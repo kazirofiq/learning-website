@@ -34,13 +34,13 @@ const Course = () => {
                   Premium Course
                 </h2>
                 <p className="text-[#ECECF5] ">
-                  Office Services, Sweeping Mopping, <br /> Kitchen Cleaning,{" "}
+                  Office Services, Sweeping Mopping, <br /> Kitchen Cleaning,
                   Cleaning <br /> Emergency Clean up
                 </p>
 
                 <div className=" flex justify-center items-center gap-2">
                   <h2 className="text-[16px] font-bold text-white cursor-pointer">
-                    Learn More{" "}
+                    Learn More
                   </h2>
                   <IoIosArrowForward className="text-white"></IoIosArrowForward>
                 </div>
@@ -57,12 +57,12 @@ const Course = () => {
               <div className="card-body items-center text-center">
                 <h2 className="card-title text-[24px] font-[700] text-[#1B1D48]">Free Course</h2>
                 <p className="text-[#666666] ">
-                  Office Services, Sweeping Mopping, <b></b> Kitchen Cleaning, {" "}
+                  Office Services, Sweeping Mopping, <br /> Kitchen Cleaning,
                   Cleaning <br /> Emergency Clean up
                 </p>
                 <div className=" flex justify-center items-center gap-2">
                   <h2 className="text-[16px] font-bold text-[#3D419F] cursor-pointer">
-                    Learn More{" "}
+                    Learn More
                   </h2>
                   <IoIosArrowForward className="text-[#3D419F]"></IoIosArrowForward>
                 </div>
