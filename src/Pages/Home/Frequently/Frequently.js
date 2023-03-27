@@ -4,7 +4,8 @@ import fr_mobile from "../../../assest/bg-img/Image2.png";
 
 const Frequently = () => {
   return (
-    <div className="mt-[86px]">
+    <div className="mt-[86px]  bg-[
+      #F7F7FE]">
       <h2 className="text-center lg:w-[554px] md:w-[554px] w-[216px] mx-auto  font-bold text-[#1B1D48] lg:text-[40px] md:text-[40px] text-[24px]">
         Frequently Asked  <span className="text-[#38A27B]">Question</span>{" "}
       </h2>
