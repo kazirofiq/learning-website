@@ -1,0 +1,15 @@
+.sumu {
+    margin-top: 40px;
+}
+
+.slick-slide {
+    height: 280px;
+}
+
+.slick-slide>div {
+    margin: 0 10px;
+}
+
+.slick-list {
+    margin: 0 -10px;
+}
