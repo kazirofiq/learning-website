@@ -57,7 +57,7 @@ const Navbar = () => {
     return (
         <section className='bg-[#FFFFFF]'>
             <div class="max-w-[1350px] mx-auto pt-11 pb-9">
-                <div class="relative flex items-center justify-between">
+                <div class="relative flex items-center justify-between lg:px-0 px-5">
                     <a
                         href="/"
                         aria-label="Company"
@@ -92,7 +92,7 @@ const Navbar = () => {
                             </svg>
                         </button>
                         {isMenuOpen && (
-                            <div class="absolute top-0 left-0 w-full">
+                            <div class="absolute top-0 left-0 w-full lg:px-0 px-5">
                                 <div class="p-5 bg-white border rounded shadow-sm">
                                     <div class="flex items-center justify-between mb-4">
                                         <div>

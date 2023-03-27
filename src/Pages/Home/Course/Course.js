@@ -10,6 +10,7 @@ const Course = () => {
       className="mt-32"
       style={{
         background: `url(${course})`,
+
       }}
     >
       <div className="lg:w-[730px] mx-auto">
