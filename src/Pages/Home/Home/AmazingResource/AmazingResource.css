@@ -1,0 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+.poppins{
+    font-family: 'Poppins', sans-serif;
+}
+
+.gs{
+    border-radius: 12px;
+    padding: 12px 24px 12px 24px;
+    background-color: #FFFFFF;
+}
+.gs_sm{
+    border-radius: 12px;
+    padding: 12px 20px 12px 20px;
+    background-color: #FFFFFF;
+}
