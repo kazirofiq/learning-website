@@ -11,59 +11,59 @@ import circle_4 from '../../../../assest/what-learn/circle-4.png'
 
 
 const WhatLearn = () => {
-const whatlearns = [
+    const whatlearns = [
 
-    {
-        circle: circle_1,
-        icon : ai,
-        heading: 'Adobe Illustrtor',
-        text: 'Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency'
-    },
-    {
-        circle: circle_2,
-        icon : Amazon,
-        heading: 'Adobe Illustrtor',
-        text: 'Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency'
-    },
-    {
-        circle: circle_3,
-        icon : Fiverrr,
-        heading: 'Adobe Illustrtor',
-        text: 'Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency'
-    },
-    {
-        circle: circle_4,
-        icon : Freepik,
-        heading: 'Adobe Illustrtor',
-        text: 'Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency'
-    },
-]
+        {
+            circle: circle_1,
+            icon: ai,
+            heading: 'Adobe Illustrtor',
+            text: 'Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency'
+        },
+        {
+            circle: circle_2,
+            icon: Amazon,
+            heading: 'Adobe Illustrtor',
+            text: 'Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency'
+        },
+        {
+            circle: circle_3,
+            icon: Fiverrr,
+            heading: 'Adobe Illustrtor',
+            text: 'Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency'
+        },
+        {
+            circle: circle_4,
+            icon: Freepik,
+            heading: 'Adobe Illustrtor',
+            text: 'Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency'
+        },
+    ]
     return (
-        <div>
-            <h2 style={{Color: '#1B1D48'}} className='text-center xs:text-2xl lg:text-4xl  font-bold py-5'>What You will <span style={{color: '#38A27B'}}>learn?</span></h2>
-            
+        <div className='lg:pt-20'>
+            <h2 style={{ Color: '#1B1D48' }} className='text-center xs:text-2xl lg:text-4xl  font-bold py-5'>What You will <span style={{ color: '#38A27B' }}>learn?</span></h2>
+
             <div class="grid sm:grid-cols-2  md:grid-cols-4 gap-4 ">
 
-            {
-                whatlearns.map( whatlearn => <div>
-                    <div className='text-center p-5'>
-                        <div className='flex justify-center items-center'>
-                           <div className='circleIcon'>
-                           <img className='circle ' src={whatlearn.circle} alt="" />
-                           
-                            <div className='glass-card'>
-                                 <img className='' src={whatlearn.icon} alt="" />
+                {
+                    whatlearns.map(whatlearn => <div>
+                        <div className='text-center p-5'>
+                            <div className='flex justify-center items-center'>
+                                <div className='circleIcon'>
+                                    <img className='circle ' src={whatlearn.circle} alt="" />
+
+                                    <div className='glass-card'>
+                                        <img className='' src={whatlearn.icon} alt="" />
+                                    </div>
+                                </div>
                             </div>
-                           </div>
+                            <div>
+                                <h2 className=' text-2xl font-bold text-[#1B1D48]'>{whatlearn.heading}</h2>
+                                <p>{whatlearn.text}</p>
+                            </div>
+
                         </div>
-                        <div>
-                            <h2 className=' text-2xl font-bold text-[#1B1D48]'>{whatlearn.heading}</h2>
-                            <p>{whatlearn.text}</p>
-                        </div>
-                       
-                    </div>
-                </div> )
-            }
+                    </div>)
+                }
             </div>
         </div>
     );
