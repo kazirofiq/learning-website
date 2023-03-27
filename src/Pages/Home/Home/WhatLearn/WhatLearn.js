@@ -22,25 +22,25 @@ const whatlearns = [
     {
         circle: circle_2,
         icon : Amazon,
-        heading: 'Adobe Illustrtor',
+        heading: 'KDP',
         text: 'Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency'
     },
     {
         circle: circle_3,
         icon : Fiverrr,
-        heading: 'Adobe Illustrtor',
+        heading: 'Fiverrr',
         text: 'Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency'
     },
     {
         circle: circle_4,
         icon : Freepik,
-        heading: 'Adobe Illustrtor',
+        heading: 'Freepik',
         text: 'Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency'
     },
 ]
     return (
         <div>
-            <h2 style={{Color: '#1B1D48'}} className='text-center xs:text-2xl lg:text-4xl  font-bold py-5'>What You will <span style={{color: '#38A27B'}}>learn?</span></h2>
+            <h2  className='text-center text-[#1B1D48] xs:text-2xl lg:text-4xl  font-bold py-5'>What You will <span style={{color: '#38A27B'}}>learn?</span></h2>
             
             <div class="grid sm:grid-cols-2  md:grid-cols-4 gap-4 ">
 
