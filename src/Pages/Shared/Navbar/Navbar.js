@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assest/logo/Logo (2).png';
 import './Navbar.css';
-import { GiPriceTag, GiQueenCrown } from "react-icons/gi";
 import premium from '../../../assest/icon/premium.png';
 import free from '../../../assest/icon/Free (1).png';
 
@@ -39,7 +38,7 @@ const Navbar = () => {
 
                     <nav aria-label="Account Nav" class="mt-2 flex flex-col space-y-1 absolute bottom-[-157px] w-[180px] shadow-lg shadow-[#D5D7E9] bg-[#FFFFFF] rounded-[10px]">
                         <a href="" class="rounded-lg  text-sm font-medium text-[#333333] pt-[20px] pb-[14px] px-[22px] mx-auto"><img src={premium} className='inline-block mr-3 text-[#333333]'></img> Primium Course</a>
-                        <hr className='text-[#D5D7E9]'/>
+                        <hr className='text-[#D5D7E9]' />
                         <a href="" class="rounded-lg text-sm font-medium text-[#333333] pt-[14px] px-[22px] pb-[20px]"> <img src={free} className='inline-block mr-3'></img> Free Course</a>
 
                     </nav>

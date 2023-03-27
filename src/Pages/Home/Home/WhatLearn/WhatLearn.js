@@ -22,31 +22,31 @@ const WhatLearn = () => {
         {
             circle: circle_2,
             icon: Amazon,
-            heading: 'Adobe Illustrtor',
+            heading: 'KDP',
             text: 'Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency'
         },
         {
             circle: circle_3,
             icon: Fiverrr,
-            heading: 'Adobe Illustrtor',
+            heading: 'Fiverr',
             text: 'Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency'
         },
         {
             circle: circle_4,
             icon: Freepik,
-            heading: 'Adobe Illustrtor',
+            heading: 'Freepik',
             text: 'Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency'
         },
     ]
     return (
-        <div className='lg:pt-20'>
-            <h2 style={{ Color: '#1B1D48' }} className='text-center xs:text-2xl lg:text-4xl  font-bold py-5'>What You will <span style={{ color: '#38A27B' }}>learn?</span></h2>
+        <div className='lg:pt-20 lg:mx-[145px] mx-[52px]'>
+            <h2 style={{ Color: '#1B1D48' }} className='text-center text-[24px] lg:text-4xl md:text-4xl  font-bold py-5'>What You will <span style={{ color: '#38A27B' }}>learn?</span></h2>
 
             <div class="grid sm:grid-cols-2  md:grid-cols-4 gap-4 ">
 
                 {
                     whatlearns.map(whatlearn => <div>
-                        <div className='text-center p-5'>
+                        <div className='text-center p-5 '>
                             <div className='flex justify-center items-center'>
                                 <div className='circleIcon'>
                                     <img className='circle ' src={whatlearn.circle} alt="" />
@@ -56,9 +56,9 @@ const WhatLearn = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <h2 className=' text-2xl font-bold text-[#1B1D48]'>{whatlearn.heading}</h2>
-                                <p>{whatlearn.text}</p>
+                            <div className='grid lg:grid-rows-2 md:grid-rows-2 items-center justify-center'>
+                                <h2 className=' text-2xl  font-bold text-[#1B1D48]'>{whatlearn.heading}</h2>
+                                <p className='lg:w-[250px]  w-[255px] mx-auto'>{whatlearn.text}</p>
                             </div>
 
                         </div>
