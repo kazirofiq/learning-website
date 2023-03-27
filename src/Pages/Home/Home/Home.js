@@ -1,15 +1,20 @@
 import React from 'react';
-import Course from '../Course/Course';
 import About from '../About/About';
-import Frequently from '../Frequently/Frequently';
+import Consultancy from '../Consultancy/Consultancy';
+import Course from '../Course/Course';
+import AmazingResource from './AmazingResource/AmazingResource';
+import WhatLearn from './WhatLearn/WhatLearn';
+import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
         <div>
+            <Banner />
             <About></About>
             <Course></Course>
-            <Frequently></Frequently>
-
+            <WhatLearn />
+            <Consultancy></Consultancy>
+            <AmazingResource></AmazingResource>
         </div>
     );
 };
