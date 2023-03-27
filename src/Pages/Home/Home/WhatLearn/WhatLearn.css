@@ -1,0 +1,59 @@
+
+.circleIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 7.8rem; 
+    height: 7.8rem;
+    
+}
+/* .icon{
+    position: relative;
+    background: rgba(20, 14, 14, 0.4);
+    border: 1px solid #E2E3F1;
+    backdrop-filter: blur(4px);
+    width: 6.5rem; 
+    height: 6.5rem;
+    border-radius: .8rem;
+    z-index: 99999; 
+    
+
+
+}
+.circle{
+position: absolute;
+left: -6px;
+top: -6px;
+z-index: 0;
+} */
+
+.circle {
+    background: white;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.1)
+    );
+    height: 2rem;
+    width: 2rem;
+    position: absolute;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+}
+.glass-card {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid #E2E3F1;
+    backdrop-filter: blur(4px);
+    width: 6.5rem; 
+    height: 6.5rem;
+    position: absolute;
+
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .8rem;
+    
+}
