@@ -7,7 +7,7 @@ import { IconName, IoIosArrowForward } from "react-icons/io";
 const Course = () => {
   return (
     <section
-      className="mt-32"
+      className="mt-32 mb-[100px]"
       style={{
         background: `url(${course})`,
         backgroundSize: 'cover'
