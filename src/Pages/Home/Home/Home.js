@@ -1,9 +1,10 @@
 import React from 'react';
+import WhatLearn from './WhatLearn/WhatLearn';
 
 const Home = () => {
     return (
         <div>
-            This is Home Page
+           <WhatLearn />
         </div>
     );
 };
