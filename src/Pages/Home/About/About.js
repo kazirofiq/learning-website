@@ -9,7 +9,7 @@ const About = () => {
 
             }}>
             <section >
-                <div className="hero lg:p-24">
+                <div className="hero lg:pt-20">
                     <div className="hero-content flex-col lg:flex-row-reverse gap-x-32">
                         <div className='lg:text-left text-center'>
                             <p className='lg:text-lg text-base font-medium text-[#333333]'>About us</p>

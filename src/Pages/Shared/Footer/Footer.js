@@ -8,7 +8,7 @@ const Footer = () => {
                 height: '386px'
             }}
             className='w-full bg-slate-100 text-base-content shadow-none'>
-            <footer className="footer p-10 justify-between w-full mx-auto">
+            <footer className="footer p-10 justify-between w-full mx-auto mt-20">
                 <div>
                     <img className='w-1/4' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCUEwts4uoA2Zk4uGFSWayTNfoLgraSoxF2g&usqp=CAU' alt="" />
                     <p >
