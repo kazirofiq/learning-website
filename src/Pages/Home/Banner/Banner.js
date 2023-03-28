@@ -7,7 +7,7 @@ import playvideo from '../../../assest/bg-img/play.png'
 const Banner = () => {
     return (
         <section className='bg-[#F8F8FF]'>
-            <div className='max-w-[1350px] mx-auto flex-row-reverse lg-w-full lg:flex md:flex pt-5 lg:pt-0 pb-[40px] lg:pb-[90px] items-center lg:px-0 px-5 relative'>
+            <div className='max-w-[1350px] lg:px-11 mx-auto flex-row-reverse lg-w-full lg:flex md:flex pt-5 lg:pt-0 pb-[40px] lg:pb-[90px] items-center lg:px-0 px-5 relative'>
                 <div className='flex-row w-full lg:ml-[31px] lg:mt-3'>
                     <img className='w-full' src={bannerRightPic} alt="" />
                 </div>
@@ -18,7 +18,7 @@ const Banner = () => {
                     <div className='grid grid-cols-[1] lg:grid-cols-[169px_1fr] md:grid-cols-[169px_1fr] text-center lg:text-left lg:justify-start justify-center items-center'>
                         <a href='/' className='gssm w-[121px] h-[45px] lg:h-[59px] lg:w-[169px] mx-auto lg:mx-0  lg:gs text-white text-sm lg:text-lg font-bold mr-7 mb-4 lg-mb-0 text-center'>Get Started</a>
                         <div className='flex items-center lg:text-lg text-[#333333] font-medium text-center lg:text-left ml-4'>
-                           <a href=''><img className='w-[41px] lg:w-[61px]' src={playvideo} /></a> 
+                            <a href=''><img className='w-[41px] lg:w-[61px]' src={playvideo} /></a>
                             <p className='pl-3'>How it Works</p>
                         </div>
                     </div>
@@ -40,7 +40,7 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-       </section >
+        </section >
     );
 };
 

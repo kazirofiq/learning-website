@@ -55,8 +55,8 @@ const Navbar = () => {
 
     return (
         <section className='bg-[#FFFFFF]'>
-            <div class="max-w-[1350px] mx-auto pt-11 pb-9">
-                <div class="relative flex items-center justify-between">
+            <div class="max-w-[1350px] lg:px-11 mx-auto pt-11 pb-9">
+                <div class="relative flex items-center justify-between lg:px-0 px-5">
                     <a
                         href="/"
                         aria-label="Company"
