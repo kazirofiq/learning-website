@@ -6,11 +6,11 @@ import PremiumCourseBanner from './PremiumCourseBanner/PremiumCourseBanner';
 const PremiumCourse = () => {
     return (
         <div>
-            <PremiumCourseBanner />
+            {/* <PremiumCourseBanner />
             <div className='flex justify-between'>
                     <PremiumCourseHome />
                     <EnrollMentCard />
-        </div>
+        </div> */}
         </div>
         
     );

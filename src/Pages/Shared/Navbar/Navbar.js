@@ -39,7 +39,7 @@ const Navbar = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link className="normal-case text-xl"><img className='w-36' src={logo} alt="" /></Link>
+                    <Link className="normal-case text-xl" to={'/'}><img className='w-36' src={logo} alt="" /></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
