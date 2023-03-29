@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assest/logo/Logo (White).png';
-import fb from '../../../assest/icon/fb.png'
-import instagram from '../../../assest/icon/insta.png'
-import linkedin from '../../../assest/icon/linkdin.png'
-import twitter from '../../../assest/icon/twitter.png'
+import fb from '../../../assest/icon/fb.png';
+import instagram from '../../../assest/icon/instagram.png';
+import linkedin from '../../../assest/icon/linkdin.png';
+import twitter from '../../../assest/icon/twitter.png';
 
 const Footer = () => {
     return (

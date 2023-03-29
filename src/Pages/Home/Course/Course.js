@@ -2,7 +2,7 @@ import React from "react";
 import course from "../../../assest/bg-img/BG.png";
 import premium from "../../../assest/icon/Vector.png";
 import free from "../../../assest/icon/free.png";
-import { IconName, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 
 const Course = () => {
   return (
@@ -24,8 +24,8 @@ const Course = () => {
         </div>
         <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-flow-row-dense grid-cols-1 gap-[30px] justify-center items-center">
           <div className="">
-            <div className="card bg-[#FFFFFF] hover:bg-[#3D419F] hover:text-white shadow-xl">
-              <div className="bg-[#E2E3F1] w-[104px] h-[104px] mx-auto rounded-full mt-[32px]">
+            <div className="card bg-[#3D419F] shadow-xl">
+              <div className="bg-[#ECECF5] w-[104px] h-[104px] mx-auto rounded-full mt-[32px]">
                 <figure className="pt-5">
                   <img src={premium} alt="Shoes" className="rounded-xl" />
                 </figure>

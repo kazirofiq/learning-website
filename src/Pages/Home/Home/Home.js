@@ -6,6 +6,7 @@ import AmazingResource from './AmazingResource/AmazingResource';
 import WhatLearn from './WhatLearn/WhatLearn';
 import Banner from '../Banner/Banner';
 import Frequently from '../Frequently/Frequently';
+import StudentFeedback from '../StudentFeedback/StudentFeedback';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <WhatLearn />
             <Consultancy></Consultancy>
             <AmazingResource></AmazingResource>
+            <StudentFeedback></StudentFeedback>
             <Frequently></Frequently>
         </div>
     );

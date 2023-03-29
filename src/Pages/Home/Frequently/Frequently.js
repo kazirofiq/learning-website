@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import frequently from "../../../assest/bg-img/Image1.png";
 import fr_mobile from "../../../assest/bg-img/Image2.png";
 import './Frequently.css'
@@ -12,11 +12,9 @@ const Frequently = () => {
       <h2 className="text-center lg:w-[540px] md:w-[540px] w-[216px] mx-auto  font-bold text-[#1B1D48] lg:text-[40px] md:text-[40px] text-[24px]">
         Frequently Asked <span className="text-[#38A27B]">Question</span>{" "}
       </h2>
-      <div className="grid lg:grid-cols-2 grid-cols-1  justify-center items-center lg:ml-[145px] lg:mr-[64px] ">
-        
-        {/*  */}
-        <div className=" lg:-mr-[40px] text-start">
-          <section className="dark:bg-gray-800 dark:text-gray-100 lg:mr-[164px] mr-0 ">
+      <div className="grid lg:grid-cols-2 grid-cols-1  justify-center items-center lg:ml-[145px] ">
+        <div className="lg:-mr-40 text-start">
+          <section className="dark:text-gray-100 lg:mr-[164px] ">
             <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
               <div className="space-y-4 lg:w-[540px] md:w-[540px] w-[328px] mx-auto">
                 <div
