@@ -1,44 +1,58 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../assest/logo/Logo (White).png';
+import fb from '../../../assest/icon/fb.png'
+import instagram from '../../../assest/icon/insta.png'
+import linkedin from '../../../assest/icon/linkdin.png'
+import twitter from '../../../assest/icon/twitter.png'
 
 const Footer = () => {
     return (
-        <div
-            style={{
-                height: '386px'
-            }}
-            className='w-full bg-slate-100 text-base-content shadow-none'>
-            <footer className="footer p-10 justify-between w-full mx-auto">
+        <div className='w-full text-base-content shadow-none'>
+            <footer className="footer bg-[#1B1D48] p-16 justify-between w-full mx-auto text-white">
                 <div>
-                    <img className='w-1/4' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCUEwts4uoA2Zk4uGFSWayTNfoLgraSoxF2g&usqp=CAU' alt="" />
-                    <p >
-                        <span className='font-bold text-black'>PERFORM TRACKER</span>
-                        <br />
-                        <span>Platform to evaluate company performance</span>
+                    <img src={logo} alt="" />
+                    <p className='text-white'>
+                        <span>Learn With Rakib is an interesting <br /> platform that will teach you in <br /> more an interactive way</span>
                     </p>
+                    <div className='flex gap-5'>
+                        <Link><img src={fb} alt="" /></Link>
+                        <Link><img src={twitter} alt="" /></Link>
+                        <Link><img src={instagram} alt="" /></Link>
+                        <Link><img src={linkedin} alt="" /></Link>
+                    </div>
                 </div>
                 <div>
-                    <span className="footer-title">Services</span>
-                    <Link className="link link-hover">Branding</Link>
-                    <Link className="link link-hover">Design</Link>
-                    <Link className="link link-hover">Marketing</Link>
-                    <Link className="link link-hover">Advertisement</Link>
+                    <span className="font-bold uppercase text-[700] text-white">Useful Link</span>
+                    <Link className="link link-hover">Home</Link>
+                    <Link className="link link-hover">Course</Link>
+                    <Link className="link link-hover">Resource</Link>
+                    <Link className="link link-hover">Service</Link>
                 </div>
                 <div>
-                    <span className="footer-title">Company</span>
+                    <span className="font-bold uppercase text-[700] text-white">Contact Us</span>
+                    <Link className="link link-hover">+880 1781-251002</Link>
+                    <Link className="link link-hover">Mondolgd111@gmail.com</Link>
+                    <Link className="link link-hover">Street, Magura-7611,Khulna</Link>
+                </div>
+                <div>
+                    <span className="font-bold uppercase text-[700] text-white">Company</span>
                     <Link className="link link-hover">About us</Link>
-                    <Link className="link link-hover">Contact</Link>
-                    <Link className="link link-hover">Jobs</Link>
-                    <Link className="link link-hover">Press kit</Link>
+                    <Link className="link link-hover">Refund</Link>
+                    <Link className="link link-hover">Privacy</Link>
+                    <Link className="link link-hover">Terms & Condition</Link>
                 </div>
+                {/* <div>
+                    <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+                </div> */}
+            </footer>
+            <footer className="footer bg-[#3D419F] footer-center p-4 text-white">
                 <div>
-                    <span className="footer-title">Legal</span>
-                    <Link className="link link-hover">Terms of use</Link>
-                    <Link className="link link-hover">Privacy policy</Link>
-                    <Link className="link link-hover">Cookie policy</Link>
+                    <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
                 </div>
             </footer>
         </div>
+
     );
 };
 
