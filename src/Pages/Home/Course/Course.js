@@ -2,7 +2,7 @@ import React from "react";
 import course from "../../../assest/bg-img/BG.png";
 import premium from "../../../assest/icon/Vector.png";
 import free from "../../../assest/icon/free.png";
-import { IconName, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 
 const Course = () => {
   return (
