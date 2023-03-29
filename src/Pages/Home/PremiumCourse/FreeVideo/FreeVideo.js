@@ -1,7 +1,5 @@
 import React from 'react';
 import image1 from '../../../../assest/course_image/course_image_1.png';
-import image2 from '../../../../assest/course_image/course_image_2.png';
-import image3 from '../../../../assest/course_image/course_image_3.png';
 
 const FreeVideo = () => {
 
@@ -45,9 +43,8 @@ const FreeVideo = () => {
 
     ]
 
-
     return (
-        <section className='my-12 mx-5 lg:mx-auto w-[320px] lg:min-w-[1110px] bg-red-100'>
+        <section className='my-12 mx-auto w-[320px] lg:min-w-[1110px]'>
             <div className='w-[320px] lg:w-[1110px] grid grid-cols-1 lg:grid-cols-2 justify-center items-center'>
                 <div className=''>
                     <h1 className='text-[24px] lg:text-[40px] leading-[30px] lg:leading-[60px] font-bold poppins'>
@@ -73,7 +70,6 @@ const FreeVideo = () => {
                     course_data.map(data => <div
                         key={data.id}
                     >
-
                         <div className="w-full ">
                             <figure>
                                 <img src={image1} alt="" className='w-[320px]  lg:w-[350px] ' />
@@ -81,8 +77,6 @@ const FreeVideo = () => {
                             <div className="poppins mt-[17px] lg:mt-6">
                                 <h2 className="text-2xl font-bold leading-9 text-[#333333]">{data.course_name}</h2>
                                 <p className="text-base leading-6 font-normal text-[#666666] mt-1 lg:mt-2">{data.name}</p>
-                                <div className="">
-                                </div>
                             </div>
                         </div>
                     </div>)
