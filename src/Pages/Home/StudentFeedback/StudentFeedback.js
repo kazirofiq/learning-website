@@ -17,6 +17,7 @@ export default function StudentFeedback() {
         slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,
+        arrows : false,
         responsive: [
             {
                 breakpoint: 1200,
@@ -96,13 +97,13 @@ export default function StudentFeedback() {
     return (
 
         <div>
-            <h2 className='text-2xl lg:text-[40px] md:text-[35px] font-bold text-[#1B1D48] mt-10 lg:mt[87px] text-center'>What Our Student <span className='text-[#38A27B]'>Say</span></h2>
+            <h2 className='text-2xl lg:text-[40px] md:text-[35px] font-bold text-[#1B1D48] mt-10 lg:mt[87px] text-center lg:pt-11'>What Our Student <span className='text-[#38A27B]'>Say</span></h2>
 
             <div
                 style={{
                     backgroundImage: `url(${sliderBg})`
                 }}
-                className='lg:mx-24 mt-[61px] lg:[82px] h-[70%] sumu'>
+                className=' lg:mx-[145px] mt-[61px] lg:[82px] h-[70%] sumu mx-auto lg:pb-9'>
 
                 <Slider {...settings}>
                     {

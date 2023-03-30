@@ -4,7 +4,7 @@ import consultancy from '../../../assest/bg-img/Image.png'
 const Consultancy = () => {
     return (
         <section className='bg-[#F8F8FF]'>
-            <div className="hero lg:pl-44 max-w-[1350px]">
+            <div className="hero lg:pl-44 max-w-[1350px] lg:pb-[87px] lg:pt-[13px]">
                 <div className="hero-content flex-col lg:flex-row-reverse gap-x-32">
                     <div className='lg:text-left text-center'>
                         {/* <p className='lg:text-lg text-base font-medium text-[#333333]'>About us</p> */}

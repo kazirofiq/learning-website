@@ -7,13 +7,13 @@ import { IoIosArrowForward } from "react-icons/io";
 const Course = () => {
   return (
     <section
-      className="mt-32 mb-[100px]"
+      className="pt-32  pb-[100px]"
       style={{
         background: `url(${course})`,
         backgroundSize: 'cover'
       }}
     >
-      <div className="lg:w-[730px] mx-auto">
+      <div className="lg:w-[730px] mx-auto px-5 lg-px-0">
         <div className="mx-auto mb-[40px]">
           <h2 className="text-center lg:w-[554px] md:w-[554px] w-[272px] mx-auto text-[#1B1D48] lg:text-[40px] md:text-[40px] text-[24px] font-bold">
             Get started with{" "}
