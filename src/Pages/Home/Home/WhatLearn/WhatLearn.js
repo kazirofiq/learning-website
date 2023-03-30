@@ -42,10 +42,12 @@ const WhatLearn = () => {
         <div className='lg:pt-20 lg:mx-[145px] mx-[52px]'>
             <h2 style={{ Color: '#1B1D48' }} className='text-center text-[24px] lg:text-4xl md:text-4xl  font-bold py-5'>What You will <span style={{ color: '#38A27B' }}>learn?</span></h2>
 
-            <div class="grid sm:grid-cols-2  md:grid-cols-4 gap-4 ">
+            <div className="grid sm:grid-cols-2  md:grid-cols-4 gap-4 ">
 
                 {
-                    whatlearns.map(whatlearn => <div>
+                    whatlearns.map((whatlearn, i) => <div
+                        key={i}
+                    >
                         <div className='text-center p-5 '>
                             <div className='flex justify-center items-center'>
                                 <div className='circleIcon'>
