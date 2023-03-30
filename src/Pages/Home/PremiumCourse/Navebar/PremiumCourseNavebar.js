@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import Scrollspy from 'react-scrollspy';
 
 
 
@@ -8,7 +7,8 @@ const PremiumCourseNavebar = () => {
     return (
         <div className="bg-[#ECECF5] rounded-[10px] mt-[32px] sticky top-0">
     <ul className="flex justify-between h-[40px] items-center">
-      <li className=''>
+
+    <li className=''>
         <Link className='bg-[#3D419F] rounded-[10px] text-[#FFFFFF] h-[40px] flex items-center w-[152px] justify-center'>
           Overview
         </Link>
