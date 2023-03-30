@@ -6,7 +6,7 @@ import CourseCurriculumAccordion from './CourseCurriculumAccordion';
 
 const CourseCurriculum = () => {
     return (
-        <section className='lg:max-w-full bg-[#F8F8FF] mx-auto'>
+        <section className='lg:max-w-full bg-[#F8F8FF] mx-auto' id='courseCurriculum'>
             <div className='lg:max-w-[1110px] mx-auto'>
                 <div className='lg:w-[731px] w-[320px] lg:mx-0 mx-auto py-4 lg:py-[22px]'>
                     <div>
