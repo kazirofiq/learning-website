@@ -23,6 +23,9 @@ const Banner = () => {
                         </div>
                         <div className='flex justify-center mr-8 lg:mt-0 mt-4'>
                             <Link><img src={start_button} alt="" className='w-12 h-12 lg:w-[71px] lg:h-[71px]' /></Link>
+
+                            {/* Please do not delete below code! */}
+                            {/* <Link><PlayAndPauseButton></PlayAndPauseButton></Link> */}
                             <div className='flex items-center'><p className='pl-[12px] poppins font-medium lg:text-lg text-sm'>How It Works</p></div>
                         </div>
                     </div>
