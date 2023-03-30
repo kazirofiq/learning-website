@@ -39,7 +39,7 @@ const whatlearns = [
     },
 ]
     return (
-        <div>
+        <div className='py-[5.4rem]'>
             <h2  className='text-center text-[#1B1D48] xs:text-2xl lg:text-4xl  font-bold py-5'>What You will <span style={{color: '#38A27B'}}>learn?</span></h2>
             
             <div class="grid sm:grid-cols-2  md:grid-cols-4 gap-4 ">
