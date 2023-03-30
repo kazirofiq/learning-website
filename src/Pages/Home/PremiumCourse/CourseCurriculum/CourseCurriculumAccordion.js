@@ -5,7 +5,7 @@ import lock from '../../../../assest/course_curriculum/unlock,lock open,pad lock
 const CourseCurriculumAccordion = () => {
     return (
         <section className="bg-[#F7F7FE]">
-            <div className="grid lg:grid-cols-2 grid-cols-1 justify-center items-center">
+            <div className="grid grid-cols-1 justify-center items-center">
                 <div className="container flex flex-col justify-center my-3">
                     <div className="space-y-4 lg:w-[729px] w-[320px]">
                         <div className="collapse collapse-arrow bg-white">
