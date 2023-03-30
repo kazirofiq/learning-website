@@ -1,5 +1,5 @@
 import React from 'react';
-import CourseCurriculum from '../CourseCurriculum/CourseCurriculum';
+// import CourseCurriculum from '../CourseCurriculum/CourseCurriculum';
 import FreeVideo from '../FreeVideo/FreeVideo';
 import LearnerReview from '../LearnerReview/LearnerReview';
 import Mentor from '../Mentor/Mentor';
