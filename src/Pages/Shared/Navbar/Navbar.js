@@ -54,7 +54,7 @@ const Navbar = () => {
     );
 
     return (
-        <section className='bg-[#FFFFFF]'>
+        <section className='bg-[#FFFFFF] sticky top-0 z-40'>
             <div className="max-w-[1350px] lg:px-11 mx-auto pt-11 pb-9">
                 <div className="relative flex items-center justify-between lg:px-0 px-5">
                     <button
