@@ -16,9 +16,9 @@ const Navbar = () => {
             <li tabIndex={0} className="relative">
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
                     <summary
-                        className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:text-gray-700"
+                        className="flex cursor-pointer items-center justify-between rounded-lg  py-2 text-gray-500 hover:text-gray-700"
                     >
-                        <span className="text-sm font-medium"> Course </span>
+                        <span className="text-[#333333] text-base font-normal"> Course </span>
 
                         <span className="shrink-0 transition duration-300 group-open:-rotate-180">
                             <svg
@@ -36,10 +36,10 @@ const Navbar = () => {
                         </span>
                     </summary>
 
-                    <nav aria-label="Account Nav" className="mt-2 flex flex-col space-y-1 absolute bottom-[-157px] w-[180px] shadow-lg shadow-[#D5D7E9] bg-[#FFFFFF] rounded-[10px]">
-                        <a href="" className="rounded-lg  text-sm font-medium text-[#333333] pt-[20px] pb-[14px] px-[22px] mx-auto"><img src={premium} className='inline-block mr-3 text-[#333333]'></img> Primium Course</a>
+                    <nav aria-label="Account Nav" className="mt-2 z-50 flex flex-col space-y-1 absolute bottom-[-157px] w-[180px] shadow-lg shadow-[#D5D7E9] bg-[#FFFFFF] rounded-[10px]">
+                        <Link to='/premium_course' className="rounded-lg  text-sm font-medium text-[#333333] pt-[20px] pb-[14px] px-[22px] mx-auto"><img alt='' src={premium} className='inline-block mr-3 text-[#333333]'></img> Primium Course</Link>
                         <hr className='text-[#D5D7E9]' />
-                        <a href="" className="rounded-lg text-sm font-medium text-[#333333] pt-[14px] px-[22px] pb-[20px]"> <img src={free} className='inline-block mr-3'></img> Free Course</a>
+                        <Link href="" className="rounded-lg text-sm font-medium text-[#333333] pt-[14px] px-[22px] pb-[20px]"> <img alt='' src={free} className='inline-block mr-3' ></img> Free Course</Link>
 
                     </nav>
                 </details>
@@ -55,8 +55,8 @@ const Navbar = () => {
 
     return (
         <section className='bg-[#FFFFFF]'>
-            <div class="max-w-[1350px] mx-auto pt-11 pb-9">
-                <div class="relative flex items-center justify-between lg:px-0 px-5">
+            <div className="max-w-[1350px] lg:px-11 mx-auto pt-11 pb-9">
+                <div className="relative flex items-center justify-between lg:px-0 px-5">
                     <a
                         href="/"
                         aria-label="Company"
@@ -91,9 +91,9 @@ const Navbar = () => {
                             </svg>
                         </button>
                         {isMenuOpen && (
-                            <div class="absolute top-0 left-0 w-full lg:px-0 px-5">
-                                <div class="p-5 bg-white border rounded shadow-sm">
-                                    <div class="flex items-center justify-between mb-4">
+                            <div className="absolute top-0 left-0 w-full z-50">
+                                <div className="p-5 bg-white border rounded shadow-sm">
+                                    <div className="flex items-center justify-between mb-4">
                                         <div>
                                             <a
                                                 href="/"

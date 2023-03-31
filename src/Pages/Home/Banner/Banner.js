@@ -1,8 +1,9 @@
 import React from 'react';
 import './Banner.css';
 import bannerRightPic from '../../../assest/bg-img/bannerright (1).png';
-import arrow from '../../../assest/bg-img/Arrow.png';
-import playvideo from '../../../assest/bg-img/play.png'
+import arrow from '../../../assest/bg-img/Arrow.png'
+import start_button from '../../../assest/banner/start_button.png';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -12,14 +13,20 @@ const Banner = () => {
                     <img className='w-full' src={bannerRightPic} alt="" />
                 </div>
                 <img className='hidden lg:block absolute right-[56%] bottom-[32%]' src={arrow} alt="arrow" />
-                <div className='flex-row w-full lg:mr-[31px] lg:mx-0 mx-auto'>
-                    <h1 className='text-4xl lg:text-[56px] md:text-[50px] text-[#1B1D48] lg:leading-[80px] sm:leading-[60px] mb-[30px] font-bold lg:text-left md:text-left text-center pt-6 lg:p-0 lg:w-[542px] sm:w-[320px] lg:mx-0 mx-auto'>Learning Online is <span className='text-[#38A27B] lg:block'>Now Much Easier</span></h1>
-                    <p className='text-[#666666] leading-6 text-[16px] mb-11 lg:text-left md:text-left text-center lg:w-[542px] lg:mx-0 mx-auto w-[320px]'>Learn With Rakib is an interesting platform that will teach you in more an interactive way</p>
-                    <div className='grid grid-cols-[1] lg:grid-cols-[169px_1fr] md:grid-cols-[169px_1fr] text-center lg:text-left lg:justify-start justify-center items-center'>
-                        <a href='/' className='gssm w-[121px] h-[45px] lg:h-[59px] lg:w-[169px] mx-auto lg:mx-0  lg:gs text-white text-sm lg:text-lg font-bold mr-7 lg-mt-[17px] lg-mb-0 text-center'>Get Started</a>
-                        <div className='flex items-center lg:text-lg text-[#333333] font-medium text-center mt-4 lg:mt-0 lg:text-left ml-4'>
-                            <a href=''><img className='w-[41px] lg:w-[61px]' src={playvideo} /></a>
-                            <p className='pl-3'>How it Works</p>
+                <div className='flex-row w-full lg:mr-[31px]'>
+                    <h1 className='text-4xl lg:text-[56px] md:text-[50px] text-[#1B1D48] lg:leading-[80px] sm:leading-[60px] mb-[30px] lg:w-[542px] sm:w-[320px] font-bold lg:text-left md:text-left text-center pt-6 lg:p-0'>Learning Online is <span className='text-[#38A27B] lg:block'>Now Much Easier</span></h1>
+                    <p className='text-[#666666] leading-6 text-[16px] mb-11 lg:text-left text-center'>Learn With Rakib is an interesting platform that will teach you in more an interactive way</p>
+
+                    <div className='lg:flex items-center sm:block mx-auto lg:mx-0'>
+                        <div className='flex justify-center'>
+                            <a href='/' className=' gs_sm lg:gs lg:mr-7 text-white text-sm lg:text-lg lg:font-bold font-semibold'>Get Started</a>
+                        </div>
+                        <div className='flex justify-center mr-8 lg:mt-0 mt-4'>
+                            <Link><img src={start_button} alt="" className='w-12 h-12 lg:w-[71px] lg:h-[71px]' /></Link>
+
+                            {/* Please do not delete below code! */}
+                            {/* <Link><PlayAndPauseButton></PlayAndPauseButton></Link> */}
+                            <div className='flex items-center'><p className='pl-[12px] poppins font-medium lg:text-lg text-sm'>How It Works</p></div>
                         </div>
                     </div>
 
