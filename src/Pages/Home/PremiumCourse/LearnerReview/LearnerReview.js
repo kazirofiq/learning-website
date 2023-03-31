@@ -5,7 +5,7 @@ import Review from './Review';
 
 const LearnerReview = () => {
     return (
-        <section className='max-w-[1110px] mx-auto'>
+        <section className='max-w-[1110px] mx-auto' id='learnerReview'>
 
             <p className='text-[#1B1D48] text-center lg:text-start text-[20px] lg:text-2xl poppins font-semibold lg:font-bold leading-[30px] lg:leading-9'>Learner Review (15 Rating)</p>
 

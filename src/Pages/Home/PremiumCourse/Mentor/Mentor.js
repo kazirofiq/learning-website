@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Mentor = () => {
     return (
-        <section className='w-[320px] lg:w-[1110px] mx-auto mb-6 mt-2 lg:my-6'>
+        <section className='w-[320px] lg:w-[1110px] mx-auto my-6' id='mentor'>
             <div className='w-[320px] lg:w-[743px]'>
                 <p className='text-xl lg:text-2xl text-center lg:text-start font-bold leading-[30px] lg:leading-9 text-[#1B1D48] poppins w-[320px]'>Meet Your Mentor</p>
 
