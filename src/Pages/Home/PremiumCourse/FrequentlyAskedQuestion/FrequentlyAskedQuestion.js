@@ -11,7 +11,7 @@ const FrequentlyAskedQuestion = () => {
 
             <div className="grid grid-cols-1 justify-center items-center">
                 <div className="container flex flex-col justify-center mt-6 lg:mt-12">
-                    <div className="space-y-4 lg:w-[730px] w-[320px] mb-4">
+                    <div className="space-y-4 lg:w-[730px] w-[320px] mb-4 mx-auto lg:mx-0">
                         <div className="collapse collapse-arrow">
                             <input type="checkbox" className="peer" />
 
@@ -27,7 +27,7 @@ const FrequentlyAskedQuestion = () => {
                         </div>
                     </div>
 
-                    <div className="space-y-4 lg:w-[730px] w-[320px] mb-4">
+                    <div className="space-y-4 lg:w-[730px] w-[320px] mb-4 mx-auto lg:mx-0">
                         <div className="collapse collapse-arrow">
                             <input type="checkbox" className="peer" />
 
@@ -42,7 +42,8 @@ const FrequentlyAskedQuestion = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="space-y-4 lg:w-[730px] w-[320px] mb-4">
+
+                    <div className="space-y-4 lg:w-[730px] w-[320px] mb-4 mx-auto lg:mx-0">
                         <div className="collapse collapse-arrow">
                             <input type="checkbox" className="peer" />
 
@@ -57,7 +58,8 @@ const FrequentlyAskedQuestion = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="space-y-4 lg:w-[730px] w-[320px] mb-4">
+
+                    <div className="space-y-4 lg:w-[730px] w-[320px] mb-4 mx-auto lg:mx-0">
                         <div className="collapse collapse-arrow">
                             <input type="checkbox" className="peer" />
 
@@ -72,7 +74,8 @@ const FrequentlyAskedQuestion = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="space-y-4 lg:w-[730px] w-[320px]">
+
+                    <div className="space-y-4 lg:w-[730px] w-[320px] mx-auto lg:mx-0">
                         <div className="collapse collapse-arrow">
                             <input type="checkbox" className="peer" />
 
