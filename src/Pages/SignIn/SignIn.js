@@ -19,9 +19,7 @@ const SignIn = () => {
   return (
     <div
       className="bg mb-10 lg:py-[120px]   mx-auto flex justify-center items-center"
-      style={{ backgroundImage: `url(${login})`
-                
-    }}
+    
     >
       <div className="h-[372px]  w-[398px] pt-[3.5rem] mx-auto flex justify-center items-center">
         <div className="w-96 bg-white rounded-xl  py-4 px-8">
@@ -71,7 +69,6 @@ const SignIn = () => {
             <div className="flex py-[14px] justify-between items-center">
               <div className="form-control">
                 <label className="label cursor-pointer">
-                  {/* <input type="checkbox" checked="checked" className="checkbox" /> */}
                   <input
                     type="checkbox"
                     id="A3-yes"

@@ -37,11 +37,13 @@
   }
   @media only screen and (min-width: 992px) {
     
-    .bg {
+    .bgg {
+       
       background-repeat: no-repeat;
       background-position: center center;
       background-image: url('../../assest/bg-img/login.png');
   }
    
   }
+  
   
