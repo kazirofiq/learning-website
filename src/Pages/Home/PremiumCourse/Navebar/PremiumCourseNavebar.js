@@ -17,8 +17,8 @@ const PremiumCourseNavebar = () => {
       let activeIndex = menuItemIds.length - 1;
 
       menuItems.forEach((item, index) => {
-        const top = item.offsetTop - 50; // subtract header height
-        const bottom = top + item.offsetHeight;
+        const top = item; // subtract header height
+        const bottom = top + item;
 
         if (scrollPosition >= top && scrollPosition < bottom) {
           activeIndex = index;
