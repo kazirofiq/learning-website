@@ -31,7 +31,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <span className="font-bold uppercase text-[700] text-white">Contact Us</span>
-                    <Link className="link link-hover">01781-251002</Link>
+                    <Link className="link link-hover">+880 1781-251002</Link>
                     <Link className="link link-hover">Mondolgd111@gmail.com</Link>
                     <Link className="link link-hover">Street, Magura-7611,Khulna</Link>
                 </div>

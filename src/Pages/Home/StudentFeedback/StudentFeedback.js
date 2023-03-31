@@ -17,6 +17,7 @@ export default function StudentFeedback() {
         slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,
+        arrows : false,
         responsive: [
             {
                 breakpoint: 1200,
@@ -63,28 +64,28 @@ export default function StudentFeedback() {
             describe: "There are many variations of passages of Lorem Ipsum available, but the majority have"
         },
         {
-            id: 1,
+            id: 2,
             name: "Rasel Mondol",
             image: "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSStEXQ52SE6txqvnwfAyOZ-dt6fkkBqzcir0RaZkoG54dYK7UByieR90Nb18ON4rdZ6VyDNVuQdk1kXik",
             skill: "Ui/Ux Designer",
             describe: "There are many variations of passages of Lorem Ipsum available, but the majority have"
         },
         {
-            id: 1,
+            id: 3,
             name: "Rasel Mondol",
             image: "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSStEXQ52SE6txqvnwfAyOZ-dt6fkkBqzcir0RaZkoG54dYK7UByieR90Nb18ON4rdZ6VyDNVuQdk1kXik",
             skill: "Ui/Ux Designer",
             describe: "There are many variations of passages of Lorem Ipsum available, but the majority have"
         },
         {
-            id: 1,
+            id: 4,
             name: "Rasel Mondol",
             image: "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSStEXQ52SE6txqvnwfAyOZ-dt6fkkBqzcir0RaZkoG54dYK7UByieR90Nb18ON4rdZ6VyDNVuQdk1kXik",
             skill: "Ui/Ux Designer",
             describe: "There are many variations of passages of Lorem Ipsum available, but the majority have"
         },
         {
-            id: 1,
+            id: 5,
             name: "Rasel Mondol",
             image: "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSStEXQ52SE6txqvnwfAyOZ-dt6fkkBqzcir0RaZkoG54dYK7UByieR90Nb18ON4rdZ6VyDNVuQdk1kXik",
             skill: "Ui/Ux Designer",
@@ -96,18 +97,18 @@ export default function StudentFeedback() {
     return (
 
         <div>
-            <h2 className='text-2xl lg:text-[40px] md:text-[35px] font-bold text-[#1B1D48] mt-10 lg:mt[87px] text-center'>What Our Student <span className='text-[#38A27B]'>Say</span></h2>
+            <h2 className='text-2xl lg:text-[40px] md:text-[35px] font-bold text-[#1B1D48] mt-10 lg:mt[87px] text-center lg:pt-11'>What Our Student <span className='text-[#38A27B]'>Say</span></h2>
 
             <div
                 style={{
                     backgroundImage: `url(${sliderBg})`
                 }}
-                className='lg:mx-24 mt-[61px] lg:[82px] h-[70%] sumu'>
+                className=' lg:mx-[145px] mt-[61px] lg:[82px] h-[70%] sumu mx-auto lg:pb-9'>
 
                 <Slider {...settings}>
                     {
                         students.map(student =>
-                            <div className='relative h-[203px] w-[370px] border-y-4 border-[#3D419F] rounded-xl text-center sumu'>
+                            <div key={student.id} className='relative h-[203px] w-[370px] border-y-4 border-[#3D419F] rounded-xl text-center sumu'>
                                 <img className='absolute top-[-18%] right-[43%] h-14 w-14 rounded-full border-2 border-[#3D419F]' src='https://static.photocdn.pt/images/articles/2018/12/05/articles/2017_8/beginner_photography_mistakes-1.webp' alt='' />
                                 <h4 className='font-bold text-base mt-[30px]'>Rasel Mondol</h4>
                                 <h5 className='text-xs font-light mt-1'>Ui/Ux Deginer</h5>
