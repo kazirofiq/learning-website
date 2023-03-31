@@ -1,4 +1,5 @@
 import React from "react";
+import frequently from "../../../assest/bg-img/Image1.png";
 import fr_mobile from "../../../assest/bg-img/Image2.png";
 import thinkimg from '../../../assest/icon/Image.png'
 
@@ -12,7 +13,7 @@ const Frequently = () => {
         <div className="lg:-mr-40 text-start">
           <section className="dark:text-gray-100  lg:w-[540px]">
             <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
-              <div className="space-y-4">
+              <div className="space-y-4 lg:w-[540px] md:w-[540px] w-[328px] mx-auto">
                 <div
                   tabIndex={0}
                   className="collapse collapse-arrow border border-base-300 bg-[#FFFFFF] rounded-box
@@ -38,9 +39,9 @@ const Frequently = () => {
                     What makes Defferent From Other Available Apps On The App
                     Store?
                   </div>
-                  <div className="collapse-content">
-                    <p className="">
-                      tabIndex={0} attribute is necessary to make the div
+                  <div className="collapse-content  bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
+                    <p className=" ">
+                      attribute is necessary to make the div
                       focusable
                     </p>
                   </div>
@@ -50,12 +51,14 @@ const Frequently = () => {
                   className="collapse collapse-arrow border border-base-300 bg-[#FFFFFF] rounded-box
                   hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
-                  <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium">
-                    How to start using Sales Application? How can I register?
+                  <input type="checkbox" className="peer" />
+                  <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
+                    What makes Defferent From Other Available Apps On The App
+                    Store?
                   </div>
-                  <div className="collapse-content">
-                    <p>
-                      tabIndex={0} attribute is necessary to make the div
+                  <div className="collapse-content  bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
+                    <p className=" ">
+                      attribute is necessary to make the div
                       focusable
                     </p>
                   </div>
@@ -64,29 +67,46 @@ const Frequently = () => {
                   tabIndex={0}
                   className="collapse collapse-arrow border border-base-300  bg-[#FFFFFF] rounded-box hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
-                  <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium ">
-                    How To Start Free Trial?
+                  <input type="checkbox" className="peer" />
+                  <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
+                    What makes Defferent From Other Available Apps On The App
+                    Store?
                   </div>
-                  <div className="collapse-content">
-                    <p>
-                      tabIndex={0} attribute is necessary to make the div
+                  <div className="collapse-content  bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
+                    <p className=" ">
+                      attribute is necessary to make the div
                       focusable
                     </p>
                   </div>
                 </div>
-
-                {/*  */}
                 <div
                   tabIndex={0}
                   className="collapse collapse-arrow border border-base-300 bg-[#FFFFFF] rounded-box
                   hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
-                  <div className="collapse-title text-xl font-medium">
-                    Focus me to see content
+                  <input type="checkbox" className="peer" />
+                  <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
+                    What makes Defferent From Other Available Apps On The App
+                    Store?
                   </div>
-                  <div className="collapse-content">
-                    <p>
-                      tabIndex={0} attribute is necessary to make the div
+                  <div className="collapse-content  bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
+                    <p className=" ">
+                      attribute is necessary to make the div
+                      focusable
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="collapse collapse-arrow hvr order bx border-base-300 bg-base-100 rounded-box "
+                >
+                  <input type="checkbox" className="peer" />
+                  <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
+                    What makes Defferent From Other Available Apps On The App
+                    Store?
+                  </div>
+                  <div className="collapse-content  bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
+                    <p className=" ">
+                      attribute is necessary to make the div
                       focusable
                     </p>
                   </div>
