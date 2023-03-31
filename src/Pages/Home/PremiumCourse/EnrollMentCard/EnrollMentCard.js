@@ -12,7 +12,7 @@ import time from "../../../../assest/buyCourseCardIcon/Time.png";
 const EnrollMentCard = () => {
     return (
         <div className='lg:mt-[-200px]'>
-            <div className="card poppins w-[320px] lg:w-[350px] bg-base-100 shadow-xl sticky top-0 inline-block">
+            <div className="card poppins sticky top-0 w-[320px] lg:w-[350px] bg-base-100 shadow-xl inline-block">
                 <div className='relative cursor-pointer'>
                 <figure>
                 <img className='lg:block hidden' src={videoImg} alt="video" />
