@@ -104,7 +104,7 @@ export default function StudentFeedback() {
                 }}
                 className='lg:mx-24 mt-[61px] lg:[82px] h-[70%] sumu'>
 
-                <Slider {...settings}>
+                <Slider className='max-w-[92%] mx-auto' {...settings}>
                     {
                         students.map(student =>
                             <div key={student.id} className='relative h-[203px] w-[370px] border-y-4 border-[#3D419F] rounded-xl text-center sumu'>
