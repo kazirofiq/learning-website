@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assest/logo/Logo (White).png';
-import fb from '../../../assest/icon/fb.png'
-import instagram from '../../../assest/icon/insta.png'
-import linkedin from '../../../assest/icon/linkdin.png'
-import twitter from '../../../assest/icon/twitter.png'
+import fb from '../../../assest/icon/fb.png';
+import instagram from '../../../assest/icon/instagram.png';
+import linkedin from '../../../assest/icon/linkdin.png';
+import twitter from '../../../assest/icon/twitter.png';
 
 const Footer = () => {
     return (
@@ -31,7 +31,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <span className="font-bold uppercase text-[700] text-white">Contact Us</span>
-                    <Link className="link link-hover">01781-251002</Link>
+                    <Link className="link link-hover">+880 1781-251002</Link>
                     <Link className="link link-hover">Mondolgd111@gmail.com</Link>
                     <Link className="link link-hover">Street, Magura-7611,Khulna</Link>
                 </div>
