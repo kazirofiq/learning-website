@@ -5,6 +5,9 @@ import SignIn from "../../Pages/SignIn/SignIn";
 import SignUp from "../../Pages/SignUp/SignUp";
 import PremiumCourseHome from "../../Pages/Home/PremiumCourse/PremiumCourseHome/PremiumCourseHome";
 import OrderDetails from "../../Pages/OrderDetails/OrderDetails";
+import MyCourseLayout from "../../Layout/MyCourseLayout";
+import MyCourse from "../../Pages/MyCourse/MyCourse";
+import Dashboard from "../../Pages/Dashboard/Dashboard";
 
 
 const router = createBrowserRouter([
@@ -34,7 +37,24 @@ const router = createBrowserRouter([
                 element: <OrderDetails />
             },
         ]
-    }
+    },
+    {
+        path: '/dashboard',
+        element: <MyCourseLayout></MyCourseLayout>,
+        children: [
+          {
+            path: '/dashboard',
+            element: <Dashboard></Dashboard>
+          },
+          {
+            path: '/dashboard/mycourse',
+            element: <MyCourse></MyCourse>
+          },
+          
+         
+          
+        ]
+      },
 ])
 
 export default router;
