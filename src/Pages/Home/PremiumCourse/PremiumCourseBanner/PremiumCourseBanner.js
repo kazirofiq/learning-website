@@ -1,10 +1,10 @@
 import React from 'react';
 import bannerImg from "../../../../assest/banner/Header.png"
 import bannerResponsiveImg from "../../../../assest/banner/Header1.png"
+import AboutTheCourse from '../AboutTheCourse/AboutTheCourse';
 import EnrollMentCard from '../EnrollMentCard/EnrollMentCard';
-import PremiumCourseNavebar from './../Navebar/PremiumCourseNavebar';
-import AboutTheCourse from './../AboutTheCourse/AboutTheCourse';
-import WhatWillYouLearn from './../WhatWillYouLearn/WhatWillYouLearn';
+import PremiumCourseNavebar from '../Navebar/PremiumCourseNavebar';
+import WhatWillYouLearn from '../WhatWillYouLearn/WhatWillYouLearn';
 const PremiumCourseBanner = () => {
     return (
         <div className='poppins'>
@@ -16,7 +16,7 @@ const PremiumCourseBanner = () => {
                     <p className='lg:block hidden text-[16px] font-normal leading-6 text-[#666666] mt-[18px]'>Learn With Rakib is an interesting platform that will teach you in <br /> more an interactive way</p>
                     <p className='lg:hidden block text-base font-normal leading-6 text-[#666666] mt-[18px]'>Learn With Rakib is an interesting platform that will teach you in more an interactive way</p>
                     <div className='lg:block hidden'>
-                        <PremiumCourseNavebar />
+                        {/* <PremiumCourseNavebar /> */}
                         <AboutTheCourse />
                         <WhatWillYouLearn />
                     </div>
@@ -24,7 +24,7 @@ const PremiumCourseBanner = () => {
                 </div>
                 <EnrollMentCard />
                 <div className='lg:hidden block'>
-                    <PremiumCourseNavebar />
+                    {/* <PremiumCourseNavebar /> */}
                     <AboutTheCourse />
                     <WhatWillYouLearn />
                 </div>

@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Banner.css';
 import bannerRightPic from '../../../assest/bg-img/bannerright (1).png';
 import arrow from '../../../assest/bg-img/Arrow.png'
 import start_button from '../../../assest/banner/start_button.png';
 import { Link } from 'react-router-dom';
+import HowItWorksVideo from './HowItWorksVideo';
 
 const Banner = () => {
+
+    const [openVideo, setOpenVideo] = useState(null);
+
     return (
         <section className='bg-[#F8F8FF]'>
             <div className='max-w-[1350px] lg:px-11 mx-auto flex-row-reverse lg-w-full lg:flex md:flex pt-5 lg:pt-0 pb-[40px] lg:pb-[90px] items-center lg:px-0 px-5 relative'>
@@ -22,7 +26,12 @@ const Banner = () => {
                             <a href='/' className=' gs_sm lg:gs lg:mr-7 text-white text-sm lg:text-lg lg:font-bold font-semibold'>Get Started</a>
                         </div>
                         <div className='flex justify-center mr-8 lg:mt-0 mt-4'>
-                            <Link><img src={start_button} alt="" className='w-12 h-12 lg:w-[71px] lg:h-[71px]' /></Link>
+
+                            <label
+                                htmlFor="openVideoModal"
+                                className="">
+                                <img src={start_button} alt="" className='w-12 h-12 lg:w-[71px] lg:h-[71px] cursor-pointer' />
+                            </label>
 
                             {/* Please do not delete below code! */}
                             {/* <Link><PlayAndPauseButton></PlayAndPauseButton></Link> */}
@@ -47,6 +56,10 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
+
+            <HowItWorksVideo
+                setOpenVideo={setOpenVideo}
+            ></HowItWorksVideo>
         </section >
     );
 };
