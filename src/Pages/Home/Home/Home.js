@@ -7,6 +7,7 @@ import WhatLearn from './WhatLearn/WhatLearn';
 import Banner from '../Banner/Banner';
 import Frequently from '../Frequently/Frequently';
 import StudentFeedback from '../StudentFeedback/StudentFeedback';
+import SuccesModal from '../../Modal/SuccesModal/SuccesModal';
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
             <AmazingResource></AmazingResource>
             <StudentFeedback></StudentFeedback>
             <Frequently></Frequently>
+            {/* <SuccesModal></SuccesModal> */}
         </div>
     );
 };
