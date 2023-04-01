@@ -44,7 +44,7 @@ const FreeVideo = () => {
     ]
 
     return (
-    <section className='mx-auto w-[320px] lg:min-w-[1110px] mb-12 lg:mb-[100px]'>
+    <section className='mx-auto w-[320px] lg:min-w-[1110px] mb-12 lg:mb-[100px]' id='free-course'>
             <div className='mb-10 mx-auto w-[320px] lg:min-w-[1110px]'>
                 <div className='w-[320px] lg:w-[1110px] grid grid-cols-1 lg:grid-cols-2 justify-center items-center'>
                     <div className=''>
