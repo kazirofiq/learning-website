@@ -1,6 +1,4 @@
 import React from "react";
-import frequently from "../../../assest/bg-img/Image1.png";
-import fr_mobile from "../../../assest/bg-img/Image2.png";
 import thinkimg from '../../../assest/icon/Image.png'
 
 const Frequently = () => {
@@ -17,16 +15,17 @@ const Frequently = () => {
                 <div
                   tabIndex={0}
                   className="collapse collapse-arrow border border-base-300 bg-[#FFFFFF] rounded-box
-             hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
+                  hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
-                  <div className="collapse-title lg:text-[18px] md:text-[18px]  text-[16px] font-medium">
-                    What is This App?
+                  <input type="checkbox" className="peer" />
+                  <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
+                    What makes Defferent From Other Available Apps On The App
+                    Store?
                   </div>
-                  <div className="collapse-content">
-                    <p className="">
-                      tabIndex={0} Lisque persius interesset his et, in quot
-                      quidam persequeris vim, ad mea essent possim iriure. Mutat
-                      tacimates
+                  <div className="collapse-content  bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
+                    <p className=" ">
+                      attribute is necessary to make the div
+                      focusable
                     </p>
                   </div>
                 </div>
@@ -35,7 +34,8 @@ const Frequently = () => {
                   className="collapse collapse-arrow border border-base-300 bg-[#FFFFFF] rounded-box
                   hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
-                  <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium">
+                  <input type="checkbox" className="peer" />
+                  <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
                     What makes Defferent From Other Available Apps On The App
                     Store?
                   </div>
@@ -104,7 +104,7 @@ const Frequently = () => {
                     What makes Defferent From Other Available Apps On The App
                     Store?
                   </div>
-                  <div className="collapse-content  bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
+                  <div className="collapse-content bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
                     <p className=" ">
                       attribute is necessary to make the div
                       focusable
