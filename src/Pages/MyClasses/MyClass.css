@@ -1,0 +1,20 @@
+#inputID::-webkit-input-placeholder {
+    color: white;
+    opacity: 1;
+}
+#inputID::-moz-placeholder {
+    color: white;
+    opacity: 1;
+}
+#inputID:-ms-input-placeholder {
+    color: white;
+    opacity: 1;
+}
+#inputID::-ms-input-placeholder {
+    color: white;
+    opacity: 1;
+}
+#inputID::placeholder {
+    color: white;
+    opacity: 1;
+}

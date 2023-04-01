@@ -48,6 +48,7 @@ const Navbar = () => {
             <li className='text-[#333333] text-base font-normal'><Link>Resource</Link></li>
             <li className='text-[#333333] text-base font-normal'><Link>Consultancy</Link></li>
             <li className='text-[#333333] text-base font-normal'><Link>Review</Link></li>
+            <li className='text-[#333333] text-base font-normal'><Link to='/dashboard'>My Course</Link></li>
             <li className="lg:text-base login inline-block rounded border border-[#3D419F] font-normal text-[#282B6B] hover:bg-[#3D419F] hover:text-white focus:outline-none focus:ring active:bg-[#3D419F]"><Link to='/login' >Login </Link></li>
             <li className='lg:text-base login inline-block rounded border border-[#3D419F] bg-[#3D419F] font-normal text-white hover:bg-transparent hover:text-[#282B6B] focus:outline-none focus:ring active:text-indigo-500'><Link to="signup">Sign Up</Link></li>
         </>
@@ -55,7 +56,7 @@ const Navbar = () => {
 
     return (
         <section className='bg-[#FFFFFF]'>
-            <div className="max-w-[1350px] lg:px-11 mx-auto pt-11 pb-9">
+            <div className="max-w-[1350px] lg:px-11 mx-auto py-[28px]">
                 <div className="relative flex items-center justify-between lg:px-0 px-5">
                     <a
                         href="/"
