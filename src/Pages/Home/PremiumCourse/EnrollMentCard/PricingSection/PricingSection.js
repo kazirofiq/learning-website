@@ -5,7 +5,7 @@ const PricingSection = () => {
     return (
 
 
-        <div className="lg:static fixed bottom-0 lg:w-full bg-white z-50">
+        <div className="lg:static fixed bottom-0 left-0 right-0 lg:w-full bg-white z-50">
         <div className='lg:static top-full lg:w-full lg:pb-0 pb-6 free-offer-button lg:block'>
           <div className='flex justify-between items-center mt-6 lg:mt-[0px] px-[32px] lg:mb-0 mb-4'>
             <h1 className='font-medium lg:text-2xl text-base text-[#777777] line-through'>$1500.00</h1>

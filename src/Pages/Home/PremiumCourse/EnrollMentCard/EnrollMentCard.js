@@ -50,7 +50,7 @@ const EnrollMentCard = () => {
           } ${
             (activeItem === "free-course" || activeItem === "frequentlyAskedQuestion") ? "hidden" : ""
           }`}>
-            <div className="card poppins sticky top-0 w-[320px] lg:w-[350px] bg-base-100 shadow-xl inline-block lg:h-[730px] relative">
+            <div className="card poppins sticky top-0 w-[320px] lg:w-[350px] bg-base-100 shadow-xl inline-block lg:h-[730px]">
                 <div className='relative cursor-pointer'>
                     <figure>
                         <img className='lg:block hidden' src={videoImg} alt="video" />
@@ -108,7 +108,7 @@ const EnrollMentCard = () => {
                         </div>
                     </div>
                     {/* pricing section */}
-                   <PricingSection />
+                    <PricingSection />
                 </div>
             </div>
         </div>
