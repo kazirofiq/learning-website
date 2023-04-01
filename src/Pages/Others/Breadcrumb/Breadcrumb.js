@@ -2,7 +2,7 @@ import React from 'react';
 
 const Breadcrumb = () => {
     return (
-        <div>
+        <div className='lg:block hidden'>
             <nav class="flex" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">

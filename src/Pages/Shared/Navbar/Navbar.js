@@ -56,7 +56,7 @@ const Navbar = () => {
 
     return (
         <section className='bg-[#FFFFFF]'>
-            <div className="max-w-[1350px] lg:px-11 mx-auto pt-11 pb-9">
+            <div className="max-w-[1350px] lg:px-11 mx-auto py-[28px]">
                 <div className="relative flex items-center justify-between lg:px-0 px-5">
                     <a
                         href="/"
