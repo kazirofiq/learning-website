@@ -5,8 +5,8 @@ import './Dashboard.css'
 const Dashboard = () => {
     return (
         <div className=''>
-            {/* <iframe className=" lg:w-1/2 rounded-lg border-none" width="363" height="363" src="https://www.youtube.com/embed/lJ5z7sdFMKo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe> */}
-            <img src={video} alt="" className='rounded-2xl w-[320px] lg:w-full' />
+            <img src={video} alt="" className='rounded-2xl w-[320px] lg:w-[732px] mx-5 lg:mx-0' />
+
             <div className='lg:flex hidden items-center content-center justify-between w-[732px] mt-[29px]'>
                 <div className=''>
                     <p className='text-[#333333] text-[20px] leading-[30px] font-semibold poppins'>Topic : Greetings and Instroduction</p>
@@ -18,8 +18,8 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            <div className=' items-center content-center justify-between w-[732px] mt-[29px]'>
-                <div className='flex items-center gap-3'>
+            <div className='block lg:hidden items-center content-center justify-between w-[320px] lg:w-[732px] mt-[29px] mx-5 lg:mx-0'>
+                <div className='flex items-center justify-center gap-3'>
                     <a href=' ' className='text-sm lg:text-base leading-[21px] lg:leading-6 class_bs_sm lg:class_bs text-[#666666] border-[1px] border-[#666666] border-solid lg:font-semibold font-medium poppins bg-[#F8F8FF]'>Previous</a>
                     <a href=' ' className='text-sm lg:text-base leading-[21px] lg:leading-6 class_bs_sm lg:class_bs text-white bg-[#3D419F] lg:font-semibold font-medium poppins'>Next</a>
                 </div>
