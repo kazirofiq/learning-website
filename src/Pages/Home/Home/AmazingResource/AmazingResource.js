@@ -5,13 +5,13 @@ import '../AmazingResource/AmazingResource.css';
 
 const AmazingResource = () => {
     return (
-        <section className='w-full lg:h-[555px] bg-[#1B1D48]' style={{
+        <section className='w-full  bg-[#1B1D48]' style={{
             backgroundImage: `url(${elements})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: "cover",
             backgroundPosition: ""
         }}>
-            <div className='mx-5 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 max-w-[1350px] lg:mx-auto py-[40px] lg:py-[93px]'>
+            <div className='mx-5 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 max-w-[1350px] lg:mx-auto py-[40px] lg:pt-[87px] lg:pb-[55px]'>
                 <div className='text-white mx-auto sm:mt-0 w-[315px] lg:w-[540px] lg:text-left md:text-left text-center poppins'>
                     <p className=''>Amazing Resource</p>
                     <p className='lg:block hidden text-[24px] lg:text-[40px] leading-9 lg:leading-[60px] font-bold lg:mt-0 mt-1'>

@@ -3,7 +3,7 @@ import router from './Routes/Routes/Routes';
 
 function App() {
   return (
-    <div className='relative'>
+    <div>
       <RouterProvider router={router}></RouterProvider>
     </div>
   );

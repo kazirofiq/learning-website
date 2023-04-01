@@ -13,13 +13,13 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 
 const PremiumCourseNavebar = () => {
-  
+
   const [activeItem, setActiveItem] = useState(null);
 
-useEffect(() => {
+  useEffect(() => {
 
   const handleScroll = () => {
-    const menuItemIds = ['aboutTheCourse', 'courseCurriculum', 'mentor', 'learnerReview', 'frequentlyAskedQuestion'];
+    const menuItemIds = ['aboutTheCourse', 'courseCurriculum', 'mentor', 'learnerReview', 'frequentlyAskedQuestion','free-course'];
     const menuItems = menuItemIds.map(id => document.getElementById(id));
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     let activeIndex = menuItemIds.length + 1;
@@ -40,7 +40,7 @@ useEffect(() => {
   return () => {
     window.removeEventListener('scroll', handleScroll);
   };
-}, []);
+  }, []);
 
 const handleItemClick = (itemId) => {
   const scrollPosition = document.getElementById(itemId).offsetTop - 50; // subtract header height
@@ -49,8 +49,8 @@ const handleItemClick = (itemId) => {
 };
 
     return (
-      <div className='sticky top-0 rounded-[10px]'>
-          <nav className="bg-[#ECECF5] rounded-[10px] mt-[32px]lg:block hidden">
+      <div className={activeItem ==="free-course" ?'hidden':"sticky top-0 rounded-[10px] lg:z-20 -z-20"}>
+          <nav className="bg-[#ECECF5] rounded-[10px] mt-[32px] lg:block hidden">
     <ul className="flex justify-between h-[40px] items-center">
     <li className=''>
         <Link className={activeItem === 'aboutTheCourse' ? 'active bg-[#3D419F] rounded-[10px] text-[#FFFFFF] h-[40px] flex items-center w-[152px] justify-center' : 'bg-[#ECECF5] rounded-[10px] text-[#FFFFFF] h-[40px] flex items-center w-[152px] justify-center'} onClick={() => handleItemClick('aboutTheCourse')}>
@@ -79,7 +79,7 @@ const handleItemClick = (itemId) => {
         </li>
     </ul>
 </nav>
-<nav className="bg-[#ECECF5] rounded-[10px] mt-6 lg:hidden block w-[325px] mx-auto">
+<nav className="bg-[#ECECF5] rounded-[10px] mt-6 lg:hidden block mx-auto">
   <ul className="flex justify-between h-[37px] items-center">
   <Swiper
         slidesPerView={4}

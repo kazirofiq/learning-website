@@ -11,7 +11,7 @@ const Main = () => {
             <div className='bottom'>
                 <Outlet></Outlet>
             </div>
-            {/* <Footer></Footer> */}
+            <Footer></Footer>
         </div>
     );
 };
