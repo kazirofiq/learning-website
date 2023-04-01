@@ -27,7 +27,7 @@ const SignIn = () => {
             Welcome Back
           </h2>
 
-          <form onSubmit={handleSubmit(SignIn)}>
+          <form onSubmit={handleSubmit(SignIn)}>  
             <div className="form-control w-full ">
               <input
                 type="text"
