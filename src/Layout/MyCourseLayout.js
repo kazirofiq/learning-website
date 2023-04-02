@@ -17,9 +17,8 @@ const MyCourseLayout = () => {
                             <input className='hidden'
                                 type="checkbox" id='toggle-sidebar' />
                             <Outlet></Outlet>
-
                         </div>
-                      <MyCourse></MyCourse>
+                        <MyCourse></MyCourse>
                     </div>
                 </div>
             </section>
