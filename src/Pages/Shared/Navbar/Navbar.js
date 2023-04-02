@@ -56,7 +56,7 @@ const Navbar = () => {
 
     return (
         <section className='bg-[#FFFFFF]'>
-            <div className="max-w-[1350px] lg:px-11 mx-auto py-[28px]">
+            <div className="max-w-[1350px]  h-[72px] lg:h-[100px] lg:px-11 mx-auto py-4 lg:py-[28px]">
                 <div className="relative flex items-center justify-between lg:px-0 px-5">
                     <a
                         href="/"
@@ -64,7 +64,7 @@ const Navbar = () => {
                         title="Company"
                         className="inline-flex items-center"
                     >
-                        <img src={logo} alt="Learn with Rakib Logo" />
+                        <img src={logo} alt="Learn with Rakib Logo" className='lg:w-[147px] w-[107px] lg:h-[44px] h-[32px]' />
                     </a>
                     <ul className="items-center hidden space-x-8 lg:flex">
                         {menuItems}
@@ -102,7 +102,7 @@ const Navbar = () => {
                                                 title="Company"
                                                 className="inline-flex items-center"
                                             >
-                                                <img src={logo} alt="Learn With Rakib Logo" />
+                                                <img src={logo} alt="Learn With Rakib Logo" className='w-[107px] h-[32px]' />
                                             </a>
                                         </div>
                                         <div>
