@@ -10,7 +10,7 @@ const FrequentlyAskedQuestion = () => {
                 <br /><span className='text-[#38A27B]'>Question</span></p>
 
             <div className="grid grid-cols-1 justify-center items-center">
-                <div className="container flex flex-col justify-center mt-6 lg:mt-12 -z-50">
+                <div className="container flex flex-col justify-center mt-6 lg:mt-12 zi">
                     <div className="space-y-4 lg:w-[730px] w-[320px] mb-4 mx-auto lg:mx-0">
                         <div className="collapse collapse-arrow">
                             <input type="checkbox" className="peer" />

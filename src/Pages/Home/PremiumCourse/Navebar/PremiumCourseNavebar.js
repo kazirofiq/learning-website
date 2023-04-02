@@ -91,7 +91,7 @@ const PremiumCourseNavebar = () => {
     </ul>
 </nav>
 {/* Responsive nav */}
-<nav className="bg-[#ECECF5] rounded-[10px] mt-6 lg:hidden mx-auto">
+<nav className="bg-[#ECECF5] rounded-[10px] mt-6 lg:hidden mx-auto -z-10">
   <ul className="flex justify-between h-[37px] items-center">
   <Swiper
         slidesPerView={3}
