@@ -1,5 +1,6 @@
 import React from "react";
-import thinkimg from '../../../assest/icon/Image.png'
+import thinkimg from '../../../assest/icon/Image.png';
+import "./Frequently.css";
 
 const Frequently = () => {
   return (
@@ -14,7 +15,7 @@ const Frequently = () => {
               <div className="space-y-4 lg:w-[540px] md:w-[540px] w-[328px] mx-auto">
                 <div
                   tabIndex={0}
-                  className="collapse collapse-arrow border border-base-300 bg-[#FFFFFF] rounded-box
+                  className="collapse collapse-arrow hvr bx  bg-[#FFFFFF] rounded-box
                   hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
                   <input type="checkbox" className="peer" />
@@ -31,7 +32,7 @@ const Frequently = () => {
                 </div>
                 <div
                   tabIndex={0}
-                  className="collapse collapse-arrow border border-base-300 bg-[#FFFFFF] rounded-box
+                  className="collapse collapse-arrow hvr bx  bg-[#FFFFFF] rounded-box
                   hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
                   <input type="checkbox" className="peer" />
@@ -48,7 +49,7 @@ const Frequently = () => {
                 </div>
                 <div
                   tabIndex={0}
-                  className="collapse collapse-arrow border border-base-300 bg-[#FFFFFF] rounded-box
+                  className="collapse collapse-arrow hvr bx  bg-[#FFFFFF] rounded-box
                   hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
                   <input type="checkbox" className="peer" />
@@ -65,14 +66,14 @@ const Frequently = () => {
                 </div>
                 <div
                   tabIndex={0}
-                  className="collapse collapse-arrow border border-base-300  bg-[#FFFFFF] rounded-box hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
+                  className="collapse collapse-arrow hvr bx   bg-[#FFFFFF] rounded-box hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
                     What makes Defferent From Other Available Apps On The App
                     Store?
                   </div>
-                  <div className="collapse-content  bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
+                  <div className="collapse-content bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
                     <p className=" ">
                       attribute is necessary to make the div
                       focusable
@@ -81,7 +82,7 @@ const Frequently = () => {
                 </div>
                 <div
                   tabIndex={0}
-                  className="collapse collapse-arrow border border-base-300 bg-[#FFFFFF] rounded-box
+                  className="collapse collapse-arrow hvr bx  bg-[#FFFFFF] rounded-box
                   hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
                   <input type="checkbox" className="peer" />
@@ -104,7 +105,7 @@ const Frequently = () => {
                     What makes Defferent From Other Available Apps On The App
                     Store?
                   </div>
-                  <div className="collapse-content bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
+                  <div className="collapse-content  bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
                     <p className=" ">
                       attribute is necessary to make the div
                       focusable
