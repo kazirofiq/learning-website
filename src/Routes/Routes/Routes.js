@@ -42,19 +42,19 @@ const router = createBrowserRouter([
         path: '/dashboard',
         element: <MyCourseLayout></MyCourseLayout>,
         children: [
-          {
-            path: '/dashboard',
-            element: <Dashboard></Dashboard>
-          },
-          {
-            path: '/dashboard/myclass',
-            element: <MyClasses></MyClasses>
-          },
-          
-         
-          
+            {
+                path: '/dashboard',
+                element: <Dashboard></Dashboard>
+            },
+            {
+                path: '/dashboard/myclass',
+                element: <MyClasses></MyClasses>
+            },
+
+
+
         ]
-      },
+    },
 ])
 
 export default router;
