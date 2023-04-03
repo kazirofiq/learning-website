@@ -4,14 +4,14 @@ import "./Frequently.css";
 
 const Frequently = () => {
   return (
-    <div className="mt-[86px] pb-[100px] bg-[#F7F7FE]">
-      <h2 className="text-center lg:w-[554px] md:w-[554px] w-[216px] mx-auto lg:pt-[70px] font-bold text-[#1B1D48] lg:text-[40px] md:text-[40px] text-[24px]">
+    <div className="mt-[86px] bg-[#F7F7FE]">
+      <h2 className="text-center lg:w-[554px] md:w-[554px] w-[216px] mx-auto pt-[30px]  lg:pt-[70px] font-bold text-[#1B1D48] lg:text-[40px] md:text-[40px] text-[24px]">
         Frequently Asked  <span className="text-[#38A27B]">Question</span>{" "}
       </h2>
-      <div className=" lg:flex justify-start items-center lg:px-[115px] mx-auto">
-        <div className="lg:-mr-40 text-start">
+      <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-[30px]  lg:h-[686px]  lg:px-[115px] mx-auto">
+        <div className="text-start">
           <section className="dark:text-gray-100  lg:w-[540px]">
-            <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
+            <div className="container justify-between flex flex-col  px-4 py-8 mx-auto md:p-8">
               <div className="space-y-4 lg:w-[540px] md:w-[540px] w-[328px] mx-auto">
                 <div
                   tabIndex={0}
