@@ -23,9 +23,9 @@ const SignUp = () => {
                 
     // }}
     >
-      <div className="h-[520px] bg-white bxs z-50 shadow-slate-500 lg:shadow-none md:shadow-none w-[398px] p-[24px] lg:mt-[26px] md:mt-[26px] lg:ml-[325px] md:ml-[325px] mx-auto flex justify-center items-center">
+      <div className="h-[520px] bg-white bxs mt-[40px] z-50 shadow-slate-500 lg:shadow-none md:shadow-none w-[398px] p-[24px] lg:mt-[26px] md:mt-[26px] lg:ml-[325px] md:ml-[325px] mx-auto flex justify-center items-center">
         <div className="w-96 bg-white rounded-xl  py-4 px-8">
-          <h2 className="text-[24px] leading-[36px]  pb-[12px] text-center font-bold">
+          <h2 className="text-[24px] leading-[36px] text-[#1B1D48] pb-[12px] text-center font-bold">
           Create Account
           </h2>
 

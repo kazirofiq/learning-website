@@ -23,7 +23,7 @@ const SignIn = () => {
     >
       <div className="h-[372px] bxsh bg-white shadow-2xl  w-[398px] p-[24px] mx-auto flex justify-center items-center">
         <div className="w-96 bg-white rounded-xl  py-4 px-8">
-          <h2 className="text-[24px] leading-[36px]  pb-[12px] text-center font-bold">
+          <h2 className="text-[24px] leading-[36px] text-[#1B1D48] pb-[12px] text-center font-bold">
             Welcome Back
           </h2>
 
