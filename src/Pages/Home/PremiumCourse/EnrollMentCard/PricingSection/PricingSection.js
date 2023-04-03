@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import './PricingSection.css';
 const PricingSection = () => {
   return (
     <div className="lg:static fixed bottom-0 left-0 right-0 lg:w-full bg-white z-50">
