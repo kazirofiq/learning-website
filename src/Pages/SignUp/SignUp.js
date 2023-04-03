@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import login from "../../assest/bg-img/login.png";
 import { GrView } from "react-icons/gr";
@@ -9,35 +9,35 @@ import hidePwdImg from "../../assest/login-svg/hide-password.svg";
 import "./SignUp.css";
 
 const SignUp = () => {
-    const {
-        register,
-        formState: { errors },
-        handleSubmit,
-      } = useForm();
-      const [pwd, setPwd] = useState("");
-      const [isRevealPwd, setIsRevealPwd] = useState(false);
-    return (
-        <div
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+  const [pwd, setPwd] = useState("");
+  const [isRevealPwd, setIsRevealPwd] = useState(false);
+  return (
+    <div
       className="bgg mb-6 bg-[#fff] lg:mb-0 md:mb-0 lg:w-[1092px]  mx-auto flex justify-center items-center"
-    //   style={{ backgroundImage: `url(${login})`
-                
-    // }}
+      //   style={{ backgroundImage: `url(${login})`
+
+      // }}
     >
       <div className="h-[583px] shadow-slate-500 lg:shadow-none md:shadow-none w-[398px] pt-[3.5rem] mx-auto flex justify-center items-center">
         <div className="w-96 bg-white rounded-xl  py-4 px-8">
           <h2 className="text-[24px] leading-[36px]  pb-[12px] text-center font-bold">
-          Create Account
+            Create Account
           </h2>
 
           <form onSubmit={handleSubmit(SignUp)}>
             <div className="form-control w-full ">
               <input
                 type="text"
-                placeholder='Name'
+                placeholder="Name"
                 {...register("name", {
                   required: "Your Name is required",
                 })}
-                className=" pad input-bordered w-full max-w-xs "
+                className=" pad input-bordered w-full max-w-xs  "
               />
               {errors.name && (
                 <p className="text-red-600" role="alert">
@@ -122,12 +122,21 @@ const SignUp = () => {
                           fill="#3D419F"
                           fill-rule="nonzero"
                         >
-                          <path className="" d="m25.576 11.414c0.56558 0.55188 0.56558 1.4439 0 1.9961l-9.404 9.176c-0.28213 0.27529-0.65247 0.41385-1.0228 0.41385-0.37034 0-0.74068-0.13855-1.0228-0.41385l-4.7019-4.588c-0.56584-0.55188-0.56584-1.4442 0-1.9961 0.56558-0.55214 1.4798-0.55214 2.0456 0l3.679 3.5899 8.3812-8.1779c0.56558-0.55214 1.4798-0.55214 2.0456 0z" />
+                          <path
+                            className=""
+                            d="m25.576 11.414c0.56558 0.55188 0.56558 1.4439 0 1.9961l-9.404 9.176c-0.28213 0.27529-0.65247 0.41385-1.0228 0.41385-0.37034 0-0.74068-0.13855-1.0228-0.41385l-4.7019-4.588c-0.56584-0.55188-0.56584-1.4442 0-1.9961 0.56558-0.55214 1.4798-0.55214 2.0456 0l3.679 3.5899 8.3812-8.1779c0.56558-0.55214 1.4798-0.55214 2.0456 0z"
+                          />
                         </g>
                       </g>
                     </svg>
                   </div>
-                  <span className="label-text text-[12px] font-light">I agree to all the <span className='text-[#333333] font-bold'>terms</span> and <span className='font-bold text-[#333333]'>privacy policy</span></span>
+                  <span className="label-text text-[12px] font-light">
+                    I agree to all the{" "}
+                    <span className="text-[#333333] font-bold">terms</span> and{" "}
+                    <span className="font-bold text-[#333333]">
+                      privacy policy
+                    </span>
+                  </span>
                 </label>
               </div>
             </div>
@@ -141,17 +150,15 @@ const SignUp = () => {
                         </p>} */}
           </form>
           <p className="font-semibold text-[16px] leading-[24px] text-[#666666] mt-[16px] text-center">
-          All ready have an account{" "}
+            All ready have an account{" "}
             <Link className="text-[#3D419F]" to="/signup">
-               Please Login
+              Please Login
             </Link>
           </p>
         </div>
       </div>
-
-     
     </div>
-    );
+  );
 };
 
 export default SignUp;
