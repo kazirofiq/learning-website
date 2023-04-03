@@ -116,6 +116,7 @@ const Frequently = () => {
           </section>
         </div>
         <div className="lg:w-full w-99">
+          
           <img className="" src={thinkimg} alt="" />
         </div>
       </div>
