@@ -18,7 +18,7 @@ const SignIn = () => {
   const [isRevealPwd, setIsRevealPwd] = useState(false);
   return (
     <div
-      className="bg mb-10 lg:py-[120px]   mx-auto flex justify-center items-center"
+      className="bg mb-10 lg:py-[120px] mx-auto flex justify-center items-center"
 
     >
       <div className="h-[372px] bxsh bg-white shadow-2xl  w-[398px] p-[24px] mx-auto flex justify-center items-center">

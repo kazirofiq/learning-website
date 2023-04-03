@@ -8,7 +8,8 @@ const CourseCurriculumAccordion = () => {
             <div className="grid grid-cols-1 justify-center items-center">
                 <div className="container flex flex-col justify-center my-3">
                     <div className="space-y-4 lg:w-[729px] w-[320px]">
-                        <div className="collapse collapse-arrow bg-white">
+
+                       <div className="collapse collapse-arrow bg-white">
                             <input type="checkbox" className="peer" />
 
                             <div className="rounded-[10px] border-solid border-2 border-[#C3C4E1] peer-checked:border-[#3D419F] collapse-title text-[#666666] peer-checked:text-[#3D419F] h-[49px] lg:h-[61px]">
@@ -37,7 +38,7 @@ const CourseCurriculumAccordion = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                       </div>
 
                         <div className="collapse collapse-arrow bg-white">
                             <input type="checkbox" className="peer" />

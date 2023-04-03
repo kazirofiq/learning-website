@@ -6,8 +6,9 @@ import SignUp from "../../Pages/SignUp/SignUp";
 import PremiumCourseHome from "../../Pages/Home/PremiumCourse/PremiumCourseHome/PremiumCourseHome";
 import OrderDetails from "../../Pages/OrderDetails/OrderDetails";
 import MyCourseLayout from "../../Layout/MyCourseLayout";
-import MyCourse from "../../Pages/MyCourse/MyCourse";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
+import MyClasses from "../../Pages/MyClasses/MyClasses";
+import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 
 
 const router = createBrowserRouter([
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
                 path: '/payment',
                 element: <OrderDetails />
             },
+            {
+                path:'/profile',
+                element:<ProfilePage />
+            }
         ]
     },
     {
@@ -47,8 +52,8 @@ const router = createBrowserRouter([
             element: <Dashboard></Dashboard>
           },
           {
-            path: '/dashboard/mycourse',
-            element: <MyCourse></MyCourse>
+            path: '/dashboard/myclass',
+            element: <MyClasses></MyClasses>
           },
           
          

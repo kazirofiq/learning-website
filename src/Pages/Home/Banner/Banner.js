@@ -12,7 +12,7 @@ const Banner = () => {
 
     return (
         <section className='bg-[#F8F8FF]'>
-            <div className='max-w-[1350px] lg:px-11 mx-auto flex-row-reverse lg-w-full lg:flex md:flex pt-5 lg:pt-0 pb-[40px] lg:pb-[90px] items-center lg:px-0 px-5 relative'>
+            <div className='max-w-[1350px] lg:px-11 mx-auto flex-row-reverse lg-w-full lg:flex md:flex pt-5 lg:pt-0 pb-[40px] lg:pb-[90px] items-center lg:px-0 px-5'>
                 <div className='flex-row w-full lg:ml-[31px] lg:mt-3'>
                     <img className='w-full' src={bannerRightPic} alt="" />
                 </div>
