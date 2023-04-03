@@ -1,5 +1,6 @@
 import React from "react";
-import thinkimg from '../../../assest/icon/Image.png'
+import thinkimg from '../../../assest/icon/Image.png';
+import './Frequently.css'
 
 const Frequently = () => {
   return (
@@ -49,8 +50,7 @@ const Frequently = () => {
                 <div
                   tabIndex={0}
                   className="collapse collapse-arrow border border-base-300 bg-[#FFFFFF] rounded-box
-                  hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
-                >
+                  hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]">
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
                     What makes Defferent From Other Available Apps On The App
@@ -63,10 +63,7 @@ const Frequently = () => {
                     </p>
                   </div>
                 </div>
-                <div
-                  tabIndex={0}
-                  className="collapse collapse-arrow border border-base-300  bg-[#FFFFFF] rounded-box hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
-                >
+                <div tabIndex={0} className="collapse collapse-arrow border border-base-300  bg-[#FFFFFF] rounded-box hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]">
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
                     What makes Defferent From Other Available Apps On The App
@@ -79,11 +76,8 @@ const Frequently = () => {
                     </p>
                   </div>
                 </div>
-                <div
-                  tabIndex={0}
-                  className="collapse collapse-arrow border border-base-300 bg-[#FFFFFF] rounded-box
-                  hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
-                >
+                <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-[#FFFFFF] rounded-box
+                  hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]">
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
                     What makes Defferent From Other Available Apps On The App
@@ -96,9 +90,7 @@ const Frequently = () => {
                     </p>
                   </div>
                 </div>
-                <div
-                  className="collapse collapse-arrow hvr order bx border-base-300 bg-base-100 rounded-box "
-                >
+                <div className="collapse collapse-arrow hvr order bx border-base-300 bg-base-100 rounded-box">
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
                     What makes Defferent From Other Available Apps On The App
