@@ -8,6 +8,7 @@ import OrderDetails from "../../Pages/OrderDetails/OrderDetails";
 import MyCourseLayout from "../../Layout/MyCourseLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
+import OrderHistory from "../../Pages/Order History/OrderHistory";
 
 
 const router = createBrowserRouter([

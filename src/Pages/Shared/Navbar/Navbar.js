@@ -36,12 +36,12 @@ const Navbar = () => {
                         </span>
                     </summary>
 
-                    <nav aria-label="Account Nav" className="mt-2 z-50 flex flex-col space-y-1 absolute bottom-[-157px] w-[180px] shadow-lg shadow-[#D5D7E9] bg-[#FFFFFF] rounded-[10px]">
-                        <Link to='/premium_course' className="rounded-lg  text-sm font-medium text-[#333333] pt-[20px] pb-[14px] px-[22px] mx-auto"><img alt='' src={premium} className='inline-block mr-3 text-[#333333]'></img> Primium Course</Link>
+                    <li className="mt-2 z-50 flex flex-col space-y-1 absolute lg:left-[-100%] bottom-[-147px] w-[180px] shadow-lg shadow-[#D5D7E9] bg-[#FFFFFF] rounded-[10px]">
+                        <Link to='/premium_course' className="rounded-lg text-sm font-medium text-[#333333] pt-[20px] pb-[14px] px-[22px] mx-auto"><img alt='' src={premium} className='inline-block mr-3 text-[#333333]'></img> Primium Course</Link>
                         <hr className='text-[#D5D7E9]' />
                         <Link href="" className="rounded-lg text-sm font-medium text-[#333333] pt-[14px] px-[22px] pb-[20px]"> <img alt='' src={free} className='inline-block mr-3' ></img> Free Course</Link>
 
-                    </nav>
+                    </li>
                 </details>
             </li>
             <li className='text-[#333333] text-base font-normal'><Link>Advice</Link></li>
@@ -50,7 +50,7 @@ const Navbar = () => {
             <li className='text-[#333333] text-base font-normal'><Link>Review</Link></li>
             <li className='text-[#333333] text-base font-normal'><Link to='/dashboard'>My Course</Link></li>
             <li className="lg:text-base login inline-block rounded border border-[#3D419F] font-normal text-[#282B6B] hover:bg-[#3D419F] hover:text-white focus:outline-none focus:ring active:bg-[#3D419F]"><Link to='/login' >Login </Link></li>
-            <li className='lg:text-base login inline-block rounded border border-[#3D419F] bg-[#3D419F] font-normal text-white hover:bg-transparent hover:text-[#282B6B] focus:outline-none focus:ring active:text-indigo-500'><Link to="signup">Sign Up</Link></li>
+            <li className="lg:text-base inline-block rounded border border-[#3D419F] font-normal text-[#282B6B] hover:bg-[#3D419F] hover:text-white focus:outline-none focus:ring active:bg-[#3D419F] su"><Link to='/signup' >Sign Up</Link></li>
         </>
     );
 
@@ -66,7 +66,7 @@ const Navbar = () => {
                     >
                         <img src={logo} alt="Learn with Rakib Logo" className='lg:w-[147px] w-[107px] lg:h-[44px] h-[32px]' />
                     </a>
-                    <ul className="items-center hidden space-x-8 lg:flex">
+                    <ul className="items-center hidden space-x-[18px] lg:flex">
                         {menuItems}
                     </ul>
                     <div className="lg:hidden">
