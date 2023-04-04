@@ -8,6 +8,7 @@ import OrderDetails from "../../Pages/OrderDetails/OrderDetails";
 import MyCourseLayout from "../../Layout/MyCourseLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
+import Assignment from "../../Pages/Assignment/Assignment";
 
 
 const router = createBrowserRouter([
@@ -42,19 +43,20 @@ const router = createBrowserRouter([
         path: '/dashboard',
         element: <MyCourseLayout></MyCourseLayout>,
         children: [
-          {
-            path: '/dashboard',
-            element: <Dashboard></Dashboard>
-          },
-          {
-            path: '/dashboard/myclass',
-            element: <MyClasses></MyClasses>
-          },
-          
-         
-          
+            {
+                path: '/dashboard',
+                element: <Dashboard></Dashboard>
+            },
+            {
+                path: '/dashboard/assignment',
+                element: <Assignment></Assignment>
+            },
+            {
+                path: '/dashboard/myclass',
+                element: <MyClasses></MyClasses>
+            },
         ]
-      },
+    },
 ])
 
 export default router;

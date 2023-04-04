@@ -1,10 +1,10 @@
 import React from 'react';
-import { Outlet } from 'react-router';
 import Navbar from '../Pages/Shared/Navbar/Navbar';
 import Breadcrumb from '../Pages/Others/Breadcrumb/Breadcrumb';
-import MyClasses from '../Pages/MyClasses/MyClasses';
+import { Outlet } from 'react-router-dom';
+import MyAssignment from '../Pages/Assignment/MyAssignment';
 
-const MyCourseLayout = () => {
+const AssignmentLayout = () => {
     return (
         <>
             <Navbar></Navbar>
@@ -17,7 +17,7 @@ const MyCourseLayout = () => {
                                 type="checkbox" id='toggle-sidebar' />
                             <Outlet></Outlet>
                         </div>
-                        <MyClasses></MyClasses>
+                        <MyAssignment></MyAssignment>
                     </div>
                 </div>
             </section>
@@ -25,4 +25,4 @@ const MyCourseLayout = () => {
     );
 };
 
-export default MyCourseLayout;
+export default AssignmentLayout;
