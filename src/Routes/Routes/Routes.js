@@ -8,7 +8,7 @@ import OrderDetails from "../../Pages/OrderDetails/OrderDetails";
 import MyCourseLayout from "../../Layout/MyCourseLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
-import OrderHistory from "../../Pages/Order History/OrderHistory";
+import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 
 
 const router = createBrowserRouter([
@@ -37,6 +37,10 @@ const router = createBrowserRouter([
                 path: '/payment',
                 element: <OrderDetails />
             },
+            {
+                path: '/profile',
+                element: <ProfilePage />
+            }
         ]
     },
     {

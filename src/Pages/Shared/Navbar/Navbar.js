@@ -37,9 +37,9 @@ const Navbar = () => {
                     </summary>
 
                     <li className="mt-2 z-50 flex flex-col space-y-1 absolute lg:left-[-100%] bottom-[-147px] w-[180px] shadow-lg shadow-[#D5D7E9] bg-[#FFFFFF] rounded-[10px]">
-                        <Link to='/premium_course' className="rounded-lg text-sm font-medium text-[#333333] pt-[20px] pb-[14px] px-[22px] mx-auto"><img alt='' src={premium} className='inline-block mr-3 text-[#333333]'></img> Primium Course</Link>
+                        <Link to='/premium_course' className="rounded-lg text-sm font-medium text-[#333333] pt-[20px] pb-[14px] px-[22px] mx-auto"><img alt='' src={premium} className='inline-block mr-3 text-[#333333]'></img>Premium Course</Link>
                         <hr className='text-[#D5D7E9]' />
-                        <Link href="" className="rounded-lg text-sm font-medium text-[#333333] pt-[14px] px-[22px] pb-[20px]"> <img alt='' src={free} className='inline-block mr-3' ></img> Free Course</Link>
+                        <Link to="" className="rounded-lg text-sm font-medium text-[#333333] pt-[14px] px-[22px] pb-[20px]"> <img alt='' src={free} className='inline-block mr-3' ></img>Free Course</Link>
 
                     </li>
                 </details>
