@@ -8,6 +8,8 @@ import Banner from '../Banner/Banner';
 import Frequently from '../Frequently/Frequently';
 import StudentFeedback from '../StudentFeedback/StudentFeedback';
 import OrderHistory from '../../Order History/OrderHistory';
+import Resourcemodal from '../../ResourceModal/Resourcemodal';
+
 
 const Home = () => {
     return (
@@ -21,6 +23,7 @@ const Home = () => {
             <StudentFeedback></StudentFeedback>
             <Frequently></Frequently>
             <OrderHistory/>
+            <Resourcemodal/>
         </div>
     );
 };

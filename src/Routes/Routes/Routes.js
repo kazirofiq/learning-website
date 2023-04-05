@@ -30,7 +30,7 @@ const router = createBrowserRouter([
 
             },
             {
-                path: '/premium_course',
+                path: '/premium-course',
                 element: <PremiumCourseHome></PremiumCourseHome>
             },
             {
