@@ -74,11 +74,11 @@ const SignIn = () => {
                     id="A3-yes"
                     name="A3-confirmation"
                     value="yes"
-                    class="opacity-0 absolute h-8 w-8"
+                    className="opacity-0 absolute h-8 w-8"
                   />
-                  <div class="bg-white border-2  border-[#4044A0] w-[16px] h-[16px] flex  flex-shrink-0 justify-center items-center mr-2 focus-within:border-[#4044A0]">
+                  <div className="bg-white border-2  border-[#4044A0] w-[16px] h-[16px] flex  flex-shrink-0 justify-center items-center mr-2 focus-within:border-[#4044A0]">
                     <svg
-                      class="fill-current hidden w-3 h-3 text-[#3D419F] pointer-events-none"
+                      className="fill-current hidden w-3 h-3 text-[#3D419F] pointer-events-none"
                       version="1.1"
                       viewBox="0 0 17 12"
                       xmlns="http://www.w3.org/2000/svg"

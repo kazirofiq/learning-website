@@ -15,28 +15,28 @@ const AboutMe = () => {
     };
 
     return (
-        <div className='mt-6 poppins'>
-            <h1 className='text-[#1B1D48]  font-semibold text-base'>About Me</h1>
-            <div className='grid grid-cols-2'>
+        <div className='lg:mt-[52px] poppins mt-4'>
+            <h1 className='text-[#1B1D48] font-medium lg:font-semibold lg:text-base text-lg'>About Me</h1>
+            <div className='lg:grid flex lg:flex-row flex-col grid-cols-2'>
             <div className='mt-3'>
                 <label htmlFor="name" className='block text-[#666666] font-normal text-sm mb-2'>Name</label>
-                <input type="text" id='name' placeholder="Name" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[375px] h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+                <input type="text" id='name' placeholder="Name" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
             </div>
             <div className='mt-3'>
                 <label htmlFor="StudentId" className='block text-[#666666] font-normal text-sm mb-2'>Student Id</label>
-                <input type="text" id='StudentId' placeholder="Student Id" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[375px] h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+                <input type="text" id='StudentId' placeholder="Student Id" className="input border-[1px] rounded-[8px] focus:border-[#3D419F]  w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
             </div>
             <div className='mt-3'>
                 <label htmlFor="Email" className='block text-[#666666] font-normal text-sm mb-2'>Email</label>
-                <input type="email" id='Email' placeholder="Email" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[375px] h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+                <input type="email" id='Email' placeholder="Email" className="input border-[1px] rounded-[8px] focus:border-[#3D419F]  w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
             </div>
             <div className='mt-3'>
                 <label htmlFor="Phone" className='block text-[#666666] font-normal text-sm mb-2'>Name</label>
-                <input type="number" id='Phone' placeholder="Phone" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[375px] h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+                <input type="number" id='Phone' placeholder="Phone" className="input border-[1px] rounded-[8px] focus:border-[#3D419F]  w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
             </div>
             <div className='mt-3'>
                 <label htmlFor="dob" className='block text-[#666666] font-normal text-sm mb-2'>D.O.B</label>
-                <input type="date" id='dob' placeholder="Name" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[375px] h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+                <input type="date" id='dob' placeholder="Name" className="input border-[1px] rounded-[8px] focus:border-[#3D419F]  w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
             </div>
 
 {/* select field */}
@@ -45,20 +45,20 @@ const AboutMe = () => {
   <button 
     type="input"
     id='Gender'
-    class="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[375px] h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]"
+    class="input border-[1px] rounded-[8px] focus:border-[#3D419F]  w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]"
     aria-haspopup="listbox"
     aria-expanded={isOpen}
     onClick={toggleSelect}
   >
     <span class="block truncate text-left ml-4">{selectedItem}</span>
-    <span class="absolute inset-y-0 right-[18px] mt-[7%] flex items-center pr-2 pointer-events-none">
+    <span class="absolute inset-y-0 right-[9%] lg:right-[18px] mt-[9%] lg:mt-[7%] flex items-center pr-2 pointer-events-none">
         <img className={isOpen ? 'rotate-90' : ''} src={rightArrow} alt="" />
     </span>
   </button>
   {isOpen && (
     <div className='flex justify-end'>
         <ul
-      class="absolute mt-1 text-right w-[81px] bg-[#FFFFFF] rounded-md shadow-lg max-h-40 overflow-auto z-10"
+      class="absolute mt-1 lg:mr-0 text-right w-[81px] bg-[#FFFFFF] rounded-md shadow-lg max-h-40 overflow-auto z-10"
       tabindex="-1"
       role="listbox"
       aria-labelledby="listbox-label"
