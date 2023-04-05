@@ -39,11 +39,11 @@ const PremiumCourseNavebar = () => {
   };
   }, []);
 
-const handleItemClick = (itemId) => {
-  const scrollPosition = document.getElementById(itemId).offsetTop - 50; // subtract header height
-  window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
-  setActiveItem(itemId);
-};
+  const handleItemClick = (itemId) => {
+    const scrollPosition = document.getElementById(itemId).offsetTop - 50; // subtract header height
+    window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+    setActiveItem(itemId);
+  };
 
     return (
       <div className={activeItem ==="free-course" ?'hidden':"sticky top-0 rounded-[10px] lg:z-20"}>
