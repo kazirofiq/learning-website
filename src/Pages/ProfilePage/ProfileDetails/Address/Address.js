@@ -3,7 +3,7 @@ import React from 'react';
 const Address = () => {
     return (
         <div className='poppins'>
-            <h1 className='text-[#1B1D48] font-medium lg:font-semibold lg:text-base text-lg'>About Me</h1>
+            <h1 className='text-[#1B1D48] font-medium lg:font-semibold lg:text-base text-lg'>Address</h1>
             <div className='lg:grid flex lg:flex-row flex-col grid-cols-2'>
             <div className='mt-3'>
                 <label htmlFor="Vill" className='block text-[#666666] font-normal text-sm mb-2'>Vill</label>
