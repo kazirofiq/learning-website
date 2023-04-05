@@ -9,3 +9,6 @@
 .slick-slide>div {
     margin: 0 10px;
 }
+.border-line{
+    border: 1px solid #E2E3F1;
+}

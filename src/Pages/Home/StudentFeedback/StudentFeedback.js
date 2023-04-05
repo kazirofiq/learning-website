@@ -9,12 +9,16 @@ import sliderBg from '../../../assest/bg-img/Slider bg(1).png'
 export default function StudentFeedback() {
 
     let settings = {
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 3,
+        focusOnSelect: true,
         dots: true,
         infinite: true,
         autoplay: true,
         autoplaySpeed: 2000,
+        cssEase: 'linear',
         speed: 5000,
-        slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,
         arrows : false,
@@ -105,10 +109,10 @@ export default function StudentFeedback() {
                 }}
                 className=' lg:mx-[145px] mt-[61px] lg:[82px] h-[70%] sumu mx-auto lg:pb-9'>
 
-                <Slider {...settings}>
+                <Slider className='max-w-[92%] mx-auto' {...settings}>
                     {
                         students.map(student =>
-                            <div key={student.id} className='relative h-[203px] w-[370px] border-y-4 border-[#3D419F] rounded-xl text-center sumu'>
+                            <div key={student.id} className='relative h-[203px] w-[370px] border-[#3D419F] border-line rounded-xl text-center sumu'>
                                 <img className='absolute top-[-18%] right-[43%] h-14 w-14 rounded-full border-2 border-[#3D419F]' src='https://static.photocdn.pt/images/articles/2018/12/05/articles/2017_8/beginner_photography_mistakes-1.webp' alt='' />
                                 <h4 className='font-bold text-base mt-[30px]'>Rasel Mondol</h4>
                                 <h5 className='text-xs font-light mt-1'>Ui/Ux Deginer</h5>
