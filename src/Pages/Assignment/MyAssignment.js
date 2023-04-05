@@ -5,7 +5,7 @@ import video from '../../assest/my_class/my_class.png';
 const MyAssignment = () => {
     return (
         <div className=''>
-            <img src={video} alt="" className='rounded-2xl w-[320px] lg:w-[732px] mx-5 lg:mx-0' />
+            <img src={video} alt="" className='rounded-2xl w-[320px] lg:w-[732px] mx-auto lg:mx-0' />
 
             <div className='lg:flex hidden items-center content-center justify-between w-[732px] mt-[29px]'>
                 <div className=''>

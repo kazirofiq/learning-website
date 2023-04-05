@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from '../Pages/Shared/Navbar/Navbar';
 import Breadcrumb from '../Pages/Others/Breadcrumb/Breadcrumb';
 import { Outlet } from 'react-router-dom';
-import MyAssignment from '../Pages/Assignment/MyAssignment';
 
 const AssignmentLayout = () => {
     return (
@@ -17,7 +16,7 @@ const AssignmentLayout = () => {
                                 type="checkbox" id='toggle-sidebar' />
                             <Outlet></Outlet>
                         </div>
-                        <MyAssignment></MyAssignment>
+                        {/* <MyAssignment></MyAssignment> */}
                     </div>
                 </div>
             </section>
