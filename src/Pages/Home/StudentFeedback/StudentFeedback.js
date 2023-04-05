@@ -14,7 +14,7 @@ export default function StudentFeedback() {
         infinite: true,
         autoplay: true,
         autoplaySpeed: 2000,
-        speed: 5000,
+        speed: 3500,
         slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,
