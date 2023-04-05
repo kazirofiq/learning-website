@@ -5,6 +5,7 @@ import arrow from '../../../assest/bg-img/Arrow.png'
 import start_button from '../../../assest/banner/start_button.png';
 import { Link } from 'react-router-dom';
 import HowItWorksVideo from './HowItWorksVideo';
+import MessageBox from '../MessageBox/MessageBox';
 
 const Banner = () => {
 
@@ -60,6 +61,7 @@ const Banner = () => {
             <HowItWorksVideo
                 setOpenVideo={setOpenVideo}
             ></HowItWorksVideo>
+            <MessageBox></MessageBox>
         </section >
     );
 };
