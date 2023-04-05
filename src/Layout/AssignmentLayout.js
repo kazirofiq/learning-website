@@ -16,7 +16,6 @@ const AssignmentLayout = () => {
                                 type="checkbox" id='toggle-sidebar' />
                             <Outlet></Outlet>
                         </div>
-                        {/* <MyAssignment></MyAssignment> */}
                     </div>
                 </div>
             </section>
