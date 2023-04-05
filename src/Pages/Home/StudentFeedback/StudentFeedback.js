@@ -109,7 +109,7 @@ export default function StudentFeedback() {
                 }}
                 className=' lg:mx-[145px] mt-[61px] lg:[82px] h-[70%] sumu mx-auto lg:pb-9'>
 
-                <Slider {...settings}>
+                <Slider className='max-w-[92%] mx-auto' {...settings}>
                     {
                         students.map(student =>
                             <div key={student.id} className='relative h-[203px] w-[370px] border-[#3D419F] border-line rounded-xl text-center sumu'>
