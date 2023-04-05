@@ -5,6 +5,7 @@ import SignIn from "../../Pages/SignIn/SignIn";
 import SignUp from "../../Pages/SignUp/SignUp";
 import PremiumCourseHome from "../../Pages/Home/PremiumCourse/PremiumCourseHome/PremiumCourseHome";
 import OrderDetails from "../../Pages/OrderDetails/OrderDetails";
+import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path: '/payment',
                 element: <OrderDetails />
+            },
+            {
+                path: '/importent',
+                element: <ImportentLink />
             },
         ]
     }

@@ -9,6 +9,7 @@ import sliderBg from '../../../assest/bg-img/Slider bg(1).png'
 export default function StudentFeedback() {
 
     let settings = {
+        centerMode: true,
         dots: true,
         infinite: true,
         autoplay: true,
@@ -17,7 +18,7 @@ export default function StudentFeedback() {
         slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,
-        arrows : false,
+        arrows: false,
         responsive: [
             {
                 breakpoint: 1200,
@@ -40,7 +41,7 @@ export default function StudentFeedback() {
             {
                 breakpoint: 900,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                     slidesToScroll: 1,
                     initialSlide: 2
                 }
@@ -108,7 +109,7 @@ export default function StudentFeedback() {
                 <Slider {...settings}>
                     {
                         students.map(student =>
-                            <div key={student.id} className='relative h-[203px] w-[370px] border-y-4 border-[#3D419F] rounded-xl text-center sumu'>
+                            <div key={student.id} className='relative h-[203px] border-[#3D419F] rounded-xl text-center sumu border-y-[1px]'>
                                 <img className='absolute top-[-18%] right-[43%] h-14 w-14 rounded-full border-2 border-[#3D419F]' src='https://static.photocdn.pt/images/articles/2018/12/05/articles/2017_8/beginner_photography_mistakes-1.webp' alt='' />
                                 <h4 className='font-bold text-base mt-[30px]'>Rasel Mondol</h4>
                                 <h5 className='text-xs font-light mt-1'>Ui/Ux Deginer</h5>
@@ -116,7 +117,6 @@ export default function StudentFeedback() {
                             </div>
                         )
                     }
-
                 </Slider>
             </div>
 

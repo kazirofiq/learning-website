@@ -8,6 +8,7 @@ import Banner from '../Banner/Banner';
 import Frequently from '../Frequently/Frequently';
 import StudentFeedback from '../StudentFeedback/StudentFeedback';
 import SuccesModal from '../../Modal/SuccesModal/SuccesModal';
+import MessageBox from '../MessageBox/MessageBox';
 
 const Home = () => {
     return (
@@ -21,6 +22,7 @@ const Home = () => {
             <StudentFeedback></StudentFeedback>
             <Frequently></Frequently>
             {/* <SuccesModal></SuccesModal> */}
+
         </div>
     );
 };
