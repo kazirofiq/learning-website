@@ -9,6 +9,7 @@ import MyCourseLayout from "../../Layout/MyCourseLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
 import OrderHistory from "../../Pages/Order History/OrderHistory";
+import Consultetion from "../../Pages/Consultetion/Consultetion";
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
                 path: '/payment',
                 element: <OrderDetails />
             },
+            {
+                path:'/consultetion',
+                element:<Consultetion/>
+            }
         ]
     },
     {
