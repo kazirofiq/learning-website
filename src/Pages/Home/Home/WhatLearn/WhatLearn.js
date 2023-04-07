@@ -41,7 +41,7 @@ const WhatLearn = () => {
     return (
         <section className='bg-[#FFFFFF] lg:pb-[75px]'>
             <div className='lg:pt-14 lg:mx-[145px] mx-[52px]'>
-                <h2 style={{ Color: '#1B1D48' }} className='text-center text-[24px] lg:text-4xl md:text-4xl  font-bold py-5'>What You will <span style={{ color: '#38A27B' }}>learn?</span></h2>
+                <h2  className='text-center text-[24px] lg:text-4xl md:text-4xl  font-bold py-5 text-[#1B1D48]'>What You will <span style={{ color: '#38A27B' }}>learn?</span></h2>
 
                 <div class="grid sm:grid-cols-2  md:grid-cols-4 gap-4 ">
 
@@ -59,7 +59,7 @@ const WhatLearn = () => {
                                 </div>
                                 <div className='grid lg:grid-rows-2 md:grid-rows-2 items-center justify-center'>
                                     <h2 className=' text-2xl  font-bold text-[#1B1D48]'>{whatlearn.heading}</h2>
-                                    <p className='lg:w-[250px]  w-[255px] mx-auto'>{whatlearn.text}</p>
+                                    <p className='lg:w-[250px] text-[#666666] w-[255px] mx-auto'>{whatlearn.text}</p>
                                 </div>
 
                             </div>

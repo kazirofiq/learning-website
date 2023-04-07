@@ -7,6 +7,9 @@ import WhatLearn from './WhatLearn/WhatLearn';
 import Banner from '../Banner/Banner';
 import Frequently from '../Frequently/Frequently';
 import StudentFeedback from '../StudentFeedback/StudentFeedback';
+import OrderHistory from '../../Order History/OrderHistory';
+import SuccesModal from '../../Modal/SuccesModal/SuccesModal';
+import MessageBox from '../MessageBox/MessageBox';
 
 const Home = () => {
     return (
@@ -19,6 +22,9 @@ const Home = () => {
             <AmazingResource></AmazingResource>
             <StudentFeedback></StudentFeedback>
             <Frequently></Frequently>
+            <OrderHistory />
+            {/* <SuccesModal></SuccesModal> */}
+
         </div>
     );
 };
