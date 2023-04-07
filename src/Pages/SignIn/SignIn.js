@@ -27,6 +27,7 @@ const SignIn = () => {
           <form onSubmit={handleSubmit(SignIn)}>
             <div className="form-control w-full ">
               <input
+                placeholder="Enter your email"
                 type="text"
                 {...register("number", {
                   required: "Number is required",
