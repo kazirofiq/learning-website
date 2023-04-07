@@ -17,10 +17,7 @@ const SignIn = () => {
   const [pwd, setPwd] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
   return (
-    <div
-      className="bg mb-10 lg:py-[120px] mx-auto flex justify-center items-center"
-
-    >
+    <div className="bg mb-10 lg:py-[120px] mx-auto flex justify-center items-center">
       <div className="h-[372px] bxsh bg-white shadow-2xl  w-[398px] p-[24px] mx-auto flex justify-center items-center">
         <div className="w-96 bg-white rounded-xl  py-4 px-8">
           <h2 className="text-[24px] leading-[36px] text-[#1B1D48] pb-[12px] text-center font-bold">
@@ -30,11 +27,12 @@ const SignIn = () => {
           <form onSubmit={handleSubmit(SignIn)}>
             <div className="form-control w-full ">
               <input
+                placeholder="Enter your email"
                 type="text"
                 {...register("number", {
                   required: "Number is required",
                 })}
-                className=" pad input-bordered w-full max-w-xs "
+                className=" pad input-bordered w-full max-w-xs outline-none"
               />
               {errors.number && (
                 <p className="text-red-600" role="alert">
@@ -45,7 +43,7 @@ const SignIn = () => {
 
             <div className="pwd-container  w-full mt-4 rounded-full">
               <input
-                className=" pad w-full max-w-xs"
+                className=" pad w-full max-w-xs outline-none"
                 name="pwd"
                 placeholder="Enter Password"
                 type={isRevealPwd ? "text" : "password"}
@@ -89,17 +87,25 @@ const SignIn = () => {
                           fill="#3D419F"
                           fill-rule="nonzero"
                         >
-                          <path className="" d="m25.576 11.414c0.56558 0.55188 0.56558 1.4439 0 1.9961l-9.404 9.176c-0.28213 0.27529-0.65247 0.41385-1.0228 0.41385-0.37034 0-0.74068-0.13855-1.0228-0.41385l-4.7019-4.588c-0.56584-0.55188-0.56584-1.4442 0-1.9961 0.56558-0.55214 1.4798-0.55214 2.0456 0l3.679 3.5899 8.3812-8.1779c0.56558-0.55214 1.4798-0.55214 2.0456 0z" />
+                          <path
+                            className=""
+                            d="m25.576 11.414c0.56558 0.55188 0.56558 1.4439 0 1.9961l-9.404 9.176c-0.28213 0.27529-0.65247 0.41385-1.0228 0.41385-0.37034 0-0.74068-0.13855-1.0228-0.41385l-4.7019-4.588c-0.56584-0.55188-0.56584-1.4442 0-1.9961 0.56558-0.55214 1.4798-0.55214 2.0456 0l3.679 3.5899 8.3812-8.1779c0.56558-0.55214 1.4798-0.55214 2.0456 0z"
+                          />
                         </g>
                       </g>
                     </svg>
                   </div>
-                  <span className="label-text text-[12px] font-light">Keep me logged in</span>
+                  <span className="label-text text-[12px] font-light">
+                    Keep me logged in
+                  </span>
                 </label>
               </div>
               <div>
                 <label className="label">
-                  <Link to="/reset" className="label-text-alt link text-[14px] font-medium leading-[21px] no-underline  text-black">
+                  <Link
+                    to="/reset"
+                    className="label-text-alt link text-[14px] font-medium leading-[21px] no-underline  text-black"
+                  >
                     Forgot password?
                   </Link>
                 </label>
