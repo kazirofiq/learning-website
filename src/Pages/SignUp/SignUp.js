@@ -4,11 +4,15 @@ import { Link } from "react-router-dom";
 import login from "../../assest/bg-img/login.png";
 import { GrView } from "react-icons/gr";
 import { BsEyeSlash } from "react-icons/bs";
+import { useNavigate } from 'react-router-dom';
 import showPwdImg from "../../assest/login-svg/show-password.svg";
 import hidePwdImg from "../../assest/login-svg/hide-password.svg";
 import "./SignUp.css";
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
+    const { createUser, updateUser } = useContext(AuthContext);
     const {
         register,
         formState: { errors },
@@ -16,6 +20,33 @@ const SignUp = () => {
       } = useForm();
       const [pwd, setPwd] = useState("");
       const [isRevealPwd, setIsRevealPwd] = useState(false);
+      const navigate = useNavigate();
+
+
+
+      const handleSignUp = (data) => {
+        createUser(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                    .then((result) => {
+                        console.log(result);
+                        navigate('/');
+                    })
+                    .catch(err => console.log(err));
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+
+
+
     return (
         <div
       className="bgg   LG:w-[1092px] lg:h-[792px]  mb-6 bg-[#fff] lg:mb-0 md:mb-0 lg:w-[1092px]  mx-auto flex justify-center items-center"
@@ -29,7 +60,7 @@ const SignUp = () => {
           Create Account
           </h2>
 
-          <form onSubmit={handleSubmit(SignUp)}>
+          <form onSubmit={handleSubmit(handleSignUp)}>
             <div className="form-control w-full ">
               <input
                 type="text"
@@ -81,6 +112,8 @@ const SignUp = () => {
                 className=" pad outline-none w-full max-w-xs"
                 name="pwd"
                 placeholder="Enter Password"
+                {...register("password", {
+                  required: "Password is required"})}
                 type={isRevealPwd ? "text" : "password"}
                 value={pwd}
                 onChange={(e) => setPwd(e.target.value)}
@@ -107,20 +140,20 @@ const SignUp = () => {
                     id="A3-yes"
                     name="A3-confirmation"
                     value="yes"
-                    class="opacity-0 absolute h-8 w-8"
+                    className="opacity-0 absolute h-8 w-8"
                   />
-                  <div class="bg-white border-2  border-[#4044A0] w-[16px] h-[16px] flex  flex-shrink-0 justify-center items-center mr-2 focus-within:border-[#4044A0]">
+                  <div className="bg-white border-2  border-[#4044A0] w-[16px] h-[16px] flex  flex-shrink-0 justify-center items-center mr-2 focus-within:border-[#4044A0]">
                     <svg
-                      class="fill-current hidden w-3 h-3 text-[#3D419F] pointer-events-none"
+                      className="fill-current hidden w-3 h-3 text-[#3D419F] pointer-events-none"
                       version="1.1"
                       viewBox="0 0 17 12"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <g fill="none" fill-rule="evenodd">
+                      <g fill="none" fillRule="evenodd">
                         <g
                           transform="translate(-9 -11)"
                           fill="#3D419F"
-                          fill-rule="nonzero"
+                          fillRule="nonzero"
                         >
                           <path className="" d="m25.576 11.414c0.56558 0.55188 0.56558 1.4439 0 1.9961l-9.404 9.176c-0.28213 0.27529-0.65247 0.41385-1.0228 0.41385-0.37034 0-0.74068-0.13855-1.0228-0.41385l-4.7019-4.588c-0.56584-0.55188-0.56584-1.4442 0-1.9961 0.56558-0.55214 1.4798-0.55214 2.0456 0l3.679 3.5899 8.3812-8.1779c0.56558-0.55214 1.4798-0.55214 2.0456 0z" />
                         </g>
