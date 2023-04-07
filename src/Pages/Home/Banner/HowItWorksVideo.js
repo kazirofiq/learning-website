@@ -9,7 +9,7 @@ const HowItWorksVideo = () => {
                     id="openVideoModal"
                     className="modal-toggle" />
                 <div className="modal">
-                    <div className="modal-box relative ">
+                    <div className="modal-box relative p-0 ">
                         <label
                             htmlFor="openVideoModal"
                             className="btn btn-sm btn-circle absolute right-2 top-2"
