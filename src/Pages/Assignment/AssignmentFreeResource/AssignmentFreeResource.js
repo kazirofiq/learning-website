@@ -1,7 +1,7 @@
 import React from 'react';
 import downloadIcon from '../../../assest/assignment/DownloadSimple.png';
 
-const FreeResource = () => {
+const AssignmentFreeResource = () => {
     return (
         <div className=' w-[320px] lg:w-[732px] lg:mt-0 mb-[20px] mt-8 h-[208px] lg:h-[225px] mx-5 lg:mx-0 bg-white custom_shadow' >
             <p className='lg:pt-10 pt-6 poppins text-[20px] lg:text-2xl font-semibold lg:font-bold leading-[30px] lg:leading-[36px] text-[#1B1D48] text-center'>Free Resource</p>
@@ -26,4 +26,4 @@ const FreeResource = () => {
     );
 };
 
-export default FreeResource;
+export default AssignmentFreeResource;

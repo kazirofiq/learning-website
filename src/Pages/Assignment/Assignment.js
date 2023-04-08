@@ -2,7 +2,7 @@ import React from 'react';
 import assignment from '../../assest/assignment/Assignment Vector.png'
 import './Assignment.css';
 import AssignmentResult from './AssignmentResult/AssignmentResult';
-import FreeResource from './FreeResource/FreeResource';
+import AssignmentFreeResource from './AssignmentFreeResource/AssignmentFreeResource';
 
 const Assignment = () => {
     return (
@@ -63,7 +63,7 @@ const Assignment = () => {
         // </div>
 
         // <AssignmentResult></AssignmentResult>
-        <FreeResource></FreeResource>
+        <AssignmentFreeResource></AssignmentFreeResource>
     );
 };
 
