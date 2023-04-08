@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html data-theme="light" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>Learn With Rakib</title>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!-- Messenger Chat Plugin Code -->
-    <div id="fb-root"></div>
+  <title>Learn With Rakib</title>
+</head>
 
-    <!-- Your Chat Plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat"></div>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!-- Messenger Chat Plugin Code -->
+  <div id="fb-root"></div>
 
-    <script>
+  <!-- Your Chat Plugin code -->
+  <div id="fb-customer-chat" class="fb-customerchat"></div>
+
+  <!-- <script>
       var chatbox = document.getElementById("fb-customer-chat");
       chatbox.setAttribute("page_id", "115756004779928");
       chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
+    </script> -->
 
-    <!-- Your SDK code -->
-    <script>
+  <!-- Your SDK code -->
+  <!-- <script>
       window.fbAsyncInit = function () {
         FB.init({
           xfbml: true,
@@ -44,6 +45,7 @@
         js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
         fjs.parentNode.insertBefore(js, fjs);
       })(document, "script", "facebook-jssdk");
-    </script>
-  </body>
+    </script> -->
+</body>
+
 </html>

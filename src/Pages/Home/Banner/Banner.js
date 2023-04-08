@@ -61,7 +61,7 @@ const Banner = () => {
             <HowItWorksVideo
                 setOpenVideo={setOpenVideo}
             ></HowItWorksVideo>
-            <MessageBox></MessageBox>
+            {/* <MessageBox></MessageBox> */}
         </section >
     );
 };
