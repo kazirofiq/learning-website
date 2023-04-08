@@ -3,11 +3,6 @@
 
 }
 
-/* .pwd-container input {
-  padding: 5px 30px 5px 10px;
-  font-size: 20px;
-} */
-
 .pwd-container img {
   cursor: pointer;
   position: absolute;
@@ -39,9 +34,17 @@ input:checked+div svg {
 @media only screen and (min-width: 992px) {
 
   .bg {
+    width: 833.17px;
+    height: 566px;
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url('../../assest/bg-img/login.png');
   }
 
+}
+.bxsh{
+  
+  border-radius: 12px;
+  
+  
 }

@@ -18,12 +18,12 @@ const SignIn = () => {
   const [isRevealPwd, setIsRevealPwd] = useState(false);
   return (
     <div
-      className="bg mb-10 lg:py-[120px]   mx-auto flex justify-center items-center"
+      className="bg mb-10 lg:py-[120px] mx-auto flex justify-center items-center"
 
     >
-      <div className="h-[372px]  w-[398px] pt-[3.5rem] mx-auto flex justify-center items-center">
+      <div className="h-[372px] bxsh bg-white shadow-2xl  w-[398px] p-[24px] mx-auto flex justify-center items-center">
         <div className="w-96 bg-white rounded-xl  py-4 px-8">
-          <h2 className="text-[24px] leading-[36px]  pb-[12px] text-center font-bold">
+          <h2 className="text-[24px] leading-[36px] text-[#1B1D48] pb-[12px] text-center font-bold">
             Welcome Back
           </h2>
 
@@ -74,11 +74,11 @@ const SignIn = () => {
                     id="A3-yes"
                     name="A3-confirmation"
                     value="yes"
-                    class="opacity-0 absolute h-8 w-8"
+                    className="opacity-0 absolute h-8 w-8"
                   />
-                  <div class="bg-white border-2  border-[#4044A0] w-[16px] h-[16px] flex  flex-shrink-0 justify-center items-center mr-2 focus-within:border-[#4044A0]">
+                  <div className="bg-white border-2  border-[#4044A0] w-[16px] h-[16px] flex  flex-shrink-0 justify-center items-center mr-2 focus-within:border-[#4044A0]">
                     <svg
-                      class="fill-current hidden w-3 h-3 text-[#3D419F] pointer-events-none"
+                      className="fill-current hidden w-3 h-3 text-[#3D419F] pointer-events-none"
                       version="1.1"
                       viewBox="0 0 17 12"
                       xmlns="http://www.w3.org/2000/svg"
