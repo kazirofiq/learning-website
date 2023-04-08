@@ -11,6 +11,7 @@ import MyClasses from "../../Pages/MyClasses/MyClasses";
 import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 import Assignment from "../../Pages/Assignment/Assignment";
 import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
+import Quiz from "../../Pages/Quiz/Quiz";
 
 
 const router = createBrowserRouter([
@@ -54,12 +55,16 @@ const router = createBrowserRouter([
         element: <MyCourseLayout></MyCourseLayout>,
         children: [
             {
-                path: '/dashboard',
+                path: '/dashboard/my_course',
                 element: <Dashboard></Dashboard>
             },
             {
                 path: '/dashboard/assignment',
                 element: <Assignment></Assignment>
+            },
+            {
+                path: '/dashboard/quiz',
+                element: <Quiz></Quiz>
             },
             {
                 path: '/dashboard/myclass',

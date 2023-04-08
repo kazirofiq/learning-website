@@ -47,7 +47,7 @@ const Navbar = () => {
             <li className='text-[#333333] text-base font-normal'><Link>Resource</Link></li>
             <li className='text-[#333333] text-base font-normal'><Link>Consultancy</Link></li>
             <li className='text-[#333333] text-base font-normal'><Link>Review</Link></li>
-            <li className='text-[#333333] text-base font-normal'><Link to='/dashboard'>My Course</Link></li>
+            <li className='text-[#333333] text-base font-normal'><Link to='/dashboard/my_course'>My Course</Link></li>
             <li className="lg:text-base login inline-block rounded border border-[#3D419F] font-normal text-[#282B6B] hover:bg-[#3D419F] hover:text-white focus:outline-none focus:ring active:bg-[#3D419F] mr-5 lg:mr-0"><Link to='/login' >Login </Link></li>
             <li className="lg:text-base inline-block rounded border border-[#3D419F] font-normal text-[#282B6B] hover:bg-[#3D419F] hover:text-white focus:outline-none focus:ring active:bg-[#3D419F] su"><Link to='/signup' >Sign Up</Link></li>
         </>
