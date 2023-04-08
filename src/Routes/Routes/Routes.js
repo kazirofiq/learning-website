@@ -12,6 +12,8 @@ import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 import Assignment from "../../Pages/Assignment/Assignment";
 import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
 import Quiz from "../../Pages/Quiz/Quiz";
+import OrderHistory from "../../Pages/Order History/OrderHistory";
+import Consultetion from "../../Pages/Consultetion/Consultetion";
 
 
 const router = createBrowserRouter([
@@ -33,7 +35,7 @@ const router = createBrowserRouter([
 
             },
             {
-                path: '/premium_course',
+                path: '/premium-course',
                 element: <PremiumCourseHome></PremiumCourseHome>
             },
             {
@@ -48,6 +50,10 @@ const router = createBrowserRouter([
                 path: '/importent',
                 element: <ImportentLink />
             },
+            {
+                path: '/consultetion',
+                element: <Consultetion />
+            }
         ]
     },
     {

@@ -5,7 +5,7 @@ const WhatWillYouLearn = () => {
         <div className='mt-6 poppins'>
             <h3 className='font-bold text-2xl text-[#1B1D48]'>What Will You Learn?</h3>
             <div className='mt-2 lg:mt-5'>
-                <ul className='mt-2 lg:mt-5 grid grid-cols-1 lg:grid-cols-2 lg:gap-y-5 gap-y-3'>
+                <ul className='mt-2 lg:mt-5 grid grid-cols-1 lg:grid-cols-1 lg:gap-y-5 gap-y-3'>
                     <li className='flex items-center'>
                         <img className='h-4 w-4 mr-[11px]' src={checkIcon} alt="" />
                          <span className='font-normal text-sm lg:text-base text-[#666666]'>Learn Figma Basic to Advanced Design</span>
