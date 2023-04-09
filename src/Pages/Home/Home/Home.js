@@ -9,6 +9,8 @@ import Frequently from '../Frequently/Frequently';
 import StudentFeedback from '../StudentFeedback/StudentFeedback';
 import OrderHistory from '../../Order History/OrderHistory';
 import Resourcemodal from '../../ResourceModal/Resourcemodal';
+import StudentList from '../../StudentList/StudentList';
+import Assignment from '../../Assignment/Assignment';
 
 
 const Home = () => {
@@ -24,6 +26,8 @@ const Home = () => {
             <Frequently></Frequently>
             <OrderHistory/>
             <Resourcemodal/>
+            <StudentList/>
+            <Assignment/>
         </div>
     );
 };

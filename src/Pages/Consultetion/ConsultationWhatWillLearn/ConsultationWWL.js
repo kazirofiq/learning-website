@@ -1,6 +1,6 @@
 import React from 'react';
 import checkIcon from "../../../assest/buyCourseCardIcon/Group 1000003311.png";
-const ConsultetionWWL = () => {
+const ConsultationWWL = () => {
     return (
         <div className='py-[48px]'>
             <div className='mt-6 poppins px-[20px] lg:px-[145px]'>
@@ -48,4 +48,4 @@ const ConsultetionWWL = () => {
     );
 };
 
-export default ConsultetionWWL;
+export default ConsultationWWL;

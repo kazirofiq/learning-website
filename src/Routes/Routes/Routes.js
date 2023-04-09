@@ -9,7 +9,7 @@ import MyCourseLayout from "../../Layout/MyCourseLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
 import OrderHistory from "../../Pages/Order History/OrderHistory";
-import Consultetion from "../../Pages/Consultetion/Consultetion";
+import Consultetion from "../../Pages/Consultetion/Consultation";
 
 
 const router = createBrowserRouter([
