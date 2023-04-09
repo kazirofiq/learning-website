@@ -89,6 +89,19 @@ const FrequentlyAskedQuestion = () => {
                             </div>
                         </div>
                     </div>
+                    <div className="collapse collapse-arrow hvr order bx border-base-300 bg-base-100 rounded-box">
+                  <input type="checkbox" className="peer" />
+                  <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
+                    What makes Defferent From Other Available Apps On The App
+                    Store?
+                  </div>
+                  <div className="collapse-content bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
+                    <p className=" ">
+                      attribute is necessary to make the div
+                      focusable
+                    </p>
+                  </div>
+                </div>
                 </div>
             </div>
         </section>

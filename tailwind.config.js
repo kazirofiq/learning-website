@@ -13,7 +13,6 @@ module.exports = {
           neutral: "#3D4451",
           "basic": "#666666",
           "basic-color": "#333333",
-          "unique": "#555555",
         }
       }
     ]

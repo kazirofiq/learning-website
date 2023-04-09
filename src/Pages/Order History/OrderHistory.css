@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+.poppins{
+    font-family: 'Poppins', sans-serif;
+}
+.bg-color{
+    background-color: #F8F8FF;
+    opacity: 111;
+    border-radius: 0;
+    text-transform: capitalize;
+}
+.bshadow{
+    box-shadow: 0px 4px 20px #E7E7FF;
+    border-radius: 12px;
+}
+.border-botom{
+    border-bottom: 2px solid #F8F8FF;
+}
+
+.paid-button{
+height: 24px;
+width: 64px;
+left: 24px;
+top: 16px;
+border-radius: 76px;
+padding: 2px 12px 2px 12px;
+background-color:  #38A27B;
+}
+.failed-button{
+height: 24px;
+width: 73px;
+left: 24px;
+top: 16px;
+border-radius: 76px;
+padding: 2px 12px 2px 12px;
+background: #E8291D;
+}
+.cancel-button{
+height: 24px;
+width: 79px;
+left: 24px;
+top: 16px;
+border-radius: 76px;
+padding: 2px 12px 2px 12px;
+background: #FF8A00;
+}
+.round-white{
+    
+width: 8px;
+height: 8px;
+background: #FFFFFF;
+border-radius: 50%;
+}
