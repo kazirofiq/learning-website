@@ -9,6 +9,7 @@ import MyCourseLayout from "../../Layout/MyCourseLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
 import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
+import WorkShop from "../../Pages/WorkShop/WorkShop";
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path:'/profile',
                 element:<ProfilePage />
+            },
+            {
+                path:'/workshop',
+                element: <WorkShop />
             }
         ]
     },

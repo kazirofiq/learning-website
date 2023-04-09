@@ -3,12 +3,11 @@ import './FrequentlyAskedQuestion.css';
 
 const FrequentlyAskedQuestion = () => {
     return (
-        <section className='max-w-[1110px] mx-5 lg:mx-auto my-8 lg:my-10' id='frequentlyAskedQuestion'>
+        <section className='max-w-[1110px] mx-5 lg:mx-auto py-8 lg:py-10' id='frequentlyAskedQuestion'>
             <p className='hidden lg:block text-6 lg:text-[40px] leading-[36px] lg:leading-[60px] font-bold text-[#1B1D48] poppins'>Frequently Asked <span className='text-[#38A27B]'>Question</span></p>
 
             <p className='block lg:hidden text-[24px] text-center lg:text-[40px] leading-[36px] lg:leading-[60px] font-bold text-[#1B1D48] poppins'>Frequently Asked
                 <br /><span className='text-[#38A27B]'>Question</span></p>
-
             <div className="grid grid-cols-1 justify-center items-center">
                 <div className="container flex flex-col justify-center mt-6 lg:mt-12 zi">
                     <div className="space-y-4 lg:w-[730px] w-[320px] mb-4 mx-auto lg:mx-0">

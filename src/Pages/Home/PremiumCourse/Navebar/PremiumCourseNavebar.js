@@ -22,7 +22,7 @@ const PremiumCourseNavebar = () => {
     let activeIndex = menuItemIds.length + 1;
 
     menuItems.forEach((item, index) => {
-      const top = item.offsetTop - 50; // subtract header height
+      const top = item.offsetTop - 50;
       const bottom = top + item.offsetHeight;
 
       if (scrollPosition >= top && scrollPosition < bottom) {
@@ -40,7 +40,7 @@ const PremiumCourseNavebar = () => {
   }, []);
 
   const handleItemClick = (itemId) => {
-    const scrollPosition = document.getElementById(itemId).offsetTop - 50; // subtract header height
+    const scrollPosition = document.getElementById(itemId).offsetTop - 50;
     window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
     setActiveItem(itemId);
   };
