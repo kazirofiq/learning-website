@@ -14,6 +14,7 @@ import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
 import Quiz from "../../Pages/Quiz/Quiz";
 import Consultetion from "../../Pages/Consultetion/Consultation";
 import Resource from "../../Pages/Resource/Resource";
+import WorkShop from "../../Pages/WorkShop/WorkShop";
 
 
 const router = createBrowserRouter([
@@ -58,6 +59,14 @@ const router = createBrowserRouter([
                 path: '/resource',
                 element: <Resource />
             },
+            {
+                path: '/profile',
+                element: <ProfilePage />
+            },
+            {
+                path: '/workshop',
+                element: <WorkShop />
+            }
         ]
     },
     {
