@@ -14,6 +14,9 @@ import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
 import UpcomingCourse from "../../Pages/Home/Course/UpcomingCourse/UpcomingCourse";
 import UpcomingPremimumCourses from "../../Pages/Courses/UpcomingPremimumCourses/UpcomingPremimumCourses";
 import FreeCorses from "../../Pages/Courses/FreeCorses/FreeCorses";
+import Quiz from "../../Pages/Quiz/Quiz";
+import Consultetion from "../../Pages/Consultetion/Consultation";
+import Resource from "../../Pages/Resource/Resource";
 
 
 const router = createBrowserRouter([
@@ -62,6 +65,14 @@ const router = createBrowserRouter([
                 path: '/freecorses',
                 element: <FreeCorses />
             },
+            {
+                path: '/consultetion',
+                element: <Consultetion />
+            },
+            {
+                path: '/resource',
+                element: <Resource />
+            },
         ]
     },
     {
@@ -69,12 +80,16 @@ const router = createBrowserRouter([
         element: <MyCourseLayout></MyCourseLayout>,
         children: [
             {
-                path: '/dashboard',
+                path: '/dashboard/my_course',
                 element: <Dashboard></Dashboard>
             },
             {
                 path: '/dashboard/assignment',
                 element: <Assignment></Assignment>
+            },
+            {
+                path: '/dashboard/quiz',
+                element: <Quiz></Quiz>
             },
             {
                 path: '/dashboard/myclass',
