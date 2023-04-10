@@ -17,6 +17,10 @@ import MyCourse from "../../Pages/AdminDashboard/MyCourse/MyCourse";
 import CourseList from "../../Pages/AdminDashboard/CourseList/CourseList";
 import DraftCourse from "../../Pages/AdminDashboard/DraftCourse/DraftCourse";
 
+import Quiz from "../../Pages/Quiz/Quiz";
+import Consultetion from "../../Pages/Consultetion/Consultation";
+import Resource from "../../Pages/Resource/Resource";
+import WorkShop from "../../Pages/WorkShop/WorkShop";
 
 
 const router = createBrowserRouter([
@@ -53,6 +57,22 @@ const router = createBrowserRouter([
                 path: '/importent',
                 element: <ImportentLink />
             },
+            {
+                path: '/consultetion',
+                element: <Consultetion />
+            },
+            {
+                path: '/resource',
+                element: <Resource />
+            },
+            {
+                path: '/profile',
+                element: <ProfilePage />
+            },
+            {
+                path: '/workshop',
+                element: <WorkShop />
+            }
         ]
     },
     {
@@ -60,12 +80,16 @@ const router = createBrowserRouter([
         element: <MyCourseLayout></MyCourseLayout>,
         children: [
             {
-                path: '/dashboard',
+                path: '/dashboard/my_course',
                 element: <Dashboard></Dashboard>
             },
             {
                 path: '/dashboard/assignment',
                 element: <Assignment></Assignment>
+            },
+            {
+                path: '/dashboard/quiz',
+                element: <Quiz></Quiz>
             },
             {
                 path: '/dashboard/myclass',
