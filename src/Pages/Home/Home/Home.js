@@ -12,7 +12,7 @@ import SuccesModal from '../../Modal/SuccesModal/SuccesModal';
 // import MessageBox from '../MessageBox/MessageBox';
 import Resourcemodal from '../../ResourceModal/Resourcemodal';
 import StudentList from '../../StudentList/StudentList';
-import Assignment from '../../Assignment/Assignment';
+import AssignmentList from '../../../AssignmentList/AssignmentList';
 
 
 const Home = () => {
@@ -30,7 +30,7 @@ const Home = () => {
             {/* <SuccesModal></SuccesModal> */}
             <Resourcemodal />
             <StudentList />
-            <Assignment />
+            <AssignmentList></AssignmentList>
         </div>
     );
 };
