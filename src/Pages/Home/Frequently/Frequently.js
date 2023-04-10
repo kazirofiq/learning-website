@@ -1,6 +1,8 @@
 import React from "react";
-import thinkimg from '../../../assest/icon/Image.png';
-import "./Frequently.css";
+import thinginglg from '../../../assest/bg-img/Image1.png';
+import thingingsm from '../../../assest/bg-img/Image2.png'
+
+import './Frequently.css'
 
 const Frequently = () => {
   return (
@@ -15,8 +17,8 @@ const Frequently = () => {
               <div className="space-y-4 lg:w-[540px] md:w-[540px] w-[328px] mx-auto">
                 <div
                   tabIndex={0}
-                  className="collapse collapse-arrow hvr bx  bg-[#FFFFFF] rounded-box
-                  hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
+                  className="collapse collapse-arrow border faq-box-shadow bg-[#FFFFFF] rounded-box
+                  hover:bg-[#3D419F] hover:border-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
@@ -32,8 +34,8 @@ const Frequently = () => {
                 </div>
                 <div
                   tabIndex={0}
-                  className="collapse collapse-arrow hvr bx  bg-[#FFFFFF] rounded-box
-                  hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
+                  className="collapse collapse-arrow border faq-box-shadow bg-[#FFFFFF] rounded-box
+                  hover:bg-[#3D419F] hover:border-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
@@ -49,8 +51,8 @@ const Frequently = () => {
                 </div>
                 <div
                   tabIndex={0}
-                  className="collapse collapse-arrow hvr bx  bg-[#FFFFFF] rounded-box
-                  hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
+                  className="collapse collapse-arrow border faq-box-shadow bg-[#FFFFFF] rounded-box
+                  hover:bg-[#3D419F] hover:border-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
@@ -66,7 +68,8 @@ const Frequently = () => {
                 </div>
                 <div
                   tabIndex={0}
-                  className="collapse collapse-arrow hvr bx   bg-[#FFFFFF] rounded-box hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
+                  className="collapse collapse-arrow faq-box-shadow border bg-[#FFFFFF] rounded-box
+                  hover:bg-[#3D419F] hover:border-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
@@ -82,23 +85,8 @@ const Frequently = () => {
                 </div>
                 <div
                   tabIndex={0}
-                  className="collapse collapse-arrow hvr bx  bg-[#FFFFFF] rounded-box
-                  hover:bg-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
-                >
-                  <input type="checkbox" className="peer" />
-                  <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
-                    What makes Defferent From Other Available Apps On The App
-                    Store?
-                  </div>
-                  <div className="collapse-content  bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
-                    <p className=" ">
-                      attribute is necessary to make the div
-                      focusable
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className="collapse collapse-arrow hvr order bx border-base-300 bg-base-100 rounded-box "
+                  className="collapse collapse-arrow border faq-box-shadow bg-[#FFFFFF] rounded-box
+                  hover:bg-[#3D419F] hover:border-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
                 >
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
@@ -116,9 +104,9 @@ const Frequently = () => {
             </div>
           </section>
         </div>
-        <div className="lg:w-full w-99">
-          
-          <img className="" src={thinkimg} alt="" />
+        <div className="lg:w-full">
+          <img className="hidden lg:block mr-0" src={thinginglg} alt="" />
+          <img className="block lg:hidden mx-auto pb-[61px]" src={thingingsm} alt="" />
         </div>
       </div>
     </div>

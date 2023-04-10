@@ -5,7 +5,8 @@ import './Dashboard.css'
 const Dashboard = () => {
     return (
         <div className=''>
-            <img src={video} alt="" className='rounded-2xl w-[320px] lg:w-[732px] mx-5 lg:mx-0' />
+            {/* <img src={video} alt="" className='rounded-2xl w-[320px] lg:w-[732px] mx-5 lg:mx-0' /> */}
+            <iframe width="732" height="413" src="https://www.youtube.com/embed/coQ1c_ffiHc" title="Surath Al Baqara /Ridjaal Ahmed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
             <div className='lg:flex hidden items-center content-center justify-between w-[732px] mt-[29px]'>
                 <div className=''>

@@ -8,7 +8,15 @@ import OrderDetails from "../../Pages/OrderDetails/OrderDetails";
 import MyCourseLayout from "../../Layout/MyCourseLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
-import OrderHistory from "../../Pages/Order History/OrderHistory";
+import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
+import Assignment from "../../Pages/Assignment/Assignment";
+import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
+import AdminDashboard from "../../Pages/AdminDashboard/AdminDashboard";
+import AdmindashboardLayout from "../../Pages/AdminDashboard/AdmindashboardLayout/AdmindashboardLayout";
+import MyCourse from "../../Pages/AdminDashboard/MyCourse/MyCourse";
+import CourseList from "../../Pages/AdminDashboard/CourseList/CourseList";
+import DraftCourse from "../../Pages/AdminDashboard/DraftCourse/DraftCourse";
+
 
 
 const router = createBrowserRouter([
@@ -37,26 +45,66 @@ const router = createBrowserRouter([
                 path: '/payment',
                 element: <OrderDetails />
             },
-            
+            {
+                path: '/profile',
+                element: <ProfilePage />
+            },
+            {
+                path: '/importent',
+                element: <ImportentLink />
+            },
         ]
     },
     {
         path: '/dashboard',
         element: <MyCourseLayout></MyCourseLayout>,
         children: [
-          {
-            path: '/dashboard',
-            element: <Dashboard></Dashboard>
-          },
-          {
-            path: '/dashboard/myclass',
-            element: <MyClasses></MyClasses>
-          },
-          
-         
-          
+            {
+                path: '/dashboard',
+                element: <Dashboard></Dashboard>
+            },
+            {
+                path: '/dashboard/assignment',
+                element: <Assignment></Assignment>
+            },
+            {
+                path: '/dashboard/myclass',
+                element: <MyClasses></MyClasses>
+            },
         ]
-      },
+    },
+    {
+        path: '/admindashboard',
+        element: <AdmindashboardLayout></AdmindashboardLayout>,
+        children: [
+            {
+                path: '/admindashboard',
+                element: <AdminDashboard></AdminDashboard>
+            },
+            // {
+            //     path: '/admindashboard/mycourse',
+            //     element: <MyCourse></MyCourse>
+            // },
+            
+            {
+                path: "/admindashboard/mycourse",
+                element: <MyCourse></MyCourse>,
+                children: [
+                  {
+                    path: "/admindashboard/mycourse",
+                    element: <CourseList></CourseList>
+                  },
+                  {
+                    path: "/admindashboard/mycourse/draftcourse",
+                    element: <DraftCourse></DraftCourse>
+                  },
+                  
+                ]
+              },
+            
+           
+        ]
+    },
 ])
 
 export default router;

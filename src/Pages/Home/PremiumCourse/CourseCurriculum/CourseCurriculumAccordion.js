@@ -37,7 +37,7 @@ const CourseCurriculumAccordion = () => {
                                     </div>
                                 </div>
                             </div>
-                       </div>
+                        </div>
 
                         {/* <div className="collapse collapse-arrow bg-white">
                             <input type="checkbox" className="peer" />
