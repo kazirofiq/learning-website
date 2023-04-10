@@ -1,21 +1,40 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link , useLocation, useNavigate } from "react-router-dom";
 import login from "../../assest/bg-img/login.png";
 import { GrView } from "react-icons/gr";
 import { BsEyeSlash } from "react-icons/bs";
 import showPwdImg from "../../assest/login-svg/show-password.svg";
 import hidePwdImg from "../../assest/login-svg/hide-password.svg";
 import "./login.css";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const SignIn = () => {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
+
+  const {signIn} = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || '/';
+  const {register, formState: { errors }, handleSubmit } = useForm();
   const [pwd, setPwd] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
+
+
+  const handleLogin = data => {
+    console.log(data);
+    signIn(data.email, data.password)
+        .then(result => {
+            //const user = result.user;
+            console.log(result);
+            navigate(from, { replace: true });
+
+        })
+        .catch(error => {
+            console.log(error.message);
+        });
+}
+
+
   return (
     <div className="bg mb-10 lg:py-[120px] mx-auto flex justify-center items-center">
       <div className="h-[372px] bxsh bg-white shadow-2xl  w-[398px] p-[24px] mx-auto flex justify-center items-center">
@@ -24,13 +43,13 @@ const SignIn = () => {
             Welcome Back
           </h2>
 
-          <form onSubmit={handleSubmit(SignIn)}>
+          <form onSubmit={handleSubmit(handleLogin)}>
             <div className="form-control w-full ">
               <input
                 placeholder="Enter your email"
                 type="text"
-                {...register("number", {
-                  required: "Number is required",
+                {...register("email", {
+                  required: "Email is required",
                 })}
                 className=" pad input-bordered w-full max-w-xs outline-none"
               />
@@ -45,6 +64,9 @@ const SignIn = () => {
               <input
                 className=" pad w-full max-w-xs outline-none"
                 name="pwd"
+                {...register("password", {
+                  required: "Password is required"
+              })}
                 placeholder="Enter Password"
                 type={isRevealPwd ? "text" : "password"}
                 value={pwd}

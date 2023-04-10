@@ -4,11 +4,15 @@ import { Link } from "react-router-dom";
 import login from "../../assest/bg-img/login.png";
 import { GrView } from "react-icons/gr";
 import { BsEyeSlash } from "react-icons/bs";
+import { useNavigate } from 'react-router-dom';
 import showPwdImg from "../../assest/login-svg/show-password.svg";
 import hidePwdImg from "../../assest/login-svg/hide-password.svg";
 import "./SignUp.css";
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
+  const { createUser, updateUser } = useContext(AuthContext);
   const {
     register,
     formState: { errors },
@@ -16,12 +20,39 @@ const SignUp = () => {
   } = useForm();
   const [pwd, setPwd] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
+  const navigate = useNavigate();
+
+
+
+  const handleSignUp = (data) => {
+    createUser(data.email, data.password)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+        const userInfo = {
+          displayName: data.name
+        }
+        updateUser(userInfo)
+          .then((result) => {
+            console.log(result);
+            navigate('/');
+          })
+          .catch(err => console.log(err));
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+
+
+
   return (
     <div
       className="bgg   LG:w-[1092px] lg:h-[792px]  mb-6 bg-[#fff] lg:mb-0 md:mb-0 lg:w-[1092px]  mx-auto flex justify-center items-center"
-      //   style={{ backgroundImage: `url(${login})`
+    //   style={{ backgroundImage: `url(${login})`
 
-      // }}
+    // }}
     >
       <div className="h-[520px] bg-white bxs mt-[40px] z-50 shadow-slate-500 lg:shadow-none md:shadow-none w-[398px] p-[24px] lg:mt-[26px] md:mt-[26px] lg:ml-[325px] md:ml-[325px] mx-auto flex justify-center items-center">
         <div className="w-96 bg-white rounded-xl  py-4 px-8">
@@ -29,7 +60,7 @@ const SignUp = () => {
             Create Account
           </h2>
 
-          <form onSubmit={handleSubmit(SignUp)}>
+          <form onSubmit={handleSubmit(handleSignUp)}>
             <div className="form-control w-full ">
               <input
                 type="text"
@@ -81,6 +112,9 @@ const SignUp = () => {
                 className=" pad outline-none w-full max-w-xs"
                 name="pwd"
                 placeholder="Enter Password"
+                {...register("password", {
+                  required: "Password is required"
+                })}
                 type={isRevealPwd ? "text" : "password"}
                 value={pwd}
                 onChange={(e) => setPwd(e.target.value)}
@@ -116,11 +150,11 @@ const SignUp = () => {
                       viewBox="0 0 17 12"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <g fill="none" fill-rule="evenodd">
+                      <g fill="none" fillRule="evenodd">
                         <g
                           transform="translate(-9 -11)"
                           fill="#3D419F"
-                          fill-rule="nonzero"
+                          fillRule="nonzero"
                         >
                           <path
                             className=""
