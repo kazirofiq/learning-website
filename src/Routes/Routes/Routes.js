@@ -11,6 +11,9 @@ import MyClasses from "../../Pages/MyClasses/MyClasses";
 import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 import Assignment from "../../Pages/Assignment/Assignment";
 import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
+import UpcomingCourse from "../../Pages/Home/Course/UpcomingCourse/UpcomingCourse";
+import UpcomingPremimumCourses from "../../Pages/Courses/UpcomingPremimumCourses/UpcomingPremimumCourses";
+import FreeCorses from "../../Pages/Courses/FreeCorses/FreeCorses";
 
 
 const router = createBrowserRouter([
@@ -46,6 +49,18 @@ const router = createBrowserRouter([
             {
                 path: '/importent',
                 element: <ImportentLink />
+            },
+            {
+                path: '/upcomingcourse',
+                element: <UpcomingCourse />
+            },
+            {
+                path: '/upcomingpremimumcourse',
+                element: <UpcomingPremimumCourses />
+            },
+            {
+                path: '/freecorses',
+                element: <FreeCorses />
             },
         ]
     },

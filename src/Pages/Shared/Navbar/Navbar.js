@@ -39,14 +39,13 @@ const Navbar = () => {
                     <li className="mt-2 z-50 flex flex-col space-y-1 absolute left-[100px] lg:left-[-100%] bottom-auto lg:bottom-[-147px] top-[-10px] lg:top-auto w-[170px] lg:w-[180px] shadow-lg shadow-[#D5D7E9] bg-[#FFFFFF] rounded-[10px]">
                         <Link to='/premium_course' className="rounded-lg text-sm font-medium text-[#333333] pt-[20px] pb-[14px] px-[10px] lg:px-[22px] lg:mx-auto"><img alt='' src={premium} className='inline-block mr-3 text-[#333333]'></img>Premium Course</Link>
                         <hr className='text-[#D5D7E9]' />
-                        <Link to="" className="rounded-lg text-sm font-medium text-[#333333] pt-[14px] px-[10px] lg:px-[22px] pb-[20px]"> <img alt='' src={free} className='inline-block mr-3' ></img>Free Course</Link>
+                        <Link to="/freecorses" className="rounded-lg text-sm font-medium text-[#333333] pt-[14px] px-[10px] lg:px-[22px] pb-[20px]"> <img alt='' src={free} className='inline-block mr-3' ></img>Free Course</Link>
                     </li>
                 </details>
             </li>
-            <li className='text-[#333333] text-base font-normal'><Link>Advice</Link></li>
             <li className='text-[#333333] text-base font-normal'><Link>Resource</Link></li>
             <li className='text-[#333333] text-base font-normal'><Link>Consultancy</Link></li>
-            <li className='text-[#333333] text-base font-normal'><Link>Review</Link></li>
+            <li className='text-[#333333] text-base font-normal'><Link to='/upcomingcourse'>Workshop</Link></li>
             <li className='text-[#333333] text-base font-normal'><Link to='/dashboard'>My Course</Link></li>
             <li className="lg:text-base login inline-block rounded border border-[#3D419F] font-normal text-[#282B6B] hover:bg-[#3D419F] hover:text-white focus:outline-none focus:ring active:bg-[#3D419F] mr-5 lg:mr-0"><Link to='/login' >Login </Link></li>
             <li className="lg:text-base inline-block rounded border border-[#3D419F] font-normal text-[#282B6B] hover:bg-[#3D419F] hover:text-white focus:outline-none focus:ring active:bg-[#3D419F] su"><Link to='/signup' >Sign Up</Link></li>
