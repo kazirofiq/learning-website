@@ -36,6 +36,7 @@ const Quiz = () => {
                                 <input type="checkbox" checked className="checkbox checkbox-xs" />
                                 <p className='text-[14px] lg:text-base text-[#333333] leading-[21px] lg:leading-6 font-normal'>Web Designer</p>
                             </div>
+
                             <div className='flex items-center gap-3 poppins py-2 px-3 hover:bg-[#ECECF5] rounded-[8px] w-[222px]'>
                                 <input type="checkbox" checked className="checkbox checkbox-xs" />
                                 <p className='text-[14px] lg:text-base text-[#333333] leading-[21px] lg:leading-6 font-normal'>Ui Designer</p>
