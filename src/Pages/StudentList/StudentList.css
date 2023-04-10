@@ -1,0 +1,50 @@
+.student-list-table-shadow {
+    box-shadow: 0px 4px 20px #E7E7FF
+}
+
+.course-category-students{
+    height: 180px;
+width: 176px;
+
+border-radius: 8px;
+padding: 0px 16px 0px 16px;
+background-color: #FFFFFF;
+
+}
+.student-prenxt-button{
+    height: 40px;
+    width: 125px;
+    border-radius: 8px;
+    padding: 8px 14px 8px 14px;
+    background: white;
+border: 1px solid #C3C4E1;
+
+
+}
+select {
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Safari, Chrome, Opera */
+    -webkit-appearance: none;
+  
+}
+  
+/* for IE10 */
+ select::-ms-expand {
+    display: none;
+}
+
+.selectop{
+    height: 180px;
+width: 176px;
+
+border-radius: 8px;
+padding: 0px 16px 0px 16px;
+border: none;
+border-bottom: 1px solid red;
+
+}
+
+
+
+

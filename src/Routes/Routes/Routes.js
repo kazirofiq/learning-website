@@ -12,7 +12,7 @@ import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 import Assignment from "../../Pages/Assignment/Assignment";
 import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
 import Quiz from "../../Pages/Quiz/Quiz";
-import Consultetion from "../../Pages/Consultetion/Consultetion";
+import Consultetion from "../../Pages/Consultetion/Consultation";
 import Resource from "../../Pages/Resource/Resource";
 
 

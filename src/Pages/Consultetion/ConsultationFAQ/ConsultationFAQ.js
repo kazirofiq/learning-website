@@ -1,7 +1,7 @@
 import React from 'react';
-import './ConsultetionFAQ.css';
+import './ConsultationFAQ.css';
 
-const ConsultetionFAQ = () => {
+const ConsultationFAQ = () => {
     return (
         <section className='px-[20px] lg:px-[145px] mx-5 lg:mx-auto my-8 lg:my-10' id='frequentlyAskedQuestion'>
             <p className='hidden lg:block text-6 lg:text-[40px] leading-[36px] lg:leading-[60px] font-bold text-[#1B1D48] poppins text-center'>Frequently Asked <span className='text-[#38A27B]'>Question</span></p>
@@ -96,4 +96,4 @@ const ConsultetionFAQ = () => {
     );
 };
 
-export default ConsultetionFAQ;
+export default ConsultationFAQ;

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './ConsultetionNavbar.css';
+import './ConsultationNavbar.css';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 
 
 
-const ConsultetionNavbar = () => {
+const ConsultationNavbar = () => {
 
     const [activeItem, setActiveItem] = useState(null);
 
@@ -136,4 +136,4 @@ const ConsultetionNavbar = () => {
     );
 };
 
-export default ConsultetionNavbar;
+export default ConsultationNavbar;

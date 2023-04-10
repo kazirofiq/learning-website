@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ConsultetionAboutTC = () => {
+const ConsultationAboutTC = () => {
     return (
         <div className='px-[20px] lg:px-[145px]'>
             <div id="aboutTheCourse" className='mx-auto'>
@@ -20,4 +20,4 @@ const ConsultetionAboutTC = () => {
     );
 };
 
-export default ConsultetionAboutTC;
+export default ConsultationAboutTC;

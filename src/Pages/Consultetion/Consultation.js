@@ -1,14 +1,14 @@
 import React from 'react';
-import './Consultetion.css'
+import './Consultation.css'
 import Cimg from '../../assest/Consultency/Image.png'
 import PricingCategory from './PricingCategory/PricinglCategory';
 import ConsultationReviews from './ConsultationReviews.js/ConsultationReviews';
-import ConsultetionFAQ from './ConsultetionFAQ/ConsultetionFAQ';
-import ConsultetionWWL from './ConsultetionWhatWillLearn/ConsultetionWWL';
-import ConsultetionAboutTC from './ConsultetionAboutTC/ConsultetionAboutTC';
-import ConsultetionNavbar from './ConsultetionNavbar/ConsultetionNavbar';
+import ConsultetionFAQ from './ConsultationFAQ/ConsultationFAQ';
+import ConsultetionWWL from './ConsultationWhatWillLearn/ConsultationWWL';
+import ConsultetionAboutTC from './ConsultationAboutTC/ConsultationAboutTC';
+import ConsultetionNavbar from './ConsultationNavbar/ConsultationNavbar';
 
-const Consultetion = () => {
+const Consultation = () => {
     return (
         <div className='py-[96px]'>
             <dev className="text-center  px-[20px] lg:px-[145px]">
@@ -30,4 +30,4 @@ const Consultetion = () => {
     );
 };
 
-export default Consultetion;
+export default Consultation;
