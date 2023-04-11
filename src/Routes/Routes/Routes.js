@@ -12,6 +12,7 @@ import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 import WorkShop from "../../Pages/WorkShop/WorkShop";
 import Assignment from "../../Pages/Assignment/Assignment";
 import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
+import CreateCourse from "../../Pages/CreateCourse/CreateCourse";
 
 
 const router = createBrowserRouter([
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
             },
         ]
     },
+    {
+        path:'/create-course',
+        element: <CreateCourse />
+    }
 ])
 
 export default router;

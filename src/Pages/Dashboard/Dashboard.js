@@ -18,7 +18,6 @@ const Dashboard = () => {
                     <a href=' ' className='text-sm lg:text-base leading-[21px] lg:leading-6 class_bs_sm lg:class_bs text-white bg-[#3D419F] lg:font-semibold font-medium poppins'>Next</a>
                 </div>
             </div>
-
             <div className='block lg:hidden items-center content-center justify-between w-[320px] lg:w-[732px] mt-[18px] mx-5 lg:mx-0'>
                 <div className='flex items-center justify-center gap-3 mb-5'>
                     <a href=' ' className='text-sm lg:text-base leading-[21px] lg:leading-6 class_bs_sm lg:class_bs text-[#666666] border-[1px] border-[#666666] border-solid lg:font-semibold font-medium poppins bg-[#F8F8FF]'>Previous</a>
