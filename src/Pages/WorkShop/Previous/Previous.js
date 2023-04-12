@@ -1,15 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import bgRectangle1 from '../../../assest/workshop/Rectangle 1.png'
 import bgRectangle2 from '../../../assest/workshop/Rectangle 2.png'
 import bgRectangle3 from '../../../assest/workshop/Rectangle 3.png'
 import bgRectangle4 from '../../../assest/workshop/Rectangle 4.png'
+import profile from '../../../assest/workshop/profile.png'
 import star from '../../../assest/workshop/star.png'
 import clock from '../../../assest/workshop/clock.png'
-import profile from '../../../assest/workshop/profile.png'
-import { Link } from 'react-router-dom';
 
-const pre = () => {
-
+const Previous = () => {
     const Previouscourses = [
         {
             id: 1,
@@ -40,15 +39,18 @@ const pre = () => {
             price: 150
         },
     ]
-
     return (
         <div className='mt-[40px] lg:mt-[107px] md:mt-[100px]'>
             <div className='flex items-center justify-center'>
-                <Link to='/upcomingcourse'>
-                    < button className='bg-[#ECECF5] px-6 py-2 text-[#C3C4E1] rounded-[10px] border-[1px] hover:border-[#3D419F] focus:bg-[#3D419F] active:bg-[#3D419F] focus:text-white font-medium text-base leading-6' > Upcoming</button >
+                <Link to='/upcoming'>
+                    <button className='px-6 py-2 lg:leading-[24px] md:leading-[22px] leading-[21px] text-sm lg:text-base md:text-base rounded-[10px] text-left border inline-block bg-[#ECECF5] text-[#C3C4E1] font-medium  focus:text-white focus:outline-none focus:bg-[#3D419F]'>
+                        Upcoming
+                    </button>
                 </Link>
-                <Link to=''>
-                    <button className='bg-[#ECECF5] px-6 py-2 text-[#C3C4E1] rounded-[10px] border-[1px] hover:border-[#3D419F] focus:bg-[#3D419F] active:bg-[#3D419F] focus:text-white font-medium text-base leading-6'>Previous</button>
+                <Link to='/previous'>
+                    <button className='px-6 py-2 lg:leading-[24px] md:leading-[22px] leading-[21px] text-sm lg:text-base md:text-base rounded-[10px] text-left border inline-block bg-[#ECECF5] text-[#C3C4E1] font-medium  focus:text-white focus:outline-none focus:bg-[#3D419F]'>
+                        Previous
+                    </button>
                 </Link>
             </div >
             <div className='mt-6 lg:mt-12 md:mt-10 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 lg:mx-[145px] gap-5 ml-16 md:ml-0'>
@@ -88,4 +90,4 @@ const pre = () => {
     );
 };
 
-export default pre;
+export default Previous;
