@@ -4,6 +4,7 @@ import logo from '../../../assest/logo/Logo (2).png';
 import './Navbar.css';
 import premium from '../../../assest/icon/premium.png';
 import free from '../../../assest/icon/Free (1).png';
+import { BiChevronDown } from "react-icons/bi";
 
 
 
@@ -15,44 +16,82 @@ const Navbar = () => {
     const menuItems = (
         <>
 
-            <li tabIndex={0} className="relative">
-                <details className="group [&_summary::-webkit-details-marker]:hidden">
-                    <summary
-                        className="flex cursor-pointer items-center lg:justify-between rounded-lg  py-2 text-gray-500 hover:text-gray-700"
+            <li>
+                <div className="dropdown">
+                    <label
+                        tabIndex={0}
+                        className="cursor-pointer flex items-center"
                     >
-                        <span className="text-[#333333] text-base font-normal"> Course </span>
-
-                        <span className="shrink-0 transition duration-300 group-open:-rotate-180">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                        </span>
-                    </summary>
-
-                    <ul className="mt-2 z-50 flex flex-col space-y-1 absolute lg:left-[-100%] lg:bottom-[-147px] lg:w-[180px] lg:shadow-lg shadow-[#D5D7E9] lg:bg-[#FFFFFF] lg:rounded-[10px]">
-                        <Link to='/premium_course' className="lg:rounded-lg text-sm font-medium text-[#333333] lg:pt-[20px] lg:pb-[14px] px-[22px] mx-auto"><img alt='' src={premium} className='inline-block mr-3 text-[#333333]'></img> Primium Course</Link>
-                        <hr className='text-[#D5D7E9]' />
-                        <Link href="" className="rounded-lg text-sm font-medium text-[#333333] pt-[14px] px-[22px] pb-[20px]"> <img alt='' src={free} className='inline-block mr-3' ></img> Free Course</Link>
-
+                        <span className="text-[#333333] capitalize text-base font-normal">
+                            Course
+                        </span>{" "}
+                        <BiChevronDown className='text-[#333333]' />
+                    </label>
+                    <ul
+                        tabIndex={0}
+                        className="menu dropdown-content mt-0 lg:mt-9 w-[165px] h-[74px] font-normal text-sm leading-[21px] rounded-[10px] border border-[#3D419F] bg-[#FFFFFF]"
+                    >
+                        <li>
+                            <Link to='/premium_course' className='text-[#333333] bg-[#FFFFFF] h-[36px] py-2 px-6'>Premium Course </Link>
+                        </li>
+                        <li>
+                            <Link to='/freecorses' className='text-[#333333] bg-[#ECECF5] rounded-t-[12px] h-[36px] py-2 px-6'>Free Course</Link>
+                        </li>
                     </ul>
-
-                </details>
+                </div>
             </li>
-            <li className='text-[#333333] text-base font-normal'><Link to='/resource'>Resource</Link></li>
+            <li>
+                <div className="dropdown">
+                    <label
+                        tabIndex={0}
+                        className="cursor-pointer flex items-center"
+                    >
+                        <span className="text-[#333333] capitalize text-base font-normal">
+                            Resource
+                        </span>{" "}
+                        <BiChevronDown className='text-[#333333]' />
+                    </label>
+                    <ul
+                        tabIndex={0}
+                        className="menu dropdown-content mt-0 lg:mt-9 w-[147px] h-[74px] font-normal text-sm leading-[21px] rounded-[10px] border border-[#3D419F] bg-[#FFFFFF]"
+                    >
+                        <li>
+                            <Link to='/resource' className='text-[#333333] bg-[#FFFFFF] h-[36px] py-2 px-6'>Free Resource </Link>
+                        </li>
+                        <li>
+                            <Link to='/kdptools' className='text-[#333333] bg-[#ECECF5] rounded-t-[12px] h-[36px] py-2 px-6'>KDP Tool</Link>
+                        </li>
+                    </ul>
+                </div>
+            </li>
             <li className='text-[#333333] text-base font-normal'><Link to="/consultetion">Consultancy</Link></li>
-            <li className='text-[#333333] text-base font-normal'><Link to="/workshop">Work Shop</Link></li>
+            <li>
+                <div className="dropdown">
+                    <label
+                        tabIndex={0}
+                        className="cursor-pointer flex items-center"
+                    >
+                        <span className="text-[#333333] capitalize text-base font-normal">
+                            Workshop
+                        </span>{" "}
+                        <BiChevronDown className='text-[#333333]' />
+                    </label>
+                    <ul
+                        tabIndex={0}
+                        className="menu dropdown-content mt-0 lg:mt-9 w-[121px] h-[74px] font-normal text-sm leading-[21px] rounded-[10px] border border-[#3D419F] bg-[#FFFFFF]"
+                    >
+                        <li>
+                            <Link to='/upcoming' className='text-[#333333] bg-[#ECECF5] rounded-[10px] h-[36px] py-2 px-6'>Upcoming</Link>
+                        </li>
+                        <li>
+                            <Link to='/previous' className='text-[#333333] bg-[#FFFFFF] h-[36px] py-2 px-6'>Previous</Link>
+                        </li>
+                    </ul>
+                </div>
+            </li>
             <li className='text-[#333333] text-base font-normal'><Link to='/dashboard'>My Course</Link></li>
-            <li className="lg:text-base login inline-block rounded border border-[#3D419F] font-normal text-[#282B6B] hover:bg-[#3D419F] hover:text-white focus:outline-none focus:ring active:bg-[#3D419F]"><Link to='/login' >Login </Link></li>
-            <li className="lg:text-base inline-block rounded border border-[#3D419F] font-normal text-[#282B6B] hover:bg-[#3D419F] hover:text-white focus:outline-none focus:ring active:bg-[#3D419F] su"><Link to='/signup' >Sign Up</Link></li>
+            <Link to='/login' ><li className="lg:text-base login inline-block rounded border border-[#3D419F] font-normal text-[#282B6B] hover:bg-[#3D419F] hover:text-white focus:outline-none focus:ring active:bg-[#3D419F]">Login </li></Link>
+            <Link to='/signup' ><li className="lg:text-base inline-block rounded border border-[#3D419F] font-normal text-[#282B6B] hover:bg-[#3D419F] hover:text-white focus:outline-none focus:ring active:bg-[#3D419F] su">Sign Up</li></Link>
         </>
     );
 

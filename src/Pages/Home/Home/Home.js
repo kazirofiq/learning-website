@@ -10,7 +10,6 @@ import StudentFeedback from '../StudentFeedback/StudentFeedback';
 import OrderHistory from '../../Order History/OrderHistory';
 import SuccesModal from '../../Modal/SuccesModal/SuccesModal';
 // import MessageBox from '../MessageBox/MessageBox';
-import Resourcemodal from '../../ResourceModal/Resourcemodal';
 import StudentList from '../../StudentList/StudentList';
 import AssignmentList from '../../../AssignmentList/AssignmentList';
 
@@ -28,7 +27,6 @@ const Home = () => {
             <Frequently></Frequently>
             <OrderHistory />
             {/* <SuccesModal></SuccesModal> */}
-            <Resourcemodal />
             <StudentList />
             <AssignmentList></AssignmentList>
         </div>

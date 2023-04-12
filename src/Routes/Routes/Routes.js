@@ -17,10 +17,20 @@ import MyCourse from "../../Pages/AdminDashboard/MyCourse/MyCourse";
 import CourseList from "../../Pages/AdminDashboard/CourseList/CourseList";
 import DraftCourse from "../../Pages/AdminDashboard/DraftCourse/DraftCourse";
 
+import UpcomingPremimumCourses from "../../Pages/Courses/UpcomingPremimumCourses/UpcomingPremimumCourses";
+import FreeCorses from "../../Pages/Courses/FreeCorses/FreeCorses";
 import Quiz from "../../Pages/Quiz/Quiz";
 import Consultetion from "../../Pages/Consultetion/Consultation";
 import Resource from "../../Pages/Resource/Resource";
 import WorkShop from "../../Pages/WorkShop/WorkShop";
+import BsrCalculetor from "../../Pages/KdpTools/BsrCalculetor/BsrCalculetor";
+import KdpTools from "../../Pages/KdpTools/KdpTools/KdpTools";
+import RoyalCalculetor from "../../Pages/KdpTools/RoyaltyCalculetor/RoyalCalculetor";
+import KdpLayout from "../../Layout/KdpLayout";
+import QrGenaretor from "../../Pages/KdpTools/QrGenaretor/QrGenaretor";
+import CategoryFinder from "../../Pages/KdpTools/CategoryFinder/CategoryFinder";
+import Upcoming from "../../Pages/WorkShop/Upcoming/Upcoming";
+import Previous from "../../Pages/WorkShop/Previous/Previous";
 
 
 const router = createBrowserRouter([
@@ -58,6 +68,14 @@ const router = createBrowserRouter([
                 element: <ImportentLink />
             },
             {
+                path: '/upcomingpremimumcourse',
+                element: <UpcomingPremimumCourses />
+            },
+            {
+                path: '/freecorses',
+                element: <FreeCorses />
+            },
+            {
                 path: '/consultetion',
                 element: <Consultetion />
             },
@@ -72,7 +90,43 @@ const router = createBrowserRouter([
             {
                 path: '/workshop',
                 element: <WorkShop />
+            },
+            {
+                path: '/upcoming',
+                element: <Upcoming></Upcoming>
+            },
+            {
+                path: '/previous',
+                element: <Previous></Previous>
             }
+
+
+        ]
+    },
+    {
+        path: '/kdptools',
+        element: <KdpLayout />,
+        children: [
+            {
+                path: '/kdptools',
+                element: <KdpTools />,
+            },
+            {
+                path: '/kdptools/bsrcalculetor',
+                element: <BsrCalculetor></BsrCalculetor>
+            },
+            {
+                path: '/kdptools/royaltycalculetor',
+                element: <RoyalCalculetor></RoyalCalculetor>
+            },
+            {
+                path: '/kdptools/qrgenaretor',
+                element: <QrGenaretor></QrGenaretor>
+            },
+            {
+                path: '/kdptools/categoryfinder',
+                element: <CategoryFinder></CategoryFinder>
+            },
         ]
     },
     {
