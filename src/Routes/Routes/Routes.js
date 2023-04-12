@@ -9,9 +9,18 @@ import MyCourseLayout from "../../Layout/MyCourseLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
 import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
-import WorkShop from "../../Pages/WorkShop/WorkShop";
 import Assignment from "../../Pages/Assignment/Assignment";
 import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
+import AdminDashboard from "../../Pages/AdminDashboard/AdminDashboard";
+import AdmindashboardLayout from "../../Pages/AdminDashboard/AdmindashboardLayout/AdmindashboardLayout";
+import MyCourse from "../../Pages/AdminDashboard/MyCourse/MyCourse";
+import CourseList from "../../Pages/AdminDashboard/CourseList/CourseList";
+import DraftCourse from "../../Pages/AdminDashboard/DraftCourse/DraftCourse";
+
+import Quiz from "../../Pages/Quiz/Quiz";
+import Consultetion from "../../Pages/Consultetion/Consultation";
+import Resource from "../../Pages/Resource/Resource";
+import WorkShop from "../../Pages/WorkShop/WorkShop";
 import CreateCourse from "../../Pages/CreateCourse/CreateCourse";
 
 
@@ -42,11 +51,27 @@ const router = createBrowserRouter([
                 element: <OrderDetails />
             },
             {
-                path:'/profile',
-                element:<ProfilePage />
+                path: '/profile',
+                element: <ProfilePage />
             },
             {
-                path:'/workshop',
+                path: '/importent',
+                element: <ImportentLink />
+            },
+            {
+                path: '/consultetion',
+                element: <Consultetion />
+            },
+            {
+                path: '/resource',
+                element: <Resource />
+            },
+            {
+                path: '/profile',
+                element: <ProfilePage />
+            },
+            {
+                path: '/workshop',
                 element: <WorkShop />
             },
             {
@@ -60,12 +85,16 @@ const router = createBrowserRouter([
         element: <MyCourseLayout></MyCourseLayout>,
         children: [
             {
-                path: '/dashboard',
+                path: '/dashboard/my_course',
                 element: <Dashboard></Dashboard>
             },
             {
                 path: '/dashboard/assignment',
                 element: <Assignment></Assignment>
+            },
+            {
+                path: '/dashboard/quiz',
+                element: <Quiz></Quiz>
             },
             {
                 path: '/dashboard/myclass',
@@ -74,9 +103,35 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path:'/create-course',
-        element: <CreateCourse />
-    }
+        path: '/admindashboard',
+        element: <AdmindashboardLayout></AdmindashboardLayout>,
+        children: [
+            {
+                path: '/admindashboard',
+                element: <AdminDashboard></AdminDashboard>
+            },
+            {
+                path: '/admindashboard/create-course',
+                element: <CreateCourse />
+            },
+            
+            {
+                path: "/admindashboard/mycourse",
+                element: <MyCourse></MyCourse>,
+                children: [
+                  {
+                    path: "/admindashboard/mycourse",
+                    element: <CourseList></CourseList>
+                  },
+                  {
+                    path: "/admindashboard/mycourse/draftcourse",
+                    element: <DraftCourse></DraftCourse>
+                  },
+                  
+                ]
+              },
+        ]
+    },
 ])
 
 export default router;
