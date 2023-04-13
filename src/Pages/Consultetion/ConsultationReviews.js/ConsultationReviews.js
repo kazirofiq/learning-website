@@ -47,7 +47,7 @@ const ConsultationReviews = () => {
                     </div>
                 </div>
                 <div className='flex justify-center '>
-                    <a href='/' className='mt-6 lg:mt-10 text-sm lg:text-base leading-[21px] lg:leading-6 bs_sm lg:bs text-white lg:font-semibold font-medium poppins'>See More Review</a>
+                    <Link to='/allreviews' className='mt-6 lg:mt-10 text-sm lg:text-base leading-[21px] lg:leading-6 bs_sm lg:bs text-white lg:font-semibold font-medium poppins'>See More Review</Link>
                 </div>
             </div>
         </section>

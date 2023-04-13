@@ -7,6 +7,7 @@ import accountIcon from "../../../assest/icon/account.png";
 import planner from "../../../assest/icon/planner.png";
 import ExternalLink from "../../../assest/icon/External Link.png";
 import OrderHistory from "../../../assest/icon/order history.png";
+import { ArrowTopRightOnSquareIcon, ClipboardIcon, ClockIcon, UserIcon } from '@heroicons/react/24/solid'
 const percentage = 60;
 const customColor = '#3D419F';
 const styles = {
@@ -27,7 +28,7 @@ const textStyle = {
 
 const ProfileCard = () => {
   return (
-    <div className="card w-[255px] bg-base-100 shadow-xl poppins">
+    <div className="card w-[255px] bg-base-100 shadow-xl poppins lg:mt-[84px] md:mt-[50px] mt-8">
       <figure className="px-10 pt-10">
         <img src={profileImg} alt="profile_image" className="rounded-xl" />
       </figure>
@@ -51,29 +52,31 @@ const ProfileCard = () => {
       <div className='px-4 mt-6'>
         <hr />
       </div>
-      <div className="items-center text-center mb-4 w-full inline-block lg:mt-[15px] lg:px-4 px-5">
+      <div className='mt-4 px-4 pb-6'>
         <Link to='/profile'>
-          <button className="rounded-[8px] h-[40px] w-[223px] text-sm lg:text-base font-normal text-[#FFFFFF] bg-[#3D419F]  py-[10px] lg:w-full mx-auto flex items-center justify-center">
-            <img className='mr-[13px]' src={accountIcon} alt="" />
-            <span>My Profile</span>
+          <button className='gap-x-[14px] flex items-center leading-[24px] text-base rounded-[8px] w-[223px] px-4 py-2 bg-[#FFFFFF] text-[#666666] font-medium  focus:text-white focus:outline-none focus:bg-[#3D419F]'>
+            <UserIcon className='h-5 w-5' />
+            My Profile
           </button>
         </Link>
-      </div>
-      <div className='mt-4 px-[35px] pb-8'>
-        <ul className='grid grid-cols-1 gap-y-[31px]'>
-          <li className='flex items-center'>
-            <img className='mr-[15px]' src={planner} alt="" />
-            <h4 className='text-[#666666] font-normal text-base'>My Planner</h4>
-          </li>
-          <li className='flex items-center'>
-            <img className='mr-[15px]' src={ExternalLink} alt="" />
-            <h4 className='text-[#666666] font-normal text-base'>Important Link</h4>
-          </li>
-          <li className='flex items-center'>
-            <img className='mr-[15px]' src={OrderHistory} alt="" />
-            <h4 className='text-[#666666] font-normal text-base'>Order History</h4>
-          </li>
-        </ul>
+        <Link to=''>
+          <button className='mt-1 gap-x-[14px] flex items-center leading-[24px] text-base rounded-[8px] w-[223px] px-4 py-2 bg-[#FFFFFF] text-[#666666] font-medium  focus:text-white focus:outline-none focus:bg-[#3D419F]'>
+            <ClipboardIcon className='h-5 w-5' />
+            My Planner
+          </button>
+        </Link>
+        <Link to='/profile/importent'>
+          <button className='mt-1 gap-x-[14px] flex items-center leading-[24px] text-base rounded-[8px] w-[223px] px-4 py-2 bg-[#FFFFFF] text-[#666666] font-medium  focus:text-white focus:outline-none focus:bg-[#3D419F]'>
+            <ArrowTopRightOnSquareIcon className='h-5 w-5' />
+            Important Link
+          </button>
+        </Link>
+        <Link to='/profile/orderhistory'>
+          <button className='mt-1 gap-x-[14px] flex items-center leading-[24px] text-base rounded-[8px] w-[223px] px-4 py-2 bg-[#FFFFFF] text-[#666666] font-medium  focus:text-white focus:outline-none focus:bg-[#3D419F]'>
+            <ClockIcon className='h-5 w-5' />
+            Order History
+          </button>
+        </Link>
       </div>
     </div>
   );

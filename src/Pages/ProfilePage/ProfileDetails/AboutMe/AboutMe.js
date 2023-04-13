@@ -129,20 +129,18 @@ const AboutMe = () => {
                 {items.map((item) => (
                   <li
                     key={item}
-                    className={`${
-                      selectedItem === item
-                        ? "font-medium text-[#1B1D48] text-base pl-4"
-                        : "font-medium text-[#1B1D48] text-base pl-4"
-                    } cursor-pointer select-none relative`}
+                    className={`${selectedItem === item
+                      ? "font-medium text-[#1B1D48] text-base pl-4"
+                      : "font-medium text-[#1B1D48] text-base pl-4"
+                      } cursor-pointer select-none relative`}
                     onClick={() => handleItemClick(item)}
                   >
                     <div className="flex items-center">
                       <span
-                        className={`${
-                          selectedItem === item
-                            ? "font-semibold"
-                            : "font-normal"
-                        } block truncate`}
+                        className={`${selectedItem === item
+                          ? "font-semibold"
+                          : "font-normal"
+                          } block truncate`}
                       >
                         {item}
                       </span>
