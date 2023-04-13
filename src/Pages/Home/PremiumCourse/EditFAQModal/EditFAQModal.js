@@ -1,6 +1,6 @@
 import React from 'react';
 
-const editFAQModal = () => {
+const EditFAQModal = () => {
 
     return (
         <section>
@@ -12,7 +12,7 @@ const editFAQModal = () => {
                 <div className="modal pt-24">
                     <div className="modal-box relative ">
                         <label
-                            htmlFor="editFAQModal"
+                           htmlFor="editFAQModal"
                             className="btn btn-sm btn-circle absolute right-2  top-2"
                         >
                             ✕
@@ -101,4 +101,4 @@ const editFAQModal = () => {
     );
 };
 
-export default editFAQModal;
+export default EditFAQModal;
