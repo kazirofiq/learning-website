@@ -21,7 +21,7 @@ const MyClasses = () => {
 
             <div className='flex bg-primary items-center rounded-xl mt-4 w-[320px] lg:w-[350px] h-[45px]'>
               <img src={search_icon} alt="" className='w-4 h-4 ml-6 my-[14.5px]' />
-              <input type="text" id="inputID" placeholder="Search Lesson" className="input bg-primary rounded-r-xl rounded-l-none text-[#FFFFFF] w-[320px] lg:w-[350px] h-[45px]" />
+              <input type="text" id="inputID" placeholder="Search Lesson" className="input bg-primary rounded-r-xl rounded-l-none text-[#FFFFFF] w-[320px] lg:w-[350px] h-[45px] focus:outline-none" />
             </div>
 
             <div className=''>
