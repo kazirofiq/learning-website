@@ -3,6 +3,7 @@ import assignment from '../../assest/assignment/Assignment Vector.png'
 import './Assignment.css';
 import AssignmentResult from './AssignmentResult/AssignmentResult';
 import AssignmentFreeResource from './AssignmentFreeResource/AssignmentFreeResource';
+import AddFAQ from '../Home/PremiumCourse/AddFAQ/AddFAQ';
 
 const Assignment = () => {
     return (
@@ -62,8 +63,9 @@ const Assignment = () => {
 
         // </div>
 
+        <AddFAQ></AddFAQ>
         // <AssignmentResult></AssignmentResult>
-        <AssignmentFreeResource></AssignmentFreeResource>
+        // <AssignmentFreeResource></AssignmentFreeResource>
     );
 };
 

@@ -1,0 +1,33 @@
+/* #inputID::-webkit-input-placeholder {
+    color: black;
+    opacity: 1;
+}
+#inputID::-moz-placeholder {
+    color: black;
+    opacity: 1;
+}
+#inputID:-ms-input-placeholder {
+    color: black;
+    opacity: 1;
+}
+#inputID::-ms-input-placeholder {
+    color: black;
+    opacity: 1;
+}
+#inputID::placeholder {
+    color: black;
+    opacity: 1;
+} */
+
+.custom_shadow{
+    box-shadow: 0px 4px 20px #E7E7FF;
+    border-radius: 12px;
+}
+
+.custom_font{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
