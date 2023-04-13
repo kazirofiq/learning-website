@@ -10,7 +10,6 @@ import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
 import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 import Assignment from "../../Pages/Assignment/Assignment";
-import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
 import UpcomingPremimumCourses from "../../Pages/Courses/UpcomingPremimumCourses/UpcomingPremimumCourses";
 import FreeCorses from "../../Pages/Courses/FreeCorses/FreeCorses";
 import Quiz from "../../Pages/Quiz/Quiz";
@@ -25,6 +24,10 @@ import QrGenaretor from "../../Pages/KdpTools/QrGenaretor/QrGenaretor";
 import CategoryFinder from "../../Pages/KdpTools/CategoryFinder/CategoryFinder";
 import Upcoming from "../../Pages/WorkShop/Upcoming/Upcoming";
 import Previous from "../../Pages/WorkShop/Previous/Previous";
+import ProfileLayout from "../../Layout/ProfileLayout";
+import ImportentLink from "../../Pages/ProfilePage/ImportentLink/ImportentLink";
+import OrderHistory from "../../Pages/ProfilePage/OrderHistory/OrderHistory";
+import AllReviews from "../../Pages/Reviews/AllReviews/AllReviews";
 
 
 const router = createBrowserRouter([
@@ -54,14 +57,6 @@ const router = createBrowserRouter([
                 element: <OrderDetails />
             },
             {
-                path: '/profile',
-                element: <ProfilePage />
-            },
-            {
-                path: '/importent',
-                element: <ImportentLink />
-            },
-            {
                 path: '/upcomingpremimumcourse',
                 element: <UpcomingPremimumCourses />
             },
@@ -78,10 +73,6 @@ const router = createBrowserRouter([
                 element: <Resource />
             },
             {
-                path: '/profile',
-                element: <ProfilePage />
-            },
-            {
                 path: '/workshop',
                 element: <WorkShop />
             },
@@ -92,9 +83,31 @@ const router = createBrowserRouter([
             {
                 path: '/previous',
                 element: <Previous></Previous>
+            },
+            {
+                path: '/allreviews',
+                element: <AllReviews />
             }
 
 
+        ]
+    },
+    {
+        path: '/profile',
+        element: <ProfileLayout />,
+        children: [
+            {
+                path: '/profile',
+                element: <ProfilePage />
+            },
+            {
+                path: '/profile/importent',
+                element: <ImportentLink />
+            },
+            {
+                path: '/profile/orderhistory',
+                element: <OrderHistory />
+            }
         ]
     },
     {
