@@ -29,7 +29,7 @@ const Education = () => {
                 className="opacity-0 absolute h-[18px] w-[18px] cursor-pointer text-[#666666]"
                 onClick={() => checkSwitch(isChecked)}
               />
-              <div className="bg-white border-2  border-[#666666] w-[16px] h-[16px] flex  flex-shrink-0 justify-center items-center mr-2 focus-within:border-[#666666]">
+              <div className="bg-white border-2  border-[#666666] w-[16px] h-[16px] flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-[#666666]">
                 <svg
                   className="fill-current hidden h-[18px] w-[18px] pointer-events-none text-[#666666]"
                   version="1.1"

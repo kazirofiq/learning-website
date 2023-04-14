@@ -12,6 +12,8 @@ import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 import Assignment from "../../Pages/Assignment/Assignment";
 import Quiz from "../../Pages/Quiz/Quiz";
 import ImportantLink from "../../Pages/Modal/ImportantLink/ImportantLink";
+import ProfileDetails from "../../Pages/ProfilePage/ProfileDetails/ProfileDetails";
+import OrderHistory from "../../Pages/Order History/OrderHistory";
 
 
 const router = createBrowserRouter([
@@ -40,13 +42,31 @@ const router = createBrowserRouter([
                 path: '/payment',
                 element: <OrderDetails />
             },
-            {
-                path: '/profile',
-                element: <ProfilePage />
-            },
+            // {
+            //     path: '/profile',
+            //     element: <ProfilePage />
+            // },
             {
                 path: '/important',
                 element: <ImportantLink />
+            },
+            {
+                path: "/profile",
+                element: <ProfilePage />,
+                children: [
+                    {
+                        path: "/profile",
+                        element: <ProfileDetails></ProfileDetails>
+                    },
+                    {
+                        path: "/profile/important",
+                        element: <ImportantLink></ImportantLink>
+                    },
+                    {
+                        path: "/profile/order_history",
+                        element: <OrderHistory></OrderHistory>
+                    },
+                ]
             },
         ]
     },

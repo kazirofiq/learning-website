@@ -27,7 +27,7 @@ const textStyle = {
 
 const ProfileCard = () => {
   return (
-    <div className="card w-[255px] bg-base-100 custom_shadow poppins">
+    <div className="card w-[255px] bg-base-100 custom_shadow poppins mb-[96px]">
       <figure className="px-10 pt-10">
         <img src={profileImg} alt="profile_image" className="rounded-xl" />
       </figure>
@@ -61,18 +61,24 @@ const ProfileCard = () => {
       </div>
       <div className='mt-4 px-[35px] pb-8'>
         <ul className='grid grid-cols-1 gap-y-[31px]'>
-          <li className='flex items-center'>
-            <img className='mr-[15px]' src={planner} alt="" />
-            <h4 className='text-[#666666] font-normal text-base'>My Planner</h4>
-          </li>
-          <li className='flex items-center'>
-            <img className='mr-[15px]' src={ExternalLink} alt="" />
-            <h4 className='text-[#666666] font-normal text-base'>Important Link</h4>
-          </li>
-          <li className='flex items-center'>
-            <img className='mr-[15px]' src={OrderHistory} alt="" />
-            <h4 className='text-[#666666] font-normal text-base'>Order History</h4>
-          </li>
+          <Link>
+            <li className='flex items-center'>
+              <img className='mr-[15px]' src={planner} alt="" />
+              <h4 className='text-[#666666] font-normal text-base'>My Planner</h4>
+            </li>
+          </Link>
+          <Link to='/profile/important'>
+            <li className='flex items-center'>
+              <img className='mr-[15px]' src={ExternalLink} alt="" />
+              <h4 className='text-[#666666] font-normal text-base'>Important Link</h4>
+            </li>
+          </Link>
+          <Link to='/profile/order_history'>
+            <li className='flex items-center'>
+              <img className='mr-[15px]' src={OrderHistory} alt="" />
+              <h4 className='text-[#666666] font-normal text-base'>Order History</h4>
+            </li>
+          </Link>
         </ul>
       </div>
     </div>

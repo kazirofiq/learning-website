@@ -4,7 +4,7 @@ import './OrderHistory.css';
 
 const OrderHistory = () => {
     return (
-        <section className='py-20'>
+        <section className=''>
 
             <div class="overflow-x-auto bshadow poppins">
                 <h2 className="text-xl text-[#1B1D48] py-[16px] px-[19px] font-semibold leading-[30px]">Order History</h2>
