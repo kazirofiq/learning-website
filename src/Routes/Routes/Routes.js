@@ -10,8 +10,8 @@ import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
 import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 import Assignment from "../../Pages/Assignment/Assignment";
-import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
 import Quiz from "../../Pages/Quiz/Quiz";
+import ImportantLink from "../../Pages/Modal/ImportantLink/ImportantLink";
 
 
 const router = createBrowserRouter([
@@ -45,8 +45,8 @@ const router = createBrowserRouter([
                 element: <ProfilePage />
             },
             {
-                path: '/importent',
-                element: <ImportentLink />
+                path: '/important',
+                element: <ImportantLink />
             },
         ]
     },

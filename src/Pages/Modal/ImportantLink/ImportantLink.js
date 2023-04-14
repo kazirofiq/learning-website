@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ImportentLink = () => {
+const ImportantLink = () => {
     return (
         <div className='bg-[#F8F8FF] px-5 lg:px-0 md:px-0 py-8 lg:py-[60px] md:py-[50px]'>
             <div className='bg-[#FFFFFF] w-full max-w-[825px] px-4 lg:mx-6 md:px-5 py-5 lg:my-6 md:py-6 shadow-md rounded-xl'>
@@ -58,4 +58,4 @@ const ImportentLink = () => {
     );
 };
 
-export default ImportentLink;
+export default ImportantLink;
