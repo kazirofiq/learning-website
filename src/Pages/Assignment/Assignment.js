@@ -63,8 +63,8 @@ const Assignment = () => {
 
         // </div>
 
-        <AddFAQ></AddFAQ>
-        // <AssignmentResult></AssignmentResult>
+        // <AddFAQ></AddFAQ>
+        <AssignmentResult></AssignmentResult>
         // <AssignmentFreeResource></AssignmentFreeResource>
     );
 };

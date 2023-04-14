@@ -58,7 +58,7 @@ const AboutMe = () => {
                     {isOpen && (
                         <div className='flex justify-end'>
                             <ul
-                                class="absolute mt-1 lg:mr-0 text-right w-[81px] bg-[#FFFFFF] rounded-md shadow-lg max-h-40 overflow-auto z-10"
+                                class="absolute mt-1 lg:mr-0 text-right w-[81px] bg-[#FFFFFF] custom_shadow rounded-md shadow-lg max-h-40 overflow-auto z-10"
                                 tabindex="-1"
                                 role="listbox"
                                 aria-labelledby="listbox-label"

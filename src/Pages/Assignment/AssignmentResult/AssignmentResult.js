@@ -1,6 +1,7 @@
 import React from 'react';
 
 import '../Assignment.css';
+import AssignmentProgressbar from './AssignmentProgressbar';
 
 const AssignmentResult = () => {
     return (
@@ -42,14 +43,9 @@ const AssignmentResult = () => {
                 </div>
             </div>
 
-            <div className='flex my-6 lg:mt-8 gap-[12px] items-center justify-center'>
-                <div className="radial-progress progress-secondary " style={{ "--value": 70 }}><span className='text-[#333333] font-bold text-[14.07px] leading-[21.1px]'>70</span></div>
-                <div>
-                    <p className='text-[#333333] poppins text-[16px] leading-[22.28px] font-normal'>Your Score
-                        <br /> Out of 100 Marks</p>
-                </div>
+            <div className='w-[212.07px] h-[68px] mx-auto mt-8'>
+                <AssignmentProgressbar />
             </div>
-
         </div>
 
     );

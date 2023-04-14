@@ -7,8 +7,8 @@ import ProfileCompleteProgressbar from '../ProfileCompletedRange/ProfileComplete
 
 const ProfileDetails = () => {
   return (
-    <div className=''>
-      <div className='p-6 bg-[#FFFFFF] shadow-sm'>
+    <div className='mb-[134px]'>
+      <div className='p-6 bg-[#FFFFFF] custom_shadow'>
         <h1 className='text-[#1B1D48] font-semibold text-base'>My Profile</h1>
         <UploadImageCard />
         <div className='w-[150px] h-[58px] lg:hidden block'>
@@ -16,10 +16,10 @@ const ProfileDetails = () => {
         </div>
         <AboutMe />
       </div>
-      <div className='p-6 bg-[#FFFFFF] shadow-sm mt-6'>
+      <div className='p-6 bg-[#FFFFFF] custom_shadow mt-6'>
         <Address />
       </div>
-      <div className='p-6 bg-[#FFFFFF] shadow-sm mt-6'>
+      <div className='p-6 bg-[#FFFFFF] custom_shadow mt-6'>
         <Education />
       </div>
     </div>

@@ -27,7 +27,7 @@ const textStyle = {
 
 const ProfileCard = () => {
   return (
-    <div className="card w-[255px] bg-base-100 shadow-xl poppins">
+    <div className="card w-[255px] bg-base-100 custom_shadow poppins">
       <figure className="px-10 pt-10">
         <img src={profileImg} alt="profile_image" className="rounded-xl" />
       </figure>
