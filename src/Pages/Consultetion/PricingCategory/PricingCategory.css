@@ -1,6 +1,5 @@
 .pricing-card {
-    width: 320px;
-
+    width: 350px;
     border-radius: 10px;
     padding: 24px 0px 24px 0px;
     background-color: white;
@@ -19,16 +18,19 @@
     color: #666666;
 }
 
-.pricing-card:hover{
+.pricing-card:hover {
     background-color: #3D419F;
-    color:white;
-}
-.pricing-card:hover .price-category{
     color: white;
 }
+
+.pricing-card:hover .price-category {
+    color: white;
+}
+
 .pricing-card:hover ul {
     color: white;
 }
-.pricing-card:hover button{
+
+.pricing-card:hover button {
     color: #3D419F;
 }
