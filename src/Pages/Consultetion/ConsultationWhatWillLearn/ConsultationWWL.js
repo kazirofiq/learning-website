@@ -2,11 +2,11 @@ import React from 'react';
 import checkIcon from "../../../assest/buyCourseCardIcon/Group 1000003311.png";
 const ConsultationWWL = () => {
     return (
-        <div className='py-[48px]'>
+        <div className='pt-0 pb-[36px] lg:pt-[48px] lg-pb-[48px]'>
             <div className='mt-6 poppins px-[20px] lg:px-[145px]'>
                 <div className='mx-auto max-w-[750px mx-auto]' id="WhatWillYouLearn">
-                    <h2 className='font-bold text-2xl text-[#1B1D48] text-center'>What Will You Learn?</h2>
-                    <div className='mt-2 lg:mt-5 mx-auto max-w-[750px]'>
+                    <h2 className='font-bold text-2xl text-[#1B1D48] text-left'>What Will You Learn?</h2>
+                    <div className='mt-2 lg:mt-5 max-w-[750px]'>
                         <ul className='mt-2 lg:mt-5  justify-center mx-auto grid grid-cols-1 lg:grid-cols-2'>
                             <li className='flex items-center pb-4'>
                                 <img className='h-4 w-4 mr-[11px]' src={checkIcon} alt="" />

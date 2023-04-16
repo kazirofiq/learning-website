@@ -2,15 +2,15 @@ import React from 'react';
 import preIcon from '../../assest/icon/preicon.png';
 import nextIcon from '../../assest/icon/nexticon.png'
 import downloadIcon from '../../assest/icon/DownloadSimple.png'
-import './Assignment.css'
+import './AssignmentList.css'
 
-const Assignment = () => {
+const AssignmentList = () => {
     return (
     
                 <section className='student-list-table-shadow max-w-[1138px] mx-auto'>
                     <div class="container px-4 mx-auto bg-white my-8 ">
                         <div class="flex items-center px-[5px] py-[10px] justify-between">
-                            <h2 class="text-sm font-medium leading-[21px] text-[#333333]">Student List</h2>
+                            <h2 class="text-sm font-medium leading-[21px] text-[#333333]">Assignment List</h2>
                             {/* <select className="selectop outline-none focus-none">
                                 <option>Amazon Kdp course</option>
                                 <option>Ui/Ux Design course </option>
@@ -145,4 +145,4 @@ const Assignment = () => {
     );
 };
 
-export default Assignment;
+export default AssignmentList;
