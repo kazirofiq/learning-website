@@ -65,7 +65,6 @@ const Assignment = () => {
 
         // <AddFAQ></AddFAQ>
         <AssignmentResult></AssignmentResult>
-        // <AssignmentFreeResource></AssignmentFreeResource>
     );
 };
 
