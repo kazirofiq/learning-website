@@ -10,12 +10,8 @@ import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
 import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 import Assignment from "../../Pages/Assignment/Assignment";
+import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
 import Quiz from "../../Pages/Quiz/Quiz";
-import ImportantLink from "../../Pages/Modal/ImportantLink/ImportantLink";
-import ProfileDetails from "../../Pages/ProfilePage/ProfileDetails/ProfileDetails";
-import OrderHistory from "../../Pages/Order History/OrderHistory";
-import PlannerPage from "../../Pages/PlannerPage/PlannerPage";
-import StudentDashboard from "../../Pages/StudentDashboard/StudentDashboard/StudentDashboard";
 
 
 const router = createBrowserRouter([
@@ -45,30 +41,82 @@ const router = createBrowserRouter([
                 element: <OrderDetails />
             },
             {
+                path: '/upcomingpremimumcourse',
+                element: <UpcomingPremimumCourses />
+            },
+            {
+                path: '/freecorses',
+                element: <FreeCorses />
+            },
+            {
+                path: '/consultetion',
+                element: <Consultetion />
+            },
+            {
+                path: '/resource',
+                element: <Resource />
+            },
+            {
+                path: '/workshop',
+                element: <WorkShop />
+            },
+            {
+                path: '/upcoming',
+                element: <Upcoming></Upcoming>
+            },
+            {
+                path: '/previous',
+                element: <Previous></Previous>
+            },
+            {
+                path: '/allreviews',
+                element: <AllReviews />
+            }
+
+
+        ]
+    },
+    {
+        path: '/profile',
+        element: <ProfileLayout />,
+        children: [
+            {
                 path: '/student_dashboard',
                 element: <StudentDashboard />
             },
             {
-                path: "/profile",
-                element: <ProfilePage />,
-                children: [
-                    {
-                        path: "/profile",
-                        element: <ProfileDetails></ProfileDetails>
-                    },
-                    {
-                        path: "/profile/planner",
-                        element: <PlannerPage></PlannerPage>
-                    },
-                    {
-                        path: "/profile/important",
-                        element: <ImportantLink></ImportantLink>
-                    },
-                    {
-                        path: "/profile/order_history",
-                        element: <OrderHistory></OrderHistory>
-                    },
-                ]
+                path: '/importent',
+                element: <ImportentLink />
+            },
+            {
+                path: '/profile/orderhistory',
+                element: <OrderHistory />
+            }
+        ]
+    },
+    {
+        path: '/kdptools',
+        element: <KdpLayout />,
+        children: [
+            {
+                path: '/kdptools',
+                element: <KdpTools />,
+            },
+            {
+                path: '/kdptools/bsrcalculetor',
+                element: <BsrCalculetor></BsrCalculetor>
+            },
+            {
+                path: '/kdptools/royaltycalculetor',
+                element: <RoyalCalculetor></RoyalCalculetor>
+            },
+            {
+                path: '/kdptools/qrgenaretor',
+                element: <QrGenaretor></QrGenaretor>
+            },
+            {
+                path: '/kdptools/categoryfinder',
+                element: <CategoryFinder></CategoryFinder>
             },
         ]
     },
@@ -92,6 +140,38 @@ const router = createBrowserRouter([
                 path: '/dashboard/myclass',
                 element: <MyClasses></MyClasses>
             },
+        ]
+    },
+    {
+        path: '/admindashboard',
+        element: <AdmindashboardLayout></AdmindashboardLayout>,
+        children: [
+            {
+                path: '/admindashboard',
+                element: <AdminDashboard></AdminDashboard>
+            },
+            // {
+            //     path: '/admindashboard/mycourse',
+            //     element: <MyCourse></MyCourse>
+            // },
+
+            {
+                path: "/admindashboard/mycourse",
+                element: <MyCourse></MyCourse>,
+                children: [
+                    {
+                        path: "/admindashboard/mycourse",
+                        element: <CourseList></CourseList>
+                    },
+                    {
+                        path: "/admindashboard/mycourse/draftcourse",
+                        element: <DraftCourse></DraftCourse>
+                    },
+
+                ]
+            },
+
+
         ]
     },
 ])

@@ -33,7 +33,7 @@ color: #FFFFFF;
                   <img src={premium} alt="Shoes" className="rounded-xl" />
                 </figure>
               </div>
-              <div className="card-body items-center text-centere">
+              <div className="card-body items-center text-center">
                 <h2 className="card-title text-[24px] font-[700] text-[#1B1D48]">
                   Premium Course
                 </h2>

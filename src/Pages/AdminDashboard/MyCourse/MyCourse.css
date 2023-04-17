@@ -1,0 +1,17 @@
+.table-back td, .table-back th{
+    background-color: #FFFFFF;
+    border: none;
+    
+}
+
+.table-back{
+    box-shadow: 0px 4px 20px #E7E7FF;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+}
+.create{
+    border: 1px solid #3D419F;
+    border-radius: 8px;
+    height: 40px;
+
+}
