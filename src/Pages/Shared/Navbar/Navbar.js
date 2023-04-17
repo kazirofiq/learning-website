@@ -29,13 +29,14 @@ const Navbar = () => {
                     </label>
                     <ul
                         tabIndex={0}
-                        className="menu dropdown-content mt-0 lg:mt-9 w-[165px] h-[74px] font-normal text-sm leading-[21px] rounded-[10px] border border-[#3D419F] bg-[#FFFFFF]"
+                        className="menu dropdown-content mt-0 lg:mt-9 w-[165px] h-[75px] font-normal text-sm leading-[21px] rounded-[10px] border border-[#3D419F] bg-[#FFFFFF]"
                     >
                         <li>
-                            <Link to='/premium_course' className='text-[#333333] bg-[#FFFFFF] h-[36px] py-2 px-6'>Premium Course </Link>
+                            <Link to='/premium_course' className='text-[#333333] bg-[#FFFFFF] h-[36px] py-2 px-6 hover:bg-[#ECECF5]'>Premium Course </Link>
                         </li>
+                        <hr />
                         <li>
-                            <Link to='/freecorses' className='text-[#333333] bg-[#ECECF5] rounded-t-[12px] h-[36px] py-2 px-6'>Free Course</Link>
+                            <Link to='/freecorses' className='text-[#333333] hover:bg-[#ECECF5] h-[36px] py-2 px-6'>Free Course</Link>
                         </li>
                     </ul>
                 </div>
@@ -53,43 +54,22 @@ const Navbar = () => {
                     </label>
                     <ul
                         tabIndex={0}
-                        className="menu dropdown-content mt-0 lg:mt-9 w-[147px] h-[74px] font-normal text-sm leading-[21px] rounded-[10px] border border-[#3D419F] bg-[#FFFFFF]"
+                        className="menu dropdown-content mt-0 lg:mt-9 w-[147px] h-[75px] font-normal text-sm leading-[21px] rounded-[10px] border border-[#3D419F] bg-[#FFFFFF]"
                     >
                         <li>
-                            <Link to='/resource' className='text-[#333333] bg-[#FFFFFF] h-[36px] py-2 px-6'>Free Resource </Link>
+                            <Link to='/resource' className='text-[#333333] bg-[#FFFFFF] h-[36px] py-2 px-6 hover:bg-[#ECECF5]'>Free Resource </Link>
                         </li>
+                        <hr />
                         <li>
-                            <Link to='/kdptools' className='text-[#333333] bg-[#ECECF5] rounded-t-[12px] h-[36px] py-2 px-6'>KDP Tool</Link>
+                            <Link to='/kdptools' className='text-[#333333] hover:bg-[#ECECF5] h-[36px] py-2 px-6'>KDP Tool</Link>
                         </li>
                     </ul>
                 </div>
             </li>
             <li className='text-[#333333] text-base font-normal'><Link to="/consultetion">Consultancy</Link></li>
-            <li>
-                <div className="dropdown">
-                    <label
-                        tabIndex={0}
-                        className="cursor-pointer flex items-center"
-                    >
-                        <span className="text-[#333333] capitalize text-base font-normal">
-                            Workshop
-                        </span>{" "}
-                        <BiChevronDown className='text-[#333333]' />
-                    </label>
-                    <ul
-                        tabIndex={0}
-                        className="menu dropdown-content mt-0 lg:mt-9 w-[121px] h-[74px] font-normal text-sm leading-[21px] rounded-[10px] border border-[#3D419F] bg-[#FFFFFF]"
-                    >
-                        <li>
-                            <Link to='/upcoming' className='text-[#333333] bg-[#ECECF5] rounded-[10px] h-[36px] py-2 px-6'>Upcoming</Link>
-                        </li>
-                        <li>
-                            <Link to='/previous' className='text-[#333333] bg-[#FFFFFF] h-[36px] py-2 px-6'>Previous</Link>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li className='text-[#333333] text-base font-normal'><Link to='/dashboard'>My Course</Link></li>
+            <li className='text-[#333333] text-base font-normal'><Link to="/workshop/upcoming">WorkShop</Link></li>
+
+            <li className='text-[#333333] text-base font-normal'><Link to='/mycourses'>My Course</Link></li>
             <Link to='/login' ><li className="lg:text-base login inline-block rounded border border-[#3D419F] font-normal text-[#282B6B] hover:bg-[#3D419F] hover:text-white focus:outline-none focus:ring active:bg-[#3D419F]">Login </li></Link>
             <Link to='/signup' ><li className="lg:text-base inline-block rounded border border-[#3D419F] font-normal text-[#282B6B] hover:bg-[#3D419F] hover:text-white focus:outline-none focus:ring active:bg-[#3D419F] su">Sign Up</li></Link>
             <div className="dropdown dropdown-end">

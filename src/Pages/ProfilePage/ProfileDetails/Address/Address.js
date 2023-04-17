@@ -1,27 +1,60 @@
+import { PencilSquareIcon } from '@heroicons/react/24/solid';
 import React from 'react';
+import AddressEdit from '../../ProfileDetailsEdit/AddressEdit/AddressEdit';
 
 const Address = () => {
     return (
         <div className='poppins'>
-            <h1 className='text-[#1B1D48] font-medium lg:font-semibold lg:text-base text-lg'>Address</h1>
+            <div className="flex justify-between items-center">
+                <h1 className="text-[#1B1D48] font-medium lg:font-semibold lg:text-base text-lg">
+                    Address
+                </h1>
+                <label htmlFor="edit-address-modal">
+                    <div className="flex items-center gap-x-1 text-[#1B1D48] cursor-pointer">
+                        <PencilSquareIcon className='h-4 w-4 lg:h-5 lg:w-5' />
+                        <p className="font-medium lg:font-semibold lg:text-sm text-sm">Edit</p>
+                    </div>
+                </label>
+            </div>
+            <AddressEdit />
             <div className='lg:grid flex lg:flex-row flex-col grid-cols-2'>
-            <div className='mt-3'>
-                <label htmlFor="Vill" className='block text-[#666666] font-normal text-sm mb-2'>Vill</label>
-                <input type="text" id='Vill' placeholder="Village" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
-            </div>
-            <div className='mt-3'>
-                <label htmlFor="Post" className='block text-[#666666] font-normal text-sm mb-2'>Post</label>
-                <input type="text" id='Post' placeholder="Post" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
-            </div>
-            <div className='mt-3'>
-                <label htmlFor="Thana" className='block text-[#666666] font-normal text-sm mb-2'>Thana</label>
-                <input type="email" id='Thana' placeholder="Thana" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
-            </div>
-            <div className='mt-3'>
-                <label htmlFor="District" className='block text-[#666666] font-normal text-sm mb-2'>District</label>
-                <input type="text" id='District' placeholder="District" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
-            </div>
+                <div className="mt-3">
+                    <label
+                        htmlFor="name"
+                        className="block text-[#666666] font-semibold text-sm mb-2"
+                    >
+                        Village
+                    </label>
+                    <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">Rangpur,newzummapara</p>
                 </div>
+                <div className="mt-3">
+                    <label
+                        htmlFor="name"
+                        className="block text-[#666666] font-semibold text-sm mb-2"
+                    >
+                        Post
+                    </label>
+                    <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">Rangpur,5400</p>
+                </div>
+                <div className="mt-3">
+                    <label
+                        htmlFor="name"
+                        className="block text-[#666666] font-semibold text-sm mb-2"
+                    >
+                        Thana
+                    </label>
+                    <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">Kotoali</p>
+                </div>
+                <div className="mt-3">
+                    <label
+                        htmlFor="name"
+                        className="block text-[#666666] font-semibold text-sm mb-2"
+                    >
+                        District
+                    </label>
+                    <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">Rangpur,Bangladesh</p>
+                </div>
+            </div>
         </div>
     );
 };

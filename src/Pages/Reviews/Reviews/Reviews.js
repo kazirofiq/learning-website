@@ -48,7 +48,7 @@ const Reviews = () => {
     ]
 
     return (
-        <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-[30px] mt-[11px]  lg:mt-[48px] md:mt-[30px]'>
+        <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-[30px] mt-[11px]  lg:mt-[48px] md:mt-[30px]  mb-10 lg:mb-[96px] md:mb-[60px]'>
             {
                 reviews.map(review => (
                     <div>
