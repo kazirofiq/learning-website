@@ -12,6 +12,26 @@ import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 import Assignment from "../../Pages/Assignment/Assignment";
 import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
 import Quiz from "../../Pages/Quiz/Quiz";
+import FreeCorses from "../../Pages/Courses/FreeCorses/FreeCorses";
+import WorkShop from "../../Pages/WorkShop/WorkShop";
+import Upcoming from "../../Pages/WorkShop/Upcoming/Upcoming";
+import Previous from "../../Pages/WorkShop/Previous/Previous";
+import AllReviews from "../../Pages/Reviews/AllReviews/AllReviews";
+import ProfileLayout from "../../Layout/ProfileLayout";
+import StudentDashboard from "../../Pages/StudentDashboard/StudentDashboard/StudentDashboard";
+import OrderHistory from "../../Pages/ProfilePage/OrderHistory/OrderHistory";
+import CategoryFinder from "../../Pages/KdpTools/CategoryFinder/CategoryFinder";
+import QrGenaretor from "../../Pages/KdpTools/QrGenaretor/QrGenaretor";
+import RoyalCalculetor from "../../Pages/KdpTools/RoyaltyCalculetor/RoyalCalculetor";
+import BsrCalculetor from "../../Pages/KdpTools/BsrCalculetor/BsrCalculetor";
+import KdpTools from "../../Pages/KdpTools/KdpTools/KdpTools";
+import KdpLayout from "../../Layout/KdpLayout";
+import DraftCourse from "../../Pages/AdminDashboard/DraftCourse/DraftCourse";
+import CourseList from "../../Pages/AdminDashboard/CourseList/CourseList";
+import MyCourse from "../../Pages/AdminDashboard/MyCourse/MyCourse";
+import AdminDashboard from "../../Pages/AdminDashboard/AdminDashboard";
+import AdmindashboardLayout from "../../Pages/AdminDashboard/AdmindashboardLayout/AdmindashboardLayout";
+import Resource from "../../Pages/Resource/Resource";
 
 
 const router = createBrowserRouter([
@@ -42,7 +62,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/upcomingpremimumcourse',
-                element: <UpcomingPremimumCourses />
+                element: <pUpcomingPremimumCourses />
             },
             {
                 path: '/freecorses',

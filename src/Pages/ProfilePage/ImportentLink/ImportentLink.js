@@ -2,8 +2,8 @@ import React from 'react';
 
 const ImportantLink = () => {
     return (
-<<<<<<<< HEAD:src/Pages/Modal/ImportantLink/ImportantLink.js
-        <div className='px-5 lg:px-0 md:px-0 mb-[96px]'>
+<<<<<<<< HEAD: src / Pages / Modal / ImportantLink / ImportantLink.js
+        < div className = 'px-5 lg:px-0 md:px-0 mb-[96px]' >
             <div className='bg-[#FFFFFF] max-w-[825px] p-6 custom_shadow rounded-xl'>
 ========
         <div className='bg-[#F8F8FF] px-5 lg:px-0 md:px-0 py-8 lg:py-[60px] md:py-[50px]'>
