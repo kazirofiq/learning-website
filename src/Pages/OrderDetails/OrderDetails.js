@@ -6,6 +6,8 @@ import graphics_banner from "../../assest/OrderDetails/graphics_banner.png";
 import bkash from "../../assest/OrderDetails/bkash.png";
 import nagad from "../../assest/OrderDetails/nagad.png";
 import visa from "../../assest/OrderDetails/visa.png";
+import { Link } from "react-router-dom";
+import SuccesModal from "../Modal/SuccesModal/SuccesModal";
 
 // const MainContainer = styled.div`
 //   width: 100%;
@@ -261,15 +263,22 @@ const OrderDetails = () => {
                 <img className="payment-logo " src={visa} alt="blash" />
               </div>
               <div>
-                <button className=" w-full bg-[#3D419F] rounded-xl text-white py-3 font-semibold ">
-                  {" "}
-                  Payment Complete
-                </button>
+                <Link>
+                  <label htmlFor="my-modal-3">
+                    <button className=" w-full bg-[#3D419F] rounded-xl text-white py-3 font-semibold ">
+                      {" "}
+                      Payment Complete
+                    </button>
+                  </label>
+
+                </Link>
               </div>
+
             </div>
           </div>
         </div>
       </div>
+      <SuccesModal />
     </section>
   );
 };

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Outlet } from 'react-router';
 import Navbar from '../Pages/Shared/Navbar/Navbar';
+import Footer from '../Pages/Shared/Footer/Footer';
 import Breadcrumb from '../Pages/Others/Breadcrumb/Breadcrumb';
 import MyClasses from '../Pages/MyClasses/MyClasses';
+import Dashboard from '../Pages/Dashboard/Dashboard';
 
 const MyCourseLayout = () => {
     return (
@@ -17,10 +19,19 @@ const MyCourseLayout = () => {
                                 type="checkbox" id='toggle-sidebar' />
                             <Outlet></Outlet>
                         </div>
-                        <MyClasses></MyClasses>
+                        <div className='hidden lg:block'>
+                            <MyClasses></MyClasses>
+                        </div>
                     </div>
+                    <Dashboard />
+                </div>
+                <div className='lg:hidden flex items-center justify-center'>
+                    <MyClasses />
                 </div>
             </section>
+            <div className='mt-14 lg:mt-20'>
+                <Footer />
+            </div>
         </>
     );
 };
