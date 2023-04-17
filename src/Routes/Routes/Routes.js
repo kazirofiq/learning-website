@@ -21,6 +21,7 @@ import Quiz from "../../Pages/Quiz/Quiz";
 import Consultetion from "../../Pages/Consultetion/Consultation";
 import Resource from "../../Pages/Resource/Resource";
 import WorkShop from "../../Pages/WorkShop/WorkShop";
+import SendNotification from "../../Pages/AdminDashboard/SendNotificationModal/SendNotificationModal";
 
 
 const router = createBrowserRouter([
@@ -106,8 +107,8 @@ const router = createBrowserRouter([
                 element: <AdminDashboard></AdminDashboard>
             },
             // {
-            //     path: '/admindashboard/mycourse',
-            //     element: <MyCourse></MyCourse>
+            //     path: '/admindashboard/sendnotification',
+            //     element: <SendNotification></SendNotification>
             // },
             
             {
