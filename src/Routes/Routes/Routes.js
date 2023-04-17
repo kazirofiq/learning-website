@@ -14,6 +14,8 @@ import Quiz from "../../Pages/Quiz/Quiz";
 import ImportantLink from "../../Pages/Modal/ImportantLink/ImportantLink";
 import ProfileDetails from "../../Pages/ProfilePage/ProfileDetails/ProfileDetails";
 import OrderHistory from "../../Pages/Order History/OrderHistory";
+import PlannerPage from "../../Pages/PlannerPage/PlannerPage";
+import StudentDashboard from "../../Pages/StudentDashboard/StudentDashboard/StudentDashboard";
 
 
 const router = createBrowserRouter([
@@ -42,13 +44,9 @@ const router = createBrowserRouter([
                 path: '/payment',
                 element: <OrderDetails />
             },
-            // {
-            //     path: '/profile',
-            //     element: <ProfilePage />
-            // },
             {
-                path: '/important',
-                element: <ImportantLink />
+                path: '/student_dashboard',
+                element: <StudentDashboard />
             },
             {
                 path: "/profile",
@@ -57,6 +55,10 @@ const router = createBrowserRouter([
                     {
                         path: "/profile",
                         element: <ProfileDetails></ProfileDetails>
+                    },
+                    {
+                        path: "/profile/planner",
+                        element: <PlannerPage></PlannerPage>
                     },
                     {
                         path: "/profile/important",

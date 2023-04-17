@@ -61,7 +61,7 @@ const ProfileCard = () => {
       </div>
       <div className='mt-4 px-[35px] pb-8'>
         <ul className='grid grid-cols-1 gap-y-[31px]'>
-          <Link>
+          <Link to='/profile/planner'>
             <li className='flex items-center'>
               <img className='mr-[15px]' src={planner} alt="" />
               <h4 className='text-[#666666] font-normal text-base'>My Planner</h4>
