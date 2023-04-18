@@ -10,7 +10,7 @@ const FrequentlyAskedQuestion = () => {
                 <br /><span className='text-[#38A27B]'>Question</span></p>
 
             <div className="grid grid-cols-1 justify-center items-center">
-                <div className="container flex flex-col justify-center mt-6 lg:mt-12 zi">
+                <div className="container flex flex-col justify-center mt-6 lg:mt-12 -z-50">
                     <div className="space-y-4 lg:w-[730px] w-[320px] mb-4 mx-auto lg:mx-0">
                         <div className="collapse collapse-arrow">
                             <input type="checkbox" className="peer" />
@@ -90,19 +90,6 @@ const FrequentlyAskedQuestion = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="collapse collapse-arrow hvr order bx border-base-300 bg-base-100 rounded-box">
-                  <input type="checkbox" className="peer" />
-                  <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
-                    What makes Defferent From Other Available Apps On The App
-                    Store?
-                  </div>
-                  <div className="collapse-content bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
-                    <p className=" ">
-                      attribute is necessary to make the div
-                      focusable
-                    </p>
-                  </div>
-                </div>
                 </div>
             </div>
         </section>

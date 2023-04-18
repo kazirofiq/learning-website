@@ -6,6 +6,7 @@ const About = () => {
             style={{
                 backgroundImage: `url(${bg})`,
                 backgroundRepeat: 'no-repeat',
+
             }} className="bg-[#FFFFFF]">
             <section >
                 <div className="hero lg:pt-20 pb-[84px]">

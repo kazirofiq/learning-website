@@ -151,7 +151,7 @@ const Resource = () => {
 
                     <nav
                       aria-label="Account Nav"
-                      className="my-1 z-50 flex flex-col  transition-opacity bottom-[] w-full   "
+                      className="my-1 z-50 flex flex-col  transition-opacity bottom-[] w-full "
                     >
                       <div className="form-control">
                         <label className="cursor-pointer  flex items-center text-[#666666] text-[14px]">

@@ -46,11 +46,11 @@ const EnrollMentCard = () => {
     return (
     //    <div className={activeItem==="free-course" && "hidden"}>
          <div  className={`${
-            (activeItem !== "free-course" && activeItem !== "frequentlyAskedQuestion") ? "lg:mt-[-200px] mx-auto" : "hidden"
+            (activeItem !== "free-course" && activeItem !== "frequentlyAskedQuestion") ? "lg:mt-[-200px] mx-auto" : ""
           } ${
             (activeItem === "free-course" || activeItem === "frequentlyAskedQuestion") ? "hidden" : ""
           }`}>
-            <div className="card poppins w-[320px] lg:w-[350px] bg-base-100 shadow-xl inline-block sticky top-0">
+            <div className="card poppins sticky top-0 w-[320px] lg:w-[350px] bg-base-100 shadow-xl inline-block lg:h-[730px]">
                 <div className='relative cursor-pointer'>
                     <figure>
                         <img className='lg:block hidden' src={videoImg} alt="video" />
@@ -62,53 +62,46 @@ const EnrollMentCard = () => {
                     </figure>
                 </div>
 
-               
-                <div className="card-body lg:px-[25px] p-3 mt-4 lg:mt-[0px]">
-                    <div className=''>
-                        <div className="
-                         h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
+                <div className="card-body lg:px-[25px] p-3">
+                    <div>
+                        <div className="lg:alert lg:alert- h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
                             <div className='flex items-center'>
-                                <img className='h-5 w-[22px] mr-[9px]' src={instractor} alt="" />
+                                <img className='h-5 w-[22px] lg:mr-0 mr-[9px]' src={instractor} alt="" />
                                 <span className='font-normal text-sm lg:text-base text-[#333333]'>Instructor</span>
                             </div>
                             <h4 className='font-normal text-sm lg:text-base text-[#333333]'>Rasel Mondol</h4>
                         </div>
-                        <div className="
-                         h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
+                        <div className="lg:alert lg:alert- h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
                             <div className='flex items-center'>
-                                <img className='h-5 w-[22px] mr-[9px]' src={time} alt="" />
+                                <img className='h-5 w-[22px] lg:mr-0 mr-[9px]' src={time} alt="" />
                                 <span className='font-normal text-sm lg:text-base text-[#333333]'>Duration</span>
                             </div>
                             <h4 className='font-normal text-sm lg:text-base text-[#333333]'>3 Month</h4>
                         </div>
-                        <div className="
-                         h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
+                        <div className="lg:alert lg:alert- h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
                             <div className='flex items-center'>
-                                <img className='h-5 w-[22px] mr-[9px]' src={lesson} alt="" />
+                                <img className='h-5 w-[22px] lg:mr-0 mr-[9px]' src={lesson} alt="" />
                                 <span className='font-normal text-sm lg:text-base text-[#333333]'>Lesson</span>
                             </div>
                             <h4 className='font-normal text-sm lg:text-base text-[#333333]'>24</h4>
                         </div>
-                        <div className="
-                         h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
+                        <div className="lg:alert lg:alert- h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
                             <div className='flex items-center'>
-                                <img className='h-5 w-[22px] mr-[9px]' src={enroll} alt="" />
+                                <img className='h-5 w-[22px] lg:mr-0 mr-[9px]' src={enroll} alt="" />
                                 <span className='font-normal text-sm lg:text-base text-[#333333]'>Enrolled</span>
                             </div>
                             <h4 className='font-normal text-sm lg:text-base text-[#333333]'>35 Student</h4>
                         </div>
-                        <div className="
-                         h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
+                        <div className="lg:alert lg:alert- h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
                             <div className='flex items-center'>
-                                <img className='h-5 w-[22px] mr-[9px]' src={group} alt="" />
+                                <img className='h-5 w-[22px] lg:mr-0 mr-[9px]' src={group} alt="" />
                                 <span className='font-normal text-sm lg:text-base text-[#333333]'>Course Level</span>
                             </div>
                             <h4 className='font-normal text-sm lg:text-base text-[#333333]'>Intermediate</h4>
                         </div>
-                        <div className="
-                         h-11 rounded-none border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
+                        <div className="lg:alert lg:alert- h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
                             <div className='flex items-center'>
-                                <img className='h-5 w-[22px] mr-[9px]' src={access} alt="" />
+                                <img className='h-5 w-[22px] lg:mr-0 mr-[9px]' src={access} alt="" />
                                 <span className='font-normal text-sm lg:text-base text-[#333333]'>Access</span>
                             </div>
                             <h4 className='font-normal text-sm lg:text-base text-[#333333]'>Life Time</h4>
