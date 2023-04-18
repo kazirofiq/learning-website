@@ -21,16 +21,38 @@ const PremiumCourseNavebar = () => {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     let activeIndex = menuItemIds.length + 1;
 
+<<<<<<< HEAD
     menuItems.forEach((item, index) => {
       const top = item.offsetTop - 50; // subtract header height
       const bottom = top + item.offsetHeight;
+=======
+      menuItems.forEach((item, index) => {
+        const top = item.offsetTop - 50;
+        const bottom = top + item.offsetHeight;
+>>>>>>> 94d40ec85b82a40b21cc53caf8c928a223954643
 
       if (scrollPosition >= top && scrollPosition < bottom) {
         activeIndex = index;
       }
     });
 
+<<<<<<< HEAD
     setActiveItem(menuItemIds[activeIndex]);
+=======
+      setActiveItem(menuItemIds[activeIndex]);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleItemClick = (itemId) => {
+    const scrollPosition = document.getElementById(itemId).offsetTop - 50;
+    window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+    setActiveItem(itemId);
+>>>>>>> 94d40ec85b82a40b21cc53caf8c928a223954643
   };
 
   window.addEventListener('scroll', handleScroll);

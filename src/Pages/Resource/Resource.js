@@ -6,6 +6,7 @@ import { BiChevronLeft } from "react-icons/bi";
 import { AiOutlineBars } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
 import { Link } from "react-router-dom";
+import ResourceDetails from "./ResourceDetails/ResourceDetails";
 
 const Resource = () => {
   const [open, setOpen] = useState("");
@@ -60,9 +61,9 @@ const Resource = () => {
           </h5>
         </div>
         <div className="grid grid-cols-1  md:grid-cols-4 gap-0 md:gap-5">
-          <div className={` ${ open ? `${open}` : "hidden" }  bg-white md:bg-[#F8F8FF] p-5 mb-10 rounded-md md:block`}
+          <div className={` ${open ? `${open}` : "hidden"}  bg-white md:bg-[#F8F8FF] p-5 mb-10 rounded-md md:block`}
           >
-            
+
             <div className="flex justify-between items-center border-b-2 pb-3 ">
               <div className="flex justify-start items-center font-bold text-[#333333]">
                 <span>
@@ -71,15 +72,15 @@ const Resource = () => {
                 <span className="pl-2">Filter</span>
               </div>
               <div className=" flex justify-end   text-xl md:hidden">
-              <ImCross onClick={() => handleButtonClose("hidden")} />
-            </div>
+                <ImCross onClick={() => handleButtonClose("hidden")} />
+              </div>
               <div className=" hidden md:block">
                 <BiChevronLeft />
               </div>
             </div>
             <div>
               <ul>
-              <li tabIndex={0} className="relative md:hidden border-b-2 ">
+                <li tabIndex={0} className="relative md:hidden border-b-2 ">
                   <details className="group [&_summary::-webkit-details-marker]:hidden">
                     <summary className="flex cursor-pointer items-center justify-between rounded-lg  py-2 text-gray-500 hover:text-gray-700">
                       <span className="text-[#333333] text-base  font-bold">
@@ -107,7 +108,7 @@ const Resource = () => {
                       aria-label="Account Nav"
                       className="my-1  flex flex-col   transition-opacity   w-full   "
                     >
-                      
+
                       <div className="form-control">
                         <label className="cursor-pointer  flex items-center text-[#666666] text-[14px]">
                           <input type="checkbox" />
@@ -120,12 +121,12 @@ const Resource = () => {
                           <span className="pl-2"> Recent</span>
                         </label>
                       </div>
-                     
-             
+
+
                     </nav>
                   </details>
-              </li>
-              <li tabIndex={0} className="relative border-b-2  md:border-b-0 ">
+                </li>
+                <li tabIndex={0} className="relative border-b-2  md:border-b-0 ">
                   <details className="group [&_summary::-webkit-details-marker]:hidden">
                     <summary className="flex cursor-pointer items-center justify-between rounded-lg  py-2 text-gray-500 hover:text-gray-700">
                       <span className="text-[#333333] text-base  font-bold">
@@ -159,7 +160,7 @@ const Resource = () => {
                           <span className="pl-2"> All Template</span>
                         </label>
                       </div>
-                     
+
                       <div className="form-control">
                         <label className="cursor-pointer  flex items-center text-[#666666] text-[14px]">
                           <input type="checkbox" />
@@ -178,7 +179,7 @@ const Resource = () => {
                           <span className="pl-2"> Kdp Book</span>
                         </label>
                       </div>
-                     
+
                       <div className="form-control">
                         <label className="cursor-pointer  flex items-center text-[#666666] text-[14px]">
                           <input type="checkbox" />
@@ -191,13 +192,13 @@ const Resource = () => {
                           <span className="pl-2">Others</span>
                         </label>
                       </div>
-                     
-             
+
+
                     </nav>
                   </details>
                 </li>
               </ul>
-              
+
             </div>
           </div>
           <div className="col-span-3 ">
@@ -247,9 +248,12 @@ const Resource = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-y-6 ">
               {freeResource.map((resource) => (
-                <div className=" px-3">
-                  <img className="w-full " src={resource.img} alt="" />
-                </div>
+                <label htmlFor="my-modal-3" className="cursor-pointer">
+                  <div className=" px-3">
+                    <img className="w-full " src={resource.img} alt="" />
+                  </div>
+                </label>
+
               ))}
             </div>
             <div className="flex justify-center pt-14">
@@ -260,6 +264,7 @@ const Resource = () => {
           </div>
         </div>
       </div>
+      <ResourceDetails></ResourceDetails>
     </section>
   );
 };

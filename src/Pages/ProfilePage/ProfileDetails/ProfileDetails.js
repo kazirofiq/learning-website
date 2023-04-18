@@ -7,7 +7,7 @@ import ProfileCompleteProgressbar from '../ProfileCompletedRange/ProfileComplete
 
 const ProfileDetails = () => {
   return (
-    <div className=''>
+    <div className='lg:mt-[84px] md:mt-[50px] mt-8'>
       <div className='p-6 bg-[#FFFFFF] shadow-sm'>
         <h1 className='text-[#1B1D48] font-semibold text-base'>My Profile</h1>
         <UploadImageCard />

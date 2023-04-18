@@ -31,7 +31,11 @@ const Course = () => {
                 </figure>
               </div>
               <div className="card-body items-center text-center">
+<<<<<<< HEAD
                 <h2 className="card-title text-[24px] font-[700] hover:text-[#FFFFFF]">
+=======
+                <h2 className="card-title text-[24px] font-[700] text-[#1B1D48]">
+>>>>>>> 94d40ec85b82a40b21cc53caf8c928a223954643
                   Premium Course
                 </h2>
                 <p className="hover:text-[#ECECF5] ">
