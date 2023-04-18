@@ -63,13 +63,6 @@ const router = createBrowserRouter([
                 element: <OrderDetails />
             },
             {
-<<<<<<< HEAD
-                path: '/resource',
-                element: <Resource />
-            },
-        ]
-    }
-=======
                 path: '/upcomingpremimumcourse',
                 element: <UpcomingPremimumCourses />
             },
@@ -203,7 +196,6 @@ const router = createBrowserRouter([
 
         ]
     },
->>>>>>> 94d40ec85b82a40b21cc53caf8c928a223954643
 ])
 
 export default router;
