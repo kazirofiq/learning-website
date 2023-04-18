@@ -12,18 +12,6 @@ import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
-<<<<<<< HEAD
-    const {
-        register,
-        formState: { errors },
-        handleSubmit,
-      } = useForm();
-      const [pwd, setPwd] = useState("");
-      const [isRevealPwd, setIsRevealPwd] = useState(false);
-    return (
-        <div
-      className="bgg mb-6 bg-[#fff] lg:mb-0 md:mb-0 lg:w-[1092px]  mx-auto flex justify-center items-center"
-=======
   const { createUser, updateUser } = useContext(AuthContext);
   const {
     register,
@@ -62,20 +50,14 @@ const SignUp = () => {
   return (
     <div
       className="bgg   LG:w-[1092px] lg:h-[792px]  mb-6 bg-[#fff] lg:mb-0 md:mb-0 lg:w-[1092px]  mx-auto flex justify-center items-center"
->>>>>>> 94d40ec85b82a40b21cc53caf8c928a223954643
     //   style={{ backgroundImage: `url(${login})`
 
     // }}
     >
       <div className="h-[583px] shadow-slate-500 lg:shadow-none md:shadow-none w-[398px] pt-[3.5rem] mx-auto flex justify-center items-center">
         <div className="w-96 bg-white rounded-xl  py-4 px-8">
-<<<<<<< HEAD
-          <h2 className="text-[24px] leading-[36px]  pb-[12px] text-center font-bold">
-          Create Account
-=======
           <h2 className="text-[24px] leading-[36px] text-[#1B1D48] pb-[12px] text-center font-bold">
             Create Account
->>>>>>> 94d40ec85b82a40b21cc53caf8c928a223954643
           </h2>
 
           <form onSubmit={handleSubmit(handleSignUp)}>

@@ -89,8 +89,6 @@ const FrequentlyAskedQuestion = () => {
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
-=======
                     <div className="collapse collapse-arrow hvr order bx border-base-300 bg-base-100 rounded-box">
                         <input type="checkbox" className="peer" />
                         <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
@@ -104,7 +102,6 @@ const FrequentlyAskedQuestion = () => {
                             </p>
                         </div>
                     </div>
->>>>>>> 94d40ec85b82a40b21cc53caf8c928a223954643
                 </div>
             </div>
         </section>
