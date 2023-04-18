@@ -15,13 +15,11 @@ import AdmindashboardLayout from "../../Pages/AdminDashboard/AdmindashboardLayou
 import MyCourse from "../../Pages/AdminDashboard/MyCourse/MyCourse";
 import CourseList from "../../Pages/AdminDashboard/CourseList/CourseList";
 import DraftCourse from "../../Pages/AdminDashboard/DraftCourse/DraftCourse";
-
 import UpcomingPremimumCourses from "../../Pages/Courses/UpcomingPremimumCourses/UpcomingPremimumCourses";
 import FreeCorses from "../../Pages/Courses/FreeCorses/FreeCorses";
 import Quiz from "../../Pages/Quiz/Quiz";
 import Consultetion from "../../Pages/Consultetion/Consultation";
 import Resource from "../../Pages/Resource/Resource";
-import WorkShop from "../../Pages/WorkShop/WorkShop";
 import BsrCalculetor from "../../Pages/KdpTools/BsrCalculetor/BsrCalculetor";
 import KdpTools from "../../Pages/KdpTools/KdpTools/KdpTools";
 import RoyalCalculetor from "../../Pages/KdpTools/RoyaltyCalculetor/RoyalCalculetor";
@@ -34,6 +32,13 @@ import ProfileLayout from "../../Layout/ProfileLayout";
 import ImportentLink from "../../Pages/ProfilePage/ImportentLink/ImportentLink";
 import OrderHistory from "../../Pages/ProfilePage/OrderHistory/OrderHistory";
 import AllReviews from "../../Pages/Reviews/AllReviews/AllReviews";
+import MyCourses from "../../Pages/Courses/MyCourses/MyCourses";
+import PreviousWorkshop from "../../Pages/Courses/PreviousWorkshop/PreviousWorkshop";
+import CourseLayout from "../../Layout/CourseLayout";
+import WorkShopLayout from "../../Layout/WorkShopLayout";
+import UpComingDetails from "../../Pages/WorkShop/UpComingDetails/UpComingDetails";
+import Vedio from "../../Pages/CourseVedio/Vedio/Vedio";
+// import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
 
 
 const router = createBrowserRouter([
@@ -79,23 +84,47 @@ const router = createBrowserRouter([
                 element: <Resource />
             },
             {
-                path: '/workshop',
-                element: <WorkShop />
-            },
-            {
-                path: '/upcoming',
-                element: <Upcoming></Upcoming>
-            },
-            {
-                path: '/previous',
-                element: <Previous></Previous>
-            },
-            {
                 path: '/allreviews',
                 element: <AllReviews />
+            },
+            {
+                path: '/upcomingdetails',
+                element: <UpComingDetails />
+            },
+            // {
+            //     path: '/reviewmodal',
+            //     element: <ReviewModal />
+            // }
+
+
+        ]
+    },
+    {
+        path: '/mycourses',
+        element: <CourseLayout />,
+        children: [
+            {
+                path: '/mycourses',
+                element: <MyCourses />
+            },
+            {
+                path: '/mycourses/previousworkshop',
+                element: <PreviousWorkshop />
             }
-
-
+        ]
+    },
+    {
+        path: '/workshop',
+        element: <WorkShopLayout />,
+        children: [
+            {
+                path: '/workshop/upcoming',
+                element: <Upcoming />
+            },
+            {
+                path: '/workshop/previous',
+                element: <Previous></Previous>
+            },
         ]
     },
     {
@@ -143,25 +172,21 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: '/dashboard',
+        path: '/vedio',
         element: <MyCourseLayout></MyCourseLayout>,
         children: [
             {
-                path: '/dashboard/my_course',
-                element: <Dashboard></Dashboard>
-            },
-            {
-                path: '/dashboard/assignment',
-                element: <Assignment></Assignment>
-            },
-            {
-                path: '/dashboard/quiz',
-                element: <Quiz></Quiz>
-            },
-            {
-                path: '/dashboard/myclass',
-                element: <MyClasses></MyClasses>
-            },
+                path: '/vedio',
+                element: <Vedio />
+            }
+            // {
+            //     path: '/dashboard/assignment',
+            //     element: <Assignment></Assignment>
+            // },
+            // {
+            //     path: '/dashboard/quiz',
+            //     element: <Quiz></Quiz>
+            // },
         ]
     },
     {
