@@ -10,9 +10,10 @@ import hidePwdImg from "../../assest/login-svg/hide-password.svg";
 import "./SignUp.css";
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
+import {getUserToken} from "../../hooks/useToken"
 
 const SignUp = () => {
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, user } = useContext(AuthContext);
   const {
     register,
     formState: { errors },
@@ -27,15 +28,38 @@ const SignUp = () => {
   const handleSignUp = (data) => {
     createUser(data.email, data.password)
       .then(result => {
-        const user = result.user;
-        console.log(user);
         const userInfo = {
           displayName: data.name
         }
+        console.log(userInfo)
         updateUser(userInfo)
-          .then((result) => {
-            console.log(result);
-            navigate('/');
+          .then(() => {
+            console.log(user);
+
+            // Studnet Info for Backend
+            const studentInfo = {
+              name : user.displayName,
+              email : user.email,
+              phoneNumber : data.number,
+              studentID : user.uid,
+            }
+            // send data to DB
+
+          //   fetch('http://localhost:5000/users', {
+          //   method: 'POST',
+          //   headers: {
+          //       'content-type': 'application/json'
+          //   },
+          //   body: JSON.stringify(studentInfo)
+          //  })
+          //   .then(res => res.json())
+          //   .then(data => conslode.log(data))
+
+
+            // Get JWT Token
+            
+          //getUserToken(user.email);
+          // navigate('/');
           })
           .catch(err => console.log(err));
       })
