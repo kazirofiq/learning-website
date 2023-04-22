@@ -1,5 +1,24 @@
-.steps .step {
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-  }
+.timeline-wrapper {
+  /* margin-left: 1.5rem; */
+  border-left: 2px dotted #ddd;
+  height: 30%;
+}
+.node {
+  padding-left: .5rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+.node h3, .node p {
+  margin: 0;
+}
+.node::before {
+  content: "";
+  width: .5rem;
+  height: .5rem;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  position: absolute;
+  top: -1.3px;
+  left: -5.5px;
+}

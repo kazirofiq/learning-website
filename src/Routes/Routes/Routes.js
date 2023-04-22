@@ -22,6 +22,11 @@ import Consultetion from "../../Pages/Consultetion/Consultation";
 import Resource from "../../Pages/Resource/Resource";
 import WorkShop from "../../Pages/WorkShop/WorkShop";
 import CreateCourse from "../../Pages/CreateCourse/CreateCourse";
+import SideCategory from "../../Pages/CreateCourse/SideCategory/SideCategory";
+import CourseCurriculum from "../../Pages/CourseCurriculum/CourseCurriculum";
+import CourseCurriculumQuiz from "../../Pages/CourseCurriculum/CourseCurriculumQuiz/CourseCurriculumQuiz";
+import UPloadResource from "../../Pages/UploadResource/UPloadResource";
+
 
 
 const router = createBrowserRouter([
@@ -111,8 +116,22 @@ const router = createBrowserRouter([
                 element: <AdminDashboard></AdminDashboard>
             },
             {
-                path: '/admindashboard/create-course',
-                element: <CreateCourse />
+                path: '/admindashboard/course-create',
+                element: <SideCategory />,
+                children:[
+                   {
+                    path:'/admindashboard/course-create',
+                    element: <CreateCourse />
+                   },
+                   {
+                    path:'/admindashboard/course-create/course-curriculum',
+                    element: <CourseCurriculum />
+                   },
+                   {
+                    path:'/admindashboard/course-create/course-curriculum-quiz',
+                    element: <CourseCurriculumQuiz />
+                   },
+                ]
             },
             
             {
@@ -130,7 +149,12 @@ const router = createBrowserRouter([
                   
                 ]
               },
+              {
+                path:'/admindashboard/upload-Resource',
+                element: <UPloadResource />
+            },
         ]
+        
     },
 ])
 

@@ -3,7 +3,7 @@ import React from "react";
 const AdminHeader = () => {
   return (
     <div className="bg-[#F8F8FF]">
-      <div className="grid lg:grid-cols-[1fr_168px] justify-between items-center">
+      <div className="grid lg:grid-cols-[1fr_168px] justify-between items-center w-[1100px]">
         <div className="">
           <h2 className="text-[#333333] font-bold text-xl">Hello, Mondol!</h2>
           <p className="text-[##666666] text-[12px]">Good Morning, Let’s start learning</p>
