@@ -6,10 +6,10 @@ import CourseCurriculumAccordion from './CourseCurriculumAccordion';
 
 const CourseCurriculum = () => {
     return (
-        <section className='lg:max-w-full bg-[#F8F8FF] mx-auto' id='courseCurriculum'>
-            <div className='lg:max-w-[1110px] mx-auto'>
-                <div className='lg:w-[731px] w-[320px] lg:mx-0 mx-auto py-4 lg:py-[22px]'>
-                    <div>
+        <section className='' id='courseCurriculum'>
+            <div className=''>
+                <div className='lg:w-[730px] w-[320px] py-4 lg:py-[22px] bg-[#F8F8FF] '>
+                    <div className=''>
                         <div>
                             <p className='text-[#1B1D48] text-[20px] lg:text-2xl font-bold leading-[30px] lg:leading-9 mb-[11px] poppins'>The Course Curriculam</p>
                         </div>

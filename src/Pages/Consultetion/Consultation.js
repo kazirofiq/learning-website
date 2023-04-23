@@ -23,12 +23,12 @@ const Consultation = () => {
             <div className=' px-[20px] lg:px-[145px]'>
                 <img className='w-full sm:sml-Cimg lg:Cimg' src={Cimg} alt="" />
             </div>
-            <ConsultetionNavbar/>
-            <ConsultetionAboutTC/>
-            <ConsultetionWWL/>
-            <PricingCategory/>
-            <ConsultetionFAQ/>
-            <ConsultationReviews/>
+            <ConsultetionNavbar />
+            <ConsultetionAboutTC />
+            <ConsultetionWWL />
+            <PricingCategory />
+            <ConsultetionFAQ />
+            <ConsultationReviews />
         </div>
 
     );

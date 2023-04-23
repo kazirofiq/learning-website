@@ -5,6 +5,7 @@ import twitter from '../../../../assest/mentor/social_icon/twitter.png'
 import linkedin from '../../../../assest/mentor/social_icon/linkedin.png'
 import instagram from '../../../../assest/mentor/social_icon/instagram.png'
 import { Link } from 'react-router-dom';
+import ReviewModal from '../../../Dashboard/ReviewModal/ReviewModal';
 
 const Mentor = () => {
     return (
@@ -13,10 +14,9 @@ const Mentor = () => {
                 <p className='text-xl lg:text-2xl text-center lg:text-start font-bold leading-[30px] lg:leading-9 text-[#1B1D48] poppins w-[320px]'>Meet Your Mentor</p>
 
                 <div className='lg:flex block mx-auto'>
-                    <div className='w-[320px] lg:w-[186px]'>
+                    <div className='w-[320px] lg:w-[186px]' >
                         <img src={mentor_image} alt="" className='lg:w-[186px] h-[194.02px] mx-auto lg:mr-[17px] mt-[9px]' />
                     </div>
-
                     <div className='poppins mt-[3px] lg:mt-5 lg:text-start text-center'>
                         <p className='text-[#333333] text-base lg:text-xl leading-[30px] font-semibold'>Rasel Mondol</p>
                         <p className='text-[#666666] text-[12px] leading-[18px] font-light'>Graphic and UI/UX Designer | Instructor

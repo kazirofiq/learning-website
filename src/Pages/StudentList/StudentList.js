@@ -18,7 +18,7 @@ const StudentList = () => {
                     </select> */}
 
                 </div>
-                
+
 
                 <div class="flex flex-col mt-6">
                     <div class="-mx-4 -my-2 overflow-x-auto">

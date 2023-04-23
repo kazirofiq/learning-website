@@ -4,11 +4,12 @@ import premium from "../../../assest/icon/Vector.png";
 import free from "../../../assest/icon/free.png";
 import { IoIosArrowForward } from "react-icons/io";
 import './Course.css'
+import { Link } from "react-router-dom";
 
 const Course = () => {
   return (
     <section
-      className="pt-32  pb-[100px]"
+      className="pt-[87px]  pb-[100px]"
       style={{
         background: `url(${course})`,
         backgroundSize: 'cover'
@@ -43,9 +44,11 @@ color: #FFFFFF;
                 </p>
 
                 <div className=" flex justify-center items-center gap-2">
-                  <h2 className="text-[16px] font-bold text-[#3D419F] cursor-pointer">
-                    Learn More
-                  </h2>
+                  <Link to='/premium_course'>
+                    <h2 className="text-[16px] font-bold text-[#3D419F] cursor-pointer">
+                      Learn More
+                    </h2>
+                  </Link>
                   <IoIosArrowForward className=""></IoIosArrowForward>
                 </div>
               </div>
@@ -65,9 +68,11 @@ color: #FFFFFF;
                   Cleaning <br /> Emergency Clean up
                 </p>
                 <div className=" flex justify-center items-center gap-2">
-                  <h2 className="text-[16px] font-bold text-[#1B1D48]  cursor-pointer">
-                    Learn More
-                  </h2>
+                  <Link to='/freecorses'>
+                    <h2 className="text-[16px] font-bold text-[#1B1D48]  cursor-pointer">
+                      Learn More
+                    </h2>
+                  </Link>
                   <IoIosArrowForward className=""></IoIosArrowForward>
                 </div>
               </div>

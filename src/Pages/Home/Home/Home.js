@@ -7,10 +7,10 @@ import WhatLearn from './WhatLearn/WhatLearn';
 import Banner from '../Banner/Banner';
 import Frequently from '../Frequently/Frequently';
 import StudentFeedback from '../StudentFeedback/StudentFeedback';
-import OrderHistory from '../../Order History/OrderHistory';
-import Resourcemodal from '../../ResourceModal/Resourcemodal';
+// import MessageBox from '../MessageBox/MessageBox';
 import StudentList from '../../StudentList/StudentList';
-import AssignmentList from '../../Assignment/AssignmentList';
+import AssignmentList from '../../../AssignmentList/AssignmentList';
+import SuccesModal from '../../Modal/SuccesModal/SuccesModal';
 
 
 const Home = () => {
@@ -24,10 +24,9 @@ const Home = () => {
             <AmazingResource></AmazingResource>
             <StudentFeedback></StudentFeedback>
             <Frequently></Frequently>
-            <OrderHistory/>
-            <Resourcemodal/>
-            <StudentList/>
-            <AssignmentList/>
+            {/* <StudentList /> */}
+            {/* <AssignmentList></AssignmentList> */}
+            {/* <SuccesModal /> */}
         </div>
     );
 };

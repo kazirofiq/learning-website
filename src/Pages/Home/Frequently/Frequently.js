@@ -6,11 +6,11 @@ import './Frequently.css'
 
 const Frequently = () => {
   return (
-    <div className="mt-[86px] bg-[#F7F7FE]">
-      <h2 className="text-center lg:w-[554px] md:w-[554px] w-[216px] mx-auto pt-[30px]  lg:pt-[70px] font-bold text-[#1B1D48] lg:text-[40px] md:text-[40px] text-[24px]">
+    <div className="mt-[86px] bg-[#F7F7FE] lg:h-[800px]">
+      <h2 className="text-center mx-auto pt-[30px]  lg:pt-[96px] font-bold text-[#1B1D48] lg:text-[40px] md:text-[40px] text-[24px]">
         Frequently Asked  <span className="text-[#38A27B]">Question</span>{" "}
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-[30px]  lg:h-[686px]  lg:px-[115px] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2  lg:gap-[30px]  lg:h-[686px]  lg:px-[145px] mx-auto">
         <div className="text-start">
           <section className="dark:text-gray-100  lg:w-[540px]">
             <div className="container justify-between flex flex-col  px-4 py-8 mx-auto md:p-8">
@@ -76,7 +76,7 @@ const Frequently = () => {
                     What makes Defferent From Other Available Apps On The App
                     Store?
                   </div>
-                  <div className="collapse-content  bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
+                  <div className="collapse-content bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
                     <p className=" ">
                       attribute is necessary to make the div
                       focusable
