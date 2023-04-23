@@ -11,7 +11,7 @@ import scroll from '../../assest/Consultency/Scroll.png';
 
 const Consultation = () => {
     return (
-        <div className='py-0 pb-[30px] lg:py-[96px]'>
+        <div className='py-0 pb-[30px] lg:py-[95px]'>
             <div className="text-center  px-[20px] lg:px-[145px]">
                 <p className='text-lg text-[#333333] font-mem
                  leading-[27px]'>Consultation</p>
