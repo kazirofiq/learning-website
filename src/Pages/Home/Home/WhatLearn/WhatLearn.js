@@ -1,6 +1,6 @@
 import React from "react";
 import "./WhatLearn.css";
-import ai from "../../../../assest/what-learn/Ai.png";
+import ai from "../../../../assest/what-learn/ai.png";
 import Amazon from "../../../../assest/what-learn/amajon.png";
 import Freepik from "../../../../assest/what-learn/Freepik.png";
 import Fiverrr from "../../../../assest/what-learn/fiverr.png";
