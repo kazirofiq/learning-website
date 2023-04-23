@@ -1,9 +1,9 @@
 import React from "react";
 import "./WhatLearn.css";
-import ai from "../../../../assest/what-learn/ai.png";
-import Amazon from "../../../../assest/what-learn/Amazon.png";
+import ai from "../../../../assest/what-learn/Ai.png";
+import Amazon from "../../../../assest/what-learn/amajon.png";
 import Freepik from "../../../../assest/what-learn/Freepik.png";
-import Fiverrr from "../../../../assest/what-learn/Fiverrr.png";
+import Fiverrr from "../../../../assest/what-learn/fiverr.png";
 import circle_1 from "../../../../assest/what-learn/circle-1.png";
 import circle_2 from "../../../../assest/what-learn/circle-2.png";
 import circle_3 from "../../../../assest/what-learn/circle-3.png";

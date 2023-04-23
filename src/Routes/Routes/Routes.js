@@ -178,15 +178,15 @@ const router = createBrowserRouter([
             {
                 path: '/vedio',
                 element: <Vedio />
-            }
-            // {
-            //     path: '/dashboard/assignment',
-            //     element: <Assignment></Assignment>
-            // },
-            // {
-            //     path: '/dashboard/quiz',
-            //     element: <Quiz></Quiz>
-            // },
+            },
+            {
+                path: '/vedio/assignment',
+                element: <Assignment></Assignment>
+            },
+            {
+                path: '/vedio/quiz',
+                element: <Quiz></Quiz>
+            },
         ]
     },
     {

@@ -5,6 +5,7 @@ import Footer from '../Pages/Shared/Footer/Footer';
 import Breadcrumb from '../Pages/Others/Breadcrumb/Breadcrumb';
 import MyClasses from '../Pages/MyClasses/MyClasses';
 import Dashboard from '../Pages/Dashboard/Dashboard';
+import ReviewModal from '../Pages/Dashboard/ReviewModal/ReviewModal';
 
 const MyCourseLayout = () => {
     return (
@@ -24,6 +25,7 @@ const MyCourseLayout = () => {
                         </div>
                     </div>
                     <Dashboard />
+                    <ReviewModal />
                 </div>
                 <div className='lg:hidden flex items-center justify-center'>
                     <MyClasses />

@@ -19,7 +19,7 @@ const Banner = () => {
                 <img className='hidden lg:block absolute right-[53%] bottom-[24%]' src={arrow} alt="arrow" />
                 <div className='flex-row w-full lg:mr-[31px]'>
                     <h1 className='text-4xl lg:text-[56px] md:text-[50px] text-[#1B1D48] lg:leading-[80px] sm:leading-[60px] mb-[30px] lg:w-[542px] sm:w-[320px] font-bold lg:text-left md:text-left text-center pt-6 lg:p-0'>Learning Online is <span className='text-[#38A27B] lg:block'>Now Much Easier</span></h1>
-                    <p className='text-[#666666] leading-6 text-[16px] mb-11 lg:text-left text-center'>Learn With Rakib is an interesting platform that will teach you in more an interactive way</p>
+                    <p className='text-[#666666] leading-6 text-[16px] mb-11 lg:text-left md:text-left text-center'>Learn With Rakib is an interesting platform that will teach you in <br /> more an interactive way</p>
 
                     <div className='lg:flex items-center sm:block mx-auto lg:mx-0'>
                         <div className='flex justify-center'>
@@ -30,7 +30,7 @@ const Banner = () => {
                             <label
                                 htmlFor="openVideoModal"
                                 className="">
-                                <img src={start_button} alt="" className='w-12 h-12 lg:w-[71px] lg:h-[71px] cursor-pointer' />
+                                <img src={start_button} alt="" className='w-12 h-12 lg:w-[60px] lg:h-[60px] cursor-pointer' />
                             </label>
 
                             {/* Please do not delete below code! */}
