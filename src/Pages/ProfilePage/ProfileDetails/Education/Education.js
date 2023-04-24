@@ -20,7 +20,7 @@ const Education = () => {
                 <label htmlFor="Degree-Title" className='block text-[#666666] font-normal text-sm mb-2'>Exam/Degree Title</label>
                 <input type="text" id='Degree-Title' placeholder="Exam/Degree Title" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
                <div className='flex justify-start items-center'>
- 
+  {/* test comment */}
                   <input
                     type="checkbox"
                     id="graduated"
