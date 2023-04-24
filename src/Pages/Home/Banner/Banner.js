@@ -23,7 +23,7 @@ const Banner = () => {
 
                     <div className='lg:flex items-center sm:block mx-auto lg:mx-0'>
                         <div className='flex justify-center'>
-                            <a href='/' className=' gs_sm lg:gs lg:mr-7 text-white text-sm lg:text-lg lg:font-bold font-semibold'>Get Started</a>
+                            <a href='/' className=' gs_sm lg:gs lg:mr-7 text-white text-sm lg:text-lg lg:font-bold font-semibold'> Start Learning</a>
                         </div>
                         <div className='flex justify-center mr-8 lg:mt-0 mt-4'>
 
