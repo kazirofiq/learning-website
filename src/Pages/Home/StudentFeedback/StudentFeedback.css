@@ -1,29 +1,11 @@
 .sumu {
-    margin-top: 65px;
+    margin-top: 40px;
 }
 
 .slick-slide {
-    height: 100%;
-    /* width: 800px; */
+    height: 280px;
 }
 
 .slick-slide>div {
-    margin: 0px 30px;
-    margin-top: -69px;
-    /* width: 370px; */
-    height: 265px;
-
-}
-
-.slick-track {
-    margin-top: 60px;
-}
-
-.slick-center {
-
-    border-top: 5px solid #3D419F;
-    border-bottom: 5px solid #3D419F;
-    /* height: 100%; */
-    width: 20px;
-    border-radius: 16px;
+    margin: 0 10px;
 }

@@ -4,7 +4,6 @@ import bannerRightPic from '../../../assest/bg-img/bannerright (1).png';
 import arrow from '../../../assest/bg-img/Arrow.png'
 import start_button from '../../../assest/banner/start_button.png';
 import HowItWorksVideo from './HowItWorksVideo';
-import MessageBox from '../MessageBox/MessageBox';
 
 const Banner = () => {
 
@@ -16,7 +15,7 @@ const Banner = () => {
                 <div className='flex-row w-full lg:ml-[31px] lg:mt-3'>
                     <img className='w-full' src={bannerRightPic} alt="" />
                 </div>
-                <img className='hidden lg:block absolute right-[53%] bottom-[24%]' src={arrow} alt="arrow" />
+                <img className='hidden lg:block absolute right-[56%] bottom-[32%]' src={arrow} alt="arrow" />
                 <div className='flex-row w-full lg:mr-[31px]'>
                     <h1 className='text-4xl lg:text-[56px] md:text-[50px] text-[#1B1D48] lg:leading-[80px] sm:leading-[60px] mb-[30px] lg:w-[542px] sm:w-[320px] font-bold lg:text-left md:text-left text-center pt-6 lg:p-0'>Learning Online is <span className='text-[#38A27B] lg:block'>Now Much Easier</span></h1>
                     <p className='text-[#666666] leading-6 text-[16px] mb-11 lg:text-left md:text-left text-center'>Learn With Rakib is an interesting platform that will teach you in <br /> more an interactive way</p>
@@ -35,21 +34,21 @@ const Banner = () => {
 
                             {/* Please do not delete below code! */}
                             {/* <Link><PlayAndPauseButton></PlayAndPauseButton></Link> */}
-                            <div className='flex items-center'><p className='pl-[12px] text-[#333333] poppins font-medium lg:text-lg text-sm'>How It Works</p></div>
+                            <div className='flex items-center'><p className='pl-[12px] poppins font-medium lg:text-lg text-sm'>How It Works</p></div>
                         </div>
                     </div>
 
-                    <div className='flex items-center lg:mt-[39px] mt-7 w-[320px] lg:w-[436px]'>
+                    <div className='flex items-center lg:mt-[39px] mt-7 w-[320px] lg:w-[407px]'>
                         <p className='line'></p>
-                        <div className='ml-[20px] lg:ml-8 '>
+                        <div className='ml-[20px] lg:ml-8 lg:w-[128px]'>
                             <h4 className='text-3xl lg:text-[32px] text font-bold'>120+</h4>
                             <p className='text-sm lg:text-[16px] text2'>Happy Students</p>
                         </div>
-                        <div className='ml-[20px] lg:ml-8 '>
+                        <div className='ml-[20px] lg:ml-8 lg:w-[128px]'>
                             <h4 className='text-3xl lg:text-[32px] text font-bold'>25+</h4>
                             <p className='text-sm lg:text-[16px] text2'>Active User</p>
                         </div>
-                        <div className='ml-[20px] '>
+                        <div className='ml-[20px] lg:ml-8 lg:w-[128px]'>
                             <h4 className='text-3xl lg:text-[32px] text font-bold'>5+</h4>
                             <p className='text-sm lg:text-[16px] text2'>Online Classes</p>
                         </div>

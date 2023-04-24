@@ -27,6 +27,7 @@ const Home = () => {
             {/* <StudentList /> */}
             {/* <AssignmentList></AssignmentList> */}
             {/* <SuccesModal /> */}
+
         </div>
     );
 };

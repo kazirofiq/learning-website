@@ -8,7 +8,6 @@ const FrequentlyAskedQuestion = () => {
 
             <p className='block lg:hidden text-[24px] text-center lg:text-[40px] leading-[36px] lg:leading-[60px] font-bold text-[#1B1D48] poppins'>Frequently Asked
                 <br /><span className='text-[#38A27B]'>Question</span></p>
-
             <div className="grid grid-cols-1 justify-center items-center mx-auto">
                 <div className="flex flex-col justify-center mt-6 lg:mt-12 mx-auto">
                     <div className="space-y-4 max-w-[730px] mb-4 mx-auto lg:mx-0">
