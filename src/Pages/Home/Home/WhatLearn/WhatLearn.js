@@ -15,25 +15,25 @@ const WhatLearn = () => {
       circle: circle_1,
       icon: ai,
       heading: "Adobe Illustrtor",
-      text: "Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency",
+      text: "Create art that speaks volumes. Design logos, illustrations, and graphics with precision and creativity using Adobe's industry-leading vector graphics software.",
     },
     {
       circle: circle_2,
       icon: Amazon,
       heading: "KDP",
-      text: "Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency",
+      text: "KDP Self-publishing made easy! Create, publish, and sell your own books on Amazon with Kindle Direct Publishing. Share your creativity with the world and reach users worldwide!",
     },
     {
       circle: circle_3,
       icon: Fiverrr,
       heading: "Fiverr",
-      text: "Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency",
+      text: "Unlock your freelance potential. Find gigs, showcase your skills, and earn money doing what you love. Join the global community of freelancers on Fiverr today!",
     },
     {
       circle: circle_4,
       icon: Freepik,
       heading: "Freepik",
-      text: "Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency",
+      text: "Freepik is your design marketplace. Sell your creative assets and reach millions of potential customers. Join the community of talented sellers on Freepik and monetize your designs!",
     },
   ];
   return (

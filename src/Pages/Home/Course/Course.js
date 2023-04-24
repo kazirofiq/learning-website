@@ -39,8 +39,9 @@ color: #FFFFFF;
                   Premium Course
                 </h2>
                 <p className=" text-[#666666]">
-                  Office Services, Sweeping Mopping, <br /> Kitchen Cleaning,
-                  Cleaning <br /> Emergency Clean up
+                  {/* Office Services, Sweeping Mopping, <br /> Kitchen Cleaning,
+                  Cleaning <br /> Emergency Clean up */}
+                  Elevate your KDP game with Learn With Rakib's premium course! Gain expert insights on self-publishing on Kindle, unlock advanced strategies, and achieve publishing success. <br /> Join now!
                 </p>
 
                 <div className=" flex justify-center items-center gap-2">
@@ -64,8 +65,9 @@ color: #FFFFFF;
               <div className="card-body  items-center  text-center">
                 <h2 className="card-title text-[24px] font-[700] text-[#1B1D48]">Free Course</h2>
                 <p className=" text-[#666666]">
-                  Office Services, Sweeping Mopping, <br /> Kitchen Cleaning,
-                  Cleaning <br /> Emergency Clean up
+                  {/* Office Services, Sweeping Mopping, <br /> Kitchen Cleaning,
+                  Cleaning <br /> Emergency Clean up */}
+                  Learn With Rakib offers FREE expert KDP classes on YouTube! Master self-publishing on Kindle with valuable insights, tips, and strategies from your trusted mentor. <br />Join now!
                 </p>
                 <div className=" flex justify-center items-center gap-2">
                   <Link to='/freecorses'>

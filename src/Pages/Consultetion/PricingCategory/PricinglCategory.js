@@ -1,6 +1,7 @@
 import React from 'react';
 import './PricingCategory.css'
 import { RxCheckCircled } from "react-icons/rx";
+import { Link } from 'react-router-dom';
 
 const PricingCategory = () => {
     return (
@@ -41,7 +42,7 @@ const PricingCategory = () => {
                                     </li>
 
                                 </ul>
-                                <button type="button" className="text-[#666666] text-sm leading-[21px] font-semibold pricing-card-button mx-auto">Choose Plan</button>
+                                <Link to='/payment' type="button" className="text-[#666666] text-center text-sm leading-[21px] font-semibold pricing-card-button mx-auto">Choose Plan</Link>
                             </div>
                             <div className="flex flex-col mb-4 md:mb-5 lg:mb-0 p-6 pricing-card max-w-[350px] lg:mr-[15px]">
                                 <div className="space-y-2 price-category text-center text-[#666666]">
@@ -71,7 +72,7 @@ const PricingCategory = () => {
                                     </li>
 
                                 </ul>
-                                <button type="button" className="text-[#666666] text-sm leading-[21px] font-semibold pricing-card-button mx-auto">Choose Plan</button>
+                                <Link to='/payment' type="button" className="text-[#666666] text-center text-sm leading-[21px] font-semibold pricing-card-button mx-auto">Choose Plan</Link>
                             </div>
                             <div className="flex flex-col mb-4 md:mb-5 lg:mb-0 p-6 pricing-card max-w-[350px] lg:mr-[15px]">
                                 <div className="space-y-2 price-category text-center text-[#666666]">
@@ -101,7 +102,7 @@ const PricingCategory = () => {
                                     </li>
 
                                 </ul>
-                                <button type="button" className="text-[#666666] text-sm leading-[21px] font-semibold pricing-card-button mx-auto">Choose Plan</button>
+                                <Link to='/payment' type="button" className="text-[#666666] text-center text-sm leading-[21px] font-semibold pricing-card-button mx-auto">Choose Plan</Link>
                             </div>
                         </div>
 
