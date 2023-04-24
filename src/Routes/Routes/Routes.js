@@ -198,8 +198,8 @@ const router = createBrowserRouter([
                 element: <AdminDashboard></AdminDashboard>
             },
             // {
-            //     path: '/admindashboard/mycourse',
-            //     element: <MyCourse></MyCourse>
+            //     path: '/admindashboard/sendnotification',
+            //     element: <SendNotification></SendNotification>
             // },
 
             {

@@ -10,8 +10,8 @@ const About = () => {
 
             }} className="bg-[#FFFFFF]">
             <section >
-                <div className="hero lg:pt-20 pb-[84px]">
-                    <div className="hero-content flex-col lg:flex-row-reverse gap-x-[185px]">
+                <div className="hero lg:pt-20  pb-[84px]">
+                    <div className="hero-content flex-col lg:flex-row-reverse md:ml-[231px] md:mr-[153px] gap-x-[120px] ">
                         <div className='lg:text-left text-center'>
                             <p className='lg:text-lg text-base font-medium text-[#333333]'>About us</p>
                             <h1 className="lg:text-[40px] lg:leading-[60px] md:text-3xl text-2xl font-bold text-[#38A27B]"><span className='text-[#1B1D48]'>What Is </span>Learn With Rakib?</h1>
