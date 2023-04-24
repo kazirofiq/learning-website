@@ -1,5 +1,5 @@
 import React from 'react';
-import image_rectangle from '../../../../assest/amazing_resource/Image.png';
+import image_rectangle from '../../../../assest/bg-img/Image-amajon.png';
 import elements from '../../../../assest/amazing_resource/Elements.png';
 import '../AmazingResource/AmazingResource.css';
 import { Link } from 'react-router-dom';
@@ -12,8 +12,8 @@ const AmazingResource = () => {
             backgroundSize: "cover",
             backgroundPosition: ""
         }}>
-            <div className='mx-5 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 max-w-[1350px] lg:mx-[145px] py-[40px] lg:pt-[87px] lg:pb-[55px]'>
-                <div className='text-white mx-auto sm:mt-0 w-[315px] lg:w-[540px] lg:text-left md:text-left text-center poppins'>
+            <div className=' grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 md:mx-[145px] gap-x-[26px] py-[40px] lg:pt-[87px] lg:pb-[55px]'>
+                <div className='text-white  sm:mt-0 w-[315px] lg:w-[540px] lg:text-left md:text-left text-center mx-auto poppins'>
                     <p className=''>Amazing Resource</p>
                     <p className='lg:block hidden text-[24px] lg:text-[40px] leading-9 lg:leading-[60px] font-bold lg:mt-0 mt-1'>
                         Amazon KDP Book Interior
@@ -27,14 +27,14 @@ const AmazingResource = () => {
                         <br /><span className='text-[#38A27B]'>Download</span>
                     </p>
 
-                    <p className='lg:text-base text-sm leading-5 lg:leading-6 lg:mt-8 mt-3 lg:mb-12
-                            mb-6 text-justify'>Learn with Rakib is a platform that Will help you to learn, How to become a self-publisher. Learn with Rakib is a platform that Will help you to learn, How to become a self-publisher.</p>
+                    <p className='lg:text-base text-sm leading-5 lg:leading-[24px] lg:mt-8 mt-3 lg:mb-12
+                            mb-6 text-justify'>Learn with Rakib is a platform that Will help you to learn, How to <br/> become a self-publisher. Learn with Rakib is a platform that Will <br/> help you to learn, How to become a self-publisher.</p>
                     <Link to='/freecorses'>
                         <button className='bg_sm lg:bg text-[#3D419F] text-sm lg:text-lg lg:font-semibold font-medium'>Free Download</button>
                     </Link>
                 </div>
-                <div>
-                    <img src={image_rectangle} alt="" className='lg:w-[547.74px] sm:w-[320px]' />
+                <div className=''>
+                    <img src={image_rectangle} alt="" className='lg:w-[534px] sm:w-[320px] mr-0' />
                 </div>
             </div>
         </section >

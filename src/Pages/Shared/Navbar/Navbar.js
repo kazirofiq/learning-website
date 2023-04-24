@@ -301,7 +301,7 @@ const Navbar = () => {
     );
     return (
         <section className="bg-[#FFFFFF]">
-            <div className="max-w-[1350px] hidden md:block lg:px-11 mx-auto py-[28px]">
+            <div className=" md:mx-[145px] hidden md:block   py-[28px]">
                 <div className="relative flex items-center justify-between lg:px-0 px-5">
                     <Link
                         to="/"

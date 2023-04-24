@@ -12,13 +12,13 @@ const Banner = () => {
 
     return (
         <section className='bg-[#F8F8FF]'>
-            <div className='max-w-[1350px] lg:px-11 mx-auto flex-row-reverse lg-w-full lg:flex md:flex pt-5 lg:pt-0 pb-[40px] lg:pb-[90px] items-center px-5'>
+            <div className=' md:mx-[145px]  flex-row-reverse lg-w-full lg:flex md:flex pt-5 lg:pt-0 pb-[40px] lg:pb-[90px] items-center px-5'>
                 <div className='flex-row w-full lg:ml-[31px] lg:mt-3'>
                     <img className='w-full' src={bannerRightPic} alt="" />
                 </div>
-                <img className='hidden lg:block absolute right-[53%] bottom-[24%]' src={arrow} alt="arrow" />
-                <div className='flex-row w-full lg:mr-[31px]'>
-                    <h1 className='text-4xl lg:text-[56px] md:text-[50px] text-[#1B1D48] lg:leading-[80px] sm:leading-[60px] mb-[30px] lg:w-[542px] sm:w-[320px] font-bold lg:text-left md:text-left text-center pt-6 lg:p-0'>Learning Online is <span className='text-[#38A27B] lg:block'>Now Much Easier</span></h1>
+                <img className='hidden lg:block absolute right-[47%] bottom-[-8%]' src={arrow} alt="arrow" />
+                <div className='flex-row w-full lg:mr-[31px] lg:w-[542px] sm:w-[320px]'>
+                    <h1 className='text-4xl lg:text-[51px]  text-[#1B1D48] md:leading-[68px]   mb-[30px]  font-bold lg:text-left md:text-left text-center pt-6 lg:p-0'>Learning Online is <span className='text-[#38A27B] lg:block'>Now Much Easier</span></h1>
                     <p className='text-[#666666] leading-6 text-[16px] mb-11 lg:text-left md:text-left text-center'>Learn With Rakib is an interesting platform that will teach you in <br /> more an interactive way</p>
 
                     <div className='lg:flex items-center sm:block mx-auto lg:mx-0'>
