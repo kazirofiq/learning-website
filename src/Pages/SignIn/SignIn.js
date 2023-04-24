@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link , useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assest/bg-img/login.png";
 import { GrView } from "react-icons/gr";
 import { BsEyeSlash } from "react-icons/bs";
@@ -11,11 +11,11 @@ import { AuthContext } from "../../contexts/AuthProvider";
 
 const SignIn = () => {
 
-  const {signIn} = useContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || '/';
-  const {register, formState: { errors }, handleSubmit } = useForm();
+  const { register, formState: { errors }, handleSubmit } = useForm();
   const [pwd, setPwd] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
 
@@ -23,16 +23,16 @@ const SignIn = () => {
   const handleLogin = data => {
     console.log(data);
     signIn(data.email, data.password)
-        .then(result => {
-            //const user = result.user;
-            console.log(result);
-            navigate(from, { replace: true });
+      .then(result => {
+        //const user = result.user;
+        console.log(result);
+        navigate(from, { replace: true });
 
-        })
-        .catch(error => {
-            console.log(error.message);
-        });
-}
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+  }
 
 
   return (
@@ -66,7 +66,7 @@ const SignIn = () => {
                 name="pwd"
                 {...register("password", {
                   required: "Password is required"
-              })}
+                })}
                 placeholder="Enter Password"
                 type={isRevealPwd ? "text" : "password"}
                 value={pwd}
