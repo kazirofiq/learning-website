@@ -33,11 +33,11 @@ const Consultancy = () => {
           {/* <iframe className=" lg:w-1/2 rounded-lg" width="363" height="363" src="https://www.youtube.com/embed/lJ5z7sdFMKo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe> */}
           <div className="relative">
             <div className="relative">
-            <img src={bgRound} alt="group" className="absolute z-[-9999]" />
-            <img width="363" height="363" src={consultancy} alt="" />
+              <img src={bgRound} alt="group" className="absolute z-[-9999]" />
+              <img width="363" height="363" src={consultancy} alt="" />
             </div>
-            <img  src={forntCon}  alt="group" className="absolute z-[9999] top-[45%] md:left-[-85px] left-[-50px]" />
-            <img  src={forntsmal}  alt="group" className="absolute z-[9999] bottom-[-42px] md:right-[-63px] right-[52px]" />
+            <img src={forntCon} alt="group" className="absolute z-[9999] top-[45%] md:left-[-85px] left-[-50px]" />
+            <img src={forntsmal} alt="group" className="absolute z-[9999] bottom-[-42px] md:right-[-63px] right-[52px]" />
 
           </div>
         </div>

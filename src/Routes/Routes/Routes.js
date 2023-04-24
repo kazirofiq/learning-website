@@ -39,13 +39,6 @@ import WorkShopLayout from "../../Layout/WorkShopLayout";
 import UpComingDetails from "../../Pages/WorkShop/UpComingDetails/UpComingDetails";
 import Vedio from "../../Pages/CourseVedio/Vedio/Vedio";
 // import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
-import WorkShop from "../../Pages/WorkShop/WorkShop";
-import CreateCourse from "../../Pages/CreateCourse/CreateCourse";
-import SideCategory from "../../Pages/CreateCourse/SideCategory/SideCategory";
-import CourseCurriculum from "../../Pages/CourseCurriculum/CourseCurriculum";
-import CourseCurriculumQuiz from "../../Pages/CourseCurriculum/CourseCurriculumQuiz/CourseCurriculumQuiz";
-import UPloadResource from "../../Pages/UploadResource/UPloadResource";
-
 
 
 const router = createBrowserRouter([
@@ -93,14 +86,6 @@ const router = createBrowserRouter([
             {
                 path: '/allreviews',
                 element: <AllReviews />
-            },
-            {
-                path: '/workshop',
-                element: <WorkShop />
-            },
-            {
-                path: '/importent',
-                element: <ImportentLink />
             },
             {
                 path: '/upcomingdetails',
@@ -218,25 +203,6 @@ const router = createBrowserRouter([
             // },
 
             {
-                path: '/admindashboard/course-create',
-                element: <SideCategory />,
-                children: [
-                    {
-                        path: '/admindashboard/course-create',
-                        element: <CreateCourse />
-                    },
-                    {
-                        path: '/admindashboard/course-create/course-curriculum',
-                        element: <CourseCurriculum />
-                    },
-                    {
-                        path: '/admindashboard/course-create/course-curriculum-quiz',
-                        element: <CourseCurriculumQuiz />
-                    },
-                ]
-            },
-
-            {
                 path: "/admindashboard/mycourse",
                 element: <MyCourse></MyCourse>,
                 children: [
@@ -251,10 +217,8 @@ const router = createBrowserRouter([
 
                 ]
             },
-            {
-                path: '/admindashboard/upload-Resource',
-                element: <UPloadResource />
-            },
+
+
         ]
 
     },
