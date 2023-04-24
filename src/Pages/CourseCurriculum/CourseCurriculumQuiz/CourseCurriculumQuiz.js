@@ -109,7 +109,7 @@ const CourseCurriculumQuiz = () => {
           >
             Lesson 1-4: Quiz
           </label>
-          <input type="text" id='Upload-File' placeholder="What is Amazon KDP?" className="input border-[1px] rounded-[8px] focus:border-[#C3C4E1] w-full h-[56px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+          <input type="text" id='Upload-File' placeholder="First Quiz of this module" className="input border-[1px] rounded-[8px] focus:border-[#C3C4E1] w-full h-[56px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
              <div className='mt-5'>
              <QuizAccordion />
              </div>
