@@ -61,7 +61,7 @@ const PremiumCourseNavebar = () => {
             </Link>
           </li>
           <li>
-            <Link className={activeItem === 'courseCurriculum' ? 'active bg-[#3D419F] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[146px]] justify-center' : 'bg-[#ECECF5] rounded-[10px] text-[#333] h-[37px] flex items-center w-[97px] lg:w-[146px] justify-center'} onClick={() => handleItemClick('courseCurriculum')}>
+            <Link className={activeItem === 'courseCurriculum' ? 'active bg-[#3D419F] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[146px] justify-center' : 'bg-[#ECECF5] rounded-[10px] text-[#333] h-[37px] flex items-center w-[97px] lg:w-[146px] justify-center'} onClick={() => handleItemClick('courseCurriculum')}>
               <a href="#courseCurriculum">Curriculum</a>
             </Link>
           </li>
