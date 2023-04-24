@@ -73,7 +73,7 @@ const UploadVideoCurriculum = () => {
             <img className='mr-3' src={PlusIcon} alt="" />
                   <span className='font-normal text-base text-[#3D419F] cursor-pointer'>Add More</span>
         </div>
-        <Buttons setRoute={'/admindashboard/course-create/faq'} text={'Save & Continue'} />
+        <Buttons setRoute={'/admindashboard/course-create/AddFAQ'} text={'Save & Continue'} />
             </div>
         </div>
     );

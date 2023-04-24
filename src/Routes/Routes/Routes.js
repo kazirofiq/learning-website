@@ -21,8 +21,13 @@ import Quiz from "../../Pages/Quiz/Quiz";
 import Consultetion from "../../Pages/Consultetion/Consultation";
 import Resource from "../../Pages/Resource/Resource";
 import BsrCalculetor from "../../Pages/KdpTools/BsrCalculetor/BsrCalculetor";
+import SideCategory from "../../Pages/CreateCourse/SideCategory/SideCategory";
+import CourseCurriculum from "../../Pages/CourseCurriculum/CourseCurriculum";
+import CourseCurriculumQuiz from "../../Pages/CourseCurriculum/CourseCurriculumQuiz/CourseCurriculumQuiz";
+import CreateCourse from "../../Pages/CreateCourse/CreateCourse";
 import KdpTools from "../../Pages/KdpTools/KdpTools/KdpTools";
 import RoyalCalculetor from "../../Pages/KdpTools/RoyaltyCalculetor/RoyalCalculetor";
+import UPloadResource from "../../Pages/UploadResource/UPloadResource";
 import KdpLayout from "../../Layout/KdpLayout";
 import QrGenaretor from "../../Pages/KdpTools/QrGenaretor/QrGenaretor";
 import CategoryFinder from "../../Pages/KdpTools/CategoryFinder/CategoryFinder";
@@ -38,6 +43,7 @@ import CourseLayout from "../../Layout/CourseLayout";
 import WorkShopLayout from "../../Layout/WorkShopLayout";
 import UpComingDetails from "../../Pages/WorkShop/UpComingDetails/UpComingDetails";
 import Vedio from "../../Pages/CourseVedio/Vedio/Vedio";
+import AddFAQ from "../../Pages/Home/PremiumCourse/AddFAQ/AddFAQ";
 // import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
 
 
@@ -197,30 +203,50 @@ const router = createBrowserRouter([
                 path: '/admindashboard',
                 element: <AdminDashboard></AdminDashboard>
             },
-            // {
-            //     path: '/admindashboard/sendnotification',
-            //     element: <SendNotification></SendNotification>
-            // },
-
+            {
+                path: '/admindashboard/course-create',
+                element: <SideCategory />,
+                children:[
+                   {
+                    path:'/admindashboard/course-create',
+                    element: <CreateCourse />
+                   },
+                   {
+                    path:'/admindashboard/course-create/course-curriculum',
+                    element: <CourseCurriculum />
+                   },
+                   {
+                    path:'/admindashboard/course-create/course-curriculum-quiz',
+                    element: <CourseCurriculumQuiz />
+                   },
+                   {
+                    path:'/admindashboard/course-create/AddFAQ',
+                    element: <AddFAQ />
+                   }
+                ]
+            },
+            
             {
                 path: "/admindashboard/mycourse",
                 element: <MyCourse></MyCourse>,
                 children: [
-                    {
-                        path: "/admindashboard/mycourse",
-                        element: <CourseList></CourseList>
-                    },
-                    {
-                        path: "/admindashboard/mycourse/draftcourse",
-                        element: <DraftCourse></DraftCourse>
-                    },
-
+                  {
+                    path: "/admindashboard/mycourse",
+                    element: <CourseList></CourseList>
+                  },
+                  {
+                    path: "/admindashboard/mycourse/draftcourse",
+                    element: <DraftCourse></DraftCourse>
+                  },
+                  
                 ]
+              },
+              {
+                path:'/admindashboard/upload-Resource',
+                element: <UPloadResource />
             },
-
-
         ]
-
+        
     },
 ])
 
