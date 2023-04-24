@@ -3,6 +3,7 @@ import './Banner.css';
 import bannerRightPic from '../../../assest/bg-img/bannerright (1).png';
 import arrow from '../../../assest/bg-img/Arrow.png'
 import start_button from '../../../assest/banner/start_button.png';
+import { Link } from 'react-router-dom';
 import HowItWorksVideo from './HowItWorksVideo';
 
 const Banner = () => {
@@ -11,7 +12,7 @@ const Banner = () => {
 
     return (
         <section className='bg-[#F8F8FF]'>
-            <div className='max-w-[1350px] lg:px-11 mx-auto flex-row-reverse lg-w-full lg:flex md:flex pt-5 lg:pt-0 pb-[40px] lg:pb-[90px] items-center px-5'>
+            <div className='max-w-[1350px] lg:px-11 mx-auto flex-row-reverse lg-w-full lg:flex md:flex pt-5 lg:pt-0 pb-[40px] lg:pb-[90px] items-center lg:px-0 px-5'>
                 <div className='flex-row w-full lg:ml-[31px] lg:mt-3'>
                     <img className='w-full' src={bannerRightPic} alt="" />
                 </div>
@@ -59,7 +60,6 @@ const Banner = () => {
             <HowItWorksVideo
                 setOpenVideo={setOpenVideo}
             ></HowItWorksVideo>
-            {/* <MessageBox></MessageBox> */}
         </section >
     );
 };

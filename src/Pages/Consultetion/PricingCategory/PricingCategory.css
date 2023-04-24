@@ -18,16 +18,19 @@
     color: #666666;
 }
 
-.pricing-card:hover{
+.pricing-card:hover {
     background-color: #3D419F;
-    color:white;
-}
-.pricing-card:hover .price-category{
     color: white;
 }
+
+.pricing-card:hover .price-category {
+    color: white;
+}
+
 .pricing-card:hover ul {
     color: white;
 }
-.pricing-card:hover button{
+
+.pricing-card:hover button {
     color: #3D419F;
 }
