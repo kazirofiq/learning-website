@@ -10,18 +10,35 @@ import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
 import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 import Assignment from "../../Pages/Assignment/Assignment";
-import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
 import AdminDashboard from "../../Pages/AdminDashboard/AdminDashboard";
 import AdmindashboardLayout from "../../Pages/AdminDashboard/AdmindashboardLayout/AdmindashboardLayout";
 import MyCourse from "../../Pages/AdminDashboard/MyCourse/MyCourse";
 import CourseList from "../../Pages/AdminDashboard/CourseList/CourseList";
 import DraftCourse from "../../Pages/AdminDashboard/DraftCourse/DraftCourse";
-
+import UpcomingPremimumCourses from "../../Pages/Courses/UpcomingPremimumCourses/UpcomingPremimumCourses";
+import FreeCorses from "../../Pages/Courses/FreeCorses/FreeCorses";
 import Quiz from "../../Pages/Quiz/Quiz";
 import Consultetion from "../../Pages/Consultetion/Consultation";
 import Resource from "../../Pages/Resource/Resource";
-import WorkShop from "../../Pages/WorkShop/WorkShop";
-import SendNotification from "../../Pages/AdminDashboard/SendNotificationModal/SendNotificationModal";
+import BsrCalculetor from "../../Pages/KdpTools/BsrCalculetor/BsrCalculetor";
+import KdpTools from "../../Pages/KdpTools/KdpTools/KdpTools";
+import RoyalCalculetor from "../../Pages/KdpTools/RoyaltyCalculetor/RoyalCalculetor";
+import KdpLayout from "../../Layout/KdpLayout";
+import QrGenaretor from "../../Pages/KdpTools/QrGenaretor/QrGenaretor";
+import CategoryFinder from "../../Pages/KdpTools/CategoryFinder/CategoryFinder";
+import Upcoming from "../../Pages/WorkShop/Upcoming/Upcoming";
+import Previous from "../../Pages/WorkShop/Previous/Previous";
+import ProfileLayout from "../../Layout/ProfileLayout";
+import ImportentLink from "../../Pages/ProfilePage/ImportentLink/ImportentLink";
+import OrderHistory from "../../Pages/ProfilePage/OrderHistory/OrderHistory";
+import AllReviews from "../../Pages/Reviews/AllReviews/AllReviews";
+import MyCourses from "../../Pages/Courses/MyCourses/MyCourses";
+import PreviousWorkshop from "../../Pages/Courses/PreviousWorkshop/PreviousWorkshop";
+import CourseLayout from "../../Layout/CourseLayout";
+import WorkShopLayout from "../../Layout/WorkShopLayout";
+import UpComingDetails from "../../Pages/WorkShop/UpComingDetails/UpComingDetails";
+import Vedio from "../../Pages/CourseVedio/Vedio/Vedio";
+// import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
 
 
 const router = createBrowserRouter([
@@ -51,12 +68,12 @@ const router = createBrowserRouter([
                 element: <OrderDetails />
             },
             {
-                path: '/profile',
-                element: <ProfilePage />
+                path: '/upcomingpremimumcourse',
+                element: <UpcomingPremimumCourses />
             },
             {
-                path: '/importent',
-                element: <ImportentLink />
+                path: '/freecorses',
+                element: <FreeCorses />
             },
             {
                 path: '/consultetion',
@@ -67,34 +84,108 @@ const router = createBrowserRouter([
                 element: <Resource />
             },
             {
-                path: '/profile',
-                element: <ProfilePage />
+                path: '/allreviews',
+                element: <AllReviews />
             },
             {
-                path: '/workshop',
-                element: <WorkShop />
+                path: '/upcomingdetails',
+                element: <UpComingDetails />
+            },
+            // {
+            //     path: '/reviewmodal',
+            //     element: <ReviewModal />
+            // }
+
+
+        ]
+    },
+    {
+        path: '/mycourses',
+        element: <CourseLayout />,
+        children: [
+            {
+                path: '/mycourses',
+                element: <MyCourses />
+            },
+            {
+                path: '/mycourses/previousworkshop',
+                element: <PreviousWorkshop />
             }
         ]
     },
     {
-        path: '/dashboard',
+        path: '/workshop',
+        element: <WorkShopLayout />,
+        children: [
+            {
+                path: '/workshop/upcoming',
+                element: <Upcoming />
+            },
+            {
+                path: '/workshop/previous',
+                element: <Previous></Previous>
+            },
+        ]
+    },
+    {
+        path: '/profile',
+        element: <ProfileLayout />,
+        children: [
+            {
+                path: '/profile',
+                element: <ProfilePage />
+            },
+            {
+                path: '/profile/importent',
+                element: <ImportentLink />
+            },
+            {
+                path: '/profile/orderhistory',
+                element: <OrderHistory />
+            }
+        ]
+    },
+    {
+        path: '/kdptools',
+        element: <KdpLayout />,
+        children: [
+            {
+                path: '/kdptools',
+                element: <KdpTools />,
+            },
+            {
+                path: '/kdptools/bsrcalculetor',
+                element: <BsrCalculetor></BsrCalculetor>
+            },
+            {
+                path: '/kdptools/royaltycalculetor',
+                element: <RoyalCalculetor></RoyalCalculetor>
+            },
+            {
+                path: '/kdptools/qrgenaretor',
+                element: <QrGenaretor></QrGenaretor>
+            },
+            {
+                path: '/kdptools/categoryfinder',
+                element: <CategoryFinder></CategoryFinder>
+            },
+        ]
+    },
+    {
+        path: '/vedio',
         element: <MyCourseLayout></MyCourseLayout>,
         children: [
             {
-                path: '/dashboard/my_course',
-                element: <Dashboard></Dashboard>
+                path: '/vedio',
+                element: <Vedio />
             },
             {
-                path: '/dashboard/assignment',
+                path: '/vedio/assignment',
                 element: <Assignment></Assignment>
             },
             {
-                path: '/dashboard/quiz',
+                path: '/vedio/quiz',
                 element: <Quiz></Quiz>
-            },
-            {
-                path: '/dashboard/myclass',
-                element: <MyClasses></MyClasses>
             },
         ]
     },
@@ -110,24 +201,24 @@ const router = createBrowserRouter([
             //     path: '/admindashboard/sendnotification',
             //     element: <SendNotification></SendNotification>
             // },
-            
+
             {
                 path: "/admindashboard/mycourse",
                 element: <MyCourse></MyCourse>,
                 children: [
-                  {
-                    path: "/admindashboard/mycourse",
-                    element: <CourseList></CourseList>
-                  },
-                  {
-                    path: "/admindashboard/mycourse/draftcourse",
-                    element: <DraftCourse></DraftCourse>
-                  },
-                  
+                    {
+                        path: "/admindashboard/mycourse",
+                        element: <CourseList></CourseList>
+                    },
+                    {
+                        path: "/admindashboard/mycourse/draftcourse",
+                        element: <DraftCourse></DraftCourse>
+                    },
+
                 ]
-              },
-            
-           
+            },
+
+
         ]
     },
 ])

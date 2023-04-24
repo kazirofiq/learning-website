@@ -1,5 +1,6 @@
 import React from "react";
 import consultancy from "../../../assest/bg-img/Image.png";
+import { Link } from "react-router-dom";
 
 const Consultancy = () => {
   return (
@@ -20,9 +21,11 @@ const Consultancy = () => {
               strengths,
               <br /> set goals, and develop strategies.{" "}
             </p>
-            <button className="mt-6 lg:mt-10 md:mt-10 px-4 py-2 lg:px-8 lg:py-4 bg-[#3D419F] text-white rounded-xl lg:font-semibold font-normal lg:text-base text-sm">
-              See Details
-            </button>
+            <Link to='/consultetion'>
+              <button className="mt-6 lg:mt-10 md:mt-10 px-4 py-2 lg:px-8 lg:py-4 bg-[#3D419F] text-white rounded-xl lg:font-semibold font-normal lg:text-base text-sm">
+                See Details
+              </button>
+            </Link>
           </div>
           {/* <iframe className=" lg:w-1/2 rounded-lg" width="363" height="363" src="https://www.youtube.com/embed/lJ5z7sdFMKo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe> */}
           <img width="363" height="363" src={consultancy} alt="" />
