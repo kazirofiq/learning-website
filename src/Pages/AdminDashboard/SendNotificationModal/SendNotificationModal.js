@@ -88,8 +88,8 @@ const SendNotificationModal = ({ setEditingClient }) => {
                 <textarea
                   className="textarea textarea-bordered h-[164px] bg-[#F8F8FF] resize-none text-[#333333]"
                   placeholder=""
-                  defaultValue="Some awesome resource will be added the course Curriculam. Hope we’ll learn some good techniques
-                  Cheers, Mondol vai"
+                  defaultValue="Some awesome resource will be added the course Curriculam.Hope we’ll learn some good techniques
+                  Cheers,Mondol vai"
                 ></textarea>
               </div>
             </div>
