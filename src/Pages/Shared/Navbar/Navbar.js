@@ -300,7 +300,7 @@ const Navbar = () => {
         </>
     );
     return (
-        <section className="bg-[#FFFFFF]">
+        <section className="bg-[#FFFFFF] max-w-[1110px]">
             <div className="max-w-[1350px] hidden md:block lg:px-11 mx-auto py-[28px]">
                 <div className="relative flex items-center justify-between lg:px-0 px-5">
                     <Link

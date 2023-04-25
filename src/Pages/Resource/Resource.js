@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ractangle from "../../assest/resources/rectangle.png";
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch, AiOutlineStar } from "react-icons/ai";
 import { BiChevronDown } from "react-icons/bi";
 import { BiChevronLeft } from "react-icons/bi";
 import { AiOutlineBars } from "react-icons/ai";
@@ -246,11 +246,52 @@ const Resource = () => {
                 />
               </span>
             </div>
+            {/* <div className="grid lg:grid-cols-3 md:grid-cols-2 mt-10 gap-y-6">
+              {
+                freeResource.map(resource =>
+                  <div class="group relative block">
+                    <div className='absolute object-cover transition-opacity'>
+                      <div className="group-hover:opacity-40">
+                        <img className="w-full" src={resource.img} alt=""></img>
+                      </div>
+                    </div >
+                    <div class="p-0 md:p-4 lg:p-4">
+                      <div class="mt-32 sm:mt-48 lg:mt-24 flex">
+                        <div
+                          class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 flex gap-5"
+                        >
+                          <a href='/'>
+                            <div className='h-5 w-5 rounded-full p-2'>
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6  " fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                            </div>
+                          </a>
+                          <p class="text-xs text-black">
+                            2023 Family Weekly & Monthly kdp interior free download
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }
+
+            </div> */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-y-6 ">
               {freeResource.map((resource) => (
                 <label htmlFor="my-modal-3" className="cursor-pointer">
                   <div className=" px-3">
-                    <img className="w-full " src={resource.img} alt="" />
+                    <div className="group  rounded-xl">
+                      <img className="w-full absolutes object-cover opacity-100 transition-opacity group-hover:opacity-75" src={resource.img} alt="" />
+                      {/* <div className="relative">
+                        <div className="-mt-20">
+                          <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                            <p class="text-sm text-black">
+                              2023 Family Weekly & Monthly kdp interior free download
+                            </p>
+                          </div>
+                        </div>
+                      </div> */}
+                    </div>
                   </div>
                 </label>
 
