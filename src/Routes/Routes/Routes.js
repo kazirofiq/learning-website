@@ -8,9 +8,7 @@ import OrderDetails from "../../Pages/OrderDetails/OrderDetails";
 import MyCourseLayout from "../../Layout/MyCourseLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
-import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 import Assignment from "../../Pages/Assignment/Assignment";
-import ImportentLink from "../../Pages/Modal/ImportentLink/ImportentLink";
 import Quiz from "../../Pages/Quiz/Quiz";
 import FreeCorses from "../../Pages/Courses/FreeCorses/FreeCorses";
 import WorkShop from "../../Pages/WorkShop/WorkShop";
@@ -32,6 +30,10 @@ import MyCourse from "../../Pages/AdminDashboard/MyCourse/MyCourse";
 import AdminDashboard from "../../Pages/AdminDashboard/AdminDashboard";
 import AdmindashboardLayout from "../../Pages/AdminDashboard/AdmindashboardLayout/AdmindashboardLayout";
 import Resource from "../../Pages/Resource/Resource";
+import Consultation from "../../Pages/Consultetion/Consultation";
+import ImportentLink from "../../Pages/ProfilePage/ImportentLink/ImportentLink";
+import FrequentlyAskedQuestion from "../../Pages/Home/PremiumCourse/FrequentlyAskedQuestion/FrequentlyAskedQuestion";
+import AddFAQ from "../../Pages/Home/PremiumCourse/AddFAQ/AddFAQ";
 
 
 const router = createBrowserRouter([
@@ -70,7 +72,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/consultetion',
-                element: <Consultetion />
+                element: <Consultation />
             },
             {
                 path: '/resource',
@@ -91,9 +93,11 @@ const router = createBrowserRouter([
             {
                 path: '/allreviews',
                 element: <AllReviews />
+            },
+            {
+                path: '/faq',
+                element: <AddFAQ />
             }
-
-
         ]
     },
     {
@@ -101,15 +105,11 @@ const router = createBrowserRouter([
         element: <ProfileLayout />,
         children: [
             {
-                path: '/student_dashboard',
-                element: <StudentDashboard />
-            },
-            {
-                path: '/importent',
+                path: '/profile/importent',
                 element: <ImportentLink />
             },
             {
-                path: '/profile/orderhistory',
+                path: '/profile/profile/orderhistory',
                 element: <OrderHistory />
             }
         ]

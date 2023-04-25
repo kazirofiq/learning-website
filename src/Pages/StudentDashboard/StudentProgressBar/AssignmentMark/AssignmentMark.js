@@ -32,9 +32,7 @@ const AssignmentMark = () => {
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                         ))}
                     </Pie>
-
                 </PieChart>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, magnam!</p>
             </div>
         </section>
     );

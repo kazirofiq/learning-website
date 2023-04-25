@@ -15,8 +15,8 @@ const AdmindashboardLayout = () => {
                 className='hidden' onClick={toggleSidebar} type="checkbox" id='toggle-sidebar'/> */}
                 <AdminHeader></AdminHeader>
                 <Outlet></Outlet>
-                
-                </div>
+
+            </div>
         </div>
     );
 };

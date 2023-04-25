@@ -14,7 +14,9 @@ const ProfileLayout = () => {
                     <div className='ml-[50px] md:ml-0 lg:ml-0 hidden lg:block md:block'>
                         <ProfileCard />
                     </div>
-                    <Outlet></Outlet>
+                    <Outlet>
+
+                    </Outlet>
                     <div className='lg:hidden block'>
                         <ResponsiveBottomNav />
                     </div>

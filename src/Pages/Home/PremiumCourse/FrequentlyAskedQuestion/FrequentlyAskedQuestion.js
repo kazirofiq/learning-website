@@ -23,7 +23,7 @@ const FrequentlyAskedQuestion = () => {
                                     <p className='text-sm lg:text-base leading-[21px] lg:leading-6 font-normal'>MasterClass is the streaming platform that makes it possible for anyone to watch or listen to hundreds of video lessons taught by 180+ of the world's best.</p>
                                 </div>
                             </div>
-                        </div>
+                    </div>
                     </div>
 
                     <div className="space-y-4 lg:w-[730px] w-[320px] mb-4 mx-auto lg:mx-0">
