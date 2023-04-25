@@ -6,6 +6,8 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import CourseList from "../CourseList/CourseList";
 import DraftCourse from "../DraftCourse/DraftCourse";
+import SendNotification from "../SendNotificationModal/SendNotificationModal";
+import SendNotificationModal from "../SendNotificationModal/SendNotificationModal";
 
 const MyCourse = () => {
 
@@ -37,11 +39,22 @@ const MyCourse = () => {
         </div>
 
         <div className="flex create justify-center items-center mr-4 border-[#3D419F] gap-2">
-          <AiOutlinePlus className="text-[#3D419F]"></AiOutlinePlus>
-          <h2 className="text-[#3D419F] font-[400] leading-[24px]">Create</h2>
+        <label htmlFor="my-modal-3" className="flex justify-center items-center gap-2 ">
+              <AiOutlinePlus className="text-[#3D419F]"></AiOutlinePlus>
+            <h2 className="text-[#3D419F] font-[400] leading-[24px]">Create</h2>
+      </label>
+           
         </div>
       </div>
       <Outlet></Outlet>
+      {/* {
+        active === "courseList" && 
+      }
+      {
+        active === "draftCourse" && 
+      } */}
+      
+      <SendNotificationModal></SendNotificationModal>
     </div>
   );
 };
