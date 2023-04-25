@@ -6,7 +6,7 @@ const courseSummary = [
     {
         id: 1,
         moduleNumber: 1,
-        module: 'Types of Niches in Amazon KDP',
+        module: 'Welcome And Overview Of The Course',
         lessons: [
             {
                 vedioLesson: 'What is Amazon KDP ?',
@@ -29,7 +29,7 @@ const courseSummary = [
     {
         id: 2,
         moduleNumber: 2,
-        module: 'Working Process and Necessary Document',
+        module: 'What Is KDP and How To setup KDP account',
         lessons: [
             'What is Amazon KDP ?',
             'Future and Earning Opportunity',
@@ -40,7 +40,7 @@ const courseSummary = [
     {
         id: 3,
         moduleNumber: 3,
-        module: 'Types of Paperback Book Categories',
+        module: 'All About Illustrator',
         lessons: [
             'What is Amazon KDP ?',
             'Future and Earning Opportunity',
@@ -51,23 +51,67 @@ const courseSummary = [
     {
         id: 1,
         moduleNumber: 4,
-        module: 'Types of Niches in Amazon KDP',
+        module: 'Niche Research On KDP',
         lessons: [
             {
-                vedioLesson: 'What is Amazon KDP ?',
+                vedioLesson: 'What Is Niche?',
                 vedioLink: 'https://cdn.pixabay.com/photo/2017/07/18/18/24/dove-2516641__340.jpg'
             },
             {
-                vedioLesson: 'Future and Earning Opportunity',
+                vedioLesson: 'What is evergreen Niche?',
                 vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
             },
             {
-                vedioLesson: 'Amazon Kindle Copyright and Trademark Rules',
+                vedioLesson: 'What is event Niche?',
                 vedioLink: 'https://i.pinimg.com/736x/5d/87/f5/5d87f5aa96107b62534fa6c9cf6baa95.jpg'
             },
             {
-                vedioLesson: 'How to Make Book Cover Template for KDP',
+                vedioLesson: "What is extension and why It's important?",
                 vedioLink: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq6oy5oJPmD04d-CqCcywDlFe73C8E23oD1IbrCzmzfk3v_JluW3TkFxiYlH5cCuqudk4&usqp=CAU'
+            },
+            {
+                vedioLesson: "How to add extensions?",
+                vedioLink: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq6oy5oJPmD04d-CqCcywDlFe73C8E23oD1IbrCzmzfk3v_JluW3TkFxiYlH5cCuqudk4&usqp=CAU'
+            },
+            {
+                vedioLesson: "All about BSR?",
+                vedioLink: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq6oy5oJPmD04d-CqCcywDlFe73C8E23oD1IbrCzmzfk3v_JluW3TkFxiYlH5cCuqudk4&usqp=CAU'
+            },
+            {
+                vedioLesson: ' All about search result, score and search volume?',
+                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
+            },
+            {
+                vedioLesson: 'Different types of books on KDP With List Of the Books?',
+                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
+            },
+            {
+                vedioLesson: 'Manually niche research on kdp?',
+                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
+            },
+            {
+                vedioLesson: 'Manually  niche research on other marketplace?',
+                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
+            },
+            {
+                vedioLesson: 'Niche research with paid tools Part 01?',
+                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
+            },
+            {
+                vedioLesson: 'Niche research with paid tools part 02?',
+                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
+            },
+            {
+                vedioLesson: ' My niche research Style ( Niche Nurturing) Part 01?',
+                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
+            },
+            {
+                vedioLesson: 'My niche research Style ( Niche Nurturing) Part 02?',
+                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
+            },
+            {
+                vedioLesson: 'How to take niche research service to save time?',
+                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
             },
         ]
     },

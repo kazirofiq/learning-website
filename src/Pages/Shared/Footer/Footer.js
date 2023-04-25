@@ -30,9 +30,9 @@ const Footer = () => {
                 </div>
                 <div>
                     <span className="font-bold uppercase text-[700] text-white">Contact Us</span>
-                    <div className='flex'><FiPhoneCall className='mr-4'></FiPhoneCall><Link className="link link-hover">+880 1781-251002</Link></div>
-                    <div className='flex'><AiFillMail className='mr-4'></AiFillMail><Link className="link link-hover">+Mondolgd111@gmail.com</Link></div>
-                    <div className='flex'><FaAddressBook className='mr-4'></FaAddressBook><Link className="link link-hover">Street, Magura-7611,Khulna</Link></div>
+                    <div className='flex'><FiPhoneCall className='mr-4'></FiPhoneCall><Link className="link link-hover">+8801612-039047</Link></div>
+                    <div className='flex'><AiFillMail className='mr-4'></AiFillMail><Link className="link link-hover">support@learnwithrakib.pro</Link></div>
+                    <div className='flex'><FaAddressBook className='mr-4'></FaAddressBook><Link className="link link-hover">Mouvasha Road, Rangpur.</Link></div>
 
                 </div>
                 <div>

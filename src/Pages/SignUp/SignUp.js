@@ -68,7 +68,7 @@ const SignUp = () => {
                 {...register("name", {
                   required: "Your Name is required",
                 })}
-                className=" pad outline-none bg-white input-bordered w-full max-w-xs "
+                className=" pad outline-none text-black bg-white input-bordered w-full max-w-xs "
               />
               {errors.name && (
                 <p className="text-red-600" role="alert">
@@ -83,7 +83,7 @@ const SignUp = () => {
                 {...register("email", {
                   required: "email is required",
                 })}
-                className=" pad outline-none  input-bordered w-full max-w-xs "
+                className=" pad outline-none text-black input-bordered w-full max-w-xs "
               />
               {errors.email && (
                 <p className="text-red-600" role="alert">
@@ -93,12 +93,12 @@ const SignUp = () => {
             </div>
             <div className="form-control w-full mt-4 ">
               <input
-                type="number"
+                type="text"
                 placeholder="mobile"
                 {...register("number", {
                   required: "Number is required",
                 })}
-                className=" pad outline-none  input-bordered w-full max-w-xs "
+                className=" pad outline-none text-black input-bordered w-full max-w-xs "
               />
               {errors.number && (
                 <p className="text-red-600" role="alert">
@@ -109,7 +109,7 @@ const SignUp = () => {
 
             <div className="pwd-container  w-full mt-4 rounded-full">
               <input
-                className=" pad outline-none w-full max-w-xs"
+                className=" pad text-black outline-none w-full max-w-xs"
                 name="pwd"
                 placeholder="Enter Password"
                 {...register("password", {
@@ -164,7 +164,7 @@ const SignUp = () => {
                       </g>
                     </svg>
                   </div>
-                  <span className="label-text text-[12px] font-light">
+                  <span className="label-text text-black text-[12px] font-light">
                     I agree to all the{" "}
                     <span className="text-[#333333] font-bold">terms</span> and{" "}
                     <span className="font-bold text-[#333333]">
