@@ -1,9 +1,9 @@
 import React from "react";
 import "./WhatLearn.css";
 import ai from "../../../../assest/what-learn/ai.png";
-import Amazon from "../../../../assest/what-learn/Amazon.png";
+import Amazon from "../../../../assest/what-learn/amajon.png";
 import Freepik from "../../../../assest/what-learn/Freepik.png";
-import Fiverrr from "../../../../assest/what-learn/Fiverrr.png";
+import Fiverrr from "../../../../assest/what-learn/fiverr.png";
 import circle_1 from "../../../../assest/what-learn/circle-1.png";
 import circle_2 from "../../../../assest/what-learn/circle-2.png";
 import circle_3 from "../../../../assest/what-learn/circle-3.png";
@@ -15,25 +15,25 @@ const WhatLearn = () => {
       circle: circle_1,
       icon: ai,
       heading: "Adobe Illustrtor",
-      text: "Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency",
+      text: "Create art that speaks volumes. Design logos, illustrations, and graphics with precision and creativity using Adobe's industry-leading vector graphics software.",
     },
     {
       circle: circle_2,
       icon: Amazon,
       heading: "KDP",
-      text: "Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency",
+      text: "KDP Self-publishing made easy! Create, publish, and sell your own books on Amazon with Kindle Direct Publishing. Share your creativity with the world and reach users worldwide!",
     },
     {
       circle: circle_3,
       icon: Fiverrr,
       heading: "Fiverr",
-      text: "Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency",
+      text: "Unlock your freelance potential. Find gigs, showcase your skills, and earn money doing what you love. Join the global community of freelancers on Fiverr today!",
     },
     {
       circle: circle_4,
       icon: Freepik,
       heading: "Freepik",
-      text: "Office Services, Sweeping Mopping, Kitchen Cleaning, Cleaning Emergency",
+      text: "Freepik is your design marketplace. Sell your creative assets and reach millions of potential customers. Join the community of talented sellers on Freepik and monetize your designs!",
     },
   ];
   return (
@@ -43,10 +43,10 @@ const WhatLearn = () => {
           What You will <span style={{ color: "#38A27B" }}>learn?</span>
         </h2>
 
-        <div className="grid sm:grid-cols-2  md:grid-cols-4 gap-4 ">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mt-12">
           {whatlearns.map((whatlearn, index) => (
             <div key={index}>
-              <div className="text-center p-5 ">
+              <div className="text-center">
                 <div className="flex justify-center items-center">
                   <div className="circleIcon">
                     <img className="circle " src={whatlearn.circle} alt="" />
@@ -56,11 +56,11 @@ const WhatLearn = () => {
                     </div>
                   </div>
                 </div>
-                <div className="grid lg:grid-rows-2 md:grid-rows-2 items-center justify-center">
-                  <h2 className=" text-2xl  font-bold text-[#1B1D48]">
+                <div className="">
+                  <h2 className=" text-2xl mt-[27px] font-bold text-[#1B1D48]">
                     {whatlearn.heading}
                   </h2>
-                  <p className="lg:w-[250px] text-[#666666] w-[255px] mx-auto">
+                  <p className="lg:w-[250px] text-[#666666] w-[255px] mt-[17px] mx-auto">
                     {whatlearn.text}
                   </p>
                 </div>

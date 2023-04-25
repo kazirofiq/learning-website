@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { VedioContext } from "../../../contexts/VedioProvider";
 
 const Breadcrumb = () => {
+
+  const { selectedOption } = useContext(VedioContext)
+
   return (
     <div className="lg:block hidden">
       <nav className="flex" aria-label="Breadcrumb">
@@ -53,7 +57,7 @@ const Breadcrumb = () => {
                 ></path>
               </svg>
               <span className="text-base poppins font-medium text-[#333333] dark:text-[#333333]">
-                What Is Amazon KDP?
+                {selectedOption}
               </span>
             </div>
           </li>

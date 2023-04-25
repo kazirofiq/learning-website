@@ -4,10 +4,23 @@ import app from '../firebase/firebase.config';
 
 export const AuthContext = createContext();
 const auth = getAuth(app)
-  
+
 const AuthProvider = ({ children }) => {
+    // const [isOpen, setIsOpen] = useState(false);
+    // const [selectedOption, setSelectedOption] = useState(null);
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+
+
+    // const toggling = () => setIsOpen(!isOpen);
+    // const onOptionClicked = value => () => {
+    //     setIsOpen(false);
+    //     setSelectedOption(value);
+    //     console.log(value);
+    // };
+
+
+
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
@@ -43,7 +56,13 @@ const AuthProvider = ({ children }) => {
         updateUser,
         logOut,
         user,
-        loading
+        loading,
+        // setIsOpen,
+        // isOpen,
+        // setSelectedOption,
+        // selectedOption,
+        // onOptionClicked,
+        // toggling
     }
     return (
         <AuthContext.Provider value={authInfo}>

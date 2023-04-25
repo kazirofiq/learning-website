@@ -9,18 +9,18 @@ import MyCourseLayout from "../../Layout/MyCourseLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
 import Assignment from "../../Pages/Assignment/Assignment";
-import Quiz from "../../Pages/Quiz/Quiz";
+import AdminDashboard from "../../Pages/AdminDashboard/AdminDashboard";
+import AdmindashboardLayout from "../../Pages/AdminDashboard/AdmindashboardLayout/AdmindashboardLayout";
+import MyCourse from "../../Pages/AdminDashboard/MyCourse/MyCourse";
+import CourseList from "../../Pages/AdminDashboard/CourseList/CourseList";
+import DraftCourse from "../../Pages/AdminDashboard/DraftCourse/DraftCourse";
+
+import UpcomingPremimumCourses from "../../Pages/Courses/UpcomingPremimumCourses/UpcomingPremimumCourses";
 import FreeCorses from "../../Pages/Courses/FreeCorses/FreeCorses";
+import Quiz from "../../Pages/Quiz/Quiz";
+import Consultetion from "../../Pages/Consultetion/Consultation";
+import Resource from "../../Pages/Resource/Resource";
 import WorkShop from "../../Pages/WorkShop/WorkShop";
-import Upcoming from "../../Pages/WorkShop/Upcoming/Upcoming";
-import Previous from "../../Pages/WorkShop/Previous/Previous";
-import AllReviews from "../../Pages/Reviews/AllReviews/AllReviews";
-import ProfileLayout from "../../Layout/ProfileLayout";
-import StudentDashboard from "../../Pages/StudentDashboard/StudentDashboard/StudentDashboard";
-import OrderHistory from "../../Pages/ProfilePage/OrderHistory/OrderHistory";
-import CategoryFinder from "../../Pages/KdpTools/CategoryFinder/CategoryFinder";
-import QrGenaretor from "../../Pages/KdpTools/QrGenaretor/QrGenaretor";
-import RoyalCalculetor from "../../Pages/KdpTools/RoyaltyCalculetor/RoyalCalculetor";
 import BsrCalculetor from "../../Pages/KdpTools/BsrCalculetor/BsrCalculetor";
 import KdpTools from "../../Pages/KdpTools/KdpTools/KdpTools";
 import KdpLayout from "../../Layout/KdpLayout";
@@ -32,8 +32,8 @@ import AdmindashboardLayout from "../../Pages/AdminDashboard/AdmindashboardLayou
 import Resource from "../../Pages/Resource/Resource";
 import Consultation from "../../Pages/Consultetion/Consultation";
 import ImportentLink from "../../Pages/ProfilePage/ImportentLink/ImportentLink";
-import FrequentlyAskedQuestion from "../../Pages/Home/PremiumCourse/FrequentlyAskedQuestion/FrequentlyAskedQuestion";
-import AddFAQ from "../../Pages/Home/PremiumCourse/AddFAQ/AddFAQ";
+import OrderHistory from "../../Pages/ProfilePage/OrderHistory/OrderHistory";
+import AllReviews from "../../Pages/Reviews/AllReviews/AllReviews";
 
 
 const router = createBrowserRouter([
@@ -79,25 +79,35 @@ const router = createBrowserRouter([
                 element: <Resource />
             },
             {
-                path: '/workshop',
-                element: <WorkShop />
-            },
-            {
-                path: '/upcoming',
-                element: <Upcoming></Upcoming>
-            },
-            {
-                path: '/previous',
-                element: <Previous></Previous>
-            },
-            {
                 path: '/allreviews',
                 element: <AllReviews />
             },
             {
-                path: '/faq',
-                element: <AddFAQ />
+                path: '/upcomingdetails',
+                element: <UpComingDetails />
+            },
+            // {
+            //     path: '/reviewmodal',
+            //     element: <ReviewModal />
+            // }
+
+
+        ]
+    },
+    {
+        path: '/mycourses',
+        element: <CourseLayout />,
+        children: [
+            {
+                path: '/mycourses',
+                element: <MyCourses />
+            },
+            {
+                path: '/allreviews',
+                element: <AllReviews />
             }
+
+
         ]
     },
     {
@@ -141,24 +151,20 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: '/dashboard',
+        path: '/vedio',
         element: <MyCourseLayout></MyCourseLayout>,
         children: [
             {
-                path: '/dashboard/my_course',
-                element: <Dashboard></Dashboard>
+                path: '/vedio',
+                element: <Vedio />
             },
             {
-                path: '/dashboard/assignment',
+                path: '/vedio/assignment',
                 element: <Assignment></Assignment>
             },
             {
-                path: '/dashboard/quiz',
+                path: '/vedio/quiz',
                 element: <Quiz></Quiz>
-            },
-            {
-                path: '/dashboard/myclass',
-                element: <MyClasses></MyClasses>
             },
         ]
     },
@@ -170,10 +176,28 @@ const router = createBrowserRouter([
                 path: '/admindashboard',
                 element: <AdminDashboard></AdminDashboard>
             },
-            // {
-            //     path: '/admindashboard/mycourse',
-            //     element: <MyCourse></MyCourse>
-            // },
+            {
+                path: '/admindashboard/course-create',
+                element: <SideCategory />,
+                children: [
+                    {
+                        path: '/admindashboard/course-create',
+                        element: <CreateCourse />
+                    },
+                    {
+                        path: '/admindashboard/course-create/course-curriculum',
+                        element: <CourseCurriculum />
+                    },
+                    {
+                        path: '/admindashboard/course-create/course-curriculum-quiz',
+                        element: <CourseCurriculumQuiz />
+                    },
+                    {
+                        path: '/admindashboard/course-create/AddFAQ',
+                        element: <AddFAQ />
+                    }
+                ]
+            },
 
             {
                 path: "/admindashboard/mycourse",
@@ -190,9 +214,12 @@ const router = createBrowserRouter([
 
                 ]
             },
-
-
+            {
+                path: '/admindashboard/upload-Resource',
+                element: <UPloadResource />
+            },
         ]
+
     },
 ])
 

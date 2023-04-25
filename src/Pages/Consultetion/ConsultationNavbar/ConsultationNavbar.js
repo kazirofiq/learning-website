@@ -50,37 +50,37 @@ const ConsultationNavbar = () => {
     return (
         <div className={activeItem === "free-course" ? 'hidden' : "sticky top-0 rounded-[10px] lg:z-20"}>
             <div className='lg:px-[145px]' >
-                <nav className="bg-[#ECECF5] rounded-[10px] mt-[32px] lg:block hidden">
+                <nav className="bg-[#ECECF5] rounded-[10px] mt-[32px] lg:block hidden lg:w-[77%]">
                     <ul className="flex justify-between h-[37px] items-center">
                         <li className=''>
-                            <Link className={activeItem === 'aboutTheCourse' ? 'active bg-[#3D419F] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[152px] justify-center' : 'bg-[#ECECF5] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[152px] justify-center'} onClick={() => handleItemClick('aboutTheCourse')}>
+                            <Link className={activeItem === 'aboutTheCourse' ? 'active bg-[#3D419F] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[140px] justify-center' : 'bg-[#ECECF5] rounded-[10px] text-[#C3C4E1] h-[37px] flex items-center w-[97px] lg:w-[140px] justify-center'} onClick={() => handleItemClick('aboutTheCourse')}>
                                 <a href="#aboutTheCourse">Details</a>
                             </Link>
                         </li>
                         <li>
-                            <Link className={activeItem === 'WhatWillYouLearn' ? 'active bg-[#3D419F] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[152px] justify-center' : 'bg-[#ECECF5] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[152px] justify-center'} onClick={() => handleItemClick('WhatWillYouLearn')}>
+                            <Link className={activeItem === 'WhatWillYouLearn' ? 'active bg-[#3D419F] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[140px] justify-center' : 'bg-[#ECECF5] rounded-[10px] text-[#C3C4E1] h-[37px] flex items-center w-[97px] lg:w-[140px] justify-center'} onClick={() => handleItemClick('WhatWillYouLearn')}>
                                 <a href="#WhatWillYouLearn">What You Learn</a>
                             </Link>
                         </li>
                         <li>
-                            <Link className={activeItem === 'PricingCategory' ? 'active bg-[#3D419F] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[152px] justify-center' : 'bg-[#ECECF5] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[152px] justify-center'} onClick={() => handleItemClick('PricingCategory')}>
+                            <Link className={activeItem === 'PricingCategory' ? 'active bg-[#3D419F] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[140px] justify-center' : 'bg-[#ECECF5] rounded-[10px] text-[#C3C4E1] h-[37px] flex items-center w-[97px] lg:w-[140px] justify-center'} onClick={() => handleItemClick('PricingCategory')}>
                                 <a href="#PricingCategory">Pricing Plan</a>
                             </Link>
                         </li>
                         <li>
-                            <Link className={activeItem === 'frequentlyAskedQuestion' ? 'active bg-[#3D419F] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[152px] justify-center' : 'bg-[#ECECF5] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[152px] justify-center'} onClick={() => handleItemClick('frequentlyAskedQuestion')}>
+                            <Link className={activeItem === 'frequentlyAskedQuestion' ? 'active bg-[#3D419F] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[140px] justify-center' : 'bg-[#ECECF5] rounded-[10px] text-[#C3C4E1] h-[37px] flex items-center w-[97px] lg:w-[140px] justify-center'} onClick={() => handleItemClick('frequentlyAskedQuestion')}>
                                 <a href="#frequentlyAskedQuestion">FAQ</a>
                             </Link>
                         </li>
                         <li>
-                            <Link className={activeItem === 'LearnerReview' ? 'active bg-[#3D419F] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[152px] justify-center' : 'bg-[#ECECF5] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[152px] justify-center'} onClick={() => handleItemClick('LearnerReview')}>
+                            <Link className={activeItem === 'LearnerReview' ? 'active bg-[#3D419F] rounded-[10px] text-[#FFFFFF] h-[37px] flex items-center w-[97px] lg:w-[140px] justify-center' : 'bg-[#ECECF5] rounded-[10px] text-[#C3C4E1] h-[37px] flex items-center w-[97px] lg:w-[140px] justify-center'} onClick={() => handleItemClick('LearnerReview')}>
                                 <a href="#LearnerReview">Review</a>
                             </Link>
                         </li>
                     </ul>
                 </nav>
                 {/* Responsive nav */}
-                <nav className="bg-[#ECECF5] rounded-[10px] mt-6 lg:hidden mx-auto">
+                <nav className="bg-[#ECECF5] rounded-[10px] mt-6 hidden mx-auto">
                     <ul className="flex justify-between h-[37px] items-center">
                         <Swiper
                             slidesPerView={3}

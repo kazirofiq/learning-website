@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link , useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assest/bg-img/login.png";
 import { GrView } from "react-icons/gr";
 import { BsEyeSlash } from "react-icons/bs";
@@ -11,11 +11,11 @@ import { AuthContext } from "../../contexts/AuthProvider";
 
 const SignIn = () => {
 
-  const {signIn} = useContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || '/';
-  const {register, formState: { errors }, handleSubmit } = useForm();
+  const { register, formState: { errors }, handleSubmit } = useForm();
   const [pwd, setPwd] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
 
@@ -23,23 +23,23 @@ const SignIn = () => {
   const handleLogin = data => {
     console.log(data);
     signIn(data.email, data.password)
-        .then(result => {
-            //const user = result.user;
-            console.log(result);
-            navigate(from, { replace: true });
+      .then(result => {
+        //const user = result.user;
+        console.log(result);
+        navigate(from, { replace: true });
 
-        })
-        .catch(error => {
-            console.log(error.message);
-        });
-}
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+  }
 
 
   return (
     <div className="bg mb-10 lg:py-[120px] mx-auto flex justify-center items-center">
       <div className="h-[372px] bxsh bg-white shadow-2xl  w-[398px] p-[24px] mx-auto flex justify-center items-center">
         <div className="w-96 bg-white rounded-xl  py-4 px-8">
-          <h2 className="text-[24px] leading-[36px] text-[#1B1D48] pb-[12px] text-center font-bold">
+          <h2 className="text-[24px] leading-[36px]  pb-[12px] text-center font-bold">
             Welcome Back
           </h2>
 
@@ -66,7 +66,7 @@ const SignIn = () => {
                 name="pwd"
                 {...register("password", {
                   required: "Password is required"
-              })}
+                })}
                 placeholder="Enter Password"
                 type={isRevealPwd ? "text" : "password"}
                 value={pwd}
@@ -94,11 +94,11 @@ const SignIn = () => {
                     id="A3-yes"
                     name="A3-confirmation"
                     value="yes"
-                    className="opacity-0 absolute h-8 w-8"
+                    class="opacity-0 absolute h-8 w-8"
                   />
-                  <div className="bg-white border-2  border-[#4044A0] w-[16px] h-[16px] flex  flex-shrink-0 justify-center items-center mr-2 focus-within:border-[#4044A0]">
+                  <div class="bg-white border-2  border-[#4044A0] w-[16px] h-[16px] flex  flex-shrink-0 justify-center items-center mr-2 focus-within:border-[#4044A0]">
                     <svg
-                      className="fill-current hidden w-3 h-3 text-[#3D419F] pointer-events-none"
+                      class="fill-current hidden w-3 h-3 text-[#3D419F] pointer-events-none"
                       version="1.1"
                       viewBox="0 0 17 12"
                       xmlns="http://www.w3.org/2000/svg"

@@ -10,6 +10,7 @@ import StudentFeedback from '../StudentFeedback/StudentFeedback';
 // import MessageBox from '../MessageBox/MessageBox';
 import StudentList from '../../StudentList/StudentList';
 import AssignmentList from '../../../AssignmentList/AssignmentList';
+import SuccesModal from '../../Modal/SuccesModal/SuccesModal';
 
 
 const Home = () => {
@@ -23,8 +24,10 @@ const Home = () => {
             <AmazingResource></AmazingResource>
             <StudentFeedback></StudentFeedback>
             <Frequently></Frequently>
-            <StudentList />
-            <AssignmentList></AssignmentList>
+            {/* <StudentList /> */}
+            {/* <AssignmentList></AssignmentList> */}
+            {/* <SuccesModal /> */}
+
         </div>
     );
 };
