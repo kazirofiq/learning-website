@@ -15,7 +15,7 @@ const CourseCurriculumAccordion = () => {
                                 <p className="lg:text-[18px] md:text-[18px] leading-[27px] font-medium poppins">Greetings and Instroduction</p>
                             </div>
 
-                            <div className="collapse-content bg-[#FFFFFF] text-primary-content peer-checked:bg-[#FFFFFF] peer-checked:text-[#666666]">
+                            {/* <div className="collapse-content bg-[#FFFFFF] text-primary-content peer-checked:bg-[#FFFFFF] peer-checked:text-[#666666]">
                                 <div className="flex justify-between mt-3">
                                     <div className="flex items-center gap-2">
                                         <img src={play} alt="" className="w-[14px] h-[14px]" />
@@ -36,7 +36,7 @@ const CourseCurriculumAccordion = () => {
                                         <img src={lock} alt="" className="w-[14px] h-[14px]" />
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className="collapse collapse-arrow bg-white">
@@ -46,7 +46,7 @@ const CourseCurriculumAccordion = () => {
                                 <p className="lg:text-[18px] md:text-[18px] leading-[27px] font-medium poppins">Design Principle</p>
                             </div>
 
-                            <div className="collapse-content bg-[#FFFFFF] text-primary-content peer-checked:bg-[#FFFFFF] peer-checked:text-[#666666]">
+                            {/* <div className="collapse-content bg-[#FFFFFF] text-primary-content peer-checked:bg-[#FFFFFF] peer-checked:text-[#666666]">
                                 <div className="flex justify-between mt-3">
                                     <div className="flex items-center gap-2">
                                         <img src={play} alt="" className="w-[14px] h-[14px]" />
@@ -67,7 +67,7 @@ const CourseCurriculumAccordion = () => {
                                         <img src={lock} alt="" className="w-[14px] h-[14px]" />
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
 
 
@@ -78,7 +78,7 @@ const CourseCurriculumAccordion = () => {
                                 <p className="lg:text-[18px] md:text-[18px] leading-[27px] font-medium poppins">Learn Tool Easiest Way</p>
                             </div>
 
-                            <div className="collapse-content bg-[#FFFFFF] text-primary-content peer-checked:bg-[#FFFFFF] peer-checked:text-[#666666]">
+                            {/* <div className="collapse-content bg-[#FFFFFF] text-primary-content peer-checked:bg-[#FFFFFF] peer-checked:text-[#666666]">
                                 <div className="flex justify-between mt-3">
                                     <div className="flex items-center gap-2">
                                         <img src={play} alt="" className="w-[14px] h-[14px]" />
@@ -99,7 +99,7 @@ const CourseCurriculumAccordion = () => {
                                         <img src={lock} alt="" className="w-[14px] h-[14px]" />
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
 
                     </div>

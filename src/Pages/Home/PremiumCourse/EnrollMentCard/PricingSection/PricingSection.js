@@ -16,6 +16,9 @@ const PricingSection = () => {
             <button className="rounded-[10px] w-[320px] text-sm lg:text-base font-[600] text-[#FFFFFF] bg-[#3D419F]  py-[10px] lg:w-full mx-auto">Enroll Now</button>
           </div>
         </Link>
+        <div className='mt-4 text-black ml-5'>
+          To know the process <Link><span className='text-[#3D419F]'>Watch this Video</span></Link>
+        </div>
       </div>
     </div>
 

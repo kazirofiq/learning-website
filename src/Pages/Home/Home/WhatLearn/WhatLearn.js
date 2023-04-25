@@ -43,10 +43,10 @@ const WhatLearn = () => {
           What You will <span style={{ color: "#38A27B" }}>learn?</span>
         </h2>
 
-        <div className="grid sm:grid-cols-2  md:grid-cols-4 gap-4 ">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mt-12">
           {whatlearns.map((whatlearn, index) => (
             <div key={index}>
-              <div className="text-center p-5 ">
+              <div className="text-center">
                 <div className="flex justify-center items-center">
                   <div className="circleIcon">
                     <img className="circle " src={whatlearn.circle} alt="" />
@@ -56,11 +56,11 @@ const WhatLearn = () => {
                     </div>
                   </div>
                 </div>
-                <div className="grid lg:grid-rows-2 md:grid-rows-2 items-center justify-center">
-                  <h2 className=" text-2xl  font-bold text-[#1B1D48]">
+                <div className="">
+                  <h2 className=" text-2xl mt-[27px] font-bold text-[#1B1D48]">
                     {whatlearn.heading}
                   </h2>
-                  <p className="lg:w-[250px] text-[#666666] w-[255px] mx-auto">
+                  <p className="lg:w-[250px] text-[#666666] w-[255px] mt-[17px] mx-auto">
                     {whatlearn.text}
                   </p>
                 </div>

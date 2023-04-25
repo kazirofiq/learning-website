@@ -90,7 +90,7 @@ const FrequentlyAskedQuestion = () => {
                         </div>
                     </div>
 
-                    <div className="space-y-4 lg:w-[730px] w-[320px] mx-auto lg:mx-0">
+                    <div className="space-y-4 lg:w-[730px] mb-4 w-[320px] mx-auto lg:mx-0">
                         <div className="collapse collapse-arrow">
                             <input type="checkbox" className="peer" />
 
@@ -105,7 +105,7 @@ const FrequentlyAskedQuestion = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="space-y-4 lg:w-[730px] w-[320px] mx-auto lg:mx-0">
+                    <div className="space-y-4 lg:w-[730px] mb-4 w-[320px] mx-auto lg:mx-0">
                         <div className="collapse collapse-arrow">
                             <input type="checkbox" className="peer" />
 
@@ -120,7 +120,7 @@ const FrequentlyAskedQuestion = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="space-y-4 lg:w-[730px] w-[320px] mx-auto lg:mx-0">
+                    <div className="space-y-4 lg:w-[730px] mb-4 w-[320px] mx-auto lg:mx-0">
                         <div className="collapse collapse-arrow">
                             <input type="checkbox" className="peer" />
 
@@ -135,7 +135,7 @@ const FrequentlyAskedQuestion = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="space-y-4 lg:w-[730px] w-[320px] mx-auto lg:mx-0">
+                    <div className="space-y-4 lg:w-[730px] mb-4 w-[320px] mx-auto lg:mx-0">
                         <div className="collapse collapse-arrow">
                             <input type="checkbox" className="peer" />
 
