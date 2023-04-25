@@ -45,7 +45,10 @@ import UpComingDetails from "../../Pages/WorkShop/UpComingDetails/UpComingDetail
 import Vedio from "../../Pages/CourseVedio/Vedio/Vedio";
 import AddFAQ from "../../Pages/Home/PremiumCourse/AddFAQ/AddFAQ";
 // import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
-
+import AboutUs from "../../Pages/Shared/Footer/AboutUs/AboutUs";
+import PrivacyPolicy from "../../Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy";
+import Refund from "../../Pages/Shared/Footer/Refund/Refund";
+import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/TermsAndConditions";
 
 const router = createBrowserRouter([
     {
@@ -97,10 +100,23 @@ const router = createBrowserRouter([
                 path: '/upcomingdetails',
                 element: <UpComingDetails />
             },
-            // {
-            //     path: '/reviewmodal',
-            //     element: <ReviewModal />
-            // }
+            // footer text route
+            {
+                path: '/aboutUs',
+                element: <AboutUs />
+            },
+            {
+                path: '/privacyPolicy',
+                element: <PrivacyPolicy />
+            },
+            {
+                path: '/termsAndCondition',
+                element: <TermsAndConditions />
+            },
+            {
+                path: '/refund',
+                element: <Refund />
+            },
 
 
         ]

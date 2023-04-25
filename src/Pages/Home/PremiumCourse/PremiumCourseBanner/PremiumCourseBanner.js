@@ -17,9 +17,9 @@ const PremiumCourseBanner = () => {
             <img className='lg:hidden block mx-auto' src={bannerResponsiveImg} alt="" />
             <div className='lg:grid flex flex-col lg:w-[1110px] w-[360px] mx-auto mt-[38px] gap-4 lg:gap-[30px]' style={{ gridTemplateColumns: "4fr 1fr" }}>
                 <div className='lg:w-[743px] w-[320px] lg:px-0 px-5'>
-                    <h2 className='text-[#38A27B] lg:text-[40px] text-[24px] font-bold lg:leading-[60px] leading-9'><span className='text-[#1B1D48] lg:inline-block block lg:w-[720px] w-[320px]'>Graphic Design Bootcamp:<br /> </span> Photoshop, Illustrator, InDesign</h2>
-                    <p className='lg:block hidden text-sm lg:text-[16px] font-normal leading-6 text-[#666666] mt-[18px]'>Learn With Rakib is an interesting platform that will teach you in <br /> more an interactive way</p>
-                    <p className='lg:hidden block text-base lg:w-[720px] w-[320px] font-normal leading-6 text-[#666666] mt-[18px]'>Learn With Rakib is an interesting platform that will teach you in more an interactive way</p>
+                    <h2 className='text-[#38A27B] lg:text-[40px] text-[24px] font-bold lg:leading-[60px] leading-9'><span className='text-[#1B1D48] lg:inline-block block lg:w-[720px] w-[320px]'>KDP Mastery: <span className='text-[#38A27B]'>The Complete Guide</span><br /> </span>  to Self-Publishing on Amazon</h2>
+                    <p className='lg:block hidden text-sm lg:text-[16px] font-normal leading-6 text-[#666666] mt-[18px]'> Unlock Your Publishing Success with Expert Guidance and Strategies from Learn With  Rakib's <br /> Premium Paid Course: KDP Mastery - The Complete Guide to Self-Publishing on Amazon.</p>
+                    <p className='lg:hidden block text-base lg:w-[720px] w-[320px] font-normal leading-6 text-[#666666] mt-[18px]'>Unlock Your Publishing Success with Expert Guidance and Strategies from Learn With  Rakib's Premium Paid Course: KDP Mastery - The Complete Guide to Self-Publishing on Amazon.</p>
                     <div className='lg:block hidden'>
                         <PremiumCourseNavebar />
                         <AboutTheCourse />

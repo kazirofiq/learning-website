@@ -52,7 +52,7 @@ const Reviews = () => {
             {
                 reviews.map(review => (
                     <div>
-                        <div className='w-[320px] lg:w-[640px] mx-auto lg:mx-0 border-solid border-[0.5px] border-[#3D419F] rounded-2xl p-5 lg:p-8 mt-3'>
+                        <div className='mx-auto lg:mx-0 border-solid border-[0.5px] border-[#3D419F] rounded-2xl p-5 lg:p-8 mt-3'>
                             <div className='flex items-center gap-x-6'>
                                 <img className='h-12 w-12' src={avater} alt="" />
                                 <div className='poppins'>

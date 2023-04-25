@@ -10,10 +10,9 @@ import hidePwdImg from "../../assest/login-svg/hide-password.svg";
 import "./SignUp.css";
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
-import {getUserToken} from "../../hooks/useToken"
 
 const SignUp = () => {
-  const { createUser, updateUser, user } = useContext(AuthContext);
+  const { createUser, updateUser } = useContext(AuthContext);
   const {
     register,
     formState: { errors },
@@ -28,38 +27,15 @@ const SignUp = () => {
   const handleSignUp = (data) => {
     createUser(data.email, data.password)
       .then(result => {
+        const user = result.user;
+        console.log(user);
         const userInfo = {
           displayName: data.name
         }
-        console.log(userInfo)
         updateUser(userInfo)
-          .then(() => {
-            console.log(user);
-
-            // Studnet Info for Backend
-            const studentInfo = {
-              name : user.displayName,
-              email : user.email,
-              phoneNumber : data.number,
-              studentID : user.uid,
-            }
-            // send data to DB
-
-          //   fetch('http://localhost:5000/users', {
-          //   method: 'POST',
-          //   headers: {
-          //       'content-type': 'application/json'
-          //   },
-          //   body: JSON.stringify(studentInfo)
-          //  })
-          //   .then(res => res.json())
-          //   .then(data => conslode.log(data))
-
-
-            // Get JWT Token
-            
-          //getUserToken(user.email);
-          // navigate('/');
+          .then((result) => {
+            console.log(result);
+            navigate('/');
           })
           .catch(err => console.log(err));
       })
@@ -78,7 +54,7 @@ const SignUp = () => {
 
     // }}
     >
-      <div className="h-[583px] shadow-slate-500 lg:shadow-none md:shadow-none w-[398px] pt-[3.5rem] mx-auto flex justify-center items-center">
+      <div className="h-[520px] bg-white bxs mt-[40px] z-50 shadow-slate-500 lg:shadow-none md:shadow-none w-[398px] p-[24px] lg:mt-[26px] md:mt-[26px] lg:ml-[325px] md:ml-[325px] mx-auto flex justify-center items-center">
         <div className="w-96 bg-white rounded-xl  py-4 px-8">
           <h2 className="text-[24px] leading-[36px] text-[#1B1D48] pb-[12px] text-center font-bold">
             Create Account
@@ -92,7 +68,7 @@ const SignUp = () => {
                 {...register("name", {
                   required: "Your Name is required",
                 })}
-                className=" pad input-bordered w-full max-w-xs "
+                className=" pad outline-none bg-white input-bordered w-full max-w-xs "
               />
               {errors.name && (
                 <p className="text-red-600" role="alert">
@@ -107,7 +83,7 @@ const SignUp = () => {
                 {...register("email", {
                   required: "email is required",
                 })}
-                className=" pad input-bordered w-full max-w-xs "
+                className=" pad outline-none  input-bordered w-full max-w-xs "
               />
               {errors.email && (
                 <p className="text-red-600" role="alert">
@@ -122,7 +98,7 @@ const SignUp = () => {
                 {...register("number", {
                   required: "Number is required",
                 })}
-                className=" pad input-bordered w-full max-w-xs "
+                className=" pad outline-none  input-bordered w-full max-w-xs "
               />
               {errors.number && (
                 <p className="text-red-600" role="alert">
@@ -133,7 +109,7 @@ const SignUp = () => {
 
             <div className="pwd-container  w-full mt-4 rounded-full">
               <input
-                className=" pad w-full max-w-xs"
+                className=" pad outline-none w-full max-w-xs"
                 name="pwd"
                 placeholder="Enter Password"
                 {...register("password", {
@@ -209,7 +185,7 @@ const SignUp = () => {
           </form>
           <p className="font-semibold text-[16px] leading-[24px] text-[#666666] mt-[16px] text-center">
             All ready have an account{" "}
-            <Link className="text-[#3D419F]" to="/signup">
+            <Link className="text-[#3D419F]" to="/login">
               Please Login
             </Link>
           </p>
