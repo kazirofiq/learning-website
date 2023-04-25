@@ -15,7 +15,7 @@ const ConsultationReviews = () => {
                             <div className='flex items-center'>
                                 <img src={reviewer} alt="" />
                                 <div className='poppins pl-5'>
-                                    <p className='text-start text-[#333333] text-sm lg:text-base leading-[21px] lg:leading-6 font-bold poppins'>Rakib Ahmed</p>
+                                    <p className='text-start text-[#333333] text-sm lg:text-base leading-[21px] lg:leading-6 font-bold poppins'>Dalowar Hosen</p>
                                     <div className='flex items-center gap-2 lg:gap-3'>
                                         <img src={rating} alt="" className='w-[79px] h-[11px]' />
                                         <p className='text-[#666666] font-light text-center lg:text-start text-xs leading-[18px]'>17-03-2023</p>
@@ -23,7 +23,7 @@ const ConsultationReviews = () => {
                                 </div>
                             </div>
                             <div className='mt-[15.5px] lg:mt-[22px]'>
-                                <p className='lg:block hidden text-[#666666] text-sm font-normal leading-[21px]'>This course is a great basic course for the beginner who is trying to get into graphic design. It goes over a good chunk of the tools that are available in Adobe. Keep in mind though that true artistic talent is not necessarily learned, and Derrick is extremely talented. He does a great job of explaining things so even those of us who aren't talented can understand and feel like we can actually do this.</p>
+                                <p className='lg:block hidden text-[#666666] text-sm font-normal leading-[21px]'>I am thrilled with the wealth of knowledge and support I have received from Learn With Rakib. The website offers a comprehensive premium paid course on KDP and consultation services on various freelancing topics. Rakib's passion for teaching and expertise in the field have been evident in the quality of the resources and guidance provided. I am grateful for the impact it has had on my freelancing career!</p>
                                 <p className='block lg:hidden text-[#666666] text-sm font-normal leading-[21px]'>This course is a great basic course for the beginner who is trying to get into graphic...<Link><span className='text-blue-500'>more</span></Link></p>
                             </div>
                         </div>
@@ -32,7 +32,7 @@ const ConsultationReviews = () => {
                             <div className='flex items-center'>
                                 <img src={reviewer} alt="" />
                                 <div className='poppins pl-5'>
-                                    <p className='text-start text-[#333333] text-sm lg:text-base leading-[21px] lg:leading-6 font-bold poppins'>Rakib Ahmed</p>
+                                    <p className='text-start text-[#333333] text-sm lg:text-base leading-[21px] lg:leading-6 font-bold poppins'>Mohammad Salauddin</p>
                                     <div className='flex items-center gap-2 lg:gap-3'>
                                         <img src={rating} alt="" className='w-[79px] h-[11px]' />
                                         <p className='text-[#666666] font-light text-center lg:text-start text-xs leading-[18px]'>17-03-2023</p>
@@ -40,7 +40,7 @@ const ConsultationReviews = () => {
                                 </div>
                             </div>
                             <div className='mt-[15.5px] lg:mt-[22px]'>
-                                <p className='lg:block hidden text-[#666666] text-sm font-normal leading-[21px]'>This course is a great basic course for the beginner who is trying to get into graphic design. It goes over a good chunk of the tools that are available in Adobe. Keep in mind though that true artistic talent is not necessarily learned, and Derrick is extremely talented. He does a great job of explaining things so even those of us who aren't talented can understand and feel like we can actually do this.</p>
+                                <p className='lg:block hidden text-[#666666] text-sm font-normal leading-[21px]'>Learn With Rakib has been an invaluable resource for my creative journey. The website offers a wide range of services, including a premium paid course on KDP, free classes on YouTube, and tailored consultation packages. Rakib's insights, strategies, and guidance have helped me enhance my freelancing skills and overcome challenges. I highly recommend Learn With Rakib to anyone looking to level up their creativity and freelancing game</p>
                                 <p className='block lg:hidden text-[#666666] text-sm font-normal leading-[21px]'>This course is a great basic course for the beginner who is trying to get into graphic...<Link><span className='text-blue-500'>more</span></Link></p>
                             </div>
                         </div>

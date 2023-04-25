@@ -8,7 +8,7 @@ const PricingCategory = () => {
             <div className="px-[20px] lg:px-[145px]">
                 <div className="mx-auto">
                     <div className="max-w-2xl mx-auto mb-7 lg:mb-11 text-center text-[#191D23]">
-                        <span className="font-semibold text-xl lg:text-[40px] leading-[30px] lg:leading-[48px]">Our Pricing Plan</span>
+                        <span className="font-bold text-xl lg:text-[40px] leading-[30px] lg:leading-[48px]">Our Pricing Plan</span>
                         <h2 className="pt-[5px] text-sm lg:text-lg font-normal leading-[21px] lg:leading-[27px]">Choose a plan that’s right for you</h2>
                     </div>
                     <div className="">
@@ -16,7 +16,7 @@ const PricingCategory = () => {
                             <div className="flex flex-col mb-4 md:mb-5 lg:mb-0 p-6 pricing-card max-w-[300px] lg:mr-[15px]">
                                 <div className="space-y-2 price-category text-center text-[#666666]">
                                     <h4 className="text-lg leading-[27px] font-normal">Basic</h4>
-                                    <span className="text-[40px] leading-[60px] font-bold">$250</span>
+                                    <span className="text-[40px] leading-[60px] font-bold">৳250</span>
                                 </div>
                                 <ul className="flex-1 mb-6 px-[20px] text-[#333333] pt-6">
                                     <li className="flex items-center justify-between  text-base font-medium
@@ -46,7 +46,7 @@ const PricingCategory = () => {
                             <div className="flex flex-col mb-4 md:mb-5 lg:mb-0 p-6 pricing-card max-w-[300px] lg:mr-[15px]">
                                 <div className="space-y-2 price-category text-center text-[#666666]">
                                     <h4 className="text-lg leading-[27px] font-normal">PREMIUM</h4>
-                                    <span className="text-[40px] leading-[60px] font-bold">$500</span>
+                                    <span className="text-[40px] leading-[60px] font-bold">৳500</span>
                                 </div>
                                 <ul className="flex-1 mb-6 px-[20px] text-[#333333] pt-6">
                                     <li className="flex items-center justify-between  text-base font-medium
@@ -76,7 +76,7 @@ const PricingCategory = () => {
                             <div className="flex flex-col mb-4 md:mb-5 lg:mb-0 p-6 pricing-card max-w-[300px] lg:mr-[15px]">
                                 <div className="space-y-2 price-category text-center text-[#666666]">
                                     <h4 className="text-lg leading-[27px] font-normal">DIAMOND</h4>
-                                    <span className="text-[40px] leading-[60px] font-bold">$750</span>
+                                    <span className="text-[40px] leading-[60px] font-bold">৳750</span>
                                 </div>
                                 <ul className="flex-1 mb-6 px-[8px] text-[#333333] pt-6">
                                     <li className="flex items-center justify-between  text-base font-medium
