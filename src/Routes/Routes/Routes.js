@@ -44,6 +44,10 @@ import CourseCurriculum from "../../Pages/Home/PremiumCourse/CourseCurriculum/Co
 import CourseCurriculumQuiz from "../../Pages/CourseCurriculum/CourseCurriculumQuiz/CourseCurriculumQuiz";
 import AddFAQ from "../../Pages/Home/PremiumCourse/AddFAQ/AddFAQ";
 import UPloadResource from "../../Pages/UploadResource/UPloadResource";
+import AboutUs from "../../Pages/Shared/Footer/AboutUs/AboutUs";
+import PrivacyPolicy from "../../Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy";
+import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/TermsAndConditions";
+import Refund from "../../Pages/Shared/Footer/Refund/Refund";
 // import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
 
 
@@ -97,10 +101,23 @@ const router = createBrowserRouter([
                 path: '/upcomingdetails',
                 element: <UpComingDetails />
             },
-            // {
-            //     path: '/reviewmodal',
-            //     element: <ReviewModal />
-            // }
+            // footer text route
+            {
+                path: '/aboutUs',
+                element: <AboutUs />
+            },
+            {
+                path: '/privacyPolicy',
+                element: <PrivacyPolicy />
+            },
+            {
+                path: '/termsAndCondition',
+                element: <TermsAndConditions />
+            },
+            {
+                path: '/refund',
+                element: <Refund />
+            },
 
 
         ]

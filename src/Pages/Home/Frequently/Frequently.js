@@ -10,10 +10,10 @@ const Frequently = () => {
         Frequently Asked  <span className="text-[#38A27B]">Question</span>{" "}
       </h2>
       <section
-        class="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center md:px-[145px]"
+        class="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center md:px-[145px] py-5"
       >
         <div>
-          <div class="h-[690px] flex items-center mb-5">
+          <div class=" flex items-center mb-5">
             <div className="">
               <section className="dark:text-gray-100">
                 <div className="justify-between flex flex-col">
@@ -70,7 +70,7 @@ const Frequently = () => {
                     >
                       <input type="checkbox" className="peer" />
                       <div className="collapse-title lg:text-[18px] md:text-[18px] text-[16px] font-medium bg-[#FFFFFF] text-[#666666] peer-checked:bg-[#3D419F] peer-checked:text-white">
-                        How can I access the premium paid course on Learn With Rakib?
+                        How can I access the premium course?
                       </div>
                       <div className="collapse-content bg-[#FFFFFF] text-primary-content peer-checked:bg-[#3D419F] peer-checked:text-white">
                         <p className=" ">
@@ -78,7 +78,7 @@ const Frequently = () => {
                         </p>
                       </div>
                     </div>
-                    <div
+                    {/* <div
                       tabIndex={0}
                       className="collapse collapse-arrow border faq-box-shadow bg-[#FFFFFF] rounded-box
                   hover:bg-[#3D419F] hover:border-[#3D419F] hover:text-white focus:outline-none focus:text-white focus:bg-[#3D419F] active:bg-[#3D419F] text-[#666666]"
@@ -92,7 +92,7 @@ const Frequently = () => {
                           Yes, absolutely! Learn With Rakib's website offers a wealth of free resources, including vectors, packages, fonts, and more, to enhance your creative projects and add a professional touch to your work
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                     <div
                       tabIndex={0}
                       className="collapse collapse-arrow border faq-box-shadow bg-[#FFFFFF] rounded-box
