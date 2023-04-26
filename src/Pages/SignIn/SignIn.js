@@ -51,7 +51,7 @@ const SignIn = () => {
                 {...register("email", {
                   required: "Email is required",
                 })}
-                className=" pad input-bordered w-full max-w-xs outline-none"
+                className=" pad text-black input-bordered w-full max-w-xs outline-none"
               />
               {errors.number && (
                 <p className="text-red-600" role="alert">
@@ -60,7 +60,7 @@ const SignIn = () => {
               )}
             </div>
 
-            <div className="pwd-container  w-full mt-4 rounded-full">
+            <div className="pwd-container text-black w-full mt-4 rounded-full">
               <input
                 className=" pad w-full max-w-xs outline-none"
                 name="pwd"
@@ -117,7 +117,7 @@ const SignIn = () => {
                       </g>
                     </svg>
                   </div>
-                  <span className="label-text text-[12px] font-light">
+                  <span className="label-text text-[12px] text-black font-light">
                     Keep me logged in
                   </span>
                 </label>

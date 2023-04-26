@@ -9,31 +9,31 @@ import CourseRoute from '../CourseRoute/CourseRoute';
 const MyCourses = () => {
 
     const MyCourses = [
-        {
-            id: 1,
-            image: card1,
-            title: "How To Publish A Book On Amazon: The Full ...",
-            mentor: "Rakib Ahmed",
-            price: 150
-        },
-        {
-            id: 2,
-            image: card2,
-            title: "How To Publish A Book On Amazon: The Full ...",
-            mentor: "Rakib Ahmed",
-            price: 150
-        },
-        {
-            id: 3,
-            image: card3,
-            title: "How To Publish A Book On Amazon: The Full ...",
-            mentor: "Rakib Ahmed",
-            price: 150
-        },
+        // {
+        //     id: 1,
+        //     image: card1,
+        //     title: "How To Publish A Book On Amazon: The Full ...",
+        //     mentor: "Rakib Ahmed",
+        //     price: 150
+        // },
+        // {
+        //     id: 2,
+        //     image: card2,
+        //     title: "How To Publish A Book On Amazon: The Full ...",
+        //     mentor: "Rakib Ahmed",
+        //     price: 150
+        // },
+        // {
+        //     id: 3,
+        //     image: card3,
+        //     title: "How To Publish A Book On Amazon: The Full ...",
+        //     mentor: "Rakib Ahmed",
+        //     price: 150
+        // },
         {
             id: 4,
             image: card4,
-            title: "How To Publish A Book On Amazon: The Full ...",
+            title: "KDP Mastery: The Complete Guide to Self-Publishing on Amazon...",
             mentor: "Rakib Ahmed",
             price: 150
         },

@@ -28,7 +28,7 @@ const KdpTools = () => {
                     <img src={vedioImage} alt='' />
                 </div>
             </div> */}
-            <div className='flex justify-center items-center px-4 lg:px-8 md:px-7 py-6 lg:py-8 md:py-7 w-full lg:w-[540px] md:w-full h-[285px] border bg-[#FFFFFF] rounded-xl shadow-[#E7E7FF] shadow-xl mt-8 lg:mt-0 md:mt-0'>
+            <div className='flex justify-center items-center px-4 lg:px-8 md:px-7 py-6 lg:py-8 md:py-7 w-full  md:w-full h-[285px] border bg-[#FFFFFF] rounded-xl shadow-[#E7E7FF] shadow-xl mt-8 lg:mt-0 md:mt-0'>
                 <h2 className='lg:leading-[48px] md:leading-[40px] leading-[36px] md:text-3xl lg:text-[32px] text-2xl text-[#1B1D48] font-bold'><span className='text-[#38A27B]'>COMING SOON . . .</span></h2>
             </div>
 
