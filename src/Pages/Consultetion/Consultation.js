@@ -15,10 +15,11 @@ const Consultation = () => {
             <div className="text-center  px-[20px] lg:px-[145px]">
                 <p className='text-lg text-[#333333] font-mem
                  leading-[27px]'>Consultation</p>
-                <h2 className='text-2xl lg:text-[40px] font-bold text-[#1B1D48] leading-[36px] mx-auto lg:leading-[48px] max-w-[874px]'>We have almost 25+ years of experience in <br /><span className='text-[#38A27B]'>Design Consultation</span></h2>
+                <h2 className='text-2xl lg:text-[40px] font-bold text-[#1B1D48] leading-[36px] mx-auto lg:leading-[48px] max-w-[874px]'>Unlock Your Creativity with Expert  <br /><span className='text-[#38A27B]'>Consultation by Rakib</span></h2>
+                <p className='text-black mt-4'> Get personalized guidance, insights, and strategies for your creativity with our tailored consultation packages.</p>
             </div>
             <div>
-                <img className="mx-auto py-[24px] lg:py-[40px]" src={scroll} alt=""/>
+                <img className="mx-auto py-[24px] lg:py-[40px]" src={scroll} alt="" />
             </div>
             <div className=' px-[20px] lg:px-[145px]'>
                 <img className='w-full sm:sml-Cimg lg:Cimg' src={Cimg} alt="" />

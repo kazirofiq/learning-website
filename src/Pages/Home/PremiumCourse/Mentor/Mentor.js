@@ -18,18 +18,18 @@ const Mentor = () => {
                         <img src={mentor_image} alt="" className='lg:w-[186px] h-[194.02px] mx-auto lg:mr-[17px] mt-[9px]' />
                     </div>
                     <div className='poppins mt-[3px] lg:mt-5 lg:text-start text-center'>
-                        <p className='text-[#333333] text-base lg:text-xl leading-[30px] font-semibold'>Rasel Mondol</p>
-                        <p className='text-[#666666] text-[12px] leading-[18px] font-light'>Graphic and UI/UX Designer | Instructor
+                        <p className='text-[#333333] text-base lg:text-xl leading-[30px] font-semibold'>Rakib Ahmad</p>
+                        <p className='text-[#666666] text-[12px] leading-[18px] font-light'>Author | Instructor
                         </p>
-                        <p className='lg:block hidden w-[320px] lg:w-[520px] mt-4 text-[#666666] text-base leading-[21px] lg:leading-6 font-normal'>Experienced in working with creatives (image, poster, flyer, cards
-                            <br /> etc.) for companies and help them grow through branding and
-                            <br /> showcasing their products</p>
+                        <p className=' w-[320px] lg:w-[520px] text-justify mt-4 text-[#666666] text-base leading-[21px] lg:leading-6 font-normal'>
+                            Rakib is a seasoned mentor with a passion for teaching self-publishing. With years of experience in the industry, Rakib has honed his expertise in Kindle Direct Publishing (KDP) and has helped countless aspiring authors achieve success on Amazon. His engaging teaching style and practical approach have made him a sought-after instructor on his website, Learn With Rakib, and YouTube channel. Rakib's dedication to empowering others with knowledge and skills in self-publishing has earned him a reputation as a trusted mentor in the industry.
+                        </p>
 
-                        <p className='block lg:hidden text-center mx-auto w-[320px] lg:w-[520px] mt-3 lg:mt-4 text-[#666666] text-base leading-[21px] lg:leading-6 font-normal'>Experienced in working with creatives
+                        {/* <p className='block lg:hidden text-center mx-auto w-[320px] lg:w-[520px] mt-3 lg:mt-4 text-[#666666] text-base leading-[21px] lg:leading-6 font-normal'>Experienced in working with creatives
                             <br />(image, poster, flyer, cards etc.) for
                             <br />companies and help them grow
                             <br />through branding and
-                            <br />showcasing their products</p>
+                            <br />showcasing their products</p> */}
 
                         <div className='flex lg:mx-0 mx-auto lg:w-[104px] w-[92px] gap-3 lg:gap-4 mt-4 lg:mt-6'>
                             <Link><img src={fb} alt="" /></Link>

@@ -75,7 +75,7 @@ const EnrollMentCard = () => {
                                 <img className='h-5 w-[22px] mr-[9px]' src={instractor} alt="" />
                                 <span className='font-normal text-sm lg:text-base text-[#333333]'>Instructor</span>
                             </div>
-                            <h4 className='font-normal text-sm lg:text-base text-[#333333]'>Rasel Mondol</h4>
+                            <h4 className='font-normal text-sm lg:text-base text-[#333333]'>Rakib Ahmad</h4>
                         </div>
                         <div className="
                  h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
@@ -83,7 +83,7 @@ const EnrollMentCard = () => {
                                 <img className='h-5 w-[22px] mr-[9px]' src={time} alt="" />
                                 <span className='font-normal text-sm lg:text-base text-[#333333]'>Duration</span>
                             </div>
-                            <h4 className='font-normal text-sm lg:text-base text-[#333333]'>3 Month</h4>
+                            <h4 className='font-normal text-sm lg:text-base text-[#333333]'>4 Month</h4>
                         </div>
                         <div className="
                  h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
@@ -91,23 +91,23 @@ const EnrollMentCard = () => {
                                 <img className='h-5 w-[22px] mr-[9px]' src={lesson} alt="" />
                                 <span className='font-normal text-sm lg:text-base text-[#333333]'>Lesson</span>
                             </div>
-                            <h4 className='font-normal text-sm lg:text-base text-[#333333]'>24</h4>
+                            <h4 className='font-normal text-sm lg:text-base text-[#333333]'>250+</h4>
                         </div>
-                        <div className="
+                        {/* <div className="
                  h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
                             <div className='flex items-center'>
                                 <img className='h-5 w-[22px] mr-[9px]' src={enroll} alt="" />
                                 <span className='font-normal text-sm lg:text-base text-[#333333]'>Enrolled</span>
                             </div>
                             <h4 className='font-normal text-sm lg:text-base text-[#333333]'>35 Student</h4>
-                        </div>
+                        </div> */}
                         <div className="
                  h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
                             <div className='flex items-center'>
                                 <img className='h-5 w-[22px] mr-[9px]' src={group} alt="" />
                                 <span className='font-normal text-sm lg:text-base text-[#333333]'>Course Level</span>
                             </div>
-                            <h4 className='font-normal text-sm lg:text-base text-[#333333]'>Intermediate</h4>
+                            <h4 className='font-normal text-sm lg:text-base text-[#333333]'>Advance</h4>
                         </div>
                         <div className="
                  h-11 rounded-none border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">

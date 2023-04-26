@@ -1,0 +1,41 @@
+.accordion {
+  display: block;
+  width: 100%;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.accordion-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.accordion-icon {
+  margin-left: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordion-content {
+  display: none;
+  background-color: #fff;
+}
+
+.accordion-content p {
+  margin: 0;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+}
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}

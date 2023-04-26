@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const KdpRoute = () => {
     return (
         <div>
+            {/* layout ta kothai */}
             <div class="mx-auto max-w-xl">
                 <h2 class="text-xl lg:text-2xl md:text-2xl font-bold sm:font-semibold md:font-semibold leading-[30px] lg:leading-9 md:leading-8 text-[#1B1D48]">Select Tools</h2>
                 <Link to='/kdptools/bsrcalculetor'>
