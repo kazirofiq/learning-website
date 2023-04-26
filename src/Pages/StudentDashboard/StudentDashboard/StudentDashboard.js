@@ -1,12 +1,14 @@
 import React from 'react';
-import ModuleProgress from '../StudentProgressBar/ModuleProgress/ModuleProgress';
-import AssignmentMark from '../StudentProgressBar/AssignmentMark/AssignmentMark';
+import AssignmentMark from '../StudentsMark/AssignmentMark/AssignmentMark';
+import ModuleProgressbar from '../StudentsMark/ModuleProgressbar/ModuleProgressbar';
+import QuizMark from '../StudentsMark/QuizMark/QuizMark';
 
 const StudentDashboard = () => {
     return (
-        <div className='w-[880px] mx-auto grid grid-cols-2'>
-            <ModuleProgress />
-            <AssignmentMark />
+        <div className='mx-6 grid grid-cols-3 gap-[28px] mt-[40px]'>
+            <ModuleProgressbar></ModuleProgressbar>
+            <AssignmentMark></AssignmentMark>
+            <QuizMark></QuizMark>
         </div>
     );
 };

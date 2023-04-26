@@ -8,32 +8,45 @@ import OrderDetails from "../../Pages/OrderDetails/OrderDetails";
 import MyCourseLayout from "../../Layout/MyCourseLayout";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyClasses from "../../Pages/MyClasses/MyClasses";
+import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 import Assignment from "../../Pages/Assignment/Assignment";
 import AdminDashboard from "../../Pages/AdminDashboard/AdminDashboard";
 import AdmindashboardLayout from "../../Pages/AdminDashboard/AdmindashboardLayout/AdmindashboardLayout";
 import MyCourse from "../../Pages/AdminDashboard/MyCourse/MyCourse";
 import CourseList from "../../Pages/AdminDashboard/CourseList/CourseList";
 import DraftCourse from "../../Pages/AdminDashboard/DraftCourse/DraftCourse";
-
 import UpcomingPremimumCourses from "../../Pages/Courses/UpcomingPremimumCourses/UpcomingPremimumCourses";
 import FreeCorses from "../../Pages/Courses/FreeCorses/FreeCorses";
 import Quiz from "../../Pages/Quiz/Quiz";
 import Consultetion from "../../Pages/Consultetion/Consultation";
 import Resource from "../../Pages/Resource/Resource";
-import WorkShop from "../../Pages/WorkShop/WorkShop";
 import BsrCalculetor from "../../Pages/KdpTools/BsrCalculetor/BsrCalculetor";
 import KdpTools from "../../Pages/KdpTools/KdpTools/KdpTools";
+import RoyalCalculetor from "../../Pages/KdpTools/RoyaltyCalculetor/RoyalCalculetor";
 import KdpLayout from "../../Layout/KdpLayout";
-import DraftCourse from "../../Pages/AdminDashboard/DraftCourse/DraftCourse";
-import CourseList from "../../Pages/AdminDashboard/CourseList/CourseList";
-import MyCourse from "../../Pages/AdminDashboard/MyCourse/MyCourse";
-import AdminDashboard from "../../Pages/AdminDashboard/AdminDashboard";
-import AdmindashboardLayout from "../../Pages/AdminDashboard/AdmindashboardLayout/AdmindashboardLayout";
-import Resource from "../../Pages/Resource/Resource";
-import Consultation from "../../Pages/Consultetion/Consultation";
+import QrGenaretor from "../../Pages/KdpTools/QrGenaretor/QrGenaretor";
+import CategoryFinder from "../../Pages/KdpTools/CategoryFinder/CategoryFinder";
+import Upcoming from "../../Pages/WorkShop/Upcoming/Upcoming";
+import Previous from "../../Pages/WorkShop/Previous/Previous";
+import ProfileLayout from "../../Layout/ProfileLayout";
 import ImportentLink from "../../Pages/ProfilePage/ImportentLink/ImportentLink";
 import OrderHistory from "../../Pages/ProfilePage/OrderHistory/OrderHistory";
 import AllReviews from "../../Pages/Reviews/AllReviews/AllReviews";
+import MyCourses from "../../Pages/Courses/MyCourses/MyCourses";
+import PreviousWorkshop from "../../Pages/Courses/PreviousWorkshop/PreviousWorkshop";
+import CourseLayout from "../../Layout/CourseLayout";
+import WorkShopLayout from "../../Layout/WorkShopLayout";
+import UpComingDetails from "../../Pages/WorkShop/UpComingDetails/UpComingDetails";
+import Vedio from "../../Pages/CourseVedio/Vedio/Vedio";
+import SideCategory from "../../Pages/CreateCourse/SideCategory/SideCategory";
+import CreateCourse from "../../Pages/CreateCourse/CreateCourse";
+import CourseCurriculum from "../../Pages/Home/PremiumCourse/CourseCurriculum/CourseCurriculum";
+import CourseCurriculumQuiz from "../../Pages/CourseCurriculum/CourseCurriculumQuiz/CourseCurriculumQuiz";
+import AddFAQ from "../../Pages/Home/PremiumCourse/AddFAQ/AddFAQ";
+import UPloadResource from "../../Pages/UploadResource/UPloadResource";
+import StudentDashboardLayout from "../../Pages/StudentDashboard/StudentDashboardLayout/StudentDashboardLayout";
+import StudentDashboard from "../../Pages/StudentDashboard/StudentDashboard/StudentDashboard";
+// import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
 
 
 const router = createBrowserRouter([
@@ -64,7 +77,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/upcomingpremimumcourse',
-                element: <pUpcomingPremimumCourses />
+                element: <UpcomingPremimumCourses />
             },
             {
                 path: '/freecorses',
@@ -72,7 +85,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/consultetion',
-                element: <Consultation />
+                element: <Consultetion />
             },
             {
                 path: '/resource',
@@ -103,11 +116,23 @@ const router = createBrowserRouter([
                 element: <MyCourses />
             },
             {
-                path: '/allreviews',
-                element: <AllReviews />
+                path: '/mycourses/previousworkshop',
+                element: <PreviousWorkshop />
             }
-
-
+        ]
+    },
+    {
+        path: '/workshop',
+        element: <WorkShopLayout />,
+        children: [
+            {
+                path: '/workshop/upcoming',
+                element: <Upcoming />
+            },
+            {
+                path: '/workshop/previous',
+                element: <Previous></Previous>
+            },
         ]
     },
     {
@@ -115,11 +140,15 @@ const router = createBrowserRouter([
         element: <ProfileLayout />,
         children: [
             {
+                path: '/profile',
+                element: <ProfilePage />
+            },
+            {
                 path: '/profile/importent',
                 element: <ImportentLink />
             },
             {
-                path: '/profile/profile/orderhistory',
+                path: '/profile/orderhistory',
                 element: <OrderHistory />
             }
         ]
@@ -198,7 +227,6 @@ const router = createBrowserRouter([
                     }
                 ]
             },
-
             {
                 path: "/admindashboard/mycourse",
                 element: <MyCourse></MyCourse>,
@@ -220,6 +248,16 @@ const router = createBrowserRouter([
             },
         ]
 
+    },
+    {
+        path: '/studentdashboard',
+        element: <StudentDashboardLayout></StudentDashboardLayout>,
+        children: [
+            {
+                path: '/studentdashboard',
+                element: <StudentDashboard></StudentDashboard>
+            }
+        ]
     },
 ])
 
