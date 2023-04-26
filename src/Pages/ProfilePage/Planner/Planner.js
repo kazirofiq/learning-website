@@ -2,14 +2,15 @@ import React from 'react';
 import {AiOutlinePlus} from 'react-icons/ai'
 import UploadedImage from './UploadedImage';
 
+
 const Planner = () => {
     return (
         <div className='bg-[#F8F8FF]  lg:px-0 md:px-0 py-8 lg:py-[60px] md:py-[50px]'>
             <div className='bg-[rgb(255,255,255)] w-full max-w-[825px]   py-5 lg:my-6 md:py-6 shadow-md rounded-xl'>
             <div>
-                <h3 className='px-3 pb-4 text-2xl font-bold'>My Planner</h3>
+                <h3  className='px-3 pb-4 text-2xl font-bold  text-[#333333]'>My Planner</h3>
                 <div className='grid grid-cols-1  md:grid-cols-2 gap-y-0 gap-x-0  border-b-2'> 
-                    <div className='  border-r-2'>
+                    <div className='  border-r-2 text-[#33333]'>
                         <div className='bg-[#F8F8FF] py-3  px-3 text-gray-500'> Task list</div>
                         <div className=' py-2  px-3 border-b-2'>
                             <div className="form-control">
@@ -45,15 +46,15 @@ const Planner = () => {
                     </div>
                     <div className=''>
                         <div className='bg-[#F8F8FF] py-3 px-3 text-gray-500'>Note</div>
-                        <div className='py-1 px-3  border-b-0'>
-                          <p>Just a quick reminder that today's focus is on the KDP interior. Please make sure that all design elements are in place and that the formatting is correct. 
+                        <div className='py-1 px-3  border-b-0 text-[#333333]'>
+                          <p className='text-[14px]'>Just a quick reminder that today's focus is on the KDP interior. Please make sure that all design elements are in place and that the formatting is correct. 
                             Remember to double-check for any errors before uploading the file. Let's aim for a polished and professional final product. Don't hesitate to ask for Mentor if needed.
                           </p>
                         </div>
                     </div>
                 </div>
                 <div className='py-5 border-b-2 px-3'>
-                    <button className='px-3 py-2 border rounded-lg'><AiOutlinePlus  className='inline'/>  Add Task</button>
+                    <button className='px-4 py-2 border rounded-lg text-[#666666]'><AiOutlinePlus  className='inline'/>  Add Task</button>
                 </div>
             </div>
             <UploadedImage />
