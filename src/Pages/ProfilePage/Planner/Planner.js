@@ -7,6 +7,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { GrEdit } from "react-icons/gr";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import UploadFile from "./UploadFil";
 
 const Planner = () => {
   return (
@@ -33,23 +34,23 @@ const Planner = () => {
 
               <ul
                 tabIndex={0}
-                className="dropdown-content menu p-2 border-2 bg-white rounded-box w-40"
+                className="dropdown-content menu p-2 border-2 bg-white rounded-lg w-40"
               >
                 <li>
                   <label
                     
                     htmlFor="my-modal-2"
                   >
-                    <a className="flex  items-center text-bold">
+                    <Link className="flex  items-center text-bold text-[#333333]">
                       {" "}
                       <GrEdit className=" mr-3" />
                       edit
-                    </a>{" "}
+                    </Link>{" "}
                   </label>
                 </li>
                 <li>
                   <Link
-                    className="text-bold"
+                    className="text-bold text-[#333333]"
                     
                   >
                     {" "}
@@ -84,16 +85,16 @@ const Planner = () => {
                     
                     htmlFor="my-modal-2"
                   >
-                    <a className="flex  items-center text-bold">
+                    <Link className="flex  items-center text-bold text-[#333333]">
                       {" "}
                       <GrEdit className=" mr-3" />
                       edit
-                    </a>{" "}
+                    </Link>{" "}
                   </label>
                 </li>
                 <li>
                   <Link
-                    className="text-bold"
+                    className="text-bold text-[#333333]"
                     
                   >
                     {" "}
@@ -166,6 +167,9 @@ const Planner = () => {
               <AiOutlinePlus className="inline" /> Add Task
             </button>
           </div>
+        </div>
+        <div>
+            <UploadFile />
         </div>
         <UploadedImage />
       </div>
