@@ -49,6 +49,9 @@ import AboutUs from "../../Pages/Shared/Footer/AboutUs/AboutUs";
 import PrivacyPolicy from "../../Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy";
 import Refund from "../../Pages/Shared/Footer/Refund/Refund";
 import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/TermsAndConditions";
+// import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
+import Planner from "../../Pages/ProfilePage/Planner/Planner";
+
 
 const router = createBrowserRouter([
     {
@@ -160,6 +163,10 @@ const router = createBrowserRouter([
             {
                 path: '/profile/importent',
                 element: <ImportentLink />
+            },
+            {
+                path: '/profile/Planner',
+                element: <Planner />
             },
             {
                 path: '/profile/orderhistory',
