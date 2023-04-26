@@ -16,7 +16,7 @@ const KdpLayout = () => {
                         <p className='lg:leading-[24px] leading-[21px] md:text-base lg:text-base text-sm font-normal text-[#666666] mt-2 lg:mt-3 md:mt-3'>Level up your self-publishing journey with countless free tools and resources <br /> developed by Learn with Rakib</p>
                     </div>
                     <section class="overflow-hidden sm:grid sm:grid-cols-2 mt-8 lg:mt-[48px] md:mt-10">
-                        <div class="">
+                        <div class="mr-4">
                             <KdpRoute></KdpRoute>
                         </div>
                         <div>
