@@ -69,7 +69,7 @@ const ProfileCard = () => {
             My Profile
           </button>
         </Link>
-        <Link to=''>
+        <Link to='/profile/Planner'>
           <button className='mt-1 gap-x-[14px] flex items-center leading-[24px] text-base rounded-[8px] w-[223px] px-4 py-2 bg-[#FFFFFF] text-[#666666] font-medium  focus:text-white focus:outline-none focus:bg-[#3D419F]'>
             <ClipboardIcon className='h-5 w-5' />
             My Planner

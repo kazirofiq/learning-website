@@ -32,6 +32,7 @@ import ProfileLayout from "../../Layout/ProfileLayout";
 import ImportentLink from "../../Pages/ProfilePage/ImportentLink/ImportentLink";
 import OrderHistory from "../../Pages/ProfilePage/OrderHistory/OrderHistory";
 import AllReviews from "../../Pages/Reviews/AllReviews/AllReviews";
+<<<<<<< HEAD
 import MyCourses from "../../Pages/Courses/MyCourses/MyCourses";
 import PreviousWorkshop from "../../Pages/Courses/PreviousWorkshop/PreviousWorkshop";
 import CourseLayout from "../../Layout/CourseLayout";
@@ -49,6 +50,9 @@ import PrivacyPolicy from "../../Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy
 import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/TermsAndConditions";
 import Refund from "../../Pages/Shared/Footer/Refund/Refund";
 // import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
+=======
+import Planner from "../../Pages/ProfilePage/Planner/Planner";
+>>>>>>> 9516025a20a62625d1cf34722437f60d4545ab57
 
 
 const router = createBrowserRouter([
@@ -161,6 +165,10 @@ const router = createBrowserRouter([
             {
                 path: '/profile/importent',
                 element: <ImportentLink />
+            },
+            {
+                path: '/profile/Planner',
+                element: <Planner />
             },
             {
                 path: '/profile/orderhistory',
