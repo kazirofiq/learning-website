@@ -34,6 +34,7 @@ import ProfileLayout from "../../Layout/ProfileLayout";
 import ImportentLink from "../../Pages/ProfilePage/ImportentLink/ImportentLink";
 import OrderHistory from "../../Pages/ProfilePage/OrderHistory/OrderHistory";
 import AllReviews from "../../Pages/Reviews/AllReviews/AllReviews";
+import Planner from "../../Pages/ProfilePage/Planner/Planner";
 
 
 const router = createBrowserRouter([
@@ -109,6 +110,10 @@ const router = createBrowserRouter([
             {
                 path: '/profile/importent',
                 element: <ImportentLink />
+            },
+            {
+                path: '/profile/Planner',
+                element: <Planner />
             },
             {
                 path: '/profile/orderhistory',
