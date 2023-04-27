@@ -17,15 +17,15 @@ const CourseCurriculum = () => {
                         <div className='flex gap-2 lg:gap-4 w-[320px] lg:w-[375px]'>
                             <div className='flex gap-1 lg:gap-[6px] items-center'>
                                 <img src={group} alt="" className='w-[10.23px] h-[9.21px]' />
-                                <p className='text-xs leading-[18px] text-[#666666]'>Intermediate Level</p>
+                                <p className='text-xs leading-[18px] text-[#666666]'>Advance Level</p>
                             </div>
                             <div className='flex gap-1 lg:gap-[6px] items-center'>
                                 <img src={video} alt="" className='w-[10.23px] h-[9.21px]' />
-                                <p className='text-xs leading-[18px] text-[#666666]'>15 Lesson</p>
+                                <p className='text-xs leading-[18px] text-[#666666]'>250+ Lessons</p>
                             </div>
                             <div className='flex gap-1 lg:gap-[6px] items-center'>
                                 <img src={time} alt="" className='w-[10.23px] h-[9.21px]' />
-                                <p className='text-xs leading-[18px] text-[#666666]'>05.25.00 Total Hours</p>
+                                <p className='text-xs leading-[18px] text-[#666666]'>00.00.00 Total Hours</p>
                             </div>
                         </div>
                         <CourseCurriculumAccordion></CourseCurriculumAccordion>

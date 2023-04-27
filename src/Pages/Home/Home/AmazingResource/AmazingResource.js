@@ -1,5 +1,5 @@
 import React from 'react';
-import image_rectangle from '../../../../assest/bg-img/Image-amajon.png';
+import image_rectangle from '../../../../assest/amazing_resource/Image.png';
 import elements from '../../../../assest/amazing_resource/Elements.png';
 import '../AmazingResource/AmazingResource.css';
 import { Link } from 'react-router-dom';
