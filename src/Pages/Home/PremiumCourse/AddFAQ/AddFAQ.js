@@ -1,7 +1,6 @@
 import plus_icon from '../../../../assest/admin_dashboard/add_faq/plus_icon.png'
 import menu_icon from '../../../../assest/admin_dashboard/add_faq/Menu.png'
 import draft from '../../../../assest/admin_dashboard/add_faq/draft.png'
-import trash_icon from '../../../../assest/admin_dashboard/add_faq/trash.png'
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './AddFAQ.css'

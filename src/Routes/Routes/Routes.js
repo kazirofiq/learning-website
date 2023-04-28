@@ -44,6 +44,10 @@ import WorkShopLayout from "../../Layout/WorkShopLayout";
 import UpComingDetails from "../../Pages/WorkShop/UpComingDetails/UpComingDetails";
 import Vedio from "../../Pages/CourseVedio/Vedio/Vedio";
 import AddFAQ from "../../Pages/Home/PremiumCourse/AddFAQ/AddFAQ";
+import StudentDashboardLayout from "../../Pages/StudentDashboard/StudentDashboardLayout/StudentDashboardLayout";
+import StudentDashboard from "../../Pages/StudentDashboard/StudentDashboard/StudentDashboard";
+import StudentMarks from "../../Pages/StudentDashboard/StudentsMark/StudentMarks";
+import LeaderBoard from "../../Pages/StudentDashboard/LeaderBoard/LeaderBoard";
 // import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
 import AboutUs from "../../Pages/Shared/Footer/AboutUs/AboutUs";
 import PrivacyPolicy from "../../Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy";
@@ -229,47 +233,64 @@ const router = createBrowserRouter([
             {
                 path: '/admindashboard/course-create',
                 element: <SideCategory />,
-                children:[
-                   {
-                    path:'/admindashboard/course-create',
-                    element: <CreateCourse />
-                   },
-                   {
-                    path:'/admindashboard/course-create/course-curriculum',
-                    element: <CourseCurriculum />
-                   },
-                   {
-                    path:'/admindashboard/course-create/course-curriculum-quiz',
-                    element: <CourseCurriculumQuiz />
-                   },
-                   {
-                    path:'/admindashboard/course-create/AddFAQ',
-                    element: <AddFAQ />
-                   }
+                children: [
+                    {
+                        path: '/admindashboard/course-create',
+                        element: <CreateCourse />
+                    },
+                    {
+                        path: '/admindashboard/course-create/course-curriculum',
+                        element: <CourseCurriculum />
+                    },
+                    {
+                        path: '/admindashboard/course-create/course-curriculum-quiz',
+                        element: <CourseCurriculumQuiz />
+                    },
+                    {
+                        path: '/admindashboard/course-create/AddFAQ',
+                        element: <AddFAQ />
+                    }
                 ]
             },
-            
             {
                 path: "/admindashboard/mycourse",
                 element: <MyCourse></MyCourse>,
                 children: [
-                  {
-                    path: "/admindashboard/mycourse",
-                    element: <CourseList></CourseList>
-                  },
-                  {
-                    path: "/admindashboard/mycourse/draftcourse",
-                    element: <DraftCourse></DraftCourse>
-                  },
-                  
+                    {
+                        path: "/admindashboard/mycourse",
+                        element: <CourseList></CourseList>
+                    },
+                    {
+                        path: "/admindashboard/mycourse/draftcourse",
+                        element: <DraftCourse></DraftCourse>
+                    },
+
                 ]
-              },
-              {
-                path:'/admindashboard/upload-Resource',
+            },
+            {
+                path: '/admindashboard/upload-Resource',
                 element: <UPloadResource />
             },
         ]
-        
+
+    },
+    {
+        path: '/student-dashboard',
+        element: <StudentDashboardLayout></StudentDashboardLayout>,
+        children: [
+            {
+                path: '/student-dashboard',
+                element: <StudentDashboard></StudentDashboard>
+            },
+            {
+                path: '/student-dashboard/analytic',
+                element: <StudentMarks></StudentMarks>
+            },
+            {
+                path: '/student-dashboard/leader-board',
+                element: <LeaderBoard></LeaderBoard>
+            },
+        ]
     },
 ])
 

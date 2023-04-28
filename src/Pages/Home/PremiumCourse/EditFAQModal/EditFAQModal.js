@@ -10,7 +10,7 @@ const EditFAQModal = () => {
                     id="editFAQModal"
                     className="modal-toggle" />
                 <div className="modal pt-24">
-                    <div className="modal-box relative ">
+                    <div className="modal-box relative bg-[#F8F8FF]">
                         <label
                            htmlFor="editFAQModal"
                             className="btn btn-sm btn-circle absolute right-2  top-2"
@@ -88,7 +88,7 @@ const EditFAQModal = () => {
                                 </div>
                                 <br />
                                 <input
-                                    className="btn btn-accent w-full my-4"
+                                    className="btn btn-accent bg-[#3D419F] w-full my-4"
                                     type="submit"
                                     value="Submit"
                                 />
