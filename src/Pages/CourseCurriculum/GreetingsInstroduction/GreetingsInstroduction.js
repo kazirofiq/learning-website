@@ -23,8 +23,6 @@ const GreetingsInstroduction = () => {
         {/* Module 1 style */}
         <div className='flex items-center w-full'>
           <input type="text" placeholder="Module Name & Number" className="input bg-transparent w-full focus:outline-none placeholder:text-[#1B1D48] font-semibold text-lg text-[#1B1D48] pl-0" />
-          {/* <h3 type='text' className='font-semibold text-lg text-[#1B1D48] mr-3'>Module 1 : Greetings and Instroduction</h3> */}
-          {/* <img className='cursor-pointer' src={trash} alt="" /> */}
         </div>
         <div>
           <button className="w-[152px] h-[40px] text-[#3D419F] border-[1px] border-[#3D419F] flex items-center justify-center rounded-lg">
