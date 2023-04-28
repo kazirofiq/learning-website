@@ -10,8 +10,9 @@ import SendNotification from "../SendNotificationModal/SendNotificationModal";
 import SendNotificationModal from "../SendNotificationModal/SendNotificationModal";
 
 const MyCourse = () => {
-
-  const location = useLocation();
+    
+    const location = useLocation();
+  // console.log(location.pathname);
   const [activeDraft, setActiveDraft] = useState(false);
   useEffect(() => {
     if (location.pathname === "/admindashboard/mycourse/draftcourse") {
@@ -29,21 +30,20 @@ const MyCourse = () => {
           <ul className=" menu-horizontal bg-[#ECECF5] hover:text-white rounded-xl">
             <li className={`py-1 rounded-xl px-5 ${activeDraft || "bg-[#3D419F]"}`}>
               <Link to="/admindashboard/mycourse"
+            //   onClick={setActive("courseList")}
               >Course List</Link>
             </li>
             <li className={`py-1 rounded-xl px-5 ${activeDraft && "bg-[#3D419F]"}`}>
               <Link to="/admindashboard/mycourse/draftcourse"
+            //   onClick={setActive("draftCourse")}
               >Draft Course</Link>
             </li>
           </ul>
         </div>
 
         <div className="flex create justify-center items-center mr-4 border-[#3D419F] gap-2">
-        <label htmlFor="my-modal-3" className="flex justify-center items-center gap-2 ">
-              <AiOutlinePlus className="text-[#3D419F]"></AiOutlinePlus>
+            <AiOutlinePlus className="text-[#3D419F]"></AiOutlinePlus>
             <h2 className="text-[#3D419F] font-[400] leading-[24px]">Create</h2>
-      </label>
-           
         </div>
       </div>
       <Outlet></Outlet>
@@ -54,7 +54,7 @@ const MyCourse = () => {
         active === "draftCourse" && 
       } */}
       
-      <SendNotificationModal></SendNotificationModal>
+      
     </div>
   );
 };

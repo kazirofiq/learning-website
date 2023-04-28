@@ -38,9 +38,9 @@ const Footer = () => {
                 <div>
                     <span className="font-bold uppercase text-[700] text-white">Company</span>
                     <Link to='/aboutUs' className="link link-hover">About us</Link>
-                    <Link to='/refund' className="link link-hover">Refund</Link>
-                    <Link to='/privacyPolicy' className="link link-hover">Privacy</Link>
-                    <Link to='/termsAndCondition' className="link link-hover">Terms & Condition</Link>
+                    <Link to='/refund' className="link link-hover">Refund Policy </Link>
+                    <Link to='/privacyPolicy' className="link link-hover">Privacy Policy</Link>
+                    <Link to='/termsAndCondition' className="link link-hover">Terms and Conditions</Link>
                 </div>
                 {/* <div>
                     <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>

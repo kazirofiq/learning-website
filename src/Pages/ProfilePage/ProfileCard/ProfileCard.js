@@ -25,19 +25,6 @@ const textStyle = {
 
 
 const ProfileCard = () => {
-
-  const location = useLocation();
-  // console.log(location.pathname);
-  const [activeDraft, setActiveDraft] = useState(false);
-  useEffect(() => {
-    if (location.pathname === "/profile/importent" || location.pathname === "/profile/orderhistory") {
-      setActiveDraft(true)
-    }
-    else {
-      setActiveDraft(false)
-    }
-  }, [location.pathname])
-
   return (
     <div className="card w-[255px] bg-base-100 shadow-xl poppins lg:mt-[84px] md:mt-[50px] mt-8">
       <figure className="px-10 pt-10">
@@ -65,7 +52,7 @@ const ProfileCard = () => {
       </div>
       <div className='mt-4 px-4 pb-6'>
         <Link to='/profile'>
-          <button className={`gap-x-[14px] flex items-center leading-[24px] text-base rounded-[8px] w-[223px] px-4 py-2 text-[#666666] font-medium  focus:text-white focus:outline-none ${activeDraft || "bg-[#3D419F] text-white"}`}>
+          <button className='gap-x-[14px] flex items-center leading-[24px] text-base rounded-[8px] w-[223px] px-4 py-2 bg-[#FFFFFF] text-[#666666] font-medium  focus:text-white focus:outline-none focus:bg-[#3D419F]'>
             <UserIcon className='h-5 w-5' />
             {/* <img src={profile} alt='' /> */}
             {/* <svg className='focus:' width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -74,7 +61,7 @@ const ProfileCard = () => {
             My Profile
           </button>
         </Link>
-        <Link to=''>
+        <Link to='/profile/Planner'>
           <button className='mt-1 gap-x-[14px] flex items-center leading-[24px] text-base rounded-[8px] w-[223px] px-4 py-2 bg-[#FFFFFF] text-[#666666] font-medium  focus:text-white focus:outline-none focus:bg-[#3D419F]'>
             <ClipboardIcon className='h-5 w-5' />
             My Planner
