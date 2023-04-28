@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import './UploadPhotoAndVideo.css';
 import UploadCoverImg from '../CourseUploadProgress/UploadCoverImg';
 import UploadKDPvideo from '../CourseUploadProgress/UploadKDPvideo';
@@ -75,10 +75,10 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId }) => {
         fetch(`http://localhost:5000/videos/status/${id}`)
           .then(res => res.json())
           .then(data => {
-            console.log(isVideoUploading);
+            // console.log(isVideoUploading);
             const percent = parseInt(((new Date()).getTime() - time) * 100 * 10000 / data.upload_time)
             const status = data.status === "ready" ? 100 : percent > 99 ? 99 : percent;
-            console.log(cancelVideoUpload);
+            // console.log(cancelVideoUpload);
             if (data.status === "ready") {
               clearInterval(checkInterval);
               setIsVideoUploading(false);

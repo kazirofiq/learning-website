@@ -39,9 +39,15 @@ const CourseDetailsInput = () => {
     const price = form.price.value;
     const instructor = form.instructor.value;
     const description = form.description.value;
-    const will_learn = form.will_learn.value;
+    let will_learn = [];
 
-    if (title && subtitle && selectedItem && selectedItem !== "Select" && price && promotionVideoId && instructor && description && will_learn && draft) {
+    if (form.will_learn.length) {
+      will_learn = [...form.will_learn].map(will_lrn => will_lrn.value).filter(will_lrn => will_lrn);
+    } else {
+      will_learn = form.will_learn.value ? [form.will_learn.value] : [];
+    }
+
+    if (title && subtitle && selectedItem && selectedItem !== "Select" && price && promotionVideoId && instructor && description && will_learn.length > 0) {
       const course = { title, subtitle, selectedItem, price, promotionVideoId, instructor, description, will_learn, draft };
 
       fetch("http://localhost:5000/courses", {
@@ -54,9 +60,9 @@ const CourseDetailsInput = () => {
         .then(res => res.json())
         .then(data => {
           console.log(data);
-          navigate("/admindashboard/course-create/course-curriculum");
+          navigate(`/admindashboard/course-create/course-curriculum/${data.insertedId}`);
         })
-        .catch(err => console.error(err));
+        .catch(err => console.error(err))
     } else {
       setError("All Fields Are Required");
     }
@@ -150,7 +156,7 @@ const CourseDetailsInput = () => {
         <input name='instructor' id='Instructor' type="text" placeholder="Instructor" className="input w-full focus:outline-none bg-[#F8F8FF] focus:border-[1px] focus:border-[#C3C4E1] h-[45px] lg:h-[48px] shadow-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
       </div>
       <div className='mt-4'>
-        <label htmlFor='Course-Description' className="label text-[#666666] font-normal text-sm">Course  Description</label>
+        <label htmlFor='Course-Description' className="label text-[#666666] font-normal text-sm">Course Description</label>
         <div className="form-control">
           <textarea name='description' className="textarea textarea-bordered h-[238px] w-full focus:outline-none bg-[#F8F8FF] focus:border-[1px] focus:border-[#C3C4E1] shadow-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" placeholder="Course Description"></textarea>
         </div>

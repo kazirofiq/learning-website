@@ -239,7 +239,7 @@ const router = createBrowserRouter([
                         element: <CreateCourse />
                     },
                     {
-                        path: '/admindashboard/course-create/course-curriculum',
+                        path: '/admindashboard/course-create/course-curriculum/:courseId',
                         element: <CourseCurriculum />
                     },
                     {
