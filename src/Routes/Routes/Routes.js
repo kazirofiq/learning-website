@@ -46,6 +46,8 @@ import AddFAQ from "../../Pages/Home/PremiumCourse/AddFAQ/AddFAQ";
 import UPloadResource from "../../Pages/UploadResource/UPloadResource";
 import StudentDashboardLayout from "../../Pages/StudentDashboard/StudentDashboardLayout/StudentDashboardLayout";
 import StudentDashboard from "../../Pages/StudentDashboard/StudentDashboard/StudentDashboard";
+import StudentMarks from "../../Pages/StudentDashboard/StudentsMark/StudentMarks";
+import LeaderBoard from "../../Pages/StudentDashboard/LeaderBoard/LeaderBoard";
 // import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
 
 
@@ -250,13 +252,21 @@ const router = createBrowserRouter([
 
     },
     {
-        path: '/studentdashboard',
+        path: '/student-dashboard',
         element: <StudentDashboardLayout></StudentDashboardLayout>,
         children: [
             {
-                path: '/studentdashboard',
+                path: '/student-dashboard',
                 element: <StudentDashboard></StudentDashboard>
-            }
+            },
+            {
+                path: '/student-dashboard/analytic',
+                element: <StudentMarks></StudentMarks>
+            },
+            {
+                path: '/student-dashboard/leader-board',
+                element: <LeaderBoard></LeaderBoard>
+            },
         ]
     },
 ])
