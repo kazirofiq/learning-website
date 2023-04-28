@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { PlayCircleIcon, LockClosedIcon, CheckCircleIcon } from '@heroicons/react/24/solid'
 
 import { VedioContext } from '../../contexts/VedioProvider';
+import { Link } from 'react-router-dom';
 
 const Module = ({ modules }) => {
     const { module, lessons, moduleNumber } = modules;
@@ -27,9 +28,11 @@ const Module = ({ modules }) => {
                                 <div>
                                     <CheckCircleIcon className='w-[18px] h-[18px]' />
                                 </div>
-                                <div>
-                                    <p onClick={onOptionClicked(lesson.vedioLesson)} className='lg:w-[275px] w-[248px]'>{moduleNumber}-{`${i + 1}`} :{lesson.vedioLesson}</p>
-                                </div>
+                                <Link to='/vedio/assignment'>
+                                    <div>
+                                        <p onClick={onOptionClicked(lesson.vedioLesson)} className='lg:w-[275px] w-[248px]'>{moduleNumber}-{`${i + 1}`} :{lesson.vedioLesson}</p>
+                                    </div>
+                                </Link>
                             </button>
                         )
                     }

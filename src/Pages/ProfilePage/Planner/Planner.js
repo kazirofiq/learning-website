@@ -1,6 +1,7 @@
 import React from 'react';
 import {AiOutlinePlus} from 'react-icons/ai'
 import UploadedImage from './UploadedImage';
+import UploadFile from './UploadFile';
 
 const Planner = () => {
     return (
@@ -28,7 +29,6 @@ const Planner = () => {
                                 <span className="pl-2"> Check and finalize the formatting of the manuscript to ensure consistency.</span>
                                 </label>
                             </div>
-                            
 
                          </div>
                          <div className=' py-2  p-3 border-b-0'>
@@ -55,6 +55,9 @@ const Planner = () => {
                 <div className='py-5 border-b-2 px-3'>
                     <button className='px-3 py-2 border rounded-lg'><AiOutlinePlus  className='inline'/>  Add Task</button>
                 </div>
+            </div>
+            <div>
+                <UploadFile />
             </div>
             <UploadedImage />
         </div>

@@ -21,8 +21,13 @@ import Quiz from "../../Pages/Quiz/Quiz";
 import Consultetion from "../../Pages/Consultetion/Consultation";
 import Resource from "../../Pages/Resource/Resource";
 import BsrCalculetor from "../../Pages/KdpTools/BsrCalculetor/BsrCalculetor";
+import SideCategory from "../../Pages/CreateCourse/SideCategory/SideCategory";
+import CourseCurriculum from "../../Pages/CourseCurriculum/CourseCurriculum";
+import CourseCurriculumQuiz from "../../Pages/CourseCurriculum/CourseCurriculumQuiz/CourseCurriculumQuiz";
+import CreateCourse from "../../Pages/CreateCourse/CreateCourse";
 import KdpTools from "../../Pages/KdpTools/KdpTools/KdpTools";
 import RoyalCalculetor from "../../Pages/KdpTools/RoyaltyCalculetor/RoyalCalculetor";
+import UPloadResource from "../../Pages/UploadResource/UPloadResource";
 import KdpLayout from "../../Layout/KdpLayout";
 import QrGenaretor from "../../Pages/KdpTools/QrGenaretor/QrGenaretor";
 import CategoryFinder from "../../Pages/KdpTools/CategoryFinder/CategoryFinder";
@@ -38,16 +43,12 @@ import CourseLayout from "../../Layout/CourseLayout";
 import WorkShopLayout from "../../Layout/WorkShopLayout";
 import UpComingDetails from "../../Pages/WorkShop/UpComingDetails/UpComingDetails";
 import Vedio from "../../Pages/CourseVedio/Vedio/Vedio";
-import SideCategory from "../../Pages/CreateCourse/SideCategory/SideCategory";
-import CreateCourse from "../../Pages/CreateCourse/CreateCourse";
-import CourseCurriculum from "../../Pages/Home/PremiumCourse/CourseCurriculum/CourseCurriculum";
-import CourseCurriculumQuiz from "../../Pages/CourseCurriculum/CourseCurriculumQuiz/CourseCurriculumQuiz";
 import AddFAQ from "../../Pages/Home/PremiumCourse/AddFAQ/AddFAQ";
-import UPloadResource from "../../Pages/UploadResource/UPloadResource";
+// import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
 import AboutUs from "../../Pages/Shared/Footer/AboutUs/AboutUs";
 import PrivacyPolicy from "../../Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy";
-import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/TermsAndConditions";
 import Refund from "../../Pages/Shared/Footer/Refund/Refund";
+import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/TermsAndConditions";
 // import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
 import Planner from "../../Pages/ProfilePage/Planner/Planner";
 
@@ -228,47 +229,47 @@ const router = createBrowserRouter([
             {
                 path: '/admindashboard/course-create',
                 element: <SideCategory />,
-                children: [
-                    {
-                        path: '/admindashboard/course-create',
-                        element: <CreateCourse />
-                    },
-                    {
-                        path: '/admindashboard/course-create/course-curriculum',
-                        element: <CourseCurriculum />
-                    },
-                    {
-                        path: '/admindashboard/course-create/course-curriculum-quiz',
-                        element: <CourseCurriculumQuiz />
-                    },
-                    {
-                        path: '/admindashboard/course-create/AddFAQ',
-                        element: <AddFAQ />
-                    }
+                children:[
+                   {
+                    path:'/admindashboard/course-create',
+                    element: <CreateCourse />
+                   },
+                   {
+                    path:'/admindashboard/course-create/course-curriculum',
+                    element: <CourseCurriculum />
+                   },
+                   {
+                    path:'/admindashboard/course-create/course-curriculum-quiz',
+                    element: <CourseCurriculumQuiz />
+                   },
+                   {
+                    path:'/admindashboard/course-create/AddFAQ',
+                    element: <AddFAQ />
+                   }
                 ]
             },
-
+            
             {
                 path: "/admindashboard/mycourse",
                 element: <MyCourse></MyCourse>,
                 children: [
-                    {
-                        path: "/admindashboard/mycourse",
-                        element: <CourseList></CourseList>
-                    },
-                    {
-                        path: "/admindashboard/mycourse/draftcourse",
-                        element: <DraftCourse></DraftCourse>
-                    },
-
+                  {
+                    path: "/admindashboard/mycourse",
+                    element: <CourseList></CourseList>
+                  },
+                  {
+                    path: "/admindashboard/mycourse/draftcourse",
+                    element: <DraftCourse></DraftCourse>
+                  },
+                  
                 ]
-            },
-            {
-                path: '/admindashboard/upload-Resource',
+              },
+              {
+                path:'/admindashboard/upload-Resource',
                 element: <UPloadResource />
             },
         ]
-
+        
     },
 ])
 

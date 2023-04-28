@@ -113,6 +113,10 @@ const courseSummary = [
                 vedioLesson: 'How to take niche research service to save time?',
                 vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
             },
+            {
+                vedioLesson: 'Assignment no: 1',
+                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
+            },
         ]
     },
 ]

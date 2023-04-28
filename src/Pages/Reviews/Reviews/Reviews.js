@@ -56,7 +56,7 @@ const Reviews = () => {
                             <div className='flex items-center gap-x-6'>
                                 <img className='h-12 w-12' src={avater} alt="" />
                                 <div className='poppins'>
-                                    <p className='text-start text-[#333333] text-sm lg:text-base leading-[21px] lg:leading-6 font-bold poppins'>Rakib Ahmed</p>
+                                    <p className='text-start text-[#333333] text-sm lg:text-base leading-[21px] lg:leading-6 font-bold poppins'>Rashidul Sony</p>
                                     <div className='flex items-center gap-2 lg:gap-3'>
                                         <img src={rating} alt="" className='w-[79px] h-[11px]' />
                                         <p className='text-[#666666] font-light text-center lg:text-start text-xs leading-[18px]'>17-03-2023</p>

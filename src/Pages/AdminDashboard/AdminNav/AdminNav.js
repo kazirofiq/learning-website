@@ -57,7 +57,7 @@ const AdminNav = () => {
             </Link>
           </li>
           <li>
-          <Link to="/dashboard/profile">
+          <Link to="/admindashboard/upload-Resource">
               <div className="flex gap-4 items-center">
               <FaFirstOrderAlt className='text-white'></FaFirstOrderAlt>
                 <h2>Resources</h2>
