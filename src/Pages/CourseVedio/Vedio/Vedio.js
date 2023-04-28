@@ -1,9 +1,14 @@
 import React, { createContext } from 'react';
 import { VedioContext } from '../../../contexts/VedioProvider';
+import { useParams } from 'react-router-dom';
 
 const Vedio = () => {
 
     const { courseSummary } = createContext(VedioContext)
+
+
+    const { lesson } = useParams()
+    console.log(lesson);
 
     return (
         <div>

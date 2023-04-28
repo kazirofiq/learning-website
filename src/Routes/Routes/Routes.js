@@ -195,19 +195,19 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: '/vedio',
+        path: '/batch/1',
         element: <MyCourseLayout></MyCourseLayout>,
         children: [
             {
-                path: '/vedio',
+                path: '/batch/1/video/:lesson',
                 element: <Vedio />
             },
             {
-                path: '/vedio/assignment',
+                path: '/batch/1/assignment/:assignment_no',
                 element: <Assignment></Assignment>
             },
             {
-                path: '/vedio/quiz',
+                path: '/batch/1/quiz/:quiz_no',
                 element: <Quiz></Quiz>
             },
         ]
