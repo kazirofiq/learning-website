@@ -2,11 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import adminLogo from "../../../assest/logo/Logo (White).png";
 import { MdOutlineAssignment, MdOutlineTopic } from "react-icons/md";
-import { IoNotificationsSharp } from "react-icons/io5";
 import { BiLogIn } from "react-icons/bi";
-import { AiFillAlert, AiFillMail, AiOutlineMail, AiOutlineRight } from "react-icons/ai";
+import { AiOutlineMail, AiOutlineRight } from "react-icons/ai";
 import { GiGraduateCap } from "react-icons/gi";
-import { FaFirstOrderAlt, IconName } from "react-icons/fa";
+import { FaFirstOrderAlt } from "react-icons/fa";
 
 const AdminNav = () => {
   return (

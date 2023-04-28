@@ -12,6 +12,7 @@ const CourseDetailsInput = () => {
   const [promotionVideoId, setPromotionVideoId] = useState("");
   const [draft, setDraft] = useState(false);
   const [error, setError] = useState("");
+  const [willLearns, setWillLearns] = useState(["willLearn"]);
   const navigate = useNavigate();
 
   const levels = ["Beginner", "Advanced"];
@@ -20,6 +21,13 @@ const CourseDetailsInput = () => {
     setSelectedItem(item);
     setIsOpen(false);
   };
+
+  const addWillLearn = () => {
+    setWillLearns([
+      ...willLearns,
+      "willLearn"
+    ])
+  }
 
   const handleAddCourse = e => {
     e.preventDefault();
@@ -149,12 +157,13 @@ const CourseDetailsInput = () => {
       </div>
       <div className='mt-4'>
         <label htmlFor='Will-Learn' className="label text-[#666666] font-normal text-sm">What Students Will Learn?</label>
-        <input name='will_learn' type="text" placeholder="What Students Will Learn?" className="input w-full focus:outline-none bg-[#F8F8FF] focus:border-[1px] focus:border-[#C3C4E1] h-[45px] lg:h-[48px] shadow-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
-        <input type="text" placeholder="What Students Will Learn?" className="input mt-3 w-full focus:outline-none bg-[#F8F8FF] focus:border-[1px] focus:border-[#C3C4E1] h-[45px] lg:h-[48px] shadow-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+        {
+          willLearns.map((willLearn, i) => <input key={i} name='will_learn' type="text" placeholder="What Students Will Learn?" className="input w-full focus:outline-none bg-[#F8F8FF] focus:border-[1px] focus:border-[#C3C4E1] h-[45px] lg:h-[48px] shadow-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />)
+        }
       </div>
       <div className='flex items-center mt-3'>
         <img className='mr-3' src={plusIcon} alt="" />
-        <span className='font-normal text-base text-[#3D419F] cursor-pointer'>Add More</span>
+        <span onClick={addWillLearn} className='font-normal text-base text-[#3D419F] cursor-pointer'>Add More</span>
       </div>
       <div>
         <UploadPhotoAndVideo setPromotionVideoId={setPromotionVideoId} />
