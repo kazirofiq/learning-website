@@ -23,7 +23,7 @@ const PremiumCourseBanner = () => {
                     <div className='lg:block hidden'>
                         <PremiumCourseNavebar />
                         <AboutTheCourse />
-                        <WhatWillYouLearn />
+                        {/* <WhatWillYouLearn /> */}
                         <CourseCurriculum />
                         <Mentor></Mentor>
                         <LearnerReview></LearnerReview>
@@ -36,7 +36,7 @@ const PremiumCourseBanner = () => {
                 <div className='lg:hidden block'>
                     <PremiumCourseNavebar />
                     <AboutTheCourse />
-                    <WhatWillYouLearn />
+                    {/* <WhatWillYouLearn /> */}
                     <CourseCurriculum />
                     <Mentor></Mentor>
                     <LearnerReview></LearnerReview>

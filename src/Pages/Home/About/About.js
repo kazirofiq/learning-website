@@ -21,7 +21,7 @@ const About = () => {
                                 <img className='h-[44px] w-[44px] lg:w-[53px] lg:h-[53px]' src={phone} alt='' />
                                 <div>
                                     <p className='text-[#666666] font-normal text-sm leading-[21px]'>Need Help?</p>
-                                    <h4 className='text-[#333333] lg:text-[16px] text-sm font-semibold lg:font-bold leading-[24px]'>+8801612-039047</h4>
+                                    <h4 className='text-[#333333] lg:text-[16px] text-sm font-semibold lg:font-bold leading-[24px]'><a href="tel:+8801612-039047">+8801612-039047</a></h4>
                                 </div>
                             </div>
                         </div>

@@ -8,35 +8,35 @@ const WhatWillYouLearn = () => {
                 <ul className='mt-2 lg:mt-5 grid grid-cols-1 lg:grid-cols-1 lg:gap-y-5 gap-y-3'>
                     <li className='flex items-center'>
                         <img className='h-4 w-4 mr-[11px]' src={checkIcon} alt="" />
-                        <span className='font-normal text-sm lg:text-base text-[#666666]'>How to identify and validate profitable book ideas for Kindle Direct Publishing (KDP)</span>
+                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Mastering the art of freelancing on platforms like Fiverr, Freepik, and KDP</span>
                     </li>
                     <li className='flex items-center'>
                         <img className='h-4 w-4 mr-[11px]' src={checkIcon} alt="" />
-                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Strategies for effective book planning, outlining, and organization</span>
+                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Techniques and strategies to create high-quality line art and illustrations.</span>
                     </li>
                     <li className='flex items-center'>
                         <img className='h-4 w-4 mr-[11px]' src={checkIcon} alt="" />
-                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Techniques for creating high-quality book covers and interior that stand out on KDP</span>
+                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Best practices for optimizing gigs, profiles, and listings on freelancing platforms.</span>
                     </li>
                     <li className='flex items-center'>
                         <img className='h-4 w-4 mr-[11px]' src={checkIcon} alt="" />
-                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Best practices for formatting and preparing manuscripts for publishing on KDP</span>
+                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Insider tips on how to attract and retain clients for long-term success.</span>
                     </li>
                     <li className='flex items-center'>
                         <img className='h-4 w-4 mr-[11px]' src={checkIcon} alt="" />
-                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Insider tips on optimizing book metadata, keywords, and categories for maximum visibility</span>
+                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Strategies for pricing, negotiating, and managing freelance projects effectively.</span>
                     </li>
                     <li className='flex items-center'>
                         <img className='h-4 w-4 mr-[11px]' src={checkIcon} alt="" />
-                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Proven marketing strategies to boost book sales, including Amazon ads and book promotions</span>
+                        <span className='font-normal text-sm lg:text-base text-[#666666]'>In-depth knowledge about the latest trends and industry insights in the freelancing world.</span>
                     </li>
                     <li className='flex items-center'>
                         <img className='h-4 w-4 mr-[11px]' src={checkIcon} alt="" />
-                        <span className='font-normal text-sm lg:text-base text-[#666666]'> Building a successful author platform on Amazon, including author pages and book series</span>
+                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Step-by-step guidance on setting up and managing a successful freelancing business.</span>
                     </li>
                     <li className='flex items-center'>
                         <img className='h-4 w-4 mr-[11px]' src={checkIcon} alt="" />
-                        <span className='font-normal text-sm lg:text-base text-[#666666]'> Strategies for getting more book reviews and leveraging social media for book promotion</span>
+                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Practical tips on time management, productivity, and goal-setting for freelancers.</span>
                     </li>
                     <li className='flex items-center'>
                         <img className='h-4 w-4 mr-[11px]' src={checkIcon} alt="" />
@@ -44,7 +44,11 @@ const WhatWillYouLearn = () => {
                     </li>
                     <li className='flex items-center'>
                         <img className='h-4 w-4 mr-[11px]' src={checkIcon} alt="" />
-                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Tools, resources, and AI power to streamline the self-publishing process and save time and effort.</span>
+                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Techniques for building a professional portfolio and branding your freelancing services.</span>
+                    </li>
+                    <li className='flex items-center'>
+                        <img className='h-4 w-4 mr-[11px]' src={checkIcon} alt="" />
+                        <span className='font-normal text-sm lg:text-base text-[#666666]'>Access to exclusive resources, tools, and templates to streamline your freelancing</span>
                     </li>
                 </ul>
             </div>

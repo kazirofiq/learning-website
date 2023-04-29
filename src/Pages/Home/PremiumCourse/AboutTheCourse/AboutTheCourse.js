@@ -1,4 +1,5 @@
 import React from 'react';
+import WhatWillYouLearn from '../WhatWillYouLearn/WhatWillYouLearn';
 
 const AboutTheCourse = () => {
     return (
@@ -18,6 +19,9 @@ const AboutTheCourse = () => {
                 <br />
                 Don't miss out on this opportunity to turn your passion for writing into a successful self-publishing venture. Enroll in KDP Mastery today and take your publishing career to new heights with Learn With Rakib's expert guidance!
             </p>
+            <div>
+                <WhatWillYouLearn />
+            </div>
         </div>
     );
 };
