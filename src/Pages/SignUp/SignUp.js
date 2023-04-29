@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import login from "../../assest/bg-img/login.png";
-import { GrView } from "react-icons/gr";
-import { BsEyeSlash } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 import showPwdImg from "../../assest/login-svg/show-password.svg";
 import hidePwdImg from "../../assest/login-svg/hide-password.svg";
@@ -21,8 +18,6 @@ const SignUp = () => {
   const [pwd, setPwd] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
   const navigate = useNavigate();
-
-
 
   const handleSignUp = (data) => {
     createUser(data.email, data.password)
@@ -43,8 +38,6 @@ const SignUp = () => {
         console.log(error);
       });
   }
-
-
 
 
   return (
@@ -117,7 +110,7 @@ const SignUp = () => {
                 })}
                 type={isRevealPwd ? "text" : "password"}
                 value={pwd}
-                onChange={(e) => setPwd(e.target.value)}
+                onKeyUp={(e) => setPwd(e.target.value)}
               />
               <img
                 alt=""
