@@ -1,12 +1,12 @@
 import plus_icon from '../../../../assest/admin_dashboard/add_faq/plus_icon.png'
 import menu_icon from '../../../../assest/admin_dashboard/add_faq/Menu.png'
 import draft from '../../../../assest/admin_dashboard/add_faq/draft.png'
-import trash_icon from '../../../../assest/admin_dashboard/add_faq/trash.png'
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './AddFAQ.css'
 import { useState } from 'react';
 import EditFAQModal from '../EditFAQModal/EditFAQModal';
+import Buttons from '../../../CreateCourse/Buttons/Buttons';
 
 const AddFAQ = () => {
 
@@ -104,22 +104,24 @@ const AddFAQ = () => {
                                     />
 
                                 </div>
-
-                                <div className='flex gap-5 mt-8 justify-center'>
-                                    <Link>
+                                <div>
+                                    <Buttons setRoute={""} text={"Published"} />
+                                </div>
+                                {/* <div className='flex gap-5 mt-8 justify-center'> */}
+                                    {/* <Link>
                                         <div className='flex gap-2 items-center h-[48px] text-sm leading-[21px] py-2 px-5 rounded-[10px] text-[#333333] font-medium poppins border-[1px] border-solid border-[#333333]'>
                                             <img src={draft} alt="" className='w-[17.2px] h-[17.2px]' />
                                             <p className=' '>Save as Draft</p>
                                         </div>
-                                    </Link>
-                                    <Link>
-                                        <div className='flex justify-between gap-2 items-center h-[48px] text-sm bg-[#3D419F] leading-[21px] py-2 px-5 rounded-[10px] text-white font-medium poppins border-[1px] border-solid border-[#3D419F]'>
-                                            <p className=' '>Published</p>
+                                    </Link> */}
+                                    {/* <Link> */}
+                                        {/* <div className='flex justify-between gap-2 items-center h-[48px] text-sm bg-[#3D419F] leading-[21px] py-2 px-5 rounded-[10px] text-white font-medium poppins border-[1px] border-solid border-[#3D419F]'> */}
+                                            {/* <p className=' '>Published</p> */}
                                             {/* <img src={right_arrow} alt="" /> */}
-                                            <FaArrowRight />
-                                        </div>
-                                    </Link>
-                                </div>
+                                            {/* <FaArrowRight /> */}
+                                        {/* </div> */}
+                                    {/* </Link> */}
+                                {/* </div> */}
                             </form>
                         </div>
                     </div>

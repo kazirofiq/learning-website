@@ -21,8 +21,13 @@ import Quiz from "../../Pages/Quiz/Quiz";
 import Consultetion from "../../Pages/Consultetion/Consultation";
 import Resource from "../../Pages/Resource/Resource";
 import BsrCalculetor from "../../Pages/KdpTools/BsrCalculetor/BsrCalculetor";
+import SideCategory from "../../Pages/CreateCourse/SideCategory/SideCategory";
+import CourseCurriculum from "../../Pages/CourseCurriculum/CourseCurriculum";
+import CourseCurriculumQuiz from "../../Pages/CourseCurriculum/CourseCurriculumQuiz/CourseCurriculumQuiz";
+import CreateCourse from "../../Pages/CreateCourse/CreateCourse";
 import KdpTools from "../../Pages/KdpTools/KdpTools/KdpTools";
 import RoyalCalculetor from "../../Pages/KdpTools/RoyaltyCalculetor/RoyalCalculetor";
+import UPloadResource from "../../Pages/UploadResource/UPloadResource";
 import KdpLayout from "../../Layout/KdpLayout";
 import QrGenaretor from "../../Pages/KdpTools/QrGenaretor/QrGenaretor";
 import CategoryFinder from "../../Pages/KdpTools/CategoryFinder/CategoryFinder";
@@ -38,17 +43,18 @@ import CourseLayout from "../../Layout/CourseLayout";
 import WorkShopLayout from "../../Layout/WorkShopLayout";
 import UpComingDetails from "../../Pages/WorkShop/UpComingDetails/UpComingDetails";
 import Vedio from "../../Pages/CourseVedio/Vedio/Vedio";
-import SideCategory from "../../Pages/CreateCourse/SideCategory/SideCategory";
-import CreateCourse from "../../Pages/CreateCourse/CreateCourse";
-import CourseCurriculum from "../../Pages/Home/PremiumCourse/CourseCurriculum/CourseCurriculum";
-import CourseCurriculumQuiz from "../../Pages/CourseCurriculum/CourseCurriculumQuiz/CourseCurriculumQuiz";
 import AddFAQ from "../../Pages/Home/PremiumCourse/AddFAQ/AddFAQ";
-import UPloadResource from "../../Pages/UploadResource/UPloadResource";
+import StudentDashboardLayout from "../../Pages/StudentDashboard/StudentDashboardLayout/StudentDashboardLayout";
+import StudentDashboard from "../../Pages/StudentDashboard/StudentDashboard/StudentDashboard";
+import StudentMarks from "../../Pages/StudentDashboard/StudentsMark/StudentMarks";
+import LeaderBoard from "../../Pages/StudentDashboard/LeaderBoard/LeaderBoard";
+// import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
 import AboutUs from "../../Pages/Shared/Footer/AboutUs/AboutUs";
 import PrivacyPolicy from "../../Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy";
-import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/TermsAndConditions";
 import Refund from "../../Pages/Shared/Footer/Refund/Refund";
+import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/TermsAndConditions";
 // import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
+import Planner from "../../Pages/ProfilePage/Planner/Planner";
 
 
 const router = createBrowserRouter([
@@ -163,6 +169,10 @@ const router = createBrowserRouter([
                 element: <ImportentLink />
             },
             {
+                path: '/profile/Planner',
+                element: <Planner />
+            },
+            {
                 path: '/profile/orderhistory',
                 element: <OrderHistory />
             }
@@ -242,7 +252,6 @@ const router = createBrowserRouter([
                     }
                 ]
             },
-
             {
                 path: "/admindashboard/mycourse",
                 element: <MyCourse></MyCourse>,
@@ -264,6 +273,24 @@ const router = createBrowserRouter([
             },
         ]
 
+    },
+    {
+        path: '/student-dashboard',
+        element: <StudentDashboardLayout></StudentDashboardLayout>,
+        children: [
+            {
+                path: '/student-dashboard',
+                element: <StudentDashboard></StudentDashboard>
+            },
+            {
+                path: '/student-dashboard/analytic',
+                element: <StudentMarks></StudentMarks>
+            },
+            {
+                path: '/student-dashboard/leader-board',
+                element: <LeaderBoard></LeaderBoard>
+            },
+        ]
     },
 ])
 

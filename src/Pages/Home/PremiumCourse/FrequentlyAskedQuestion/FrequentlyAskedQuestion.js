@@ -23,7 +23,7 @@ const FrequentlyAskedQuestion = () => {
                                     <p className='text-sm lg:text-base leading-[21px] lg:leading-6 font-normal'>The KDP Mastery course is a comprehensive guide to self-publishing on Amazon's Kindle Direct Publishing (KDP) platform, covering everything from manuscript preparation to marketing strategies for success.</p>
                                 </div>
                             </div>
-                        </div>
+                    </div>
                     </div>
 
                     <div className="space-y-4 max-w-[730px] mb-4 mx-auto lg:mx-0">
