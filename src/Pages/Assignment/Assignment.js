@@ -58,9 +58,9 @@ const Assignment = () => {
                     placeholder="Paste Google Drive Link Here"
                     className="input border-1 border-solid border-[#C3C4E1] w-[190px] lg:w-[344px] h-[40px] focus:outline-none"
                 />
-                <a href=' ' className='absolute right-[-45px] text-sm lg:text-base leading-[21px] lg:leading-6 py-2 px-5 rounded-[12px] text-white lg:font-semibold font-medium poppins bg-[#3D419F]'>Previous</a>
+                <a href=' ' className='absolute right-[-45px] text-sm lg:text-base leading-[21px] lg:leading-6 py-2 px-5 rounded-[12px] text-white lg:font-semibold font-medium poppins bg-[#3D419F]'>Submit</a>
             </div>
-            <AddFAQ></AddFAQ>
+            {/* <AddFAQ></AddFAQ> */}
         </div>
 
 

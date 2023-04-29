@@ -2,6 +2,7 @@ import React from 'react';
 import image_rectangle from '../../../../assest/amazing_resource/Image.png';
 import elements from '../../../../assest/amazing_resource/Elements.png';
 import '../AmazingResource/AmazingResource.css';
+import { Link } from 'react-router-dom';
 
 const AmazingResource = () => {
     return (
@@ -11,27 +12,25 @@ const AmazingResource = () => {
             backgroundSize: "cover",
             backgroundPosition: ""
         }}>
-            <div className='mx-5 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 max-w-[1350px] lg:mx-auto py-[40px] lg:pt-[87px] lg:pb-[55px]'>
-                <div className='text-white mx-auto sm:mt-0 w-[315px] lg:w-[540px] lg:text-left md:text-left text-center poppins'>
+            <div className=' grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 items-center md:mx-[145px] gap-x-[26px] py-[40px] lg:pt-[87px] lg:pb-[55px]'>
+                <div className='text-white sm:mt-0 lg:text-left md:text-left text-center mx-auto poppins'>
                     <p className=''>Amazing Resource</p>
                     <p className='lg:block hidden text-[24px] lg:text-[40px] leading-9 lg:leading-[60px] font-bold lg:mt-0 mt-1'>
-                        Amazon KDP Book Interior
-                        <br />
-                        Template <span className='text-[#38A27B]'>Free Download</span>
+                        Empower Your Creativity with  <span className='text-[#38A27B]'>Our Resource Hub</span>
                     </p>
 
                     <p className='block lg:hidden text-[24px] lg:text-[40px] leading-9 lg:leading-[60px] font-bold lg:mt-0 mt-1'>
-                        Amazon KDP Book
-                        <br /> Interior Template <span className='text-[#38A27B]'>Free</span>
-                        <br /><span className='text-[#38A27B]'>Download</span>
+                        Amazon KDP Book Interior Template <span className='text-[#38A27B]'>Free</span>
+                        <span className='text-[#38A27B]'>Download</span>
                     </p>
 
-                    <p className='lg:text-base text-sm leading-5 lg:leading-6 lg:mt-8 mt-3 lg:mb-12
-                            mb-6 text-justify'>Learn with Rakib is a platform that Will help you to learn, How to become a self-publisher. Learn with Rakib is a platform that Will help you to learn, How to become a self-publisher.</p>
-                    <a href='/' className='bg_sm lg:bg text-[#3D419F] text-sm lg:text-lg lg:font-semibold font-medium'>Learn More</a>
+                    <p className='lg:text-base text-sm leading-5 lg:leading-[24px] lg:mt-8 mt-3 lg:mb-12 mb-6 text-justify'>Unlock a Wealth of Design Assets and Tools for Your Creative <br /> Projects - Enhance Your Work with our Resource Collection.</p>
+                    <Link to='/freecorses'>
+                        <button className='bg_sm lg:bg text-[#3D419F] text-sm lg:text-lg lg:font-semibold font-medium'>Free Download</button>
+                    </Link>
                 </div>
-                <div>
-                    <img src={image_rectangle} alt="" className='lg:w-[547.74px] sm:w-[320px]' />
+                <div className=''>
+                    <img src={image_rectangle} alt="" className='' />
                 </div>
             </div>
         </section >

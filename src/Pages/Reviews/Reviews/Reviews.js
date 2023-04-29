@@ -48,15 +48,15 @@ const Reviews = () => {
     ]
 
     return (
-        <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-[30px] mt-[11px]  lg:mt-[48px] md:mt-[30px]'>
+        <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-[30px] mt-[11px]  lg:mt-[48px] md:mt-[30px]  mb-10 lg:mb-[96px] md:mb-[60px]'>
             {
                 reviews.map(review => (
                     <div>
-                        <div className='w-[320px] lg:w-[640px] mx-auto lg:mx-0 border-solid border-[0.5px] border-[#3D419F] rounded-2xl p-5 lg:p-8 mt-3'>
+                        <div className='mx-auto lg:mx-0 border-solid border-[0.5px] border-[#3D419F] rounded-2xl p-5 lg:p-8 mt-3'>
                             <div className='flex items-center gap-x-6'>
                                 <img className='h-12 w-12' src={avater} alt="" />
                                 <div className='poppins'>
-                                    <p className='text-start text-[#333333] text-sm lg:text-base leading-[21px] lg:leading-6 font-bold poppins'>Rakib Ahmed</p>
+                                    <p className='text-start text-[#333333] text-sm lg:text-base leading-[21px] lg:leading-6 font-bold poppins'>Rashidul Sony</p>
                                     <div className='flex items-center gap-2 lg:gap-3'>
                                         <img src={rating} alt="" className='w-[79px] h-[11px]' />
                                         <p className='text-[#666666] font-light text-center lg:text-start text-xs leading-[18px]'>17-03-2023</p>

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link , useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assest/bg-img/login.png";
 import { GrView } from "react-icons/gr";
 import { BsEyeSlash } from "react-icons/bs";
@@ -11,11 +11,11 @@ import { AuthContext } from "../../contexts/AuthProvider";
 
 const SignIn = () => {
 
-  const {signIn} = useContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || '/';
-  const {register, formState: { errors }, handleSubmit } = useForm();
+  const { register, formState: { errors }, handleSubmit } = useForm();
   const [pwd, setPwd] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
 
@@ -23,16 +23,16 @@ const SignIn = () => {
   const handleLogin = data => {
     console.log(data);
     signIn(data.email, data.password)
-        .then(result => {
-            //const user = result.user;
-            console.log(result);
-            navigate(from, { replace: true });
+      .then(result => {
+        //const user = result.user;
+        console.log(result);
+        navigate(from, { replace: true });
 
-        })
-        .catch(error => {
-            console.log(error.message);
-        });
-}
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+  }
 
 
   return (
@@ -51,7 +51,7 @@ const SignIn = () => {
                 {...register("email", {
                   required: "Email is required",
                 })}
-                className=" pad input-bordered w-full max-w-xs outline-none"
+                className=" pad text-black input-bordered w-full max-w-xs outline-none"
               />
               {errors.number && (
                 <p className="text-red-600" role="alert">
@@ -60,13 +60,13 @@ const SignIn = () => {
               )}
             </div>
 
-            <div className="pwd-container  w-full mt-4 rounded-full">
+            <div className="pwd-container text-black w-full mt-4 rounded-full">
               <input
                 className=" pad w-full max-w-xs outline-none"
                 name="pwd"
                 {...register("password", {
                   required: "Password is required"
-              })}
+                })}
                 placeholder="Enter Password"
                 type={isRevealPwd ? "text" : "password"}
                 value={pwd}
@@ -117,7 +117,7 @@ const SignIn = () => {
                       </g>
                     </svg>
                   </div>
-                  <span className="label-text text-[12px] font-light">
+                  <span className="label-text text-[12px] text-black font-light">
                     Keep me logged in
                   </span>
                 </label>

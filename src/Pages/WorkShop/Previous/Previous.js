@@ -40,20 +40,8 @@ const Previous = () => {
         },
     ]
     return (
-        <div className='mt-[40px] lg:mt-[107px] md:mt-[100px]'>
-            <div className='flex items-center justify-center'>
-                <Link to='/upcoming'>
-                    <button className='px-6 py-2 lg:leading-[24px] md:leading-[22px] leading-[21px] text-sm lg:text-base md:text-base rounded-[10px] text-left border inline-block bg-[#ECECF5] text-[#C3C4E1] font-medium  focus:text-white focus:outline-none focus:bg-[#3D419F]'>
-                        Upcoming
-                    </button>
-                </Link>
-                <Link to='/previous'>
-                    <button className='px-6 py-2 lg:leading-[24px] md:leading-[22px] leading-[21px] text-sm lg:text-base md:text-base rounded-[10px] text-left border inline-block bg-[#ECECF5] text-[#C3C4E1] font-medium  focus:text-white focus:outline-none focus:bg-[#3D419F]'>
-                        Previous
-                    </button>
-                </Link>
-            </div >
-            <div className='mt-6 lg:mt-12 md:mt-10 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 lg:mx-[145px] gap-5 ml-16 md:ml-0'>
+        <div className=''>
+            <div className='mt-6 lg:mt-12 md:mt-10 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 lg:mx-[145px] gap-5 ml-16 md:ml-0 mb-[48px] md:mb-[70px] lg:mb-[96px]'>
                 {
                     Previouscourses.map(previous =>
                         <div className="card w-[255px] h-[330px] lg:h-[352px] rounded-[10px] bg-[#FFFFFF] border-[1px] border-[#ECECF5]">

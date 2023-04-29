@@ -7,44 +7,62 @@ const FreeVideo = () => {
         {
             "id": "1",
             "image": "../../../../assest/course_image/course_image_1.png",
-            "course_name": "What is KDP?",
+            "course_name": "What Is KDP?",
             "name": "Watch this video and learn about KDP"
         },
         {
             "id": "2",
             "image": "../../../../assest/course_image/course_image_2.png",
-            "course_name": "What is KDP?",
+            "course_name": "How does KDP work?",
             "name": "Watch this video and learn about KDP"
         },
         {
             "id": "3",
             "image": "../../../../assest/course_image/course_image_3.png",
-            "course_name": "What is KDP?",
+            "course_name": "What Is The Future Of KDP?",
             "name": "Watch this video and learn about KDP"
         },
         {
             "id": "4",
             "image": "../../../../assest/course_image/course_image_1.png",
-            "course_name": "What is KDP?",
+            "course_name": "E-Book, Paperback and Hardcover.",
             "name": "Watch this video and learn about KDP"
         },
         {
             "id": "5",
             "image": "../../../../assest/course_image/course_image_2.png",
-            "course_name": "What is KDP?",
+            "course_name": "Start With Paperback on Amazon KDP.",
             "name": "Watch this video and learn about KDP"
         },
         {
             "id": "6",
             "image": "../../../../assest/course_image/course_image_3.png",
-            "course_name": "What is KDP?",
+            "course_name": "Amazon KDP Rules and Regulations.",
+            "name": "Watch this video and learn about KDP"
+        },
+        {
+            "id": "7",
+            "image": "../../../../assest/course_image/course_image_3.png",
+            "course_name": "What Is Niche?",
+            "name": "Watch this video and learn about KDP"
+        },
+        {
+            "id": "8",
+            "image": "../../../../assest/course_image/course_image_3.png",
+            "course_name": "Quality vs Quantity",
+            "name": "Watch this video and learn about KDP"
+        },
+        {
+            "id": "9",
+            "image": "../../../../assest/course_image/course_image_3.png",
+            "course_name": "Niche Research Part 01.",
             "name": "Watch this video and learn about KDP"
         },
 
     ]
 
     return (
-        <section className='mx-auto w-[320px] lg:min-w-[1110px] mb-12 lg:mb-[100px] pt-[40px]' id='free-course'>
+        <section className='mx-auto w-[320px] lg:min-w-[1110px] mb-12 lg:mb-[100px]' id='free-course'>
             <div className='mb-10 mx-auto w-[320px] lg:min-w-[1110px]'>
                 <div className='w-[320px] lg:w-[1110px] grid grid-cols-1 lg:grid-cols-2 justify-center items-center'>
                     <div className=''>

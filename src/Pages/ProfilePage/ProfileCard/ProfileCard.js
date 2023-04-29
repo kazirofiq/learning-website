@@ -1,12 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import profileImg from '../../../assest/Profile_image/Avatar.png';
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { Link } from 'react-router-dom';
-import accountIcon from "../../../assest/icon/account.png";
-import planner from "../../../assest/icon/planner.png";
-import ExternalLink from "../../../assest/icon/External Link.png";
-import OrderHistory from "../../../assest/icon/order history.png";
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowTopRightOnSquareIcon, ClipboardIcon, ClockIcon, UserIcon } from '@heroicons/react/24/solid'
 const percentage = 60;
 const customColor = '#3D419F';
@@ -26,7 +22,21 @@ const textStyle = {
   dominantBaseline: 'middle',
 };
 
+
 const ProfileCard = () => {
+
+  const location = useLocation();
+  // console.log(location.pathname);
+  const [activeDraft, setActiveDraft] = useState(false);
+  useEffect(() => {
+    if (location.pathname === "/profile/importent" || location.pathname === "/profile/orderhistory") {
+      setActiveDraft(true)
+    }
+    else {
+      setActiveDraft(false)
+    }
+  }, [location.pathname])
+
   return (
     <div className="card w-[255px] bg-base-100 shadow-xl poppins lg:mt-[84px] md:mt-[50px] mt-8">
       <figure className="px-10 pt-10">
@@ -54,7 +64,7 @@ const ProfileCard = () => {
       </div>
       <div className='mt-4 px-4 pb-6'>
         <Link to='/profile'>
-          <button className='gap-x-[14px] flex items-center leading-[24px] text-base rounded-[8px] w-[223px] px-4 py-2 bg-[#FFFFFF] text-[#666666] font-medium  focus:text-white focus:outline-none focus:bg-[#3D419F]'>
+          <button className={`gap-x-[14px] flex items-center leading-[24px] text-base rounded-[8px] w-[223px] px-4 py-2 text-[#666666] font-medium  focus:text-white focus:outline-none ${activeDraft || "bg-[#3D419F] text-white"}`}>
             <UserIcon className='h-5 w-5' />
             My Profile
           </button>
