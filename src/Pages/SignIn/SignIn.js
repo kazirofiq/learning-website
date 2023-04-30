@@ -53,9 +53,9 @@ const SignIn = () => {
                 })}
                 className=" pad text-black input-bordered w-full max-w-xs outline-none"
               />
-              {errors.number && (
+              {errors.email && (
                 <p className="text-red-600" role="alert">
-                  {errors.number?.message}
+                  {errors.email?.message}
                 </p>
               )}
             </div>
