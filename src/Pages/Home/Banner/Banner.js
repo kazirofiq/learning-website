@@ -18,7 +18,7 @@ const Banner = () => {
                 <div className='flex-row w-full lg:ml-[31px] lg:mt-3'>
                     <img className='' src={bannerRightPic} alt="" />
                 </div>
-                <img className='hidden lg:block absolute right-[47%] bottom-[-8%]' src={arrow} alt="arrow" />
+                {/* <img className='hidden lg:block absolute right-[49%] bottom-[10%]' src={arrow} alt="arrow" /> */}
                 <div className='flex-row w-full lg:mr-[31px] lg:w-[542px] sm:w-[320px]'>
                     <h1 className='text-4xl lg:text-[51px]  text-[#1B1D48] md:leading-[68px]   mb-[30px]  font-bold lg:text-left md:text-left text-center pt-6 lg:p-0'>Learning Online is <span className='text-[#38A27B] lg:block'>Now Much Easier</span></h1>
                     <p className='text-[#666666] leading-6 text-[16px] mb-11 lg:text-left md:text-left text-center'>Learn With Rakib is an interesting platform that will teach you KDP in  an interactive way.</p>
@@ -45,7 +45,8 @@ const Banner = () => {
                         </div>
                     </div>
 
-                    <div className='flex items-center lg:mt-[39px] mt-7 w-[320px] lg:w-[436px]'>
+                   <div className='flex items-center justify-between relative'>
+                   <div className='flex items-center lg:mt-[39px] mt-7 w-[320px] lg:w-[436px]'>
                         <p className='line'></p>
                         <div className='ml-[20px] lg:ml-8 '>
                             <h4 className='text-3xl lg:text-[32px] text font-bold'>150+</h4>
@@ -60,6 +61,8 @@ const Banner = () => {
                             <p className='text-sm lg:text-[16px] text2'>Online Classes</p>
                         </div>
                     </div>
+                     <img className='hidden lg:block absolute ml-[89%] mt-[12%]' src={arrow} alt="arrow" />
+                   </div>
                 </div>
             </div>
 
