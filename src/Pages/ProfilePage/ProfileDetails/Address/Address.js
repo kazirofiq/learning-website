@@ -1,8 +1,17 @@
 import { PencilSquareIcon } from '@heroicons/react/24/solid';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import AddressEdit from '../../ProfileDetailsEdit/AddressEdit/AddressEdit';
+import { useQuery } from '@tanstack/react-query';
+import { AuthContext } from '../../../../contexts/AuthProvider';
 
 const Address = () => {
+    const {user}= useContext(AuthContext);
+  const [editingaboute, setEditingAboute] = useState(null);
+  const { data: student = {}, refetch } = useQuery({
+    queryKey: ["adress", user?.uid ],
+    queryFn: () =>
+      fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`).then((res) => res.json()),
+  });
     return (
         <div className='poppins'>
             <div className="flex justify-between items-center">
@@ -25,7 +34,7 @@ const Address = () => {
                     >
                         Village
                     </label>
-                    <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">Rangpur,newzummapara</p>
+                    <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">{student?.village || 'N/A'}</p>
                 </div>
                 <div className="mt-3">
                     <label
@@ -34,7 +43,7 @@ const Address = () => {
                     >
                         Post
                     </label>
-                    <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">Rangpur,5400</p>
+                    <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">{student?.post || 'N/A'}</p>
                 </div>
                 <div className="mt-3">
                     <label
@@ -43,7 +52,7 @@ const Address = () => {
                     >
                         Thana
                     </label>
-                    <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">Kotoali</p>
+                    <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">{student?.thana || 'N/A'}</p>
                 </div>
                 <div className="mt-3">
                     <label
@@ -52,7 +61,7 @@ const Address = () => {
                     >
                         District
                     </label>
-                    <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">Rangpur,Bangladesh</p>
+                    <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">{student?.district || 'N/A'}</p>
                 </div>
             </div>
         </div>
