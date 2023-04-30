@@ -10,7 +10,6 @@ import { AuthContext } from "../../../contexts/AuthProvider";
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user, logOut } = useContext(AuthContext);
-
     const handleLogOut = () => {
         logOut().then(() => console.log("Logged Out")).catch(err => console.error("Some Error Occured"))
     }

@@ -31,11 +31,11 @@ input:checked+div svg {
   @apply block;
 }
 
-.log {
+/* .log {
   background: #3D419F;
   border-radius: 10px;
   padding: 12px 111px;
-}
+} */
 
 @media only screen and (min-width: 992px) {
 

@@ -8,15 +8,19 @@ import { AuthContext } from "../../contexts/AuthProvider";
 
 const SignIn = () => {
 
-  const { signIn } = useContext(AuthContext);
+  const { signIn, user } = useContext(AuthContext);
+  console.log(user)
   const location = useLocation();
   const navigate = useNavigate();
+  
   const from = location.state?.from?.pathname || '/';
   const { register, formState: { errors }, handleSubmit } = useForm();
   const [pwd, setPwd] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
 
-
+  if(user?.email && user?.uid){
+    return navigate("/")
+  }
   const handleLogin = data => {
     console.log(data);
     signIn(data.email, data.password)
@@ -50,9 +54,9 @@ const SignIn = () => {
                 })}
                 className=" pad text-black input-bordered w-full max-w-xs outline-none"
               />
-              {errors.number && (
+              {errors.email && (
                 <p className="text-red-600" role="alert">
-                  {errors.number?.message}
+                  {errors.email?.message}
                 </p>
               )}
             </div>
@@ -131,13 +135,12 @@ const SignIn = () => {
               </div>
             </div>
 
-            <input
-              className=" log w-full font-bold text-[18px] leading-[27px] text-white"
+              <input
+              className="lg:w-full w-[288px] h-[51px] font-bold text-[18px] text-white btn bg-[#3D419F] hover:bg-[#3D419F] capitalize"
               type="submit"
               value="Login Securely"
             />
-            {/* {loginError && <p className='text-red-600'>{loginError}
-                        </p>} */}
+         
           </form>
           <p className="font-semibold text-[16px] leading-[24px] text-[#666666] mt-[16px] text-center">
             New User?{" "}

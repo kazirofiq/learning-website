@@ -8,7 +8,7 @@ import "./SignUp.css";
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, user, verificationEmail } = useContext(AuthContext);
   const {
     register,
     formState: { errors },
@@ -18,10 +18,20 @@ const SignUp = () => {
   const [isRevealPwd, setIsRevealPwd] = useState(false);
   const navigate = useNavigate();
 
+  if (user?.email && user?.uid) {
+    return navigate("/")
+  }
+
   const handleSignUp = (data) => {
     createUser(data.email, data.password)
       .then(result => {
         const user = result.user;
+        console.log(user);
+        verificationEmail()
+          .then(() => {
+            console.log("Email verification send")
+
+          });
         const userInfo = {
           displayName: data.name
         }
@@ -187,12 +197,10 @@ const SignUp = () => {
             </div>
 
             <input
-              className=" log w-full font-bold text-[18px] leading-[27px] text-white"
+              className="lg:w-full w-[288px] h-[51px] font-bold text-[18px] text-white btn bg-[#3D419F] hover:bg-[#3D419F] capitalize"
               type="submit"
               value="Create Free account"
             />
-            {/* {loginError && <p className='text-red-600'>{loginError}
-                        </p>} */}
           </form>
           <p className="font-semibold text-[16px] leading-[24px] text-[#666666] mt-[16px] text-center">
             All ready have an account{" "}
