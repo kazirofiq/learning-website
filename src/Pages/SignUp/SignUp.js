@@ -12,7 +12,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
-  const { createUser, updateUser, user } = useContext(AuthContext);
+  const { createUser, updateUser, user, verificationEmail } = useContext(AuthContext);
   const {
     register,
     formState: { errors },
@@ -25,12 +25,17 @@ const SignUp = () => {
   if(user?.email && user?.uid){
     return navigate("/")
   }
-
+  
   const handleSignUp = (data) => {
     createUser(data.email, data.password)
       .then(result => {
         const user = result.user;
         console.log(user);
+        verificationEmail()
+        .then(() => {
+            console.log("Email verification send")
+            
+        });
         const userInfo = {
           displayName: data.name
         }
