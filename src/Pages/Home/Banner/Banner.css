@@ -46,8 +46,8 @@
 }
 .play-animation-btn::before{
     content: "";
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
     position: absolute;
     top: 0;
     left: 5%;
