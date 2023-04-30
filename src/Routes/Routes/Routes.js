@@ -74,35 +74,35 @@ const router = createBrowserRouter([
             },
             {
                 path: '/premium_course',
-                element: <PremiumCourseHome></PremiumCourseHome>
+                element: <PrivateRoute><PremiumCourseHome /></PrivateRoute>
             },
             {
                 path: '/payment',
-                element: <OrderDetails />
+                element: <PrivateRoute><OrderDetails /></PrivateRoute>
             },
             {
                 path: '/upcomingpremimumcourse',
-                element: <UpcomingPremimumCourses />
+                element: <PrivateRoute><UpcomingPremimumCourses /></PrivateRoute>
             },
             {
                 path: '/freecorses',
-                element: <FreeCorses />
+                element: <PrivateRoute><FreeCorses /></PrivateRoute>
             },
             {
                 path: '/consultetion',
-                element: <Consultetion />
+                element: <PrivateRoute><Consultetion /></PrivateRoute>
             },
             {
                 path: '/resource',
-                element: <Resource />
+                element: <PrivateRoute><Resource /></PrivateRoute>
             },
             {
                 path: '/allreviews',
-                element: <AllReviews />
+                element: <PrivateRoute><AllReviews /></PrivateRoute>
             },
             {
                 path: '/upcomingdetails',
-                element: <UpComingDetails />
+                element: <PrivateRoute><UpComingDetails /></PrivateRoute>
             },
             // footer text route
             {
@@ -177,7 +177,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/kdptools',
-        element: <KdpLayout />,
+        element: <PrivateRoute><KdpLayout /></PrivateRoute>,
         children: [
             {
                 path: '/kdptools',
