@@ -134,11 +134,9 @@ const SignIn = () => {
               </div>
             </div>
 
-            <input
-              className=" log w-full font-bold text-[18px] leading-[27px] text-white"
-              type="submit"
-              value="Login Securely"
-            />
+            <button type="submit" className="lg:w-full w-[288px] h-[51px] font-bold text-[18px] text-white btn bg-[#3D419F] hover:bg-[#3D419F] capitalize">
+Login Securely
+              </button>
             {/* {loginError && <p className='text-red-600'>{loginError}
                         </p>} */}
           </form>
