@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { PlayCircleIcon, LockClosedIcon, CheckCircleIcon } from '@heroicons/react/24/solid'
+import React, { useContext } from 'react';
+import { CheckCircleIcon } from '@heroicons/react/24/solid'
 
 import { VedioContext } from '../../contexts/VedioProvider';
 import { Link } from 'react-router-dom';

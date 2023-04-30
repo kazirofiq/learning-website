@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import showPwdImg from "../../assest/login-svg/show-password.svg";
 import hidePwdImg from "../../assest/login-svg/hide-password.svg";
 import "./SignUp.css";
-import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
@@ -23,29 +22,48 @@ const SignUp = () => {
     createUser(data.email, data.password)
       .then(result => {
         const user = result.user;
-        console.log(user);
         const userInfo = {
           displayName: data.name
         }
         updateUser(userInfo)
           .then((result) => {
             console.log(result);
-            navigate('/');
+            saveUser({
+              name: data.name,
+              email: data.email,
+              mobile: data.mobile,
+              uid: user.uid,
+              studentId: `LWR-${(new Date()).getTime()}`
+            })
           })
-          .catch(err => console.log(err));
+          .catch(err => console.error(err));
       })
       .catch(error => {
-        console.log(error);
+        console.error(error);
       });
+  }
+
+  const saveUser = user => {
+    fetch("https://learn-with-rakib-server-three.vercel.app/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(user)
+    })
+      .then(res => res.json())
+      .then(data => {
+        navigate('/');
+      })
+      .catch(err => {
+        console.error(err);
+      })
   }
 
 
   return (
     <div
-      className="bgg   LG:w-[1092px] lg:h-[792px]  mb-6 bg-[#fff] lg:mb-0 md:mb-0 lg:w-[1092px]  mx-auto flex justify-center items-center"
-    //   style={{ backgroundImage: `url(${login})`
-
-    // }}
+      className="bgg LG:w-[1092px] lg:h-[792px] smb-6 bg-[#fff] lg:mb-0 md:mb-0 lg:w-[1092px] mx-auto flex justify-center items-center"
     >
       <div className="h-[520px] bg-white bxs mt-[40px] z-50 shadow-slate-500 lg:shadow-none md:shadow-none w-[398px] p-[24px] lg:mt-[26px] md:mt-[26px] lg:ml-[325px] md:ml-[325px] mx-auto flex justify-center items-center">
         <div className="w-96 bg-white rounded-xl  py-4 px-8">
@@ -110,7 +128,7 @@ const SignUp = () => {
                 })}
                 type={isRevealPwd ? "text" : "password"}
                 value={pwd}
-                onKeyUp={(e) => setPwd(e.target.value)}
+                onChange={(e) => setPwd(e.target.value)}
               />
               <img
                 alt=""

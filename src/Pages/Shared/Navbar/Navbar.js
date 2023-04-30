@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../../../assest/logo/Logo (2).png";
 import "./Navbar.css";
 import { BiChevronDown } from "react-icons/bi";
-import avater from "../../../assest/Profile_image/Avatar.png";
+import avatar from "../../../assest/Profile_image/Avatar.png";
 import { AuthContext } from "../../../contexts/AuthProvider";
 // import navicon from "../../../assest/navicon.png";
 
@@ -106,7 +106,7 @@ const Navbar = () => {
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src={avater} alt="" />
+                                <img src={user?.photoURL || avatar} alt="" />
                             </div>
                         </label>
                         <ul
@@ -440,7 +440,7 @@ const Navbar = () => {
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src={avater} alt="icon" />
+                                <img src={user?.photoURL || avatar} alt="icon" />
                             </div>
                         </label>
 

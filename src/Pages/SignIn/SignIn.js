@@ -1,9 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import login from "../../assest/bg-img/login.png";
-import { GrView } from "react-icons/gr";
-import { BsEyeSlash } from "react-icons/bs";
 import showPwdImg from "../../assest/login-svg/show-password.svg";
 import hidePwdImg from "../../assest/login-svg/hide-password.svg";
 import "./login.css";
