@@ -1,9 +1,24 @@
 import { PencilSquareIcon } from '@heroicons/react/24/solid';
 import React from 'react';
 import { useState } from 'react';
+
+import { useContext } from 'react';
+import { AuthContext } from '../../../../contexts/AuthProvider';
+import { useQuery } from '@tanstack/react-query';
 import EducationEdit from '../../ProfileDetailsEdit/EducationEdit/EducationEdit';
+import EduCationEditing from '../../ProfileDetailsEdit/EduCationEditing/EduCationEditing';
+
 
 const Education = () => {
+  const [editingEducation, setEditingEducation] = useState(null);
+
+  const {user}= useContext(AuthContext);
+  const { data: student = {}, refetch } = useQuery({
+    queryKey: ["education", user?.uid ],
+    queryFn: () =>
+      fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`).then((res) => res.json()),
+  });
+
   const [isChecked, setIsChecked] = useState(Boolean);
   const checkSwitch = (value) => {
     return setIsChecked(!value);
@@ -15,7 +30,7 @@ const Education = () => {
         <h1 className="text-[#1B1D48] font-medium lg:font-semibold lg:text-base text-lg">
           Education
         </h1>
-        <label htmlFor="editPromotionModal">
+        <label htmlFor="editEducationModal">
           <div className="flex items-center gap-x-1 text-[#1B1D48] cursor-pointer">
             <PencilSquareIcon className='h-4 w-4 lg:h-5 lg:w-5' />
             <p className="font-medium lg:font-semibold lg:text-sm text-sm">Edit</p>
@@ -25,22 +40,14 @@ const Education = () => {
       <div className='lg:grid flex lg:flex-row flex-col grid-cols-2'>
         <div className='mt-3'>
           <label htmlFor="education" className='block text-[#666666] font-normal text-sm mb-2'>Your Education level</label>
-          <input type="text" id='education' placeholder="Type Education level" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+          <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">{student?.education || "N/A"}</p>
         </div>
         <div className='flex flex-col-reverse lg:hidden'>
           <div className='mt-3'>
             <label htmlFor="Degree-Title" className='block text-[#666666] font-normal text-sm mb-2'>Exam/Degree Title</label>
-            <input type="text" id='Degree-Title' placeholder="Exam/Degree Title" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+            <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">{student?.degree || "N/A"}</p>
             <div className='flex justify-start items-center'>
 
-              <input
-                type="checkbox"
-                id="graduated"
-                name="graduated"
-                value="yes"
-                className="opacity-0 absolute h-[18px] w-[18px] cursor-pointer text-[#666666]"
-                onClick={() => checkSwitch(isChecked)}
-              />
               <div className="bg-white border-2  border-[#666666] w-[16px] h-[16px] flex  flex-shrink-0 justify-center items-center mr-2 focus-within:border-[#666666]">
                 <svg
                   className="fill-current hidden h-[18px] w-[18px] pointer-events-none text-[#666666]"
@@ -65,7 +72,8 @@ const Education = () => {
           </div>
           <div className='mt-3'>
             <label htmlFor="Institution-Name" className='block text-[#666666] font-normal text-sm mb-2'>Institution Name</label>
-            <input type="text" id='Institution-Name' placeholder="Institution-Name" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+            
+            <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">{student?.intitution || "N/A"}</p>
 
           </div>
         </div>
@@ -117,8 +125,9 @@ const Education = () => {
             <input type="text" id='Passing-year' placeholder="Approximate Passing year" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
           </div>
         }
-
       </div>
+      <EduCationEditing>
+              </EduCationEditing>
     </div>
   );
 };

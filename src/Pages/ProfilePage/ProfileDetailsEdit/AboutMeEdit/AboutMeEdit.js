@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toast';
 import { useContext } from 'react';
 import { AuthContext } from '../../../../contexts/AuthProvider';
-const AboutMeEdit = ({ refetch}) => {
+const AboutMeEdit = ({ refetch, setEditingAboute}) => {
   // const { _id, name, designation, designation_to, date } = about;
   const {user}= useContext(AuthContext);
     const {
@@ -34,8 +34,9 @@ const AboutMeEdit = ({ refetch}) => {
           .then((result) => {
             console.log(result);
             toast.success(`${data.name} is update successfully`);
+            window.location.reload()
             // setEditingAboute(null);
-            refetch();
+            // refetch();
           })
           .catch(err => console.error(err))
       };
@@ -74,6 +75,7 @@ const AboutMeEdit = ({ refetch}) => {
             >
               <div className="grid grid-cols-2 gap-4 items-center">
                 <div>
+                <label className='text-black'>Your Name</label>
                   <input
                     name="name"
                     defaultValue={user?.name}
@@ -91,15 +93,14 @@ const AboutMeEdit = ({ refetch}) => {
                   )}
                 </div>
                 <div>
+                <label className='text-black'>Student Id</label>
                   <input
                     name="studentId"
                     // defaultValue={name}
                     type="text"
 
                     className="input input-bordered my-2 w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 text-black"
-                    {...register("studentId", {
-                      required: "Student Id is required",
-                    })}
+                    
                   />
                   {errors.studentId && (
                     <p className="text-red-600" role="alert">
@@ -108,6 +109,7 @@ const AboutMeEdit = ({ refetch}) => {
                   )}
                 </div>
                 <div>
+                <label className='text-black'>Email</label>
                   <input
                   // defaultValue={editingaboute.email}
                     name="email"
@@ -124,6 +126,7 @@ const AboutMeEdit = ({ refetch}) => {
                   )}
                 </div>
                 <div>
+                <label className='text-black'>Phone</label>
                   <input
                     name="Phone"
                     // defaultValue={name}
@@ -141,6 +144,7 @@ const AboutMeEdit = ({ refetch}) => {
                   )}
                 </div>
                 <div>
+                <label className='text-black'>Date</label>
                   <input
                     name="date"
                     // defaultValue={date}
@@ -158,6 +162,7 @@ const AboutMeEdit = ({ refetch}) => {
                   )}
                 </div>
                 <div>
+                  Gender
                   <select
                     name="gender"
                     // defaultValue={designation_to}
@@ -186,7 +191,7 @@ const AboutMeEdit = ({ refetch}) => {
               <br />
               <div className="modal-action justify-center">
                 <input
-                  className="cursor-pointer hover:bg-slate-900 px-3 py-2 rounded-lg bg-orange-600 text-white font-semibold"
+                  className="cursor-pointer  px-3 py-2 rounded-lg bg-[#3D419F] text-white font-semibold"
                   type="submit"
                   value="Save"
                 />

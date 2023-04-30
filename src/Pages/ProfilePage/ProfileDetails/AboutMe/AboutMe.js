@@ -6,6 +6,8 @@ import { PencilSquareIcon } from '@heroicons/react/24/solid';
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { AuthContext } from "../../../../contexts/AuthProvider";
+import EducationEdit from "../../ProfileDetailsEdit/EducationEdit/EducationEdit";
+import AddressEdit from "../../ProfileDetailsEdit/AddressEdit/AddressEdit";
 
 const AboutMe = () => {
   const {user}= useContext(AuthContext);
@@ -95,6 +97,7 @@ const AboutMe = () => {
           setEditingAboute={setEditingAboute}
         ></AboutMeEdit>
       )}
+  
     </div>
   );
 };

@@ -11,11 +11,17 @@ const AddressEdit = () => {
             headers: {
               "content-type": "application/json",
             },
-            body: JSON.stringify({village: e.target.village.value}),
+            body: JSON.stringify({
+                village: e.target.village.value,
+                post: e.target.post.value,
+                thana: e.target.thana.value,
+                district: e.target.district.value,
+            }),
           })
             .then((res) => res.json())
             .then((result) => {
               console.log(result);
+              window.location.reload()
             //   toast.success(`${data.name} is update successfully`);
             //   refetch();
             //   setEditingClient(null);
@@ -42,15 +48,15 @@ const AddressEdit = () => {
                                 </div>
                                 <div className='mt-3'>
                                     <label htmlFor="Post" className='block text-[#666666] font-normal text-sm mb-2'>Post</label>
-                                    <input type="text" id='Post' placeholder="Post" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+                                    <input name='post' type="text" id='Post' placeholder="Post" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
                                 </div>
                                 <div className='mt-3'>
                                     <label htmlFor="Thana" className='block text-[#666666] font-normal text-sm mb-2'>Thana</label>
-                                    <input type="email" id='Thana' placeholder="Thana" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+                                    <input name='thana' type="text" id='Thana' placeholder="Thana" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
                                 </div>
                                 <div className='mt-3'>
                                     <label htmlFor="District" className='block text-[#666666] font-normal text-sm mb-2'>District</label>
-                                    <input type="text" id='District' placeholder="District" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+                                    <input name='district' type="text" id='District' placeholder="District" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
                                 </div>
                             </div>
                             <div className='flex justify-center items-center mt-5 lg:mt-8'>
