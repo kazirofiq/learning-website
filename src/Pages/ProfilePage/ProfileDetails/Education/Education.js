@@ -12,11 +12,11 @@ import EduCationEditing from '../../ProfileDetailsEdit/EduCationEditing/EduCatio
 const Education = () => {
   const [editingEducation, setEditingEducation] = useState(null);
 
-  const {user}= useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const { data: student = {}, refetch } = useQuery({
-    queryKey: ["education", user?.uid ],
+    queryKey: ["education", user?.uid],
     queryFn: () =>
-      fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`).then((res) => res.json()),
+      fetch(`https://learn-with-rakib-server-three.vercel.app/users/uid?uid=${user?.uid}`).then((res) => res.json()),
   });
 
   const [isChecked, setIsChecked] = useState(Boolean);
@@ -26,7 +26,7 @@ const Education = () => {
 
   return (
     <div className='poppins mb-[128px]'>
-       <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center">
         <h1 className="text-[#1B1D48] font-medium lg:font-semibold lg:text-base text-lg">
           Education
         </h1>
@@ -72,7 +72,7 @@ const Education = () => {
           </div>
           <div className='mt-3'>
             <label htmlFor="Institution-Name" className='block text-[#666666] font-normal text-sm mb-2'>Institution Name</label>
-            
+
             <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">{student?.intitution || "N/A"}</p>
 
           </div>
@@ -127,7 +127,7 @@ const Education = () => {
         }
       </div>
       <EduCationEditing>
-              </EduCationEditing>
+      </EduCationEditing>
     </div>
   );
 };

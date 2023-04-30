@@ -12,19 +12,32 @@ const OrderDetails = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [isPaid, setIsPaid] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [coupon, setCoupon] = useState({});
   const [searchParams] = useSearchParams();
 
   const toggleChecked = e => {
     setIsChecked(e.target.checked);
   }
 
+  const handleCoupon = e => {
+    e.preventDefault();
+    const couponId = e.target.couponId.value;
+    fetch(`https://learn-with-rakib-server-three.vercel.app/coupons/?couponId=${couponId}`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        setCoupon(data)
+      })
+      .catch(err => console.error(err))
+  }
+
   useEffect(() => {
     setIsSuccess(searchParams.get("status"));
-    fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`)
+    fetch(`https://learn-with-rakib-server-three.vercel.app/users/uid?uid=${user?.uid}`)
       .then(res => res.json())
       .then(data => setIsPaid(data.paidPremium))
       .catch(err => console.error(err))
-  }, [searchParams, setIsSuccess, user])
+  }, [searchParams, setIsSuccess, user]);
 
   return (
     <section className=" bg-[#F8F8FF]">
@@ -97,17 +110,25 @@ const OrderDetails = () => {
               <h5 className="text-[#1B1D48] font-bold text-xl pt-4 pb-3">
                 Coupon
               </h5>
-              <div className="coupon">
+              <form onSubmit={handleCoupon} className="coupon">
                 <div className="form-control  ">
                   <div className="input-group h-12 ">
-                    <input type="text" className="input " />
-                    <button className="btn  apply-button">apply</button>
+                    <input name="couponId" type="text" className="input " />
+                    <button type="submit" className="btn  apply-button">apply</button>
                   </div>
                 </div>
-              </div>
+              </form>
+              {
+                coupon?.discount && <div className="flex justify-between mt-4 text-[1rem] text-[#333333]">
+                  <p>Discount</p>
+                  <p>-৳{10000 * Number(coupon?.discount) / 100}</p>
+                </div>
+              }
               <div className="flex justify-between text-xl font-bold py-6 text-[#606280] ">
                 <p>Total amount</p>
-                <p>৳10000</p>
+                {
+                  coupon?.discount ? <p>৳{10000 - (10000 * Number(coupon?.discount) / 100)}</p> : <p>৳10000</p>
+                }
               </div>
               {
                 isPaid ? "" : <div className="text-[#1B1D48] flex gap-2 items-start mb-4">
@@ -123,7 +144,7 @@ const OrderDetails = () => {
                       Already Enrolled
                     </button>
                   </label> :
-                    isChecked && user?.uid ? <Link to={`http://localhost:5000/payment/uid?uid=${user?.uid}`}>
+                    isChecked && user?.uid ? <Link to={`https://learn-with-rakib-server-three.vercel.app/payment/uid?uid=${user?.uid}&couponId=${coupon?.value}`}>
                       <label htmlFor="my-modal-3">
                         <button className=" w-full bg-[#3D419F] rounded-xl text-white py-3 font-semibold ">
                           {" "}

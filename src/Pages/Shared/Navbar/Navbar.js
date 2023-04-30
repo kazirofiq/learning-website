@@ -5,14 +5,26 @@ import "./Navbar.css";
 import { BiChevronDown } from "react-icons/bi";
 import avatar from "../../../assest/Profile_image/Avatar.png";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import { useEffect } from "react";
 // import navicon from "../../../assest/navicon.png";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [savedUser, SetSavedUser] = useState(null)
     const { user, logOut } = useContext(AuthContext);
+
     const handleLogOut = () => {
         logOut().then(() => console.log("Logged Out")).catch(err => console.error("Some Error Occured"))
     }
+
+    useEffect(() => {
+        fetch(`https://learn-with-rakib-server-three.vercel.app/users/uid?uid=${user?.uid}`)
+            .then(res => res.json())
+            .then(data => {
+                SetSavedUser(data)
+            })
+            .catch(err => console.error(err))
+    }, [user?.uid])
 
     const menuItems = (
         <>
@@ -99,9 +111,11 @@ const Navbar = () => {
                         </li>
                     </Link>
                 </> : <>
-                    <li className="text-[#333333] text-base font-normal">
-                        <Link to="/mycourses">My Course</Link>
-                    </li>
+                    {
+                        savedUser?.paidPremium && <li className="text-[#333333] text-base font-normal">
+                            <Link to="/mycourses">My Course</Link>
+                        </li>
+                    }
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">

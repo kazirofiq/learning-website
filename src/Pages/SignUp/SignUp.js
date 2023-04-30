@@ -16,11 +16,12 @@ const SignUp = () => {
   } = useForm();
   const [pwd, setPwd] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
   const navigate = useNavigate();
 
-  if (user?.email && user?.uid) {
-    return navigate("/")
-  }
+  // if (user?.email && user?.uid) {
+  //   return navigate("/verify-email")
+  // }
 
   const handleSignUp = (data) => {
     createUser(data.email, data.password)
@@ -63,11 +64,15 @@ const SignUp = () => {
     })
       .then(res => res.json())
       .then(data => {
-        navigate('/');
+        navigate('/verify-email');
       })
       .catch(err => {
         console.error(err);
       })
+  }
+
+  const toggleChecked = e => {
+    setIsChecked(e.target.checked);
   }
 
 
@@ -163,6 +168,7 @@ const SignUp = () => {
                     name="A3-confirmation"
                     value="yes"
                     className="opacity-0 absolute h-8 w-8"
+                    onChange={toggleChecked}
                   />
                   <div className="bg-white border-2  border-[#4044A0] w-[16px] h-[16px] flex  flex-shrink-0 justify-center items-center mr-2 focus-within:border-[#4044A0]">
                     <svg
@@ -187,20 +193,27 @@ const SignUp = () => {
                   </div>
                   <span className="label-text text-black text-[12px] font-light">
                     I agree to all the{" "}
-                    <span className="text-[#333333] font-bold">terms</span> and{" "}
-                    <span className="font-bold text-[#333333]">
+                    <Link to='/termsAndCondition' className="text-[#333333] font-bold">terms</Link> and{" "}
+                    <Link to='/privacyPolicy' className="font-bold text-[#333333]">
                       privacy policy
-                    </span>
+                    </Link>
                   </span>
                 </label>
               </div>
             </div>
 
-            <input
-              className="lg:w-full w-[288px] h-[51px] font-bold text-[18px] text-white btn bg-[#3D419F] hover:bg-[#3D419F] capitalize"
-              type="submit"
-              value="Create Free account"
-            />
+            {
+              isChecked ?
+                <input
+                  className="lg:w-full w-[288px] h-[51px] font-bold text-[18px] text-white btn bg-[#3D419F] hover:bg-[#3D419F] capitalize"
+                  type="submit"
+                  value="Create Free account"
+                /> : <input
+                  className="lg:w-full w-[288px] h-[51px] font-bold text-[18px] text-white btn bg-[#868ae7] hover:bg-[#868ae7] border-[#868ae7] hover:border-[#868ae7] capitalize cursor-default"
+                  type="button"
+                  value="Create Free account"
+                />
+            }
           </form>
           <p className="font-semibold text-[16px] leading-[24px] text-[#666666] mt-[16px] text-center">
             All ready have an account{" "}

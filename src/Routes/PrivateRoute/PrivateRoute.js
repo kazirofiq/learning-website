@@ -12,7 +12,7 @@ const PrivateRoute = ({ children }) => {
         return <ClipLoader />
     }
 
-    if (!user?.emailVerified) {
+    if (user?.uid && !user?.emailVerified) {
         return <Navigate to="/verify-email" state={{ from: location }} replace />
     }
 

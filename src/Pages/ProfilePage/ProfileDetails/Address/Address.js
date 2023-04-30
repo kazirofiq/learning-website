@@ -5,13 +5,13 @@ import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../../../contexts/AuthProvider';
 
 const Address = () => {
-    const {user}= useContext(AuthContext);
-  const [editingaboute, setEditingAboute] = useState(null);
-  const { data: student = {}, refetch } = useQuery({
-    queryKey: ["adress", user?.uid ],
-    queryFn: () =>
-      fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`).then((res) => res.json()),
-  });
+    const { user } = useContext(AuthContext);
+    const [editingaboute, setEditingAboute] = useState(null);
+    const { data: student = {}, refetch } = useQuery({
+        queryKey: ["adress", user?.uid],
+        queryFn: () =>
+            fetch(`https://learn-with-rakib-server-three.vercel.app/users/uid?uid=${user?.uid}`).then((res) => res.json()),
+    });
     return (
         <div className='poppins'>
             <div className="flex justify-between items-center">

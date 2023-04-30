@@ -3,13 +3,13 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../../contexts/AuthProvider';
 
 const AddressEdit = () => {
-    const {user}= useContext(AuthContext);
-    const handleUpdate = e =>{
+    const { user } = useContext(AuthContext);
+    const handleUpdate = e => {
         e.preventDefault()
-        fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`,{
+        fetch(`https://learn-with-rakib-server-three.vercel.app/users/uid?uid=${user?.uid}`, {
             method: "PATCH",
             headers: {
-              "content-type": "application/json",
+                "content-type": "application/json",
             },
             body: JSON.stringify({
                 village: e.target.village.value,
@@ -17,18 +17,18 @@ const AddressEdit = () => {
                 thana: e.target.thana.value,
                 district: e.target.district.value,
             }),
-          })
+        })
             .then((res) => res.json())
             .then((result) => {
-              console.log(result);
-              window.location.reload()
-            //   toast.success(`${data.name} is update successfully`);
-            //   refetch();
-            //   setEditingClient(null);
+                console.log(result);
+                window.location.reload()
+                //   toast.success(`${data.name} is update successfully`);
+                //   refetch();
+                //   setEditingClient(null);
             })
 
             .catch(err => console.error(err))
-        
+
     }
     return (
         <form onSubmit={handleUpdate}>
