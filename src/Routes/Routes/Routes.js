@@ -77,11 +77,6 @@ const router = createBrowserRouter([
 
             },
             {
-                path: '/verify-email',
-                element: <VerifyEmail></VerifyEmail>
-
-            },
-            {
                 path: '/premium_course',
                 element: <PremiumCourseHome></PremiumCourseHome>
             },
