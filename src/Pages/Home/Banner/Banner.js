@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import './Banner.css';
 import bannerRightPic from '../../../assest/bg-img/bannerright (1).png';
 import arrow from '../../../assest/bg-img/Arrow.png'
-import start_button from '../../../assest/banner/start_button.png';
+import start_button from '../../../assest/icon/play-video-icon.png';
 import HowItWorksVideo from './HowItWorksVideo';
 import MessageBox from '../MessageBox/MessageBox';
 import { Link } from 'react-router-dom';
+import { BsFillPlayFill } from 'react-icons/bs';
 
 const Banner = () => {
 
@@ -13,9 +14,9 @@ const Banner = () => {
 
     return (
         <section className='bg-[#F8F8FF]'>
-            <div className=' md:mx-[145px]  flex-row-reverse lg-w-full lg:flex md:flex pt-5 lg:pt-0 pb-[40px] lg:pb-[90px] items-center px-5'>
+            <div className=' md:mx-[145px] flex-row-reverse lg-w-full lg:flex md:flex pt-5 lg:pt-0 pb-[40px] lg:pb-[90px] items-center px-5'>
                 <div className='flex-row w-full lg:ml-[31px] lg:mt-3'>
-                    <img className='w-full' src={bannerRightPic} alt="" />
+                    <img className='' src={bannerRightPic} alt="" />
                 </div>
                 <img className='hidden lg:block absolute right-[47%] bottom-[-8%]' src={arrow} alt="arrow" />
                 <div className='flex-row w-full lg:mr-[31px] lg:w-[542px] sm:w-[320px]'>
@@ -30,8 +31,12 @@ const Banner = () => {
 
                             <label
                                 htmlFor="openVideoModal"
-                                className="">
-                                <img src={start_button} alt="" className='w-12 h-12 lg:w-[60px] lg:h-[60px] cursor-pointer' />
+                                className="relative w-[53px] h-[53px] cursor-pointer flex items-center justify-center">
+                                {/* <img src={start_button} alt="" className='w-12 h-12 lg:w-[60px] lg:h-[60px] cursor-pointer' /> */}
+                                <div className='w-[40px] h-[40px] bg-[#F8F8FF] rounded-full play-animation-btn flex items-center justify-center shadow-sm'>
+                                <BsFillPlayFill className='w-12 h-12 lg:w-[60px] lg:h-[60px] cursor-pointer text-[#3D419F] ml-[2px]' />
+                                </div>
+                                {/* <a href="#" class="play-animation-btn"><i class="fas fa-play-circle"></i></a> */}
                             </label>
 
                             {/* Please do not delete below code! */}

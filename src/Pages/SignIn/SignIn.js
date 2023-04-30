@@ -11,15 +11,19 @@ import { AuthContext } from "../../contexts/AuthProvider";
 
 const SignIn = () => {
 
-  const { signIn } = useContext(AuthContext);
+  const { signIn, user } = useContext(AuthContext);
+  console.log(user)
   const location = useLocation();
   const navigate = useNavigate();
+  
   const from = location.state?.from?.pathname || '/';
   const { register, formState: { errors }, handleSubmit } = useForm();
   const [pwd, setPwd] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
 
-
+  if(user?.email && user?.uid){
+    return navigate("/")
+  }
   const handleLogin = data => {
     console.log(data);
     signIn(data.email, data.password)

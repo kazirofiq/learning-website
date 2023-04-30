@@ -12,7 +12,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, user } = useContext(AuthContext);
   const {
     register,
     formState: { errors },
@@ -22,7 +22,9 @@ const SignUp = () => {
   const [isRevealPwd, setIsRevealPwd] = useState(false);
   const navigate = useNavigate();
 
-
+  if(user?.email && user?.uid){
+    return navigate("/")
+  }
 
   const handleSignUp = (data) => {
     createUser(data.email, data.password)
