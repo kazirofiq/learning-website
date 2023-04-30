@@ -27,7 +27,7 @@ const Footer = () => {
                     <Link to="/" className="link link-hover">Home</Link>
                     <Link to="/premium_course" className="link link-hover">Course</Link>
                     <Link to="/resource" className="link link-hover">Resource</Link>
-                    <Link to="/consultetion" className="link link-hover">Service</Link>
+                    <Link to="/consultetion" className="link link-hover">Consultation</Link>
                 </div>
                 <div>
                     <span className="font-bold uppercase text-[700] text-white">Contact Us</span>

@@ -1,27 +1,31 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./OrderDetails.css";
 // import styled from 'styled-components'
 import { AiTwotoneStar } from "react-icons/ai";
 import graphics_banner from "../../assest/OrderDetails/graphics_banner.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import SuccesModal from "../Modal/SuccesModal/SuccesModal";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const OrderDetails = () => {
+  const { user } = useContext(AuthContext);
   const [isChecked, setIsChecked] = useState(false);
-  const navigate = useNavigate();
+  const [isPaid, setIsPaid] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [searchParams] = useSearchParams();
 
   const toggleChecked = e => {
     setIsChecked(e.target.checked);
   }
 
-  const makePayment = () => {
-    // navigate("https://learn-with-rakib-server-three.vercel.app/payment")
-    // .then(res => res.json())
-    // .then(data => {
-    //   console.log(data);
-    // })
-    // .catch(err => console.error(err))
-  }
+  useEffect(() => {
+    setIsSuccess(searchParams.get("status"));
+    fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`)
+      .then(res => res.json())
+      .then(data => setIsPaid(data.paidPremium))
+      .catch(err => console.error(err))
+  }, [searchParams, setIsSuccess, user])
+
   return (
     <section className=" bg-[#F8F8FF]">
       <div className="max-w-[1110px] mx-auto py-[7.5rem]">
@@ -105,25 +109,33 @@ const OrderDetails = () => {
                 <p>Total amount</p>
                 <p>৳10000</p>
               </div>
-              <div className="text-[#1B1D48] flex gap-2 items-start mb-4">
-                <input id="agreement" type="checkbox" className="checkbox checkbox-primary" onChange={toggleChecked} />
-                <label htmlFor="agreement" className="label-text text-[13px] text-black font-light mt-1s">I accept all the <Link className="text-blue-600" to="/termsAndCondition">terms</Link>, <Link className="text-blue-600" to="/privacyPolicy">privacy policy</Link> and <Link className="text-blue-600" to="/refund">refund</Link></label>
-              </div>
+              {
+                isPaid ? "" : <div className="text-[#1B1D48] flex gap-2 items-start mb-4">
+                  <input id="agreement" type="checkbox" className="checkbox checkbox-primary" onChange={toggleChecked} />
+                  <label htmlFor="agreement" className="label-text text-[13px] text-black font-light mt-1s">I accept all the <Link className="text-blue-600" to="/termsAndCondition">terms</Link>, <Link className="text-blue-600" to="/privacyPolicy">privacy policy</Link> and <Link className="text-blue-600" to="/refund">refund</Link></label>
+                </div>
+              }
               <div>
                 {
-                  isChecked ? <Link to="https://learn-with-rakib-server-three.vercel.app/payment">
-                    <label htmlFor="my-modal-3">
-                      <button className=" w-full bg-[#3D419F] rounded-xl text-white py-3 font-semibold ">
+                  isPaid ? <label htmlFor="my-modal-3">
+                    <button className=" w-full bg-[#a2a6fd] rounded-xl text-white py-3 font-semibold cursor-default">
+                      {" "}
+                      Already Enrolled
+                    </button>
+                  </label> :
+                    isChecked && user?.uid ? <Link to={`http://localhost:5000/payment/uid?uid=${user?.uid}`}>
+                      <label htmlFor="my-modal-3">
+                        <button className=" w-full bg-[#3D419F] rounded-xl text-white py-3 font-semibold ">
+                          {" "}
+                          Continue Payment
+                        </button>
+                      </label>
+                    </Link> : <label htmlFor="my-modal-3">
+                      <button className=" w-full bg-[#a2a6fd] rounded-xl text-white py-3 font-semibold cursor-default">
                         {" "}
                         Continue Payment
                       </button>
                     </label>
-                  </Link> : <label htmlFor="my-modal-3">
-                    <button className=" w-full bg-[#a2a6fd] rounded-xl text-white py-3 font-semibold cursor-default">
-                      {" "}
-                      Continue Payment
-                    </button>
-                  </label>
                 }
 
               </div>
@@ -131,7 +143,12 @@ const OrderDetails = () => {
           </div>
         </div>
       </div>
-      <SuccesModal />
+      {
+        searchParams.get("status") === "success" && <SuccesModal
+          isChecked={isSuccess}
+          setIsChecked={setIsSuccess}
+        />
+      }
     </section>
   );
 };
