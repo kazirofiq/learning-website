@@ -175,11 +175,11 @@ const SignUp = () => {
               </div>
             </div>
 
-                        <button type="submit" className="lg:w-full w-[288px] h-[51px] font-bold text-[18px] text-white btn bg-[#3D419F] hover:bg-[#3D419F] capitalize">
-                        Create Free account
-              </button>
-            {/* {loginError && <p className='text-red-600'>{loginError}
-                        </p>} */}
+            <input
+              className="lg:w-full w-[288px] h-[51px] font-bold text-[18px] text-white btn bg-[#3D419F] hover:bg-[#3D419F] capitalize"
+              type="submit"
+              value="Create Free account"
+            />
           </form>
           <p className="font-semibold text-[16px] leading-[24px] text-[#666666] mt-[16px] text-center">
             All ready have an account{" "}
