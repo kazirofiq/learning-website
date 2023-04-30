@@ -1,8 +1,31 @@
 import React from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../../../../contexts/AuthProvider';
 
 const AddressEdit = () => {
+    const {user}= useContext(AuthContext);
+    const handleUpdate = e =>{
+        e.preventDefault()
+        fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`,{
+            method: "PATCH",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({village: e.target.village.value}),
+          })
+            .then((res) => res.json())
+            .then((result) => {
+              console.log(result);
+            //   toast.success(`${data.name} is update successfully`);
+            //   refetch();
+            //   setEditingClient(null);
+            })
+
+            .catch(err => console.error(err))
+        
+    }
     return (
-        <div>
+        <form onSubmit={handleUpdate}>
             <div>
                 <input type="checkbox" id="edit-address-modal" className="modal-toggle" />
                 <div className="modal">
@@ -15,7 +38,7 @@ const AddressEdit = () => {
                             <div className='lg:grid md:grid flex lg:flex-row flex-col grid-cols-2 gap-x-[20px]'>
                                 <div className='mt-3'>
                                     <label htmlFor="Vill" className='block text-[#666666] font-normal text-sm mb-2'>Vill</label>
-                                    <input type="text" id='Vill' placeholder="Village" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+                                    <input name='village' type="text" id='Vill' placeholder="Village" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
                                 </div>
                                 <div className='mt-3'>
                                     <label htmlFor="Post" className='block text-[#666666] font-normal text-sm mb-2'>Post</label>
@@ -37,7 +60,7 @@ const AddressEdit = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     );
 };
 
