@@ -55,6 +55,7 @@ import Refund from "../../Pages/Shared/Footer/Refund/Refund";
 import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/TermsAndConditions";
 // import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
 import Planner from "../../Pages/ProfilePage/Planner/Planner";
+import VerifyEmail from "../../Pages/VerfiyEmail/VerifyEmail";
 
 
 const router = createBrowserRouter([
@@ -73,6 +74,11 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
+
+            },
+            {
+                path: '/verify-email',
+                element: <VerifyEmail></VerifyEmail>
 
             },
             {
