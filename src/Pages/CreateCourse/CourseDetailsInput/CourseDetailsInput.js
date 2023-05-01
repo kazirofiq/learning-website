@@ -50,7 +50,7 @@ const CourseDetailsInput = () => {
     if (title && subtitle && selectedItem && selectedItem !== "Select" && price && promotionVideoId && instructor && description && will_learn.length > 0) {
       const course = { title, subtitle, selectedItem, price, promotionVideoId, instructor, description, will_learn, draft };
 
-      fetch("https://learn-with-rakib-server-three.vercel.app/courses", {
+      fetch("https://learn-with-rakib.onrender.com/courses", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

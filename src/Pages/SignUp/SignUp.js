@@ -42,7 +42,7 @@ const SignUp = () => {
             saveUser({
               name: data.name,
               email: data.email,
-              mobile: data.mobile,
+              phone: data.phone,
               uid: user.uid,
               studentId: `LWR-${(new Date()).getTime()}`
             })
@@ -55,7 +55,7 @@ const SignUp = () => {
   }
 
   const saveUser = user => {
-    fetch("https://learn-with-rakib-server-three.vercel.app/users", {
+    fetch("https://learn-with-rakib.onrender.com/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -121,14 +121,14 @@ const SignUp = () => {
               <input
                 type="text"
                 placeholder="mobile"
-                {...register("number", {
+                {...register("phone", {
                   required: "Number is required",
                 })}
                 className=" pad outline-none text-black input-bordered w-full max-w-xs "
               />
-              {errors.number && (
+              {errors.phone && (
                 <p className="text-red-600" role="alert">
-                  {errors.number?.message}
+                  {errors.phone?.message}
                 </p>
               )}
             </div>

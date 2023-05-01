@@ -11,11 +11,11 @@ const MyCourses = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`https://learn-with-rakib-server-three.vercel.app/users/uid?uid=${user?.uid}`)
+        fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`)
             .then(res => res.json())
             .then(user => {
                 user?.enrolledCourses?.map(course => {
-                    fetch(`https://learn-with-rakib-server-three.vercel.app/courses/${course.id}`)
+                    fetch(`https://learn-with-rakib.onrender.com/courses/${course.id}`)
                         .then(res => res.json())
                         .then(courseInfo => {
                             courseInfo.completed = course.completed

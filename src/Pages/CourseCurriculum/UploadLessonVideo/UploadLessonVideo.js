@@ -16,7 +16,7 @@ const UploadLessonVideo = ({ lesson, setLessons }) => {
     const [uploadError, setUploadError] = useState("");
 
     useEffect(() => {
-        fetch("https://learn-with-rakib-server-three.vercel.app/reviews", {
+        fetch("https://learn-with-rakib.onrender.com/reviews", {
             method: "POST",
             body: JSON.stringify([{
                 name: "sk"
@@ -42,7 +42,7 @@ const UploadLessonVideo = ({ lesson, setLessons }) => {
         setVideoFileInfo(acceptedFiles[0]);
         const formData = new FormData();
         formData.append("file", acceptedFiles[0]);
-        fetch("https://learn-with-rakib-server-three.vercel.app/videos", {
+        fetch("https://learn-with-rakib.onrender.com/videos", {
             method: "POST",
             body: formData
         })
@@ -66,7 +66,7 @@ const UploadLessonVideo = ({ lesson, setLessons }) => {
     const checkStatus = (id, time) => {
         if (id) {
             const checkInterval = setInterval(() => {
-                fetch(`https://learn-with-rakib-server-three.vercel.app/videos/status/${id}`)
+                fetch(`https://learn-with-rakib.onrender.com/videos/status/${id}`)
                     .then(res => res.json())
                     .then(data => {
                         const percent = parseInt(((new Date()).getTime() - time) * 100 * 10000 / data.upload_time)

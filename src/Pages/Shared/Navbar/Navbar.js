@@ -18,7 +18,7 @@ const Navbar = () => {
     }
 
     useEffect(() => {
-        fetch(`https://learn-with-rakib-server-three.vercel.app/users/uid?uid=${user?.uid}`)
+        fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`)
             .then(res => res.json())
             .then(data => {
                 SetSavedUser(data)

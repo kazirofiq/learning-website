@@ -5,7 +5,7 @@ const useIsAdmin = uid => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     if (uid) {
-      fetch(`https://learn-with-rakib-server-three.vercel.app/admin/uid?uid=${uid}`)
+      fetch(`https://learn-with-rakib.onrender.com/admin/uid?uid=${uid}`)
         .then(res => res.json())
         .then(user => {
           if (user?.uid) {
