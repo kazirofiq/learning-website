@@ -25,8 +25,7 @@ const SignIn = () => {
     setLoginError("")
     signIn(data.email, data.password)
       .then(result => {
-        //const user = result.user;
-        console.log(result);
+
         navigate(from, { replace: true });
 
       })

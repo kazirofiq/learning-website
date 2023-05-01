@@ -108,7 +108,7 @@ const SignUp = () => {
                 className=" pad outline-none text-black bg-white input-bordered w-full max-w-xs "
               />
               {errors.name && (
-                <p className="text-red-600" role="alert">
+                <p className="text-red-600 text-center" role="alert">
                   {errors.name?.message}
                 </p>
               )}
@@ -123,7 +123,7 @@ const SignUp = () => {
                 className=" pad outline-none text-black input-bordered w-full max-w-xs "
               />
               {errors.email && (
-                <p className="text-red-600" role="alert">
+                <p className="text-red-600 text-center" role="alert">
                   {errors.email?.message}
                 </p>
               )}
@@ -138,7 +138,7 @@ const SignUp = () => {
                 className=" pad outline-none text-black input-bordered w-full max-w-xs "
               />
               {errors.phone && (
-                <p className="text-red-600" role="alert">
+                <p className="text-red-600 text-center" role="alert">
                   {errors.phone?.message}
                 </p>
               )}
@@ -165,12 +165,12 @@ const SignUp = () => {
               />
             </div>
             {errors.password && (
-              <p className="text-red-600" role="alert">
+              <p className="text-red-600 text-center" role="alert">
                 {errors.password?.message}
               </p>
             )}
             {signupError && (
-              <p className="text-red-600" role="alert">
+              <p className="text-red-600 text-center" role="alert">
                 {signupError}
               </p>
             )}
