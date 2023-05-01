@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import './UploadPhotoAndVideo.css';
 import UploadCoverImg from '../CourseUploadProgress/UploadCoverImg';
 import UploadKDPvideo from '../CourseUploadProgress/UploadKDPvideo';
@@ -28,7 +28,7 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId }) => {
     setImageFileInfo(files[0]);
     const formData = new FormData();
     formData.append("image", files[0]);
-    // fetch("http://localhost:5000/videos", {
+    // fetch("https://learn-with-rakib.onrender.com/videos", {
     //   method: "POST",
     //   body: formData
     // })
@@ -54,7 +54,7 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId }) => {
     setVideoFileInfo(files[0]);
     const formData = new FormData();
     formData.append("file", files[0]);
-    fetch("http://localhost:5000/videos", {
+    fetch("https://learn-with-rakib.onrender.com/videos", {
       method: "POST",
       body: formData
     })
@@ -72,13 +72,13 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId }) => {
   const checkStatus = (id, time) => {
     if (id) {
       const checkInterval = setInterval(() => {
-        fetch(`http://localhost:5000/videos/status/${id}`)
+        fetch(`https://learn-with-rakib.onrender.com/videos/status/${id}`)
           .then(res => res.json())
           .then(data => {
-            console.log(isVideoUploading);
+            // console.log(isVideoUploading);
             const percent = parseInt(((new Date()).getTime() - time) * 100 * 10000 / data.upload_time)
             const status = data.status === "ready" ? 100 : percent > 99 ? 99 : percent;
-            console.log(cancelVideoUpload);
+            // console.log(cancelVideoUpload);
             if (data.status === "ready") {
               clearInterval(checkInterval);
               setIsVideoUploading(false);

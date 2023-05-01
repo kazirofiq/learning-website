@@ -9,10 +9,10 @@ const QrGenaretor = () => {
                     <h3 className='lg:leading-[36px] leading-[30px] text-center md:text-2xl lg:text-2xl text-xl font-semibold text-[#1B1D48]'>QR Code Generator</h3>
                     <div className='grid  grid-cols-2 items-center justify-between mt-7'>
                         <div>
-                            <p className='lg:leading-6 md:leading-6 leading-[21px] md:text-base lg:text-base text-sm font-normal text-[#333333]'>Enter URl</p>
+                        <p className='lg:leading-6 md:leading-6 leading-[21px] md:text-base lg:text-base text-sm font-normal text-[#333333]'>Enter URl</p>
                         </div>
                         <div>
-                            <input type="number" placeholder="Enter Your link" className="rounded-lg input input-bordered w-full" />
+                        <input type="number" placeholder="Enter Your link" className="rounded-lg input input-bordered w-full" />
                         </div>
                     </div>
                     {

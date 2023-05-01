@@ -27,8 +27,7 @@ const AboutUs = () => {
             At Learn With Rakib, your satisfaction is my top priority. I strive to provide exceptional value through my consultation services, premium paid course, free YouTube classes, and additional resources on the website. I am dedicated to helping you achieve your creative and freelancing goals, and I am always here to support and guide you throughout your journey.
             <br />
             <br />
-            So, whether you are a budding freelancer looking to kickstart your career, an experienced creative seeking expert guidance, or someone who wants to unlock their creativity and achieve success in the freelancing world, Learn With Rakib is your go-to resource. Join me today and let's embark on a journey to unlock your creativity and elevate your freelancing game to new heights!
-
+            Trade License No: BL-2022-23002719
         </div>
     );
 };

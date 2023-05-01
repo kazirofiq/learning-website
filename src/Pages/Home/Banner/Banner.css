@@ -27,3 +27,46 @@
 .text2{
     color: #777777;
 }
+
+.play-animation-btn {
+    text-align: center;
+    background: #fff;
+    line-height: 80px;
+    border-radius: 50%;
+    color: #3D419F;
+    position: absolute;
+    top: 15%;
+    bottom: 0;
+    right: 19%;
+    transition: 1s;
+}
+.play-animation-btn:hover{
+    background: #F8F8FF;
+    color:#fff;
+}
+.play-animation-btn::before{
+    content: "";
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    left: 5%;
+    background: #E2E3F1;
+    border-radius: 50%;
+    animation: playbtn 1.5s ease-out infinite;
+}
+@keyframes playbtn{
+    0%,30%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        transform: scale(1.5);
+        opacity: .7;
+    }
+    100%{
+        transform: scale(2);
+        opacity: 0;
+    }
+
+}
