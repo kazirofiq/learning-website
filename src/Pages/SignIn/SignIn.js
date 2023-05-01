@@ -5,6 +5,7 @@ import showPwdImg from "../../assest/login-svg/show-password.svg";
 import hidePwdImg from "../../assest/login-svg/hide-password.svg";
 import "./login.css";
 import { AuthContext } from "../../contexts/AuthProvider";
+import UpdatePasswordModal from "./UpdatePasswordModal";
 
 const SignIn = () => {
 
@@ -124,14 +125,16 @@ const SignIn = () => {
                 </label>
               </div>
               <div>
-                <label className="label">
+                            {/* The button to open modal */}
+<label htmlFor="reset-password" className="label label-text-alt link text-[14px] font-medium leading-[21px] no-underline  text-black">Forgot password?</label>
+                {/* <label className="label">
                   <Link
                     to="/reset"
                     className="label-text-alt link text-[14px] font-medium leading-[21px] no-underline  text-black"
                   >
                     Forgot password?
                   </Link>
-                </label>
+                </label> */}
               </div>
             </div>
 
@@ -150,6 +153,7 @@ const SignIn = () => {
           </p>
         </div>
       </div>
+      <UpdatePasswordModal />
     </div>
   );
 };

@@ -12,7 +12,7 @@ const SideCategory = () => {
           <Link to={'/admindashboard/course-create'}>create-course</Link>
   </li>
   <li className="step step-primary">
-          <Link to={'/admindashboard/course-create/course-curriculum'}>course curriculum</Link>
+          <Link to={`/admindashboard/course-create/course-curriculum/${1}`}>course curriculum</Link>
   </li>
   <li className="step step-primary">
     <Link to={'/admindashboard/course-create/AddFAQ'}>

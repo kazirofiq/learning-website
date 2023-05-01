@@ -54,6 +54,7 @@ import Planner from "../../Pages/ProfilePage/Planner/Planner";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import VerifyEmail from "../../Pages/VerifyEmail/VerifyEmail";
+import UpdateCuponCode from "../../Pages/AdminDashboard/UpdateCuponCode/UpdateCuponCode";
 
 
 const router = createBrowserRouter([
@@ -225,58 +226,62 @@ const router = createBrowserRouter([
             },
         ]
     },
-    // {
-    //     path: '/admindashboard',
-    //     element: <AdminRoute><AdmindashboardLayout></AdmindashboardLayout></AdminRoute>,
-    //     children: [
-    //         {
-    //             path: '/admindashboard',
-    //             element: <AdminDashboard></AdminDashboard>
-    //         },
-    //         {
-    //             path: '/admindashboard/course-create',
-    //             element: <SideCategory />,
-    //             children: [
-    //                 {
-    //                     path: '/admindashboard/course-create',
-    //                     element: <CreateCourse />
-    //                 },
-    //                 {
-    //                     path: '/admindashboard/course-create/course-curriculum/:courseId',
-    //                     element: <CourseCurriculum />
-    //                 },
-    //                 {
-    //                     path: '/admindashboard/course-create/course-curriculum-quiz',
-    //                     element: <CourseCurriculumQuiz />
-    //                 },
-    //                 {
-    //                     path: '/admindashboard/course-create/AddFAQ',
-    //                     element: <AddFAQ />
-    //                 }
-    //             ]
-    //         },
-    //         {
-    //             path: "/admindashboard/mycourse",
-    //             element: <MyCourse></MyCourse>,
-    //             children: [
-    //                 {
-    //                     path: "/admindashboard/mycourse",
-    //                     element: <CourseList></CourseList>
-    //                 },
-    //                 {
-    //                     path: "/admindashboard/mycourse/draftcourse",
-    //                     element: <DraftCourse></DraftCourse>
-    //                 },
+    {
+        path: '/admindashboard',
+        element: <AdmindashboardLayout></AdmindashboardLayout>,
+        children: [
+            {
+                path: '/admindashboard',
+                element: <AdminDashboard></AdminDashboard>
+            },
+            {
+                path:'/admindashboard/update-coupon',
+                element: <UpdateCuponCode />
+            },
+            {
+                path: '/admindashboard/course-create',
+                element: <SideCategory />,
+                children: [
+                    {
+                        path: '/admindashboard/course-create',
+                        element: <CreateCourse />
+                    },
+                    {
+                        path: '/admindashboard/course-create/course-curriculum/:courseId',
+                        element: <CourseCurriculum />
+                    },
+                    {
+                        path: '/admindashboard/course-create/course-curriculum-quiz',
+                        element: <CourseCurriculumQuiz />
+                    },
+                    {
+                        path: '/admindashboard/course-create/AddFAQ',
+                        element: <AddFAQ />
+                    }
+                ]
+            },
+            {
+                path: "/admindashboard/mycourse",
+                element: <MyCourse></MyCourse>,
+                children: [
+                    {
+                        path: "/admindashboard/mycourse",
+                        element: <CourseList></CourseList>
+                    },
+                    {
+                        path: "/admindashboard/mycourse/draftcourse",
+                        element: <DraftCourse></DraftCourse>
+                    },
 
-    //             ]
-    //         },
-    //         {
-    //             path: '/admindashboard/upload-Resource',
-    //             element: <UPloadResource />
-    //         },
-    //     ]
+                ]
+            },
+            {
+                path: '/admindashboard/upload-Resource',
+                element: <UPloadResource />
+            },
+        ]
 
-    // },
+    },
     {
         path: '/student-dashboard',
         element: <PrivateRoute><StudentDashboardLayout></StudentDashboardLayout></PrivateRoute>,

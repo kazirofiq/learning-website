@@ -54,7 +54,7 @@ const SignUp = () => {
   }
 
   const saveUser = user => {
-    fetch("https://learn-with-rakib-server-three.vercel.app/users", {
+    fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
