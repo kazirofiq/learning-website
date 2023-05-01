@@ -9,20 +9,20 @@ import { AuthContext } from "../../contexts/AuthProvider";
 const SignIn = () => {
 
   const { signIn, user } = useContext(AuthContext);
-  console.log(user)
   const location = useLocation();
   const navigate = useNavigate();
-  
-  const from = location.state?.from?.pathname || '/';
   const { register, formState: { errors }, handleSubmit } = useForm();
   const [pwd, setPwd] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
+  const [loginError, setLoginError] = useState("");
 
-  if(user?.email && user?.uid){
+  const from = location.state?.from?.pathname || '/';
+
+  if (user?.email && user?.uid) {
     return navigate("/")
   }
   const handleLogin = data => {
-    console.log(data);
+    setLoginError("")
     signIn(data.email, data.password)
       .then(result => {
         //const user = result.user;
@@ -30,9 +30,26 @@ const SignIn = () => {
         navigate(from, { replace: true });
 
       })
-      .catch(error => {
-        console.log(error.message);
-      });
+      .catch(err => {
+        console.error(err);
+        switch (err.message.split("auth/")[1].split(")")[0]) {
+          case "user-not-found":
+            setLoginError("The user is not registered");
+            break;
+
+          case "wrong-password":
+            setLoginError("Password is Incorrect");
+            break;
+
+          case "too-many-requests":
+            setLoginError(err.message.split("(auth/")[0].split(": ")[1]);
+            break;
+
+          default:
+            setLoginError(err.message);
+            break;
+        };
+      })
   }
 
 
@@ -55,7 +72,7 @@ const SignIn = () => {
                 className=" pad text-black input-bordered w-full max-w-xs outline-none"
               />
               {errors.email && (
-                <p className="text-red-600" role="alert">
+                <p className="text-red-600 text-center" role="alert">
                   {errors.email?.message}
                 </p>
               )}
@@ -83,8 +100,14 @@ const SignIn = () => {
             </div>
 
             {errors.password && (
-              <p className="text-red-600" role="alert">
+              <p className="text-red-600 text-center" role="alert">
                 {errors.password?.message}
+              </p>
+            )}
+
+            {loginError && (
+              <p className="text-red-600 text-center" role="alert">
+                {loginError}
               </p>
             )}
             <div className="flex py-[14px] justify-between items-center">
@@ -135,12 +158,12 @@ const SignIn = () => {
               </div>
             </div>
 
-              <input
+            <input
               className="lg:w-full w-[288px] h-[51px] font-bold text-[18px] text-white btn bg-[#3D419F] hover:bg-[#3D419F] capitalize"
               type="submit"
               value="Login Securely"
             />
-         
+
           </form>
           <p className="font-semibold text-[16px] leading-[24px] text-[#666666] mt-[16px] text-center">
             New User?{" "}

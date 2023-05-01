@@ -12,7 +12,7 @@ const ImportentLinkEdit = () => {
     const [importantLinkData, setImportantLinkData] = useState({});
     const { behance, pinterest, github, linkedin, personalWebsite, dribbble, userEmail, userUID, _id } = importantLinkData;
     useEffect(() => {
-        fetch(`https://learn-with-rakib.onrender.com/important-link/${user?.email}`)
+        fetch(`http://localhost:5000/important-link/${user?.email}`)
             .then(res => res.json())
             .then(data => setImportantLinkData(data))
     }, [user])
@@ -31,7 +31,7 @@ const ImportentLinkEdit = () => {
                 userUID: user?.uid,
             }
             if (userEmail && userUID) {
-                fetch(`https://learn-with-rakib.onrender.com/important-link/${_id}`, {
+                fetch(`http://localhost:5000/important-link/${_id}`, {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json"
@@ -47,7 +47,7 @@ const ImportentLinkEdit = () => {
                     .catch(err => console.error(err))
 
             } else {
-                fetch("https://learn-with-rakib.onrender.com/important-link", {
+                fetch("http://localhost:5000/important-link", {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"

@@ -5,11 +5,14 @@ import { AuthContext } from "../../contexts/AuthProvider";
 
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
-    console.log(user);
     const location = useLocation();
 
     if (loading) {
-        return <ClipLoader />
+        return (
+            <div className="flex justify-center items-center w-screen h-screen">
+                <ClipLoader color="#0000ff" size="50" />
+            </div>
+        );
     }
 
     if (user?.uid && !user?.emailVerified) {

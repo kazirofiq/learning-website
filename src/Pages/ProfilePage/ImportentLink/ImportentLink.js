@@ -13,10 +13,10 @@ const ImportentLink = () => {
     console.log(importantLinkData);
     const { behance, pinterest, github, linkedin, personalWebsite, dribbble, userEmail, userUID, _id } = importantLinkData;
     useEffect(() => {
-        fetch(`https://learn-with-rakib.onrender.com/important-link/${user?.email}`)
+        fetch(`http://localhost:5000/important-link/${user?.email}`)
             .then(res => res.json())
             .then(data => setImportantLinkData(data))
-    }, [user, importantLinkData])
+    }, [user])
 
     return (
         <div className='bg-[#F8F8FF] px-5 lg:px-0 md:px-0 py-8 lg:py-[60px] md:py-[50px]'>

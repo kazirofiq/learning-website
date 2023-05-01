@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Banner.css';
 import bannerRightPic from '../../../assest/bg-img/bannerright (1).png';
 import arrow from '../../../assest/bg-img/Arrow.png';
@@ -7,7 +7,6 @@ import { BsFillPlayFill } from 'react-icons/bs';
 
 const Banner = () => {
 
-    const [openVideo, setOpenVideo] = useState(null);
 
     return (
         <section className='bg-[#F8F8FF]'>
@@ -62,7 +61,6 @@ const Banner = () => {
             </div>
 
             <HowItWorksVideo
-                setOpenVideo={setOpenVideo}
             ></HowItWorksVideo>
         </section >
     );

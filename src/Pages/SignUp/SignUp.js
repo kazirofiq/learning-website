@@ -8,7 +8,7 @@ import "./SignUp.css";
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
-  const { createUser, updateUser, user, verificationEmail } = useContext(AuthContext);
+  const { createUser, updateUser, verificationEmail } = useContext(AuthContext);
   const {
     register,
     formState: { errors },
@@ -17,6 +17,7 @@ const SignUp = () => {
   const [pwd, setPwd] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const [signupError, setSignupError] = useState("");
   const navigate = useNavigate();
 
   // if (user?.email && user?.uid) {
@@ -24,6 +25,7 @@ const SignUp = () => {
   // }
 
   const handleSignUp = (data) => {
+    setSignupError("")
     createUser(data.email, data.password)
       .then(result => {
         const user = result.user;
@@ -49,8 +51,17 @@ const SignUp = () => {
           })
           .catch(err => console.error(err));
       })
-      .catch(error => {
-        console.error(error);
+      .catch(err => {
+        console.error(err);
+        switch (err.message.split("auth/")[1].split(")")[0]) {
+          case "email-already-in-use":
+            setSignupError("The user is already registered");
+            break;
+
+          default:
+            setSignupError(err.message)
+            break;
+        }
       });
   }
 
@@ -153,10 +164,14 @@ const SignUp = () => {
                 onClick={() => setIsRevealPwd((prevState) => !prevState)}
               />
             </div>
-
             {errors.password && (
               <p className="text-red-600" role="alert">
                 {errors.password?.message}
+              </p>
+            )}
+            {signupError && (
+              <p className="text-red-600" role="alert">
+                {signupError}
               </p>
             )}
             <div className="flex py-[14px] justify-between items-center">
