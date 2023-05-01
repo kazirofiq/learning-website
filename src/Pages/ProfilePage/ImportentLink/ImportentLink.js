@@ -8,15 +8,15 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 
 
 const ImportentLink = () => {
-    const {user} = useContext(AuthContext);
-  const [importantLinkData, setImportantLinkData] =  useState({});
-  console.log(importantLinkData);
-  const {behance,pinterest,github,linkedin,personalWebsite,dribbble,userEmail,userUID, _id}=importantLinkData;
-    useEffect(()=>{
-       fetch(`http://localhost:5000/important-link/${user?.email}`)
-       .then(res=>res.json())
-       .then(data=> setImportantLinkData(data))
-    },[user, importantLinkData])
+    const { user } = useContext(AuthContext);
+    const [importantLinkData, setImportantLinkData] = useState({});
+    console.log(importantLinkData);
+    const { behance, pinterest, github, linkedin, personalWebsite, dribbble, userEmail, userUID, _id } = importantLinkData;
+    useEffect(() => {
+        fetch(`http://localhost:5000/important-link/${user?.email}`)
+            .then(res => res.json())
+            .then(data => setImportantLinkData(data))
+    }, [user, importantLinkData])
 
     return (
         <div className='bg-[#F8F8FF] px-5 lg:px-0 md:px-0 py-8 lg:py-[60px] md:py-[50px]'>

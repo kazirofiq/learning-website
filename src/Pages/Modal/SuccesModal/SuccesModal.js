@@ -1,7 +1,8 @@
 import React from 'react';
 import succes from '../../../assest/modal/succes.png'
+import { Link } from 'react-router-dom';
 
-const SuccesModal = ({ isChecked, setIsChecked }) => {
+const SuccesModal = ({ isChecked, setIsChecked, linkTo }) => {
     return (
         <div>
             <input type="checkbox" id="my-modal-3" className="modal-toggle" checked={isChecked} />
@@ -16,7 +17,7 @@ const SuccesModal = ({ isChecked, setIsChecked }) => {
                             <h2 className="card-title text-[#1B1D48] text-xl lg:text-2xl font-semibold lg:font-bold">Congratulation!</h2>
                             <p className='text-sm lg:text-base font-normal lg: text-[#666666]'>You have successfully enrolled this <br /> course. Learn with fun!</p>
                             <div className="card-actions">
-                                <button className="bg-[#3D419F] text-white font-semibold text-sm lg:text-base w-[288px] lg:w-[350px] h-[41px] lg:h-[48px] rounded-[10px] px-5 py-[10px] lg:py-[12px] mt-[24px] lg:mt-[32px]">Go To Course</button>
+                                <Link to={linkTo}><button className="bg-[#3D419F] text-white font-semibold text-sm lg:text-base w-[288px] lg:w-[350px] h-[41px] lg:h-[48px] rounded-[10px] px-5 py-[10px] lg:py-[12px] mt-[24px] lg:mt-[32px]">Go To Course</button></Link>
                             </div>
                         </div>
                     </div>

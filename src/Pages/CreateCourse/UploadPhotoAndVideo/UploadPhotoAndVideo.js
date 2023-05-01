@@ -28,7 +28,7 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId }) => {
     setImageFileInfo(files[0]);
     const formData = new FormData();
     formData.append("image", files[0]);
-    // fetch("https://learn-with-rakib-server-three.vercel.app/videos", {
+    // fetch("http://localhost:5000/videos", {
     //   method: "POST",
     //   body: formData
     // })
@@ -54,7 +54,7 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId }) => {
     setVideoFileInfo(files[0]);
     const formData = new FormData();
     formData.append("file", files[0]);
-    fetch("https://learn-with-rakib-server-three.vercel.app/videos", {
+    fetch("http://localhost:5000/videos", {
       method: "POST",
       body: formData
     })
@@ -72,7 +72,7 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId }) => {
   const checkStatus = (id, time) => {
     if (id) {
       const checkInterval = setInterval(() => {
-        fetch(`https://learn-with-rakib-server-three.vercel.app/videos/status/${id}`)
+        fetch(`http://localhost:5000/videos/status/${id}`)
           .then(res => res.json())
           .then(data => {
             // console.log(isVideoUploading);

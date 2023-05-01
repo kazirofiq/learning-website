@@ -1,7 +1,20 @@
 import React from 'react';
+import { useState } from 'react';
+import { useContext } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../../../contexts/AuthProvider';
 
 const PricingSection = () => {
+  const { user } = useContext(AuthContext);
+  const [isPaid, setIsPaid] = useState(false);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`)
+      .then(res => res.json())
+      .then(data => setIsPaid(data.paidPremium))
+      .catch(err => console.error(err))
+  }, [setIsPaid, user?.uid])
   return (
 
 
@@ -11,11 +24,16 @@ const PricingSection = () => {
           <h1 className='font-medium lg:text-2xl text-base text-[#777777] line-through'>৳15000</h1>
           <h1 className='font-bold text-xl lg:text-2xl text-[#3D419F] text-center'>৳10,000</h1>
         </div>
-        <Link to='/payment'>
-          <div className="card-actions flex lg:justify-center items-center w-full mt-[15px] lg:px-0 px-5">
-            <button className="rounded-[10px] w-[320px] text-sm lg:text-base font-[600] text-[#FFFFFF] bg-[#3D419F]  py-[10px] lg:w-full mx-auto">Enroll Now</button>
-          </div>
-        </Link>
+        {
+          isPaid ? <div className="card-actions flex lg:justify-center items-center w-full mt-[15px] lg:px-0 px-5">
+            <button className="rounded-[10px] w-[320px] text-sm lg:text-base font-[600] text-[#FFFFFF] bg-[#a2a6fd] cursor-default py-[10px] lg:w-full mx-auto">Already Enrolled</button>
+          </div> :
+            <Link to='/payment'>
+              <div className="card-actions flex lg:justify-center items-center w-full mt-[15px] lg:px-0 px-5">
+                <button className="rounded-[10px] w-[320px] text-sm lg:text-base font-[600] text-[#FFFFFF] bg-[#3D419F]  py-[10px] lg:w-full mx-auto">Enroll Now</button>
+              </div>
+            </Link>
+        }
         <div className='mt-4 text-black ml-5'>
           To know the process <Link><span className='text-[#3D419F]'>Watch this Video</span></Link>
         </div>

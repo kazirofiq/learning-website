@@ -30,13 +30,19 @@ const ImportentLinkEdit = () => {
                 userEmail: user?.email,
                 userUID: user?.uid,
             }
-            if(userEmail && userUID){
-                    fetch(`http://localhost:5000/important-link/${_id}`, {
-                        method: "PATCH",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(allImportantLink)
+            if (userEmail && userUID) {
+                fetch(`http://localhost:5000/important-link/${_id}`, {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(allImportantLink)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data?.acknowledged) {
+                            swal("Success", "Important link updated successfully", "success");
+                        }
                     })
                         .then(res => res.json())
                         .then(data => {
@@ -62,11 +68,11 @@ const ImportentLinkEdit = () => {
                             console.log(data)
                             reset();
                         }
-    
+
                     })
             }
-            }
-           
+        }
+
 
 
 
