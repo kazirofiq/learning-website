@@ -4,7 +4,6 @@ import bannerResponsiveImg from "../../../../assest/banner/Header1.png"
 import AboutTheCourse from '../AboutTheCourse/AboutTheCourse';
 import EnrollMentCard from '../EnrollMentCard/EnrollMentCard';
 import PremiumCourseNavebar from '../Navebar/PremiumCourseNavebar';
-import WhatWillYouLearn from '../WhatWillYouLearn/WhatWillYouLearn';
 import CourseCurriculum from './../CourseCurriculum/CourseCurriculum';
 import Mentor from './../Mentor/Mentor';
 import LearnerReview from './../LearnerReview/LearnerReview';
@@ -13,7 +12,7 @@ import FreeVideo from './../FreeVideo/FreeVideo';
 const PremiumCourseBanner = () => {
     return (
         <div className='poppins'>
-            <img className='lg:block w-full hidden' src={bannerImg} alt="" />
+            <img className='lg:block w-full hidden h-[480px] object-cover' src={bannerImg} alt="" />
             <img className='lg:hidden block mx-auto' src={bannerResponsiveImg} alt="" />
             <div className='lg:grid flex flex-col lg:w-[1110px] w-[360px] mx-auto mt-[38px] gap-4 lg:gap-[30px]' style={{ gridTemplateColumns: "4fr 1fr" }}>
                 <div className='lg:w-[743px] w-[320px] lg:px-0 px-5'>
@@ -23,7 +22,6 @@ const PremiumCourseBanner = () => {
                     <div className='lg:block hidden'>
                         <PremiumCourseNavebar />
                         <AboutTheCourse />
-                        {/* <WhatWillYouLearn /> */}
                         <CourseCurriculum />
                         <Mentor></Mentor>
                         <LearnerReview></LearnerReview>

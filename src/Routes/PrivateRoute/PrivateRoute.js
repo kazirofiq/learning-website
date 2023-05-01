@@ -15,11 +15,7 @@ const PrivateRoute = ({ children }) => {
         );
     }
 
-    if (user?.uid && !user?.emailVerified) {
-        return <Navigate to="/verify-email" state={{ from: location }} replace />
-    }
-
-    if (user?.uid && user?.emailVerified) {
+    if (user?.uid) {
         return children;
     }
 

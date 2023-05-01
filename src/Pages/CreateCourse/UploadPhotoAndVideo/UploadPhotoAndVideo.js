@@ -24,22 +24,22 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId }) => {
       setImageError("Please select only image files");
       return;
     }
+    setIsImageUploading(true);
     setImageError("");
     setImageFileInfo(files[0]);
     const formData = new FormData();
     formData.append("image", files[0]);
-    // fetch("https://learn-with-rakib.onrender.com/videos", {
-    //   method: "POST",
-    //   body: formData
-    // })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     if (data.statusCode === 201) {
-    //       const time = (new Date()).getTime();
-    //       checkStatus(data.videoId, time);
-    //     }
-    //   })
-    //   .catch(err => console.error(err))
+    fetch(`https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_imgbb_key}`, {
+      method: "POST",
+      body: formData
+    })
+      .then(res => res.json())
+      .then(imgData => {
+        if (imgData.success && imgData.status === 200) {
+          console.log(imgData)
+        }
+      })
+      .catch(err => console.error(err))
   }
 
   const handleUploadVideo = files => {

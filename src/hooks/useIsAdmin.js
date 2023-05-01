@@ -5,7 +5,7 @@ const useIsAdmin = uid => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     if (uid) {
-      fetch(`https://learn-with-rakib.onrender.com/admin/uid?uid=${uid}`)
+      fetch(`http://localhost:5000/admin/uid?uid=${uid}`)
         .then(res => res.json())
         .then(user => {
           if (user?.uid) {
@@ -13,7 +13,9 @@ const useIsAdmin = uid => {
           }
           setIsLoading(false);
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+          console.error(err);
+        });
     }
   }, [uid]);
   return [isAdmin, isLoading];

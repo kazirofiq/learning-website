@@ -8,7 +8,7 @@ import "./SignUp.css";
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
-  const { createUser, updateUser, verificationEmail } = useContext(AuthContext);
+  const { createUser, updateUser } = useContext(AuthContext);
   const {
     register,
     formState: { errors },
@@ -30,11 +30,11 @@ const SignUp = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
-        verificationEmail()
-          .then(() => {
-            console.log("Email verification send")
+        // verificationEmail()
+        //   .then(() => {
+        //     console.log("Email verification send")
 
-          });
+        //   });
         const userInfo = {
           displayName: data.name
         }
@@ -58,6 +58,10 @@ const SignUp = () => {
             setSignupError("The user is already registered");
             break;
 
+          case "weak-password":
+            setSignupError("Password should be at least 6 characters");
+            break;
+
           default:
             setSignupError(err.message)
             break;
@@ -75,7 +79,7 @@ const SignUp = () => {
     })
       .then(res => res.json())
       .then(data => {
-        navigate('/verify-email');
+        navigate('/');
       })
       .catch(err => {
         console.error(err);

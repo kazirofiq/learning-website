@@ -64,9 +64,9 @@ const EnrollMentCard = () => {
                         </figure>
                     </div>
                 </label>
-                <EnrollMentCardModal />
-
-
+                <EnrollMentCardModal modalId="openEnrollMentModal">
+                    <iframe className="w-[320px] lg:w-[730px] lg:h-[450px] h-[300px]" src="https://www.youtube.com/embed/lJ5z7sdFMKo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </EnrollMentCardModal>
                 <div className="card-body lg:px-[25px] p-3 mt-4 lg:mt-[0px]">
                     <div className=''>
                         <div className="

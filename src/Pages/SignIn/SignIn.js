@@ -17,6 +17,7 @@ const SignIn = () => {
   const [loginError, setLoginError] = useState("");
 
   const from = location.state?.from?.pathname || '/';
+  console.log(from);
 
   if (user?.email && user?.uid) {
     return navigate("/")
