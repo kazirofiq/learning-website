@@ -4,21 +4,27 @@ import useIsAdmin from "../../hooks/useIsAdmin";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const AdminRoute = ({ children }) => {
-    const { user, loading, logout } = useContext(AuthContext);
+    const { user, loading, logOut } = useContext(AuthContext);
     const [isAdmin, isLoading] = useIsAdmin(user?.uid);
     const location = useLocation();
+    console.log(isAdmin, loading, isLoading, user?.uid);
 
     if (loading || isLoading) {
-        return <progress className="progress w-56"></progress>;
+        return (
+            <div className="flex justify-center items-center w-screen h-screen">
+                <progress className="progress w-56"></progress>
+            </div>
+        );
     }
 
     if (user?.uid && isAdmin) {
         return children;
     }
 
-    logout().then(() => { }).catch(err => console.error(err))
+    // logOut().then(() => console.log("Logged Out")).catch(err => console.error(err))
 
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    return <div></div>;
+    // return <Navigate to="/login" state={{ from: location }} replace />;
 }
 
 export default AdminRoute;

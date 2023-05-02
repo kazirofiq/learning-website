@@ -4,8 +4,14 @@ import bgRectangle5 from '../../../assest/workshop/Rectangle 5.png'
 import bgRectangle1 from '../../../assest/workshop/Rectangle 1.png'
 import bgRectangle2 from '../../../assest/workshop/Rectangle 2.png'
 import bgRectangle3 from '../../../assest/workshop/Rectangle 3.png'
+import { useEffect } from 'react';
 
 const Upcoming = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     const courses = [
         {
             id: 1,

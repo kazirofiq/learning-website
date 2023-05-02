@@ -114,7 +114,7 @@ const Education = () => {
         </div>
         <div className='mt-3 lg:block hidden'>
           <label htmlFor="Institution-Name" className='block text-[#666666] font-normal text-sm mb-2'>Institution Name</label>
-          <input type="text" id='Institution-Name' placeholder="Institution-Name" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+          <input disabled type="text" id='Institution-Name' placeholder="Institution-Name" className="input border-[1px] rounded-[8px] focus:border-[#3D419F] w-[288px] lg:w-[375px] h-[45px] lg:h-[48px] shadow-none bg-[#F8F8FF] focus:outline-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
 
         </div>
         {

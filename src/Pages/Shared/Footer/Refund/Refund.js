@@ -1,7 +1,13 @@
 import React from 'react';
+import { useEffect } from 'react';
 
 const Refund = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
+
         <div className='text-black p-5'>
             Thank you for choosing Learn With Rakib for your creativity and freelancing guidance. We strive to provide the best possible experience for our customers. However, we understand that circumstances may arise where you may request a refund for your purchase. Please review our refund policy below:
 

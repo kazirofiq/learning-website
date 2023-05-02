@@ -97,7 +97,7 @@ const EduCationEditing = () => {
                   )}
                 </div>
                 <div>
-                  <label className='text-black'>Exam/Degree Title</label>
+                  <label className='text-black'>Institution Name</label>
                   <input
                     name="intitution"
                     // defaultValue={name}

@@ -9,7 +9,7 @@ import { FiPhoneCall } from 'react-icons/fi';
 const Footer = () => {
     return (
         <div className='w-full text-base-content shadow-none'>
-            <footer className="footer bg-[#1B1D48] py-24 justify-between w-full mx-auto text-white px-[145px]">
+            <footer className="footer bg-[#1B1D48] py-24 justify-between w-full mx-auto text-white px-5 lg:px-[145px]">
                 <div>
                     <img src={logo} alt="" />
                     <p className='text-white'>

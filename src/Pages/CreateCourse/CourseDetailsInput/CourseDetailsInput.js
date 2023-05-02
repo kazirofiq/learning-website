@@ -10,6 +10,7 @@ const CourseDetailsInput = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState("Select");
   const [promotionVideoId, setPromotionVideoId] = useState("");
+  const [image, setImage] = useState("");
   const [draft, setDraft] = useState(false);
   const [error, setError] = useState("");
   const [willLearns, setWillLearns] = useState(["willLearn"]);
@@ -47,8 +48,8 @@ const CourseDetailsInput = () => {
       will_learn = form.will_learn.value ? [form.will_learn.value] : [];
     }
 
-    if (title && subtitle && selectedItem && selectedItem !== "Select" && price && promotionVideoId && instructor && description && will_learn.length > 0) {
-      const course = { title, subtitle, selectedItem, price, promotionVideoId, instructor, description, will_learn, draft };
+    if (title && subtitle && selectedItem && selectedItem !== "Select" && price && image && promotionVideoId && instructor && description && will_learn.length > 0) {
+      const course = { title, subtitle, selectedItem, price, image, promotionVideoId, instructor, description, will_learn, draft };
 
       fetch("https://learn-with-rakib.onrender.com/courses", {
         method: "POST",
@@ -172,7 +173,7 @@ const CourseDetailsInput = () => {
         <span onClick={addWillLearn} className='font-normal text-base text-[#3D419F] cursor-pointer'>Add More</span>
       </div>
       <div>
-        <UploadPhotoAndVideo setPromotionVideoId={setPromotionVideoId} />
+        <UploadPhotoAndVideo setPromotionVideoId={setPromotionVideoId} setImage={setImage} />
       </div>
       {
         error && <p className='text-center text-red-600 font-bold my-5'>{error}</p>

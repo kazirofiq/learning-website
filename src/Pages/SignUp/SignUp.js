@@ -8,7 +8,7 @@ import "./SignUp.css";
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
-  const { createUser, updateUser, user, verificationEmail } = useContext(AuthContext);
+  const { createUser, updateUser } = useContext(AuthContext);
   const {
     register,
     formState: { errors },
@@ -17,6 +17,7 @@ const SignUp = () => {
   const [pwd, setPwd] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const [signupError, setSignupError] = useState("");
   const navigate = useNavigate();
 
   // if (user?.email && user?.uid) {
@@ -24,15 +25,16 @@ const SignUp = () => {
   // }
 
   const handleSignUp = (data) => {
+    setSignupError("")
     createUser(data.email, data.password)
       .then(result => {
         const user = result.user;
         console.log(user);
-        verificationEmail()
-          .then(() => {
-            console.log("Email verification send")
+        // verificationEmail()
+        //   .then(() => {
+        //     console.log("Email verification send")
 
-          });
+        //   });
         const userInfo = {
           displayName: data.name
         }
@@ -49,8 +51,21 @@ const SignUp = () => {
           })
           .catch(err => console.error(err));
       })
-      .catch(error => {
-        console.error(error);
+      .catch(err => {
+        console.error(err);
+        switch (err.message.split("auth/")[1].split(")")[0]) {
+          case "email-already-in-use":
+            setSignupError("The user is already registered");
+            break;
+
+          case "weak-password":
+            setSignupError("Password should be at least 6 characters");
+            break;
+
+          default:
+            setSignupError(err.message)
+            break;
+        }
       });
   }
 
@@ -64,7 +79,7 @@ const SignUp = () => {
     })
       .then(res => res.json())
       .then(data => {
-        navigate('/verify-email');
+        navigate('/');
       })
       .catch(err => {
         console.error(err);
@@ -97,7 +112,7 @@ const SignUp = () => {
                 className=" pad outline-none text-black bg-white input-bordered w-full max-w-xs "
               />
               {errors.name && (
-                <p className="text-red-600" role="alert">
+                <p className="text-red-600 text-center" role="alert">
                   {errors.name?.message}
                 </p>
               )}
@@ -112,7 +127,7 @@ const SignUp = () => {
                 className=" pad outline-none text-black input-bordered w-full max-w-xs "
               />
               {errors.email && (
-                <p className="text-red-600" role="alert">
+                <p className="text-red-600 text-center" role="alert">
                   {errors.email?.message}
                 </p>
               )}
@@ -127,7 +142,7 @@ const SignUp = () => {
                 className=" pad outline-none text-black input-bordered w-full max-w-xs "
               />
               {errors.phone && (
-                <p className="text-red-600" role="alert">
+                <p className="text-red-600 text-center" role="alert">
                   {errors.phone?.message}
                 </p>
               )}
@@ -153,10 +168,14 @@ const SignUp = () => {
                 onClick={() => setIsRevealPwd((prevState) => !prevState)}
               />
             </div>
-
             {errors.password && (
-              <p className="text-red-600" role="alert">
+              <p className="text-red-600 text-center" role="alert">
                 {errors.password?.message}
+              </p>
+            )}
+            {signupError && (
+              <p className="text-red-600 text-center" role="alert">
+                {signupError}
               </p>
             )}
             <div className="flex py-[14px] justify-between items-center">
