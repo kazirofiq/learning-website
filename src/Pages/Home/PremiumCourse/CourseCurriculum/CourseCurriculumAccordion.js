@@ -88,7 +88,7 @@ const CourseCurriculumAccordion = () => {
                                 moduleName.map((module, i) =>
                                     <div className="collapse collapse-arrow bg-white">
                                         <input type="checkbox" className="peer" />
-                                        <div className="rounded-[10px] border-solid border-2 border-[#C3C4E1] peer-checked:border-[#3D419F] collapse-title text-[#666666] peer-checked:text-[#3D419F] h-[49px] lg:h-[61px] z-[-1]">
+                                        <div className="rounded-[10px] border-solid border-2 border-[#C3C4E1] peer-checked:border-[#3D419F] collapse-title text-[#666666] peer-checked:text-[#3D419F] h-[49px] lg:h-[61px]">
                                             <p className="lg:text-[18px] md:text-[18px] leading-[27px] font-medium poppins">{i + 1}. {module.name}</p>
                                         </div>
                                     </div>
