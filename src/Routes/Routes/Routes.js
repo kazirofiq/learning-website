@@ -54,7 +54,7 @@ import Planner from "../../Pages/ProfilePage/Planner/Planner";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import VerifyEmail from "../../Pages/VerifyEmail/VerifyEmail";
-import QR_Code from "../../Pages/Others/QR_Code/QR_Code";
+import FileDownloader from "../../Pages/Others/FileDownloder/FileDownloader";
 
 
 const router = createBrowserRouter([
@@ -133,8 +133,8 @@ const router = createBrowserRouter([
         element: <VerifyEmail></VerifyEmail>
     },
     {
-        path: '/qr-code',
-        element: <QR_Code></QR_Code>
+        path: '/downloader',
+        element: <FileDownloader></FileDownloader>
     },
     {
         path: '/mycourses',

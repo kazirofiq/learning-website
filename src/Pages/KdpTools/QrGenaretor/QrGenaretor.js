@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 import QRCode from 'react-qr-code';
+import { saveAs } from 'file-saver';
 
 const QrGenaretor = () => {
     const [text, setText] = useState('');
 
     const handleChange = (e) => {
         setText(e.target.value)
-    }
+    };
+
+    const handleDownload = () => {
+        // Fetch the image and save it using FileSaver.js
+        fetch(text)
+            .then(response => response.blob())
+            .then(blob => saveAs(blob, 'image.jpg'))
+            .catch(error => console.error(error));
+    };
 
     return (
         <div>
@@ -33,7 +42,9 @@ const QrGenaretor = () => {
                     {
                         text &&
                         <>
-                            <button className='leading-[21px] lg:leading-[24px] md:leading-[22px] text-sm lg:text-base md:text-base font-semibold text-white rounded-[10px] bg-[#3D419F] md:py-3 lg:py-3 py-2 px-[109px] lg:px-[198px] md:px-[150px] w-full'>Download</button>
+                            <button
+                                onClick={handleDownload}
+                                className='leading-[21px] lg:leading-[24px] md:leading-[22px] text-sm lg:text-base md:text-base font-semibold text-white rounded-[10px] bg-[#3D419F] md:py-3 lg:py-3 py-2 px-[109px] lg:px-[198px] md:px-[150px] w-full'>Download</button>
                         </>
                     }
                 </div>
