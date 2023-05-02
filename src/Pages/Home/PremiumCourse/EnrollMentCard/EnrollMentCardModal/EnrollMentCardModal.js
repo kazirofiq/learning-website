@@ -1,10 +1,10 @@
 import React from 'react';
 
-const EnrollMentCardModal = ({ children, modalId }) => {
+const EnrollMentCardModal = ({ children, modalId, setIsChecked }) => {
     return (
         <div>
             <div>
-                <input type="checkbox" id={modalId} className="modal-toggle" />
+                <input type="checkbox" id={modalId} className="modal-toggle" onChange={e => setIsChecked(e.target.checked)} />
                 <div className="modal">
                     <div className="relative mx-auto bg-white rounded-[20px]">
                         <label htmlFor={modalId} className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>

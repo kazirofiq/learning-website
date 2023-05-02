@@ -30,6 +30,10 @@ const MyCourses = () => {
             .catch(err => console.error(err))
     }, [user?.uid]);
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <div className='mx-[35px] lg:mx-[145px] md:mx-[20px]'>
             <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-4 mt-[24px] md:mt-[34px] lg:mt-[48px] mb-[48px] md:mb-[70px] lg:mb-[96px]'>

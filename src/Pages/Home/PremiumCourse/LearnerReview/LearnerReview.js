@@ -11,7 +11,7 @@ const LearnerReview = () => {
 
             <div className='block lg:flex gap-0 lg:gap-[58px] w-[320px] lg:w-[730px] poppins mt-0 lg:mt-6 mb-4 lg:mb-6 rounded-2xl custom_shadow mx-auto lg:mx-0'>
                 <div className='pt-3 pb-5 lg:py-[69.5px] pl-0 lg:pl-8 grid justify-center'>
-                    <p className='text-center lg:text-start text-[#333333] text-[56px] lg:text-[80px] leading-[84px] lg:leading-[120px] font-bold poppins'>4.9</p>
+                    <p className='text-center lg:text-start text-[#333333] text-[56px] lg:text-[80px] leading-[84px] lg:leading-[120px] font-bold poppins'>5.0</p>
                     <div className='flex items-center'>
                         <img src={rating} alt="" className='' />
                         <p className='text-[#666666] text-center lg:text-start text-sm lg:text-base leading-[21px] lg:leading-6'>(15 Ratigns)</p>

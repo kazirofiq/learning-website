@@ -3,12 +3,10 @@ import videoImg from "../../../../assest/staticVideoImg/Rectangle-6734.png";
 import videoImgResponsive from "../../../../assest/staticVideoImg/Video Player.png";
 import videoPlayIcon from "../../../../assest/staticVideoImg/Frame-56.png";
 import access from "../../../../assest/buyCourseCardIcon/access.png";
-import enroll from "../../../../assest/buyCourseCardIcon/Enroll 1.png";
 import lesson from "../../../../assest/buyCourseCardIcon/Lesson.png";
 import instractor from "../../../../assest/buyCourseCardIcon/Instructor.png";
 import group from "../../../../assest/buyCourseCardIcon/Group.png";
 import time from "../../../../assest/buyCourseCardIcon/Time.png";
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import './EnrollMentCard.css';
@@ -17,6 +15,7 @@ import EnrollMentCardModal from './EnrollMentCardModal/EnrollMentCardModal';
 const EnrollMentCard = () => {
 
     const [activeItem, setActiveItem] = useState(null);
+    const [isModalChecked, setIsModalChecked] = useState(false);
 
     useEffect(() => {
 
@@ -47,10 +46,7 @@ const EnrollMentCard = () => {
     return (
         activeItem === undefined
         &&
-        <div className={`${(activeItem !== "frequentlyAskedQuestion") ? `lg:mt-[-200px] mx-auto` : "hidden"
-            } ${(activeItem === "free-course" || activeItem === "frequentlyAskedQuestion") ? "hidden" : ""
-            }
- `}>
+        <div className={`${(activeItem !== "frequentlyAskedQuestion") ? `lg:mt-[-200px] mx-auto` : "hidden"} ${(activeItem === "free-course" || activeItem === "frequentlyAskedQuestion") ? "hidden" : ""}`}>
             <div className="card poppins w-[320px] lg:w-[350px] bg-base-100 shadow-xl inline-block sticky top-0">
                 <label htmlFor='openEnrollMentModal'>
                     <div className='relative cursor-pointer'>
@@ -64,8 +60,8 @@ const EnrollMentCard = () => {
                         </figure>
                     </div>
                 </label>
-                <EnrollMentCardModal modalId="openEnrollMentModal">
-                    <iframe className="w-[320px] lg:w-[730px] lg:h-[450px] h-[300px]" src="https://www.youtube.com/embed/lJ5z7sdFMKo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <EnrollMentCardModal modalId="openEnrollMentModal" setIsChecked={setIsModalChecked}>
+                    <iframe className="w-[320px] lg:w-[730px] lg:h-[450px] h-[300px]" src={`${isModalChecked && "https://player.vdocipher.com/v2/?otp=20160313versASE323czxXBX5KQ1tFFcIliU2oeit2Js8i1KRzT2v1ubP8pDNZmr&playbackInfo=eyJ2aWRlb0lkIjoiODI1OTJkMTcxNzg4NDc0OTlhYTdiMmI1NjViNWRlZGYifQ=="}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </EnrollMentCardModal>
                 <div className="card-body lg:px-[25px] p-3 mt-4 lg:mt-[0px]">
                     <div className=''>

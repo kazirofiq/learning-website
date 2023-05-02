@@ -9,6 +9,7 @@ import EnrollMentCardModal from '../EnrollMentCardModal/EnrollMentCardModal';
 const PricingSection = () => {
   const { user } = useContext(AuthContext);
   const [isPaid, setIsPaid] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -39,8 +40,8 @@ const PricingSection = () => {
           To know the process <label className='cursor-pointer' htmlFor='howToPay'><span className='text-[#3D419F] '>Watch this Video</span></label>
         </div>
       </div>
-      <EnrollMentCardModal modalId="howToPay">
-        <iframe className="w-[320px] lg:w-[730px] lg:h-[450px] h-[300px]" src="https://player.vdocipher.com/v2/?otp=20160313versASE323HiGrFGwVUOfoM1B4XG3gNKbgOGAEHX1cc1GmflQhQd7yKx&playbackInfo=eyJ2aWRlb0lkIjoiNzI1MmEyNDMyOTE1NGY5M2EwOWI4NWNjMmFjMTJjZTQifQ==" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <EnrollMentCardModal modalId="howToPay" setIsChecked={setIsChecked}>
+        <iframe className="w-[320px] lg:w-[730px] lg:h-[450px] h-[300px]" src={`${isChecked && "https://player.vdocipher.com/v2/?otp=20160313versASE323HiGrFGwVUOfoM1B4XG3gNKbgOGAEHX1cc1GmflQhQd7yKx&playbackInfo=eyJ2aWRlb0lkIjoiNzI1MmEyNDMyOTE1NGY5M2EwOWI4NWNjMmFjMTJjZTQifQ=="}`} title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </EnrollMentCardModal>
     </div>
 
