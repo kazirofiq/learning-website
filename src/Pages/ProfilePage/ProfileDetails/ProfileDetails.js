@@ -19,7 +19,7 @@ const ProfileDetails = () => {
           <div className='p-6 bg-[#FFFFFF] custom_shadow mt-6'>
             <Address />
           </div>
-          <div className='p-6 bg-[#FFFFFF] custom_shadow mt-6'>
+          <div className='p-6 bg-[#FFFFFF] custom_shadow mt-6 mb-10'>
             <Education />
           </div>
         </div>
