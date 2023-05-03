@@ -17,6 +17,7 @@ const EduCationEditing = () => {
       education: data.education,
       degree: data.degree,
       intitution: data.intitution,
+      passingYear: data.passingYear,
     };
 
     // save clients information to the database
@@ -111,6 +112,24 @@ const EduCationEditing = () => {
                   {errors.intitution && (
                     <p className="text-red-600" role="alert">
                       {errors.intitution?.message}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label className='text-black'>Approximate Passing year</label>
+                  <input
+                    name="passingYear"
+                    // defaultValue={name}
+                    type="text"
+
+                    className="input input-bordered my-2 w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 text-black"
+                    {...register("passingYear", {
+                      required: "Student Id is required",
+                    })}
+                  />
+                  {errors.passingYear && (
+                    <p className="text-red-600" role="alert">
+                      {errors.passingYear?.message}
                     </p>
                   )}
                 </div>
