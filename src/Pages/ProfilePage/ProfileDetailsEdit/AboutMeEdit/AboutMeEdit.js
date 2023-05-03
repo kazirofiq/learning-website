@@ -32,7 +32,7 @@ const AboutMeEdit = ({ refetch, setEditingAboute }) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         toast.success(`${data.name} is update successfully`);
         window.location.reload()
         // setEditingAboute(null);
