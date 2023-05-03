@@ -25,7 +25,7 @@ const AmazingResource = () => {
                     </p>
 
                     <p className='lg:text-base text-sm leading-5 lg:leading-[24px] lg:mt-8 mt-3 lg:mb-12 mb-6 text-justify'>Unlock a Wealth of Design Assets and Tools for Your Creative <br /> Projects - Enhance Your Work with our Resource Collection.</p>
-                    <Link to='/freecorses'>
+                    <Link to='/resource'>
                         <button className='bg_sm lg:bg text-[#3D419F] text-sm lg:text-lg lg:font-semibold font-medium'>Free Download</button>
                     </Link>
                 </div>

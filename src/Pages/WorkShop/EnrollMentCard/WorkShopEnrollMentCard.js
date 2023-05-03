@@ -16,7 +16,7 @@ const WorkShopEnrollMentCard = () => {
     return (
 
         <div className="lg:mt-[-200px] mx-auto" >
-            <div className="card poppins w-[320px] lg:w-[350px] bg-base-100 shadow-xl inline-block">
+            <div className="card poppins w-[320px] lg:w-[350px] bg-base-100 shadow-xl inline-block sticky top-0">
                 <div className='relative cursor-pointer'>
                     <figure>
                         <img className='lg:block hidden' src={videoImg} alt="video" />

@@ -7,6 +7,7 @@ import { AiOutlineBars } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
 import { Link } from "react-router-dom";
 import ResourceDetails from "./ResourceDetails/ResourceDetails";
+import { useEffect } from "react";
 
 const Resource = () => {
   const [open, setOpen] = useState("");
@@ -48,6 +49,10 @@ const Resource = () => {
       img: ractangle,
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <section className="bg-[#F8F8FF] py-[1rem] md:py-[7.5rem] px-4 md:px-0">

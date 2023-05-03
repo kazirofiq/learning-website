@@ -1,14 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import login from "../../assest/bg-img/login.png";
-import { GrView } from "react-icons/gr";
-import { BsEyeSlash } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 import showPwdImg from "../../assest/login-svg/show-password.svg";
 import hidePwdImg from "../../assest/login-svg/hide-password.svg";
 import "./SignUp.css";
-import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
@@ -20,39 +16,84 @@ const SignUp = () => {
   } = useForm();
   const [pwd, setPwd] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+  const [signupError, setSignupError] = useState("");
   const navigate = useNavigate();
 
-
+  // if (user?.email && user?.uid) {
+  //   return navigate("/verify-email")
+  // }
 
   const handleSignUp = (data) => {
+    setSignupError("")
     createUser(data.email, data.password)
       .then(result => {
         const user = result.user;
         console.log(user);
+        // verificationEmail()
+        //   .then(() => {
+        //     console.log("Email verification send")
+
+        //   });
         const userInfo = {
           displayName: data.name
         }
         updateUser(userInfo)
           .then((result) => {
             console.log(result);
-            navigate('/');
+            saveUser({
+              name: data.name,
+              email: data.email,
+              phone: data.phone,
+              uid: user.uid,
+              studentId: `LWR-${(new Date()).getTime()}`
+            })
           })
-          .catch(err => console.log(err));
+          .catch(err => console.error(err));
       })
-      .catch(error => {
-        console.log(error);
+      .catch(err => {
+        console.error(err);
+        switch (err.message.split("auth/")[1].split(")")[0]) {
+          case "email-already-in-use":
+            setSignupError("The user is already registered");
+            break;
+
+          case "weak-password":
+            setSignupError("Password should be at least 6 characters");
+            break;
+
+          default:
+            setSignupError(err.message)
+            break;
+        }
       });
   }
 
+  const saveUser = user => {
+    fetch("https://learn-with-rakib.onrender.com/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(user)
+    })
+      .then(res => res.json())
+      .then(data => {
+        navigate('/');
+      })
+      .catch(err => {
+        console.error(err);
+      })
+  }
 
+  const toggleChecked = e => {
+    setIsChecked(e.target.checked);
+  }
 
 
   return (
     <div
-      className="bgg   LG:w-[1092px] lg:h-[792px]  mb-6 bg-[#fff] lg:mb-0 md:mb-0 lg:w-[1092px]  mx-auto flex justify-center items-center"
-    //   style={{ backgroundImage: `url(${login})`
-
-    // }}
+      className="bgg LG:w-[1092px] lg:h-[792px] smb-6 bg-[#fff] lg:mb-0 md:mb-0 lg:w-[1092px] mx-auto flex justify-center items-center"
     >
       <div className="h-[520px] bg-white bxs mt-[40px] z-50 shadow-slate-500 lg:shadow-none md:shadow-none w-[398px] p-[24px] lg:mt-[26px] md:mt-[26px] lg:ml-[325px] md:ml-[325px] mx-auto flex justify-center items-center">
         <div className="w-96 bg-white rounded-xl  py-4 px-8">
@@ -71,7 +112,7 @@ const SignUp = () => {
                 className=" pad outline-none text-black bg-white input-bordered w-full max-w-xs "
               />
               {errors.name && (
-                <p className="text-red-600" role="alert">
+                <p className="text-red-600 text-center" role="alert">
                   {errors.name?.message}
                 </p>
               )}
@@ -86,7 +127,7 @@ const SignUp = () => {
                 className=" pad outline-none text-black input-bordered w-full max-w-xs "
               />
               {errors.email && (
-                <p className="text-red-600" role="alert">
+                <p className="text-red-600 text-center" role="alert">
                   {errors.email?.message}
                 </p>
               )}
@@ -95,14 +136,14 @@ const SignUp = () => {
               <input
                 type="text"
                 placeholder="mobile"
-                {...register("number", {
+                {...register("phone", {
                   required: "Number is required",
                 })}
                 className=" pad outline-none text-black input-bordered w-full max-w-xs "
               />
-              {errors.number && (
-                <p className="text-red-600" role="alert">
-                  {errors.number?.message}
+              {errors.phone && (
+                <p className="text-red-600 text-center" role="alert">
+                  {errors.phone?.message}
                 </p>
               )}
             </div>
@@ -127,10 +168,14 @@ const SignUp = () => {
                 onClick={() => setIsRevealPwd((prevState) => !prevState)}
               />
             </div>
-
             {errors.password && (
-              <p className="text-red-600" role="alert">
+              <p className="text-red-600 text-center" role="alert">
                 {errors.password?.message}
+              </p>
+            )}
+            {signupError && (
+              <p className="text-red-600 text-center" role="alert">
+                {signupError}
               </p>
             )}
             <div className="flex py-[14px] justify-between items-center">
@@ -142,6 +187,7 @@ const SignUp = () => {
                     name="A3-confirmation"
                     value="yes"
                     className="opacity-0 absolute h-8 w-8"
+                    onChange={toggleChecked}
                   />
                   <div className="bg-white border-2  border-[#4044A0] w-[16px] h-[16px] flex  flex-shrink-0 justify-center items-center mr-2 focus-within:border-[#4044A0]">
                     <svg
@@ -166,22 +212,27 @@ const SignUp = () => {
                   </div>
                   <span className="label-text text-black text-[12px] font-light">
                     I agree to all the{" "}
-                    <span className="text-[#333333] font-bold">terms</span> and{" "}
-                    <span className="font-bold text-[#333333]">
+                    <Link to='/termsAndCondition' className="text-[#333333] font-bold">terms</Link> and{" "}
+                    <Link to='/privacyPolicy' className="font-bold text-[#333333]">
                       privacy policy
-                    </span>
+                    </Link>
                   </span>
                 </label>
               </div>
             </div>
 
-            <input
-              className=" log w-full font-bold text-[18px] leading-[27px] text-white"
-              type="submit"
-              value="Create Free account"
-            />
-            {/* {loginError && <p className='text-red-600'>{loginError}
-                        </p>} */}
+            {
+              isChecked ?
+                <input
+                  className="lg:w-full w-[288px] h-[51px] font-bold text-[18px] text-white btn bg-[#3D419F] hover:bg-[#3D419F] capitalize"
+                  type="submit"
+                  value="Create Free account"
+                /> : <input
+                  className="lg:w-full w-[288px] h-[51px] font-bold text-[18px] text-white btn bg-[#868ae7] hover:bg-[#868ae7] border-[#868ae7] hover:border-[#868ae7] capitalize cursor-default"
+                  type="button"
+                  value="Create Free account"
+                />
+            }
           </form>
           <p className="font-semibold text-[16px] leading-[24px] text-[#666666] mt-[16px] text-center">
             All ready have an account{" "}

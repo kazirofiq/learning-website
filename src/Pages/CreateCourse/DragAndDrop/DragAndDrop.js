@@ -2,8 +2,9 @@ import React, { useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
 
 const DragAndDrop = ({ children, title, isUploading, icon, type, workWithFiles, isUploaded }) => {
-    const onDrop = useCallback(acceptedFiles => { workWithFiles(acceptedFiles) }, []);
+    const onDrop = useCallback(acceptedFiles => { workWithFiles(acceptedFiles) }, [workWithFiles]);
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+    // console.log(isUploaded);
 
     return (
         <div>

@@ -6,8 +6,6 @@ import SignUp from "../../Pages/SignUp/SignUp";
 import PremiumCourseHome from "../../Pages/Home/PremiumCourse/PremiumCourseHome/PremiumCourseHome";
 import OrderDetails from "../../Pages/OrderDetails/OrderDetails";
 import MyCourseLayout from "../../Layout/MyCourseLayout";
-import Dashboard from "../../Pages/Dashboard/Dashboard";
-import MyClasses from "../../Pages/MyClasses/MyClasses";
 import ProfilePage from "../../Pages/ProfilePage/ProfilePage";
 import Assignment from "../../Pages/Assignment/Assignment";
 import AdminDashboard from "../../Pages/AdminDashboard/AdminDashboard";
@@ -48,13 +46,13 @@ import StudentDashboardLayout from "../../Pages/StudentDashboard/StudentDashboar
 import StudentDashboard from "../../Pages/StudentDashboard/StudentDashboard/StudentDashboard";
 import StudentMarks from "../../Pages/StudentDashboard/StudentsMark/StudentMarks";
 import LeaderBoard from "../../Pages/StudentDashboard/LeaderBoard/LeaderBoard";
-// import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
 import AboutUs from "../../Pages/Shared/Footer/AboutUs/AboutUs";
 import PrivacyPolicy from "../../Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy";
 import Refund from "../../Pages/Shared/Footer/Refund/Refund";
 import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/TermsAndConditions";
-// import ReviewModal from "../../Pages/Modal/ReviewModal/ReviewModal";
 import Planner from "../../Pages/ProfilePage/Planner/Planner";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import AdminRoute from "../AdminRoute/AdminRoute";
 
 
 const router = createBrowserRouter([
@@ -77,35 +75,35 @@ const router = createBrowserRouter([
             },
             {
                 path: '/premium_course',
-                element: <PremiumCourseHome></PremiumCourseHome>
+                element: <PremiumCourseHome />
             },
             {
                 path: '/payment',
-                element: <OrderDetails />
+                element: <PrivateRoute><OrderDetails /></PrivateRoute>
             },
             {
                 path: '/upcomingpremimumcourse',
-                element: <UpcomingPremimumCourses />
+                element: <PrivateRoute><UpcomingPremimumCourses /></PrivateRoute>
             },
             {
                 path: '/freecorses',
-                element: <FreeCorses />
+                element: <PrivateRoute><FreeCorses /></PrivateRoute>
             },
             {
                 path: '/consultetion',
-                element: <Consultetion />
+                element: <PrivateRoute><Consultetion /></PrivateRoute>
             },
             {
                 path: '/resource',
-                element: <Resource />
+                element: <PrivateRoute><Resource /></PrivateRoute>
             },
             {
                 path: '/allreviews',
-                element: <AllReviews />
+                element: <PrivateRoute><AllReviews /></PrivateRoute>
             },
             {
                 path: '/upcomingdetails',
-                element: <UpComingDetails />
+                element: <PrivateRoute><UpComingDetails /></PrivateRoute>
             },
             // footer text route
             {
@@ -128,9 +126,13 @@ const router = createBrowserRouter([
 
         ]
     },
+    // {
+    //     path: '/verify-email/',
+    //     element: <VerifyEmail></VerifyEmail>
+    // },
     {
         path: '/mycourses',
-        element: <CourseLayout />,
+        element: <PrivateRoute><CourseLayout /></PrivateRoute>,
         children: [
             {
                 path: '/mycourses',
@@ -144,7 +146,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/workshop',
-        element: <WorkShopLayout />,
+        element: <PrivateRoute><WorkShopLayout /></PrivateRoute>,
         children: [
             {
                 path: '/workshop/upcoming',
@@ -158,7 +160,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/profile',
-        element: <ProfileLayout />,
+        element: <PrivateRoute><ProfileLayout /></PrivateRoute>,
         children: [
             {
                 path: '/profile',
@@ -180,7 +182,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/kdptools',
-        element: <KdpLayout />,
+        element: <PrivateRoute><KdpLayout /></PrivateRoute>,
         children: [
             {
                 path: '/kdptools',
@@ -224,7 +226,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/admindashboard',
-        element: <AdmindashboardLayout></AdmindashboardLayout>,
+        element: <AdminRoute><AdmindashboardLayout></AdmindashboardLayout></AdminRoute>,
         children: [
             {
                 path: '/admindashboard',
@@ -239,7 +241,7 @@ const router = createBrowserRouter([
                         element: <CreateCourse />
                     },
                     {
-                        path: '/admindashboard/course-create/course-curriculum',
+                        path: '/admindashboard/course-create/course-curriculum/:courseId',
                         element: <CourseCurriculum />
                     },
                     {
@@ -276,7 +278,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/student-dashboard',
-        element: <StudentDashboardLayout></StudentDashboardLayout>,
+        element: <PrivateRoute><StudentDashboardLayout></StudentDashboardLayout></PrivateRoute>,
         children: [
             {
                 path: '/student-dashboard',

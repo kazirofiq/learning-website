@@ -10,12 +10,12 @@ import EducationEdit from "../../ProfileDetailsEdit/EducationEdit/EducationEdit"
 import AddressEdit from "../../ProfileDetailsEdit/AddressEdit/AddressEdit";
 
 const AboutMe = () => {
-  const {user}= useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [editingaboute, setEditingAboute] = useState(null);
   const { data: student = {}, refetch } = useQuery({
-    queryKey: ["about", user?.uid ],
+    queryKey: ["about", user?.uid],
     queryFn: () =>
-      fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`).then((res) => res.json()),
+      fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`).then((res) => res.json()),
   });
 
   return (
@@ -97,7 +97,7 @@ const AboutMe = () => {
           setEditingAboute={setEditingAboute}
         ></AboutMeEdit>
       )}
-  
+
     </div>
   );
 };

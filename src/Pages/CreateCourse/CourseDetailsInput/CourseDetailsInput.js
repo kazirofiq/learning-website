@@ -10,8 +10,10 @@ const CourseDetailsInput = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState("Select");
   const [promotionVideoId, setPromotionVideoId] = useState("");
+  const [image, setImage] = useState("");
   const [draft, setDraft] = useState(false);
   const [error, setError] = useState("");
+  const [willLearns, setWillLearns] = useState(["willLearn"]);
   const navigate = useNavigate();
 
   const levels = ["Beginner", "Advanced"];
@@ -20,6 +22,13 @@ const CourseDetailsInput = () => {
     setSelectedItem(item);
     setIsOpen(false);
   };
+
+  const addWillLearn = () => {
+    setWillLearns([
+      ...willLearns,
+      "willLearn"
+    ])
+  }
 
   const handleAddCourse = e => {
     e.preventDefault();
@@ -31,12 +40,18 @@ const CourseDetailsInput = () => {
     const price = form.price.value;
     const instructor = form.instructor.value;
     const description = form.description.value;
-    const will_learn = form.will_learn.value;
+    let will_learn = [];
 
-    if (title && subtitle && selectedItem && selectedItem !== "Select" && price && promotionVideoId && instructor && description && will_learn && draft) {
-      const course = { title, subtitle, selectedItem, price, promotionVideoId, instructor, description, will_learn, draft };
+    if (form.will_learn.length) {
+      will_learn = [...form.will_learn].map(will_lrn => will_lrn.value).filter(will_lrn => will_lrn);
+    } else {
+      will_learn = form.will_learn.value ? [form.will_learn.value] : [];
+    }
 
-      fetch("http://localhost:5000/courses", {
+    if (title && subtitle && selectedItem && selectedItem !== "Select" && price && image && promotionVideoId && instructor && description && will_learn.length > 0) {
+      const course = { title, subtitle, selectedItem, price, image, promotionVideoId, instructor, description, will_learn, draft };
+
+      fetch("https://learn-with-rakib.onrender.com/courses", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -46,9 +61,9 @@ const CourseDetailsInput = () => {
         .then(res => res.json())
         .then(data => {
           console.log(data);
-          navigate("/admindashboard/course-create/course-curriculum");
+          navigate(`/admindashboard/course-create/course-curriculum/${data.insertedId}`);
         })
-        .catch(err => console.error(err));
+        .catch(err => console.error(err))
     } else {
       setError("All Fields Are Required");
     }
@@ -142,22 +157,23 @@ const CourseDetailsInput = () => {
         <input name='instructor' id='Instructor' type="text" placeholder="Instructor" className="input w-full focus:outline-none bg-[#F8F8FF] focus:border-[1px] focus:border-[#C3C4E1] h-[45px] lg:h-[48px] shadow-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
       </div>
       <div className='mt-4'>
-        <label htmlFor='Course-Description' className="label text-[#666666] font-normal text-sm">Course  Description</label>
+        <label htmlFor='Course-Description' className="label text-[#666666] font-normal text-sm">Course Description</label>
         <div className="form-control">
           <textarea name='description' className="textarea textarea-bordered h-[238px] w-full focus:outline-none bg-[#F8F8FF] focus:border-[1px] focus:border-[#C3C4E1] shadow-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" placeholder="Course Description"></textarea>
         </div>
       </div>
       <div className='mt-4'>
         <label htmlFor='Will-Learn' className="label text-[#666666] font-normal text-sm">What Students Will Learn?</label>
-        <input name='will_learn' type="text" placeholder="What Students Will Learn?" className="input w-full focus:outline-none bg-[#F8F8FF] focus:border-[1px] focus:border-[#C3C4E1] h-[45px] lg:h-[48px] shadow-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
-        <input type="text" placeholder="What Students Will Learn?" className="input mt-3 w-full focus:outline-none bg-[#F8F8FF] focus:border-[1px] focus:border-[#C3C4E1] h-[45px] lg:h-[48px] shadow-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />
+        {
+          willLearns.map((willLearn, i) => <input key={i} name='will_learn' type="text" placeholder="What Students Will Learn?" className="input w-full focus:outline-none bg-[#F8F8FF] focus:border-[1px] focus:border-[#C3C4E1] h-[45px] lg:h-[48px] shadow-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]" />)
+        }
       </div>
       <div className='flex items-center mt-3'>
         <img className='mr-3' src={plusIcon} alt="" />
-        <span className='font-normal text-base text-[#3D419F] cursor-pointer'>Add More</span>
+        <span onClick={addWillLearn} className='font-normal text-base text-[#3D419F] cursor-pointer'>Add More</span>
       </div>
       <div>
-        <UploadPhotoAndVideo setPromotionVideoId={setPromotionVideoId} />
+        <UploadPhotoAndVideo setPromotionVideoId={setPromotionVideoId} setImage={setImage} />
       </div>
       {
         error && <p className='text-center text-red-600 font-bold my-5'>{error}</p>

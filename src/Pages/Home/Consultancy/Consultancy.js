@@ -23,7 +23,7 @@ const Consultancy = () => {
               <br /> expand their work. Personalized consultations to identify
               strengths,
               <br /> set goals, and develop strategies.{" "} */}
-              Get personalized guidance, insights, and strategies for your <br />creativity with  our tailored consultation packages
+              Get personalized guidance, insights, and strategies for your <span className="lg:block">creativity with  our tailored consultation packages</span>
             </p>
             <Link to='/consultetion'>
               <button className="mt-6 lg:mt-10 md:mt-10 px-4 py-2 lg:px-8 lg:py-4 bg-[#3D419F] text-white rounded-xl lg:font-semibold font-normal lg:text-base text-sm">
