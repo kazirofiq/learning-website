@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import './StudentFeedback.css'
 import sliderBg from '../../../assest/bg-img/Slider bg(1).png';
-import Merazul_Islam_Rean from '../../../assest/studet_feedback/Mohammad_Salauddin.jpeg';
+import Merazul_Islam_Rean from '../../../assest/studet_feedback/Maruzul_islam_rean.jpeg';
 import Rashidul_Sony from '../../../assest/studet_feedback/Rasidul_SOny.jpeg';
 import Dalowar_Hosen from '../../../assest/studet_feedback/Dalowar_Hosen.jpeg';
 import Mohammad_Salauddin from '../../../assest/studet_feedback/Mohammad_Salauddin.jpeg';

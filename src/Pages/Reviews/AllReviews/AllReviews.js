@@ -59,7 +59,7 @@ const AllReviews = () => {
                 <div className=' w-full lg:h-[276px] h-[336px] poppins rounded-2xl lg:shadow-xl lg:shadow-[#dfe0fd] md:shadow-xl md:shadow-[#dfe0fd]'>
                     <div className='lg:flex md:flex items-center justify-between lg:mx-[32px] lg:py-[48px] md:mx-[26px] md:py-[48px] mx-0 py-0 lg:gap-x-[50px] md:gap-x-[40px] h-full'>
                         <div className='pb-5 pl-0 lg:pl-8 grid justify-center'>
-                            <p className='text-center lg:text-start text-[#333333] text-[56px] lg:text-[80px] leading-[84px] lg:leading-[120px] font-bold poppins'>4.5</p>
+                            <p className='text-center lg:text-start text-[#333333] text-[56px] lg:text-[80px] leading-[84px] lg:leading-[120px] font-bold poppins'>5.0</p>
                             <div className='flex items-center'>
                                 <img src={rating} alt="" className='' />
                                 <p className='text-[#666666] text-center lg:text-start text-sm lg:text-base leading-[21px] lg:leading-6'> (15 Ratings)</p>
@@ -69,23 +69,23 @@ const AllReviews = () => {
                         <div className='content-center'>
                             <div className='flex  items-center poppins'>
                                 <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Excellent</p>
-                                <progress className="progress progress-primary bg-[#C3C4E1] w-[182px] lg:w-[507px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] lg:ml-[200px] md:ml-[50px] ml-16" value="70" max="100"></progress>
-                                <p className='lg:ml-5 ml-2 md:ml-3'>70%</p>
+                                <progress className="progress progress-primary bg-[#C3C4E1] w-[182px] lg:w-[507px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] lg:ml-[200px] md:ml-[50px] ml-16" value="95" max="100"></progress>
+                                <p className='lg:ml-5 ml-2 md:ml-3'>95%</p>
                             </div>
                             <div className='flex items-center poppins mt-3 lg:mt-[15px] md:mt-[13px]'>
                                 <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Very Good</p>
-                                <progress className="progress progress-primary bg-[#C3C4E1] w-[182px] lg:w-[507px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] lg:ml-[190px] md:ml-[40px] ml-14" value="20" max="100"></progress>
-                                <p className='lg:ml-5 ml-2 md:ml-3'>20%</p>
+                                <progress className="progress progress-primary bg-[#C3C4E1] w-[182px] lg:w-[507px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] lg:ml-[190px] md:ml-[40px] ml-14" value="5" max="100"></progress>
+                                <p className='lg:ml-5 ml-2 md:ml-3'>5%</p>
                             </div>
                             <div className='flex items-center poppins mt-3 lg:mt-[15px] md:mt-[13px]'>
                                 <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Average</p>
-                                <progress className="progress progress-primary bg-[#C3C4E1] w-[182px] lg:w-[507px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] lg:ml-[209px] md:ml-[57px] ml-[70px]" value="3" max="100"></progress>
-                                <p className='lg:ml-5 ml-2 md:ml-3'>3%</p>
+                                <progress className="progress progress-primary bg-[#C3C4E1] w-[182px] lg:w-[507px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] lg:ml-[209px] md:ml-[57px] ml-[70px]" value="0" max="100"></progress>
+                                <p className='lg:ml-5 ml-2 md:ml-3'>0%</p>
                             </div>
                             <div className='flex items-center poppins mt-3 lg:mt-[15px] md:mt-[13px]'>
                                 <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Poor</p>
-                                <progress className="progress progress-primary bg-[#C3C4E1] w-[182px] lg:w-[507px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] lg:ml-[235px] md:ml-[84px] ml-[93px]" value="2" max="100"></progress>
-                                <p className='lg:ml-5 ml-2 md:ml-3'>2%</p>
+                                <progress className="progress progress-primary bg-[#C3C4E1] w-[182px] lg:w-[507px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] lg:ml-[235px] md:ml-[84px] ml-[93px]" value="0" max="100"></progress>
+                                <p className='lg:ml-5 ml-2 md:ml-3'>0%</p>
                             </div>
                             <div className='flex items-center poppins mt-3 lg:mt-[15px] md:mt-[13px]'>
                                 <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Terrible</p>
