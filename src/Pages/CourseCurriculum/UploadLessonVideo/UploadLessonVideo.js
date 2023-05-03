@@ -43,10 +43,10 @@ const UploadLessonVideo = ({ lesson, setLessonsData }) => {
                     })
                         .then(res => res.json())
                         .then(result => {
-                            setLessonsData(prevLessons => {
-                                const index = prevLessons.findIndex(prevLess => prevLess.lessonNo === lesson.lessonNo);
-                                prevLessons[index].number = result.insertedId;
-                                return [...prevLessons];
+                            setLessonsData(prevData => {
+                                const index = prevData.lessons.findIndex(prevLess => prevLess.lessonNo === lesson.lessonNo);
+                                prevData.lessons[index].number = result.insertedId;
+                                return { ...prevData };
                             })
                         })
                     // setVideoId(data.videoId)

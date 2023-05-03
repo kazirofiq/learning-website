@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BiChevronDown } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
 import rating from '../../../assest/learner_review/rating.png'
 import Reviews from '../Reviews/Reviews';
 // import './AllReviews.css'

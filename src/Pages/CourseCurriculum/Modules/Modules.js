@@ -9,10 +9,13 @@ const Modules = ({ no, addNewModuleFields, setModulesData }) => {
     const [showQuiz, setShowQuiz] = useState(false);
     const [showAddBtns, setShowAddBtns] = useState(false);
     const [lessons, setLessons] = useState([{ lessonNo: 1 }]);
-    const [lessonsData, setLessonsData] = useState([{
-        routeName: "video",
-        lessonNo: 1
-    }]);
+    const [lessonsData, setLessonsData] = useState({
+        moduleNo: no,
+        lessons: [{
+            routeName: "video",
+            lessonNo: 1
+        }]
+    });
 
     const addMoreLesson = () => {
         setLessons([
@@ -21,13 +24,16 @@ const Modules = ({ no, addNewModuleFields, setModulesData }) => {
                 lessonNo: lessons.length + 1
             }
         ]);
-        setLessonsData([
-            ...lessonsData,
-            {
-                routeName: "video",
-                lessonNo: lessonsData.length + 1
-            }
-        ])
+        setLessonsData({
+            moduleNo: no,
+            lessons: [
+                ...lessonsData.lessons,
+                {
+                    routeName: "video",
+                    lessonNo: lessonsData.lessons.length + 1
+                }
+            ]
+        })
     }
     console.log(lessonsData);
 
@@ -37,17 +43,17 @@ const Modules = ({ no, addNewModuleFields, setModulesData }) => {
                 const index = prevModules.findIndex(prevMod => prevMod.moduleNo === no);
                 prevModules[index].module = e.target.value;
                 return [...prevModules];
-            })
+            });
         }
     }
 
     const addLessonName = (e, lessNo) => {
         if (e.target.value) {
-            setLessonsData(prevLessons => {
-                const index = prevLessons.findIndex(prevLess => prevLess.lessonNo === lessNo);
-                prevLessons[index].name = e.target.value;
-                return [...prevLessons];
-            })
+            setLessonsData(prevData => {
+                const index = prevData.lessons.findIndex(prevLess => prevLess.lessonNo === lessNo);
+                prevData.lessons[index].name = e.target.value;
+                return { prevData };
+            });
         }
     }
 
