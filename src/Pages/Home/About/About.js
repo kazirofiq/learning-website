@@ -25,7 +25,9 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
-                        <iframe className="flex-1 rounded-lg border-none" width="363" height="363" src="https://www.youtube.com/embed/1-is8wiplZI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                        <div className='flex-1'>
+                            <iframe className="rounded-lg border-none w-full max-h-[300px] lg:max-h-[initial]" width="363" height="363" src="https://www.youtube.com/embed/1-is8wiplZI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                        </div>
                     </div>
                 </div>
             </section>

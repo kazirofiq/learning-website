@@ -1,6 +1,5 @@
 import React from 'react';
 import bannerImg from "../../../assest/banner/Header.png";
-import responsiveBannerImg from "../../../assest/banner/Header1.png";
 import WhatWillYouLearn from '../../Home/PremiumCourse/WhatWillYouLearn/WhatWillYouLearn';
 import WorkShopEnrollMentCard from '../EnrollMentCard/WorkShopEnrollMentCard';
 import TextWorkShop from '../TextWorkShop/TextWorkShop';
@@ -9,8 +8,7 @@ const UpComingDetails = () => {
     return (
         <div>
             <div>
-                <img className='lg:block hidden' src={bannerImg} alt="" />
-                <img className='lg:hidden block mx-auto' src={responsiveBannerImg} alt="" />
+                <img className='w-full lg:h-[480px] object-cover' src={bannerImg} alt="" />
                 <div className='poppins lg:w-[1110px] mx-auto w-[360px]'>
                     <div className='lg:grid flex flex-col lg:flex-row mt-6 lg:mt-[38px] gap-4 lg:gap-[30px]' style={{ gridTemplateColumns: "4fr 1fr" }}>
                         <div>

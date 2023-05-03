@@ -1,41 +1,41 @@
-import React, { useCallback, useState } from 'react';
-import { useDropzone } from 'react-dropzone';
-import UploadImgIcon from "../../../assest/icon/Cloud-upload.png";
-import Cross from "../../../assest/icon/Cross.png";
-import plusIcon from "../../../assest/icon/plus.png";
-import whitePlusIcon from "../../../assest/icon/plus-white.png";
-import videoIcon from "../../../assest/icon/video-camera.png";
-import Buttons from '../../CreateCourse/Buttons/Buttons';
+import React, { useState } from 'react';
 import Modules from '../Modules/Modules';
+import { useParams } from 'react-router-dom';
 
 
 const GreetingsInstroduction = () => {
-  const [modulesArray, setModulesArray] = useState(["modules"])
+  const { courseId } = useParams();
+  const [modulesArray, setModulesArray] = useState(["modules"]);
+  const [modulesData, setModulesData] = useState([{ moduleNo: 1, courseId }]);
 
   const addNewModuleFields = () => {
     setModulesArray([
       ...modulesArray,
       "modules"
+    ]);
+    setModulesData([
+      ...modulesData,
+      { moduleNo: modulesData.length + 1, courseId }
     ])
   }
+  // console.log(modulesData);
 
-  const onDrop = useCallback(acceptedFiles => {
-    // Do something with the files
-  }, []);
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+  // const createModules = () => {
+
+  // }
 
   return (
     <div className='poppins'>
       {
-        modulesArray.map((mod, i) => <Modules
+        modulesArray.map((_, i) => <Modules
           key={i}
           no={i + 1}
-          mod={mod}
           addNewModuleFields={addNewModuleFields}
+          setModulesData={setModulesData}
         />)
       }
       {/* Module 2 style */}
-      <div className='flex justify-between items-center mt-[38px]'>
+      {/* <div className='flex justify-between items-center mt-[38px]'>
         <h3 className='font-semibold text-lg text-[#1B1D48] mr-3'>Module 2 : Greetings and Instroduction</h3>
         <div>
           <button className="w-[152px] h-[40px] text-[#3D419F] border-[1px] border-[#3D419F] flex items-center justify-center rounded-lg">
@@ -72,9 +72,7 @@ const GreetingsInstroduction = () => {
                       <p className='font-semibold text-sm text-[#333333]'>Drop the files here ...</p>
                     </div>
                   </div>
-
                   :
-
                   <div className='flex justify-center items-center flex-col w-[416px] h-[159px] rounded-[12px]'>
                     <img src={UploadImgIcon} alt="" />
                     <div className='mt-3'>
@@ -108,9 +106,7 @@ const GreetingsInstroduction = () => {
         </div>
         <div className='flex items-center mt-3'>
           <img className='mr-3' src={whitePlusIcon} alt="" />
-          {/* <label htmlFor="addLesson"> */}
           <span className='font-normal text-base text-[#C3C4E1] cursor-pointer'>Add More</span>
-          {/* </label> */}
         </div>
         <div className='w-[291px]'>
           <div className='flex justify-end items-center'>
@@ -129,10 +125,9 @@ const GreetingsInstroduction = () => {
               <span className='font-normal text-base text-[#3D419F]'>Add Quiz</span>
             </div>
           </div>
-
         </div>
         <Buttons setRoute={'/admindashboard/course-create/course-curriculum-quiz'} text={'Save & Continue'} />
-      </div>
+      </div> */}
       {/* Add lesson and add quiz modal component */}
       {/* <AddLessonModal /> */}
     </div>

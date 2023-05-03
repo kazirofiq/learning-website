@@ -13,7 +13,9 @@ const useIsAdmin = uid => {
           }
           setIsLoading(false);
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+          console.error(err);
+        });
     }
   }, [uid]);
   return [isAdmin, isLoading];

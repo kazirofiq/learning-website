@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Banner.css';
 import bannerRightPic from '../../../assest/bg-img/bannerright (1).png';
 import arrow from '../../../assest/bg-img/Arrow.png';
 import HowItWorksVideo from './HowItWorksVideo';
 import { BsFillPlayFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
 
-    const [openVideo, setOpenVideo] = useState(null);
 
     return (
         <section className='bg-[#F8F8FF]'>
@@ -17,11 +17,11 @@ const Banner = () => {
                 </div>
                 <div className='flex-row lg:mr-[31px]'>
                     <h1 className='text-4xl lg:text-[51px]  text-[#1B1D48] md:leading-[68px]   mb-[30px]  font-bold lg:text-left md:text-left text-center pt-6 lg:p-0'>Learning Online is <span className='text-[#38A27B] lg:block'>Now Much Easier</span></h1>
-                    <p className='text-[#666666] leading-6 text-[16px] mb-11 lg:text-left md:text-left text-center'>Learn With Rakib is an interesting platform that will teach you in <br /> more an interactive way</p>
+                    <p className='text-[#666666] leading-6 text-[16px] mb-11 lg:text-left md:text-left text-center'>Learn With Rakib is an interesting platform that will teach you in <span className='lg:block'>more an interactive way</span> </p>
 
                     <div className='lg:flex items-center sm:block mx-auto lg:mx-0'>
                         <div className='flex justify-center'>
-                            <a href='/' className=' gs_sm lg:gs lg:mr-7 text-white text-sm lg:text-lg lg:font-bold font-semibold'> Start Learning</a>
+                            <Link to='/premium_course' className=' gs_sm lg:gs lg:mr-7 text-white text-sm lg:text-lg lg:font-bold font-semibold'> Start Learning</Link>
                         </div>
                         <div className='flex justify-center mr-8 lg:mt-0 mt-4'>
 
@@ -44,15 +44,15 @@ const Banner = () => {
                     <div className='flex items-center px-[20px] lg:px-0 lg:mt-[39px] mt-7 w-full lg:w-[436px] relative'>
                         <p className='line'></p>
                         <div className='ml-[20px] lg:ml-8 '>
-                            <h4 className='text-3xl lg:text-[32px] text font-bold'>120+</h4>
+                            <h4 className='text-3xl lg:text-[32px] text font-bold'>200+</h4>
                             <p className='text-sm lg:text-[16px] text2'>Happy Students</p>
                         </div>
                         <div className='ml-[20px] lg:ml-8 '>
-                            <h4 className='text-3xl lg:text-[32px] text font-bold'>25+</h4>
+                            <h4 className='text-3xl lg:text-[32px] text font-bold'>1k+</h4>
                             <p className='text-sm lg:text-[16px] text2'>Active User</p>
                         </div>
                         <div className='ml-[20px] '>
-                            <h4 className='text-3xl lg:text-[32px] text font-bold'>5+</h4>
+                            <h4 className='text-3xl lg:text-[32px] text font-bold'>100+</h4>
                             <p className='text-sm lg:text-[16px] text2'>Online Classes</p>
                         </div>
                         <img className='hidden lg:block absolute right-[-102px] bottom-[17px] fixed' src={arrow} alt="arrow" />
@@ -62,7 +62,6 @@ const Banner = () => {
             </div>
 
             <HowItWorksVideo
-                setOpenVideo={setOpenVideo}
             ></HowItWorksVideo>
         </section >
     );

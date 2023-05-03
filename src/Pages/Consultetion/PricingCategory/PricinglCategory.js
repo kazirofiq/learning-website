@@ -13,7 +13,7 @@ const PricingCategory = () => {
                     </div>
                     <div className="">
                         <div className=" mx-auto grid grid-cols-1 lg:gap-4 lg:grid-cols-3">
-                            <div className="flex flex-col mb-4 md:mb-5 lg:mb-0 p-6 pricing-card max-w-[300px] lg:mr-[15px]">
+                            <div className="w-full mx-auto flex flex-col mb-4 md:mb-5 lg:mb-0 p-6 pricing-card max-w-[300px] lg:mr-[15px]">
                                 <div className="space-y-2 price-category text-center text-[#666666]">
                                     <h4 className="text-lg leading-[27px] font-normal">Basic</h4>
                                     <span className="text-[40px] leading-[60px] font-bold">৳250</span>
@@ -43,7 +43,7 @@ const PricingCategory = () => {
                                 </ul>
                                 <button type="button" className="text-[#666666] text-sm leading-[21px] font-semibold pricing-card-button mx-auto">Choose Plan</button>
                             </div>
-                            <div className="flex flex-col mb-4 md:mb-5 lg:mb-0 p-6 pricing-card max-w-[300px] lg:mr-[15px]">
+                            <div className="w-full mx-auto flex flex-col mb-4 md:mb-5 lg:mb-0 p-6 pricing-card max-w-[300px] lg:mr-[15px]">
                                 <div className="space-y-2 price-category text-center text-[#666666]">
                                     <h4 className="text-lg leading-[27px] font-normal">PREMIUM</h4>
                                     <span className="text-[40px] leading-[60px] font-bold">৳500</span>
@@ -73,7 +73,7 @@ const PricingCategory = () => {
                                 </ul>
                                 <button type="button" className="text-[#666666] text-sm leading-[21px] font-semibold pricing-card-button mx-auto">Choose Plan</button>
                             </div>
-                            <div className="flex flex-col mb-4 md:mb-5 lg:mb-0 p-6 pricing-card max-w-[300px] lg:mr-[15px]">
+                            <div className="w-full mx-auto flex flex-col mb-4 md:mb-5 lg:mb-0 p-6 pricing-card max-w-[300px] lg:mr-[15px]">
                                 <div className="space-y-2 price-category text-center text-[#666666]">
                                     <h4 className="text-lg leading-[27px] font-normal">DIAMOND</h4>
                                     <span className="text-[40px] leading-[60px] font-bold">৳750</span>

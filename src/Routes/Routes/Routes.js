@@ -77,7 +77,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/premium_course',
-                element: <PrivateRoute><PremiumCourseHome /></PrivateRoute>
+                element: <PremiumCourseHome />
             },
             {
                 path: '/payment',
@@ -128,10 +128,10 @@ const router = createBrowserRouter([
 
         ]
     },
-    {
-        path: '/verify-email/',
-        element: <VerifyEmail></VerifyEmail>
-    },
+    // {
+    //     path: '/verify-email/',
+    //     element: <VerifyEmail></VerifyEmail>
+    // },
     {
         path: '/mycourses',
         element: <PrivateRoute><CourseLayout /></PrivateRoute>,
@@ -229,6 +229,7 @@ const router = createBrowserRouter([
     {
         path: '/admindashboard',
         element: <AdmindashboardLayout></AdmindashboardLayout>,
+        element: <AdminRoute><AdmindashboardLayout></AdmindashboardLayout></AdminRoute>,
         children: [
             {
                 path: '/admindashboard',
