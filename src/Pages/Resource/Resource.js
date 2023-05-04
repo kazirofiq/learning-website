@@ -7,8 +7,12 @@ import { AiOutlineBars } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
 
 import ResourceDetails from "./ResourceDetails/ResourceDetails";
+<<<<<<< HEAD
 import { useQuery } from "react-query";
 import { AuthContext } from "../../contexts/AuthProvider";
+=======
+import { useEffect } from "react";
+>>>>>>> 874a28a1b5bc7a55ba9abfcb4cf8245623d86409
 
 const Resource = () => {
   const [open, setOpen] = useState("");
@@ -80,6 +84,10 @@ const Resource = () => {
       categoryId: "100002",
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <section className="bg-[#F8F8FF] py-[1rem] md:py-[7.5rem] px-4 md:px-0">

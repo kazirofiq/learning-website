@@ -16,10 +16,10 @@ const ProfileDetails = () => {
         </div>
         <AboutMe />
       </div>
-      <div className='p-6 bg-[#FFFFFF] shadow-sm mt-6'>
+      <div className='p-6 bg-[#FFFFFF] custom_shadow mt-6'>
         <Address />
       </div>
-      <div className='p-6 bg-[#FFFFFF] shadow-sm mt-6'>
+      <div className='p-6 bg-[#FFFFFF] custom_shadow mt-6'>
         <Education />
       </div>
     </div>

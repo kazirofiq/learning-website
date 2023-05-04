@@ -1,7 +1,8 @@
 import React from 'react';
 import ProfileCard from './ProfileCard/ProfileCard';
-import ProfileDetails from './ProfileDetails/ProfileDetails';
 import ResponsiveBottomNav from './ResponsiveBottomNav/ResponsiveBottomNav';
+import { Outlet } from 'react-router-dom';
+import ProfileDetails from './ProfileDetails/ProfileDetails';
 
 
 const ProfilePage = () => {

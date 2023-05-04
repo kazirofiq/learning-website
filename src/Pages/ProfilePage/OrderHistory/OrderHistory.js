@@ -56,66 +56,6 @@ const OrderHistory = () => {
                                 <img src={downloadIcon} alt="download icon" />
                             </td>
                         </tr>
-                        <tr className="border-botom">
-                            <td className="px-5 py-5 text-[#333333] font-normal text-sm  w-[128px]">
-                                30 Jan, 2023
-                            </td>
-
-                            <td className="px-5 py-5 text-[#333333] font-normal text-sm w-[278px]">
-                                Graphic Design Bootcamp: Photoshop, Illustrator, InDesign
-                            </td>
-                            <td className="px-5 py-5 text-[#333333] font-normal text-sm  w-[100px]">
-                                $150
-                            </td>
-                            <td className="px-5 py-5 text-[#333333] font-normal text-sm  w-[100px]">
-                                Bkash
-                            </td>
-                            <td className="px-5 py-5 text-white font-normal text-sm w-[121px]">
-                                <button className="failed-button flex items-center justify-between">
-                                    <span className="round-white"></span>Failed
-                                </button>
-                            </td>
-                        </tr>
-                        <tr className="border-botom">
-                            <td className="px-5 py-5 text-[#333333] font-normal text-sm  w-[128px]">
-                                30 Jan, 2023
-                            </td>
-
-                            <td className="px-5 py-5 text-[#333333] font-normal text-sm  w-[278px]">
-                                Graphic Design Bootcamp: Photoshop, Illustrator, InDesign
-                            </td>
-                            <td className="px-5 py-5 text-[#333333] font-normal text-sm  w-[100px]">
-                                $150
-                            </td>
-                            <td className="px-5 py-5 text-[#333333] font-normal text-sm  w-[100px]">
-                                Bkash
-                            </td>
-                            <td className="px-5 py-5 text-white font-normal text-sm w-[121px]">
-                                <button className="cancel-button flex items-center justify-between">
-                                    <span className="round-white"></span>Cancel
-                                </button>
-                            </td>
-                        </tr>
-                        <tr className="border-botom">
-                            <td className="px-5 py-5 text-[#333333] font-normal text-sm  w-[128px]">
-                                30 Jan, 2023
-                            </td>
-
-                            <td className="px-5 py-5 text-[#333333] font-normal text-sm  w-[278px]">
-                                Graphic Design Bootcamp: Photoshop, Illustrator, InDesign
-                            </td>
-                            <td className="px-5 py-5 text-[#333333] font-normal text-sm  w-[100px]">
-                                $150
-                            </td>
-                            <td className="px-5 py-5 text-[#333333] font-normal text-sm  w-[100px]">
-                                Bkash
-                            </td>
-                            <td className="px-5 py-5 text-white font-normal text-sm w-[121px]">
-                                <button className="paid-button flex items-center justify-between">
-                                    <span className="round-white"></span>paid
-                                </button>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

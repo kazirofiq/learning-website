@@ -2,7 +2,6 @@ import React from 'react';
 import './StudentList.css'
 import preIcon from '../../assest/icon/preicon.png';
 import nextIcon from '../../assest/icon/nexticon.png';
-import svt from '../../assest/icon/stv.png'
 
 const StudentList = () => {
     return (

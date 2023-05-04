@@ -4,8 +4,13 @@ import bgReactangle2 from '../../../assest/workshop/Rectangle 2.png'
 import bgReactangle3 from '../../../assest/workshop/Rectangle 3.png'
 import bgReactangle4 from '../../../assest/workshop/Rectangle 4.png'
 import monitor from '../../../assest/workshop/monitor.png'
+import { useEffect } from 'react';
 
 const FreeCorses = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     const FreeCourses = [
         {

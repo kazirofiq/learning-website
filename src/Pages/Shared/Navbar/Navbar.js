@@ -3,17 +3,28 @@ import { Link } from "react-router-dom";
 import logo from "../../../assest/logo/Logo (2).png";
 import "./Navbar.css";
 import { BiChevronDown } from "react-icons/bi";
-import avater from "../../../assest/Profile_image/Avatar.png";
+// import avatar from "../../../assest/Profile_image/Avatar.png";
 import { AuthContext } from "../../../contexts/AuthProvider";
-// import navicon from "../../../assest/navicon.png";
+import { useEffect } from "react";
+import navicon from "../../../assest/navicon.png";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [savedUser, SetSavedUser] = useState(null)
     const { user, logOut } = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut().then(() => console.log("Logged Out")).catch(err => console.error("Some Error Occured"))
     }
+
+    useEffect(() => {
+        fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`)
+            .then(res => res.json())
+            .then(data => {
+                SetSavedUser(data)
+            })
+            .catch(err => console.error(err))
+    }, [user?.uid])
 
     const menuItems = (
         <>
@@ -100,13 +111,15 @@ const Navbar = () => {
                         </li>
                     </Link>
                 </> : <>
-                    <li className="text-[#333333] text-base font-normal">
-                        <Link to="/mycourses">My Course</Link>
-                    </li>
+                    {
+                        savedUser?.paidPremium && <li className="text-[#333333] text-base font-normal">
+                            <Link to="/mycourses">My Course</Link>
+                        </li>
+                    }
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src={avater} alt="" />
+                                <img src={user?.photoURL || navicon} alt="" />
                             </div>
                         </label>
                         <ul
@@ -275,14 +288,10 @@ const Navbar = () => {
                                 </Link>
                             </nav>
                         </details>
-
-
                         <Link
                             to="/consultetion"
                             class="flex items-center gap-2  border-b  py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                         >
-
-
                             <span class="text-sm font-medium">Consultancy</span>
                         </Link>
                         <Link
@@ -438,81 +447,137 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src={avater} alt="icon" />
-                            </div>
-                        </label>
+                        {
+                            user?.uid ? <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img src={user?.photoURL || navicon} alt="icon" />
+                                </div>
+                            </label> : <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img src={navicon} alt="icon" />
+                                </div>
+                            </label>
+                        }
 
                         <ul
                             tabIndex={0}
                             className="menu menu-compact dropdown-content w-[168px] bg-[#FFFFFF] mt-7 rounded-xl"
                         >
-                            <li className="w-[136px] mx-4 mt-4 border rounded-lg hover:text-white">
-                                <Link
-                                    to="/profile"
-                                    className="px-3 py-2 bg-[#FFFFFF] hover:bg-[#3D419F] hover:text-white text-[#333333]"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={1.5}
-                                        stroke="currentColor"
-                                        className="w-6 h-6"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-                                        />
-                                    </svg>
-                                    <span className="font-medium text-sm leading-4">
-                                        My Profile
-                                    </span>
-                                </Link>
-                            </li>
-                            <li className="w-[136px] mx-4 my-2 border rounded-lg hover:text-white">
-                                <Link className="px-3 py-2 bg-[#FFFFFF] hover:bg-[#3D419F] hover:text-white text-[#333333]">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={1.5}
-                                        stroke="currentColor"
-                                        className="w-6 h-6"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"
-                                        />
-                                    </svg>
+                            {
+                                user?.uid ? <>
+                                    <li className="w-[136px] mx-4 mt-4 border rounded-lg hover:text-white">
+                                        <Link
+                                            to="/profile"
+                                            className="px-3 py-2 bg-[#FFFFFF] hover:bg-[#3D419F] hover:text-white text-[#333333]"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                strokeWidth={1.5}
+                                                stroke="currentColor"
+                                                className="w-6 h-6"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                                                />
+                                            </svg>
+                                            <span className="font-medium text-sm leading-4">
+                                                My Profile
+                                            </span>
+                                        </Link>
+                                    </li>
+                                    <li className="w-[136px] mx-4 my-2 border rounded-lg hover:text-white">
+                                        <Link className="px-3 py-2 bg-[#FFFFFF] hover:bg-[#3D419F] hover:text-white text-[#333333]">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                strokeWidth={1.5}
+                                                stroke="currentColor"
+                                                className="w-6 h-6"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"
+                                                />
+                                            </svg>
 
-                                    <span className="font-medium text-sm leading-4">
-                                        Dashboard
-                                    </span>
-                                </Link>
-                            </li>
-                            <li className="w-[136px] mx-4 mb-4 border rounded-lg hover:text-white">
-                                <span onClick={handleLogOut} className="px-3 py-2 bg-[#FFFFFF]  hover:bg-[#3D419F] hover:text-white text-[#333333]">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={1.5}
-                                        stroke="currentColor"
-                                        className="w-6 h-6"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
-                                        />
-                                    </svg>
-                                    <span className="font-medium text-sm leading-4">Log Out</span>
-                                </span>
-                            </li>
+                                            <span className="font-medium text-sm leading-4">
+                                                Dashboard
+                                            </span>
+                                        </Link>
+                                    </li>
+                                    <li className="w-[136px] mx-4 mb-4 border rounded-lg hover:text-white">
+                                        <span onClick={handleLogOut} className="px-3 py-2 bg-[#FFFFFF]  hover:bg-[#3D419F] hover:text-white text-[#333333]">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                strokeWidth={1.5}
+                                                stroke="currentColor"
+                                                className="w-6 h-6"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                                                />
+                                            </svg>
+                                            <span className="font-medium text-sm leading-4">Log Out</span>
+                                        </span>
+                                    </li>
+                                </> : <>
+                                    <li className="w-[136px] mx-4 mt-4 border rounded-lg hover:text-white">
+                                        <Link
+                                            to="/login"
+                                            className="px-3 py-2 bg-[#FFFFFF] hover:bg-[#3D419F] hover:text-white text-[#333333]"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                strokeWidth={1.5}
+                                                stroke="currentColor"
+                                                className="w-6 h-6"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                                                />
+                                            </svg>
+                                            <span className="font-medium text-sm leading-4">
+                                                Login
+                                            </span>
+                                        </Link>
+                                    </li>
+                                    <li className="w-[136px] mx-4 my-2 border rounded-lg hover:text-white">
+                                        <Link to="signup" className="px-3 py-2 bg-[#FFFFFF] hover:bg-[#3D419F] hover:text-white text-[#333333]">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                strokeWidth={1.5}
+                                                stroke="currentColor"
+                                                className="w-6 h-6"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"
+                                                />
+                                            </svg>
+                                            <span className="font-medium text-sm leading-4">
+                                                Sign Up
+                                            </span>
+                                        </Link>
+                                    </li>
+                                </>
+                            }
                         </ul>
                     </div>
                 </div>

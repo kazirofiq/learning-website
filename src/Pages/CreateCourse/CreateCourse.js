@@ -4,16 +4,16 @@ import SideCategory from './SideCategory/SideCategory';
 import CourseDetailsInput from './CourseDetailsInput/CourseDetailsInput';
 
 const CreateCourse = () => {
-    return (
+  return (
 
-                    <div className='poppins'>
-                            <div className=''>
-                                     <div className='shadow-lg p-6'> 
-                                        <CourseDetailsInput />
-                                   </ div>
-                                 </div>  
-                    </div>
-    );
+    <div className='poppins'>
+      <div className=''>
+        <div className='shadow-lg p-6'>
+          <CourseDetailsInput />
+        </ div>
+      </div>
+    </div>
+  );
 };
 
 export default CreateCourse;

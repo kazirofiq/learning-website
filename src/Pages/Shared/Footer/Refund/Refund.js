@@ -1,7 +1,13 @@
 import React from 'react';
+import { useEffect } from 'react';
 
 const Refund = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
+
         <div className='text-black p-5'>
             Thank you for choosing Learn With Rakib for your creativity and freelancing guidance. We strive to provide the best possible experience for our customers. However, we understand that circumstances may arise where you may request a refund for your purchase. Please review our refund policy below:
 
@@ -28,11 +34,14 @@ const Refund = () => {
             Refunds are only eligible for purchases made directly through our website, Learn With Rakib. If you purchased our courses or services from a third-party platform, please refer to their refund policy.
             <br />
             <br />
-            6. Changes to Refund Policy
+            6. The refund will be provided using the same payment channel using which the customer has paid.
+            <br />
+            <br />
+            7. Changes to Refund Policy
             We reserve the right to modify or update our refund policy at any time without prior notice. Any changes to the refund policy will be effective immediately upon posting on our website.
             <br />
             <br />
-            7. Contact Us
+            8. Contact Us
             If you have any questions or concerns about our refund policy, please contact us at support@learnwithrakib.pro or +8801612-039047. We are committed to providing excellent customer service and will do our best to address any issues or inquiries you may have.
             <br />
             <br />

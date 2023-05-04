@@ -8,8 +8,14 @@ import ConsultetionWWL from './ConsultationWhatWillLearn/ConsultationWWL';
 import ConsultetionAboutTC from './ConsultationAboutTC/ConsultationAboutTC';
 import ConsultetionNavbar from './ConsultationNavbar/ConsultationNavbar';
 import scroll from '../../assest/Consultency/Scroll.png';
+import { useEffect } from 'react';
 
 const Consultation = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <div className='py-0 pb-[30px] lg:py-[95px]'>
             <div className="text-center  px-[20px] lg:px-[145px]">

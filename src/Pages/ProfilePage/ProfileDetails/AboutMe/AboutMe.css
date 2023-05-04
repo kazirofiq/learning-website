@@ -94,7 +94,9 @@ summary.radios:before {
 
 input[type=radio] {
 	counter-increment: radios;
-	appearance: none;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
 	display: none;
 }
 
@@ -127,4 +129,9 @@ label span {
 	height: 1rem;
 	border: 1px solid #727272;
 	border-radius: 3px;
+}
+
+.custom_shadow{
+	box-shadow: 0px 4px 20px #E7E7FF;
+	border-radius: 12px;
 }

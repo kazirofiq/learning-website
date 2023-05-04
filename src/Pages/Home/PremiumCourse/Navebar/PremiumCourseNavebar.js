@@ -52,7 +52,7 @@ const PremiumCourseNavebar = () => {
   };
 
   return (
-    <div className={activeItem === "free-course" ? 'hidden' : "sticky stop top-0 rounded-[10px] lg:z-20"}>
+    <div className={activeItem === "free-course" ? 'hidden' : "sticky stop top-0 rounded-[10px] lg:z-20 lg:block hidden"}>
       <nav className="bg-[#ECECF5] rounded-[10px] mt-[32px] lg:block hidden w-[730px]">
         <ul className="flex justify-between h-[37px] items-center">
           <li className=''>

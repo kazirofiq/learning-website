@@ -1,61 +1,55 @@
 import React from 'react';
-import image1 from '../../../../assest/course_image/course_image_1.png';
+import image1 from '../../../../assest/course_image/Class-1.jpg';
+import image2 from '../../../../assest/course_image/Class-2.jpg';
+import image3 from '../../../../assest/course_image/Class-3.jpg';
+import image4 from '../../../../assest/course_image/Class-4.jpg';
+import image5 from '../../../../assest/course_image/Class-5.jpg';
+import image6 from '../../../../assest/course_image/Class-6.jpg';
+import { Link } from 'react-router-dom';
 
 const FreeVideo = () => {
 
     const course_data = [
         {
             "id": "1",
-            "image": "../../../../assest/course_image/course_image_1.png",
+            "image": image1,
+            "videoLink": "https://youtu.be/JK3YTuw9ltU",
             "course_name": "What Is KDP?",
             "name": "Watch this video and learn about KDP"
         },
         {
             "id": "2",
-            "image": "../../../../assest/course_image/course_image_2.png",
+            "image": image2,
+            "videoLink": "https://youtu.be/Jm5Qz0HrSug",
             "course_name": "How does KDP work?",
             "name": "Watch this video and learn about KDP"
         },
         {
             "id": "3",
-            "image": "../../../../assest/course_image/course_image_3.png",
+            "image": image3,
+            "videoLink": "https://youtu.be/RgdUKHWDr_Q",
             "course_name": "What Is The Future Of KDP?",
             "name": "Watch this video and learn about KDP"
         },
         {
             "id": "4",
-            "image": "../../../../assest/course_image/course_image_1.png",
+            "image": image4,
+            "videoLink": "https://youtu.be/KJBzZhMjcK4",
             "course_name": "E-Book, Paperback and Hardcover.",
             "name": "Watch this video and learn about KDP"
         },
         {
             "id": "5",
-            "image": "../../../../assest/course_image/course_image_2.png",
+            "image": image5,
+            "videoLink": "https://youtu.be/TCEvBBWCeLs",
             "course_name": "Start With Paperback on Amazon KDP.",
             "name": "Watch this video and learn about KDP"
         },
         {
             "id": "6",
-            "image": "../../../../assest/course_image/course_image_3.png",
+            "image": image6,
+            "videoLink": "https://youtu.be/DYzL7BdP_MM",
             "course_name": "Amazon KDP Rules and Regulations.",
-            "name": "Watch this video and learn about KDP"
-        },
-        {
-            "id": "7",
-            "image": "../../../../assest/course_image/course_image_3.png",
-            "course_name": "What Is Niche?",
-            "name": "Watch this video and learn about KDP"
-        },
-        {
-            "id": "8",
-            "image": "../../../../assest/course_image/course_image_3.png",
-            "course_name": "Quality vs Quantity",
-            "name": "Watch this video and learn about KDP"
-        },
-        {
-            "id": "9",
-            "image": "../../../../assest/course_image/course_image_3.png",
-            "course_name": "Niche Research Part 01.",
             "name": "Watch this video and learn about KDP"
         },
 
@@ -89,15 +83,16 @@ const FreeVideo = () => {
                         course_data.map(data => <div
                             key={data.id}
                         >
-                            <div className="w-full ">
-                                <figure>
-                                    <img src={image1} alt="" className='w-[320px]  lg:w-[350px] ' />
-                                </figure>
-                                <div className="poppins mt-[17px] lg:mt-6">
-                                    <h2 className="text-2xl font-bold leading-9 text-[#333333]">{data.course_name}</h2>
-                                    <p className="text-base leading-6 font-normal text-[#666666] mt-1 lg:mt-2">{data.name}</p>
-                                </div>
-                            </div>
+                            <Link to={data.videoLink}>
+                                <div className="w-full ">
+                                    <figure>
+                                        <img src={data.image} alt="" className='w-[320px]  lg:w-[350px] ' />
+                                    </figure>
+                                    <div className="poppins mt-[17px] lg:mt-6">
+                                        <h2 className="text-2xl font-bold leading-9 text-[#333333]">{data.course_name}</h2>
+                                        <p className="text-base leading-6 font-normal text-[#666666] mt-1 lg:mt-2">{data.name}</p>
+                                    </div>
+                                </div></Link>
                         </div>)
                     }
                 </div>
