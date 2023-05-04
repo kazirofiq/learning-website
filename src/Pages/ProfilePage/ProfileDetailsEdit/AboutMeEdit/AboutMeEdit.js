@@ -41,18 +41,6 @@ const AboutMeEdit = ({ refetch, setEditingAboute }) => {
       .catch(err => console.error(err))
   };
 
-  // const [isOpen, setIsOpen] = useState(false);
-  // const [selectedItem, setSelectedItem] = useState("Select");
-
-  // const items = ["Male", "Female", "Other"];
-
-  // const toggleSelect = () => setIsOpen(!isOpen);
-
-  // const handleItemClick = (item) => {
-  //     setSelectedItem(item);
-  //     setIsOpen(false);
-  // };
-
   return (
     <>
       <div className=" w-full">
@@ -64,7 +52,6 @@ const AboutMeEdit = ({ refetch, setEditingAboute }) => {
         <div className="modal pt-24">
           <div className="modal-box pt-12">
             <label
-              // onClick={() => setEditingAboute(null)}
               htmlFor="editPromotionModal"
               className="btn btn-sm btn-circle absolute right-2 top-2"
             >
@@ -80,7 +67,6 @@ const AboutMeEdit = ({ refetch, setEditingAboute }) => {
                     name="name"
                     defaultValue={user?.name}
                     type="text"
-                    // defaultValue={user?.displayName}
                     className="input input-bordered my-2 w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 text-black"
                     {...register("name", {
                       required: "Client Name is required",

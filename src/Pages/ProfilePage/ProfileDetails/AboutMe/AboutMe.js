@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import rightArrow from "../../../../assest/icon/right arrow.png";
-import { Link } from "react-router-dom";
 import AboutMeEdit from "../../ProfileDetailsEdit/AboutMeEdit/AboutMeEdit";
 import { PencilSquareIcon } from '@heroicons/react/24/solid';
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { AuthContext } from "../../../../contexts/AuthProvider";
-import EducationEdit from "../../ProfileDetailsEdit/EducationEdit/EducationEdit";
-import AddressEdit from "../../ProfileDetailsEdit/AddressEdit/AddressEdit";
 
 const AboutMe = () => {
   const { user } = useContext(AuthContext);

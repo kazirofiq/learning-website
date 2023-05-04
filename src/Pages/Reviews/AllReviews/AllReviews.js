@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BiChevronDown } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
-import rating from '../../../assest/learner_review/rating.png'
+import rating from '../../../assest/learner_review/Vector.png'
 import Reviews from '../Reviews/Reviews';
 // import './AllReviews.css'
 
@@ -17,9 +17,9 @@ const AllReviews = () => {
     };
 
     const options = [
-        "Most Recent",
-        "Highest Rated",
-        "Lowest Rated"
+        "Kdp Course Review",
+        "Workshop Review",
+        "Consultency Review"
     ];
 
     return (
@@ -58,9 +58,13 @@ const AllReviews = () => {
             <div>
                 <div className=' w-full lg:h-[276px] h-[336px] poppins rounded-2xl lg:shadow-xl lg:shadow-[#dfe0fd] md:shadow-xl md:shadow-[#dfe0fd]'>
                     <div className='lg:grid md:grid lg:grid-cols-[1fr_2fr] items-center justify-between lg:mx-[32px] lg:py-[48px] md:mx-[26px] md:py-[48px] mx-0 py-0 lg:gap-x-[50px] md:gap-x-[40px] h-full'>
-                        <div className='pb-5 pl-0 lg:pl-8  grid justify-center'>
+                        <div className='pb-5 pl-0 lg:pl-8 md:pt-14 pt-0 grid justify-center'>
                             <p className='text-center lg:text-start text-[#333333] text-[56px] lg:text-[80px] leading-[84px] lg:leading-[120px] font-bold poppins whitespace-nowrap'>5 .0</p>
                             <div className='flex gap-3 items-center'>
+                                <img src={rating} alt="" className='' />
+                                <img src={rating} alt="" className='' />
+                                <img src={rating} alt="" className='' />
+                                <img src={rating} alt="" className='' />
                                 <img src={rating} alt="" className='' />
                                 <p className='text-[#666666] text-center lg:text-start text-sm lg:text-base leading-[21px] lg:leading-6 whitespace-nowrap'> (15 Ratings)</p>
                             </div>
@@ -72,7 +76,7 @@ const AllReviews = () => {
                                 <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Excellent</p>
                                 </div>
                                 <div>
-                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[507px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="70" max="100"></progress>
+                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="70" max="100"></progress>
                                 </div>
                                 <div>
                                 <p className='lg:ml-5 ml-2 md:ml-3'>70%</p>
@@ -83,7 +87,7 @@ const AllReviews = () => {
                                 <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Very Good</p>
                                 </div>
                                 <div>
-                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[507px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="20" max="100"></progress>
+                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="20" max="100"></progress>
                                 </div>
                                 <div>
                                 <p className='lg:ml-5 ml-2 md:ml-3'>20%</p>
@@ -94,7 +98,7 @@ const AllReviews = () => {
                                 <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Average</p>
                                 </div>
                                 <div>
-                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[507px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="3" max="100"></progress>
+                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="3" max="100"></progress>
                                 </div>
                                 <div>
                                 <p className='lg:ml-5 ml-2 md:ml-3'>3%</p>
@@ -105,7 +109,7 @@ const AllReviews = () => {
                                 <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Excellent</p>
                                 </div>
                                 <div>
-                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[507px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="2" max="100"></progress>
+                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="2" max="100"></progress>
                                 </div>
                                 <div>
                                 <p className='lg:ml-5 ml-2 md:ml-3'>2%</p>
@@ -116,7 +120,7 @@ const AllReviews = () => {
                                 <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Poor</p>
                                 </div>
                                 <div>
-                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[507px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="0" max="100"></progress>
+                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="0" max="100"></progress>
                                 </div>
                                 <div>
                                 <p className='lg:ml-5 ml-2 md:ml-3'>0%</p>
