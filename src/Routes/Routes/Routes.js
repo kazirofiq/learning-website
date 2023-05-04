@@ -95,6 +95,7 @@ const router = createBrowserRouter([
                 path: '/resource',
                 element: <Resource />
             },
+            
             {
                 path: '/allreviews',
                 element: <AllReviews />
