@@ -3,18 +3,32 @@ import QRCode from 'react-qr-code';
 import { saveAs } from 'file-saver';
 
 const QrGenaretor = () => {
-    const [text, setText] = useState('');
+    const [qrData, setQrData] = useState('');
 
     const handleChange = (e) => {
-        setText(e.target.value)
+        setQrData(e.target.value)
     };
 
+    // const handleDownload = () => {
+    //     fetch(qrData)
+    //         .then(response => response.blob())
+    //         .then(blob => saveAs(blob, 'image.png'))
+    //         .catch(error => console.error(error));
+    // };
+
+
     const handleDownload = () => {
-        // Fetch the image and save it using FileSaver.js
-        fetch(text)
-            .then(response => response.blob())
-            .then(blob => saveAs(blob, 'image.jpg'))
-            .catch(error => console.error(error));
+        // Generate download with use canvas and stream
+        const canvas = document.getElementById("qr-gen");
+        const pngUrl = canvas
+            .toDataURL("image/png")
+            .replace("image/png", "image/octet-stream");
+        let downloadLink = document.createElement("a");
+        downloadLink.href = pngUrl;
+        downloadLink.download = `${qrData}.png`;
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
     };
 
     return (
@@ -29,18 +43,19 @@ const QrGenaretor = () => {
                         <div>
                             <input
                                 type="text"
-                                value={text}
+                                value={qrData}
                                 onChange={(e) => { handleChange(e) }}
                                 placeholder="Enter your link"
                                 className="rounded-lg input w-[152px] lg:w-[298px] border-[#C3C4E1] focus:outline-none border-[1px] text-[#333333] placeholder:text-[#333333]" />
                         </div>
                     </div>
                     <QRCode
-                        value={text}
+                        id="qr-gen"
+                        value={qrData}
                         className='w-[96px] h-[96px] mx-auto my-4 lg:my-6'
                     />
                     {
-                        text &&
+                        qrData &&
                         <>
                             <button
                                 onClick={handleDownload}

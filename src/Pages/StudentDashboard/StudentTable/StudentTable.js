@@ -1,39 +1,39 @@
 import React from 'react';
 import StudentTableDetails from '../StudentTableDetails/StudentTableDetails';
-import './StudentTable.css' 
+import './StudentTable.css'
 import Profile from '../../../assest/bg-img/Image.png'
 
 const StudentTable = () => {
-    const tablData = [
-        {
-            name: 'Rofiqul',
-            img: Profile,
-            quiz: '15',
-            score: '90',
-        },
-        {
-            name: 'Rofiqul',
-            img: Profile,
-            quiz: '15',
-            score: '90',
-        },
-        {
-            name: 'Rofiqul',
-            img: Profile,
-            quiz: '15',
-            score: '90',
-        },
-        {
-            name: 'Rofiqul',
-            img: Profile,
-            quiz: '15',
-            score: '90',
-        },
+  const tablData = [
+    {
+      name: 'Rofiqul',
+      img: Profile,
+      quiz: '15',
+      score: '90',
+    },
+    {
+      name: 'Rofiqul',
+      img: Profile,
+      quiz: '15',
+      score: '90',
+    },
+    {
+      name: 'Rofiqul',
+      img: Profile,
+      quiz: '15',
+      score: '90',
+    },
+    {
+      name: 'Rofiqul',
+      img: Profile,
+      quiz: '15',
+      score: '90',
+    },
 
 
-      ]
-    return (
-        <div>
+  ]
+  return (
+    <div>
       <div>
         <div className="overflow-x-auto w-full mt-4">
           <table className="table table-back w-full">
@@ -59,7 +59,7 @@ const StudentTable = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default StudentTable;
