@@ -4,8 +4,9 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toast';
 import { useContext } from 'react';
 import { AuthContext } from '../../../../contexts/AuthProvider';
-const AboutMeEdit = ({ refetch, setEditingAboute }) => {
-  // const { _id, name, designation, designation_to, date } = about;
+const AboutMeEdit = ({ refetch, setEditingAboute, about }) => {
+  console.log(about, 'about data')
+  const { _id, name, email, studentId, gender, phone } = about;
   const { user } = useContext(AuthContext);
   const {
     register,
@@ -15,8 +16,6 @@ const AboutMeEdit = ({ refetch, setEditingAboute }) => {
   const handleEditPromotion = (data) => {
     const about = {
       name: data.name,
-      email: data.email,
-      studentId: data.StudentId,
       phone: data.phone,
       gender: data.gender,
       date: data.date,
@@ -34,9 +33,8 @@ const AboutMeEdit = ({ refetch, setEditingAboute }) => {
       .then((result) => {
         console.log(result);
         toast.success(`${data.name} is update successfully`);
-        window.location.reload()
-        // setEditingAboute(null);
-        // refetch();
+        setEditingAboute(null);
+        refetch();
       })
       .catch(err => console.error(err))
   };
@@ -63,9 +61,9 @@ const AboutMeEdit = ({ refetch, setEditingAboute }) => {
               <div className="grid grid-cols-2 gap-4 items-center">
                 <div>
                   <label className='text-black'>Your Name</label>
-                  <input
+                  <input 
                     name="name"
-                    defaultValue={user?.name}
+                    value={name}
                     type="text"
                     className="input input-bordered my-2 w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 text-black"
                     {...register("name", {
@@ -80,12 +78,13 @@ const AboutMeEdit = ({ refetch, setEditingAboute }) => {
                 </div>
                 <div>
                   <label className='text-black'>Student Id</label>
-                  <input
+                  <input 
+                    disabled
                     name="studentId"
-                    // defaultValue={name}
+                    defaultValue={studentId}
                     type="text"
 
-                    className="input input-bordered my-2 w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 text-black"
+                    className="input input-bordered disabled:border-transparent my-2 w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 disabled:text-slate-500 disabled:bg-[#ebebf1]"
 
                   />
                   {errors.studentId && (
@@ -95,12 +94,13 @@ const AboutMeEdit = ({ refetch, setEditingAboute }) => {
                   )}
                 </div>
                 <div>
-                  <label className='text-black'>Email</label>
+                  <label className=''>Email</label>
                   <input
-                    // defaultValue={editingaboute.email}
+                    disabled
+                    defaultValue={email}
                     name="email"
                     type="email"
-                    className="input input-bordered my-2 w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 text-black"
+                    className="input input-bordered disabled:border-transparent my-2 w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 disabled:text-slate-500 disabled:bg-[#ebebf1]"
                   // {...register("designation", {
                   //   required: "Email is required",
                   // })}
@@ -115,7 +115,7 @@ const AboutMeEdit = ({ refetch, setEditingAboute }) => {
                   <label className='text-black'>Phone</label>
                   <input
                     name="Phone"
-                    // defaultValue={name}
+                    defaultValue={phone}
                     type="number"
                     // defaultValue={user?.displayName}
                     className="input input-bordered my-2 w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 text-black"
@@ -151,7 +151,7 @@ const AboutMeEdit = ({ refetch, setEditingAboute }) => {
                   Gender
                   <select
                     name="gender"
-                    // defaultValue={designation_to}
+                    defaultValue={gender}
                     className="select select-bordered w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 text-black "
                     {...register("gender", {
                       required: "Your Name is required",
