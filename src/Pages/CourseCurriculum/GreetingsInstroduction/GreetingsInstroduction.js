@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import Modules from '../Modules/Modules';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import Buttons from '../../CreateCourse/Buttons/Buttons';
+import { server } from '../../../variables/server';
 
 
 const GreetingsInstroduction = () => {
   const { courseId } = useParams();
   const [modulesArray, setModulesArray] = useState(["modules"]);
   const [modulesData, setModulesData] = useState([{ moduleNo: 1, courseId }]);
+  const navigate = useNavigate();
 
   const addNewModuleFields = () => {
     setModulesArray([
@@ -20,12 +23,57 @@ const GreetingsInstroduction = () => {
   }
   // console.log(modulesData);
 
-  // const createModules = () => {
+  const createModules = e => {
+    e.preventDefault();
+    const allModules = modulesData;
+    const quiz = [];
+    modulesData.forEach(mod => (mod.quiz && quiz.push({ quiz: mod.quiz, moduleNo: mod.moduleNo })));
+    console.log(quiz);
+    if (quiz.length > 0) {
+      fetch(`${server}/modules/contents/quiz`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(quiz)
+      })
+        .then(res => res.json())
+        .then(result => {
+          result.forEach(r => {
+            const index = allModules.findIndex(mod => mod.moduleNo === r.moduleNo)
+            allModules[index].lessons.push({ number: r.number, routeName: r.routeName, name: allModules[index].quizName });
+            delete allModules[index].quiz;
+            delete allModules[index].quizName;
+          });
+          saveModulesToDB(allModules);
+        })
+    } else {
+      saveModulesToDB(allModules);
+    }
+    // console.log(allModules);
 
-  // }
+  }
+
+  const saveModulesToDB = modules => {
+
+    fetch(`${server}/modules/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(modules)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.acknowledged && data.insertedCount > 0) {
+          navigate(`/admindashboard/course-create/AddFAQ/${courseId}`);
+        }
+      })
+  }
 
   return (
-    <div className='poppins'>
+    <form onSubmit={createModules} className='poppins'>
       {
         modulesArray.map((_, i) => <Modules
           key={i}
@@ -130,7 +178,8 @@ const GreetingsInstroduction = () => {
       </div> */}
       {/* Add lesson and add quiz modal component */}
       {/* <AddLessonModal /> */}
-    </div>
+      <Buttons setDraft={false} text={'Save & Continue'} />
+    </form>
 
   );
 };

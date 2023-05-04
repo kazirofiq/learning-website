@@ -111,7 +111,10 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId, setImage }) => {
             }
             setVideoStatus(status);
           })
-          .catch(err => console.error(err))
+          .catch(err => {
+            console.log(err);
+            clearInterval(checkInterval)
+          })
       }, 3000);
     }
   }

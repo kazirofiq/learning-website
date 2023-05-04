@@ -41,7 +41,7 @@ const PricingSection = () => {
         </div>
       </div>
       <EnrollMentCardModal modalId="howToPay" setIsChecked={setIsChecked}>
-        <iframe className="w-[320px] lg:w-[730px] lg:h-[450px] h-[300px]" src={`${isChecked && "https://player.vdocipher.com/v2/?otp=20160313versASE323HiGrFGwVUOfoM1B4XG3gNKbgOGAEHX1cc1GmflQhQd7yKx&playbackInfo=eyJ2aWRlb0lkIjoiNzI1MmEyNDMyOTE1NGY5M2EwOWI4NWNjMmFjMTJjZTQifQ=="}`} title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe className="w-[320px] lg:w-[730px] lg:h-[450px] h-[300px]" src={`${isChecked && "https://player.vdocipher.com/v2/?otp=20160313versASE323HiGrFGwVUOfoM1B4XG3gNKbgOGAEHX1cc1GmflQhQd7yKx&playbackInfo=eyJ2aWRlb0lkIjoiNzI1MmEyNDMyOTE1NGY5M2EwOWI4NWNjMmFjMTJjZTQifQ=="}`} title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen="true"></iframe>
       </EnrollMentCardModal>
     </div>
 

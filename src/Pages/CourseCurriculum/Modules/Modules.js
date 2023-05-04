@@ -4,6 +4,7 @@ import whitePlusIcon from "../../../assest/icon/plus-white.png";
 import Cross from "../../../assest/icon/Cross.png";
 import UploadLessonVideo from '../UploadLessonVideo/UploadLessonVideo';
 import CourseCurriculumQuiz from '../CourseCurriculumQuiz/CourseCurriculumQuiz';
+import { useEffect } from 'react';
 
 const Modules = ({ no, addNewModuleFields, setModulesData }) => {
     const [showQuiz, setShowQuiz] = useState(false);
@@ -35,27 +36,30 @@ const Modules = ({ no, addNewModuleFields, setModulesData }) => {
             ]
         })
     }
-    console.log(lessonsData);
+    // console.log(lessonsData);
 
     const addModuleName = e => {
-        if (e.target.value) {
-            setModulesData(prevModules => {
-                const index = prevModules.findIndex(prevMod => prevMod.moduleNo === no);
-                prevModules[index].module = e.target.value;
-                return [...prevModules];
-            });
-        }
+        setModulesData(prevModules => {
+            const index = prevModules.findIndex(prevMod => prevMod.moduleNo === no);
+            prevModules[index].module = e.target.value;
+            return [...prevModules];
+        });
     }
 
     const addLessonName = (e, lessNo) => {
-        if (e.target.value) {
-            setLessonsData(prevData => {
-                const index = prevData.lessons.findIndex(prevLess => prevLess.lessonNo === lessNo);
-                prevData.lessons[index].name = e.target.value;
-                return { prevData };
-            });
-        }
+        setLessonsData(prevData => {
+            const index = prevData.lessons.findIndex(prevLess => prevLess.lessonNo === lessNo);
+            prevData.lessons[index].name = e.target.value;
+            return { ...prevData };
+        });
     }
+    useEffect(() => {
+        setModulesData(prevModules => {
+            const index = prevModules.findIndex(prevMod => prevMod.moduleNo === no);
+            prevModules[index].lessons = lessonsData.lessons
+            return [...prevModules];
+        });
+    }, [lessonsData, setModulesData, no])
 
     return (
         <div className='mb-10'>
@@ -64,7 +68,7 @@ const Modules = ({ no, addNewModuleFields, setModulesData }) => {
                     <input onBlur={addModuleName} name={`module${no}`} type="text" defaultValue={`Module ${no} : `} placeholder="Module No: Module Name" className="input bg-transparent w-full focus:outline-none placeholder:text-[#1B1D48] font-semibold text-lg text-[#1B1D48] pl-0" />
                 </div>
                 <div>
-                    <button onClick={addNewModuleFields} className="w-[152px] h-[40px] text-[#3D419F] border-[1px] border-[#3D419F] flex items-center justify-center rounded-lg">
+                    <button type='button' onClick={addNewModuleFields} className="w-[152px] h-[40px] text-[#3D419F] border-[1px] border-[#3D419F] flex items-center justify-center rounded-lg">
                         <span>
                             <img className='mr-2' src={plusIcon} alt="" />
                         </span>
@@ -89,7 +93,7 @@ const Modules = ({ no, addNewModuleFields, setModulesData }) => {
                     </div>)
                 }
                 {
-                    showQuiz ? <CourseCurriculumQuiz moduleNo={no} quizNo={lessons.length + 1} /> : ""
+                    showQuiz ? <CourseCurriculumQuiz moduleNo={no} quizNo={lessons.length + 1} setModulesData={setModulesData} /> : ""
                 }
                 <div onClick={() => !showAddBtns && setShowAddBtns(true)} className='flex items-center mt-3'>
                     <img className='mr-3' src={showAddBtns ? whitePlusIcon : plusIcon} alt="" />
