@@ -1,7 +1,11 @@
 import React from 'react';
 import quizImage from '../../assest/quiz/Quiz.png'
+import useTitle from '../../hooks/useTitle';
 
 const Quiz = () => {
+
+    useTitle('Quiz - ');
+
     return (
         <section className=' w-[320px] lg:w-[732px] lg:mt-0 mb-[20px] mt-8 h-[381px] lg:h-[445px] mx-5 lg:mx-0 bg-white custom_shadow' >
             <div className='flex items-center'>

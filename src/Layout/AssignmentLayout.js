@@ -8,7 +8,7 @@ const AssignmentLayout = () => {
         <>
             <Navbar></Navbar>
             <section className='bg-[#F8F8FF] pt-0 lg:pt-[34px]'>
-                <div className='lg:w-[1110px] w-[360px] h-[413px] mx-auto'>
+                <div className='lg:w-[1110px] w-[360px] mx-auto'>
                     <Breadcrumb></Breadcrumb>
                     <div className='grid lg:grid-cols-[1fr_350px] grid-cols-1 mb-6'>
                         <div className='mt-0 lg:my-[22px] '>
