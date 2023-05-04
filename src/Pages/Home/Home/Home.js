@@ -11,9 +11,13 @@ import StudentFeedback from '../StudentFeedback/StudentFeedback';
 import StudentList from '../../StudentList/StudentList';
 import AssignmentList from '../../../AssignmentList/AssignmentList';
 import SuccesModal from '../../Modal/SuccesModal/SuccesModal';
+import useTitle from '../../../hooks/useTitle';
 
 
 const Home = () => {
+
+    useTitle('');
+
     return (
         <div>
             <Banner />

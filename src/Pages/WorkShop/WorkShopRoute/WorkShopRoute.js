@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from "react-router-dom"
+import useTitle from '../../../hooks/useTitle';
 const WorkShopRoute = () => {
+
+    useTitle('Work Shop - ');
 
     const location = useLocation();
     const [activeDraft, setActiveDraft] = useState(false);

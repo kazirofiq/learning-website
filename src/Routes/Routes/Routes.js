@@ -40,7 +40,6 @@ import PreviousWorkshop from "../../Pages/Courses/PreviousWorkshop/PreviousWorks
 import CourseLayout from "../../Layout/CourseLayout";
 import WorkShopLayout from "../../Layout/WorkShopLayout";
 import UpComingDetails from "../../Pages/WorkShop/UpComingDetails/UpComingDetails";
-import Vedio from "../../Pages/CourseVedio/Vedio/Vedio";
 import AddFAQ from "../../Pages/Home/PremiumCourse/AddFAQ/AddFAQ";
 import StudentDashboardLayout from "../../Pages/StudentDashboard/StudentDashboardLayout/StudentDashboardLayout";
 import StudentDashboard from "../../Pages/StudentDashboard/StudentDashboard/StudentDashboard";
@@ -53,6 +52,7 @@ import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/Ter
 import Planner from "../../Pages/ProfilePage/Planner/Planner";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AdminRoute from "../AdminRoute/AdminRoute";
+import Video from "../../Pages/CourseVedio/Video/Video";
 
 
 const router = createBrowserRouter([
@@ -207,19 +207,19 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: '/vedio',
+        path: '/video',
         element: <MyCourseLayout></MyCourseLayout>,
         children: [
             {
-                path: '/vedio',
-                element: <Vedio />
+                path: '/video',
+                element: <Video />
             },
             {
-                path: '/vedio/assignment',
+                path: '/video/assignment',
                 element: <Assignment></Assignment>
             },
             {
-                path: '/vedio/quiz',
+                path: '/video/quiz',
                 element: <Quiz></Quiz>
             },
         ]
@@ -285,7 +285,7 @@ const router = createBrowserRouter([
                 element: <StudentDashboard></StudentDashboard>
             },
             {
-                path: '/student-dashboard/analytic',
+                path: '/student-dashboard/analytics',
                 element: <StudentMarks></StudentMarks>
             },
             {

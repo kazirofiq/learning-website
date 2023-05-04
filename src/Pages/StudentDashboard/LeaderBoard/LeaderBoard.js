@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import StudentTable from '../StudentTable/StudentTable';
 import right_arrow from '../../../assest/student_dashboard/Vector.png'
+import useTitle from '../../../hooks/useTitle';
 
 const LeaderBoard = () => {
+
+    useTitle('Leader Board - ');
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState("Kdp Mastery");

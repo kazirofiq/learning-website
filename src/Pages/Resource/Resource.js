@@ -8,8 +8,12 @@ import { ImCross } from "react-icons/im";
 import { Link } from "react-router-dom";
 import ResourceDetails from "./ResourceDetails/ResourceDetails";
 import { useEffect } from "react";
+import useTitle from "../../hooks/useTitle";
 
 const Resource = () => {
+
+  useTitle('Free Resource - ');
+
   const [open, setOpen] = useState("");
   console.log(open);
 

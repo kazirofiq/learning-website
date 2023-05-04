@@ -48,7 +48,7 @@ const QuizMark = () => {
                 <div className='p-6'>
                     <div className='flex justify-between'>
                         <div>
-                            <p className='poppins text-[#1B1D48] font-semibold text-[18px] leading-[27px]'>QuizMark</p>
+                            <p className='poppins text-[#1B1D48] font-semibold text-[18px] leading-[27px]'>Quiz Mark</p>
                         </div>
                         <div >
                             <div className="relative">
