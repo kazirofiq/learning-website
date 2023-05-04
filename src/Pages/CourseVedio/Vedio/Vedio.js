@@ -2,7 +2,7 @@ import React, { createContext } from 'react';
 import { VedioContext } from '../../../contexts/VedioProvider';
 import useTitle from '../../../hooks/useTitle';
 
-const Video = () => {
+const Vedio = () => {
 
     useTitle('Module Detail - ');
 
@@ -17,4 +17,4 @@ const Video = () => {
     );
 };
 
-export default Video;
+export default Vedio;
