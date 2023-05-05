@@ -9,8 +9,8 @@ import EduCationEditing from '../../ProfileDetailsEdit/EduCationEditing/EduCatio
 
 const Education = () => {
   
-
   const { user } = useContext(AuthContext);
+    const [editingEducation, setEditingEducation] = useState(null);
   const { data: student = {}, refetch } = useQuery({
     queryKey: ["education", user?.uid],
     queryFn: () =>
@@ -28,7 +28,9 @@ const Education = () => {
         <h1 className="text-[#1B1D48] font-medium lg:font-semibold lg:text-base text-lg">
           Education
         </h1>
-        <label htmlFor="editEducationModal">
+        <label 
+        onClick={() =>setEditingEducation(student)}
+        htmlFor="editEducationModal">
           <div className="flex items-center gap-x-1 text-[#1B1D48] cursor-pointer">
             <PencilSquareIcon className='h-4 w-4 lg:h-5 lg:w-5' />
             <p className="font-medium lg:font-semibold lg:text-sm text-sm">Edit</p>
@@ -55,8 +57,12 @@ const Education = () => {
         
 
       </div>
-      <EduCationEditing>
-      </EduCationEditing>
+      <EduCationEditing
+          // refetch={refetch}
+          education={editingEducation}
+          refetch={refetch}
+          setEditingEducation={setEditingEducation}
+        ></EduCationEditing>
     </div>
   );
 };
