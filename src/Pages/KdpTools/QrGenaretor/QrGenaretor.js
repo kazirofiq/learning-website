@@ -9,27 +9,27 @@ const QrGenaretor = () => {
         setQrData(e.target.value)
     };
 
-    // const handleDownload = () => {
-    //     fetch(qrData)
-    //         .then(response => response.blob())
-    //         .then(blob => saveAs(blob, 'image.png'))
-    //         .catch(error => console.error(error));
-    // };
-
-
     const handleDownload = () => {
-        // Generate download with use canvas and stream
-        const canvas = document.getElementById("qr-gen");
-        const pngUrl = canvas
-            .toDataURL("image/png")
-            .replace("image/png", "image/octet-stream");
-        let downloadLink = document.createElement("a");
-        downloadLink.href = pngUrl;
-        downloadLink.download = `${qrData}.png`;
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
+        fetch(qrData)
+            .then(response => response.blob())
+            .then(blob => saveAs(blob, 'image.png'))
+            .catch(error => console.error(error));
     };
+
+
+    // const handleDownload = () => {
+    // // Generate download with use canvas and stream
+    //     const canvas = document.getElementById("qr-gen");
+    //     const pngUrl = canvas
+    //         .toDataURL("image/png")
+    //         .replace("image/png", "image/octet-stream");
+    //     let downloadLink = document.createElement("a");
+    //     downloadLink.href = pngUrl;
+    //     downloadLink.download = `${qrData}.png`;
+    //     document.body.appendChild(downloadLink);
+    //     downloadLink.click();
+    //     document.body.removeChild(downloadLink);
+    // };
 
     return (
         <div>
@@ -46,7 +46,7 @@ const QrGenaretor = () => {
                                 value={qrData}
                                 onChange={(e) => { handleChange(e) }}
                                 placeholder="Enter your link"
-                                className="rounded-lg input w-[152px] lg:w-[298px] border-[#C3C4E1] focus:outline-none border-[1px] text-[#333333] placeholder:text-[#333333]" />
+                                className="rounded-lg input w-[152px] lg:w-[298px] border-[#C3C4E1] focus:outline-none border-[1px] text-[#333333] placeholder:text-[#CACACA] only-of-type:text-[#333333]" />
                         </div>
                     </div>
                     <QRCode
