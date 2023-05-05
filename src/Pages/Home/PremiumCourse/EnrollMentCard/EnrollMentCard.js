@@ -61,7 +61,7 @@ const EnrollMentCard = () => {
                     </div>
                 </label>
                 <EnrollMentCardModal modalId="openEnrollMentModal" setIsChecked={setIsModalChecked}>
-                    <iframe className="w-[320px] lg:w-[730px] lg:h-[450px] h-[300px]" src={`${isModalChecked && "https://player.vdocipher.com/v2/?otp=20160313versASE323czxXBX5KQ1tFFcIliU2oeit2Js8i1KRzT2v1ubP8pDNZmr&playbackInfo=eyJ2aWRlb0lkIjoiODI1OTJkMTcxNzg4NDc0OTlhYTdiMmI1NjViNWRlZGYifQ=="}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe className="w-[320px] lg:w-[730px] lg:h-[450px] h-[300px]" src={`${isModalChecked && "https://player.vdocipher.com/v2/?otp=20160313versASE323czxXBX5KQ1tFFcIliU2oeit2Js8i1KRzT2v1ubP8pDNZmr&playbackInfo=eyJ2aWRlb0lkIjoiODI1OTJkMTcxNzg4NDc0OTlhYTdiMmI1NjViNWRlZGYifQ=="}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen="true"></iframe>
                 </EnrollMentCardModal>
                 <div className="card-body lg:px-[25px] p-3 mt-4 lg:mt-[0px]">
                     <div className=''>

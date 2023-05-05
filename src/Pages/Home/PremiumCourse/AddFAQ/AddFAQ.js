@@ -1,16 +1,32 @@
 import plus_icon from '../../../../assest/admin_dashboard/add_faq/plus_icon.png'
 import menu_icon from '../../../../assest/admin_dashboard/add_faq/Menu.png'
-import draft from '../../../../assest/admin_dashboard/add_faq/draft.png'
-import { FaArrowRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './AddFAQ.css'
 import { useState } from 'react';
-import EditFAQModal from '../EditFAQModal/EditFAQModal';
 import Buttons from '../../../CreateCourse/Buttons/Buttons';
 
 const AddFAQ = () => {
+    const { courseId } = useParams()
+    const [faq, setFaq] = useState({
+        courseId,
+        faq: [
+            {
+                que: "",
+                answer: ""
+            }
+        ]
+    });
 
-    const [faq, setFaq] = useState(null);
+    const addFAQ = () => {
+        setFaq(prev => {
+            return {
+                courseId,
+                faq: [
+                    ...prev.faq[prev.faq.length]
+                ]
+            }
+        })
+    }
 
     return (
         <section className='w-[964px] bg-[#FFFFFF] rounded-[12px] custom_shadow'>
@@ -20,17 +36,17 @@ const AddFAQ = () => {
                         <p className='text-[#1B1D48] text-[18px] leading-[27px] font-semibold poppins'>Frequently Asked Question</p>
                     </div>
                     <div className='flex gap-3'>
-                        <label
+                        {/* <label
                             htmlFor="editFAQModal"
                             className='flex gap-2 text-sm leading-[21px] py-2 px-5 rounded-[10px] text-[#3D419F] font-normal poppins border-[1px] border-solid border-[#3D419F]'>
                             <p className=' '>Edit FAQ</p>
-                        </label>
-                        <Link>
+                        </label> */}
+                        <span onClick={addFAQ}>
                             <div className='flex gap-2 text-sm leading-[21px] py-2 px-5 rounded-[10px] text-[#3D419F] font-normal poppins border-[1px] border-solid border-[#3D419F]'>
                                 <img src={plus_icon} alt="" />
                                 <p className=' '>Add FAQ</p>
                             </div>
-                        </Link>
+                        </span>
                     </div>
                 </div>
 
@@ -54,7 +70,7 @@ const AddFAQ = () => {
                                     />
                                 </div>
 
-                                <div className="collapse collapse-arrow mt-4">
+                                {/* <div className="collapse collapse-arrow mt-4">
                                     <input type="checkbox" className="peer" />
 
                                     <div className="flex gap-3 items-center rounded-[10px] bg-[#F8F8FF] collapse-title text-[#1B1D48] h-[49px] lg:h-[61px]">
@@ -103,33 +119,18 @@ const AddFAQ = () => {
                                         placeholder="Type here"
                                     />
 
-                                </div>
+                                </div> */}
                                 <div>
-                                    <Buttons setRoute={""} text={"Published"} />
+                                    <Buttons setRoute={""} text={"Publish Course"} />
                                 </div>
-                                {/* <div className='flex gap-5 mt-8 justify-center'> */}
-                                    {/* <Link>
-                                        <div className='flex gap-2 items-center h-[48px] text-sm leading-[21px] py-2 px-5 rounded-[10px] text-[#333333] font-medium poppins border-[1px] border-solid border-[#333333]'>
-                                            <img src={draft} alt="" className='w-[17.2px] h-[17.2px]' />
-                                            <p className=' '>Save as Draft</p>
-                                        </div>
-                                    </Link> */}
-                                    {/* <Link> */}
-                                        {/* <div className='flex justify-between gap-2 items-center h-[48px] text-sm bg-[#3D419F] leading-[21px] py-2 px-5 rounded-[10px] text-white font-medium poppins border-[1px] border-solid border-[#3D419F]'> */}
-                                            {/* <p className=' '>Published</p> */}
-                                            {/* <img src={right_arrow} alt="" /> */}
-                                            {/* <FaArrowRight /> */}
-                                        {/* </div> */}
-                                    {/* </Link> */}
-                                {/* </div> */}
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <EditFAQModal
+            {/* <EditFAQModal
                 setFaq={setFaq}
-            ></EditFAQModal>
+            ></EditFAQModal> */}
         </section>
     );
 };

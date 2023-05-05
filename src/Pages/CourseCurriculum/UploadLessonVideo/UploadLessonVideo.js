@@ -1,34 +1,19 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import UploadImgIcon from "../../../assest/icon/Cloud-upload.png";
 import redVideoIcon from "../../../assest/icon/video-camera-red.png";
 import redCross from "../../../assest/icon/Cross-red.png";
 import Cross from "../../../assest/icon/Cross.png";
 import videoIcon from "../../../assest/icon/video-camera.png";
+import { server } from '../../../variables/server';
 
-const UploadLessonVideo = ({ lesson, setLessons }) => {
+const UploadLessonVideo = ({ lesson, setLessonsData }) => {
     const [videoStatus, setVideoStatus] = useState(0);
     const [videoFileInfo, setVideoFileInfo] = useState("");
     const [videoError, setVideoError] = useState("");
     const [isVideoUploading, setIsVideoUploading] = useState(false);
     const [isVideoUploaded, setIsVideoUploaded] = useState(false);
-    const [videoId, setVideoId] = useState("");
     const [uploadError, setUploadError] = useState("");
-
-    useEffect(() => {
-        fetch("https://learn-with-rakib.onrender.com/reviews", {
-            method: "POST",
-            body: JSON.stringify([{
-                name: "sk"
-            }, {
-                name: "robin"
-            }])
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-            })
-    }, [])
 
     const onDrop = useCallback(acceptedFiles => {
         if (acceptedFiles[0].type.split("/")[0] !== "video") {
@@ -42,7 +27,7 @@ const UploadLessonVideo = ({ lesson, setLessons }) => {
         setVideoFileInfo(acceptedFiles[0]);
         const formData = new FormData();
         formData.append("file", acceptedFiles[0]);
-        fetch("https://learn-with-rakib.onrender.com/videos", {
+        fetch(`${server}/videos`, {
             method: "POST",
             body: formData
         })
@@ -50,8 +35,22 @@ const UploadLessonVideo = ({ lesson, setLessons }) => {
             .then(data => {
                 if (data.statusCode === 201) {
                     const time = (new Date()).getTime();
-                    setVideoId(data.videoId)
-                    // setLessons
+                    fetch(`${server}/modules/contents`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ videoId: data.videoId })
+                    })
+                        .then(res => res.json())
+                        .then(result => {
+                            setLessonsData(prevData => {
+                                const index = prevData.lessons.findIndex(prevLess => prevLess.lessonNo === lesson.lessonNo);
+                                prevData.lessons[index].number = result.insertedId;
+                                return { ...prevData };
+                            })
+                        })
+                    // setVideoId(data.videoId)
                     checkStatus(data.videoId, time);
                 }
             })
@@ -60,13 +59,14 @@ const UploadLessonVideo = ({ lesson, setLessons }) => {
                 setUploadError(err.message)
                 console.error(err)
             })
-    }, []);
+    }, [lesson, setLessonsData]);
+
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
     const checkStatus = (id, time) => {
         if (id) {
             const checkInterval = setInterval(() => {
-                fetch(`https://learn-with-rakib.onrender.com/videos/status/${id}`)
+                fetch(`${server}/videos/status/${id}`)
                     .then(res => res.json())
                     .then(data => {
                         const percent = parseInt(((new Date()).getTime() - time) * 100 * 10000 / data.upload_time)
@@ -77,6 +77,10 @@ const UploadLessonVideo = ({ lesson, setLessons }) => {
                             setIsVideoUploaded(true);
                         }
                         setVideoStatus(status);
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        clearInterval(checkInterval)
                     })
             }, 3000);
         }
@@ -147,6 +151,28 @@ const UploadLessonVideo = ({ lesson, setLessons }) => {
                 }
                 {
                     isVideoUploading && <div>
+                        <div className="card w-96 bg-base-100 shadow-md pr-4 pl-[10px] py-[10px]">
+                            <div>
+                                <div className='flex justify-between items-center'>
+                                    <div className='flex items-center'>
+                                        <img className='w-10 h-10 mr-[6px]' src={videoIcon} alt="" />
+                                        <h3 className='font-normal text-base text-[#333333]'>{videoFileInfo?.name}</h3>
+                                    </div>
+                                    <img className='cursor-pointer' src={Cross} alt="" />
+                                </div>
+                                <div className='ml-[46px]'>
+                                    <span className='font-light text-xs text-[#666666]'>{(videoFileInfo?.size / 1048576).toFixed(2)} MB</span>
+                                    <div className='flex items-center'>
+                                        <progress className="progress w-56 bg-[#E1F1EB] mr-3 progress-secondary" value={videoStatus} max="100"></progress>
+                                        <span className='text-[#333333] font-normal text-base'>{videoStatus}%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                {
+                    isVideoUploaded && <div>
                         <div className="card w-96 bg-base-100 shadow-md pr-4 pl-[10px] py-[10px]">
                             <div>
                                 <div className='flex justify-between items-center'>

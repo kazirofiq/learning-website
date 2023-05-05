@@ -1,7 +1,6 @@
 import React from 'react';
 import draftIcon from "../../../assest/icon/Group 1000003428.png";
 import continueIcon from "../../../assest/icon/buttonRight.png";
-import { Link } from 'react-router-dom';
 const Buttons = ({ setDraft, text }) => {
     return (
         <div className='flex items-center justify-center gap-x-5 mt-8 mb-8'>

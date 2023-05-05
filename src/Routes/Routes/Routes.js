@@ -249,7 +249,7 @@ const router = createBrowserRouter([
                         element: <CourseCurriculumQuiz />
                     },
                     {
-                        path: '/admindashboard/course-create/AddFAQ',
+                        path: '/admindashboard/course-create/AddFAQ/:courseId',
                         element: <AddFAQ />
                     }
                 ]

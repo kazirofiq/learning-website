@@ -1,6 +1,4 @@
 import React from 'react';
-import CreateCourseNav from './CreateCourseNav/CreateCourseNav';
-import SideCategory from './SideCategory/SideCategory';
 import CourseDetailsInput from './CourseDetailsInput/CourseDetailsInput';
 
 const CreateCourse = () => {
