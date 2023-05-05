@@ -70,7 +70,7 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId, setImage }) => {
     setVideoFileInfo(files[0]);
     const formData = new FormData();
     formData.append("file", files[0]);
-    fetch("https://learn-with-rakib.onrender.com/videos", {
+    fetch("http://localhost:5000/videos", {
       method: "POST",
       body: formData
     })
@@ -92,7 +92,7 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId, setImage }) => {
   const checkStatus = (id, time) => {
     if (id) {
       const checkInterval = setInterval(() => {
-        fetch(`https://learn-with-rakib.onrender.com/videos/status/${id}`)
+        fetch(`http://localhost:5000/videos/status/${id}`)
           .then(res => res.json())
           .then(data => {
             // console.log(isVideoUploading);
@@ -122,7 +122,6 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId, setImage }) => {
   const handleCancelVideoUpload = () => setCancelVideoUpload(true);
 
   useEffect(() => {
-    console.log("rendering");
     if (imageStatus > 1 && !isImageUploading) {
       const imageUploadInterval = setInterval(() => setImageStatus(prev => {
         if (prev < 100) {

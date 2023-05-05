@@ -5,9 +5,11 @@ import Cross from "../../../assest/icon/Cross.png";
 import UploadLessonVideo from '../UploadLessonVideo/UploadLessonVideo';
 import CourseCurriculumQuiz from '../CourseCurriculumQuiz/CourseCurriculumQuiz';
 import { useEffect } from 'react';
+import CreateAssignment from '../CreateAssignment/CreateAssignment';
 
 const Modules = ({ no, addNewModuleFields, setModulesData }) => {
     const [showQuiz, setShowQuiz] = useState(false);
+    const [showAssignment, setShowAssignment] = useState(false);
     const [showAddBtns, setShowAddBtns] = useState(false);
     const [lessons, setLessons] = useState([{ lessonNo: 1 }]);
     const [lessonsData, setLessonsData] = useState({
@@ -95,17 +97,20 @@ const Modules = ({ no, addNewModuleFields, setModulesData }) => {
                 {
                     showQuiz ? <CourseCurriculumQuiz moduleNo={no} quizNo={lessons.length + 1} setModulesData={setModulesData} /> : ""
                 }
+                {
+                    showAssignment ? <CreateAssignment moduleNo={no} lessNo={showQuiz ? lessons.length + 2 : lessons.length + 1} setModulesData={setModulesData} /> : ""
+                }
                 <div onClick={() => !showAddBtns && setShowAddBtns(true)} className='flex items-center mt-3'>
                     <img className='mr-3' src={showAddBtns ? whitePlusIcon : plusIcon} alt="" />
                     <span className={`font-normal text-base ${showAddBtns ? "text-[#C3C4E1]" : "text-[#3D419F] cursor-pointer"}`}>Add More</span>
                 </div>
                 {
                     showAddBtns &&
-                    <div className='w-[291px]'>
+                    <div className='w-[450px]'>
                         <div onClick={() => setShowAddBtns(false)} className='flex justify-end items-center'>
                             <img className='cursor-pointer' src={Cross} alt="" />
                         </div>
-                        <div className='w-[291px] h-12 border-[1px] border-[#C3C4E1] rounded-[10px] flex items-center px-4 py-3'>
+                        <div className='w-[450px] h-12 border-[1px] border-[#C3C4E1] rounded-[10px] flex items-center px-4 py-3'>
                             <div onClick={addMoreLesson} className='flex items-center cursor-pointer'>
                                 <img className='mr-3' src={plusIcon} alt="" />
                                 <span className='font-normal text-base text-[#3D419F]'>Add Lesson</span>
@@ -116,6 +121,13 @@ const Modules = ({ no, addNewModuleFields, setModulesData }) => {
                             <div onClick={() => setShowQuiz(true)} className='flex items-center cursor-pointer'>
                                 <img className='mr-3' src={plusIcon} alt="" />
                                 <span className='font-normal text-base text-[#3D419F]'>Add Quiz</span>
+                            </div>
+                            <div className='flex items-center mx-3'>
+                                <span className='font-normal text-base text-[#C3C4E1]'>or</span>
+                            </div>
+                            <div onClick={() => setShowAssignment(true)} className='flex items-center cursor-pointer'>
+                                <img className='mr-3' src={plusIcon} alt="" />
+                                <span className='font-normal text-base text-[#3D419F]'>Add Assignment</span>
                             </div>
                         </div>
                     </div>
