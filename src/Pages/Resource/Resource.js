@@ -63,7 +63,7 @@ const Resource = () => {
       <div className=" max-w-[1110px] mx-auto ">
         <div className={` ${open ? "hidden" : `${open}`} text-center pb-10`}>
           <h2 className="text-[#333333] text-3xl  font-bold pb-3">
-            Free Resource Download
+            KDP Resources
           </h2>
           <h5 className="text-[#666666] ">
             Explore more than 3,600 FREE template for download without any cost!
@@ -92,7 +92,7 @@ const Resource = () => {
                 <li tabIndex={0} className="relative md:hidden border-b-2 ">
                   <details className="group [&_summary::-webkit-details-marker]:hidden">
                     <summary className="flex cursor-pointer items-center justify-between rounded-lg  py-2 text-gray-500 hover:text-gray-700">
-                      <span className="text-[#333333] text-base  font-bold">
+                      <span className="text-[#333333] text-base font-bold">
                         {" "}
                         Sort by{" "}
                       </span>
@@ -117,21 +117,18 @@ const Resource = () => {
                       aria-label="Account Nav"
                       className="my-1  flex flex-col   transition-opacity   w-full   "
                     >
-
                       <div className="form-control">
                         <label className="cursor-pointer  flex items-center text-[#666666] text-[14px]">
                           <input type="checkbox" />
-                          <span className="pl-2"> Popular</span>
+                          <span className="pl-2">Popular</span>
                         </label>
                       </div>
                       <div className="form-control">
                         <label className="cursor-pointer  flex items-center text-[#666666] text-[14px]">
                           <input type="checkbox" />
-                          <span className="pl-2"> Recent</span>
+                          <span className="pl-2">Recent</span>
                         </label>
                       </div>
-
-
                     </nav>
                   </details>
                 </li>
@@ -201,8 +198,51 @@ const Resource = () => {
                           <span className="pl-2">Others</span>
                         </label>
                       </div>
+                    </nav>
+                  </details>
+                </li>
 
+                <li tabIndex={0} className="relative border-b-2  md:border-b-0 ">
+                  <details className="group [&_summary::-webkit-details-marker]:hidden">
+                    <summary className="flex cursor-pointer items-center justify-between rounded-lg  py-2 text-gray-500 hover:text-gray-700">
+                      <span className="text-[#333333] text-base  font-bold">
+                        {" "}
+                        License
+                      </span>
 
+                      <span className="shrink-0 transition duration-300 group-open:-rotate-180">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-5 w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </summary>
+
+                    <nav
+                      aria-label="Account Nav"
+                      className="my-1 z-50 flex flex-col  transition-opacity bottom-[] w-full "
+                    >
+                      <div className="form-control">
+                        <label className="cursor-pointer  flex items-center text-[#666666] text-[14px]">
+                          <input type="checkbox" />
+                          <span className="pl-2">Premium</span>
+                        </label>
+                      </div>
+
+                      <div className="form-control">
+                        <label className="cursor-pointer  flex items-center text-[#666666] text-[14px]">
+                          <input type="checkbox" />
+                          <span className="pl-2">Free</span>
+                        </label>
+                      </div>
                     </nav>
                   </details>
                 </li>
@@ -220,7 +260,7 @@ const Resource = () => {
                     </div>
                     <input
                       type="text"
-                      placeholder="Search "
+                      placeholder="Search Product"
                       className="input bg-[#F8F8FF] h-8 md:h-12 focus:outline-none"
                     />
 
@@ -235,7 +275,7 @@ const Resource = () => {
                       </label>
                       <ul
                         tabIndex={0}
-                        className="menu dropdown-content p-2 shadow bg-base-100 rounded-sm "
+                        className="menu dropdown-content p-2 custom_shadow bg-base-100 text-[#666666]"
                       >
                         <li>
                           <a>Popular </a>
