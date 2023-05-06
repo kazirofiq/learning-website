@@ -5,7 +5,6 @@ import twitter from '../../../../assest/mentor/social_icon/twitter.png'
 import linkedin from '../../../../assest/mentor/social_icon/linkedin.png'
 import instagram from '../../../../assest/mentor/social_icon/instagram.png'
 import { Link } from 'react-router-dom';
-import ReviewModal from '../../../Dashboard/ReviewModal/ReviewModal';
 
 const Mentor = () => {
     return (

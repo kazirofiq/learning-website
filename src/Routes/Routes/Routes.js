@@ -21,7 +21,6 @@ import Resource from "../../Pages/Resource/Resource";
 import BsrCalculetor from "../../Pages/KdpTools/BsrCalculetor/BsrCalculetor";
 import SideCategory from "../../Pages/CreateCourse/SideCategory/SideCategory";
 import CourseCurriculum from "../../Pages/CourseCurriculum/CourseCurriculum";
-import CourseCurriculumQuiz from "../../Pages/CourseCurriculum/CourseCurriculumQuiz/CourseCurriculumQuiz";
 import CreateCourse from "../../Pages/CreateCourse/CreateCourse";
 import KdpTools from "../../Pages/KdpTools/KdpTools/KdpTools";
 import RoyalCalculetor from "../../Pages/KdpTools/RoyaltyCalculetor/RoyalCalculetor";
@@ -53,6 +52,8 @@ import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/Ter
 import Planner from "../../Pages/ProfilePage/Planner/Planner";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AdminRoute from "../AdminRoute/AdminRoute";
+import CreateWorkshop from "../../Pages/CreateWorkshop/CreateWorkshop";
+import WorkshopCurriculum from "../../Pages/WorkshopCurriculum/WorkshopCurriculum";
 
 
 const router = createBrowserRouter([
@@ -102,7 +103,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><AllReviews /></PrivateRoute>
             },
             {
-                path: '/upcomingdetails',
+                path: '/upcomingdetails/:workshopId',
                 element: <PrivateRoute><UpComingDetails /></PrivateRoute>
             },
             // footer text route
@@ -245,13 +246,23 @@ const router = createBrowserRouter([
                         element: <CourseCurriculum />
                     },
                     {
-                        path: '/admindashboard/course-create/course-curriculum-quiz',
-                        element: <CourseCurriculumQuiz />
-                    },
-                    {
                         path: '/admindashboard/course-create/AddFAQ/:courseId',
                         element: <AddFAQ />
                     }
+                ]
+            },
+            {
+                path: '/admindashboard/create-workshop',
+                element: <SideCategory />,
+                children: [
+                    {
+                        path: '/admindashboard/create-workshop',
+                        element: <CreateWorkshop />
+                    },
+                    {
+                        path: '/admindashboard/create-workshop/workshop-curriculum/:workshopId',
+                        element: <WorkshopCurriculum />
+                    },
                 ]
             },
             {
@@ -264,6 +275,21 @@ const router = createBrowserRouter([
                     },
                     {
                         path: "/admindashboard/mycourse/draftcourse",
+                        element: <DraftCourse></DraftCourse>
+                    },
+
+                ]
+            },
+            {
+                path: "/admindashboard/myWorkshop",
+                element: <MyCourse></MyCourse>,
+                children: [
+                    {
+                        path: "/admindashboard/myWorkshop",
+                        element: <CourseList></CourseList>
+                    },
+                    {
+                        path: "/admindashboard/myWorkshop/draftcourse",
                         element: <DraftCourse></DraftCourse>
                     },
 
