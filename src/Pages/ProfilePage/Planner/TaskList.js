@@ -1,25 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-hot-toast';
+import React, { useContext, useEffect, useState } from 'react';
 import { MdDelete } from 'react-icons/md';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
-const TaskList = ({ data }) => {
+const TaskList = ({ data, taskList, dateFormate, _id }) => {
     //   console.log(data)
     const [selectedText, setSelectedText] = useState('');
     const [isChecked, setIsChecked] = useState(data?.selecTed);
     // console.log(isChecked)
+    const { user } = useContext(AuthContext);
+    const { displayName, email, uid } = user;
 
-    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
+    const taskListData = {
+        [dateFormate]: [{
+            taskList: taskList?.taskList,
+            selecTed: false,
+            userName: displayName,
+            email: email,
+            userId: uid,
+        }]
+    }
+
 
     //   task list update
-    const setSelectedData = (_id) => {
-        if (selectedText.length && _id) {
+    const setSelectedData = (id) => {
+        if (selectedText.length && id) {
             const taskListData = {
                 taskList: selectedText,
                 selecTed: !isChecked,
             }
-            fetch(`http://localhost:5000/task-list/${_id}`, {
+            fetch(`http://localhost:5000/task-list/${id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"
@@ -39,7 +49,7 @@ const TaskList = ({ data }) => {
     }
 
     // task list delete
-    const taskListDelete = (_id) => {
+    const taskListDelete = (id) => {
         Swal.fire({
             title: 'Are you sure?',
             text: "You want ot delete it",
@@ -50,11 +60,12 @@ const TaskList = ({ data }) => {
             confirmButtonText: 'Yes, Delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/task-list/${_id}`, {
+                fetch(`http://localhost:5000/task-list/${_id}/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(data => {
+                        console.log(data);
                         if (data?.acknowledged) {
                             Swal.fire(
                                 'Deleted!',
@@ -68,14 +79,14 @@ const TaskList = ({ data }) => {
     }
 
     return (
-        <div key={data?._id} className=' py-2  px-3 border-b-2 grid grid-cols-[1fr_20px] items-center'>
+        <div key={data?._id} className=' py-2  px-3 border-b-2 items-center'>
             <div className="form-control">
                 <label onClick={() => setSelectedData(data?._id)} className="cursor-pointer  flex items-center text-[#666666] text-[14px]">
-                    <input type="checkbox" onClick={(e) => setIsChecked(e.target.checked)} defaultChecked={data?.selecTed && "checked"} />
+                    {/* <input type="checkbox" onClick={(e) => setIsChecked(e.target.checked)} defaultChecked={data?.selecTed && "checked"} /> */}
                     <span onClick={(e) => setSelectedText(e.target.innerText)} className="pl-2">{data?.taskList}</span>
                 </label>
             </div>
-            <MdDelete onClick={() => taskListDelete(data?._id)} className='text-gray-900 mx-auto hover:text-red-600 cursor-pointer' />
+
         </div>
     );
 };
