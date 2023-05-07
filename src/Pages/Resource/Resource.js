@@ -1,18 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState , useEffect} from "react";
 
 import { AiOutlineSearch } from "react-icons/ai";
 
 import { BiChevronLeft } from "react-icons/bi";
 import { AiOutlineBars } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
-
 import ResourceDetails from "./ResourceDetails/ResourceDetails";
-<<<<<<< HEAD
 import { useQuery } from "react-query";
 import { AuthContext } from "../../contexts/AuthProvider";
-=======
-import { useEffect } from "react";
->>>>>>> 874a28a1b5bc7a55ba9abfcb4cf8245623d86409
 
 const Resource = () => {
   const [open, setOpen] = useState("");
@@ -22,13 +17,13 @@ const Resource = () => {
   const [search, setSearch] = useState("");
   const { user } = useContext(AuthContext);
   const { data: allresouces = [], refetch } = useQuery({
-    queryKey: ["resources"],
+    queryKey: ["resources", catWiseResource],
     queryFn: () =>
       fetch(`http://localhost:5000/resource/${catWiseResource}`).then((res) =>
         res.json()
       ),
   });
-  console.log(user)
+  
   //handle single Resourch
   const handleSingleResource = (resource) =>{
     return setSingleResource(resource)
@@ -39,7 +34,7 @@ const Resource = () => {
     setCatWiseResource(categoryId);
   };
   const handleLicenseString = (licenseId) =>{
-    setLicenseWiseResource(licenseId)
+    setCatWiseResource(licenseId)
   }
   const handleButton = (value) => {
     setOpen(value);
@@ -77,11 +72,11 @@ const Resource = () => {
   const licenses = [
     {
       categoryName: "Premium",
-      categoryId: "100001",
+      categoryId: "10001",
     },
     {
       categoryName: "Free",
-      categoryId: "100002",
+      categoryId: "10002",
     },
   ];
 
