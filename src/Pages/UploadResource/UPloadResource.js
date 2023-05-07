@@ -22,12 +22,16 @@ const UPloadResource = () => {
   const [selectedItemId, setSelectedItemId] = useState("");
   const [selectedLicenseId, setSelectedLicenseId] = useState("");
   const [selectedItemLicense, setSelectedItemLicense] = useState("Select");
-
-  
+ 
   const [droptImg, setDropImg] = useState([])
+  
+  let imgSize = parseInt(droptImg[0]?.size / 1000000)
+
+
+
 
   
-  console.log(selectedItemId )
+  
 
   // onDrop Npm
   const onDrop = useCallback((acceptedFiles) => {
@@ -91,8 +95,8 @@ const UPloadResource = () => {
     setSelectedLicenseId(licenseId)
     setIsOpenLicense(false);
   };
-  const image = droptImg[0]
-  console.log(image)
+  
+ 
   const handleUploadResource = (e) => {
     e.preventDefault()
      const resourcTitle = e.target.resourcTitle.value
@@ -101,6 +105,7 @@ const UPloadResource = () => {
      const description = e.target.description.value
 
     const image = droptImg[0]
+    console.log(image)
     const formData = new FormData()
     formData.append('image', image)
 
@@ -111,7 +116,7 @@ const UPloadResource = () => {
     })
       .then(res => res.json())
       .then(imgData => {
-        console.log(imgData)
+        
         if (imgData.success) {
           const post = {
             title : resourcTitle,
@@ -332,7 +337,7 @@ const UPloadResource = () => {
               className="label text-[#666666] font-normal text-sm"
               htmlFor="upload-file"
             >
-              Upload File
+             Upload thumbnail 
             </label>
             <div>
               <div className="grid grid-cols-2 gap-x-6">
@@ -360,15 +365,28 @@ const UPloadResource = () => {
                             Browse
                           </span>
                         </p>
-                        <p className="font-light text-xs text-[#666666]">
+                        {
+                          droptImg[0] 
+                          ?(
+                            <p className="font-light text-xs text-[#666666]">
+                          file Name :{droptImg[0]?.name}
+                        </p>
+                          )
+                          :
+                          (
+                            <p className="font-light text-xs text-[#666666]">
                           Video, Pdf or Text file (max. 2.0 GB)
                         </p>
+                          )
+
+                        }
+                        
                       </div>
                     </div>
                   )}
                 </div>
                 <div>
-                  <div className="card w-96 bg-base-100 shadow-md pr-4 pl-[10px] py-[10px]">
+                  <div className="card hidden w-96 bg-base-100 shadow-md pr-4 pl-[10px] py-[10px]">
                     <div>
                       <div className="flex justify-between items-center">
                         <div className="flex items-center">
@@ -378,11 +396,12 @@ const UPloadResource = () => {
                             alt=""
                           />
                           <div className="mt-[18px]">
+                            
                             <h3 className="font-normal text-base text-[#E8291D]">
                               Upload failed, try again
                             </h3>
                             <p className="mt-[2px] text-[#E8291D] font-light text-xs">
-                              Graphic Design Bootcamp.Mp4
+                              {droptImg[0]?.name}
                             </p>
                             <p className="text-base font-normal text-[#E8291D]">
                               Try again
@@ -393,7 +412,11 @@ const UPloadResource = () => {
                       </div>
                     </div>
                   </div>
-                  <div>
+                  {
+                    droptImg[0]?.name 
+                    ?
+                    <>
+                    <div>
                     <div>
                       <div className="card w-96 bg-base-100 shadow-md pr-4 pl-[10px] py-[10px] mt-4">
                         <div>
@@ -405,15 +428,25 @@ const UPloadResource = () => {
                                 alt=""
                               />
                               <div className="flex items-center justify-between w-full">
-                                <p className="text-[#333333] font-normal text-base">
-                                  Kdp Interior Book Cover.Jpg
-                                </p>
+                             
+                                    <p className="text-[#333333] font-normal text-base">
+                                    {
+                                      droptImg[0]?.name
+                                    }
+                                  </p>
+                                 
+                                
                                 <img src={checkedIcon} alt="" />
                               </div>
                             </div>
                             <div className="flex flex-col ml-[31px]">
+                              
+                                
+                              
                               <span className="text-[#666666] font-light text-xs">
-                                5 MB
+                                {
+                                  imgSize
+                                }MB
                               </span>
                               <div className="flex items-center">
                                 <progress
@@ -431,11 +464,64 @@ const UPloadResource = () => {
                       </div>
                     </div>
                   </div>
+                    </>
+                    :
+                    <>
+                    <div>
+                    <div>
+                      <div className="card w-96 bg-base-100 shadow-md pr-4 pl-[10px] py-[10px] mt-4">
+                        <div>
+                          <div className="rounded-xl mt-3">
+                            <div className="flex items-center">
+                              <img
+                                className="w-[26px] h-[26px] mr-[5px]"
+                                src={imgIcon}
+                                alt=""
+                              />
+                              <div className="flex items-center justify-between w-full">
+                             
+                                    <p className="text-[#333333] font-normal text-base">
+                                    {
+                                      droptImg[0]?.name
+                                    }
+                                  </p>
+                                 
+                                
+                                <img src={checkedIcon} alt="" />
+                              </div>
+                            </div>
+                            <div className="flex flex-col ml-[31px]">
+                              
+                                
+                              
+                              <span className="text-[#666666] font-light text-xs">
+                                {
+                                  imgSize || 0
+                                }MB
+                              </span>
+                              <div className="flex items-center">
+                                <progress
+                                  className="progress w-[410px] bg-[#fff] mr-3 progress-accent"
+                                  value="0"
+                                  max="100"
+                                ></progress>
+                                <span className="text-[#333333] font-normal text-base">
+                                  0%
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    </>
+                  }
                 </div>
               </div>
               <div className="my-8">
                 <div className="flex items-center justify-center gap-x-5 mt-8 mb-8">
-                  <button className="text-[#333333] border-[1px] border-[#333333] w-[179px] h-[48px] rounded-[10px] flex items-center justify-center">
+                  <button className="text-[#333333] hidden border-[1px] border-[#333333] w-[179px] h-[48px] rounded-[10px] flex items-center justify-center">
                     <img className="mr-[13px]" src={draftIcon} alt="" />
                     Save as Draft
                   </button>
