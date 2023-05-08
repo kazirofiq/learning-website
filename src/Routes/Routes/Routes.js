@@ -103,7 +103,8 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><AllReviews /></PrivateRoute>
             },
             {
-                path: '/upcomingdetails/:workshopId',
+                // /:workshopId
+                path: '/upcomingdetails',
                 element: <PrivateRoute><UpComingDetails /></PrivateRoute>
             },
             // footer text route

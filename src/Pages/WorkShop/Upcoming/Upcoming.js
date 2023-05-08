@@ -54,7 +54,7 @@ const Upcoming = () => {
                                     <h2 className=" font-semibold text-base lg:text-lg leading-6 text-[#333333]">How To Publish A Book On Amazon: The Full ...</h2>
                                     <p className='font-normal text-xs lg:text-sm md:text-sm leading-[18px] text-[#333333] mt-[8px] lg:mt-3 md:mt-3'>Rakib Ahmed</p>
                                     <div className="">
-                                        <p className='font-semibold lg:font-bold text-sm lg:text-base leading-6 text-[#333333] mt-3 lg:mt-4 md:mt-4'>$150</p>
+                                        <p className='font-semibold lg:font-bold text-sm lg:text-base leading-6 text-[#333333] mt-3 lg:mt-4 md:mt-4'>৳500</p>
                                     </div>
                                 </div>
                             </div>
