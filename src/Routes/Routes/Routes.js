@@ -104,7 +104,7 @@ const router = createBrowserRouter([
             },
             {
                 // /:workshopId
-                path: '/upcomingdetails',
+                path: '/upcomingdetails/:workshopId',
                 element: <PrivateRoute><UpComingDetails /></PrivateRoute>
             },
             // footer text route
