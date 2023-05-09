@@ -149,7 +149,7 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li className="w-[136px] mx-4 my-2 border rounded-lg hover:text-white">
-                                <Link className="px-3 py-2 bg-[#FFFFFF] hover:bg-[#3D419F] hover:text-white text-[#333333]">
+                                <Link to="student-dashboard" className="px-3 py-2 bg-[#FFFFFF] hover:bg-[#3D419F] hover:text-white text-[#333333]">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -490,7 +490,7 @@ const Navbar = () => {
                                         </Link>
                                     </li>
                                     <li className="w-[136px] mx-4 my-2 border rounded-lg hover:text-white">
-                                        <Link className="px-3 py-2 bg-[#FFFFFF] hover:bg-[#3D419F] hover:text-white text-[#333333]">
+                                        <Link to="student-dashboard" className="px-3 py-2 bg-[#FFFFFF] hover:bg-[#3D419F] hover:text-white text-[#333333]">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 fill="none"

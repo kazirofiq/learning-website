@@ -11,23 +11,26 @@ const MyCourses = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`)
-            .then(res => res.json())
-            .then(user => {
-                user?.enrolledCourses?.map(course => {
-                    fetch(`http://localhost:5000/courses/${course.id}`)
-                        .then(res => res.json())
-                        .then(courseInfo => {
-                            courseInfo.completed = course.completed
-                            setCourses([
-                                ...courses,
-                                courseInfo
-                            ])
-                        })
-                        .catch(err => console.error(err))
+        if (user?.uid) {
+            fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`)
+                .then(res => res.json())
+                .then(user => {
+                    user?.enrolledCourses?.map(courseInfo => {
+                        console.log(courseInfo);
+                        fetch(`http://localhost:5000/courses/${courseInfo.id}`)
+                            .then(res => res.json())
+                            .then(course => {
+                                course.completed = courseInfo.completed
+                                setCourses([
+                                    ...courses,
+                                    course
+                                ])
+                            })
+                            .catch(err => console.error(err))
+                    })
                 })
-            })
-            .catch(err => console.error(err))
+                .catch(err => console.error(err))
+        }
     }, [user?.uid]);
 
     useEffect(() => {
