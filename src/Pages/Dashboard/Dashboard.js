@@ -11,7 +11,7 @@ const Dashboard = () => {
   const { selectedOption } = useContext(VedioContext)
 
   return (
-    <div className='lg:-mt-20 -mt-0'>
+    <div className=''>
       <div>
         <div className='lg:flex hidden items-center content-center justify-between w-[732px] mt-[29px]'>
           <div className=''>

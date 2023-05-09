@@ -47,7 +47,7 @@ const MyCourses = () => {
                                 <div className='flex items-center gap-x-3'>
                                     <progress className="progress progress-secondary w-56 mt-1" value={mycourse.completed} max="100"></progress><span>{mycourse.completed}%</span>
                                 </div>
-                                <Link to='/vedio'>
+                                <Link to='/batch-1'>
                                     <div className="w-full bg-[#3D419F] rounded-lg mt-[16px]">
                                         <button className='px-[74.5px] py-[8px] text-white text-[14px] lg:text-[16px] font-medium'>Continue</button>
                                     </div>

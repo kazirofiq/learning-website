@@ -6,7 +6,7 @@ import Module from './Module';
 import { VedioContext } from '../../contexts/VedioProvider';
 const MyClasses = () => {
 
-  const { courseSummary } = useContext(VedioContext)
+  const { allModules } = useContext(VedioContext)
 
   return (
     <div>
@@ -29,7 +29,7 @@ const MyClasses = () => {
               <div className=''>
                 <scrollable-component class="my-content">
                   <div className=''>
-                    {courseSummary.map(modules => <Module
+                    {allModules.map(modules => <Module
                       modules={modules}
                     ></Module>)}
                   </div>

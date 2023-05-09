@@ -209,21 +209,31 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: '/vedio',
+        path: '/batch-1',
         element: <MyCourseLayout></MyCourseLayout>,
         children: [
             {
-                path: '/vedio',
-                element: <Vedio />
+                path: '/batch-1/video/:number',
+                element: <Vedio />,
+                loader: async ({ params }) => {
+                    return fetch(`http://localhost:5000/batch-1/${params.number}`)
+                },
             },
             {
-                path: '/vedio/assignment',
+                path: '/batch-1/quiz/:number',
+                element: <Quiz></Quiz>,
+                loader: async ({ params }) => {
+                    return fetch(`http://localhost:5000/batch-1/${params.number}`)
+                },
+            },
+            {
+                path: '/batch-1/assignment/:number',
+                loader: async ({ params }) => {
+                    return fetch(`http://localhost:5000/batch-1/${params.number}`)
+                },
                 element: <Assignment></Assignment>
             },
-            {
-                path: '/vedio/quiz',
-                element: <Quiz></Quiz>
-            },
+
         ]
     },
     {
