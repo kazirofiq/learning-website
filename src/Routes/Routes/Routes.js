@@ -96,8 +96,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/resource',
-                element: <PrivateRoute><Resource /></PrivateRoute>
+                element: <Resource />
             },
+
             {
                 path: '/allreviews',
                 element: <PrivateRoute><AllReviews /></PrivateRoute>
@@ -238,11 +239,15 @@ const router = createBrowserRouter([
     },
     {
         path: '/admindashboard',
-        element: <AdminRoute><AdmindashboardLayout></AdmindashboardLayout></AdminRoute>,
+        element: <AdmindashboardLayout />,
         children: [
             {
                 path: '/admindashboard',
                 element: <AdminDashboard></AdminDashboard>
+            },
+            {
+                path: '/admindashboard/upload-Resource',
+                element: <UPloadResource />
             },
             {
                 path: '/admindashboard/course-create',
@@ -259,9 +264,13 @@ const router = createBrowserRouter([
                     {
                         path: '/admindashboard/course-create/AddFAQ/:courseId',
                         element: <AddFAQ />
-                    }
+                    },
+
+
+
                 ]
             },
+
             {
                 path: '/admindashboard/create-workshop',
                 element: <SideCategory />,
@@ -312,6 +321,7 @@ const router = createBrowserRouter([
             },
         ]
 
+
     },
     {
         path: '/student-dashboard',
@@ -329,6 +339,8 @@ const router = createBrowserRouter([
                 path: '/student-dashboard/leader-board',
                 element: <LeaderBoard></LeaderBoard>
             },
+
+
         ]
     },
 ])

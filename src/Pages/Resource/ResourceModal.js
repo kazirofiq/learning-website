@@ -8,6 +8,7 @@ import TW from '../../assest/amazing_resource/shareiconTw.png'
 import { Link } from 'react-router-dom';
 
 const Resourcemodal = () => {
+   
     return (
     
         <div>
