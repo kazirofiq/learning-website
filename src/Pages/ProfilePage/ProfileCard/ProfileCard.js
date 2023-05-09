@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import profileImg from '../../../assest/Profile_image/Avatar.png';
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowTopRightOnSquareIcon, ClipboardIcon, ClockIcon, UserIcon } from '@heroicons/react/24/solid'
 const percentage = 60;
 const customColor = '#3D419F';

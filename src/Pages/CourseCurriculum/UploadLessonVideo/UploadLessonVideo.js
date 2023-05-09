@@ -5,6 +5,7 @@ import redVideoIcon from "../../../assest/icon/video-camera-red.png";
 import redCross from "../../../assest/icon/Cross-red.png";
 import Cross from "../../../assest/icon/Cross.png";
 import videoIcon from "../../../assest/icon/video-camera.png";
+import { server } from '../../../variables/server';
 
 const UploadLessonVideo = ({ lesson, setLessonsData }) => {
     const [videoStatus, setVideoStatus] = useState(0);
@@ -26,7 +27,7 @@ const UploadLessonVideo = ({ lesson, setLessonsData }) => {
         setVideoFileInfo(acceptedFiles[0]);
         const formData = new FormData();
         formData.append("file", acceptedFiles[0]);
-        fetch("http://localhost:5000/videos", {
+        fetch(`${server}/videos`, {
             method: "POST",
             body: formData
         })
@@ -34,7 +35,7 @@ const UploadLessonVideo = ({ lesson, setLessonsData }) => {
             .then(data => {
                 if (data.statusCode === 201) {
                     const time = (new Date()).getTime();
-                    fetch("http://localhost:5000/modules/contents", {
+                    fetch(`${server}/modules/contents`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -43,10 +44,10 @@ const UploadLessonVideo = ({ lesson, setLessonsData }) => {
                     })
                         .then(res => res.json())
                         .then(result => {
-                            setLessonsData(prevLessons => {
-                                const index = prevLessons.findIndex(prevLess => prevLess.lessonNo === lesson.lessonNo);
-                                prevLessons[index].number = result.insertedId;
-                                return [...prevLessons];
+                            setLessonsData(prevData => {
+                                const index = prevData.lessons.findIndex(prevLess => prevLess.lessonNo === lesson.lessonNo);
+                                prevData.lessons[index].number = result.insertedId;
+                                return { ...prevData };
                             })
                         })
                     // setVideoId(data.videoId)
@@ -65,7 +66,7 @@ const UploadLessonVideo = ({ lesson, setLessonsData }) => {
     const checkStatus = (id, time) => {
         if (id) {
             const checkInterval = setInterval(() => {
-                fetch(`http://localhost:5000/videos/status/${id}`)
+                fetch(`${server}/videos/status/${id}`)
                     .then(res => res.json())
                     .then(data => {
                         const percent = parseInt(((new Date()).getTime() - time) * 100 * 10000 / data.upload_time)
@@ -76,6 +77,10 @@ const UploadLessonVideo = ({ lesson, setLessonsData }) => {
                             setIsVideoUploaded(true);
                         }
                         setVideoStatus(status);
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        clearInterval(checkInterval)
                     })
             }, 3000);
         }

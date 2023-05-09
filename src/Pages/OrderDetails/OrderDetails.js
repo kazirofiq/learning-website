@@ -103,10 +103,10 @@ const OrderDetails = () => {
                 <p>Course Price</p>
                 <p>৳15000</p>
               </div>
-              <div className="flex justify-between  text-[1rem] text-[#333333]">
+              {/* <div className="flex justify-between  text-[1rem] text-[#333333]">
                 <p>Discount</p>
                 <p>-৳5000</p>
-              </div>
+              </div> */}
               <h5 className="text-[#1B1D48] font-bold text-xl pt-4 pb-3">
                 Coupon
               </h5>
@@ -127,7 +127,7 @@ const OrderDetails = () => {
               <div className="flex justify-between text-xl font-bold py-6 text-[#606280] ">
                 <p>Total amount</p>
                 {
-                  coupon?.discount ? <p>৳{10000 - (10000 * Number(coupon?.discount) / 100)}</p> : <p>৳10000</p>
+                  coupon?.discount ? <p>৳{15000 - (15000 * Number(coupon?.discount) / 100)}</p> : <p>৳15000</p>
                 }
               </div>
               {

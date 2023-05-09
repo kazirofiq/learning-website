@@ -46,6 +46,8 @@ const SignUp = () => {
               email: data.email,
               phone: data.phone,
               uid: user.uid,
+              enrolledCourses: [],
+              enrolledWorkshops: [],
               studentId: `LWR-${(new Date()).getTime()}`
             })
           })

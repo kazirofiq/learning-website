@@ -179,7 +179,7 @@ const CourseDetailsInput = () => {
         error && <p className='text-center text-red-600 font-bold my-5'>{error}</p>
       }
       <div>
-        <Buttons setDraft={setDraft} text={'Save & Continue'} />
+        <Buttons setDraft={setDraft} text={'Save & Continue'} draft={true} />
       </div>
     </form>
   );

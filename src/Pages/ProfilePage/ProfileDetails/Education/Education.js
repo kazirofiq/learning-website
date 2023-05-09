@@ -1,11 +1,9 @@
 import { PencilSquareIcon } from '@heroicons/react/24/solid';
 import React from 'react';
 import { useState } from 'react';
-
 import { useContext } from 'react';
 import { AuthContext } from '../../../../contexts/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
-import EducationEdit from '../../ProfileDetailsEdit/EducationEdit/EducationEdit';
 import EduCationEditing from '../../ProfileDetailsEdit/EduCationEditing/EduCationEditing';
 
 
