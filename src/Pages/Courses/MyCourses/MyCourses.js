@@ -66,9 +66,11 @@ const MyCourses = () => {
                         <div className='flex items-center gap-x-3'>
                             <progress className="progress progress-secondary w-56 mt-1" value="0" max="100"></progress><span>0%</span>
                         </div>
-                        <div className="w-full bg-[#afb1ef] rounded-lg mt-[16px]">
-                            <button className='px-[74.5px] py-[8px] text-white text-[14px] lg:text-[16px] font-medium cursor-default'>Continue</button>
-                        </div>
+                        <Link to='/batch-1'>
+                            <div className="w-full bg-[#3D419F] rounded-lg mt-[16px]">
+                                <button className='px-[74.5px] py-[8px] text-white text-[14px] lg:text-[16px] font-medium'>Continue</button>
+                            </div>
+                        </Link>
                     </div>
                 </div>
 
