@@ -6,8 +6,12 @@ import graphics_banner from "../../assest/OrderDetails/graphics_banner.png";
 import { Link, useSearchParams } from "react-router-dom";
 import SuccesModal from "../Modal/SuccesModal/SuccesModal";
 import { AuthContext } from "../../contexts/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const OrderDetails = () => {
+
+  useTitle('');
+
   const { user } = useContext(AuthContext);
   const [isChecked, setIsChecked] = useState(false);
   const [isPaid, setIsPaid] = useState(false);

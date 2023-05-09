@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { VedioContext } from '../../../contexts/VedioProvider';
+import useTitle from '../../../hooks/useTitle';
 
 const Vedio = () => {
 

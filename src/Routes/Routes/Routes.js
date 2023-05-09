@@ -332,7 +332,7 @@ const router = createBrowserRouter([
                 element: <StudentDashboard></StudentDashboard>
             },
             {
-                path: '/student-dashboard/analytic',
+                path: '/student-dashboard/analytics',
                 element: <StudentMarks></StudentMarks>
             },
             {

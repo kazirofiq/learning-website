@@ -17,10 +17,10 @@ const StudentNav = () => {
 
                 <ul className="menu w-[224px] mx-auto p-2 rounded-box">
                     <li>
-                        <Link to="/student-dashboard/analytic">
+                        <Link to="/student-dashboard/analytics">
                             <div className="flex gap-4 items-center hover:">
                                 <img src={analytic} alt="" />
-                                <h2>Analytic</h2>
+                                <h2>Analytics</h2>
                             </div>
                         </Link>
                     </li>

@@ -5,8 +5,11 @@ import bgReactangle3 from '../../../assest/workshop/Rectangle 3.png'
 import bgReactangle4 from '../../../assest/workshop/Rectangle 4.png'
 import monitor from '../../../assest/workshop/monitor.png'
 import { useEffect } from 'react';
+import useTitle from '../../../hooks/useTitle';
 
 const FreeCorses = () => {
+
+    useTitle('Free Course - ');
 
     useEffect(() => {
         window.scrollTo(0, 0)

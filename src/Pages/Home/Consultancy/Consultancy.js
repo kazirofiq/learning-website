@@ -4,8 +4,10 @@ import bgRound from "../../../assest/bg-img/bg-round.png";
 import forntCon from "../../../assest/bg-img/Frame 37951.png";
 import forntsmal from "../../../assest/bg-img/frame-smal.png";
 import { Link } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 
 const Consultancy = () => {
+
   return (
     <section className="bg-[#F8F8FF]">
       <div className="hero lg:pb-[87px] lg:pt-[13px] ">

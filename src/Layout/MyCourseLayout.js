@@ -6,8 +6,12 @@ import Breadcrumb from '../Pages/Others/Breadcrumb/Breadcrumb';
 import MyClasses from '../Pages/MyClasses/MyClasses';
 import Dashboard from '../Pages/Dashboard/Dashboard';
 import ReviewModal from '../Pages/Dashboard/ReviewModal/ReviewModal';
+import useTitle from '../hooks/useTitle';
 
 const MyCourseLayout = () => {
+
+    useTitle('Module Detail - ');
+
     return (
         <>
             <Navbar></Navbar>

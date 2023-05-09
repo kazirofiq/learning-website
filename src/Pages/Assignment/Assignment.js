@@ -1,8 +1,12 @@
 import React from 'react';
 import assignment from '../../assest/assignment/Assignment Vector.png'
 import './Assignment.css';
+import useTitle from '../../hooks/useTitle';
 
 const Assignment = () => {
+
+    useTitle('Assignment - ');
+
     return (
         <div className=' w-[320px] lg:w-[732px] lg:mt-0 mt-8 h-[378px] lg:h-[572px] mx-5 lg:mx-0 bg-white custom_shadow' >
             <p className='lg:pt-10 pt-6 poppins text-xl font-medium leading-[30px] tracking-wider text-[#1B1D48] text-center'>Time Remaining</p>

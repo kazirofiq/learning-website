@@ -3,10 +3,14 @@ import { BiChevronDown } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import rating from '../../../assest/learner_review/Vector.png'
 import Reviews from '../Reviews/Reviews';
+import useTitle from '../../../hooks/useTitle';
 // import './AllReviews.css'
 
 
 const AllReviews = () => {
+
+    useTitle('Reviews - ');
+
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
     const toggling = () => setIsOpen(!isOpen);
