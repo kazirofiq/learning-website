@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import profileImg from '../../../assest/Profile_image/Avatar.png';
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { Link } from 'react-router-dom';
 import { ArrowTopRightOnSquareIcon, ClipboardIcon, ClockIcon, UserIcon } from '@heroicons/react/24/solid'
 import profile from '../../../assest/Profile_image/profile.svg'
+import { AuthContext } from '../../../contexts/AuthProvider';
 const percentage = 60;
 const customColor = '#3D419F';
 const styles = {
@@ -25,11 +26,14 @@ const textStyle = {
 
 
 const ProfileCard = () => {
+  const { user } = useContext(AuthContext)
   return (
     <div className="card w-[255px] bg-base-100 shadow-xl poppins lg:mt-[84px] md:mt-[50px] mt-8">
-      <figure className="px-10 pt-10">
-        <img src={profileImg} alt="profile_image" className="rounded-xl" />
-      </figure>
+      <div className="avatar">
+        <div className="w-24  mx-auto mt-3 rounded-full">
+          <img src={user?.photoURL} alt="profile_image" className="rounded-full" />
+        </div>
+      </div>
       <div className='px-[59px] mt-4'>
         <h1 className='text-[#1B1D48] lg:font-semibold lg:text-xl'>Rasel Mondol</h1>
         <div className='flex justify-center items-center mt-4'>

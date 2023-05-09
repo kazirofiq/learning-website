@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import rightArrow from "../../../../assest/icon/right arrow.png";
-import { Link } from "react-router-dom";
 import AboutMeEdit from "../../ProfileDetailsEdit/AboutMeEdit/AboutMeEdit";
 import { PencilSquareIcon } from '@heroicons/react/24/solid';
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { AuthContext } from "../../../../contexts/AuthProvider";
-import EducationEdit from "../../ProfileDetailsEdit/EducationEdit/EducationEdit";
-import AddressEdit from "../../ProfileDetailsEdit/AddressEdit/AddressEdit";
 
 const AboutMe = () => {
   const { user } = useContext(AuthContext);
@@ -24,14 +20,14 @@ const AboutMe = () => {
         <h1 className="text-[#1B1D48] font-medium lg:font-semibold lg:text-base text-lg">
           About Me
         </h1>
-        <label htmlFor="editPromotionModal">
+        <label onClick={() =>setEditingAboute(student)} 
+            htmlFor="editPromotionModal">
           <div className="flex items-center gap-x-1 text-[#1B1D48] cursor-pointer">
             <PencilSquareIcon className='h-4 w-4 lg:h-5 lg:w-5' />
             <p className="font-medium lg:font-semibold lg:text-sm text-sm">Edit</p>
           </div>
         </label>
       </div>
-      <AboutMeEdit />
       <div className="lg:grid flex lg:flex-row flex-col grid-cols-2">
         <div className="mt-3">
           <label

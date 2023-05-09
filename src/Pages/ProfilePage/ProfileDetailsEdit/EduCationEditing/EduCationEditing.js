@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toast';
 import { AuthContext } from '../../../../contexts/AuthProvider';
 
-const EduCationEditing = () => {
+const EduCationEditing = ({setEditingEducation, education, refetch}) => {
   const { user } = useContext(AuthContext);
   const {
     register,
@@ -17,6 +17,7 @@ const EduCationEditing = () => {
       education: data.education,
       degree: data.degree,
       intitution: data.intitution,
+      passingYear: data.passingYear,
     };
 
     // save clients information to the database
@@ -30,10 +31,10 @@ const EduCationEditing = () => {
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
-        toast.success(`${data.name} is update successfully`);
+        toast.success(`${data.educaton} is update successfully`);
         window.location.reload()
-        // setEditingAboute(null);
-        // refetch();
+        setEditingEducation(null);
+        refetch();
       })
       .catch(err => console.error(err))
   };
@@ -49,7 +50,7 @@ const EduCationEditing = () => {
         <div className="modal pt-24">
           <div className="modal-box pt-12">
             <label
-              // onClick={() => setEditingAboute(null)}
+              
               htmlFor="editEducationModal"
               className="btn btn-sm btn-circle absolute right-2 top-2"
             >
@@ -64,7 +65,7 @@ const EduCationEditing = () => {
                   <label className='text-black'>Your Education level</label>
                   <input
                     name="education"
-                    //   defaultValue={user?.name}
+                      defaultValue={education?.education}
                     type="text"
                     // defaultValue={user?.displayName}
                     className="input input-bordered my-2 w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 text-black"
@@ -82,7 +83,7 @@ const EduCationEditing = () => {
                   <label className='text-black'>Exam/Degree Title</label>
                   <input
                     name="degree"
-                    // defaultValue={name}
+                    defaultValue={education?.degree}
                     type="text"
 
                     className="input input-bordered my-2 w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 text-black"
@@ -100,7 +101,7 @@ const EduCationEditing = () => {
                   <label className='text-black'>Institution Name</label>
                   <input
                     name="intitution"
-                    // defaultValue={name}
+                    defaultValue={education?.intitution}
                     type="text"
 
                     className="input input-bordered my-2 w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 text-black"
@@ -111,6 +112,24 @@ const EduCationEditing = () => {
                   {errors.intitution && (
                     <p className="text-red-600" role="alert">
                       {errors.intitution?.message}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label className='text-black'>Approximate Passing year</label>
+                  <input
+                    name="passingYear"
+                    defaultValue={education?.passingYear}
+                    type="text"
+
+                    className="input input-bordered my-2 w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 text-black"
+                    {...register("passingYear", {
+                      required: "Student Id is required",
+                    })}
+                  />
+                  {errors.passingYear && (
+                    <p className="text-red-600" role="alert">
+                      {errors.passingYear?.message}
                     </p>
                   )}
                 </div>
