@@ -29,7 +29,7 @@ const Consultancy = () => {
             </p>
             <Link to='/consultetion'>
               <button className="mt-6 lg:mt-10 md:mt-10 px-4 py-2 lg:px-8 lg:py-4 bg-[#3D419F] text-white rounded-xl lg:font-semibold font-normal lg:text-base text-sm">
-                See Details
+                Make an Appointment
               </button>
             </Link>
           </div>

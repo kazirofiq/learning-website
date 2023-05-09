@@ -273,8 +273,6 @@ const router = createBrowserRouter([
                         element: <AddFAQ />
                     },
 
-
-
                 ]
             },
 
