@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AiOutlineEdit, AiOutlinePlus, AiTwotoneDelete } from 'react-icons/ai';
+import { AiOutlineEdit, AiOutlinePlus } from 'react-icons/ai';
 import UploadedImage from './UploadedImage';
 import UploadFile from './UploadFile';
 import Cross from '../../../assest/icon/Cross.png';
@@ -8,7 +8,6 @@ import toast from 'react-hot-toast';
 import TaskList from './TaskList';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import { format } from 'date-fns';
-import VerifyEmail from './../../VerifyEmail/VerifyEmail';
 const Planner = () => {
   const [addTask, setAddTask] = useState(false);
 
