@@ -7,7 +7,7 @@ const AddressEdit = ({adress, setEditingAdress, refetch}) => {
     const { user } = useContext(AuthContext);
     const handleUpdate = e => {
         e.preventDefault()
-        fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`, {
+        fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json",

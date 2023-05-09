@@ -6,7 +6,7 @@ import { BiLogIn } from "react-icons/bi";
 import { AiOutlineMail, AiOutlineRight } from "react-icons/ai";
 import { GiGraduateCap } from "react-icons/gi";
 import { FaFirstOrderAlt } from "react-icons/fa";
-
+import { RiCoupon2Line } from "react-icons/ri";
 const AdminNav = () => {
   return (
     <div className=" w-full bg-[#1B1D48]    h-screen  ">
@@ -56,6 +56,15 @@ const AdminNav = () => {
             </Link>
           </li>
           <li>
+            <Link to="/admindashboard/update-coupon">
+              {/* <Link to="/dashboard/profile"> */}
+              <div className="flex gap-4 items-center">
+                <RiCoupon2Line className='text-white' />
+                <h2>Coupon</h2>
+              </div>
+            </Link>
+          </li>
+          <li>
             <Link to="/admindashboard/upload-Resource">
               {/* <Link to="/dashboard/profile"> */}
               <div className="flex gap-4 items-center">
@@ -65,6 +74,7 @@ const AdminNav = () => {
               </div>
             </Link>
           </li>
+          
         </ul>
         {/* divider */}
         <div className="divider  "></div>

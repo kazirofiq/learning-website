@@ -26,7 +26,7 @@ const OrderDetails = () => {
   const handleCoupon = e => {
     e.preventDefault();
     const couponId = e.target.couponId.value;
-    fetch(`https://learn-with-rakib.onrender.com/coupons/?couponId=${couponId}`)
+    fetch(`http://localhost:5000/coupons/?couponId=${couponId}`)
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -37,7 +37,7 @@ const OrderDetails = () => {
 
   useEffect(() => {
     setIsSuccess(searchParams.get("status"));
-    fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`)
+    fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`)
       .then(res => res.json())
       .then(data => setIsPaid(data.paidPremium))
       .catch(err => console.error(err))
@@ -148,7 +148,7 @@ const OrderDetails = () => {
                       Already Enrolled
                     </button>
                   </label> :
-                    isChecked && user?.uid ? <Link to={`https://learn-with-rakib.onrender.com/payment/?uid=${user?.uid}&couponId=${coupon?.value}`}>
+                    isChecked && user?.uid ? <Link to={`http://localhost:5000/payment/?uid=${user?.uid}&couponId=${coupon?.value}`}>
                       <label htmlFor="my-modal-3">
                         <button className=" w-full bg-[#3D419F] rounded-xl text-white py-3 font-semibold ">
                           {" "}

@@ -11,11 +11,11 @@ const MyCourses = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`)
+        fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`)
             .then(res => res.json())
             .then(user => {
                 user?.enrolledCourses?.map(course => {
-                    fetch(`https://learn-with-rakib.onrender.com/courses/${course.id}`)
+                    fetch(`http://localhost:5000/courses/${course.id}`)
                         .then(res => res.json())
                         .then(courseInfo => {
                             courseInfo.completed = course.completed

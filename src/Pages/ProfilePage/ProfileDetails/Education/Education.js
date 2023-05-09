@@ -14,7 +14,7 @@ const Education = () => {
   const { data: student = {}, refetch } = useQuery({
     queryKey: ["education", user?.uid],
     queryFn: () =>
-      fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`).then((res) => res.json()),
+      fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`).then((res) => res.json()),
   });
 
   const [isChecked, setIsChecked] = useState(Boolean);

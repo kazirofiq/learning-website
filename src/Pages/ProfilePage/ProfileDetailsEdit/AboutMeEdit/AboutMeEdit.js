@@ -22,7 +22,7 @@ const AboutMeEdit = ({ refetch, setEditingAboute, about }) => {
     };
 
     // save clients information to the database
-    fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`, {
+    fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -31,7 +31,7 @@ const AboutMeEdit = ({ refetch, setEditingAboute, about }) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         toast.success(`${data.name} is update successfully`);
         setEditingAboute(null);
         refetch();

@@ -40,7 +40,7 @@ const SignUp = () => {
         }
         updateUser(userInfo)
           .then((result) => {
-            console.log(result);
+            // console.log(result);
             saveUser({
               name: data.name,
               email: data.email,
@@ -72,7 +72,7 @@ const SignUp = () => {
   }
 
   const saveUser = user => {
-    fetch("https://learn-with-rakib.onrender.com/users", {
+    fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

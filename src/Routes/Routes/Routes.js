@@ -52,6 +52,8 @@ import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/Ter
 import Planner from "../../Pages/ProfilePage/Planner/Planner";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AdminRoute from "../AdminRoute/AdminRoute";
+import VerifyEmail from "../../Pages/VerifyEmail/VerifyEmail";
+import UpdateCuponCode from "../../Pages/AdminDashboard/UpdateCuponCode/UpdateCuponCode";
 import CreateWorkshop from "../../Pages/CreateWorkshop/CreateWorkshop";
 import WorkshopCurriculum from "../../Pages/WorkshopCurriculum/WorkshopCurriculum";
 
@@ -239,7 +241,8 @@ const router = createBrowserRouter([
     },
     {
         path: '/admindashboard',
-        element: <AdmindashboardLayout />,
+        // element: <AdmindashboardLayout></AdmindashboardLayout>,
+        element: <AdminRoute><AdmindashboardLayout></AdmindashboardLayout></AdminRoute>,
         children: [
             {
                 path: '/admindashboard',
@@ -248,6 +251,10 @@ const router = createBrowserRouter([
             {
                 path: '/admindashboard/upload-Resource',
                 element: <UPloadResource />
+            },
+            {
+                path: '/admindashboard/update-coupon',
+                element: <UpdateCuponCode />
             },
             {
                 path: '/admindashboard/course-create',
