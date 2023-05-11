@@ -24,8 +24,7 @@ const ImportentLink = () => {
                 <div className="flex justify-between items-center">
                     <h3 className='text-lg lg:text-2xl font-medium lg:font-semibold leading-7 lg:leading-9 text-[#1B1D48]'>Important Link</h3>
                     <label htmlFor="edit-importent-link-modal">
-                        <div className="fimport { AuthContext } from './../../../contexts/AuthProvider';
-lex items-center gap-x-1 text-[#1B1D48] cursor-pointer">
+                        <div className="flex items-center gap-x-1 text-[#1B1D48] cursor-pointer">
                             <PencilSquareIcon className='h-4 w-4 lg:h-5 lg:w-5' />
                             <p className="font-medium lg:font-semibold lg:text-sm text-sm">Edit</p>
                         </div>

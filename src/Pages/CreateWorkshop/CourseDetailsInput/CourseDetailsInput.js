@@ -50,7 +50,7 @@ const CourseDetailsInput = () => {
 
     if (title && subtitle && selectedItem && selectedItem !== "Select" && price && image && promotionVideoId && instructor && description && will_learn.length > 0) {
       const workShop = { title, subtitle, selectedItem, price, image, promotionVideoId, instructor, description, will_learn, draft };
-      console.log(workShop);
+
       fetch("http://localhost:5000/workshops", {
         method: "POST",
         headers: {
@@ -60,7 +60,6 @@ const CourseDetailsInput = () => {
       })
         .then(res => res.json())
         .then(data => {
-          console.log(data);
           navigate(`/admindashboard/create-workshop/workshop-curriculum/${data.insertedId}`);
         })
         .catch(err => console.error(err))

@@ -38,7 +38,6 @@ const Modules = ({ no, addNewModuleFields, setModulesData }) => {
             ]
         })
     }
-    // console.log(lessonsData);
 
     const addModuleName = e => {
         setModulesData(prevModules => {

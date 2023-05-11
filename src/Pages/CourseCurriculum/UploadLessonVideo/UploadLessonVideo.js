@@ -79,7 +79,7 @@ const UploadLessonVideo = ({ lesson, setLessonsData }) => {
                         setVideoStatus(status);
                     })
                     .catch(err => {
-                        console.log(err);
+                        console.error(err);
                         clearInterval(checkInterval)
                     })
             }, 3000);

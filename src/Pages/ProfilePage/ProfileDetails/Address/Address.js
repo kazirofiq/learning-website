@@ -19,8 +19,8 @@ const Address = () => {
                 <h1 className="text-[#1B1D48] font-medium lg:font-semibold lg:text-base text-lg">
                     Address
                 </h1>
-                <label 
-                    onClick={() =>setEditingAdress(student)}
+                <label
+                    onClick={() => setEditingAdress(student)}
                     htmlFor="edit-address-modal">
                     <div className="flex items-center gap-x-1 text-[#1B1D48] cursor-pointer">
                         <PencilSquareIcon className='h-4 w-4 lg:h-5 lg:w-5' />
@@ -32,7 +32,7 @@ const Address = () => {
                 <div className="mt-3">
                     <label
                         htmlFor="name"
-                        className="block text-[#666666] font-semibold text-sm mb-2"
+                        className="block text-[#666666] font-normal text-sm mb-2"
                     >
                         Village
                     </label>
@@ -41,7 +41,7 @@ const Address = () => {
                 <div className="mt-3">
                     <label
                         htmlFor="name"
-                        className="block text-[#666666] font-semibold text-sm mb-2"
+                        className="block text-[#666666] font-normal text-sm mb-2"
                     >
                         Post
                     </label>
@@ -50,7 +50,7 @@ const Address = () => {
                 <div className="mt-3">
                     <label
                         htmlFor="name"
-                        className="block text-[#666666] font-semibold text-sm mb-2"
+                        className="block text-[#666666] font-normal text-sm mb-2"
                     >
                         Thana
                     </label>
@@ -59,7 +59,7 @@ const Address = () => {
                 <div className="mt-3">
                     <label
                         htmlFor="name"
-                        className="block text-[#666666] font-semibold text-sm mb-2"
+                        className="block text-[#666666] font-normal text-sm mb-2"
                     >
                         District
                     </label>
@@ -67,13 +67,13 @@ const Address = () => {
                 </div>
             </div>
             {editingAdress && (
-        <AddressEdit
-          // refetch={refetch}
-          adress={editingAdress}
-          refetch={refetch}
-          setEditingAdress={setEditingAdress}
-        ></AddressEdit>
-      )}
+                <AddressEdit
+                    // refetch={refetch}
+                    adress={editingAdress}
+                    refetch={refetch}
+                    setEditingAdress={setEditingAdress}
+                ></AddressEdit>
+            )}
         </div>
     );
 };

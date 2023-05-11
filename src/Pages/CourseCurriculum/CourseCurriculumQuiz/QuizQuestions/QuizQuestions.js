@@ -14,7 +14,6 @@ const QuizQuestions = ({ setQuizData, queNo, moduleNo }) => {
             return { ...prevData };
         });
     }
-    // console.log(options);
 
     const addOptions = (e, no) => {
         setOptions(prev => {

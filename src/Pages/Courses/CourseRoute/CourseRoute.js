@@ -17,17 +17,21 @@ const CourseRoute = () => {
 
     return (
         <div>
-            <div className='flex items-center justify-center mt-[40px] lg:mt-[96px] md:mt-[70px]'>
-                <Link to='/mycourses'>
-                    <button className={`px-6 py-2 lg:leading-[24px] md:leading-[22px] leading-[21px] text-sm lg:text-base md:text-base rounded-[10px] text-left border inline-block text-[#C3C4E1] font-medium  focus:text-white focus:outline-none ${activeDraft || "bg-[#3D419F] text-white"}`}>
-                        My Courses
-                    </button>
-                </Link>
-                <Link to='/mycourses/previousworkshop'>
-                    <button className={`px-6 py-2 lg:leading-[24px] md:leading-[22px] leading-[21px] text-sm lg:text-base md:text-base rounded-[10px] text-left border inline-block text-[#C3C4E1] font-medium  focus:text-white focus:outline-none ${activeDraft && "bg-[#3D419F]"}`}>
-                        Workshop
-                    </button>
-                </Link>
+            <div className='flex items-center  justify-center mt-[40px] md:mt-[70px]'>
+                <nav className="bg-[#ECECF5] rounded-[10px] mt-[32px] lg:block hidden w-[240px]">
+                    <ul className="flex justify-between h-[40px] items-center">
+                        <li className=''>
+                            <Link to='/mycourses' className={` ${activeDraft || "bg-[#3D419F] text-white"} text-[#C3C4E1] h-[40px] flex items-center w-[120px] justify-center' : 'bg-[#ECECF5] rounded-[10px]  justify-center`}>
+                                Upcoming
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to='/mycourses/previousworkshop' className={` ${activeDraft && "bg-[#3D419F] text-white"} text-[#C3C4E1] h-[40px]  flex items-center w-[120px]  justify-center' : 'bg-[#ECECF5] rounded-[10px]  justify-center`}>
+                                Previous
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
             </div >
         </div>
     );

@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { FaEllipsisH } from "react-icons/fa";
 import "./MyCourse.css";
 
 import { AiOutlinePlus } from "react-icons/ai";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import CourseList from "../CourseList/CourseList";
-import DraftCourse from "../DraftCourse/DraftCourse";
-import SendNotification from "../SendNotificationModal/SendNotificationModal";
-import SendNotificationModal from "../SendNotificationModal/SendNotificationModal";
 import useTitle from "../../../hooks/useTitle";
 
 const MyCourse = () => {
-
   useTitle('My Course - ');
-
   const location = useLocation();
-  // console.log(location.pathname);
   const [activeDraft, setActiveDraft] = useState(false);
+
   useEffect(() => {
     if (location.pathname === "/admindashboard/mycourse/draftcourse") {
       setActiveDraft(true)
@@ -24,7 +17,8 @@ const MyCourse = () => {
     else {
       setActiveDraft(false)
     }
-  }, [location.pathname])
+  }, [location.pathname]);
+
   return (
     <div className="table-back bg-white mt-6 ">
       <h2 className="p-4 text-[#282B6B] text-[24px] font-semibold leading-[24px]">Courses</h2>

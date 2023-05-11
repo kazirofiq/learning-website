@@ -28,7 +28,7 @@ const Planner = () => {
   const date = new Date();
   const dateFormate = format(date, 'dd-MM-yyyy');
   // console.log(dateFormate)
-  const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const getTaskList = data => {
 
     if (data?.taskList) {
@@ -80,7 +80,6 @@ const Planner = () => {
       })
         .then(res => res.json())
         .then(data => {
-          console.log(data)
           if (data?.acknowledged) {
             toast.success("Note edit successfully");
             setNote(false);
@@ -103,7 +102,6 @@ const Planner = () => {
       })
         .then(res => res.json())
         .then(data => {
-          console.log(data);
           if (data?.acknowledged) {
             toast.success("Note add successfully");
             reset();
@@ -136,7 +134,6 @@ const Planner = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         if (data?.acknowledged) {
           toast.success("successfully clear task list")
         }

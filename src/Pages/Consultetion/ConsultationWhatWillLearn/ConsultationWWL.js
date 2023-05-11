@@ -6,9 +6,9 @@ const ConsultationWWL = () => {
             <div className='mt-6 poppins px-[20px] lg:px-[145px]'>
                 <div className='mx-auto max-w-[750px mx-auto]' id="WhatWillYouLearn">
                     <h2 className='font-bold text-2xl text-[#1B1D48] text-left'>What Will You Learn?</h2>
-                    <div className='mt-2 lg:mt-5 max-w-[750px]'>
+                    <div className='mt-2 lg:mt-5 max-w-[850px]'>
                         <ul className='mt-2 lg:mt-5  justify-center mx-auto grid grid-cols-1 lg:grid-cols-2'>
-                            <li className='flex pb-4'>
+                            <li className='flex pb-4 lg:mr-5'>
                                 <img className='h-4 w-4 mr-[11px]' src={checkIcon} alt="" />
                                 <span className='font-normal text-sm lg:text-base text-[#666666]'>Strategies for self-publishing on Amazon's KDP platform, including book formatting, publishing process, and marketing tips.</span>
                             </li>

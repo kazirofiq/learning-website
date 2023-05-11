@@ -4,7 +4,6 @@ import { VedioContext } from "../../../contexts/VedioProvider";
 const Breadcrumb = () => {
 
   const { selectedOption } = useContext(VedioContext)
-  console.log(selectedOption);
 
   return (
     <div className="lg:block hidden">

@@ -1,18 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
-import { VedioContext } from '../../../contexts/VedioProvider';
-import useTitle from '../../../hooks/useTitle';
+import { useLoaderData, useLocation } from 'react-router-dom';
 import { ClipLoader } from 'react-spinners';
+import { VedioContext } from '../../../contexts/VedioProvider';
+import { AuthContext } from '../../../contexts/AuthProvider';
+import { server } from '../../../variables/server';
 
 const Vedio = () => {
-
-    // const { allModules } = useContext(VedioContext)
+    const { allModules } = useContext(VedioContext);
+    const { user } = useContext(AuthContext);
+    const { pathname } = useLocation();
     // console.log(allModules);
 
     const [videoLink, setVideoLink] = useState()
 
     const video = useLoaderData()
-    // console.log(video.videoId);
     const { videoId } = video
 
     useEffect(() => {
@@ -21,7 +22,35 @@ const Vedio = () => {
             .then(data => setVideoLink(data))
     }, [videoId])
 
+    useEffect(() => {
+        if (user?.uid) {
+            fetch(`${server}/users/uid?uid=${user?.uid}`)
+                .then(res => res.json())
+                .then(data => {
+                    const info = data.enrolledCourses.find(course => course.id === allModules[0].courseId);
+                    const allLessons = allModules?.map(module => module.lessons.map(lesson => lesson))?.flat(1)
+                    const lessonId = pathname.split('/')[3];
+                    const index = allLessons.findIndex(less => less.number === lessonId) + 1;
+                    const newCompleted = Math.floor(index * 100 / allLessons.length);
 
+                    if (info.completed < newCompleted) {
+                        fetch(`${server}/courses/completed?uid=${user?.uid}&courseId=${allModules[0].courseId}`, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({ newCompleted, lessonId })
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                console.log(data);
+                            })
+                            .catch(err => console.error(err))
+                    }
+                })
+                .catch(err => console.error(err))
+        }
+    }, [user, allModules, pathname]);
 
     return (
         <div className='h-full'>

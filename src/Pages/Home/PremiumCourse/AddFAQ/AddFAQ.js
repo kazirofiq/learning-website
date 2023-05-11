@@ -64,7 +64,6 @@ const AddFAQ = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
                 if (result.acknowledged) {
                     navigate(`/admindashboard/mycourse`);
                 }

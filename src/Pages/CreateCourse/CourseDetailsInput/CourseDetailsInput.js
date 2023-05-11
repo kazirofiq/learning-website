@@ -60,7 +60,6 @@ const CourseDetailsInput = () => {
       })
         .then(res => res.json())
         .then(data => {
-          console.log(data);
           navigate(`/admindashboard/course-create/course-curriculum/${data.insertedId}`);
         })
         .catch(err => console.error(err))
