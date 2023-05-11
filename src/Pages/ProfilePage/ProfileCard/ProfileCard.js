@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { Link } from 'react-router-dom';
@@ -7,7 +7,6 @@ import planner from '../../../assest/myplanner/planner.svg';
 import imports from '../../../assest/myplanner/import.svg';
 import order from '../../../assest/myplanner/order.svg';
 import { AuthContext } from '../../../contexts/AuthProvider';
-import { ClipboardIcon } from '@heroicons/react/24/solid';
 const percentage = 60;
 const customColor = '#3D419F';
 const styles = {
