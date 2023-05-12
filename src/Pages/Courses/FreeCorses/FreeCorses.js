@@ -4,6 +4,7 @@ import bgReactangle2 from '../../../assest/workshop/Rectangle 2.png'
 import bgReactangle3 from '../../../assest/workshop/Rectangle 3.png'
 import bgReactangle4 from '../../../assest/workshop/Rectangle 4.png'
 import monitor from '../../../assest/workshop/monitor.png'
+import './FreeCorses.css';
 import { useEffect } from 'react';
 import useTitle from '../../../hooks/useTitle';
 import { Link } from 'react-router-dom';
@@ -90,17 +91,18 @@ const FreeCorses = () => {
                 {
                     FreeCourses.map(freecorse =>
                         <Link to={`${freecorse.link}`} target='blank'>
-                            <div className="card w-[255px] h-[251px] lg:h-[262px] rounded-[10px] bg-[#FFFFFF] border-[1px] border-[#ECECF5]">
-                                <img className='h-[143px]' src={freecorse.image} alt="Shoes" />
-                                <div className="px-4 pt-3 pb-5 lg:pb-6 bg-[#FFFFFF]">
+                            <div className="card w-[255px] free-courses bg-[#FFFFFF]">
+                                <figure><img className=' rounded-t-[10px]' src={freecorse.image} alt="Shoes" /></figure>
+                                <div className="px-4 pt-3 free-courses-text pb-5 lg:pb-6 bg-[#FFFFFF]">
                                     <div className='flex items-center gap-x-[5px]'>
                                         <img src={monitor} alt='monitor'></img>
                                         <p className='font-normal text-xs leading-[18px] text-[#666666]'>24 Video</p>
                                     </div>
-                                    <h2 className=" font-semibold text-base lg:text-lg leading-6 text-[#333333] mt-2">{freecorse.title}</h2>
+                                    <h2 className=" font-semibold text-base lg:text-lg leading-6 text-[#333333] mt-2">{freecorse?.title?.length > 20 ? freecorse?.title.slice(0, 19) + '...' : freecorse.title}</h2>
                                     <p className='font-normal text-xs lg:text-sm md:text-sm leading-[18px] text-[#333333] mt-[8px] lg:mt-3 md:mt-3'>Rakib Ahmed</p>
                                 </div>
                             </div>
+
                         </Link>
                     )
                 }

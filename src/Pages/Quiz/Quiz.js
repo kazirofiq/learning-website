@@ -45,6 +45,7 @@ const Quiz = () => {
                 moduleNo: moduleInfo.moduleNo,
                 resultOf: "quiz",
                 score: updatedScore,
+                studentUid: user.uid,
                 questions: [...quizSelected]
             }
 
@@ -107,15 +108,15 @@ const Quiz = () => {
 
     useEffect(() => {
         const moduleInfo = allModules.find(m => m.lessons[m.lessons.length - 1].number === allQuiz._id)
-        if (moduleInfo) {
-            fetch(`${server}/result?resultOf=quiz&courseId=${moduleInfo?.courseId}&moduleNo=${moduleInfo?.moduleNo}`)
+        if (moduleInfo && user?.uid) {
+            fetch(`${server}/result?resultOf=quiz&courseId=${moduleInfo?.courseId}&moduleNo=${moduleInfo?.moduleNo}&studentUid=${user?.uid}`)
                 .then(res => res.json())
                 .then(data => {
                     setSavedResult(data);
                 })
                 .catch(err => console.error(err))
         }
-    }, [allModules, allQuiz])
+    }, [allModules, allQuiz, user])
 
     return (
         <section className=' w-[320px] lg:w-[732px] lg:mt-0 mb-[20px] mt-8 h-[381px] lg:h-[445px] mx-5 lg:mx-0 bg-white custom_shadow' >

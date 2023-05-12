@@ -233,7 +233,7 @@ const Resource = () => {
                       onChange={(e) => setSearch(e.target.value)}
                       type="text"
                       placeholder="Search "
-                      className="input bg-[#F8F8FF] h-8 md:h-12 focus:outline-none"
+                      className="input bg-[#F8F8FF] text-[#333] h-8 md:h-12 focus:outline-none"
                     />
 
                   </div>

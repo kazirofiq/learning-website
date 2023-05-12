@@ -52,7 +52,7 @@ const UpComingDetails = () => {
                         </div>
                         <div className='mt-10 mb-24'>
                             <h1 className='font-bold text-[#333333] text-2xl'>How to complete Payment?</h1>
-                            <p className='font-normal text-base text-[#666666] mt-3'>To know the process <span className='font-bold text-base text-[#3D419F] cursor-pointer'>Watch this Video</span></p>
+                            <p className='font-normal text-base text-[#666666] mt-3'>To know the process <label className='font-normal text-base text-[#666666] mt-3r' htmlFor='howToPay'><span className='font-bold text-base text-[#3D419F] cursor-pointer '>Watch this Video</span></label></p>
                         </div>
                     </div>
                 </div>

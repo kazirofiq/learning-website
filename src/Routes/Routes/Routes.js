@@ -52,10 +52,10 @@ import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/Ter
 import Planner from "../../Pages/ProfilePage/Planner/Planner";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AdminRoute from "../AdminRoute/AdminRoute";
-import VerifyEmail from "../../Pages/VerifyEmail/VerifyEmail";
 import UpdateCuponCode from "../../Pages/AdminDashboard/UpdateCuponCode/UpdateCuponCode";
 import CreateWorkshop from "../../Pages/CreateWorkshop/CreateWorkshop";
 import WorkshopCurriculum from "../../Pages/WorkshopCurriculum/WorkshopCurriculum";
+import AssignmentList from "../../AssignmentList/AssignmentList";
 
 
 const router = createBrowserRouter([
@@ -255,6 +255,10 @@ const router = createBrowserRouter([
             {
                 path: '/admindashboard/update-coupon',
                 element: <UpdateCuponCode />
+            },
+            {
+                path: '/admindashboard/assignment-list',
+                element: <AssignmentList />
             },
             {
                 path: '/admindashboard/course-create',

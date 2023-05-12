@@ -32,7 +32,7 @@ const ProfileCard = () => {
     <div className="card w-[255px] bg-base-100 shadow-xl poppins lg:mt-[84px] md:mt-[50px] mt-8">
       <div className="avatar">
         <div className="w-24  mx-auto mt-3 rounded-full">
-          <img src={user?.photoURL} alt="profile_image" className="rounded-full" />
+          <img src={user?.photoURL} alt="profile_image" className="rounded-full object-cover" />
         </div>
       </div>
       <div className='px-[59px] mt-4'>

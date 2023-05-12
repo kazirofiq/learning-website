@@ -9,7 +9,6 @@ const CreateAssignment = ({ moduleNo, lessNo, setModulesData }) => {
             name: "",
             assignmentNo: 0,
             assignmentDuration: 0,
-            isChecked: false,
             result: 0
         }
     })

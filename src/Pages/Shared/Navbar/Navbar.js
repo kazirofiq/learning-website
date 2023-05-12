@@ -7,6 +7,8 @@ import { BiChevronDown } from "react-icons/bi";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import { useEffect } from "react";
 import navicon from "../../../assest/navicon.png";
+import { Menu, Transition } from "@headlessui/react";
+import { Fragment } from "react";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,67 +31,100 @@ const Navbar = () => {
     const menuItems = (
         <>
             <li>
-                <div className="dropdown">
-                    <label tabIndex={0} className="cursor-pointer flex items-center">
-                        <span className="text-[#333333] capitalize text-base font-normal">
-                            Course
-                        </span>{" "}
-                        <BiChevronDown className="text-[#333333]" />
-                    </label>
-                    <ul
-                        tabIndex={0}
-                        className="menu dropdown-content mt-0 lg:mt-9 w-[165px] h-[75px] font-normal text-sm leading-[21px] rounded-[10px] border border-[#3D419F] bg-[#FFFFFF]"
-                    >
-                        <li>
-                            <Link
-                                to="/premium_course"
-                                className="text-[#333333] bg-[#FFFFFF] h-[36px] py-2 px-6 hover:bg-[#ECECF5]"
-                            >
-                                Premium Course{" "}
-                            </Link>
-                        </li>
-                        <hr />
-                        <li>
-                            <Link
-                                to="/freecorses"
-                                className="text-[#333333] hover:bg-[#ECECF5] h-[36px] py-2 px-6"
-                            >
-                                Free Course
-                            </Link>
-                        </li>
-                    </ul>
+                <div className="">
+                    <Menu as="div" className="relative inline-block text-left">
+                        <div>
+                            <Menu.Button className="text-[#333333] flex items-center text-base font-normal">
+                                Course
+                                <BiChevronDown className="text-[#333333]" />
+                            </Menu.Button>
+                        </div>
+                        <Transition
+                            as={Fragment}
+                            enter="transition ease-out duration-100"
+                            enterFrom="transform opacity-0 scale-95"
+                            enterTo="transform opacity-100 scale-100"
+                            leave="transition ease-in duration-75"
+                            leaveFrom="transform opacity-100 scale-100"
+                            leaveTo="transform opacity-0 scale-95"
+                        >
+                            <Menu.Items className="absolute w-[165px] h-[80px] right-0 mt-[40px]  origin-top-right  bg-white focus:outline-none rounded-[10px] border border-[#3D419F]">
+                                <div className="px-1 py-1 ">
+                                    <Menu.Item>
+                                        {({ active }) => (
+                                            <Link to="/premium_course"
+                                                className={`${active ? 'bg-[#ECECF5] text-[#333333]' : 'text-[#333333]'
+                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                            >
+
+                                                Premium Course
+                                            </Link>
+                                        )}
+                                    </Menu.Item>
+                                    <Menu.Item>
+                                        {({ active }) => (
+                                            <Link to="/freecorses"
+                                                className={`${active ? 'bg-[#ECECF5] text-[#333333] ' : 'text-[#333333] '
+                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                            >
+
+                                                Free Course
+                                            </Link>
+                                        )}
+                                    </Menu.Item>
+                                </div>
+                            </Menu.Items>
+                        </Transition>
+                    </Menu>
                 </div>
             </li>
             <li>
-                <div className="dropdown">
-                    <label tabIndex={0} className="cursor-pointer flex items-center">
-                        <span className="text-[#333333] capitalize text-base font-normal">
-                            Resource
-                        </span>{" "}
-                        <BiChevronDown className="text-[#333333]" />
-                    </label>
-                    <ul
-                        tabIndex={0}
-                        className="menu dropdown-content mt-0 lg:mt-9 w-[147px] h-[75px] font-normal text-sm leading-[21px] rounded-[10px] border border-[#3D419F] bg-[#FFFFFF]"
-                    >
-                        <li>
-                            <Link
-                                to="/resource"
-                                className="text-[#333333] bg-[#FFFFFF] h-[36px] py-2 px-6 hover:bg-[#ECECF5]"
-                            >
-                                Free Resource{" "}
-                            </Link>
-                        </li>
-                        <hr />
-                        <li>
-                            <Link
-                                to="/kdptools"
-                                className="text-[#333333] hover:bg-[#ECECF5] h-[36px] py-2 px-6"
-                            >
-                                KDP Tool
-                            </Link>
-                        </li>
-                    </ul>
+                <div className="">
+                    <Menu as="div" className="relative inline-block text-left">
+                        <div>
+                            <Menu.Button className="text-[#333333] flex items-center text-base font-normal">
+                                Resource
+                                <BiChevronDown className="text-[#333333]" />
+
+                            </Menu.Button>
+                        </div>
+                        <Transition
+                            as={Fragment}
+                            enter="transition ease-out duration-100"
+                            enterFrom="transform opacity-0 scale-95"
+                            enterTo="transform opacity-100 scale-100"
+                            leave="transition ease-in duration-75"
+                            leaveFrom="transform opacity-100 scale-100"
+                            leaveTo="transform opacity-0 scale-95"
+                        >
+                            <Menu.Items className="absolute w-[165px] h-[80px] right-0 mt-[40px]  origin-top-right  bg-white focus:outline-none rounded-[10px] border border-[#3D419F]">
+                                <div className="px-1 py-1 ">
+                                    <Menu.Item>
+                                        {({ active }) => (
+                                            <Link to="/resource"
+                                                className={`${active ? 'bg-[#ECECF5] text-[#333333]' : 'text-[#333333]'
+                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                            >
+
+                                                Free Resource
+                                            </Link>
+                                        )}
+                                    </Menu.Item>
+                                    <Menu.Item>
+                                        {({ active }) => (
+                                            <Link to="/kdptools"
+                                                className={`${active ? 'bg-[#ECECF5] text-[#333333] ' : 'text-[#333333] '
+                                                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                            >
+
+                                                KDP Tool
+                                            </Link>
+                                        )}
+                                    </Menu.Item>
+                                </div>
+                            </Menu.Items>
+                        </Transition>
+                    </Menu>
                 </div>
             </li>
             <li className="text-[#333333] text-base font-normal">

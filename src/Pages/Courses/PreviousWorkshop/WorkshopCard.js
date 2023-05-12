@@ -17,9 +17,9 @@ const WorkshopCard = ({ workshopId }) => {
     }, [workshopId])
 
     return (
-        <div className="card lg:w-[255px] md:w-[255px] w-[320px] h-[363px] lg:h-[326px] rounded-[10px] bg-[#FFFFFF] border-[1px] border-[#ECECF5]">
+        <div className="card lg:w-[255px] free-courses md:w-[255px] w-[320px] h-[363px] lg:h-[326px] rounded-[10px] bg-[#FFFFFF] border-[1px] border-[#ECECF5]">
             <figure><img className='lg:h-[143px] md:h-[143px] h-[179px] w-full' src={workshop.image} alt="Shoes" /></figure>
-            <div className="px-4 pt-3 pb-5 lg:pb-6 bg-[#FFFFFF]">
+            <div className="px-4 pt-3 pb-5 free-courses-text lg:pb-6 bg-[#FFFFFF]">
                 <h2 className=" font-semibold text-base lg:text-lg leading-6 text-[#333333] mt-2">{workshop?.title?.length > 20 ? workshop?.title.slice(0, 19) + '...' : workshop.title}</h2>
                 <p className='font-normal text-xs lg:text-sm md:text-sm leading-[18px] text-[#333333] mt-[8px] lg:mt-3 md:mt-3'>{workshop.instructor}</p>
                 <div className='flex items-center gap-x-3'>

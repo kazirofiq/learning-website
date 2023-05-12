@@ -25,8 +25,8 @@ const AssignmentList = () => {
                     <div class="-mx-4 -my-2 overflow-x-auto">
                         <div class="inline-block min-w-full py-2 align-middle">
                             <div class="overflow-hidden">
-                                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                                    <thead class="bg-gray-50 dark:bg-gray-800">
+                                <table class="min-w-full divide-y divide-gray-200 ">
+                                    <thead class="bg-gray-50">
                                         <tr>
                                             <th scope="col" class="py-3.5 leading-[18px] px-4 text-xs font-medium text-left rtl:text-right text-[#666666]">
 
@@ -66,7 +66,7 @@ const AssignmentList = () => {
                                             </th>
                                         </tr>
                                     </thead>
-                                    <tbody class="bg-white divide-y divide-[#E2E3F1] dark:divide-gray-700 dark:bg-gray-900">
+                                    <tbody class="bg-white divide-y divide-[#E2E3F1]">
                                         <tr>
                                             <td class="px-4 py-4 text-sm font-medium text-[#333333] whitespace-nowrap">
                                                 <div class="inline-flex items-center gap-x-3">
@@ -79,8 +79,6 @@ const AssignmentList = () => {
                                                             <h2 class="font-medium text-[#333333]">Arthur Melo</h2>
                                                             <p>1234567890</p>
                                                         </div>
-
-
 
                                                     </div>
                                                 </div>
