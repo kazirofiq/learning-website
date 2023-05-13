@@ -7,12 +7,15 @@ import QuizResult from './QuizResult';
 const Quiz = () => {
 
     const allQuiz = useLoaderData()
-    const quizes = allQuiz.quizData;
+    // console.log(allQuiz);
+    const quizes = allQuiz?.quizData;
+    console.log(quizes);
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
     const [clickedOption, setClickedOption] = useState(0)
     const [result, setResult] = useState(false)
+    // console.log(currentQuestion);
 
     const changeQuestion = () => {
         updateScore();

@@ -6,13 +6,16 @@ import { ClipLoader } from 'react-spinners';
 
 const Vedio = () => {
 
-    // const { allModules } = useContext(VedioContext)
-    // console.log(allModules);
+    const { currentContent } = useContext(VedioContext)
+    // const OneVideo = currentContent?.videoId;s
+    // console.log(OneVideo);
 
     const [videoLink, setVideoLink] = useState()
+    // console.log(videoLink);
 
     const video = useLoaderData()
     // console.log(video.videoId);
+
     const { videoId } = video
 
     useEffect(() => {

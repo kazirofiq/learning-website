@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import star from '../../assest/course_image/star_border.png';
 import pen from '../../assest/course_image/Edit, pen write.png';
 import './Dashboard.css'
@@ -7,15 +7,41 @@ import { Link } from 'react-router-dom';
 import ReviewModal from './ReviewModal/ReviewModal';
 
 const Dashboard = () => {
+  // useEffect(() => {
+  //   fetch('http://localhost:5000/batch-1')
+  //     .then(res => res.json())
+  //     .then(data => setAllLessons(data))
+  // }, [])
 
-  const { selectedOption } = useContext(VedioContext)
+  const { handleNext, handlePrevious, currentIndex, selectedOption, contents } = useContext(VedioContext)
+  // const [currentModule, setCurrentModule] = useState(0)
+  // const [allLessons, setAllLessons] = useState(0)
+  // console.log(allLessons[0].lessons);
+  // const lesson = allLessons;
+
+  // useEffect(() => {
+  //   fetch('http://localhost:5000/batch-1')
+  //     .then(res => res.json())
+  //     .then(data => setAllLessons(data))
+  // }, [])
+
+
+
+  // const handelNextButton = () => {
+  //   if (currentModule < lesson.length - 1) {
+  //     setCurrentModule(currentModule + 1);
+  //   }
+  //   else {
+  //     setCurrentModule(0)
+  //   }
+  // }
 
   return (
     <div className=''>
       <div>
         <div className='lg:flex hidden items-center content-center justify-between w-[732px] mt-[29px]'>
           <div className=''>
-            <p className='text-[#333333] text-[20px] leading-[30px] font-semibold poppins'>Topic : Greetings and Instroduction</p>
+            <p className='text-[#333333] text-[20px] leading-[30px] font-semibold poppins'>Topic :</p>
             <p className='text-[#555555] text-sm leading-[21px] font-light poppins mt-2'>Video : {selectedOption || ""}</p>
             <div className='flex items-center mt-8 gap-x-[76px]'>
               {/* <div>
@@ -36,7 +62,7 @@ const Dashboard = () => {
           </div>
           <div className='flex items-center gap-3 -mt-[90px]'>
             <a href=' ' className='text-sm lg:text-base leading-[21px] lg:leading-6 class_bs_sm lg:class_bs text-[#666666] border-[1px] border-[#666666] border-solid lg:font-semibold font-medium poppins bg-[#F8F8FF]'>Previous</a>
-            <a href=' ' className='text-sm lg:text-base leading-[21px] lg:leading-6 class_bs_sm lg:class_bs text-white bg-[#3D419F] lg:font-semibold font-medium poppins'>Next</a>
+            <p onClick={handleNext} disabled={currentIndex === contents.length - 1} className='text-sm lg:text-base leading-[21px] lg:leading-6 class_bs_sm lg:class_bs text-white bg-[#3D419F] lg:font-semibold font-medium poppins cursor-pointer'>Next</p>
           </div>
         </div>
 
