@@ -22,12 +22,12 @@ const CourseRoute = () => {
                     <ul className="flex justify-between h-[40px] items-center">
                         <li className=''>
                             <Link to='/mycourses' className={` ${activeDraft || "bg-[#3D419F] text-white"} text-[#C3C4E1] h-[40px] flex items-center w-[120px] justify-center' : 'bg-[#ECECF5] rounded-[10px]  justify-center`}>
-                                Upcoming
+                                My Courses
                             </Link>
                         </li>
                         <li>
                             <Link to='/mycourses/previousworkshop' className={` ${activeDraft && "bg-[#3D419F] text-white"} text-[#C3C4E1] h-[40px]  flex items-center w-[120px]  justify-center' : 'bg-[#ECECF5] rounded-[10px]  justify-center`}>
-                                Previous
+                                Workshop
                             </Link>
                         </li>
                     </ul>
