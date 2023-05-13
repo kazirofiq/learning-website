@@ -11,7 +11,7 @@ const AdminNav = () => {
   return (
     <div className=" w-full bg-[#1B1D48]    h-screen  ">
       <div className='w-[134px] mx-auto mt-[19px]'>
-        <img src={adminLogo} alt="" />
+        <Link to='/'><img src={adminLogo} alt="" /></Link>
       </div>
       <div className="  w-full  ">
 
@@ -48,7 +48,7 @@ const AdminNav = () => {
             </Link>
           </li>
           <li>
-            <Link to="/dashboard/activity">
+            <Link to="/admindashboard/assignment-list">
               <div className="flex gap-4 items-center">
                 <MdOutlineAssignment></MdOutlineAssignment>
                 <h2>Assignment</h2>
@@ -74,7 +74,7 @@ const AdminNav = () => {
               </div>
             </Link>
           </li>
-          
+
         </ul>
         {/* divider */}
         <div className="divider  "></div>

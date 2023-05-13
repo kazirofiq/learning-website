@@ -29,7 +29,6 @@ const OrderDetails = () => {
     fetch(`http://localhost:5000/coupons/?couponId=${couponId}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         setCoupon(data)
       })
       .catch(err => console.error(err))

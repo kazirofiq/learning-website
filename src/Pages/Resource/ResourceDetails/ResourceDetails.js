@@ -1,38 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 import { useQuery } from "react-query";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import { useContext } from "react";
 import "./ResourceDetails.css";
 import { Link } from "react-router-dom";
-import FB from "../../../assest/amazing_resource/shareiconFB.png";
-import INSTA from "../../../assest/amazing_resource/Social icon.png";
-import TW from "../../../assest/amazing_resource/shareiconTw.png";
-
+import premium from "../../../assest/icon/premium.png"
 import downloadIcon from "../../../assest/amazing_resource/Vector.png";
 
 import { toast } from "react-hot-toast";
+import { ClipLoader } from "react-spinners";
 
 const ResourceDetails = ({ singleResourch }) => {
   const { user } = useContext(AuthContext);
- 
+
   // database user and login user matching query
-  const { data: downlimit = [] } = useQuery({
+  const {
+    data: downlimit = [],
+    refetch,
+    isLoading,
+  } = useQuery({
     queryKey: ["downlimit"],
     queryFn: () =>
       fetch(
-        `http://localhost:5000/downLimit/userEmail?userEmail=${user?.email}`
+        `http://localhost:5000/downLimit/downloadDate?downloadDate=${today}&&userEmail=${user?.email}`
       ).then((res) => res.json()),
   });
-console.log(downlimit)
-  const {
-    data: loginUser = [],
-    refetch,
-  } = useQuery({
+
+  const { data: loginUser = {} } = useQuery({
     queryKey: ["loginUser"],
     queryFn: () =>
-      fetch(
-        `http://localhost:5000/users/uid?uid=${user?.uid}`
-      ).then((res) => res.json()),
+      fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`).then((res) => res.json()),
   });
 
   let today = new Date();
@@ -40,33 +37,41 @@ console.log(downlimit)
   let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
   let yyyy = today.getFullYear();
 
-  today = mm + "/" + dd  + "/" + yyyy;
-
+  today = mm + "/" + dd + "/" + yyyy;
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center w-screen h-screen">
+        <ClipLoader color="#0000ff" size="50" />
+      </div>
+    );
+  }
   const downloadLimitHandler = (e) => {
-    e.preventDefault();
     const post = {
-      downloadStatus: true,
+      downloadStatus: "1",
       userEmail: user.email,
       UserUid: user?.uid,
       downloadDate: today,
     };
-    if (downlimit.downloadDate === today && downlimit.userEmail === user?.email) {
-        fetch(`http://localhost:5000/downLimit/UserUid/${user.uid}`, {
+
+    if (downlimit?.downloadStatus === "2") {
+      refetch();
+      return toast.error("You have reached today's download limit!");
+    } else if (downlimit?.downloadStatus === "1") {
+      fetch(`http://localhost:5000/downLimit/${downlimit?._id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(post),
+        body: JSON.stringify({ downloadStatus: "2" }),
       })
         .then((res) => res.json())
         .then((result) => {
           console.log(result);
-          toast.success("Profile Updated is successfully done!");
+          if (result.acknowledged && result.modifiedCount > 0) {
+          }
         });
-     
-    } else if((downlimit.downloadDate !== today && downlimit.userEmail !== user?.email)) {
-      
-        fetch(`http://localhost:5000/downLimit`, {
+    } else {
+      fetch(`http://localhost:5000/downLimit/`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -75,14 +80,11 @@ console.log(downlimit)
       })
         .then((res) => res.json())
         .then((result) => {
-          console.log(result);
-          toast.success("Resource is successfully download!");
+
         });
-    }else{
-        toast.success("Resource is already download!");
     }
-    refetch()
   };
+
 
   return (
     <div>
@@ -96,17 +98,34 @@ console.log(downlimit)
           <div className="relative mx-auto bg-white rounded-[20px]">
             <label
               htmlFor="my-modal-3"
-              className="btn-lg text-[#666666] absolute right-[-5px] lg:right-[10px] lg:py-0 pt-[3px] lg:top-[30px]"
+              className="btn-lg text-[#666666] absolute right-[-5px] lg:right-[0px] lg:py-0 pt-[3px] lg:top-[30px]"
             >
               ✕
             </label>
-            <div class="overflow-hidden  shadow-2xl md:grid md:grid-cols-3 max-w-[925px] lg:p-8 rounded-[20px]">
+            <div class="overflow-hidden   shadow-2xl md:grid md:grid-cols-3 max-w-[925px] lg:p-8 rounded-[20px]">
               <div class="col-span-2">
-                <img
-                  src={singleResourch.imgThumbnail}
-                  alt="Boat"
-                  class="w-[31.75rem] first-letter:rounded-t-lg pt-[32px] lg:pt-0 md:rounded-l-lg md:rounded-t-none mr-0"
-                />
+                <div className="relative">
+                  <img
+                    src={singleResourch.imgThumbnail}
+                    alt="Boat"
+                    class="w-[31.75rem] first-letter:rounded-t-lg pt-[32px] lg:pt-0 md:rounded-l-lg md:rounded-t-none mr-0"
+                  />
+                  <div className="flex items-center absolute top-[40px] left-[40px]">
+                    {
+                      singleResourch?.licence === "Premium"
+                        ? <img
+                          className="z-30"
+                          src={premium}
+                          alt="premiumIcon"
+                        />
+                        :
+                        ""
+                    }
+
+
+                  </div>
+                </div>
+                {/* 
                 <div className="flex items-end pt-2 px-[20px] lg:px-0">
                   <p className="text-sm font-normal text-[#666666] leading-[21px]">
                     Share:{" "}
@@ -122,7 +141,7 @@ console.log(downlimit)
                       <img src={INSTA} alt="" />
                     </Link>
                   </div>
-                </div>
+                </div> */}
                 <div className="w-full lg:w-[861px] text-left px-[20px] lg:pb-8 lg:px-0">
                   <h2 className="text-2xl font-bold text-[#333333] leading-9 pt-[4px] lg:pt-6">
                     {singleResourch.title}
@@ -140,11 +159,12 @@ console.log(downlimit)
                 </h2>
                 {user?.uid ? (
                   singleResourch?.licence === "Premium" &&
-                  loginUser?.paidPremium === false ? (
+                    !loginUser?.paidPremium ? (
                     <>
+                      {console.log(!loginUser?.paidPremium)}
                       <Link to="/premium_course">
                         <button
-                          disabled
+
                           className="download-button mx-auto lg:mx-0 flex items-center justify-center lg:mt-3"
                         >
                           Download{" "}
@@ -156,16 +176,27 @@ console.log(downlimit)
                         </button>
                       </Link>
                     </>
+                  ) : downlimit?.downloadStatus === "2" ? (
+                    <a onClick={() => downloadLimitHandler()} disabled>
+                      <button typeof="submit">
+                        <span className="download-button mx-auto lg:mx-0 flex items-center justify-center lg:mt-3">
+                          Download
+                          <img
+                            className="text-white pl-3"
+                            src={downloadIcon}
+                            alt="downloadIcon"
+                          />
+                        </span>
+                      </button>
+                    </a>
                   ) : (
-                    (downlimit.downloadDate === today) && (downlimit.userEmail === user?.email)
-                    ?
-                    ""
-                    :
                     <>
-              
-                    <a href={singleResourch.resourcDriveLink}  target="_blank">
-                      <button  className={downlimit.downloadDate === today ? `hidden` : `bolck`}  typeof="submit">
-                        
+                      <a
+                        onClick={() => downloadLimitHandler()}
+                        href={singleResourch?.resourcDriveLink}
+                        target="_blank"
+                      >
+                        <button typeof="submit">
                           <span className="download-button mx-auto lg:mx-0 flex items-center justify-center lg:mt-3">
                             Download
                             <img
@@ -174,10 +205,8 @@ console.log(downlimit)
                               alt="downloadIcon"
                             />
                           </span>
-                        
-                      </button>
-                    </a>
-                
+                        </button>
+                      </a>
                     </>
                   )
                 ) : (
@@ -193,9 +222,7 @@ console.log(downlimit)
                       </button>
                     </a>
                   </Link>
-                )
-                
-                }
+                )}
               </div>
             </div>
           </div>

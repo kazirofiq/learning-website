@@ -71,7 +71,7 @@ color: #FFFFFF;
                 </p>
                 <div className=" flex justify-center items-center gap-2">
                   <Link to='/freecorses'>
-                    <h2 className="text-[16px] font-bold text-[#1B1D48]  cursor-pointer">
+                    <h2 className="text-[16px] font-bold text-[#3D419F]  cursor-pointer">
                       Learn More
                     </h2>
                   </Link>

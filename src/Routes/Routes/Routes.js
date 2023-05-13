@@ -52,10 +52,11 @@ import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/Ter
 import Planner from "../../Pages/ProfilePage/Planner/Planner";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AdminRoute from "../AdminRoute/AdminRoute";
-import VerifyEmail from "../../Pages/VerifyEmail/VerifyEmail";
 import UpdateCuponCode from "../../Pages/AdminDashboard/UpdateCuponCode/UpdateCuponCode";
 import CreateWorkshop from "../../Pages/CreateWorkshop/CreateWorkshop";
 import WorkshopCurriculum from "../../Pages/WorkshopCurriculum/WorkshopCurriculum";
+import AssignmentList from "../../AssignmentList/AssignmentList";
+import WorkshopContent from "../../Pages/Courses/WorkshopContent/WorkshopContent";
 
 
 const router = createBrowserRouter([
@@ -127,14 +128,20 @@ const router = createBrowserRouter([
                 path: '/refund',
                 element: <Refund />
             },
-
+            {
+                path: '/workshop/:id',
+                element: <WorkshopContent></WorkshopContent>,
+                loader: async ({ params }) => {
+                    return fetch(`http://localhost:5000/workshops/name/${params.id}`)
+                },
+            },
 
         ]
     },
     // {
     //     path: '/verify-email/',
     //     element: <VerifyEmail></VerifyEmail>
-    // },
+    // },http://localhost:5000/workshops/name/6456395921a91c9abc54f0a0
     {
         path: '/mycourses',
         element: <PrivateRoute><CourseLayout /></PrivateRoute>,
@@ -146,9 +153,11 @@ const router = createBrowserRouter([
             {
                 path: '/mycourses/previousworkshop',
                 element: <PreviousWorkshop />
-            }
-        ]
+            },
+
+        ],
     },
+
     {
         path: '/workshop',
         element: <PrivateRoute><WorkShopLayout /></PrivateRoute>,
@@ -257,6 +266,10 @@ const router = createBrowserRouter([
                 element: <UpdateCuponCode />
             },
             {
+                path: '/admindashboard/assignment-list',
+                element: <AssignmentList />
+            },
+            {
                 path: '/admindashboard/course-create',
                 element: <SideCategory />,
                 children: [
@@ -272,8 +285,6 @@ const router = createBrowserRouter([
                         path: '/admindashboard/course-create/AddFAQ/:courseId',
                         element: <AddFAQ />
                     },
-
-
 
                 ]
             },

@@ -15,7 +15,6 @@ const QuizAccordion = ({ moduleNo, setModulesData }) => {
       }]
     }
   })
-  // console.log(quizData);
 
   const adMoreQuiz = () => {
     setQuestions(prev => [

@@ -13,7 +13,6 @@ const VedioProvider = ({ children }) => {
     const onOptionClicked = value => () => {
         setIsOpen(false);
         setSelectedOption(value);
-        // console.log(value);
     };
 
     useEffect(() => {

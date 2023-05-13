@@ -27,18 +27,18 @@ const PricingSection = () => {
           <h1 className='font-bold text-xl lg:text-2xl text-[#3D419F] text-center'>৳15,000</h1>
         </div>
         {
-          isPaid ? <div className="card-actions flex lg:justify-center items-center w-full mt-[15px] lg:px-0 px-5">
+          isPaid ? <div className="card-actions disabled flex lg:justify-center items-center w-full mt-[15px] lg:px-0 px-5">
             <button className="rounded-[10px] w-[320px] text-sm lg:text-base font-[600] text-[#FFFFFF] bg-[#a2a6fd] cursor-default py-[10px] lg:w-full mx-auto">Already Enrolled</button>
           </div> :
             <Link to={`${user?.uid ? "/payment" : "/login"}`} state={{ from: location }} replace>
-              <div className="card-actions flex lg:justify-center items-center w-full mt-[15px] lg:px-0 px-5">
-                <button className="rounded-[10px] w-[320px] text-sm lg:text-base font-[600] text-[#FFFFFF] bg-[#3D419F]  py-[10px] lg:w-full mx-auto">Enroll Now</button>
+              <div className="card-actions disabled flex lg:justify-center items-center w-full mt-[15px] lg:px-0 px-5">
+                <button disabled className=" rounded-[10px] w-[320px] text-sm lg:text-base font-[600] text-[#FFFFFF] bg-[#3D419F]  py-[10px] lg:w-full mx-auto">Enroll Now</button>
               </div>
             </Link>
         }
-        <div className='mt-4 text-black ml-5'>
+        {/* <div className='mt-4 text-black ml-5'>
           To know the process <label className='cursor-pointer' htmlFor='howToPay'><span className='text-[#3D419F] '>Watch this Video</span></label>
-        </div>
+        </div> */}
       </div>
       <EnrollMentCardModal modalId="howToPay" setIsChecked={setIsChecked}>
         <iframe className="w-[320px] lg:w-[730px] lg:h-[450px] h-[300px]" src={`${isChecked && "https://player.vdocipher.com/v2/?otp=20160313versASE323HiGrFGwVUOfoM1B4XG3gNKbgOGAEHX1cc1GmflQhQd7yKx&playbackInfo=eyJ2aWRlb0lkIjoiNzI1MmEyNDMyOTE1NGY5M2EwOWI4NWNjMmFjMTJjZTQifQ=="}`} title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen="true"></iframe>

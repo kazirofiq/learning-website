@@ -6,20 +6,8 @@ export const AuthContext = createContext();
 const auth = getAuth(app)
 
 const AuthProvider = ({ children }) => {
-    // const [isOpen, setIsOpen] = useState(false);
-    // const [selectedOption, setSelectedOption] = useState(null);
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-
-
-    // const toggling = () => setIsOpen(!isOpen);
-    // const onOptionClicked = value => () => {
-    //     setIsOpen(false);
-    //     setSelectedOption(value);
-    //     console.log(value);
-    // };
-
-
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -40,11 +28,11 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     }
 
-    const verificationEmail = ()=>{
-     return sendEmailVerification(auth.currentUser);
+    const verificationEmail = () => {
+        return sendEmailVerification(auth.currentUser);
     }
 
-    const passwordReset =(email)=>{
+    const passwordReset = (email) => {
         return sendPasswordResetEmail(auth, email)
     }
 

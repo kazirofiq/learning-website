@@ -43,7 +43,6 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId, setImage }) => {
       .then(imgData => {
         if (imgData.success && imgData.status === 200) {
           clearInterval(imageUploadInterval);
-          console.log(imageStatus);
           setImage(imgData.data.url);
           setIsImageUploading(false);
         }
@@ -95,10 +94,8 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId, setImage }) => {
         fetch(`http://localhost:5000/videos/status/${id}`)
           .then(res => res.json())
           .then(data => {
-            // console.log(isVideoUploading);
             const percent = parseInt(((new Date()).getTime() - time) * 100 * 10000 / data.upload_time)
             const status = data.status === "ready" ? 100 : percent > 99 ? 99 : percent;
-            // console.log(cancelVideoUpload);
             if (data.status === "ready") {
               clearInterval(checkInterval);
               setIsVideoUploading(false);
@@ -112,7 +109,7 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId, setImage }) => {
             setVideoStatus(status);
           })
           .catch(err => {
-            console.log(err);
+            console.error(err);
             clearInterval(checkInterval)
           })
       }, 3000);

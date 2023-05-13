@@ -1,21 +1,21 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { AiOutlineSearch } from "react-icons/ai";
-
+import premium from '../../assest/icon/premium.png'
+import "./Resource.css"
 import { BiChevronLeft } from "react-icons/bi";
 import { AiOutlineBars } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
 import ResourceDetails from "./ResourceDetails/ResourceDetails";
 import { useQuery } from "react-query";
-import { AuthContext } from "../../contexts/AuthProvider";
 
 const Resource = () => {
   const [open, setOpen] = useState("");
   const [catWiseResource, setCatWiseResource] = useState("");
-  const [licenseWiseResource, setLicenseWiseResource] = useState("");
-  const [singleResourch, setSingleResource] = useState({})
+
+  const [singleResourch, setSingleResource] = useState({});
   const [search, setSearch] = useState("");
-  const { user } = useContext(AuthContext);
+
   const { data: allresouces = [], refetch } = useQuery({
     queryKey: ["resources", catWiseResource],
     queryFn: () =>
@@ -26,16 +26,16 @@ const Resource = () => {
 
   //handle single Resourch
   const handleSingleResource = (resource) => {
-    return setSingleResource(resource)
-  }
+    return setSingleResource(resource);
+  };
 
   //category sorting data
   const handleCateforySorting = (categoryId) => {
     setCatWiseResource(categoryId);
   };
   const handleLicenseString = (licenseId) => {
-    setCatWiseResource(licenseId)
-  }
+    setCatWiseResource(licenseId);
+  };
   const handleButton = (value) => {
     setOpen(value);
   };
@@ -81,8 +81,8 @@ const Resource = () => {
   ];
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <section className="bg-[#F8F8FF] py-[1rem] md:py-[7.5rem] px-4 md:px-0">
@@ -92,7 +92,7 @@ const Resource = () => {
             Free Resource Download
           </h2>
           <h5 className="text-[#666666] ">
-            Explore more than 3,600 FREE template for download without any cost!
+            Explore more than {allresouces.length} FREE template for download without any cost!
           </h5>
         </div>
         <div className="grid grid-cols-1  md:grid-cols-4 gap-0 md:gap-5">
@@ -166,37 +166,7 @@ const Resource = () => {
                         </div>
                       ))}
 
-                      {/* <div className="form-control">
-                        <label className="cursor-pointer  flex items-center text-[#666666] text-[14px]">
-                          <input type="checkbox" />
-                          <span className="pl-2"> Kdp Interior</span>
-                        </label>
-                      </div>
-                      <div className="form-control">
-                        <label className="cursor-pointer  flex items-center text-[#666666] text-[14px]">
-                          <input type="checkbox" />
-                          <span className="pl-2"> Kdp Book Cover</span>
-                        </label>
-                      </div>
-                      <div className="form-control">
-                        <label className="cursor-pointer  flex items-center text-[#666666] text-[14px]">
-                          <input type="checkbox" />
-                          <span className="pl-2"> Kdp Book</span>
-                        </label>
-                      </div>
 
-                      <div className="form-control">
-                        <label className="cursor-pointer  flex items-center text-[#666666] text-[14px]">
-                          <input type="checkbox" />
-                          <span className="pl-2">Vector</span>
-                        </label>
-                      </div>
-                      <div className="form-control">
-                        <label className="cursor-pointer  flex items-center text-[#666666] text-[14px]">
-                          <input type="checkbox" />
-                          <span className="pl-2">Others</span>
-                        </label>
-                      </div> */}
                     </nav>
                   </details>
                 </li>
@@ -231,9 +201,16 @@ const Resource = () => {
                       {licenses.map((license) => (
                         <div>
                           <div className="form-control">
-                            <label onClick={() => handleLicenseString(`${license.categoryId}`)} className="cursor-pointer  flex items-center text-[#666666] text-[14px]">
+                            <label
+                              onClick={() =>
+                                handleLicenseString(`${license.categoryId}`)
+                              }
+                              className="cursor-pointer  flex items-center text-[#666666] text-[14px]"
+                            >
                               <input type="checkbox" />
-                              <span className="pl-2">{license.categoryName}</span>
+                              <span className="pl-2">
+                                {license.categoryName}
+                              </span>
                             </label>
                           </div>
                         </div>
@@ -256,29 +233,9 @@ const Resource = () => {
                       onChange={(e) => setSearch(e.target.value)}
                       type="text"
                       placeholder="Search "
-                      className="input bg-[#F8F8FF] h-8 md:h-12 focus:outline-none"
+                      className="input bg-[#F8F8FF] text-[#333] h-8 md:h-12 focus:outline-none"
                     />
-                    {/* <div className="dropdown dropdown-end hidden md:block">
-                      <label
-                        tabIndex={0}
-                        className="btn bg-[#F8F8FF]  focus:outline-none border-0 hover:bg-[#F8F8FF]"
-                      >
-                        <span className="bg-[#F8F8FF] text-[#666666] p-0  capitalize border-l-2 pl-3">
-                          Recent <BiChevronDown className="ml-2" />
-                        </span>{" "}
-                      </label>
-                      <ul
-                        tabIndex={0}
-                        className="menu dropdown-content p-2 shadow bg-base-100 rounded-sm "
-                      >
-                        <li>
-                          <a>Popular </a>
-                        </li>
-                        <li>
-                          <a>Recent</a>
-                        </li>
-                      </ul>
-                    </div> */}
+
                   </div>
                 </div>
               </div>
@@ -289,7 +246,7 @@ const Resource = () => {
                 />
               </span>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-6 ">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-6 gap-x-6 ">
               {allresouces
                 .filter((resource) => {
                   return search.toLocaleLowerCase() === ""
@@ -297,16 +254,36 @@ const Resource = () => {
                     : resource.title.toLocaleLowerCase().includes(search);
                 })
                 .map((resource) => (
-                  <label onClick={() => handleSingleResource(resource)} htmlFor="my-modal-3" className="cursor-pointer">
-                    <div className=" px-3">
-
+                  <label
+                    onClick={() => handleSingleResource(resource)}
+                    htmlFor="my-modal-3"
+                    className="cursor-pointer"
+                  >
+                    <div className="relative resource-title">
                       <img
-
-                        className="w-full "
+                        className="w-full resource-image"
                         src={resource.imgThumbnail}
                         alt=""
                       />
+                      <div className="overly"></div>
+                      <div className="flex items-center absolute top-[16px] left-[28px]">
+                        {
+                          resource?.licence === "Premium"
+                            ? <img
+                              className="z-30"
+                              src={premium}
+                              alt="premiumIcon"
+                            />
+                            :
+                            ""
+                        }
+
+                        <p className="text-xs font-normal pl-[6px] text-white opacity-0">
+                          {resource.title}
+                        </p>
+                      </div>
                     </div>
+
                   </label>
                 ))}
             </div>
@@ -319,9 +296,7 @@ const Resource = () => {
         </div>
       </div>
       <ResourceDetails singleResourch={singleResourch}>
-        {
-          refetch()
-        }
+        {refetch()}
       </ResourceDetails>
     </section>
   );

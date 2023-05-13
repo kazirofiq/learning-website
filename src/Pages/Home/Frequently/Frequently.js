@@ -10,7 +10,7 @@ const Frequently = () => {
         Frequently Asked  <span className="text-[#38A27B]">Question</span>{" "}
       </h2>
       <section
-        class="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center md:px-[145px] py-5"
+        class="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center md:px-[145px] py-5 mb-8"
       >
         <div>
           <div class=" flex items-center mb-5">
