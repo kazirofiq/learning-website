@@ -26,7 +26,7 @@ const WorkshopCard = ({ workshopId }) => {
                     <progress className="progress progress-secondary w-56 mt-1" value="90" max="100"></progress><span>90%</span>
                 </div>
                 <div className="w-full bg-[#7578d4] rounded-lg mt-[16px]">
-                    <button disabled className='px-[74.5px] btn-disabled py-[8px] text-white text-[14px] lg:text-[16px] font-medium'>Continue</button>
+                    <button className='px-[74.5px] py-[8px] text-white text-[14px] lg:text-[16px] font-medium'>Continue</button>
                 </div>
             </div>
         </div>
