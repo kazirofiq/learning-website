@@ -17,7 +17,7 @@ const Vedio = () => {
     const { videoId } = video
 
     useEffect(() => {
-        fetch(`http://localhost:5000/videos/${videoId}`)
+        fetch(`https://learn-with-rakib.onrender.com/videos/${videoId}`)
             .then(res => res.json())
             .then(data => setVideoLink(data))
     }, [videoId])
@@ -27,14 +27,16 @@ const Vedio = () => {
             fetch(`${server}/users/uid?uid=${user?.uid}`)
                 .then(res => res.json())
                 .then(data => {
-                    const info = data.enrolledCourses.find(course => course.id === allModules[0].courseId);
+                    console.log(data.enrolledCourses, allModules);
+                    const info = data.enrolledCourses.find(course => course.id === allModules[0]?.courseId);
                     const allLessons = allModules?.map(module => module.lessons.map(lesson => lesson))?.flat(1)
                     const lessonId = pathname.split('/')[3];
                     const index = allLessons.findIndex(less => less.number === lessonId) + 1;
                     const newCompleted = Math.floor(index * 100 / allLessons.length);
+                    console.log(info);
 
-                    if (info.completed < newCompleted) {
-                        fetch(`${server}/courses/completed?uid=${user?.uid}&courseId=${allModules[0].courseId}`, {
+                    if (info?.completed < newCompleted) {
+                        fetch(`${server}/courses/completed?uid=${user?.uid}&courseId=${allModules[0]?.courseId}`, {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"

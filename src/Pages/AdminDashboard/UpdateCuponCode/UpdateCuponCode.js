@@ -14,7 +14,7 @@ const UpdateCuponCode = () => {
     const discount = couponData[0]?.discount;
 
     useEffect(() => {
-        fetch('http://localhost:5000/coupon')
+        fetch('https://learn-with-rakib.onrender.com/coupon')
             .then(res => res.json())
             .then(data => setCouponData(data))
     }, [couponData])
@@ -26,7 +26,7 @@ const UpdateCuponCode = () => {
             discount: data?.discount
         }
         if (data?.coupon && data?.discount) {
-            fetch(`http://localhost:5000/coupon/${couponID}`, {
+            fetch(`https://learn-with-rakib.onrender.com/coupon/${couponID}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"

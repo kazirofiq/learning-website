@@ -51,7 +51,7 @@ const CourseDetailsInput = () => {
     if (title && subtitle && selectedItem && selectedItem !== "Select" && price && image && promotionVideoId && instructor && description && will_learn.length > 0) {
       const course = { title, subtitle, selectedItem, price, image, promotionVideoId, instructor, description, will_learn, draft };
 
-      fetch("http://localhost:5000/courses", {
+      fetch("https://learn-with-rakib.onrender.com/courses", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

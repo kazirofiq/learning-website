@@ -19,7 +19,7 @@ const Resource = () => {
   const { data: allresouces = [], refetch } = useQuery({
     queryKey: ["resources", catWiseResource],
     queryFn: () =>
-      fetch(`http://localhost:5000/resource/${catWiseResource}`).then((res) =>
+      fetch(`https://learn-with-rakib.onrender.com/resource/${catWiseResource}`).then((res) =>
         res.json()
       ),
   });

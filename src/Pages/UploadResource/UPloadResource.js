@@ -22,61 +22,61 @@ const UPloadResource = () => {
   const [selectedItemId, setSelectedItemId] = useState("");
   const [selectedLicenseId, setSelectedLicenseId] = useState("");
   const [selectedItemLicense, setSelectedItemLicense] = useState("Select");
- 
+
   const [droptImg, setDropImg] = useState([])
-  
+
   let imgSize = parseInt(droptImg[0]?.size / 1000000)
 
 
 
 
-  
-  
+
+
 
   // onDrop Npm
   const onDrop = useCallback((acceptedFiles) => {
     setDropImg(acceptedFiles)
   }, []);
-  
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
   const items = [
     {
-      categoryName : "All Template",
+      categoryName: "All Template",
       categoryId: "11111"
     },
     {
-      categoryName : "Kdp Interior",
+      categoryName: "Kdp Interior",
       categoryId: "11112"
     },
-    
+
     {
-      categoryName : "Kdp Book Cover",
+      categoryName: "Kdp Book Cover",
       categoryId: "11114"
     },
     {
-      categoryName : "Kdp Book",
+      categoryName: "Kdp Book",
       categoryId: "11115"
     },
     {
-      categoryName : "Vector",
+      categoryName: "Vector",
       categoryId: "11116"
     },
     {
-      categoryName : "Others",
+      categoryName: "Others",
       categoryId: "11117"
     }
   ]
   // const items = ["All Template","Kdp Interior" , "Kdp Book Cover", "Kdp Book", "Vector", "Others"];
   const licenses = [
     {
-      categoryName : "Premium",
-      categoryId : "10001",
-       
+      categoryName: "Premium",
+      categoryId: "10001",
+
     },
     {
-      categoryName : "Free",
-      categoryId : "10002",
-       
+      categoryName: "Free",
+      categoryId: "10002",
+
     }
   ];
 
@@ -95,14 +95,14 @@ const UPloadResource = () => {
     setSelectedLicenseId(licenseId)
     setIsOpenLicense(false);
   };
-  
- 
+
+
   const handleUploadResource = (e) => {
     e.preventDefault()
-     const resourcTitle = e.target.resourcTitle.value
-     const resourcDriveLink = e.target.resourcDriveLink.value
-     
-     const description = e.target.description.value
+    const resourcTitle = e.target.resourcTitle.value
+    const resourcDriveLink = e.target.resourcDriveLink.value
+
+    const description = e.target.description.value
 
     const image = droptImg[0]
     console.log(image)
@@ -116,21 +116,21 @@ const UPloadResource = () => {
     })
       .then(res => res.json())
       .then(imgData => {
-        
+
         if (imgData.success) {
           const post = {
-            title : resourcTitle,
+            title: resourcTitle,
             category: selectedItem,
             categoryId: selectedItemId,
             licence: selectedItemLicense,
             licenceId: selectedLicenseId,
             designation: description,
             resourcDriveLink: resourcDriveLink,
-            imgThumbnail : imgData.data.url,
+            imgThumbnail: imgData.data.url,
             postTime: new Date().toLocaleString()
 
           }
-          fetch(`http://localhost:5000/resource`, {
+          fetch(`https://learn-with-rakib.onrender.com/resource`, {
             method: 'POST',
             headers: {
               'content-type': 'application/json'
@@ -150,7 +150,7 @@ const UPloadResource = () => {
       })
     e.target.reset()
   }
- 
+
   return (
     <div className="mt-[41px] poppins w-[1136px] mx-auto">
       <h1 className="font-semibold text-2xl text-[#1B1D48]">
@@ -214,20 +214,18 @@ const UPloadResource = () => {
                     {items.map((item) => (
                       <li
                         key={item.categoryName}
-                        className={`${
-                          selectedItem === item.categoryName
+                        className={`${selectedItem === item.categoryName
                             ? "font-medium text-[#1B1D48] text-base pl-4 mb-4"
                             : "font-medium text-[#1B1D48] text-base pl-4 mb-4"
-                        } cursor-pointer select-none relative`}
+                          } cursor-pointer select-none relative`}
                         onClick={() => handleItemClick(item.categoryName, item.categoryId)}
                       >
                         <div className="flex items-center">
                           <span
-                            className={`${
-                              selectedItem === item.categoryName
+                            className={`${selectedItem === item.categoryName
                                 ? "font-semibold"
                                 : "font-normal"
-                            } block truncate`}
+                              } block truncate`}
                           >
                             {item.categoryName}
                           </span>
@@ -276,20 +274,18 @@ const UPloadResource = () => {
                     {licenses.map((license) => (
                       <li
                         key={license}
-                        className={`${
-                          selectedItemLicense === license.categoryName
+                        className={`${selectedItemLicense === license.categoryName
                             ? "font-medium text-[#1B1D48] text-base pl-4 mb-4"
                             : "font-medium text-[#1B1D48] text-base pl-4 mb-4"
-                        } cursor-pointer select-none relative`}
-                        onClick={() => handleItemLicenceClick(license.categoryName , license.categoryId)}
+                          } cursor-pointer select-none relative`}
+                        onClick={() => handleItemLicenceClick(license.categoryName, license.categoryId)}
                       >
                         <div className="flex items-center">
                           <span
-                            className={`${
-                              selectedItemLicense === license.categoryName
+                            className={`${selectedItemLicense === license.categoryName
                                 ? "font-semibold"
                                 : "font-normal"
-                            } block truncate`}
+                              } block truncate`}
                           >
                             {license.categoryName}
                           </span>
@@ -301,7 +297,7 @@ const UPloadResource = () => {
               )}
             </div>
           </div>
-          
+
           <div className="mt-4">
             <label
               className="label text-[#666666] font-normal text-sm"
@@ -310,7 +306,7 @@ const UPloadResource = () => {
               Resource Description
             </label>
             <textarea
-             required
+              required
               name="description"
               className="textarea w-full font-medium text-base placeholder-[#1B1D48] h-[206px] focus:border-[1px] focus:border-[#C3C4E1] focus:outline-none bg-[#F8F8FF] text-[#1B1D48]"
               placeholder="Editable “Wedding Planner Checklist KDP Interior” Download instantly AI with PDF formats ready to upload on KDP Every single part of This Interior (Colors+Fonts+Style+Size) can be edited with Adobe Illustrator Software"
@@ -337,7 +333,7 @@ const UPloadResource = () => {
               className="label text-[#666666] font-normal text-sm"
               htmlFor="upload-file"
             >
-             Upload thumbnail 
+              Upload thumbnail
             </label>
             <div>
               <div className="grid grid-cols-2 gap-x-6">
@@ -366,21 +362,21 @@ const UPloadResource = () => {
                           </span>
                         </p>
                         {
-                          droptImg[0] 
-                          ?(
-                            <p className="font-light text-xs text-[#666666]">
-                          file Name :{droptImg[0]?.name}
-                        </p>
-                          )
-                          :
-                          (
-                            <p className="font-light text-xs text-[#666666]">
-                          Video, Pdf or Text file (max. 2.0 GB)
-                        </p>
-                          )
+                          droptImg[0]
+                            ? (
+                              <p className="font-light text-xs text-[#666666]">
+                                file Name :{droptImg[0]?.name}
+                              </p>
+                            )
+                            :
+                            (
+                              <p className="font-light text-xs text-[#666666]">
+                                Video, Pdf or Text file (max. 2.0 GB)
+                              </p>
+                            )
 
                         }
-                        
+
                       </div>
                     </div>
                   )}
@@ -396,7 +392,7 @@ const UPloadResource = () => {
                             alt=""
                           />
                           <div className="mt-[18px]">
-                            
+
                             <h3 className="font-normal text-base text-[#E8291D]">
                               Upload failed, try again
                             </h3>
@@ -413,109 +409,109 @@ const UPloadResource = () => {
                     </div>
                   </div>
                   {
-                    droptImg[0]?.name 
-                    ?
-                    <>
-                    <div>
-                    <div>
-                      <div className="card w-96 bg-base-100 shadow-md pr-4 pl-[10px] py-[10px] mt-4">
+                    droptImg[0]?.name
+                      ?
+                      <>
                         <div>
-                          <div className="rounded-xl mt-3">
-                            <div className="flex items-center">
-                              <img
-                                className="w-[26px] h-[26px] mr-[5px]"
-                                src={imgIcon}
-                                alt=""
-                              />
-                              <div className="flex items-center justify-between w-full">
-                             
-                                    <p className="text-[#333333] font-normal text-base">
-                                    {
-                                      droptImg[0]?.name
-                                    }
-                                  </p>
-                                 
-                                
-                                <img src={checkedIcon} alt="" />
-                              </div>
-                            </div>
-                            <div className="flex flex-col ml-[31px]">
-                              
-                                
-                              
-                              <span className="text-[#666666] font-light text-xs">
-                                {
-                                  imgSize
-                                }MB
-                              </span>
-                              <div className="flex items-center">
-                                <progress
-                                  className="progress w-[410px] bg-[#E1F1EB] mr-3 progress-secondary"
-                                  value="100"
-                                  max="100"
-                                ></progress>
-                                <span className="text-[#333333] font-normal text-base">
-                                  100%
-                                </span>
+                          <div>
+                            <div className="card w-96 bg-base-100 shadow-md pr-4 pl-[10px] py-[10px] mt-4">
+                              <div>
+                                <div className="rounded-xl mt-3">
+                                  <div className="flex items-center">
+                                    <img
+                                      className="w-[26px] h-[26px] mr-[5px]"
+                                      src={imgIcon}
+                                      alt=""
+                                    />
+                                    <div className="flex items-center justify-between w-full">
+
+                                      <p className="text-[#333333] font-normal text-base">
+                                        {
+                                          droptImg[0]?.name
+                                        }
+                                      </p>
+
+
+                                      <img src={checkedIcon} alt="" />
+                                    </div>
+                                  </div>
+                                  <div className="flex flex-col ml-[31px]">
+
+
+
+                                    <span className="text-[#666666] font-light text-xs">
+                                      {
+                                        imgSize
+                                      }MB
+                                    </span>
+                                    <div className="flex items-center">
+                                      <progress
+                                        className="progress w-[410px] bg-[#E1F1EB] mr-3 progress-secondary"
+                                        value="100"
+                                        max="100"
+                                      ></progress>
+                                      <span className="text-[#333333] font-normal text-base">
+                                        100%
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                    </>
-                    :
-                    <>
-                    <div>
-                    <div>
-                      <div className="card w-96 bg-base-100 shadow-md pr-4 pl-[10px] py-[10px] mt-4">
+                      </>
+                      :
+                      <>
                         <div>
-                          <div className="rounded-xl mt-3">
-                            <div className="flex items-center">
-                              <img
-                                className="w-[26px] h-[26px] mr-[5px]"
-                                src={imgIcon}
-                                alt=""
-                              />
-                              <div className="flex items-center justify-between w-full">
-                             
-                                    <p className="text-[#333333] font-normal text-base">
-                                    {
-                                      droptImg[0]?.name
-                                    }
-                                  </p>
-                                 
-                                
-                                <img src={checkedIcon} alt="" />
-                              </div>
-                            </div>
-                            <div className="flex flex-col ml-[31px]">
-                              
-                                
-                              
-                              <span className="text-[#666666] font-light text-xs">
-                                {
-                                  imgSize || 0
-                                }MB
-                              </span>
-                              <div className="flex items-center">
-                                <progress
-                                  className="progress w-[410px] bg-[#fff] mr-3 progress-accent"
-                                  value="0"
-                                  max="100"
-                                ></progress>
-                                <span className="text-[#333333] font-normal text-base">
-                                  0%
-                                </span>
+                          <div>
+                            <div className="card w-96 bg-base-100 shadow-md pr-4 pl-[10px] py-[10px] mt-4">
+                              <div>
+                                <div className="rounded-xl mt-3">
+                                  <div className="flex items-center">
+                                    <img
+                                      className="w-[26px] h-[26px] mr-[5px]"
+                                      src={imgIcon}
+                                      alt=""
+                                    />
+                                    <div className="flex items-center justify-between w-full">
+
+                                      <p className="text-[#333333] font-normal text-base">
+                                        {
+                                          droptImg[0]?.name
+                                        }
+                                      </p>
+
+
+                                      <img src={checkedIcon} alt="" />
+                                    </div>
+                                  </div>
+                                  <div className="flex flex-col ml-[31px]">
+
+
+
+                                    <span className="text-[#666666] font-light text-xs">
+                                      {
+                                        imgSize || 0
+                                      }MB
+                                    </span>
+                                    <div className="flex items-center">
+                                      <progress
+                                        className="progress w-[410px] bg-[#fff] mr-3 progress-accent"
+                                        value="0"
+                                        max="100"
+                                      ></progress>
+                                      <span className="text-[#333333] font-normal text-base">
+                                        0%
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                    </>
+                      </>
                   }
                 </div>
               </div>

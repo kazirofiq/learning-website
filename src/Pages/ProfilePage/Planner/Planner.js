@@ -47,7 +47,7 @@ const Planner = () => {
       }
 
       // console.log(taskListData)
-      fetch("http://localhost:5000/task-list", {
+      fetch("https://learn-with-rakib.onrender.com/task-list", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -71,7 +71,7 @@ const Planner = () => {
         email: email,
         userId: uid,
       }
-      fetch(`http://localhost:5000/task-list-note/${getNote?._id}`, {
+      fetch(`https://learn-with-rakib.onrender.com/task-list-note/${getNote?._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"
@@ -93,7 +93,7 @@ const Planner = () => {
         email: email,
         userId: uid,
       }
-      fetch("http://localhost:5000/task-list-note", {
+      fetch("https://learn-with-rakib.onrender.com/task-list-note", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -116,20 +116,20 @@ const Planner = () => {
 
   // get task note list
   useEffect(() => {
-    fetch(`http://localhost:5000/task-list-note/${email}`)
+    fetch(`https://learn-with-rakib.onrender.com/task-list-note/${email}`)
       .then(res => res.json())
       .then(data => setGetNote(data))
   }, [getNote, email])
 
   // get task list 
   useEffect(() => {
-    fetch(`http://localhost:5000/task-list/${email}`)
+    fetch(`https://learn-with-rakib.onrender.com/task-list/${email}`)
       .then(res => res.json())
       .then(data => setAllTaskList(data))
   }, [allTaskList, email])
 
   const deleteTask = () => {
-    fetch(`http://localhost:5000/task-list/${user?.email}`, {
+    fetch(`https://learn-with-rakib.onrender.com/task-list/${user?.email}`, {
       method: "DELETE"
     })
       .then(res => res.json())

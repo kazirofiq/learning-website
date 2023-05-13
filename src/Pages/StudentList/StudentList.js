@@ -1,7 +1,5 @@
 import React from 'react';
-import './StudentList.css'
-import preIcon from '../../assest/icon/preicon.png';
-import nextIcon from '../../assest/icon/nexticon.png';
+import './StudentList.css';
 
 const StudentList = () => {
     return (
@@ -23,11 +21,10 @@ const StudentList = () => {
                     <div class="-mx-4 -my-2 overflow-x-auto">
                         <div class="inline-block min-w-full py-2 align-middle">
                             <div class="overflow-hidden">
-                                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                                    <thead class="bg-gray-50 dark:bg-gray-800">
+                                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-200">
+                                    <thead class="bg-gray-50 dark:divide-gray-200">
                                         <tr>
                                             <th scope="col" class="py-3.5 leading-[18px] px-4 text-xs font-medium text-left rtl:text-right text-[#666666]">
-
 
                                                 <p>Course Name</p>
 
@@ -64,7 +61,7 @@ const StudentList = () => {
                                             </th>
                                         </tr>
                                     </thead>
-                                    <tbody class="bg-white divide-y divide-[#E2E3F1] dark:divide-gray-700 dark:bg-gray-900">
+                                    <tbody class="bg-white divide-y divide-[#E2E3F1] dark:divide-gray-200">
                                         <tr>
                                             <td class="px-4 py-4 text-sm font-medium text-[#333333] whitespace-nowrap">
                                                 <div class="inline-flex items-center gap-x-3">
@@ -118,35 +115,6 @@ const StudentList = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="flex items-center justify-between mt-6 pb-4">
-                    <a href="/" class=" flex items-center justify-center  text-base student-prenxt-button text-[#333333] font-medium">
-                        <img src={preIcon} ALT="PREVIOUS ICON" className='pt-[3px] pr-1' />
-
-                        <span>
-                            Previous
-                        </span>
-                    </a>
-
-                    <div class="items-center hidden lg:flex gap-x-3">
-                        <a href="/" class="px-2 py-1 text-sm text-blue-500 rounded-md dark:bg-gray-800 bg-blue-100/60">1</a>
-                        <a href="/" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">2</a>
-                        <a href="/" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">3</a>
-                        <a href="/" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">...</a>
-                        <a href="/" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">12</a>
-                        <a href="/" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">13</a>
-                        <a href="/" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">14</a>
-                    </div>
-
-                    <a href="/" class="flex items-center justify-center text-base student-prenxt-button text-[#333333] font-medium">
-
-
-                        <span>
-                            Next
-                        </span>
-                        <img src={nextIcon} ALT="NEXT ICON" className='pt-[3px] pl-1' />
-                    </a>
                 </div>
             </div>
         </section>

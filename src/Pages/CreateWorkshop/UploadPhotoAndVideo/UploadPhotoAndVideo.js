@@ -69,7 +69,7 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId, setImage }) => {
     setVideoFileInfo(files[0]);
     const formData = new FormData();
     formData.append("file", files[0]);
-    fetch("http://localhost:5000/videos", {
+    fetch("https://learn-with-rakib.onrender.com/videos", {
       method: "POST",
       body: formData
     })
@@ -91,7 +91,7 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId, setImage }) => {
   const checkStatus = (id, time) => {
     if (id) {
       const checkInterval = setInterval(() => {
-        fetch(`http://localhost:5000/videos/status/${id}`)
+        fetch(`https://learn-with-rakib.onrender.com/videos/status/${id}`)
           .then(res => res.json())
           .then(data => {
             const percent = parseInt(((new Date()).getTime() - time) * 100 * 10000 / data.upload_time)

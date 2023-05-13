@@ -9,18 +9,20 @@ import { useEffect } from "react";
 import navicon from "../../../assest/navicon.png";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import useIsAdmin from "../../../hooks/useIsAdmin";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [savedUser, SetSavedUser] = useState(null)
     const { user, logOut } = useContext(AuthContext);
+    const [isAdmin, isLoading] = useIsAdmin(user?.uid);
 
     const handleLogOut = () => {
         logOut().then(() => console.log("Logged Out")).catch(err => console.error("Some Error Occured"))
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`)
+        fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`)
             .then(res => res.json())
             .then(data => {
                 SetSavedUser(data)
@@ -184,7 +186,7 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li className="w-[136px] mx-4 my-2 border rounded-lg hover:text-white">
-                                <Link to="/student-dashboard" className="px-3 py-2 bg-[#FFFFFF] hover:bg-[#3D419F] hover:text-white text-[#333333]">
+                                <Link to={(user?.uid && isAdmin) ? "/admindashboard" : "/student-dashboard"} className="px-3 py-2 bg-[#FFFFFF] hover:bg-[#3D419F] hover:text-white text-[#333333]">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"

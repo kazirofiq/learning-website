@@ -56,6 +56,8 @@ import UpdateCuponCode from "../../Pages/AdminDashboard/UpdateCuponCode/UpdateCu
 import CreateWorkshop from "../../Pages/CreateWorkshop/CreateWorkshop";
 import WorkshopCurriculum from "../../Pages/WorkshopCurriculum/WorkshopCurriculum";
 import AssignmentList from "../../AssignmentList/AssignmentList";
+import StudentList from "../../Pages/StudentList/StudentList";
+import WorkshopContent from "../../Pages/Courses/WorkshopContent/WorkshopContent";
 
 
 const router = createBrowserRouter([
@@ -126,6 +128,13 @@ const router = createBrowserRouter([
             {
                 path: '/refund',
                 element: <Refund />
+            },
+            {
+                path: '/workshop/:id',
+                element: <WorkshopContent></WorkshopContent>,
+                loader: async ({ params }) => {
+                    return fetch(`https://learn-with-rakib.onrender.com/workshops/name/${params.id}`)
+                },
             },
 
 
@@ -219,20 +228,20 @@ const router = createBrowserRouter([
                 path: '/batch-1/video/:number',
                 element: <Vedio />,
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/batch-1/${params.number}`)
+                    return fetch(`https://learn-with-rakib.onrender.com/batch-1/${params.number}`)
                 },
             },
             {
                 path: '/batch-1/quiz/:number',
                 element: <Quiz></Quiz>,
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/batch-1/${params.number}`)
+                    return fetch(`https://learn-with-rakib.onrender.com/batch-1/${params.number}`)
                 },
             },
             {
                 path: '/batch-1/assignment/:number',
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/batch-1/${params.number}`)
+                    return fetch(`https://learn-with-rakib.onrender.com/batch-1/${params.number}`)
                 },
                 element: <Assignment></Assignment>
             },
@@ -247,6 +256,10 @@ const router = createBrowserRouter([
             {
                 path: '/admindashboard',
                 element: <AdminDashboard></AdminDashboard>
+            },
+            {
+                path: '/admindashboard/student-list',
+                element: <StudentList></StudentList>
             },
             {
                 path: '/admindashboard/upload-Resource',

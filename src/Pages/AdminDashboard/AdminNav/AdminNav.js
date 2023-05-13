@@ -25,22 +25,9 @@ const AdminNav = () => {
             </Link>
           </li>
           <li>
-            <Link to="/admindashboard/sendnotification">
-              <label
-                // onClick={() => setDeletingClient(client)}
-                htmlFor="confirmation-modal"
-
-              >
-                <div className="flex gap-4 items-center">
-                  <AiOutlineMail className='text-white font-bold'></AiOutlineMail>
-                  <h2>Send Notification</h2>
-                </div>
-              </label>
-
-            </Link>
           </li>
           <li>
-            <Link to="/admindashboard/sendnotification">
+            <Link to="/admindashboard/student-list">
               <div className="flex gap-4 items-center">
                 <GiGraduateCap></GiGraduateCap>
                 <h2>Student List</h2>

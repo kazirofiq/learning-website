@@ -63,20 +63,11 @@ const AssignmentList = () => {
                                                         <th scope="col" class="py-3.5 leading-[18px] px-4 text-xs font-medium text-left rtl:text-right text-[#666666]"><p>Date & time</p>
 
                                                         </th>
-
-
                                                         <th scope="col" class="py-3.5 leading-[18px] px-4 text-xs font-medium text-left rtl:text-right text-[#666666]">
-
-
                                                             <p>Assignment</p>
-
                                                         </th>
-
                                                         <th scope="col" class="py-3.5 leading-[18px] px-4 text-xs font-medium text-left rtl:text-right text-[#666666]">
-
-
                                                             <p>Assignment (attended)</p>
-
                                                         </th>
                                                         <th scope="col" class="py-3.5 px-4 text-xs font-medium text-left rtl:text-right text-[#666666]">
 

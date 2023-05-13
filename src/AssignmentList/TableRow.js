@@ -6,7 +6,8 @@ import { server } from '../variables/server';
 
 const TableRow = ({ assignment }) => {
     const [isClicked, setIsClicked] = useState(false);
-    const [marks, setMarks] = useState(assignment.marks);
+    const [marks, setMarks] = useState(assignment.marks || 0);
+    console.log(marks);
 
     const giveMarks = e => {
         e.preventDefault()
@@ -17,7 +18,7 @@ const TableRow = ({ assignment }) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ marks })
+            body: JSON.stringify({ marks, isChecked: true })
         })
             .then(res => res.json())
             .then(result => {
@@ -57,7 +58,7 @@ const TableRow = ({ assignment }) => {
                             <input name='marks' defaultValue={marks} onBlur={() => setIsClicked(false)} className='w-10' type="text" placeholder='mark' autoFocus />
                         </form>
                         :
-                        <span onClick={() => setIsClicked(true)}>{assignment.isChecked && marks}</span>
+                        <span onClick={() => setIsClicked(true)}>{marks}</span>
                 }
             </td>
         </tr>

@@ -14,7 +14,7 @@ const VedioProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        fetch('http://localhost:5000/batch-1')
+        fetch('https://learn-with-rakib.onrender.com/batch-1')
             .then(res => res.json())
             .then(data => setAllModules(data))
 

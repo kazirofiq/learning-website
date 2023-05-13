@@ -22,14 +22,14 @@ const ResourceDetails = ({ singleResourch }) => {
     queryKey: ["downlimit"],
     queryFn: () =>
       fetch(
-        `http://localhost:5000/downLimit/downloadDate?downloadDate=${today}&&userEmail=${user?.email}`
+        `https://learn-with-rakib.onrender.com/downLimit/downloadDate?downloadDate=${today}&&userEmail=${user?.email}`
       ).then((res) => res.json()),
   });
 
   const { data: loginUser = {} } = useQuery({
     queryKey: ["loginUser"],
     queryFn: () =>
-      fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`).then((res) => res.json()),
+      fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`).then((res) => res.json()),
   });
 
   let today = new Date();
@@ -57,7 +57,7 @@ const ResourceDetails = ({ singleResourch }) => {
       refetch();
       return toast.error("You have reached today's download limit!");
     } else if (downlimit?.downloadStatus === "1") {
-      fetch(`http://localhost:5000/downLimit/${downlimit?._id}`, {
+      fetch(`https://learn-with-rakib.onrender.com/downLimit/${downlimit?._id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
@@ -71,7 +71,7 @@ const ResourceDetails = ({ singleResourch }) => {
           }
         });
     } else {
-      fetch(`http://localhost:5000/downLimit/`, {
+      fetch(`https://learn-with-rakib.onrender.com/downLimit/`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

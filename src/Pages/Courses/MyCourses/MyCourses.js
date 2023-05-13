@@ -4,18 +4,20 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import LinkToCourse from './LinkToCourse';
+import ClipLoader from "react-spinners/ClipLoader";
 
 const MyCourses = () => {
     const [courses, setCourses] = useState([])
     const { user } = useContext(AuthContext);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         if (user?.uid) {
-            fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`)
+            fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`)
                 .then(res => res.json())
                 .then(user => {
                     user?.enrolledCourses?.forEach(courseInfo => {
-                        fetch(`http://localhost:5000/courses/${courseInfo.id}`)
+                        fetch(`https://learn-with-rakib.onrender.com/courses/${courseInfo.id}`)
                             .then(res => res.json())
                             .then(course => {
                                 course.completed = courseInfo.completed
@@ -24,6 +26,7 @@ const MyCourses = () => {
                                     const newCourse = !prev.find(p => p._id === course._id) ? [...prev, course] : prev
                                     return newCourse;
                                 })
+                                setIsLoading(false)
                             })
                             .catch(err => console.error(err))
                     })
@@ -38,25 +41,32 @@ const MyCourses = () => {
 
     return (
         <div className='mx-[35px] lg:mx-[145px] md:mx-[20px]'>
-            <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-4 mt-[24px] md:mt-[34px] lg:mt-[48px] mb-[48px] md:mb-[70px] lg:mb-[96px]'>
-                {
-                    courses?.map((mycourse, i) =>
-                        <div key={i} className="card free-courses lg:w-[255px] md:w-[255px] w-[320px] h-[363px] lg:h-[326px] rounded-[10px] bg-[#FFFFFF] border-[1px] border-[#ECECF5]">
-                            <figure><img className='lg:h-[143px] md:h-[143px] h-[179px] w-full' src={mycourse.image} alt="Course" /></figure>
-                            <div className="px-4 pt-3 free-courses-text pb-5 lg:pb-6 bg-[#FFFFFF]">
-                                <h2 className=" font-semibold text-base lg:text-lg leading-6 text-[#333333] mt-2">{mycourse.title.length > 30 ? mycourse.title.slice(0, 29) + "..." : mycourse.title}</h2>
-                                <p className='font-normal text-xs lg:text-sm md:text-sm leading-[18px] text-[#333333] mt-[8px] lg:mt-3 md:mt-3'>{mycourse.instructor}</p>
-                                <div className='flex items-center gap-x-3'>
-                                    <progress className="progress progress-secondary w-56 mt-1" value={mycourse.completed} max="100"></progress><span>{mycourse.completed}%</span>
+            {
+                isLoading ?
+                    <div className="flex justify-center items-center h-[400px]">
+                        <ClipLoader color="#0000ff" size="50" />
+                    </div>
+                    :
+
+                    <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-4 mt-[24px] md:mt-[34px] lg:mt-[48px] mb-[48px] md:mb-[70px] lg:mb-[96px]'>
+                        {
+                            courses?.map((mycourse, i) =>
+                                <div key={i} className="card free-courses lg:w-[255px] md:w-[255px] w-[320px] h-[363px] lg:h-[326px] rounded-[10px] bg-[#FFFFFF] border-[1px] border-[#ECECF5]">
+                                    <figure><img className='lg:h-[143px] md:h-[143px] h-[179px] w-full' src={mycourse.image} alt="Course" /></figure>
+                                    <div className="px-4 pt-3 free-courses-text pb-5 lg:pb-6 bg-[#FFFFFF]">
+                                        <h2 className=" font-semibold text-base lg:text-lg leading-6 text-[#333333] mt-2">{mycourse.title.length > 30 ? mycourse.title.slice(0, 29) + "..." : mycourse.title}</h2>
+                                        <p className='font-normal text-xs lg:text-sm md:text-sm leading-[18px] text-[#333333] mt-[8px] lg:mt-3 md:mt-3'>{mycourse.instructor}</p>
+                                        <div className='flex items-center gap-x-3'>
+                                            <progress className="progress progress-secondary w-56 mt-1" value={mycourse.completed} max="100"></progress><span>{mycourse.completed}%</span>
+                                        </div>
+                                        <LinkToCourse myCourse={mycourse} />
+                                    </div>
                                 </div>
-                                <LinkToCourse myCourse={mycourse} />
-                            </div>
-                        </div>
-                    )
-                }
+                            )
+                        }
 
 
-                {/* <div className="card lg:w-[255px] md:w-[255px] w-[320px] h-[363px] lg:h-[326px] rounded-[10px] bg-[#FFFFFF] border-[1px] border-[#ECECF5]">
+                        {/* <div className="card lg:w-[255px] md:w-[255px] w-[320px] h-[363px] lg:h-[326px] rounded-[10px] bg-[#FFFFFF] border-[1px] border-[#ECECF5]">
                     <figure><img className='lg:h-[143px] md:h-[143px] h-[179px] w-full' src={image} alt="Course" /></figure>
                     <div className="px-4 pt-3 pb-5 lg:pb-6 bg-[#FFFFFF]">
                         <h2 className=" font-semibold text-base lg:text-lg leading-6 text-[#333333] mt-2">KDP Mastery: The Complete...</h2>
@@ -73,7 +83,8 @@ const MyCourses = () => {
                 </div> */}
 
 
-            </div>
+                    </div>
+            }
         </div>
     );
 };
