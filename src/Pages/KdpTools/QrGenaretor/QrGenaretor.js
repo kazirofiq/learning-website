@@ -1,71 +1,53 @@
-import React, { useState } from 'react';
-import QRCode from 'react-qr-code';
-import { saveAs } from 'file-saver';
+import React, { useRef, useState } from 'react';
+import QRCode from 'qrcode.react';
+import html2canvas from 'html2canvas';
 
 const QrGenaretor = () => {
-    const [qrData, setQrData] = useState('');
+    const [inputValue, setInputValue] = useState("");
+    const qrCodeRef = useRef(null);
 
-    const handleChange = (e) => {
-        setQrData(e.target.value)
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
     };
 
     const handleDownload = () => {
-        fetch(qrData)
-            .then(response => response.blob())
-            .then(blob => saveAs(blob, 'image.png'))
-            .catch(error => console.error(error));
+        html2canvas(qrCodeRef.current).then((canvas) => {
+            const link = document.createElement("a");
+            link.download = "qrcode.png";
+            link.href = canvas.toDataURL();
+            link.click();
+        });
     };
-
-
-    // const handleDownload = () => {
-    // // Generate download with use canvas and stream
-    //     const canvas = document.getElementById("qr-gen");
-    //     const pngUrl = canvas
-    //         .toDataURL("image/png")
-    //         .replace("image/png", "image/octet-stream");
-    //     let downloadLink = document.createElement("a");
-    //     downloadLink.href = pngUrl;
-    //     downloadLink.download = `${qrData}.png`;
-    //     document.body.appendChild(downloadLink);
-    //     downloadLink.click();
-    //     document.body.removeChild(downloadLink);
-    // };
-
     return (
         <div>
             <div>
-                <div className='px-4 lg:px-8 md:px-7 py-6 lg:py-8 md:py-7 w-full md:w-full bg-[#FFFFFF]  custom_shadow mt-8 lg:mt-0 md:mt-0'>
-                    <h3 className='lg:leading-[36px] poppins leading-[30px] text-center md:text-2xl lg:text-2xl text-xl font-semibold text-[#1B1D48]'>QR Code Generator</h3>
-                    <div className='flex items-center justify-between mt-6'>
+                <div className='px-4 lg:px-8 md:px-7 py-6 lg:py-8 md:py-7 w-full md:w-full border bg-[#FFFFFF] rounded-xl shadow-[#E7E7FF] shadow-xl mt-8 lg:mt-0 md:mt-0'>
+                    <h3 className='lg:leading-[36px] leading-[30px] text-center md:text-2xl lg:text-2xl text-xl font-semibold text-[#1B1D48]'>QR Code Generator</h3>
+                    <div className='grid  grid-cols-2 items-center justify-between mt-7'>
                         <div>
-                            <p className='lg:leading-6 md:leading-6 leading-[21px] md:text-base lg:text-base text-sm font-normal text-[#333333]'>Enter URL</p>
+                            <p className='lg:leading-6 md:leading-6 leading-[21px] md:text-base lg:text-base text-sm font-normal text-[#333333]'>Enter URl</p>
                         </div>
                         <div>
-                            <input
-                                type="text"
-                                value={qrData}
-                                onChange={(e) => { handleChange(e) }}
-                                placeholder="Enter your link"
-                                className="rounded-lg input w-[152px] lg:w-[298px] border-[#C3C4E1] focus:outline-none border-[1px] text-[#333333] placeholder:text-[#CACACA] only-of-type:text-[#333333]" />
+                            <input type="text"
+                                value={inputValue}
+                                onChange={handleInputChange}
+                                placeholder="Enter value" className="rounded-lg input input-bordered w-full" />
                         </div>
+
                     </div>
-                    <QRCode
-                        id="qr-gen"
-                        value={qrData}
-                        className='w-[96px] h-[96px] mx-auto my-4 lg:my-6'
-                    />
-                    {
-                        qrData &&
-                        <>
-                            <button
-                                onClick={handleDownload}
-                                className='mt-5 leading-[21px] lg:leading-[24px] md:leading-[22px] text-sm lg:text-base md:text-base font-semibold text-white rounded-[10px] bg-[#3D419F] md:py-3 lg:py-3 py-2 px-[109px] w-full'>Download</button>
-                        </>
-                    }
+                    <div ref={qrCodeRef} className='mt-[30px]'>
+                        <QRCode
+                            id="qr-gen"
+                            value={inputValue}
+                            className='w-[96px] h-[96px] mx-auto my-4 lg:my-6'
+                        />
+                    </div>
+                    <button onClick={handleDownload} className="justify-center text-center flex mt-[30px] mx-auto  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Download QR Code
+                    </button>
                 </div>
             </div>
         </div>
     );
 };
-
 export default QrGenaretor;

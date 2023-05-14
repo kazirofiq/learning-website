@@ -261,7 +261,7 @@ const Resource = () => {
                   >
                     <div className="relative resource-title">
                       <img
-                        className="w-full resource-image"
+                        className="w-full h-[200px] rounded-md resource-image"
                         src={resource.imgThumbnail}
                         alt=""
                       />

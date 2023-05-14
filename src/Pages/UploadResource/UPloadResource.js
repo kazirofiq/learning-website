@@ -1,8 +1,6 @@
 import React, { useCallback } from "react";
 import { useState } from "react";
 import rightArrow from "../../assest/icon/right arrow.png";
-
-import Buttons from "../CreateCourse/Buttons/Buttons";
 import { useDropzone } from "react-dropzone";
 import driveIcon from "../../assest/icon/Cloud-upload.png";
 import draftIcon from "../../assest/icon/Cloud-upload.png";
@@ -12,7 +10,6 @@ import Cross from "../../assest/icon/Cross-red.png";
 import imgIcon from "../../assest/icon/image_vector.png";
 import checkedIcon from "../../assest/icon/Checked Square.png";
 import { toast } from "react-hot-toast";
-
 const imgbbKey = process.env.REACT_APP_imgbb_key;
 
 const UPloadResource = () => {
@@ -26,12 +23,6 @@ const UPloadResource = () => {
   const [droptImg, setDropImg] = useState([])
 
   let imgSize = parseInt(droptImg[0]?.size / 1000000)
-
-
-
-
-
-
 
   // onDrop Npm
   const onDrop = useCallback((acceptedFiles) => {
@@ -66,7 +57,6 @@ const UPloadResource = () => {
       categoryId: "11117"
     }
   ]
-  // const items = ["All Template","Kdp Interior" , "Kdp Book Cover", "Kdp Book", "Vector", "Others"];
   const licenses = [
     {
       categoryName: "Premium",
@@ -100,10 +90,11 @@ const UPloadResource = () => {
   const handleUploadResource = (e) => {
     e.preventDefault()
     const resourcTitle = e.target.resourcTitle.value
-    const resourcDriveLink = e.target.resourcDriveLink.value
+    const resourcDriveLink = e.target.resourcDriveLink.value;
+    const match = resourcDriveLink.match(/\/file\/d\/(.+?)\/.*$/);
+    const fileId = match ? match[1] : null;
 
     const description = e.target.description.value
-
     const image = droptImg[0]
     console.log(image)
     const formData = new FormData()
@@ -125,12 +116,12 @@ const UPloadResource = () => {
             licence: selectedItemLicense,
             licenceId: selectedLicenseId,
             designation: description,
-            resourcDriveLink: resourcDriveLink,
+            fileId: fileId,
             imgThumbnail: imgData.data.url,
             postTime: new Date().toLocaleString()
 
           }
-          fetch(`https://learn-with-rakib.onrender.com/resource`, {
+          fetch(`http://localhost:5000/resource`, {
             method: 'POST',
             headers: {
               'content-type': 'application/json'
@@ -215,16 +206,16 @@ const UPloadResource = () => {
                       <li
                         key={item.categoryName}
                         className={`${selectedItem === item.categoryName
-                            ? "font-medium text-[#1B1D48] text-base pl-4 mb-4"
-                            : "font-medium text-[#1B1D48] text-base pl-4 mb-4"
+                          ? "font-medium text-[#1B1D48] text-base pl-4 mb-4"
+                          : "font-medium text-[#1B1D48] text-base pl-4 mb-4"
                           } cursor-pointer select-none relative`}
                         onClick={() => handleItemClick(item.categoryName, item.categoryId)}
                       >
                         <div className="flex items-center">
                           <span
                             className={`${selectedItem === item.categoryName
-                                ? "font-semibold"
-                                : "font-normal"
+                              ? "font-semibold"
+                              : "font-normal"
                               } block truncate`}
                           >
                             {item.categoryName}
@@ -275,16 +266,16 @@ const UPloadResource = () => {
                       <li
                         key={license}
                         className={`${selectedItemLicense === license.categoryName
-                            ? "font-medium text-[#1B1D48] text-base pl-4 mb-4"
-                            : "font-medium text-[#1B1D48] text-base pl-4 mb-4"
+                          ? "font-medium text-[#1B1D48] text-base pl-4 mb-4"
+                          : "font-medium text-[#1B1D48] text-base pl-4 mb-4"
                           } cursor-pointer select-none relative`}
                         onClick={() => handleItemLicenceClick(license.categoryName, license.categoryId)}
                       >
                         <div className="flex items-center">
                           <span
                             className={`${selectedItemLicense === license.categoryName
-                                ? "font-semibold"
-                                : "font-normal"
+                              ? "font-semibold"
+                              : "font-normal"
                               } block truncate`}
                           >
                             {license.categoryName}
@@ -323,7 +314,7 @@ const UPloadResource = () => {
               required
               name="resourcDriveLink"
               id="resource-drive-link"
-              type="text"
+              type="url"
               placeholder="resource drive link"
               className="input w-full focus:outline-none bg-[#F8F8FF] focus:border-[1px] focus:border-[#C3C4E1] h-[45px] lg:h-[48px] shadow-none text-[#1B1D48] font-medium text-base placeholder-[#1B1D48]"
             />

@@ -35,8 +35,12 @@ const ProfileCard = () => {
           <img src={user?.photoURL} alt="profile_image" className="rounded-full object-cover" />
         </div>
       </div>
+      <div className='text-[#1B1D48] text-center pt-4 lg:font-semibold lg:text-xl'>
+        {user?.displayName}
+      </div>
       <div className='px-[59px] mt-4'>
-        <h1 className='text-[#1B1D48] lg:font-semibold lg:text-xl'>Rasel Mondol</h1>
+        {/* <h1 className='text-[#1B1D48] lg:font-semibold lg:text-xl'>{user?.displayName}</h1> */}
+
         <div className='flex justify-center items-center mt-4'>
           <div className=' flex justify-center items-center mr-[12px]'>
             <CircularProgressbar

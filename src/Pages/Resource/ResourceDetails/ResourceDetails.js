@@ -12,6 +12,8 @@ import { ClipLoader } from "react-spinners";
 
 const ResourceDetails = ({ singleResourch }) => {
   const { user } = useContext(AuthContext);
+  const fileId = singleResourch.fileId
+
 
   // database user and login user matching query
   const {
@@ -22,14 +24,14 @@ const ResourceDetails = ({ singleResourch }) => {
     queryKey: ["downlimit"],
     queryFn: () =>
       fetch(
-        `https://learn-with-rakib.onrender.com/downLimit/downloadDate?downloadDate=${today}&&userEmail=${user?.email}`
+        `http://localhost:5000/downLimit/downloadDate?downloadDate=${today}&&userEmail=${user?.email}`
       ).then((res) => res.json()),
   });
 
   const { data: loginUser = {} } = useQuery({
     queryKey: ["loginUser"],
     queryFn: () =>
-      fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`).then((res) => res.json()),
+      fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`).then((res) => res.json()),
   });
 
   let today = new Date();
@@ -57,7 +59,7 @@ const ResourceDetails = ({ singleResourch }) => {
       refetch();
       return toast.error("You have reached today's download limit!");
     } else if (downlimit?.downloadStatus === "1") {
-      fetch(`https://learn-with-rakib.onrender.com/downLimit/${downlimit?._id}`, {
+      fetch(`http://localhost:5000/downLimit/${downlimit?._id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
@@ -71,7 +73,7 @@ const ResourceDetails = ({ singleResourch }) => {
           }
         });
     } else {
-      fetch(`https://learn-with-rakib.onrender.com/downLimit/`, {
+      fetch(`http://localhost:5000/downLimit/`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -121,8 +123,6 @@ const ResourceDetails = ({ singleResourch }) => {
                         :
                         ""
                     }
-
-
                   </div>
                 </div>
                 {/* 
@@ -177,7 +177,7 @@ const ResourceDetails = ({ singleResourch }) => {
                       </Link>
                     </>
                   ) : downlimit?.downloadStatus === "2" ? (
-                    <a onClick={() => downloadLimitHandler()} disabled>
+                    <Link onClick={() => downloadLimitHandler()} disabled>
                       <button typeof="submit">
                         <span className="download-button mx-auto lg:mx-0 flex items-center justify-center lg:mt-3">
                           Download
@@ -188,13 +188,14 @@ const ResourceDetails = ({ singleResourch }) => {
                           />
                         </span>
                       </button>
-                    </a>
+                    </Link>
                   ) : (
                     <>
                       <a
                         onClick={() => downloadLimitHandler()}
-                        href={singleResourch?.resourcDriveLink}
-                        target="_blank"
+                        href={`https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=${process.env.REACT_APP_DRIVE_KEY}`}
+                        download={singleResourch.title}
+
                       >
                         <button typeof="submit">
                           <span className="download-button mx-auto lg:mx-0 flex items-center justify-center lg:mt-3">
@@ -211,7 +212,7 @@ const ResourceDetails = ({ singleResourch }) => {
                   )
                 ) : (
                   <Link to="/login">
-                    <a target="_blank" href={singleResourch.resourcDriveLink}>
+                    <a href={`https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=${process.env.REACT_APP_DRIVE_KEY}`}>
                       <button className="download-button mx-auto lg:mx-0 flex items-center justify-center lg:mt-3">
                         Download{" "}
                         <img
