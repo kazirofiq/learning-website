@@ -121,7 +121,7 @@ const UPloadResource = () => {
             postTime: new Date().toLocaleString()
 
           }
-          fetch(`http://localhost:5000/resource`, {
+          fetch(`https://learn-with-rakib.onrender.com/resource`, {
             method: 'POST',
             headers: {
               'content-type': 'application/json'

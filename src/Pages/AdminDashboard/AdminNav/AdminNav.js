@@ -24,8 +24,6 @@ const AdminNav = () => {
             </Link>
           </li>
           <li>
-          </li>
-          <li>
             <Link to="/admindashboard/student-list">
               <div className="flex gap-4 items-center">
                 <GiGraduateCap></GiGraduateCap>
