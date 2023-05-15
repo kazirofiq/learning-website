@@ -57,6 +57,7 @@ import CreateWorkshop from "../../Pages/CreateWorkshop/CreateWorkshop";
 import WorkshopCurriculum from "../../Pages/WorkshopCurriculum/WorkshopCurriculum";
 import AssignmentList from "../../AssignmentList/AssignmentList";
 import WorkshopContent from "../../Pages/Courses/WorkshopContent/WorkshopContent";
+import StudentList from "../../Pages/StudentList/StudentList";
 
 
 const router = createBrowserRouter([
@@ -268,6 +269,10 @@ const router = createBrowserRouter([
             {
                 path: '/admindashboard/assignment-list',
                 element: <AssignmentList />
+            },
+            {
+                path: '/admindashboard/studeent-list',
+                element: <StudentList></StudentList>
             },
             {
                 path: '/admindashboard/course-create',

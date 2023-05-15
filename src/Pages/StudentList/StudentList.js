@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './StudentList.css'
 import preIcon from '../../assest/icon/preicon.png';
 import nextIcon from '../../assest/icon/nexticon.png';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const StudentList = () => {
+    // const [student, setStudent] = useState()
+    // const { user } = useContext(AuthContext);
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/users?paidPremium=true`)
+    //         .then(res => res.json())
+    //         .then(user => setStudent(user))
+    // }, [])
+
+    // console.log(student);
+
     return (
         <section className='student-list-table-shadow max-w-[1138px] mx-auto'>
             <div class="container px-4 mx-auto bg-white my-8 ">

@@ -24,6 +24,7 @@ const MyClasses = () => {
         .catch(err => console.error(err))
     }
   }, [user, allModules])
+  console.log(courseInfo?.completed);
 
   return (
     <div>

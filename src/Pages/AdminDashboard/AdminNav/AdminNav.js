@@ -40,7 +40,7 @@ const AdminNav = () => {
             </Link>
           </li>
           <li>
-            <Link to="/admindashboard/sendnotification">
+            <Link to="/admindashboard/studeent-list">
               <div className="flex gap-4 items-center">
                 <GiGraduateCap></GiGraduateCap>
                 <h2>Student List</h2>

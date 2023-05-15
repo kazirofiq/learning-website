@@ -24,7 +24,7 @@ const AssignmentMark = () => {
 
         colors: ['#38A27B', '#3D419F', '#C1E2D6'],
 
-        series: [10, 8, 2],
+        series: [10, 20, 10],
         legend: {
             show: false
         },
