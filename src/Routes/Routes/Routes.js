@@ -58,6 +58,8 @@ import WorkshopCurriculum from "../../Pages/WorkshopCurriculum/WorkshopCurriculu
 import AssignmentList from "../../AssignmentList/AssignmentList";
 import StudentList from "../../Pages/StudentList/StudentList";
 import WorkshopContent from "../../Pages/Courses/WorkshopContent/WorkshopContent";
+import CreateModules from "../../Pages/CreateModules/CreateModules";
+import ModulesList from "../../Pages/AdminDashboard/ModulesList/ModulesList";
 
 
 const router = createBrowserRouter([
@@ -291,6 +293,14 @@ const router = createBrowserRouter([
                     },
 
                 ]
+            },
+            {
+                path: '/admindashboard/course/:courseId/modules',
+                element: <ModulesList />
+            },
+            {
+                path: '/admindashboard/course/:courseId/create-modules',
+                element: <CreateModules />
             },
 
             {

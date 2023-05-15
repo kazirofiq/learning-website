@@ -47,7 +47,7 @@ const MyClasses = () => {
               <div className=''>
                 <scrollable-component class="my-content">
                   <div className=''>
-                    {allModules.map(modules => <Module
+                    {allModules.map(modules => modules?.isReleased && <Module
                       modules={modules}
                     ></Module>)}
                   </div>

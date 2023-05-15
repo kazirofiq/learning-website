@@ -38,10 +38,10 @@ const MyCourse = () => {
           </ul>
         </div>
 
-        <div className="flex create justify-center items-center mr-4 border-[#3D419F] gap-2">
+        <Link to="/admindashboard/course-create" className="flex create justify-center items-center mr-4 border-[#3D419F] gap-2">
           <AiOutlinePlus className="text-[#3D419F]"></AiOutlinePlus>
           <h2 className="text-[#3D419F] font-[400] leading-[24px]">Create</h2>
-        </div>
+        </Link>
       </div>
       <Outlet></Outlet>
       {/* {

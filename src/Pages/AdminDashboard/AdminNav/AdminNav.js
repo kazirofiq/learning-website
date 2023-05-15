@@ -25,6 +25,14 @@ const AdminNav = () => {
             </Link>
           </li>
           <li>
+            <Link to="/admindashboard/course-create/course-curriculum/645ff25bde9557c4b0ab4afb">
+              <div className="flex gap-4 items-center hover:">
+                <MdOutlineTopic></MdOutlineTopic>
+                <h2>Create Module</h2>
+              </div>
+            </Link>
+          </li>
+          <li>
           </li>
           <li>
             <Link to="/admindashboard/student-list">
@@ -64,9 +72,9 @@ const AdminNav = () => {
 
         </ul>
         {/* divider */}
-        <div className="divider  "></div>
+        <div className="divider "></div>
         {/* profile */}
-        <ul className="menu   p-2 rounded-box">
+        {/* <ul className="menu   p-2 rounded-box">
           <li>
             <div
               //   onClick={handleLogout}
@@ -76,7 +84,7 @@ const AdminNav = () => {
               <h2 className='text-white'>Log Out</h2>
             </div>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

@@ -300,7 +300,7 @@ const UPloadResource = () => {
               required
               name="description"
               className="textarea w-full font-medium text-base placeholder-[#1B1D48] h-[206px] focus:border-[1px] focus:border-[#C3C4E1] focus:outline-none bg-[#F8F8FF] text-[#1B1D48]"
-              placeholder="Editable “Wedding Planner Checklist KDP Interior” Download instantly AI with PDF formats ready to upload on KDP Every single part of This Interior (Colors+Fonts+Style+Size) can be edited with Adobe Illustrator Software"
+              placeholder="Type Resource Description"
             ></textarea>
           </div>
           <div>
