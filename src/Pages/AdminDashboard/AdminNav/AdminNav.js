@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import adminLogo from "../../../assest/logo/Logo (White).png";
 import { MdOutlineAssignment, MdOutlineTopic } from "react-icons/md";
-import { BiLogIn } from "react-icons/bi";
-import { AiOutlineMail, AiOutlineRight } from "react-icons/ai";
+import { AiOutlineRight } from "react-icons/ai";
 import { GiGraduateCap } from "react-icons/gi";
 import { FaFirstOrderAlt } from "react-icons/fa";
 import { RiCoupon2Line } from "react-icons/ri";
@@ -21,14 +20,6 @@ const AdminNav = () => {
               <div className="flex gap-4 items-center hover:">
                 <MdOutlineTopic></MdOutlineTopic>
                 <h2>My Courses</h2>
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link to="/admindashboard/course-create/course-curriculum/645ff25bde9557c4b0ab4afb">
-              <div className="flex gap-4 items-center hover:">
-                <MdOutlineTopic></MdOutlineTopic>
-                <h2>Create Module</h2>
               </div>
             </Link>
           </li>
