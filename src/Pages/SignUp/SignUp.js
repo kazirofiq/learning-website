@@ -95,8 +95,8 @@ const SignUp = () => {
     <div
       className="bgg LG:w-[1092px] lg:h-[792px] smb-6 bg-[#fff] lg:mb-0 md:mb-0 lg:w-[1092px] mx-auto flex justify-center items-center"
     >
-      <div className="h-[520px] bg-white bxs mt-[40px] z-50 shadow-slate-500 lg:shadow-none md:shadow-none w-[398px] p-[24px] lg:mt-[26px] md:mt-[26px] lg:ml-[325px] md:ml-[325px] mx-auto flex justify-center items-center">
-        <div className="w-96 bg-white rounded-xl  py-4 px-8">
+      <div className="md:h-[520px] bg-white bxs mt-[40px] z-50 shadow-slate-500 lg:shadow-none md:shadow-none md:w-[398px] w-full md:p-[24px]  lg:mt-[26px] md:mt-[26px] lg:ml-[325px] md:ml-[325px] mx-auto flex justify-center items-center">
+        <div className="w-full bg-white rounded-xl  py-4 px-8">
           <h2 className="text-[24px] leading-[36px] text-[#1B1D48] pb-[12px] text-center font-bold">
             Create Account
           </h2>

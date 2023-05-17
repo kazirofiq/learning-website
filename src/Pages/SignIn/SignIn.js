@@ -55,8 +55,8 @@ const SignIn = () => {
 
   return (
     <div className="bg mb-10 lg:py-[120px] mx-auto flex justify-center items-center">
-      <div className="h-[372px] bxsh bg-white shadow-2xl  w-[398px] p-[24px] mx-auto flex justify-center items-center">
-        <div className="w-96 bg-white rounded-xl  py-4 px-8">
+      <div className="md:h-[372px] bxsh bg-white shadow-2xl w-full  md:w-[398px] lg:p-[24px] p-0 mx-auto flex justify-center items-center">
+        <div className="w-full bg-white rounded-xl  py-4 px-8">
           <h2 className="text-[24px] leading-[36px] text-[#1B1D48] pb-[12px] text-center font-bold">
             Welcome Back
           </h2>
