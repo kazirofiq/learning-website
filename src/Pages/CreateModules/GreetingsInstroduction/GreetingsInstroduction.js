@@ -9,6 +9,7 @@ const GreetingsInstroduction = () => {
   const { courseId } = useParams();
   const [modulesData, setModulesData] = useState({ moduleNo: 1, courseId });
   const navigate = useNavigate();
+  console.log(modulesData);
 
   const createModules = e => {
     e.preventDefault();
@@ -41,7 +42,7 @@ const GreetingsInstroduction = () => {
         });
       })
     } else if (assignment?.moduleNo) {
-      saveAssignmentAndQuiz("assignment", assignment, (result) => {
+      saveAssignmentAndQuiz("assignment", [assignment], (result) => {
         result.forEach(r => {
           allModules.lessons.push({ number: r.number, routeName: r.routeName, name: allModules.assignment.name });
           delete allModules.assignment;
