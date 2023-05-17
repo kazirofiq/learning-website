@@ -4,6 +4,7 @@ import adminLogo from "../../../assest/logo/Logo (White).png";
 import { BiLogIn } from "react-icons/bi";
 import analytic from '../../../assest/student_dashboard/analytic.png'
 import leader_board from '../../../assest/student_dashboard/leader-board.png'
+import { UserCircleIcon } from '@heroicons/react/24/solid';
 
 const StudentNav = () => {
     return (
@@ -32,11 +33,20 @@ const StudentNav = () => {
                             </div>
                         </Link>
                     </li>
+                    <li>
+                        <Link to="/profile">
+                            <div className="flex gap-4 items-center hover:">
+                                {/* <img src={leader_board} alt="" /> */}
+                                <UserCircleIcon className='h-7 w-8' />
+                                <h2>Back Profile</h2>
+                            </div>
+                        </Link>
+                    </li>
                 </ul>
                 {/* divider */}
                 <div className="divider"></div>
                 {/* profile */}
-                <ul className="menu p-2 rounded-box">
+                {/* <ul className="menu p-2 rounded-box">
                     <li>
                         <div
                             //   onClick={handleLogout}
@@ -46,7 +56,7 @@ const StudentNav = () => {
                             <h2 className='text-white'>Log Out</h2>
                         </div>
                     </li>
-                </ul>
+                </ul> */}
             </div>
         </div>
     );

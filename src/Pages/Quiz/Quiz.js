@@ -15,7 +15,9 @@ const Quiz = () => {
     const { pathname } = useLocation();
 
     const allQuiz = useLoaderData()
-    const quizes = allQuiz.quizData;
+    // console.log(allQuiz);
+    const quizes = allQuiz?.quizData;
+    // console.log(quizes);
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
@@ -38,8 +40,12 @@ const Quiz = () => {
         }
         else {
             const updatedScore = selected === quizes[currentQuestion].correctAnswer ? score + 1 : score
-            // setIsLoading(true);
-            const moduleInfo = allModules.find(m => m.lessons[m.lessons.length - 1].number === allQuiz._id)
+            const moduleInfo = allModules.find(m => m.lessons.find(less => less.routeName === "quiz" && less.number === allQuiz._id))
+
+            if (!moduleInfo || !moduleInfo?.courseId) {
+                return;
+            }
+
             const resultData = {
                 courseId: moduleInfo.courseId,
                 moduleNo: moduleInfo.moduleNo,
@@ -108,7 +114,7 @@ const Quiz = () => {
     }, [user, allModules, pathname]);
 
     useEffect(() => {
-        const moduleInfo = allModules.find(m => m.lessons[m.lessons.length - 1].number === allQuiz?._id)
+        const moduleInfo = allModules.find(m => m.lessons.find(less => less.routeName === "quiz" && less.number === allQuiz._id))
         if (moduleInfo && user?.uid) {
             fetch(`${server}/result?resultOf=quiz&courseId=${moduleInfo?.courseId}&moduleNo=${moduleInfo?.moduleNo}&studentUid=${user?.uid}`)
                 .then(res => res.json())

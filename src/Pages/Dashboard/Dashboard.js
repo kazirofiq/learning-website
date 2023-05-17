@@ -5,6 +5,11 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import ReviewModal from './ReviewModal/ReviewModal';
 
 const Dashboard = () => {
+  // useEffect(() => {
+  //   fetch('http://localhost:5000/batch-1')
+  //     .then(res => res.json())
+  //     .then(data => setAllLessons(data))
+  // }, [])
 
   const { allModules } = useContext(VedioContext);
   const location = useLocation();

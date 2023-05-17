@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const StudentTableDetails = ({ studenttables, i }) => {
-  const { name, img, quiz, score } =
+  const { name } =
     studenttables;
   return (
     <tr key={studenttables._id}>
@@ -18,15 +18,16 @@ const StudentTableDetails = ({ studenttables, i }) => {
           <Link
             //  to={`/dashboard/employees/${promotion._id}`} 
             className="avatar">
-            <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            {/* <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
               <img src={img} alt="" />
-            </div>
+            </div> */}
           </Link>
           {name}
         </div>
       </td>
-      <td>{quiz}</td>
-      <td>{score}</td>
+      <td>{0}</td>
+      <td>{0}</td>
+      <td>{0}</td>
 
     </tr>
   );

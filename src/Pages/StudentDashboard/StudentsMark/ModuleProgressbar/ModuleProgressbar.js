@@ -1,13 +1,37 @@
 import React, { useState } from 'react';
 import Chart from 'react-apexcharts';
 import right_arrow from '../../../../assest/student_dashboard/Vector.png'
+import { AuthContext } from '../../../../contexts/AuthProvider';
+import { useContext } from 'react';
+import { useEffect } from 'react';
+import { server } from '../../../../variables/server';
+import { VedioContext } from '../../../../contexts/VedioProvider';
 
 const ModuleProgressbar = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState("Kdp Mastery");
-
     const items = ["Kdp Mastery", "UI/UX Design", "Animation", "UI/UX"];
+
+    const { allModules } = useContext(VedioContext);
+    const { user } = useContext(AuthContext);
+    const [courseInfo, setCourseInfo] = useState(null);
+
+    useEffect(() => {
+        if (user?.uid) {
+            fetch(`${server}/users/uid?uid=${user?.uid}`)
+                .then(res => res.json())
+                .then(data => {
+                    setCourseInfo(data.enrolledCourses.find(course => course.id === allModules[1]?.courseId));
+                })
+                .catch(err => console.error(err))
+        }
+    }, [user, allModules])
+
+    const decent = (100 - courseInfo?.completed)
+    // console.log(decent);
+    console.log(courseInfo);
+
 
     const toggleSelect = () => setIsOpen(!isOpen);
 
@@ -23,7 +47,7 @@ const ModuleProgressbar = () => {
 
         colors: ['#38A27B', '#C1E2D6'],
 
-        series: [80, 20],
+        series: [courseInfo?.completed, decent],
         legend: {
             show: false
         },
@@ -113,21 +137,21 @@ const ModuleProgressbar = () => {
                     <div className='mt-3 flex justify-evenly text-[#333333] w-[250px] mx-auto'>
                         <div className='text-[12px] font-semibold leading-[18px] poppins'>
                             <p>Total Module</p>
-                            <p>{config.series[0]}</p>
+                            <p>{allModules.length}</p>
                         </div>
                         <div className='text-[12px] font-semibold leading-[18px] poppins'>
                             <div className='flex justify-center items-center gap-[4px]'>
                                 <div className='bg-[#38A27B] w-[8px] h-[8px] rounded-full'></div>
                                 <p>Complete</p>
                             </div>
-                            <p className='ml-[12px]'>{config.series[1]}%</p>
+                            <p className='ml-[12px]'>{config.series[0]}%</p>
                         </div>
                         <div className='text-[12px] font-semibold leading-[18px] poppins'>
                             <div className='flex justify-center items-center gap-[4px]'>
                                 <div className='bg-[#C1E2D6] w-[8px] h-[8px] rounded-full'></div>
                                 <p>Incomplete</p>
                             </div>
-                            <p className='ml-[12px]'>{config.series[2]}%</p>
+                            <p className='ml-[12px]'>{config.series[1]}%</p>
                         </div>
                     </div>
                 </div>

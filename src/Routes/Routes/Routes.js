@@ -145,7 +145,7 @@ const router = createBrowserRouter([
     // {
     //     path: '/verify-email/',
     //     element: <VerifyEmail></VerifyEmail>
-    // },
+    // },http://localhost:5000/workshops/name/6456395921a91c9abc54f0a0
     {
         path: '/mycourses',
         element: <PrivateRoute><CourseLayout /></PrivateRoute>,
@@ -157,9 +157,11 @@ const router = createBrowserRouter([
             {
                 path: '/mycourses/previousworkshop',
                 element: <PreviousWorkshop />
-            }
-        ]
+            },
+
+        ],
     },
+
     {
         path: '/workshop',
         element: <PrivateRoute><WorkShopLayout /></PrivateRoute>,
@@ -274,6 +276,10 @@ const router = createBrowserRouter([
             {
                 path: '/admindashboard/assignment-list',
                 element: <AssignmentList />
+            },
+            {
+                path: '/admindashboard/studeent-list',
+                element: <StudentList></StudentList>
             },
             {
                 path: '/admindashboard/course-create',

@@ -12,6 +12,7 @@ const Vedio = () => {
     // console.log(allModules);
 
     const [videoLink, setVideoLink] = useState()
+    // console.log(videoLink);
 
     const video = useLoaderData()
     const { videoId } = video
