@@ -88,7 +88,7 @@ const Quiz = () => {
                 .then(res => res.json())
                 .then(data => {
                     const info = data?.enrolledCourses.find(course => course.id === allModules[0]?.courseId);
-                    const allLessons = allModules?.map(module => module?.lessons.map(lesson => lesson))?.flat(1)
+                    const allLessons = allModules?.filter(module => module.isReleased).map(module => module?.lessons.map(lesson => lesson))?.flat(1)
                     // console.log(allModules);
                     const lessonId = pathname.split('/')[3];
                     const index = allLessons.findIndex(less => less.number === lessonId) + 1;
