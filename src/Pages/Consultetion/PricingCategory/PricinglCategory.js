@@ -1,8 +1,16 @@
 import React from 'react';
 import './PricingCategory.css'
 import { RxCheckCircled } from "react-icons/rx";
+import { server } from '../../../variables/server';
+import { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const PricingCategory = () => {
+    const { user } = useContext(AuthContext);
+
+    const choosePlan = plan => {
+        window.location.href = `${server}/consultation/payment?uid=${user?.uid}&plan=${plan}`
+    }
     return (
         <div className='lg:pt-[36px] lg:pb-[64px] lg:bg-[#F8F8FF]' id="PricingCategory">
             <div className="px-[20px] lg:px-[145px]">
@@ -15,14 +23,14 @@ const PricingCategory = () => {
                         <div className=" mx-auto grid grid-cols-1 lg:gap-4 lg:grid-cols-3">
                             <div className="w-full mx-auto flex flex-col mb-4 md:mb-5 lg:mb-0 p-6 pricing-card max-w-[300px] lg:mr-[15px]">
                                 <div className="space-y-2 price-category text-center text-[#666666]">
-                                    <h4 className="text-lg leading-[27px] font-normal">Basic</h4>
+                                    <h4 className="text-lg leading-[27px] font-normal">BASIC</h4>
                                     <span className="text-[40px] leading-[60px] font-bold">৳250</span>
                                 </div>
-                                <ul className="flex-1 mb-6 px-[20px] text-[#333333] pt-6">
+                                <ul className="flex-1 mb-6 text-[#333333] pt-6">
                                     <li className="flex items-center justify-between  text-base font-medium
-                             leading-6 pb-[20px] border-b px-[20px]">
+                             leading-6 py-[20px] border-b px-[20px]">
                                         <h5 className='flex items-center'><span className='pr-[5px]'><RxCheckCircled /></span> Length</h5>
-                                        <p >20 MIN</p>
+                                        <p >40 MIN</p>
                                     </li>
                                     <li className="flex items-center justify-between  text-base font-medium
                              leading-6 py-[20px] border-b px-[20px]">
@@ -41,67 +49,67 @@ const PricingCategory = () => {
                                     </li>
 
                                 </ul>
-                                <button type="button" className="text-[#666666] text-sm leading-[21px] font-semibold pricing-card-button mx-auto">Choose Plan</button>
+                                <button onClick={() => choosePlan("basic")} type="button" className="text-[#666666] text-sm leading-[21px] font-semibold pricing-card-button mx-auto">Choose Plan</button>
                             </div>
                             <div className="w-full mx-auto flex flex-col mb-4 md:mb-5 lg:mb-0 p-6 pricing-card max-w-[300px] lg:mr-[15px]">
                                 <div className="space-y-2 price-category text-center text-[#666666]">
                                     <h4 className="text-lg leading-[27px] font-normal">PREMIUM</h4>
                                     <span className="text-[40px] leading-[60px] font-bold">৳500</span>
                                 </div>
-                                <ul className="flex-1 mb-6 px-[20px] text-[#333333] pt-6">
+                                <ul className="flex-1 mb-6 text-[#333333] pt-6">
                                     <li className="flex items-center justify-between  text-base font-medium
-                             leading-6 pb-[20px] border-b px-[8px]">
+                             leading-6 py-[20px] border-b px-[20px]">
                                         <h5 className='flex items-center'><span className='pr-[5px]'><RxCheckCircled /></span> Length</h5>
                                         <p >40 MIN</p>
                                     </li>
                                     <li className="flex items-center justify-between  text-base font-medium
-                             leading-6 py-[20px] border-b px-[8px]">
+                             leading-6 py-[20px] border-b px-[20px]">
                                         <h5 className='flex items-center'><span className='pr-[5px]'><RxCheckCircled /></span> Topic</h5>
                                         <p >KDP+Fiverr</p>
                                     </li>
                                     <li className="flex items-center justify-between  text-base font-medium
-                             leading-6 py-[20px] border-b px-[8px]">
+                             leading-6 py-[20px] border-b px-[20px]">
                                         <h5 className='flex items-center'><span className='pr-[5px]'><RxCheckCircled /></span> Video</h5>
                                         <p >Yes</p>
                                     </li>
                                     <li className="flex items-center justify-between  text-base font-medium
-                             leading-6 py-[20px] border-b px-[8px]">
+                             leading-6 py-[20px] border-b px-[20px]">
                                         <h5 className='flex items-center'><span className='pr-[5px]'><RxCheckCircled /></span> Record</h5>
                                         <p >Yes</p>
                                     </li>
 
                                 </ul>
-                                <button type="button" className="text-[#666666] text-sm leading-[21px] font-semibold pricing-card-button mx-auto">Choose Plan</button>
+                                <button onClick={() => choosePlan("premium")} type="button" className="text-[#666666] text-sm leading-[21px] font-semibold pricing-card-button mx-auto">Choose Plan</button>
                             </div>
                             <div className="w-full mx-auto flex flex-col mb-4 md:mb-5 lg:mb-0 p-6 pricing-card max-w-[300px] lg:mr-[15px]">
                                 <div className="space-y-2 price-category text-center text-[#666666]">
                                     <h4 className="text-lg leading-[27px] font-normal">DIAMOND</h4>
                                     <span className="text-[40px] leading-[60px] font-bold">৳750</span>
                                 </div>
-                                <ul className="flex-1 mb-6 px-[8px] text-[#333333] pt-6">
+                                <ul className="flex-1 mb-6 text-[#333333] pt-6">
                                     <li className="flex items-center justify-between  text-base font-medium
-                             leading-6 pb-[20px] border-b px-[8px]">
+                             leading-6 py-[20px] border-b px-[20px]">
                                         <h5 className='flex items-center'><span className='pr-[5px]'><RxCheckCircled /></span> Length</h5>
                                         <p >20 MIN</p>
                                     </li>
                                     <li className="flex items-center justify-between  text-base font-medium
-                             leading-6 py-[20px] border-b px-[8px]">
+                             leading-6 py-[20px] border-b px-[20px]">
                                         <h5 className='flex items-center'><span className='pr-[5px] mr-1'><RxCheckCircled /></span> Topic</h5>
                                         <p >KDP+Fiverr+Other</p>
                                     </li>
                                     <li className="flex items-center justify-between  text-base font-medium
-                             leading-6 py-[20px] border-b px-[8px]">
+                             leading-6 py-[20px] border-b px-[20px]">
                                         <h5 className='flex items-center'><span className='pr-[5px]'><RxCheckCircled /></span> Video</h5>
                                         <p >Yes</p>
                                     </li>
                                     <li className="flex items-center justify-between  text-base font-medium
-                             leading-6 py-[20px] border-b px-[8px]">
+                             leading-6 py-[20px] border-b px-[20px]">
                                         <h5 className='flex items-center'><span className='pr-[5px]'><RxCheckCircled /></span> Record</h5>
                                         <p >Yes</p>
                                     </li>
 
                                 </ul>
-                                <button type="button" className="text-[#666666] text-sm leading-[21px] font-semibold pricing-card-button mx-auto">Choose Plan</button>
+                                <button onClick={() => choosePlan("diamond")} type="button" className="text-[#666666] text-sm leading-[21px] font-semibold pricing-card-button mx-auto">Choose Plan</button>
                             </div>
                         </div>
 

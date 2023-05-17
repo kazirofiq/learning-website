@@ -3,10 +3,14 @@ import { BiChevronDown } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import rating from '../../../assest/learner_review/Vector.png'
 import Reviews from '../Reviews/Reviews';
+import useTitle from '../../../hooks/useTitle';
 // import './AllReviews.css'
 
 
 const AllReviews = () => {
+
+    useTitle('Reviews - ');
+
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
     const toggling = () => setIsOpen(!isOpen);
@@ -73,57 +77,57 @@ const AllReviews = () => {
                         <div className='ml-4'>
                             <div className='grid md:grid-cols-[100px_1fr_100px] grid-cols-[100px_1fr_30px] mt-2 gap-3   items-center justify-between poppins'>
                                 <div>
-                                <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Excellent</p>
+                                    <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Excellent</p>
                                 </div>
                                 <div>
-                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="70" max="100"></progress>
+                                    <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="70" max="100"></progress>
                                 </div>
                                 <div>
-                                <p className='lg:ml-5 ml-2 md:ml-3'>70%</p>
-                                </div>
-                            </div>
-                            <div className='grid md:grid-cols-[100px_1fr_100px] grid-cols-[100px_1fr_30px] mt-2 gap-3   items-center justify-between poppins'>
-                                <div>
-                                <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Very Good</p>
-                                </div>
-                                <div>
-                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="20" max="100"></progress>
-                                </div>
-                                <div>
-                                <p className='lg:ml-5 ml-2 md:ml-3'>20%</p>
+                                    <p className='lg:ml-5 ml-2 md:ml-3'>70%</p>
                                 </div>
                             </div>
                             <div className='grid md:grid-cols-[100px_1fr_100px] grid-cols-[100px_1fr_30px] mt-2 gap-3   items-center justify-between poppins'>
                                 <div>
-                                <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Average</p>
+                                    <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Very Good</p>
                                 </div>
                                 <div>
-                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="3" max="100"></progress>
+                                    <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="20" max="100"></progress>
                                 </div>
                                 <div>
-                                <p className='lg:ml-5 ml-2 md:ml-3'>3%</p>
-                                </div>
-                            </div>
-                            <div className='grid md:grid-cols-[100px_1fr_100px] grid-cols-[100px_1fr_30px] mt-2 gap-3   items-center justify-between poppins'>
-                                <div>
-                                <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Excellent</p>
-                                </div>
-                                <div>
-                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="2" max="100"></progress>
-                                </div>
-                                <div>
-                                <p className='lg:ml-5 ml-2 md:ml-3'>2%</p>
+                                    <p className='lg:ml-5 ml-2 md:ml-3'>20%</p>
                                 </div>
                             </div>
                             <div className='grid md:grid-cols-[100px_1fr_100px] grid-cols-[100px_1fr_30px] mt-2 gap-3   items-center justify-between poppins'>
                                 <div>
-                                <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Poor</p>
+                                    <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Average</p>
                                 </div>
                                 <div>
-                                <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="0" max="100"></progress>
+                                    <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="3" max="100"></progress>
                                 </div>
                                 <div>
-                                <p className='lg:ml-5 ml-2 md:ml-3'>0%</p>
+                                    <p className='lg:ml-5 ml-2 md:ml-3'>3%</p>
+                                </div>
+                            </div>
+                            <div className='grid md:grid-cols-[100px_1fr_100px] grid-cols-[100px_1fr_30px] mt-2 gap-3   items-center justify-between poppins'>
+                                <div>
+                                    <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Excellent</p>
+                                </div>
+                                <div>
+                                    <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="2" max="100"></progress>
+                                </div>
+                                <div>
+                                    <p className='lg:ml-5 ml-2 md:ml-3'>2%</p>
+                                </div>
+                            </div>
+                            <div className='grid md:grid-cols-[100px_1fr_100px] grid-cols-[100px_1fr_30px] mt-2 gap-3   items-center justify-between poppins'>
+                                <div>
+                                    <p className='font-normal text-[14px] lg:text-base md:text-base text-[#333333] leading-[21px]'>Poor</p>
+                                </div>
+                                <div>
+                                    <progress className="progress progress-primary  bg-[#C3C4E1]  lg:w-[450px] md:w-[350px] h-[6px] lg:h-[10px] md:h-[8px] " value="0" max="100"></progress>
+                                </div>
+                                <div>
+                                    <p className='lg:ml-5 ml-2 md:ml-3'>0%</p>
                                 </div>
                             </div>
                         </div>

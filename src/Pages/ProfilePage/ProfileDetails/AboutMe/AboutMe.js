@@ -20,8 +20,8 @@ const AboutMe = () => {
         <h1 className="text-[#1B1D48] font-medium lg:font-semibold lg:text-base text-lg">
           About Me
         </h1>
-        <label onClick={() =>setEditingAboute(student)} 
-            htmlFor="editPromotionModal">
+        <label onClick={() => setEditingAboute(student)}
+          htmlFor="editPromotionModal">
           <div className="flex items-center gap-x-1 text-[#1B1D48] cursor-pointer">
             <PencilSquareIcon className='h-4 w-4 lg:h-5 lg:w-5' />
             <p className="font-medium lg:font-semibold lg:text-sm text-sm">Edit</p>
@@ -32,7 +32,7 @@ const AboutMe = () => {
         <div className="mt-3">
           <label
             htmlFor="name"
-            className="block text-[#666666] font-semibold text-sm mb-2"
+            className="block text-[#666666] font-normal text-sm mb-2"
           >
             Name
           </label>
@@ -41,7 +41,7 @@ const AboutMe = () => {
         <div className="mt-3">
           <label
             htmlFor="StudentId"
-            className="block text-[#666666] font-semibold text-sm mb-2"
+            className="block text-[#666666] font-normal text-sm mb-2"
           >
             Student Id
           </label>
@@ -50,7 +50,7 @@ const AboutMe = () => {
         <div className="mt-3">
           <label
             htmlFor="Email"
-            className="block text-[#666666] font-semibold text-sm mb-2"
+            className="block text-[#666666] font-normal text-sm mb-2"
           >
             Email
           </label>
@@ -59,7 +59,7 @@ const AboutMe = () => {
         <div className="mt-3">
           <label
             htmlFor="Phone"
-            className="block text-[#666666] font-semibold text-sm mb-2"
+            className="block text-[#666666] font-normal text-sm mb-2"
           >
             Phone
           </label>
@@ -68,16 +68,16 @@ const AboutMe = () => {
         <div className="mt-3">
           <label
             htmlFor="dob"
-            className="block text-[#666666] font-semibold text-sm mb-2"
+            className="block text-[#666666] font-normal text-sm mb-2"
           >
-            D.O.B
+            Date Of Birth
           </label>
           <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">{student?.date || "N/A"}</p>
         </div>
         <div className="relative mt-3">
           <label
             htmlFor="Gender"
-            className="block text-[#666666] font-semibold text-sm mb-2"
+            className="block text-[#666666] font-normal text-sm mb-2"
           >
             Gender
           </label>

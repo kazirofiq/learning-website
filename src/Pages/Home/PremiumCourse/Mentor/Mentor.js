@@ -1,11 +1,9 @@
 import React from 'react';
 import mentor_image from '../../../../assest/mentor/mentor.png'
 import fb from '../../../../assest/mentor/social_icon/fb.png'
-import twitter from '../../../../assest/mentor/social_icon/twitter.png'
 import linkedin from '../../../../assest/mentor/social_icon/linkedin.png'
-import instagram from '../../../../assest/mentor/social_icon/instagram.png'
 import { Link } from 'react-router-dom';
-import ReviewModal from '../../../Dashboard/ReviewModal/ReviewModal';
+import { AiFillYoutube } from 'react-icons/ai';
 
 const Mentor = () => {
     return (
@@ -14,7 +12,7 @@ const Mentor = () => {
                 <p className='text-xl lg:text-2xl text-center lg:text-start font-bold leading-[30px] lg:leading-9 text-[#1B1D48] poppins w-[320px]'>Meet Your Mentor</p>
 
                 <div className='lg:flex block mx-auto'>
-                    <div className='w-[320px] lg:w-[186px]' >
+                    <div className='' >
                         <img src={mentor_image} alt="" className='lg:w-[186px] h-[194.02px] mx-auto lg:mr-[17px] mt-[9px]' />
                     </div>
                     <div className='poppins mt-[3px] lg:mt-5 lg:text-start text-center'>
@@ -32,10 +30,9 @@ const Mentor = () => {
                             <br />showcasing their products</p> */}
 
                         <div className='flex lg:mx-0 mx-auto lg:w-[104px] w-[92px] gap-3 lg:gap-4 mt-4 lg:mt-6'>
-                            <Link><img src={fb} alt="" /></Link>
-                            <Link><img src={twitter} alt="" /></Link>
-                            <Link><img src={instagram} alt="" /></Link>
-                            <Link><img src={linkedin} alt="" /></Link>
+                            <Link target='blank' to='https://www.facebook.com/groups/learnwithrakib'><img src={fb} alt="" /></Link>
+                            <Link target='blank' to='https://www.youtube.com/@learnwithrakib17'><AiFillYoutube className='text-xl text-[#3d419f]'></AiFillYoutube></Link>
+                            <Link target='blank' to='https://www.linkedin.com/in/learnwithrakib/'><img src={linkedin} alt="" /></Link>
                         </div>
                     </div>
                 </div>

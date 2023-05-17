@@ -1,136 +1,49 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 export const VedioContext = createContext()
 
-const courseSummary = [
-    {
-        id: 1,
-        moduleNumber: 1,
-        module: 'Welcome And Overview Of The Course',
-        lessons: [
-            {
-                vedioLesson: 'What is Amazon KDP ?',
-                vedioLink: 'https://cdn.pixabay.com/photo/2017/07/18/18/24/dove-2516641__340.jpg'
-            },
-            {
-                vedioLesson: 'Future and Earning Opportunity',
-                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
-            },
-            {
-                vedioLesson: 'Amazon Kindle Copyright and Trademark Rules',
-                vedioLink: 'https://i.pinimg.com/736x/5d/87/f5/5d87f5aa96107b62534fa6c9cf6baa95.jpg'
-            },
-            {
-                vedioLesson: 'How to Make Book Cover Template for KDP',
-                vedioLink: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq6oy5oJPmD04d-CqCcywDlFe73C8E23oD1IbrCzmzfk3v_JluW3TkFxiYlH5cCuqudk4&usqp=CAU'
-            },
-        ]
-    },
-    {
-        id: 2,
-        moduleNumber: 2,
-        module: 'What Is KDP and How To setup KDP account',
-        lessons: [
-            'What is Amazon KDP ?',
-            'Future and Earning Opportunity',
-            'Amazon Kindle Copyright and Trademark Rules',
-            'How to Make Book Cover Template for KDP'
-        ]
-    },
-    {
-        id: 3,
-        moduleNumber: 3,
-        module: 'All About Illustrator',
-        lessons: [
-            'What is Amazon KDP ?',
-            'Future and Earning Opportunity',
-            'Amazon Kindle Copyright and Trademark Rules',
-            'How to Make Book Cover Template for KDP'
-        ]
-    },
-    {
-        id: 1,
-        moduleNumber: 4,
-        module: 'Niche Research On KDP',
-        lessons: [
-            {
-                vedioLesson: 'What Is Niche?',
-                vedioLink: 'https://cdn.pixabay.com/photo/2017/07/18/18/24/dove-2516641__340.jpg'
-            },
-            {
-                vedioLesson: 'What is evergreen Niche?',
-                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
-            },
-            {
-                vedioLesson: 'What is event Niche?',
-                vedioLink: 'https://i.pinimg.com/736x/5d/87/f5/5d87f5aa96107b62534fa6c9cf6baa95.jpg'
-            },
-            {
-                vedioLesson: "What is extension and why It's important?",
-                vedioLink: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq6oy5oJPmD04d-CqCcywDlFe73C8E23oD1IbrCzmzfk3v_JluW3TkFxiYlH5cCuqudk4&usqp=CAU'
-            },
-            {
-                vedioLesson: "How to add extensions?",
-                vedioLink: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq6oy5oJPmD04d-CqCcywDlFe73C8E23oD1IbrCzmzfk3v_JluW3TkFxiYlH5cCuqudk4&usqp=CAU'
-            },
-            {
-                vedioLesson: "All about BSR?",
-                vedioLink: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq6oy5oJPmD04d-CqCcywDlFe73C8E23oD1IbrCzmzfk3v_JluW3TkFxiYlH5cCuqudk4&usqp=CAU'
-            },
-            {
-                vedioLesson: ' All about search result, score and search volume?',
-                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
-            },
-            {
-                vedioLesson: 'Different types of books on KDP With List Of the Books?',
-                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
-            },
-            {
-                vedioLesson: 'Manually niche research on kdp?',
-                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
-            },
-            {
-                vedioLesson: 'Manually  niche research on other marketplace?',
-                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
-            },
-            {
-                vedioLesson: 'Niche research with paid tools Part 01?',
-                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
-            },
-            {
-                vedioLesson: 'Niche research with paid tools part 02?',
-                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
-            },
-            {
-                vedioLesson: ' My niche research Style ( Niche Nurturing) Part 01?',
-                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
-            },
-            {
-                vedioLesson: 'My niche research Style ( Niche Nurturing) Part 02?',
-                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
-            },
-            {
-                vedioLesson: 'How to take niche research service to save time?',
-                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
-            },
-            {
-                vedioLesson: 'Assignment no: 1',
-                vedioLink: 'https://i.pinimg.com/originals/9c/fd/4f/9cfd4fec14bfb9bdeef11494720636ec.jpg'
-            },
-        ]
-    },
-]
-
-
 const VedioProvider = ({ children }) => {
+    const [allModules, setAllModules] = useState([])
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
+    const [contents, setContents] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     const toggling = () => setIsOpen(!isOpen);
     const onOptionClicked = value => () => {
         setIsOpen(false);
         setSelectedOption(value);
-        console.log(value);
+    };
+
+    useEffect(() => {
+        fetch('https://learn-with-rakib.onrender.com/batch-1')
+            .then(res => res.json())
+            .then(data => setAllModules(data))
+
+    }, [])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/batch-1/contents')
+            .then(res => res.json())
+            .then(data => setContents(data))
+    }, [])
+
+
+    const currentContent = contents[currentIndex];
+    // console.log(currentContent[1]);
+
+    // console.log(contents);
+
+    const handleNext = () => {
+        if (currentIndex < contents.length - 1) {
+            setCurrentIndex(currentIndex + 1);
+        }
+    };
+
+    const handlePrevious = () => {
+        if (currentIndex > 0) {
+            setCurrentIndex(currentIndex - 1);
+        }
     };
 
     const vedioInfo = {
@@ -140,7 +53,14 @@ const VedioProvider = ({ children }) => {
         selectedOption,
         onOptionClicked,
         toggling,
-        courseSummary
+        allModules,
+        currentContent,
+        handleNext,
+        handlePrevious,
+        currentIndex,
+        contents
+
+
     }
 
     return (

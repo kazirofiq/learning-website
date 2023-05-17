@@ -1,10 +1,15 @@
 import { RouterProvider } from 'react-router-dom';
 import router from './Routes/Routes/Routes';
-
+import { Toaster } from 'react-hot-toast';
+import { QueryClient, QueryClientProvider } from 'react-query'
 function App() {
+  const queryClient = new QueryClient()
   return (
     <div className='max-w-[1440px] mx-auto'>
-      <RouterProvider router={router}></RouterProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router}></RouterProvider>
+        <Toaster></Toaster>
+      </QueryClientProvider>
     </div>
   );
 }

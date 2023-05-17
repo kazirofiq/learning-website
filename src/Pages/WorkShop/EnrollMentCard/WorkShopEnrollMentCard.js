@@ -4,7 +4,6 @@ import videoImgResponsive from "../../../assest/staticVideoImg/Video Player.png"
 import videoPlayIcon from "../../../assest/staticVideoImg/Frame-56.png";
 import access from "../../../assest/buyCourseCardIcon/access.png";
 import enroll from "../../../assest/buyCourseCardIcon/Enroll 1.png";
-import lesson from "../../../assest/buyCourseCardIcon/Lesson.png";
 import instractor from "../../../assest/buyCourseCardIcon/Instructor.png";
 import group from "../../../assest/buyCourseCardIcon/Group.png";
 import time from "../../../assest/buyCourseCardIcon/Time.png";

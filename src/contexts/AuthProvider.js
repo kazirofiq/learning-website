@@ -1,25 +1,13 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updatePassword, updateProfile } from 'firebase/auth';
 import app from '../firebase/firebase.config';
 
 export const AuthContext = createContext();
 const auth = getAuth(app)
 
 const AuthProvider = ({ children }) => {
-    // const [isOpen, setIsOpen] = useState(false);
-    // const [selectedOption, setSelectedOption] = useState(null);
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-
-
-    // const toggling = () => setIsOpen(!isOpen);
-    // const onOptionClicked = value => () => {
-    //     setIsOpen(false);
-    //     setSelectedOption(value);
-    //     console.log(value);
-    // };
-
-
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -40,8 +28,12 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     }
 
-    const verificationEmail = ()=>{
-     return sendEmailVerification(auth.currentUser);
+    const verificationEmail = () => {
+        return sendEmailVerification(auth.currentUser);
+    }
+
+    const passwordReset = (email) => {
+        return sendPasswordResetEmail(auth, email)
     }
 
     useEffect(() => {
@@ -60,8 +52,10 @@ const AuthProvider = ({ children }) => {
         updateUser,
         logOut,
         verificationEmail,
+        passwordReset,
         user,
         loading,
+
         // setIsOpen,
         // isOpen,
         // setSelectedOption,

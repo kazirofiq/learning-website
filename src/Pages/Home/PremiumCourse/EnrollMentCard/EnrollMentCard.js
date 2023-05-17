@@ -1,7 +1,4 @@
 import React from 'react';
-import videoImg from "../../../../assest/staticVideoImg/Rectangle-6734.png";
-import videoImgResponsive from "../../../../assest/staticVideoImg/Video Player.png";
-import videoPlayIcon from "../../../../assest/staticVideoImg/Frame-56.png";
 import access from "../../../../assest/buyCourseCardIcon/access.png";
 import lesson from "../../../../assest/buyCourseCardIcon/Lesson.png";
 import instractor from "../../../../assest/buyCourseCardIcon/Instructor.png";
@@ -11,11 +8,10 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import './EnrollMentCard.css';
 import PricingSection from './PricingSection/PricingSection';
-import EnrollMentCardModal from './EnrollMentCardModal/EnrollMentCardModal';
 const EnrollMentCard = () => {
 
     const [activeItem, setActiveItem] = useState(null);
-    const [isModalChecked, setIsModalChecked] = useState(false);
+    // const [isModalChecked, setIsModalChecked] = useState(false);
 
     useEffect(() => {
 
@@ -48,21 +44,12 @@ const EnrollMentCard = () => {
         &&
         <div className={`${(activeItem !== "frequentlyAskedQuestion") ? `lg:mt-[-200px] mx-auto` : "hidden"} ${(activeItem === "free-course" || activeItem === "frequentlyAskedQuestion") ? "hidden" : ""}`}>
             <div className="card poppins w-[320px] lg:w-[350px] bg-base-100 shadow-xl inline-block sticky top-0">
-                <label htmlFor='openEnrollMentModal'>
-                    <div className='relative cursor-pointer'>
-                        <figure>
-                            <img className='lg:block hidden' src={videoImg} alt="video" />
-                            <img className='lg:hidden block' src={videoImgResponsive} alt="" />
-                            <div className='absolute flex justify-center items-center'>
-                                <img className='lg:mr-4 lg:w-full w-9 mr-2' src={videoPlayIcon} alt="" />
-                                <h4 className='lg:text-2xl text-lg text-[#FFFFFF] font-bold leading-[36px]'>Preview</h4>
-                            </div>
-                        </figure>
-                    </div>
-                </label>
-                <EnrollMentCardModal modalId="openEnrollMentModal" setIsChecked={setIsModalChecked}>
-                    <iframe className="w-[320px] lg:w-[730px] lg:h-[450px] h-[300px]" src={`${isModalChecked && "https://player.vdocipher.com/v2/?otp=20160313versASE323czxXBX5KQ1tFFcIliU2oeit2Js8i1KRzT2v1ubP8pDNZmr&playbackInfo=eyJ2aWRlb0lkIjoiODI1OTJkMTcxNzg4NDc0OTlhYTdiMmI1NjViNWRlZGYifQ=="}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </EnrollMentCardModal>
+
+                <iframe className="w-[320px] lg:w-[350px] yt-video-rounded h-[300px] rounded-lg" src="https://player.vdocipher.com/v2/?otp=20160313versASE323czxXBX5KQ1tFFcIliU2oeit2Js8i1KRzT2v1ubP8pDNZmr&playbackInfo=eyJ2aWRlb0lkIjoiODI1OTJkMTcxNzg4NDc0OTlhYTdiMmI1NjViNWRlZGYifQ==" title="YouTube video player" frameborder="0" allow="accelerometer; mute; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+
+                {/* <EnrollMentCardModal modalId="openEnrollMentModal" setIsChecked={setIsModalChecked}>
+                    <iframe className="w-[320px] lg:w-[730px] lg:h-[450px] h-[300px]" src={`${isModalChecked && "https://player.vdocipher.com/v2/?otp=20160313versASE323czxXBX5KQ1tFFcIliU2oeit2Js8i1KRzT2v1ubP8pDNZmr&playbackInfo=eyJ2aWRlb0lkIjoiODI1OTJkMTcxNzg4NDc0OTlhYTdiMmI1NjViNWRlZGYifQ=="}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                </EnrollMentCardModal> */}
                 <div className="card-body lg:px-[25px] p-3 mt-4 lg:mt-[0px]">
                     <div className=''>
                         <div className="
@@ -89,14 +76,6 @@ const EnrollMentCard = () => {
                             </div>
                             <h4 className='font-normal text-sm lg:text-base text-[#333333]'>250+</h4>
                         </div>
-                        {/* <div className="
-                 h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
-                            <div className='flex items-center'>
-                                <img className='h-5 w-[22px] mr-[9px]' src={enroll} alt="" />
-                                <span className='font-normal text-sm lg:text-base text-[#333333]'>Enrolled</span>
-                            </div>
-                            <h4 className='font-normal text-sm lg:text-base text-[#333333]'>35 Student</h4>
-                        </div> */}
                         <div className="
                  h-11 rounded-none bg-[#FFFFFF] border-b-[1px] border-[#E6E6E6] flex justify-between items-center lg:px-0 px-3">
                             <div className='flex items-center'>
@@ -114,7 +93,6 @@ const EnrollMentCard = () => {
                             <h4 className='font-normal text-sm lg:text-base text-[#333333]'>Life Time</h4>
                         </div>
                     </div>
-                    {/* pricing section */}
                     <PricingSection />
                 </div>
             </div>

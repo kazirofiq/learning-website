@@ -9,8 +9,11 @@ import ConsultetionAboutTC from './ConsultationAboutTC/ConsultationAboutTC';
 import ConsultetionNavbar from './ConsultationNavbar/ConsultationNavbar';
 import scroll from '../../assest/Consultency/Scroll.png';
 import { useEffect } from 'react';
+import useTitle from '../../hooks/useTitle';
 
 const Consultation = () => {
+
+    useTitle('Consultancy - ');
 
     useEffect(() => {
         window.scrollTo(0, 0)

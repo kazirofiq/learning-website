@@ -7,6 +7,10 @@ import CourseCurriculumAccordion from './CourseCurriculumAccordion';
 const CourseCurriculum = () => {
     return (
         <section className='' id='courseCurriculum'>
+            <div className='mt-10 mb-10'>
+                <h1 className='font-bold text-[#333333] text-2xl'>How to complete Payment?</h1>
+                <p className='font-normal text-base text-[#666666] mt-3'>To know the process <label className='font-normal text-base text-[#666666] mt-3r' htmlFor='howToPay'><span className='font-bold text-base text-[#3D419F] cursor-pointer '>Watch this Video</span></label></p>
+            </div>
             <div className=''>
                 <div className='lg:w-[730px] w-[320px] py-4 lg:py-[22px] bg-[#F8F8FF] '>
                     <div className=''>

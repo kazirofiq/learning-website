@@ -44,6 +44,13 @@ const ImportentLinkEdit = () => {
                             swal("Success", "Important link updated successfully", "success");
                         }
                     })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data?.acknowledged) {
+                            swal("Success", "Important link updated successfully", "success");
+                        }
+                    })
                     .catch(err => console.error(err))
 
             } else {
@@ -58,6 +65,7 @@ const ImportentLinkEdit = () => {
                     .then(data => {
                         if (data?.acknowledged) {
                             swal("Success", "Important link save successfully", "success");
+                            console.log(data)
                             reset();
                         }
 

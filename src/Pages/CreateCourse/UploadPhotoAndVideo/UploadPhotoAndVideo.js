@@ -111,7 +111,10 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId, setImage }) => {
             }
             setVideoStatus(status);
           })
-          .catch(err => console.error(err))
+          .catch(err => {
+            console.log(err);
+            clearInterval(checkInterval)
+          })
       }, 3000);
     }
   }
@@ -119,7 +122,6 @@ const UploadPhotoAndVideo = ({ setPromotionVideoId, setImage }) => {
   const handleCancelVideoUpload = () => setCancelVideoUpload(true);
 
   useEffect(() => {
-    console.log("rendering");
     if (imageStatus > 1 && !isImageUploading) {
       const imageUploadInterval = setInterval(() => setImageStatus(prev => {
         if (prev < 100) {

@@ -17,7 +17,7 @@ const Banner = () => {
                 </div>
                 <div className='flex-row lg:mr-[31px]'>
                     <h1 className='text-4xl lg:text-[51px]  text-[#1B1D48] md:leading-[68px]   mb-[30px]  font-bold lg:text-left md:text-left text-center pt-6 lg:p-0'>Learning Online is <span className='text-[#38A27B] lg:block'>Now Much Easier</span></h1>
-                    <p className='text-[#666666] leading-6 text-[16px] mb-11 lg:text-left md:text-left text-center'>Learn With Rakib is an interesting platform that will teach you in <span className='lg:block'>more an interactive way</span> </p>
+                    <p className='text-[#666666] leading-6 text-[16px] mb-11 lg:text-left md:text-left text-center'>Learn With Rakib is an interesting platform that will teach you <span className='lg:block'>in more an interactive way</span> </p>
 
                     <div className='lg:flex items-center sm:block mx-auto lg:mx-0'>
                         <div className='flex justify-center'>

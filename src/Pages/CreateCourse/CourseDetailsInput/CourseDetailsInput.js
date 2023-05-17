@@ -60,7 +60,6 @@ const CourseDetailsInput = () => {
       })
         .then(res => res.json())
         .then(data => {
-          console.log(data);
           navigate(`/admindashboard/course-create/course-curriculum/${data.insertedId}`);
         })
         .catch(err => console.error(err))
@@ -179,7 +178,7 @@ const CourseDetailsInput = () => {
         error && <p className='text-center text-red-600 font-bold my-5'>{error}</p>
       }
       <div>
-        <Buttons setDraft={setDraft} text={'Save & Continue'} />
+        <Buttons setDraft={setDraft} text={'Save & Continue'} draft={true} />
       </div>
     </form>
   );

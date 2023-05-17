@@ -4,8 +4,10 @@ import bgRound from "../../../assest/bg-img/bg-round.png";
 import forntCon from "../../../assest/bg-img/Frame 37951.png";
 import forntsmal from "../../../assest/bg-img/frame-smal.png";
 import { Link } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 
 const Consultancy = () => {
+
   return (
     <section className="bg-[#F8F8FF]">
       <div className="hero lg:pb-[87px] lg:pt-[13px] ">
@@ -27,7 +29,7 @@ const Consultancy = () => {
             </p>
             <Link to='/consultetion'>
               <button className="mt-6 lg:mt-10 md:mt-10 px-4 py-2 lg:px-8 lg:py-4 bg-[#3D419F] text-white rounded-xl lg:font-semibold font-normal lg:text-base text-sm">
-                See Details
+                Make an Appointment
               </button>
             </Link>
           </div>

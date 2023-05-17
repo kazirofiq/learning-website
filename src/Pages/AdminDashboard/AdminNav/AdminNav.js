@@ -2,16 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import adminLogo from "../../../assest/logo/Logo (White).png";
 import { MdOutlineAssignment, MdOutlineTopic } from "react-icons/md";
-import { BiLogIn } from "react-icons/bi";
-import { AiOutlineMail, AiOutlineRight } from "react-icons/ai";
+import { AiOutlineRight } from "react-icons/ai";
 import { GiGraduateCap } from "react-icons/gi";
 import { FaFirstOrderAlt } from "react-icons/fa";
-
+import { RiCoupon2Line } from "react-icons/ri";
 const AdminNav = () => {
   return (
     <div className=" w-full bg-[#1B1D48]    h-screen  ">
       <div className='w-[134px] mx-auto mt-[19px]'>
-        <img src={adminLogo} alt="" />
+        <Link to='/'><img src={adminLogo} alt="" /></Link>
       </div>
       <div className="  w-full  ">
 
@@ -25,22 +24,7 @@ const AdminNav = () => {
             </Link>
           </li>
           <li>
-            <Link to="/admindashboard/sendnotification">
-              <label
-                // onClick={() => setDeletingClient(client)}
-                htmlFor="confirmation-modal"
-
-              >
-                <div className="flex gap-4 items-center">
-                  <AiOutlineMail className='text-white font-bold'></AiOutlineMail>
-                  <h2>Send Notification</h2>
-                </div>
-              </label>
-
-            </Link>
-          </li>
-          <li>
-            <Link to="/dashboard/calender">
+            <Link to="/admindashboard/student-list">
               <div className="flex gap-4 items-center">
                 <GiGraduateCap></GiGraduateCap>
                 <h2>Student List</h2>
@@ -48,10 +32,19 @@ const AdminNav = () => {
             </Link>
           </li>
           <li>
-            <Link to="/dashboard/activity">
+            <Link to="/admindashboard/assignment-list">
               <div className="flex gap-4 items-center">
                 <MdOutlineAssignment></MdOutlineAssignment>
                 <h2>Assignment</h2>
+              </div>
+            </Link>
+          </li>
+          <li>
+            <Link to="/admindashboard/update-coupon">
+              {/* <Link to="/dashboard/profile"> */}
+              <div className="flex gap-4 items-center">
+                <RiCoupon2Line className='text-white' />
+                <h2>Coupon</h2>
               </div>
             </Link>
           </li>
@@ -65,11 +58,12 @@ const AdminNav = () => {
               </div>
             </Link>
           </li>
+
         </ul>
         {/* divider */}
-        <div className="divider  "></div>
+        <div className="divider "></div>
         {/* profile */}
-        <ul className="menu   p-2 rounded-box">
+        {/* <ul className="menu   p-2 rounded-box">
           <li>
             <div
               //   onClick={handleLogout}
@@ -79,7 +73,7 @@ const AdminNav = () => {
               <h2 className='text-white'>Log Out</h2>
             </div>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

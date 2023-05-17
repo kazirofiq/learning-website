@@ -1,12 +1,10 @@
 import { useContext } from "react";
-import { Navigate, useLocation } from "react-router-dom";
 import useIsAdmin from "../../hooks/useIsAdmin";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const AdminRoute = ({ children }) => {
-    const { user, loading, logOut } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
     const [isAdmin, isLoading] = useIsAdmin(user?.uid);
-    const location = useLocation();
     // console.log(isAdmin, loading, isLoading, user?.uid);
 
     if (loading || isLoading) {

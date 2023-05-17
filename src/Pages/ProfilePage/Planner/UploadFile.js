@@ -1,49 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import UploadImgIcon from "../../../assest/icon/uploadPhoto.png";
 import crosX from "../../../assest/icon/Cross@2x.png";
 import cros from "../../../assest/icon/Cross.png";
 
+import UploadCoverImg from '../../CreateCourse/CourseUploadProgress/UploadCoverImg';
+import DragAndDrop from '../../CreateCourse/DragAndDrop/DragAndDrop';
 const UploadFile = () => {
-    const onDrop = useCallback(acceptedFiles => {
-        // Do something with the files
-      }, [])
-      const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+  
+  const [imageStatus, setImageStatus] = useState(0);
+  const [imageFileInfo, setImageFileInfo] = useState("");
+  const [imageError, setImageError] = useState("");
+  const [isImageUploading, setIsImageUploading] = useState(false);
+
+  const handleUploadImage = files => {
+    if (files[0].type.split("/")[0] !== "image") {
+      setImageError("Please select only image files");
+      return;
+    }
+
+    setImageError("");
+    setImageFileInfo(files[0]);
+    const formData = new FormData();
+    formData.append("image", files[0]);
+  }
+
     return (
         <div>
             <div className='mt-4 px-6 pb-6'>
-         <label
+         {/* <label
             htmlFor="Upload-File"
             className="block text-[#666666] font-medium text-sm mb-2"
           >
-            Upload Image <span className='text-[#333333]'>(For Idea Or Inspiration)</span>
-          </label>
+            Upload Image <span className='text-[#333333]'>(For Idea Or Inspiration)</span> */}
+          {/* </label> */}
           <div className='flex flex-col lg:flex-row lg:grid grid-cols-2 gap-x-6'>
-          <div className='bg-[#F8F8FF] w-[288px] lg:w-[381px] rounded-xl' {...getRootProps()}>
-      <input {...getInputProps()} />
-      {
-        isDragActive ?
-        <div className='flex justify-center items-center flex-col w-[288px] h-[135px] lg:w-[381px] lg:h-[159px] rounded-[12px] border-[1px] border-dashed border-[#3D419F]'>
-        <img src={UploadImgIcon} alt="" />
-        <div className='mt-3'>
-          <p className='font-semibold text-sm text-[#333333]'>Drop the files here ...</p>
-        </div>
-    </div> 
 
-          :
-
-          <div className='flex justify-center items-center flex-col w-[288px] h-[135px] lg:w-[381px] lg:h-[159px] rounded-[12px] border-[1px] border-dashed border-[#3D419F]'>
-              <img src={UploadImgIcon} alt="" />
-              <div className='mt-3'>
-                <p className='font-semibold text-sm text-[#333333]'>Drag & Drop image or <span className='text-[#3D419F] font-normal cursor-pointer'>Browse</span></p>
-                <p className='font-light text-xs text-[#666666]'>Video, Pdf or Text file (max. 2.0 GB)</p>
-              </div>
-          </div>
-      }
+          <DragAndDrop
+        title="Upload Image (For Idea Or Inspiration)"
+        isUploading={isImageUploading}
+        icon={UploadImgIcon}
+        type="image"
+        workWithFiles={handleUploadImage}
+        isUploaded={""}
+      >
+        {
+          imageError && <p className='text-red-600 text-center font-semibold'>{imageError}</p>
+        }
+        {
+          imageStatus ? <UploadCoverImg
+            imageStatus={imageStatus}
+            fileInfo={imageFileInfo}
+          /> : ""
+        }
+      </DragAndDrop>
     </div>
 
-    <div className="card lg:w-[381px] w-[288px] h-[111px] bg-[#F8F8FF] shadow-md pr-4 pl-[10px] py-[10px] lg:mt-0 mt-4">
+    {/* <div className="card lg:w-[381px] w-[288px] h-[111px] bg-[#F8F8FF] shadow-md pr-4 pl-[10px] py-[10px] lg:mt-0 mt-4">
        <div>
        <div className='rounded-xl mt-3'>
             <div className="flex items-center">
@@ -62,10 +76,9 @@ const UploadFile = () => {
             </div>
       </div>
 </div>
-    </div>
+    </div> */}
           </div>
          </div>
-        </div>
     );
 };
 

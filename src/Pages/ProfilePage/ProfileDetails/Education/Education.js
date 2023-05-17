@@ -8,9 +8,9 @@ import EduCationEditing from '../../ProfileDetailsEdit/EduCationEditing/EduCatio
 
 
 const Education = () => {
-  
+
   const { user } = useContext(AuthContext);
-    const [editingEducation, setEditingEducation] = useState(null);
+  const [editingEducation, setEditingEducation] = useState(null);
   const { data: student = {}, refetch } = useQuery({
     queryKey: ["education", user?.uid],
     queryFn: () =>
@@ -28,9 +28,9 @@ const Education = () => {
         <h1 className="text-[#1B1D48] font-medium lg:font-semibold lg:text-base text-lg">
           Education
         </h1>
-        <label 
-        onClick={() =>setEditingEducation(student)}
-        htmlFor="editEducationModal">
+        <label
+          onClick={() => setEditingEducation(student)}
+          htmlFor="editEducationModal">
           <div className="flex items-center gap-x-1 text-[#1B1D48] cursor-pointer">
             <PencilSquareIcon className='h-4 w-4 lg:h-5 lg:w-5' />
             <p className="font-medium lg:font-semibold lg:text-sm text-sm">Edit</p>
@@ -54,15 +54,15 @@ const Education = () => {
           <label htmlFor="education" className='block text-[#666666] font-normal text-sm mb-2'>Approximate Passing year</label>
           <p className="bg-[#F8F8FF] py-3 px-3 rounded-lg text-[#1B1D48] font-semibold w-full lg:w-[375px] h-[48px]">{student?.passingYear || "N/A"}</p>
         </div>
-        
+
 
       </div>
       <EduCationEditing
-          // refetch={refetch}
-          education={editingEducation}
-          refetch={refetch}
-          setEditingEducation={setEditingEducation}
-        ></EduCationEditing>
+        // refetch={refetch}
+        education={editingEducation}
+        refetch={refetch}
+        setEditingEducation={setEditingEducation}
+      ></EduCationEditing>
     </div>
   );
 };

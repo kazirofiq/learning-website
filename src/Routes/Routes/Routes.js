@@ -21,7 +21,6 @@ import Resource from "../../Pages/Resource/Resource";
 import BsrCalculetor from "../../Pages/KdpTools/BsrCalculetor/BsrCalculetor";
 import SideCategory from "../../Pages/CreateCourse/SideCategory/SideCategory";
 import CourseCurriculum from "../../Pages/CourseCurriculum/CourseCurriculum";
-import CourseCurriculumQuiz from "../../Pages/CourseCurriculum/CourseCurriculumQuiz/CourseCurriculumQuiz";
 import CreateCourse from "../../Pages/CreateCourse/CreateCourse";
 import KdpTools from "../../Pages/KdpTools/KdpTools/KdpTools";
 import RoyalCalculetor from "../../Pages/KdpTools/RoyaltyCalculetor/RoyalCalculetor";
@@ -53,6 +52,14 @@ import TermsAndConditions from "../../Pages/Shared/Footer/TermsAndConditions/Ter
 import Planner from "../../Pages/ProfilePage/Planner/Planner";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AdminRoute from "../AdminRoute/AdminRoute";
+import UpdateCuponCode from "../../Pages/AdminDashboard/UpdateCuponCode/UpdateCuponCode";
+import CreateWorkshop from "../../Pages/CreateWorkshop/CreateWorkshop";
+import WorkshopCurriculum from "../../Pages/WorkshopCurriculum/WorkshopCurriculum";
+import AssignmentList from "../../AssignmentList/AssignmentList";
+import StudentList from "../../Pages/StudentList/StudentList";
+import WorkshopContent from "../../Pages/Courses/WorkshopContent/WorkshopContent";
+import CreateModules from "../../Pages/CreateModules/CreateModules";
+import ModulesList from "../../Pages/AdminDashboard/ModulesList/ModulesList";
 
 
 const router = createBrowserRouter([
@@ -95,14 +102,16 @@ const router = createBrowserRouter([
             },
             {
                 path: '/resource',
-                element: <PrivateRoute><Resource /></PrivateRoute>
+                element: <Resource />
             },
+
             {
                 path: '/allreviews',
                 element: <PrivateRoute><AllReviews /></PrivateRoute>
             },
             {
-                path: '/upcomingdetails',
+                // /:workshopId
+                path: '/upcomingdetails/:workshopId',
                 element: <PrivateRoute><UpComingDetails /></PrivateRoute>
             },
             // footer text route
@@ -122,6 +131,13 @@ const router = createBrowserRouter([
                 path: '/refund',
                 element: <Refund />
             },
+            {
+                path: '/workshop/:id',
+                element: <WorkshopContent></WorkshopContent>,
+                loader: async ({ params }) => {
+                    return fetch(`https://learn-with-rakib.onrender.com/workshops/name/${params.id}`)
+                },
+            },
 
 
         ]
@@ -129,7 +145,7 @@ const router = createBrowserRouter([
     // {
     //     path: '/verify-email/',
     //     element: <VerifyEmail></VerifyEmail>
-    // },
+    // },http://localhost:5000/workshops/name/6456395921a91c9abc54f0a0
     {
         path: '/mycourses',
         element: <PrivateRoute><CourseLayout /></PrivateRoute>,
@@ -141,9 +157,11 @@ const router = createBrowserRouter([
             {
                 path: '/mycourses/previousworkshop',
                 element: <PreviousWorkshop />
-            }
-        ]
+            },
+
+        ],
     },
+
     {
         path: '/workshop',
         element: <PrivateRoute><WorkShopLayout /></PrivateRoute>,
@@ -207,30 +225,61 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: '/vedio',
+        path: '/batch-1',
         element: <MyCourseLayout></MyCourseLayout>,
         children: [
             {
-                path: '/vedio',
-                element: <Vedio />
+                path: '/batch-1/video/:number',
+                element: <Vedio />,
+                loader: async ({ params }) => {
+                    return fetch(`https://learn-with-rakib.onrender.com/batch-1/${params.number}`)
+                },
             },
             {
-                path: '/vedio/assignment',
+                path: '/batch-1/quiz/:number',
+                element: <Quiz></Quiz>,
+                loader: async ({ params }) => {
+                    return fetch(`https://learn-with-rakib.onrender.com/batch-1/${params.number}`)
+                },
+            },
+            {
+                path: '/batch-1/assignment/:number',
+                loader: async ({ params }) => {
+                    return fetch(`https://learn-with-rakib.onrender.com/batch-1/${params.number}`)
+                },
                 element: <Assignment></Assignment>
             },
-            {
-                path: '/vedio/quiz',
-                element: <Quiz></Quiz>
-            },
+
         ]
     },
     {
         path: '/admindashboard',
+        // element: <AdmindashboardLayout></AdmindashboardLayout>,
         element: <AdminRoute><AdmindashboardLayout></AdmindashboardLayout></AdminRoute>,
         children: [
             {
                 path: '/admindashboard',
                 element: <AdminDashboard></AdminDashboard>
+            },
+            {
+                path: '/admindashboard/student-list',
+                element: <StudentList></StudentList>
+            },
+            {
+                path: '/admindashboard/upload-Resource',
+                element: <UPloadResource />
+            },
+            {
+                path: '/admindashboard/update-coupon',
+                element: <UpdateCuponCode />
+            },
+            {
+                path: '/admindashboard/assignment-list',
+                element: <AssignmentList />
+            },
+            {
+                path: '/admindashboard/studeent-list',
+                element: <StudentList></StudentList>
             },
             {
                 path: '/admindashboard/course-create',
@@ -245,13 +294,33 @@ const router = createBrowserRouter([
                         element: <CourseCurriculum />
                     },
                     {
-                        path: '/admindashboard/course-create/course-curriculum-quiz',
-                        element: <CourseCurriculumQuiz />
+                        path: '/admindashboard/course-create/AddFAQ/:courseId',
+                        element: <AddFAQ />
+                    },
+
+                ]
+            },
+            {
+                path: '/admindashboard/course/:courseId/modules',
+                element: <ModulesList />
+            },
+            {
+                path: '/admindashboard/course/:courseId/create-modules',
+                element: <CreateModules />
+            },
+
+            {
+                path: '/admindashboard/create-workshop',
+                element: <SideCategory />,
+                children: [
+                    {
+                        path: '/admindashboard/create-workshop',
+                        element: <CreateWorkshop />
                     },
                     {
-                        path: '/admindashboard/course-create/AddFAQ',
-                        element: <AddFAQ />
-                    }
+                        path: '/admindashboard/create-workshop/workshop-curriculum/:workshopId',
+                        element: <WorkshopCurriculum />
+                    },
                 ]
             },
             {
@@ -270,10 +339,26 @@ const router = createBrowserRouter([
                 ]
             },
             {
+                path: "/admindashboard/myWorkshop",
+                element: <MyCourse></MyCourse>,
+                children: [
+                    {
+                        path: "/admindashboard/myWorkshop",
+                        element: <CourseList></CourseList>
+                    },
+                    {
+                        path: "/admindashboard/myWorkshop/draftcourse",
+                        element: <DraftCourse></DraftCourse>
+                    },
+
+                ]
+            },
+            {
                 path: '/admindashboard/upload-Resource',
                 element: <UPloadResource />
             },
         ]
+
 
     },
     {
@@ -285,13 +370,15 @@ const router = createBrowserRouter([
                 element: <StudentDashboard></StudentDashboard>
             },
             {
-                path: '/student-dashboard/analytic',
+                path: '/student-dashboard/analytics',
                 element: <StudentMarks></StudentMarks>
             },
             {
                 path: '/student-dashboard/leader-board',
                 element: <LeaderBoard></LeaderBoard>
             },
+
+
         ]
     },
 ])

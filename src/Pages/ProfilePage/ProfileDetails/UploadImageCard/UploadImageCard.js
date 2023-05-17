@@ -3,10 +3,10 @@ import avatarBig from '../../../../assest/Profile_image/Avatar Big.png';
 import uploadIcon from "../../../../assest/icon/upload.png";
 import { AuthContext } from '../../../../contexts/AuthProvider';
 const UploadImageCard = () => {
-    const {user, updateUser} = useContext(AuthContext)
+    const { user, updateUser } = useContext(AuthContext)
     const imageHostKey = process.env.REACT_APP_imgbb_key;
-    
-    const updateProfileImage = (e) =>{
+
+    const updateProfileImage = (e) => {
         const image = e.target.files[0];
         const formData = new FormData();
         formData.append('image', image);
@@ -14,18 +14,18 @@ const UploadImageCard = () => {
         fetch(url, {
             method: 'POST',
             body: formData
-            })
+        })
             .then((res) => res.json())
             .then((imgData) => {
-                if(imgData.success){
+                if (imgData.success) {
                     console.log(imgData.data.url);
                     const imageLink = {
-                        photoURL: imgData.data.url    
-                    }  
+                        photoURL: imgData.data.url
+                    }
                     updateUser(imageLink)
-                    .then(() =>{
+                        .then(() => {
 
-                    })
+                        })
                 }
 
             })
@@ -37,7 +37,7 @@ const UploadImageCard = () => {
     return (
         <div className="card w-[263px] lg:w-full bg-base-100 mt-6">
             <div className='flex items-center'>
-                <img className='w-24 h-24 lg:w-[120px] lg:h-[120px] mr-6 rounded-full' src={user?.photoURL} alt="" />
+                <img className='w-24 h-24 lg:w-[120px] lg:h-[120px] mr-6 rounded-full object-cover' src={user?.photoURL} alt="" />
                 <div>
                     <input onChange={updateProfileImage} type="file" id="upload" hidden />
                     <label for="upload" className='lg:inline-block flex justify-center items-center lg:w-[173px] lg:h-10 h-[37px] w-[151px] bg-[#3D419F] lg:py-2 lg:px-4 rounded-[10px] cursor-pointer'>

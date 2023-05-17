@@ -1,0 +1,21 @@
+.resource-title:hover p {
+    opacity: 1;
+    z-index: 999;
+}
+
+.overly {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+
+}
+
+.resource-title:hover .overly {
+    transform: scale(1);
+    opacity: 1;
+
+}
