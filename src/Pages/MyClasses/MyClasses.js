@@ -7,16 +7,18 @@ import { VedioContext } from '../../contexts/VedioProvider';
 import { server } from '../../variables/server';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const MyClasses = () => {
 
   const { allModules } = useContext(VedioContext);
   const { user } = useContext(AuthContext);
   const [courseInfo, setCourseInfo] = useState(null);
+  const { number } = useParams()
 
 
   useEffect(() => {
-    if (user?.uid) {
+    if (user?.uid && number) {
       fetch(`${server}/users/uid?uid=${user?.uid}`)
         .then(res => res.json())
         .then(data => {
@@ -24,7 +26,7 @@ const MyClasses = () => {
         })
         .catch(err => console.error(err))
     }
-  }, [user, allModules])
+  }, [user, allModules, number])
 
   return (
     <div>

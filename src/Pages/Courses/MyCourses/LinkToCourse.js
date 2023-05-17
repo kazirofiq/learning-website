@@ -7,8 +7,10 @@ const LinkToCourse = ({ myCourse }) => {
     const [courseContinueRoute, setCourseContinueRoute] = useState("");
 
     useEffect(() => {
-        const lessons = (allModules?.map(module => module.lessons.map(lesson => lesson))?.flat(1))
-        setCourseContinueRoute(`/batch-1/${lessons[0].routeName}/${lessons[0].number}`);
+        const lessons = (allModules?.filter(module => module?.isReleased).map(module => module?.lessons.map(lesson => lesson))?.flat(1))
+        if (lessons[0]?.routeName && lessons[0]?.number) {
+            setCourseContinueRoute(`/batch-1/${lessons[0].routeName}/${lessons[0].number}`);
+        }
     }, [allModules])
 
     return (
