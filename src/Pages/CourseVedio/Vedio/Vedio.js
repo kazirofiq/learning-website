@@ -33,6 +33,7 @@ const Vedio = () => {
                     const lessonId = pathname.split('/')[3];
                     const index = allLessons.findIndex(less => less.number === lessonId) + 1;
                     const newCompleted = Math.floor(index * 100 / allLessons.length);
+                    const routeName = allLessons?.find(less => less.number === lessonId)?.routeName;
 
                     if (info?.completed < newCompleted) {
                         fetch(`${server}/courses/completed?uid=${user?.uid}&courseId=${allModules[0]?.courseId}`, {
@@ -40,7 +41,7 @@ const Vedio = () => {
                             headers: {
                                 "Content-Type": "application/json"
                             },
-                            body: JSON.stringify({ newCompleted, lessonId })
+                            body: JSON.stringify({ newCompleted, lessonId, routeName })
                         })
                             .then(res => res.json())
                             .then(data => {
