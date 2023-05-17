@@ -8,7 +8,7 @@ const WorkshopVideo = ({ videoId }) => {
     const [videoLink, setVideoLink] = useState()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/videos/${videoId}`)
+        fetch(`https://learn-with-rakib.onrender.com/videos/${videoId}`)
             .then(res => res.json())
             .then(data => setVideoLink(data))
     }, [videoId])

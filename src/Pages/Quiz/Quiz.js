@@ -17,7 +17,7 @@ const Quiz = () => {
     const allQuiz = useLoaderData()
     // console.log(allQuiz);
     const quizes = allQuiz?.quizData;
-    console.log(quizes);
+    // console.log(quizes);
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
@@ -40,8 +40,12 @@ const Quiz = () => {
         }
         else {
             const updatedScore = selected === quizes[currentQuestion].correctAnswer ? score + 1 : score
-            // setIsLoading(true);
-            const moduleInfo = allModules.find(m => m.lessons[m.lessons.length - 1].number === allQuiz._id)
+            const moduleInfo = allModules.find(m => m.lessons.find(less => less.routeName === "quiz" && less.number === allQuiz._id))
+
+            if (!moduleInfo || !moduleInfo?.courseId) {
+                return;
+            }
+
             const resultData = {
                 courseId: moduleInfo.courseId,
                 moduleNo: moduleInfo.moduleNo,
@@ -83,14 +87,15 @@ const Quiz = () => {
             fetch(`${server}/users/uid?uid=${user?.uid}`)
                 .then(res => res.json())
                 .then(data => {
-                    const info = data.enrolledCourses.find(course => course.id === allModules[0].courseId);
-                    const allLessons = allModules?.map(module => module.lessons.map(lesson => lesson))?.flat(1)
+                    const info = data?.enrolledCourses.find(course => course.id === allModules[0]?.courseId);
+                    const allLessons = allModules?.map(module => module?.lessons.map(lesson => lesson))?.flat(1)
+                    // console.log(allModules);
                     const lessonId = pathname.split('/')[3];
                     const index = allLessons.findIndex(less => less.number === lessonId) + 1;
                     const newCompleted = Math.floor(index * 100 / allLessons.length)
 
-                    if (info.completed < newCompleted) {
-                        fetch(`${server}/courses/completed?uid=${user?.uid}&courseId=${allModules[0].courseId}`, {
+                    if (info?.completed < newCompleted) {
+                        fetch(`${server}/courses/completed?uid=${user?.uid}&courseId=${allModules[0]?.courseId}`, {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"
@@ -109,7 +114,7 @@ const Quiz = () => {
     }, [user, allModules, pathname]);
 
     useEffect(() => {
-        const moduleInfo = allModules.find(m => m.lessons[m.lessons.length - 1].number === allQuiz._id)
+        const moduleInfo = allModules.find(m => m.lessons.find(less => less.routeName === "quiz" && less.number === allQuiz._id))
         if (moduleInfo && user?.uid) {
             fetch(`${server}/result?resultOf=quiz&courseId=${moduleInfo?.courseId}&moduleNo=${moduleInfo?.moduleNo}&studentUid=${user?.uid}`)
                 .then(res => res.json())

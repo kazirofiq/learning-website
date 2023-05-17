@@ -29,8 +29,8 @@ const ModuleProgressbar = () => {
     }, [user, allModules])
 
     const decent = (100 - courseInfo?.completed)
-    console.log(decent);
-    console.log(courseInfo?.completed);
+    // console.log(decent);
+    console.log(courseInfo);
 
 
     const toggleSelect = () => setIsOpen(!isOpen);
@@ -137,7 +137,7 @@ const ModuleProgressbar = () => {
                     <div className='mt-3 flex justify-evenly text-[#333333] w-[250px] mx-auto'>
                         <div className='text-[12px] font-semibold leading-[18px] poppins'>
                             <p>Total Module</p>
-                            <p>{config.series[1]}</p>
+                            <p>{allModules.length}</p>
                         </div>
                         <div className='text-[12px] font-semibold leading-[18px] poppins'>
                             <div className='flex justify-center items-center gap-[4px]'>

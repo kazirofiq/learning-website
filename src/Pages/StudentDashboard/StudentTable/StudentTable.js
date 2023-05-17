@@ -1,37 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import StudentTableDetails from '../StudentTableDetails/StudentTableDetails';
 import './StudentTable.css'
 import Profile from '../../../assest/bg-img/Image.png'
 
 const StudentTable = () => {
-  const tablData = [
-    {
-      name: 'Rofiqul',
-      img: Profile,
-      quiz: '15',
-      score: '90',
-    },
-    {
-      name: 'Rofiqul',
-      img: Profile,
-      quiz: '15',
-      score: '90',
-    },
-    {
-      name: 'Rofiqul',
-      img: Profile,
-      quiz: '15',
-      score: '90',
-    },
-    {
-      name: 'Rofiqul',
-      img: Profile,
-      quiz: '15',
-      score: '90',
-    },
+  // const tablData = [
+  //   {
+  //     name: 'Rofiqul',
+  //     img: Profile,
+  //     quiz: '15',
+  //     score: '90',
+  //   },
+  //   {
+  //     name: 'Rofiqul',
+  //     img: Profile,
+  //     quiz: '15',
+  //     score: '90',
+  //   },
+  //   {
+  //     name: 'Rofiqul',
+  //     img: Profile,
+  //     quiz: '15',
+  //     score: '90',
+  //   },
+  //   {
+  //     name: 'Rofiqul',
+  //     img: Profile,
+  //     quiz: '15',
+  //     score: '90',
+  //   },
 
 
-  ]
+  // ]
+
+  const [allStudent, setAllStudent] = useState([])
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/paid`)
+      .then(res => res.json())
+      .then(user => setAllStudent(user))
+  }, [])
+
   return (
     <div>
       <div>
@@ -41,14 +49,16 @@ const StudentTable = () => {
               <tr className='text-[#333333]'>
                 <th>Rank</th>
                 <th className=''>Name</th>
-                <th>Assignment/Quiz</th>
-                <th>Score</th>
+                <th>Assignment</th>
+                <th>Assignment Score</th>
+                <th>Position</th>
               </tr>
             </thead>
             <tbody className='text-[#333333]'>
               {
-                tablData?.map((studenttables, i) =>
+                allStudent?.map((studenttables, i) =>
                   <StudentTableDetails
+                    key={i}
                     i={i}
                     studenttables={studenttables}
                   ></StudentTableDetails>

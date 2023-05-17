@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import StudentTable from '../StudentTable/StudentTable';
 import right_arrow from '../../../assest/student_dashboard/Vector.png'
 import useTitle from '../../../hooks/useTitle';
@@ -18,10 +18,9 @@ const LeaderBoard = () => {
         setSelectedItem(item);
         setIsOpen(false);
     };
-
     return (
         <section>
-            <div className='w-[558.85px] custom_shadow  mt-[40px]'>
+            <div className='custom_shadow  mt-[40px]'>
                 <div className='flex justify-between mx-6 pt-3'>
                     <div>
                         <p className='poppins font-semibold text-[18px] text-[#1B1D48] leading-[27px]'>Leader Board</p>

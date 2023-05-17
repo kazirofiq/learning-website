@@ -19,7 +19,7 @@ const Resource = () => {
   const { data: allresouces = [], refetch } = useQuery({
     queryKey: ["resources", catWiseResource],
     queryFn: () =>
-      fetch(`http://localhost:5000/resource/${catWiseResource}`).then((res) =>
+      fetch(`https://learn-with-rakib.onrender.com/resource/${catWiseResource}`).then((res) =>
         res.json()
       ),
   });
@@ -261,7 +261,7 @@ const Resource = () => {
                   >
                     <div className="relative resource-title">
                       <img
-                        className="w-full resource-image"
+                        className="w-full h-[200px] rounded-md resource-image"
                         src={resource.imgThumbnail}
                         alt=""
                       />

@@ -13,7 +13,7 @@ const ImportentLink = () => {
     console.log(importantLinkData);
     const { behance, pinterest, github, linkedin, personalWebsite, dribbble, userEmail, userUID, _id } = importantLinkData;
     useEffect(() => {
-        fetch(`http://localhost:5000/important-link/${user?.email}`)
+        fetch(`https://learn-with-rakib.onrender.com/important-link/${user?.email}`)
             .then(res => res.json())
             .then(data => setImportantLinkData(data))
     }, [user])

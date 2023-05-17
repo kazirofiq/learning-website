@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../../contexts/AuthProvider';
 const AboutMeEdit = ({ refetch, setEditingAboute, about }) => {
   console.log(about, 'about data')
-  const {  name, email, studentId, gender, phone } = about;
+  const { name, email, studentId, gender, phone } = about;
   const { user } = useContext(AuthContext);
   const {
     register,
@@ -22,7 +22,7 @@ const AboutMeEdit = ({ refetch, setEditingAboute, about }) => {
     };
 
     // save clients information to the database
-    fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`, {
+    fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -61,7 +61,7 @@ const AboutMeEdit = ({ refetch, setEditingAboute, about }) => {
               <div className="grid grid-cols-2 gap-4 items-center">
                 <div>
                   <label className='text-black'>Your Name</label>
-                  <input 
+                  <input
                     name="name"
                     value={name}
                     type="text"
@@ -78,7 +78,7 @@ const AboutMeEdit = ({ refetch, setEditingAboute, about }) => {
                 </div>
                 <div>
                   <label className='text-black'>Student Id</label>
-                  <input 
+                  <input
                     disabled
                     name="studentId"
                     defaultValue={studentId}

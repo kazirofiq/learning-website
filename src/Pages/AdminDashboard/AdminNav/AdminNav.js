@@ -25,22 +25,17 @@ const AdminNav = () => {
             </Link>
           </li>
           <li>
-            <Link to="/admindashboard/sendnotification">
-              <label
-                // onClick={() => setDeletingClient(client)}
-                htmlFor="confirmation-modal"
-
-              >
-                <div className="flex gap-4 items-center">
-                  <AiOutlineMail className='text-white font-bold'></AiOutlineMail>
-                  <h2>Send Notification</h2>
-                </div>
-              </label>
-
+            <Link to="/admindashboard/course-create/course-curriculum/645ff25bde9557c4b0ab4afb">
+              <div className="flex gap-4 items-center hover:">
+                <MdOutlineTopic></MdOutlineTopic>
+                <h2>Create Module</h2>
+              </div>
             </Link>
           </li>
           <li>
-            <Link to="/admindashboard/studeent-list">
+          </li>
+          <li>
+            <Link to="/admindashboard/student-list">
               <div className="flex gap-4 items-center">
                 <GiGraduateCap></GiGraduateCap>
                 <h2>Student List</h2>
@@ -77,9 +72,9 @@ const AdminNav = () => {
 
         </ul>
         {/* divider */}
-        <div className="divider  "></div>
+        <div className="divider "></div>
         {/* profile */}
-        <ul className="menu   p-2 rounded-box">
+        {/* <ul className="menu   p-2 rounded-box">
           <li>
             <div
               //   onClick={handleLogout}
@@ -89,7 +84,7 @@ const AdminNav = () => {
               <h2 className='text-white'>Log Out</h2>
             </div>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toast';
 import { AuthContext } from '../../../../contexts/AuthProvider';
 
-const EduCationEditing = ({setEditingEducation, education, refetch}) => {
+const EduCationEditing = ({ setEditingEducation, education, refetch }) => {
   const { user } = useContext(AuthContext);
   const {
     register,
@@ -21,7 +21,7 @@ const EduCationEditing = ({setEditingEducation, education, refetch}) => {
     };
 
     // save clients information to the database
-    fetch(`http://localhost:5000/users/uid?uid=${user?.uid}`, {
+    fetch(`https://learn-with-rakib.onrender.com/users/uid?uid=${user?.uid}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -50,7 +50,7 @@ const EduCationEditing = ({setEditingEducation, education, refetch}) => {
         <div className="modal pt-24">
           <div className="modal-box pt-12">
             <label
-              
+
               htmlFor="editEducationModal"
               className="btn btn-sm btn-circle absolute right-2 top-2"
             >
@@ -65,7 +65,7 @@ const EduCationEditing = ({setEditingEducation, education, refetch}) => {
                   <label className='text-black'>Your Education level</label>
                   <input
                     name="education"
-                      defaultValue={education?.education}
+                    defaultValue={education?.education}
                     type="text"
                     // defaultValue={user?.displayName}
                     className="input input-bordered my-2 w-full rounded-lg  p-3 text-sm bg-[#F8F8FF] placeholder:text-gray-600 text-black"

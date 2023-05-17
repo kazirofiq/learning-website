@@ -29,7 +29,7 @@ const TaskList = ({ data, taskList, dateFormate, _id }) => {
                 taskList: selectedText,
                 selecTed: !isChecked,
             }
-            fetch(`http://localhost:5000/task-list/${id}`, {
+            fetch(`https://learn-with-rakib.onrender.com/task-list/${id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"
@@ -60,7 +60,7 @@ const TaskList = ({ data, taskList, dateFormate, _id }) => {
             confirmButtonText: 'Yes, Delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/task-list/${_id}/${id}`, {
+                fetch(`https://learn-with-rakib.onrender.com/task-list/${_id}/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

@@ -39,8 +39,11 @@ const AdminHeader = () => {
           </div>
           <div>
             <div className="avatar">
-              <div className="w-[40px] rounded-full">
+              {/* <div className="w-[40px] rounded-full">
                 <img alt="" src="https://i.ibb.co/rGWFRZ3/female-avatar-icon-flat-style-female-user-icon-cartoon-woman-avatar-pink-hair-vector-stock-91462795.jpg" />
+              </div> */}
+              <div className="w-10 rounded-full">
+                <img src={user?.photoURL || "https://i.ibb.co/rGWFRZ3/female-avatar-icon-flat-style-female-user-icon-cartoon-woman-avatar-pink-hair-vector-stock-91462795.jpg"} alt="icon" />
               </div>
             </div>
           </div>

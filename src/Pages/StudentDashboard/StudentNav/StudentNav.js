@@ -46,7 +46,7 @@ const StudentNav = () => {
                 {/* divider */}
                 <div className="divider"></div>
                 {/* profile */}
-                <ul className="menu p-2 rounded-box">
+                {/* <ul className="menu p-2 rounded-box">
                     <li>
                         <div
                             //   onClick={handleLogout}
@@ -56,7 +56,7 @@ const StudentNav = () => {
                             <h2 className='text-white'>Log Out</h2>
                         </div>
                     </li>
-                </ul>
+                </ul> */}
             </div>
         </div>
     );

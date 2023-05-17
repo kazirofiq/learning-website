@@ -5,7 +5,7 @@ const useIsAdmin = uid => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     if (uid) {
-      fetch(`http://localhost:5000/admin/uid?uid=${uid}`)
+      fetch(`https://learn-with-rakib.onrender.com/admin/uid?uid=${uid}`)
         .then(res => res.json())
         .then(user => {
           if (user?.uid) {

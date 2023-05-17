@@ -4,7 +4,7 @@ const useToken = email => {
     const [token, setToken] = useState('');
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/jwt?email=${email}`)
+            fetch(`https://learn-with-rakib.onrender.com/jwt?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.accessToken) {
@@ -18,7 +18,7 @@ const useToken = email => {
 }
 
 const getUserToken = email => {
-    fetch(`http://localhost:5000/jwt?email=${email}`)
+    fetch(`https://learn-with-rakib.onrender.com/jwt?email=${email}`)
         .then(res => res.json())
         .then(data => {
             if (data.accessToken) {

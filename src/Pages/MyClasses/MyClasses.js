@@ -14,12 +14,13 @@ const MyClasses = () => {
   const { user } = useContext(AuthContext);
   const [courseInfo, setCourseInfo] = useState(null);
 
+
   useEffect(() => {
     if (user?.uid) {
       fetch(`${server}/users/uid?uid=${user?.uid}`)
         .then(res => res.json())
         .then(data => {
-          setCourseInfo(data.enrolledCourses.find(course => course.id === allModules[1].courseId));
+          setCourseInfo(data.enrolledCourses.find(course => course.id === allModules[0]?.courseId));
         })
         .catch(err => console.error(err))
     }
@@ -47,7 +48,7 @@ const MyClasses = () => {
               <div className=''>
                 <scrollable-component class="my-content">
                   <div className=''>
-                    {allModules.map(modules => <Module
+                    {allModules.map(modules => modules?.isReleased && <Module
                       modules={modules}
                     ></Module>)}
                   </div>
