@@ -83,7 +83,7 @@ const CourseCurriculumAccordion = () => {
             <div className="grid grid-cols-1 justify-center items-center">
                 <div className="container flex flex-col justify-center my-3">
                     <scrollable-component class="content">
-                        <div className="space-y-4 lg:w-[730px] w-[320px]">
+                        <div className="space-y-4 md:w-[730px] w-full ">
                             {
                                 moduleName.map((module, i) =>
                                     <div className="collapse bg-white">

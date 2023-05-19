@@ -13,7 +13,7 @@ const Consultancy = () => {
       <div className="hero lg:pb-[87px] lg:pt-[13px] ">
         <div className="hero-content flex-col lg:flex-row-reverse gap-x-32 md:mx-[145px] ">
           <div className="lg:text-left text-center">
-            {/* <p className='lg:text-lg text-base font-medium text-[#333333]'>About us</p> */}
+            <p className='lg:text-lg text-base font-medium text-[#333333]'>Consultation</p>
             <h1 className="lg:text-4xl md:text-3xl text-2xl font-bold my-4 text-[#38A27B]">
               <span className="text-[#1B1D48]">
                 Unlock Your Creativity with <br /></span>

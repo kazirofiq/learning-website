@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import rating from '../../../../assest/learner_review/rating.png'
+import rating from '../../../../assest/learner_review/Vector.png'
 import './LearnerReview.css'
 
 const Review = () => {
@@ -13,9 +13,13 @@ const Review = () => {
                         <div className='poppins'>
                             <p className='text-start text-[#333333] text-sm lg:text-base leading-[21px] lg:leading-6 font-bold poppins'>Rashidul Sony</p>
                             <div className='flex items-center gap-2 lg:gap-3'>
-                                <img src={rating} alt="" className='w-[79px] h-[11px]' />
-                                <p className='text-[#666666] font-light text-center lg:text-start text-xs leading-[18px]'>30-03-2023</p>
-                            </div>
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
+                                        <p className='text-[#666666] font-light text-center lg:text-start text-xs leading-[18px]'>17-03-2023</p>
+                                    </div>
                         </div>
                     </div>
                     <div className='mt-[15.5px] lg:mt-[22px]'>
@@ -30,9 +34,13 @@ const Review = () => {
                         <div className='poppins'>
                             <p className='text-start text-[#333333] text-sm lg:text-base leading-[21px] lg:leading-6 font-bold poppins'>Md Nishat</p>
                             <div className='flex items-center gap-2 lg:gap-3'>
-                                <img src={rating} alt="" className='w-[79px] h-[11px]' />
-                                <p className='text-[#666666] font-light text-center lg:text-start text-xs leading-[18px]'>17-03-2023</p>
-                            </div>
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
+                                        <p className='text-[#666666] font-light text-center lg:text-start text-xs leading-[18px]'>17-03-2023</p>
+                                    </div>
                         </div>
                     </div>
                     <div className='mt-[15.5px] lg:mt-[22px]'>

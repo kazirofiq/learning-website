@@ -8,7 +8,7 @@ const Refund = () => {
     }, [])
     return (
 
-        <div className='text-black p-5'>
+        <div className='text-black text-justify pb-28  md:px-[143px] px-[20px] pt-4'>
             Thank you for choosing Learn With Rakib for your creativity and freelancing guidance. We strive to provide the best possible experience for our customers. However, we understand that circumstances may arise where you may request a refund for your purchase. Please review our refund policy below:
 
             <br />

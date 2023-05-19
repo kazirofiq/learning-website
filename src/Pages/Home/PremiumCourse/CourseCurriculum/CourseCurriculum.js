@@ -12,7 +12,7 @@ const CourseCurriculum = () => {
                 <p className='font-normal text-base text-[#666666] mt-3'>To know the process <label className='font-normal text-base text-[#666666] mt-3r' htmlFor='howToPay'><span className='font-bold text-base text-[#3D419F] cursor-pointer '>Watch this Video</span></label></p>
             </div>
             <div className=''>
-                <div className='lg:w-[730px] w-[320px] py-4 lg:py-[22px] bg-[#F8F8FF] '>
+                <div className='lg:w-[730px] w-full py-4 lg:py-[22px] bg-[#F8F8FF] '>
                     <div className=''>
                         <div>
                             <p className='text-[#1B1D48] text-[20px] lg:text-2xl font-bold leading-[30px] lg:leading-9 mb-[11px] poppins'>The Course Curriculam</p>

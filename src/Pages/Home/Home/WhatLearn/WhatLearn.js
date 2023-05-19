@@ -43,7 +43,7 @@ const WhatLearn = () => {
           What You will <span style={{ color: "#38A27B" }}>learn?</span>
         </h2>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+        <div className="grid sm:grid-cols-2  md:grid-cols-4 gap-4 mt-12">
           {whatlearns.map((whatlearn, index) => (
             <div key={index}>
               <div className="text-center">

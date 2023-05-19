@@ -1,5 +1,5 @@
 import React from 'react';
-import rating from '../../../assest/learner_review/rating.png'
+import rating from '../../../assest/learner_review/Vector.png'
 import reviewer from '../../../assest/Consultency/Ellipse 34.png'
 
 import { Link } from 'react-router-dom';
@@ -17,7 +17,11 @@ const ConsultationReviews = () => {
                                 <div className='poppins pl-5'>
                                     <p className='text-start text-[#333333] text-sm lg:text-base leading-[21px] lg:leading-6 font-bold poppins'>Dalowar Hosen</p>
                                     <div className='flex items-center gap-2 lg:gap-3'>
-                                        <img src={rating} alt="" className='w-[79px] h-[11px]' />
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
                                         <p className='text-[#666666] font-light text-center lg:text-start text-xs leading-[18px]'>17-03-2023</p>
                                     </div>
                                 </div>
@@ -34,7 +38,11 @@ const ConsultationReviews = () => {
                                 <div className='poppins pl-5'>
                                     <p className='text-start text-[#333333] text-sm lg:text-base leading-[21px] lg:leading-6 font-bold poppins'>Mohammad Salauddin</p>
                                     <div className='flex items-center gap-2 lg:gap-3'>
-                                        <img src={rating} alt="" className='w-[79px] h-[11px]' />
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
+                                        <img src={rating} alt="" className='' />
                                         <p className='text-[#666666] font-light text-center lg:text-start text-xs leading-[18px]'>17-03-2023</p>
                                     </div>
                                 </div>

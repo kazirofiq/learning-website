@@ -5,14 +5,14 @@ import thinkimg from "../../../assest/bg-img/Image2.png";
 
 const Frequently = () => {
   return (
-    <div className="mt-[86px] bg-[#F7F7FE]">
+    <div className="mt-[86px] mb-10 bg-[#F7F7FE]">
       <h2 className="text-center mx-auto pt-[30px]  lg:pt-[96px] font-bold text-[#1B1D48] lg:text-[40px] md:text-[40px] text-[24px]">
         Frequently Asked  <span className="text-[#38A27B]">Question</span>{" "}
       </h2>
       <section
         class="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center md:px-[145px] py-5 mb-8"
       >
-        <div>
+        <div className="md:px-0 px-[20px]">
           <div class=" flex items-center mb-5">
             <div className="">
               <section className="dark:text-gray-100">
@@ -144,9 +144,9 @@ const Frequently = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="md:ml-[40px] ml-4">
           <div>
-            <img className="w-full" src={thinkimg} alt="" />
+            <img className="" src={thinkimg} alt="" />
           </div>
         </div>
       </section>

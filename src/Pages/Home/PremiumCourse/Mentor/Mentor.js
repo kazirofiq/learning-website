@@ -13,7 +13,7 @@ const Mentor = () => {
 
                 <div className='lg:flex block mx-auto'>
                     <div className='' >
-                        <img src={mentor_image} alt="" className='lg:w-[186px] h-[194.02px] mx-auto lg:mr-[17px] mt-[9px]' />
+                        <img src={mentor_image} alt="" className='lg:w-[186px] object-cover h-[194.02px] mx-auto lg:mr-[17px] mt-[9px]' />
                     </div>
                     <div className='poppins mt-[3px] lg:mt-5 lg:text-start text-center'>
                         <p className='text-[#333333] text-base lg:text-xl leading-[30px] font-semibold'>Rakib Ahmad</p>
@@ -29,10 +29,10 @@ const Mentor = () => {
                             <br />through branding and
                             <br />showcasing their products</p> */}
 
-                        <div className='flex lg:mx-0 mx-auto lg:w-[104px] w-[92px] gap-3 lg:gap-4 mt-4 lg:mt-6'>
-                            <Link target='blank' to='https://www.facebook.com/groups/learnwithrakib'><img src={fb} alt="" /></Link>
-                            <Link target='blank' to='https://www.youtube.com/@learnwithrakib17'><AiFillYoutube className='text-xl text-[#3d419f]'></AiFillYoutube></Link>
-                            <Link target='blank' to='https://www.linkedin.com/in/learnwithrakib/'><img src={linkedin} alt="" /></Link>
+                        <div className='flex lg:mx-0 mx-auto lg:w-[104px] w-[92px] gap-3 lg:gap-4 mt-4 lg:mt-6 items-center'>
+                            <Link target='blank' to='https://www.facebook.com/groups/learnwithrakib'><img className='w-[14px] h-[14px]' src={fb} alt="" /></Link>
+                            <Link target='blank' to='https://www.youtube.com/@learnwithrakib17'><AiFillYoutube className='text-xl  text-[#3d419f]'></AiFillYoutube></Link>
+                            <Link target='blank' to='https://www.linkedin.com/in/learnwithrakib/'><img className='w-[14px] h-[14px]' src={linkedin} alt="" /></Link>
                         </div>
                     </div>
                 </div>

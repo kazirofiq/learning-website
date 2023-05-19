@@ -28,13 +28,13 @@ const Course = () => {
           <div className="bg-white  course-category h2{
 color: #FFFFFF;
 }">
-            <div className="card hover:bg-[#3D419F] transition  shadow-xl">
+            <div className="card stck hover:bg-[#3D419F] transition  shadow-xl">
               <div className="bg-[#ECECF5] w-[104px] h-[104px] mx-auto rounded-full mt-[32px]">
                 <figure className="pt-5">
                   <img src={premium} alt="Shoes" className="rounded-xl" />
                 </figure>
               </div>
-              <div className="card-body items-center text-center">
+              <div className="card-body  items-center text-center">
                 <h2 className="card-title text-[24px] font-[700] text-[#1B1D48]">
                   Premium Course
                 </h2>
@@ -56,7 +56,7 @@ color: #FFFFFF;
             </div>
           </div>
           <div className="course-category">
-            <div className="card  bg-[#FFFFFF] hover:bg-[#3D419F] shadow-xl">
+            <div className="card stck bg-[#FFFFFF] hover:bg-[#3D419F] shadow-xl">
               <div className="bg-[#E2E3F1] w-[104px] h-[104px] mx-auto rounded-full mt-[32px]">
                 <figure className=" pt-5">
                   <img src={free} alt="Shoes" className="rounded-xl" />
