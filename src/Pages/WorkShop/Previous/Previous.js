@@ -66,9 +66,9 @@ const Previous = () => {
                                     <img className='h-3' src={star} alt='' />
                                     <p>(15)</p>
                                 </div>
-                                <div className="flex justify-between">
+                                <div className="flex justify-between items-center">
                                     <p className='font-semibold lg:font-bold text-sm lg:text-base leading-6 text-[#333333] mt-3 lg:mt-4 md:mt-4'>৳500</p>
-                                    <button className='font-semibold lg:font-bold text-sm lg:text-base leading-6 text-[#333333] mt-3 lg:mt-4 md:mt-4 border p-2 hover:bg-primary hover:text-white'>Pay Now</button>
+                                    <button className='font-semibold lg:font-bold text-sm lg:text-base leading-6 text-[#333333] mt-3 lg:mt-4 md:mt-4 border p-2 hover:bg-primary hover:text-white rounded-md'>Pay Now</button>
                                 </div>
                             </div>
                         </div>)

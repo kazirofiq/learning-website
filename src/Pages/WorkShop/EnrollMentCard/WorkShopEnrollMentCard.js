@@ -17,14 +17,8 @@ const WorkShopEnrollMentCard = () => {
         <div className="lg:mt-[-200px] mx-auto" >
             <div className="card poppins w-[320px] lg:w-[350px] bg-base-100 shadow-xl inline-block sticky top-0">
                 <div className='relative cursor-pointer'>
-                    <figure>
-                        <img className='lg:block hidden' src={videoImg} alt="video" />
-                        <img className='lg:hidden block' src={videoImgResponsive} alt="" />
-                        <div className='absolute flex justify-center items-center'>
-                            <img className='lg:mr-4 lg:w-full w-9 mr-2' src={videoPlayIcon} alt="" />
-                            <h4 className='lg:text-2xl text-lg text-[#FFFFFF] font-bold leading-[36px]'>Preview</h4>
-                        </div>
-                    </figure>
+                <iframe className="w-[320px] lg:w-[350px] yt-video-rounded h-[300px] rounded-lg" src="https://player.vdocipher.com/v2/?otp=20160313versASE323czxXBX5KQ1tFFcIliU2oeit2Js8i1KRzT2v1ubP8pDNZmr&playbackInfo=eyJ2aWRlb0lkIjoiODI1OTJkMTcxNzg4NDc0OTlhYTdiMmI1NjViNWRlZGYifQ==" title="YouTube video player" frameborder="0" allow="accelerometer; mute; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+
                 </div>
 
 

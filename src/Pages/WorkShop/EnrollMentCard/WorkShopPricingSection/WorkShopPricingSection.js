@@ -15,7 +15,7 @@ const WorkShopPricingSection = () => {
         </div>
         <Link to={`https://learn-with-rakib.onrender.com/workshops/payment?uid=${user?.uid}&amount=${500}&workshopId=${workshopId}`}>
           <div className="card-actions flex lg:justify-center items-center w-full lg:mt-[15px] lg:px-0 px-5">
-            <button className="rounded-[10px] w-[320px] text-sm lg:text-base font-[600] text-[#FFFFFF] bg-[#3D419F]  py-[10px] lg:w-full mx-auto">Enroll Now</button>
+            <button disabled  className="rounded-[10px]  w-[320px] text-sm lg:text-base font-[600] text-[#FFFFFF] bg-[#9495c5]  py-[10px] lg:w-full mx-auto">Enroll Now</button>
           </div>
         </Link>
       </div>
